@@ -1,0 +1,7 @@
+{
+  "type": "farmersdelight:add_features_by_filter",
+  "allowed_biomes": "#minecraft:is_overworld",
+  "denied_biomes": ["#forge:is_underground", "vampirism:vampire_forest"],
+  "features": "vampiresdelight:patch_wild_garlic",
+  "step": "vegetal_decoration"
+}

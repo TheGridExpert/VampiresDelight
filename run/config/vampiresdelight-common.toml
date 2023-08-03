@@ -1,0 +1,10 @@
+
+#World generation
+[world]
+
+	#Wild Garlic generation
+	[world.wild_garlic]
+		#Chance of generating clusters. Smaller value = more frequent.
+		#Range: > 0
+		chance = 160
+

@@ -1,0 +1,12 @@
+{
+  "block.vampiresdelight.wild_garlic": "Wild Garlic",
+  "block.vampiresdelight.garlic_crate": "Garlic Crate",
+
+  "item.vampiresdelight.grilled_garlic": "Grilled Garlic",
+  "item.vampiresdelight.garlic_soup": "Garlic Soup",
+
+  "item.vampiresdelight.orchid_tea": "Orchid Tea",
+  "farmersdelight.tooltip.orchid_tea": "Infects With Sanguinare",
+  "item.vampiresdelight.cursed_cupcake": "Cursed Cupcake",
+  "farmersdelight.tooltip.cursed_cupcake": "Clears Garlic Effect"
+}

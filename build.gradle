@@ -1,0 +1,141 @@
+plugins {
+    id 'eclipse'
+    id 'maven-publish'
+    id 'net.minecraftforge.gradle' version '5.1.+'
+}
+
+version = "${mod_version}-${mc_version}"
+group = 'net.grid.vampiresdelight'
+archivesBaseName = 'VampiresDelight'
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
+minecraft {
+    mappings channel: 'official', version: "${mc_version}"
+    runs {
+        client {
+            workingDirectory project.file('run')
+
+            property 'mixin.env.remapRefMap', 'true'
+
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+
+            property 'forge.logging.console.level', 'debug'
+
+            property 'forge.enabledGameTestNamespaces', 'vampiresdelight'
+
+            mods {
+                vampiresdelight {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        server {
+            workingDirectory project.file('run')
+
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+
+            property 'forge.logging.console.level', 'debug'
+
+            property 'forge.enabledGameTestNamespaces', 'vampiresdelight'
+
+            mods {
+                vampiresdelight {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        gameTestServer {
+            workingDirectory project.file('run')
+
+            property 'forge.logging.markers', 'REGISTRIES'
+
+            property 'forge.logging.console.level', 'debug'
+
+            property 'forge.enabledGameTestNamespaces', 'vampiresdelight'
+
+            mods {
+                vampiresdelight {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        data {
+            workingDirectory project.file('run')
+
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+
+            property 'forge.logging.console.level', 'debug'
+
+            args '--mod', 'vampiresdelight', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+
+            environment 'target', 'fmluserdevdata'
+
+            mods {
+                vampiresdelight {
+                    source sourceSets.main
+                }
+            }
+        }
+    }
+}
+
+sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+repositories {
+    maven {
+        url = "https://maven.maxanier.de/releases"
+    }
+    //maven {
+        //url = "https://maven.paube.de/releases"
+    //}
+    maven { url "https://www.cursemaven.com" }
+}
+
+dependencies {
+    minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
+
+    implementation fg.deobf("curse.maven:farmers-delight-398521:${farmersdelight_version}")
+
+    implementation fg.deobf("de.teamlapen.vampirism:Vampirism:${mc_version}-${vampirism_version}")
+    //implementation fg.deobf("de.teamlapen.werewolves:Werewolves:${mc_version}-${werewolves_version}")
+}
+
+jar {
+    manifest {
+        attributes([
+                "Specification-Title"     : "vampiresdelight",
+                "Specification-Vendor"    : "grid",
+                "Specification-Version"   : "1", // We are version 1 of ourselves
+                "Implementation-Title"    : "VampiresDelight",
+                "Implementation-Version"  : "${mod_version}",
+                "Implementation-Vendor"   : "grid",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
+}
+
+jar.finalizedBy('reobfJar')
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifact jar
+        }
+    }
+    repositories {
+        maven {
+            url "file://${project.projectDir}/mcmodsrepo"
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+}

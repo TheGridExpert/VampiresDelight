@@ -1,0 +1,257 @@
+{
+  "farmersdelight:main/root": {
+    "criteria": {
+      "seeds": "2023-07-22 21:27:49 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/alchemy_table/plant_oil": {
+    "criteria": {
+      "has_bottles": "2023-07-27 17:11:41 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/dark_oak_boat": {
+    "criteria": {
+      "in_water": "2023-07-22 21:31:14 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/glow_item_frame": {
+    "criteria": {
+      "has_item_frame": "2023-08-01 23:08:57 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/mushroom_stew": {
+    "criteria": {
+      "has_bowl": "2023-07-22 21:28:55 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/emerald_block": {
+    "criteria": {
+      "has_emerald": "2023-07-23 11:24:29 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/hunter/crucifix": {
+    "criteria": {
+      "holy_water": "2023-07-23 11:24:51 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/alchemy_table/vampire_blood_oil": {
+    "criteria": {
+      "has_wheat_seeds": "2023-07-23 11:25:06 +0300"
+    },
+    "done": true
+  },
+  "vampirism:vampire/become_vampire": {
+    "criteria": {
+      "main": "2023-07-22 21:29:01 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/vampire/vampire_clothing_crown": {
+    "criteria": {
+      "has_heart": "2023-07-31 23:33:09 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/general/vampire_rack": {
+    "criteria": {
+      "has_potion": "2023-07-27 17:11:41 +0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/trade": {
+    "criteria": {
+      "traded": "2023-07-23 11:24:28 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/weapontable/crucifix_ultimate": {
+    "criteria": {
+      "holy_water": "2023-07-23 11:25:38 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/farmersdelight/mixed_salad": {
+    "criteria": {
+      "has_bowl": "2023-07-22 21:28:55 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/brewing/vampire/blood_bottle_to_glass": {
+    "criteria": {
+      "has_blood_bottle": "2023-07-31 23:25:29 +0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:sunflower_plains": "2023-07-22 21:58:54 +0300",
+      "minecraft:birch_forest": "2023-07-22 21:27:38 +0300",
+      "minecraft:windswept_hills": "2023-07-22 22:00:07 +0300",
+      "minecraft:river": "2023-07-22 21:28:49 +0300",
+      "minecraft:swamp": "2023-07-22 21:59:35 +0300",
+      "minecraft:forest": "2023-07-22 21:59:08 +0300",
+      "minecraft:flower_forest": "2023-07-22 21:58:35 +0300",
+      "minecraft:windswept_gravelly_hills": "2023-07-23 11:22:50 +0300",
+      "minecraft:plains": "2023-07-22 21:58:12 +0300"
+    },
+    "done": false
+  },
+  "farmersdelight:recipes/farmersdelight/cabbage_crate": {
+    "criteria": {
+      "has_cabbage": "2023-07-31 23:32:32 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/farmersdelight/cooking/dumplings": {
+    "criteria": {
+      "has_any_ingredient": "2023-07-31 23:32:32 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/vampire/garlic_finder": {
+    "criteria": {
+      "has_garlic": "2023-07-22 22:00:44 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/cursed_spruce_boat": {
+    "criteria": {
+      "in_water": "2023-07-22 21:31:14 +0300"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/root": {
+    "criteria": {
+      "consumed_item": "2023-07-22 21:28:55 +0300"
+    },
+    "done": true
+  },
+  "vampirism:main/root": {
+    "criteria": {
+      "second": "2023-07-22 22:00:44 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/birch_boat": {
+    "criteria": {
+      "in_water": "2023-07-22 21:31:14 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/chest": {
+    "criteria": {
+      "has_lots_of_items": "2023-07-23 11:25:44 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/farmersdelight/nether_salad": {
+    "criteria": {
+      "has_bowl": "2023-07-22 21:28:55 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/hunter/cross": {
+    "criteria": {
+      "has_holy": "2023-07-23 11:24:51 +0300"
+    },
+    "done": true
+  },
+  "vampirism:hunter/become_hunter": {
+    "criteria": {
+      "main": "2023-07-27 17:12:04 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/mangrove_boat": {
+    "criteria": {
+      "in_water": "2023-07-22 21:31:14 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/food/general/garlic_bread": {
+    "criteria": {
+      "has_garlic": "2023-07-22 22:00:44 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/hunter/potion_table": {
+    "criteria": {
+      "has_glass_bottle": "2023-07-27 17:11:41 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/weapontable/crucifix_enhanced": {
+    "criteria": {
+      "has_holy_water": "2023-07-23 11:24:51 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/vampire/vampire_clothing_boots": {
+    "criteria": {
+      "has_heart": "2023-07-31 23:33:09 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/acacia_boat": {
+    "criteria": {
+      "in_water": "2023-07-22 21:31:14 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/oak_boat": {
+    "criteria": {
+      "in_water": "2023-07-22 21:31:14 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/farmersdelight/cooking/cabbage_rolls": {
+    "criteria": {
+      "has_any_ingredient": "2023-07-31 23:32:32 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/vampire/vampire_clothing_hat": {
+    "criteria": {
+      "has_heart": "2023-07-31 23:33:09 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:main/eat_comfort_food": {
+    "criteria": {
+      "comfort": "2023-07-22 21:28:55 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/dark_spruce_boat": {
+    "criteria": {
+      "in_water": "2023-07-22 21:31:14 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/vampire/vampire_clothing_legs": {
+    "criteria": {
+      "has_heart": "2023-07-31 23:33:09 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/jungle_boat": {
+    "criteria": {
+      "in_water": "2023-07-22 21:31:14 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/spruce_boat": {
+    "criteria": {
+      "in_water": "2023-07-22 21:31:14 +0300"
+    },
+    "done": true
+  },
+  "DataVersion": 3120
+}

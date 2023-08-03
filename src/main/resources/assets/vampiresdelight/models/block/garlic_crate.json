@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "farmersdelight:block/crate_bottom",
+    "side": "vampiresdelight:block/garlic_crate_side",
+    "top": "vampiresdelight:block/garlic_crate_top"
+  }
+}
