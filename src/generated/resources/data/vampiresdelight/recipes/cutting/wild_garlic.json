@@ -1,0 +1,24 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "vampiresdelight:wild_garlic"
+    }
+  ],
+  "result": [
+    {
+      "item": "vampirism:item_garlic"
+    },
+    {
+      "count": 2,
+      "item": "minecraft:light_gray_dye"
+    },
+    {
+      "chance": 0.25,
+      "item": "minecraft:green_dye"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

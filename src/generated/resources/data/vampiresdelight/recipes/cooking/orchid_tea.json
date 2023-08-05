@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "item": "vampirism:vampire_orchid"
+    },
+    {
+      "item": "vampirism:vampire_orchid"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "item": "vampiresdelight:orchid_tea"
+  }
+}

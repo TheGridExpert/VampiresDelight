@@ -2,7 +2,7 @@ package net.grid.vampiresdelight.common.world;
 
 import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.Configuration;
-import net.grid.vampiresdelight.common.registry.ModBlocks;
+import net.grid.vampiresdelight.common.registry.VDBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
@@ -36,7 +36,7 @@ public class WildGarlicGeneration {
     public static Holder<PlacedFeature> PATCH_WILD_GARLIC;
     public static void registerWildGarlicGeneration() {
         FEATURE_PATCH_WILD_GARLIC = register(new ResourceLocation(VampiresDelight.MODID, "patch_wild_garlic"),
-                ModBiomeFeatures.WILD_CROP.get(), wildCropWithFloorConfig(ModBlocks.WILD_GARLIC.get(), Blocks.GRASS, BlockPredicate.matchesTag(BLOCK_BELOW, BlockTags.DIRT), Blocks.COARSE_DIRT, BlockPredicate.matchesTag(BlockTags.DIRT)));
+                ModBiomeFeatures.WILD_CROP.get(), wildCropWithFloorConfig(VDBlocks.WILD_GARLIC.get(), Blocks.GRASS, BlockPredicate.matchesTag(BLOCK_BELOW, BlockTags.DIRT), Blocks.COARSE_DIRT, BlockPredicate.matchesTag(BlockTags.DIRT)));
         PATCH_WILD_GARLIC = registerPlacement(new ResourceLocation(VampiresDelight.MODID, "patch_wild_garlic"),
             FEATURE_PATCH_WILD_GARLIC, RarityFilter.onAverageOnceEvery(Configuration.CHANCE_WILD_GARLIC.get()), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
     }

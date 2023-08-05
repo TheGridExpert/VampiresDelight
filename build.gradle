@@ -2,6 +2,7 @@ plugins {
     id 'eclipse'
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '5.1.+'
+    id 'org.spongepowered.mixin' version '0.7+'
 }
 
 version = "${mod_version}-${mc_version}"
@@ -102,8 +103,9 @@ dependencies {
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
 
     implementation fg.deobf("curse.maven:farmers-delight-398521:${farmersdelight_version}")
-
     implementation fg.deobf("de.teamlapen.vampirism:Vampirism:${mc_version}-${vampirism_version}")
+
+    // Mod support
     //implementation fg.deobf("de.teamlapen.werewolves:Werewolves:${mc_version}-${werewolves_version}")
 }
 

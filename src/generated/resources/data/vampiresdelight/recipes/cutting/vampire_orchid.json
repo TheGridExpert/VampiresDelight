@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "vampirism:vampire_orchid"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "minecraft:magenta_dye"
+    },
+    {
+      "chance": 0.75,
+      "item": "vampirism:cursed_roots"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

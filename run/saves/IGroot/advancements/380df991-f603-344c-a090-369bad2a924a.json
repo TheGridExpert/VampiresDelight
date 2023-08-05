@@ -1,255 +1,371 @@
 {
-  "farmersdelight:main/root": {
+  "farmersdelight:recipes/farmersdelight/cooking/glow_berry_custard": {
     "criteria": {
-      "seeds": "2023-07-22 21:27:49 +0300"
+      "has_any_ingredient": "2023-08-04 14:45:50 +0300"
     },
     "done": true
   },
-  "vampirism:recipes/vampirism/alchemy_table/plant_oil": {
+  "vampirism:recipes/vampirism/general/castle_block_dark_brick_1": {
     "criteria": {
-      "has_bottles": "2023-07-27 17:11:41 +0300"
+      "has_orchid": "2023-08-04 14:46:04 +0300"
     },
     "done": true
   },
-  "minecraft:recipes/transportation/dark_oak_boat": {
+  "farmersdelight:recipes/farmersdelight/rice_from_bag": {
     "criteria": {
-      "in_water": "2023-07-22 21:31:14 +0300"
+      "has_rice_bag": "2023-08-05 16:01:59 +0300"
     },
     "done": true
   },
-  "minecraft:recipes/decorations/glow_item_frame": {
+  "minecraft:recipes/misc/cyan_dye": {
     "criteria": {
-      "has_item_frame": "2023-08-01 23:08:57 +0300"
+      "has_green_dye": "2023-08-05 16:03:51 +0300"
     },
     "done": true
   },
-  "minecraft:recipes/food/mushroom_stew": {
+  "farmersrespite:recipes/farmersrespite/brewing/strong_hot_cocoa": {
     "criteria": {
-      "has_bowl": "2023-07-22 21:28:55 +0300"
+      "has_tea": "2023-08-05 16:02:25 +0300"
     },
     "done": true
   },
-  "minecraft:recipes/building_blocks/emerald_block": {
+  "vampiresdelight:recipes/farmersdelight/garlic_crate": {
     "criteria": {
-      "has_emerald": "2023-07-23 11:24:29 +0300"
+      "has_garlic": "2023-08-05 16:03:47 +0300"
     },
     "done": true
   },
-  "vampirism:recipes/vampirism/hunter/crucifix": {
+  "farmersdelight:main/use_cutting_board": {
     "criteria": {
-      "holy_water": "2023-07-23 11:24:51 +0300"
+      "cutting_board": "2023-08-05 16:03:47 +0300"
     },
     "done": true
   },
-  "vampirism:recipes/vampirism/alchemy_table/vampire_blood_oil": {
+  "farmersrespite:recipes/farmersrespite/coffee_beans": {
     "criteria": {
-      "has_wheat_seeds": "2023-07-23 11:25:06 +0300"
+      "has_sack": "2023-08-05 16:01:51 +0300"
     },
     "done": true
   },
-  "vampirism:vampire/become_vampire": {
+  "farmersdelight:recipes/food/cake_from_milk_bottle": {
     "criteria": {
-      "main": "2023-07-22 21:29:01 +0300"
+      "has_milk_bottle": "2023-08-04 14:45:50 +0300"
     },
     "done": true
   },
-  "vampirism:recipes/vampirism/vampire/vampire_clothing_crown": {
+  "farmersdelight:recipes/farmersdelight/cooking/fried_rice": {
     "criteria": {
-      "has_heart": "2023-07-31 23:33:09 +0300"
+      "has_any_ingredient": "2023-08-04 14:45:42 +0300"
     },
     "done": true
   },
-  "vampirism:recipes/vampirism/general/vampire_rack": {
+  "vampiresdelight:recipes/farmersdelight/grilled_garlic": {
     "criteria": {
-      "has_potion": "2023-07-27 17:11:41 +0300"
+      "grilled_garlic": "2023-08-05 16:03:47 +0300"
     },
     "done": true
   },
-  "minecraft:adventure/trade": {
+  "farmersdelight:main/place_cooking_pot": {
     "criteria": {
-      "traded": "2023-07-23 11:24:28 +0300"
-    },
-    "done": true
-  },
-  "vampirism:recipes/vampirism/weapontable/crucifix_ultimate": {
-    "criteria": {
-      "holy_water": "2023-07-23 11:25:38 +0300"
-    },
-    "done": true
-  },
-  "farmersdelight:recipes/farmersdelight/mixed_salad": {
-    "criteria": {
-      "has_bowl": "2023-07-22 21:28:55 +0300"
-    },
-    "done": true
-  },
-  "vampirism:recipes/brewing/vampire/blood_bottle_to_glass": {
-    "criteria": {
-      "has_blood_bottle": "2023-07-31 23:25:29 +0300"
+      "cooking_pot": "2023-08-04 14:44:51 +0300"
     },
     "done": true
   },
   "minecraft:adventure/adventuring_time": {
     "criteria": {
-      "minecraft:sunflower_plains": "2023-07-22 21:58:54 +0300",
-      "minecraft:birch_forest": "2023-07-22 21:27:38 +0300",
-      "minecraft:windswept_hills": "2023-07-22 22:00:07 +0300",
-      "minecraft:river": "2023-07-22 21:28:49 +0300",
-      "minecraft:swamp": "2023-07-22 21:59:35 +0300",
-      "minecraft:forest": "2023-07-22 21:59:08 +0300",
-      "minecraft:flower_forest": "2023-07-22 21:58:35 +0300",
-      "minecraft:windswept_gravelly_hills": "2023-07-23 11:22:50 +0300",
-      "minecraft:plains": "2023-07-22 21:58:12 +0300"
+      "minecraft:wooded_badlands": "2023-08-04 14:43:50 +0300",
+      "minecraft:sparse_jungle": "2023-08-04 14:43:57 +0300",
+      "minecraft:lukewarm_ocean": "2023-08-04 14:44:12 +0300",
+      "minecraft:stony_shore": "2023-08-04 14:44:14 +0300",
+      "minecraft:desert": "2023-08-04 14:43:29 +0300"
     },
     "done": false
   },
-  "farmersdelight:recipes/farmersdelight/cabbage_crate": {
+  "farmersrespite:recipes/farmersrespite/brewing/hot_cocoa": {
     "criteria": {
-      "has_cabbage": "2023-07-31 23:32:32 +0300"
-    },
-    "done": true
-  },
-  "farmersdelight:recipes/farmersdelight/cooking/dumplings": {
-    "criteria": {
-      "has_any_ingredient": "2023-07-31 23:32:32 +0300"
+      "has_any_ingredient": "2023-08-05 16:01:21 +0300"
     },
     "done": true
   },
   "vampirism:recipes/vampirism/vampire/garlic_finder": {
     "criteria": {
-      "has_garlic": "2023-07-22 22:00:44 +0300"
+      "has_garlic": "2023-08-05 16:03:47 +0300"
     },
     "done": true
   },
-  "vampirism:recipes/vampirism/cursed_spruce_boat": {
+  "farmersdelight:recipes/farmersdelight/cooking/baked_cod_stew": {
     "criteria": {
-      "in_water": "2023-07-22 21:31:14 +0300"
-    },
-    "done": true
-  },
-  "minecraft:husbandry/root": {
-    "criteria": {
-      "consumed_item": "2023-07-22 21:28:55 +0300"
-    },
-    "done": true
-  },
-  "vampirism:main/root": {
-    "criteria": {
-      "second": "2023-07-22 22:00:44 +0300"
-    },
-    "done": true
-  },
-  "minecraft:recipes/transportation/birch_boat": {
-    "criteria": {
-      "in_water": "2023-07-22 21:31:14 +0300"
+      "has_any_ingredient": "2023-08-04 14:47:28 +0300"
     },
     "done": true
   },
   "minecraft:recipes/decorations/chest": {
     "criteria": {
-      "has_lots_of_items": "2023-07-23 11:25:44 +0300"
+      "has_lots_of_items": "2023-08-05 16:03:51 +0300"
     },
     "done": true
   },
   "farmersdelight:recipes/farmersdelight/nether_salad": {
     "criteria": {
-      "has_bowl": "2023-07-22 21:28:55 +0300"
+      "has_bowl": "2023-08-04 14:49:10 +0300"
     },
     "done": true
   },
-  "vampirism:recipes/vampirism/hunter/cross": {
+  "vampiresdelight:recipes/farmersdelight/grilled_garlic_from_smoking": {
     "criteria": {
-      "has_holy": "2023-07-23 11:24:51 +0300"
+      "grilled_garlic": "2023-08-05 16:03:47 +0300"
     },
     "done": true
   },
-  "vampirism:hunter/become_hunter": {
+  "farmersdelight:recipes/farmersdelight/cooking/ratatouille": {
     "criteria": {
-      "main": "2023-07-27 17:12:04 +0300"
-    },
-    "done": true
-  },
-  "minecraft:recipes/transportation/mangrove_boat": {
-    "criteria": {
-      "in_water": "2023-07-22 21:31:14 +0300"
+      "has_any_ingredient": "2023-08-04 14:45:42 +0300"
     },
     "done": true
   },
   "vampirism:recipes/food/general/garlic_bread": {
     "criteria": {
-      "has_garlic": "2023-07-22 22:00:44 +0300"
+      "has_garlic": "2023-08-05 16:03:47 +0300"
     },
     "done": true
   },
   "vampirism:recipes/vampirism/hunter/potion_table": {
     "criteria": {
-      "has_glass_bottle": "2023-07-27 17:11:41 +0300"
+      "has_glass_bottle": "2023-08-04 14:46:24 +0300"
     },
     "done": true
   },
-  "vampirism:recipes/vampirism/weapontable/crucifix_enhanced": {
+  "vampirism:recipes/vampirism/general/castle_block_purple_brick": {
     "criteria": {
-      "has_holy_water": "2023-07-23 11:24:51 +0300"
+      "has_orchid": "2023-08-04 14:46:04 +0300"
     },
     "done": true
   },
-  "vampirism:recipes/vampirism/vampire/vampire_clothing_boots": {
+  "farmersdelight:recipes/farmersdelight/cooking/vegetable_soup": {
     "criteria": {
-      "has_heart": "2023-07-31 23:33:09 +0300"
+      "has_any_ingredient": "2023-08-04 14:45:42 +0300"
     },
     "done": true
   },
-  "minecraft:recipes/transportation/acacia_boat": {
+  "farmersdelight:recipes/farmersdelight/cooked_chicken_cuts_from_smoking": {
     "criteria": {
-      "in_water": "2023-07-22 21:31:14 +0300"
+      "cooked_chicken_cuts": "2023-08-04 14:48:33 +0300"
     },
     "done": true
   },
-  "minecraft:recipes/transportation/oak_boat": {
+  "vampiresdelight:recipes/farmersdelight/cooking/orchid_tea": {
     "criteria": {
-      "in_water": "2023-07-22 21:31:14 +0300"
+      "has_any_ingredient": "2023-08-04 14:46:04 +0300"
     },
     "done": true
   },
-  "farmersdelight:recipes/farmersdelight/cooking/cabbage_rolls": {
+  "vampiresdelight:recipes/farmersdelight/grilled_garlic_from_campfire_cooking": {
     "criteria": {
-      "has_any_ingredient": "2023-07-31 23:32:32 +0300"
+      "grilled_garlic": "2023-08-05 16:03:47 +0300"
     },
     "done": true
   },
-  "vampirism:recipes/vampirism/vampire/vampire_clothing_hat": {
+  "farmersdelight:recipes/farmersdelight/cooking/hot_cocoa": {
     "criteria": {
-      "has_heart": "2023-07-31 23:33:09 +0300"
+      "has_any_ingredient": "2023-08-04 14:45:50 +0300"
     },
     "done": true
   },
-  "farmersdelight:main/eat_comfort_food": {
+  "vampirism:recipes/vampirism/general/castle_block_normal_brick": {
     "criteria": {
-      "comfort": "2023-07-22 21:28:55 +0300"
+      "has_orchid": "2023-08-04 14:46:04 +0300"
     },
     "done": true
   },
-  "vampirism:recipes/vampirism/dark_spruce_boat": {
+  "farmersdelight:recipes/farmersdelight/onion_crate": {
     "criteria": {
-      "in_water": "2023-07-22 21:31:14 +0300"
+      "has_onion": "2023-08-04 14:45:42 +0300"
     },
     "done": true
   },
-  "vampirism:recipes/vampirism/vampire/vampire_clothing_legs": {
+  "farmersdelight:main/root": {
     "criteria": {
-      "has_heart": "2023-07-31 23:33:09 +0300"
+      "seeds": "2023-08-04 14:44:41 +0300"
     },
     "done": true
   },
-  "minecraft:recipes/transportation/jungle_boat": {
+  "farmersdelight:main/get_fd_seed": {
     "criteria": {
-      "in_water": "2023-07-22 21:31:14 +0300"
+      "onion": "2023-08-04 14:45:42 +0300"
     },
     "done": true
   },
-  "minecraft:recipes/transportation/spruce_boat": {
+  "vampirism:recipes/vampirism/alchemy_table/plant_oil": {
     "criteria": {
-      "in_water": "2023-07-22 21:31:14 +0300"
+      "has_bottles": "2023-08-04 14:46:24 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/baked_potato_from_smoking": {
+    "criteria": {
+      "has_potato": "2023-08-04 14:47:28 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/mushroom_stew": {
+    "criteria": {
+      "has_bowl": "2023-08-04 14:49:10 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/farmersdelight/cooking/pumpkin_soup": {
+    "criteria": {
+      "has_any_ingredient": "2023-08-04 14:45:50 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/farmersdelight/cooked_chicken_cuts_from_campfire_cooking": {
+    "criteria": {
+      "cooked_chicken_cuts": "2023-08-04 14:48:33 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/farmersdelight/straw": {
+    "criteria": {
+      "has_straw_bale": "2023-08-05 16:02:55 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/general/vampire_rack": {
+    "criteria": {
+      "has_potion": "2023-08-04 14:46:24 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:main/craft_knife": {
+    "criteria": {
+      "netherite_knife": "2023-08-05 16:03:04 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/green_candle": {
+    "criteria": {
+      "has_green_dye": "2023-08-05 16:03:51 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/baked_potato": {
+    "criteria": {
+      "has_potato": "2023-08-04 14:47:28 +0300"
+    },
+    "done": true
+  },
+  "vampiresdelight:recipes/farmersdelight/cooking/garlic_soup": {
+    "criteria": {
+      "has_any_ingredient": "2023-08-04 14:45:21 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:main/obtain_netherite_knife": {
+    "criteria": {
+      "obtain_netherite_knife": "2023-08-05 16:03:04 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/farmersdelight/mixed_salad": {
+    "criteria": {
+      "has_bowl": "2023-08-04 14:49:10 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/farmersdelight/cooking/dumplings": {
+    "criteria": {
+      "has_any_ingredient": "2023-08-04 14:45:42 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/farmersdelight/barbecue_stick": {
+    "criteria": {
+      "has_onion": "2023-08-04 14:45:42 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/light_gray_stained_glass_pane_from_glass_pane": {
+    "criteria": {
+      "has_light_gray_dye": "2023-08-05 16:03:47 +0300"
+    },
+    "done": true
+  },
+  "vampirism:main/root": {
+    "criteria": {
+      "second": "2023-08-05 16:03:47 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/farmersdelight/cooked_chicken_cuts": {
+    "criteria": {
+      "cooked_chicken_cuts": "2023-08-04 14:48:33 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/farmersdelight/cooking/beef_stew": {
+    "criteria": {
+      "has_any_ingredient": "2023-08-04 14:47:28 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/misc/milk_bucket_from_bottles": {
+    "criteria": {
+      "has_milk_bottle": "2023-08-04 14:45:50 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/green_carpet_from_white_carpet": {
+    "criteria": {
+      "has_green_dye": "2023-08-05 16:03:51 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/green_stained_glass_pane_from_glass_pane": {
+    "criteria": {
+      "has_green_dye": "2023-08-05 16:03:51 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/light_gray_candle": {
+    "criteria": {
+      "has_light_gray_dye": "2023-08-05 16:03:47 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/general/castle_block_dark_stone": {
+    "criteria": {
+      "has_orchid": "2023-08-04 14:46:04 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/farmersdelight/cooking/fish_stew": {
+    "criteria": {
+      "has_any_ingredient": "2023-08-04 14:45:42 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/baked_potato_from_campfire_cooking": {
+    "criteria": {
+      "has_potato": "2023-08-04 14:47:28 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/lime_dye": {
+    "criteria": {
+      "has_green_dye": "2023-08-05 16:03:51 +0300"
+    },
+    "done": true
+  },
+  "vampiresdelight:recipes/vampirism/garlic_from_crate": {
+    "criteria": {
+      "has_garlic_crate": "2023-08-04 14:44:41 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/light_gray_carpet_from_white_carpet": {
+    "criteria": {
+      "has_light_gray_dye": "2023-08-05 16:03:47 +0300"
     },
     "done": true
   },

@@ -4,8 +4,8 @@ import com.mojang.logging.LogUtils;
 import net.grid.vampiresdelight.common.CommonSetup;
 import net.grid.vampiresdelight.common.Configuration;
 import net.grid.vampiresdelight.common.event.PlayerEvents;
-import net.grid.vampiresdelight.common.registry.ModBlocks;
-import net.grid.vampiresdelight.common.registry.ModItems;
+import net.grid.vampiresdelight.common.registry.VDBlocks;
+import net.grid.vampiresdelight.common.registry.VDItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -25,8 +25,8 @@ public class VampiresDelight {
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Configuration.COMMON_CONFIG);
 
-        ModItems.register(eventBus);
-        ModBlocks.register(eventBus);
+        VDItems.register(eventBus);
+        VDBlocks.register(eventBus);
 
         MinecraftForge.EVENT_BUS.register(new PlayerEvents());
 

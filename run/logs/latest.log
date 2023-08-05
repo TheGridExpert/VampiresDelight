@@ -1,67 +1,30 @@
-[03авг.2023 14:53:48.372] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 1.19, --assetsDir, /Users/nickita_bulavka/.gradle/caches/forge_gradle/assets, --gameDir, ., --fml.forgeVersion, 43.2.0, --fml.mcVersion, 1.19.2, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20220805.130853, --mod, vampiresdelight, --all, --output, /Users/nickita_bulavka/Desktop/My Mods/Forge/Vampire's Delight/src/generated/resources, --existing, /Users/nickita_bulavka/Desktop/My Mods/Forge/Vampire's Delight/src/main/resources]
-[03авг.2023 14:53:48.377] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.3.1 by Oracle Corporation; OS Mac OS X arch x86_64 version 13.4
-[03авг.2023 14:53:48.630] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/Users/nickita_bulavka/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23119!/ Service=ModLauncher Env=CLIENT
-[03авг.2023 14:53:49.143] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file /Users/nickita_bulavka/.gradle/caches/modules-2/files-2.1/net.minecraftforge/javafmllanguage/1.19.2-43.2.0/5713dfd49576886a7ffc353f14f067ad42369592/javafmllanguage-1.19.2-43.2.0.jar is missing mods.toml file
-[03авг.2023 14:53:49.152] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file /Users/nickita_bulavka/.gradle/caches/modules-2/files-2.1/net.minecraftforge/lowcodelanguage/1.19.2-43.2.0/51c88985dd125457fb8b6c2c58a4f3b9349a6b57/lowcodelanguage-1.19.2-43.2.0.jar is missing mods.toml file
-[03авг.2023 14:53:49.157] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file /Users/nickita_bulavka/.gradle/caches/modules-2/files-2.1/net.minecraftforge/mclanguage/1.19.2-43.2.0/f4fa83ef8129c7f7cc5847fbafb07f7ae86c1bb/mclanguage-1.19.2-43.2.0.jar is missing mods.toml file
-[03авг.2023 14:53:49.160] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file /Users/nickita_bulavka/.gradle/caches/modules-2/files-2.1/net.minecraftforge/fmlcore/1.19.2-43.2.0/d4dcb5b809b7f035ac22b058941cf81f84451545/fmlcore-1.19.2-43.2.0.jar is missing mods.toml file
-[03авг.2023 14:53:49.329] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
-[03авг.2023 14:53:51.464] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
-[03авг.2023 14:53:51.477] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, /Users/nickita_bulavka/.gradle/caches/forge_gradle/assets, --assetIndex, 1.19, --mod, vampiresdelight, --all, --output, /Users/nickita_bulavka/Desktop/My Mods/Forge/Vampire's Delight/src/generated/resources, --existing, /Users/nickita_bulavka/Desktop/My Mods/Forge/Vampire's Delight/src/main/resources]
-[03авг.2023 14:53:52.171] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [vampiresdelight]
-[03авг.2023 14:53:52.425] [main/FATAL] [mixin/]: Mixin apply failed vampirism.mixins.json:MixinEntity -> net.minecraft.world.entity.Entity: org.spongepowered.asm.mixin.injection.throwables.InvalidInjectionException Critical injection failure: @Inject annotation on handleIsGlowing could not find any targets matching 'Lnet/minecraft/world/entity/Entity;m_142038_()Z' in net.minecraft.world.entity.Entity. Using refmap vampirism.refmap.json [PREINJECT Applicator Phase -> vampirism.mixins.json:MixinEntity -> Prepare Injections ->  -> handler$zzj000$handleIsGlowing(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V -> Parse]
-org.spongepowered.asm.mixin.injection.throwables.InvalidInjectionException: Critical injection failure: @Inject annotation on handleIsGlowing could not find any targets matching 'Lnet/minecraft/world/entity/Entity;m_142038_()Z' in net.minecraft.world.entity.Entity. Using refmap vampirism.refmap.json [PREINJECT Applicator Phase -> vampirism.mixins.json:MixinEntity -> Prepare Injections ->  -> handler$zzj000$handleIsGlowing(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V -> Parse]
-	at org.spongepowered.asm.mixin.injection.struct.InjectionInfo.validateTargets(InjectionInfo.java:656) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
-	at org.spongepowered.asm.mixin.injection.struct.InjectionInfo.findTargets(InjectionInfo.java:587) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
-	at org.spongepowered.asm.mixin.injection.struct.InjectionInfo.readAnnotation(InjectionInfo.java:330) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
-	at org.spongepowered.asm.mixin.injection.struct.InjectionInfo.<init>(InjectionInfo.java:316) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
-	at org.spongepowered.asm.mixin.injection.struct.InjectionInfo.<init>(InjectionInfo.java:308) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
-	at org.spongepowered.asm.mixin.injection.struct.CallbackInjectionInfo.<init>(CallbackInjectionInfo.java:46) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
-	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
-	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[?:?]
-	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
-	at java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[?:?]
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[?:?]
-	at org.spongepowered.asm.mixin.injection.struct.InjectionInfo$InjectorEntry.create(InjectionInfo.java:149) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
-	at org.spongepowered.asm.mixin.injection.struct.InjectionInfo.parse(InjectionInfo.java:708) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
-	at org.spongepowered.asm.mixin.transformer.MixinTargetContext.prepareInjections(MixinTargetContext.java:1311) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
-	at org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.prepareInjections(MixinApplicatorStandard.java:1042) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
-	at org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.applyMixin(MixinApplicatorStandard.java:393) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
-	at org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.apply(MixinApplicatorStandard.java:325) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
-	at org.spongepowered.asm.mixin.transformer.TargetClassContext.apply(TargetClassContext.java:383) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
-	at org.spongepowered.asm.mixin.transformer.TargetClassContext.applyMixins(TargetClassContext.java:365) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
-	at org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:363) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
-	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClass(MixinTransformer.java:250) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
-	at org.spongepowered.asm.service.modlauncher.MixinTransformationHandler.processClass(MixinTransformationHandler.java:131) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
-	at org.spongepowered.asm.launch.MixinLaunchPluginLegacy.processClass(MixinLaunchPluginLegacy.java:131) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
-	at cpw.mods.modlauncher.serviceapi.ILaunchPluginService.processClassWithFlags(ILaunchPluginService.java:156) ~[modlauncher-10.0.9.jar:10.0.9+10.0.9+main.dcd20f30]
-	at cpw.mods.modlauncher.LaunchPluginHandler.offerClassNodeToPlugins(LaunchPluginHandler.java:88) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.modlauncher.ClassTransformer.transform(ClassTransformer.java:120) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.modlauncher.TransformingClassLoader.maybeTransformClassBytes(TransformingClassLoader.java:50) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.cl.ModuleClassLoader.readerToClass(ModuleClassLoader.java:113) ~[securejarhandler-2.1.4.jar:?]
-	at cpw.mods.cl.ModuleClassLoader.lambda$findClass$15(ModuleClassLoader.java:219) ~[securejarhandler-2.1.4.jar:?]
-	at cpw.mods.cl.ModuleClassLoader.loadFromModule(ModuleClassLoader.java:229) ~[securejarhandler-2.1.4.jar:?]
-	at cpw.mods.cl.ModuleClassLoader.findClass(ModuleClassLoader.java:219) ~[securejarhandler-2.1.4.jar:?]
-	at cpw.mods.cl.ModuleClassLoader.loadClass(ModuleClassLoader.java:135) ~[securejarhandler-2.1.4.jar:?]
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[?:?]
-	at net.minecraftforge.registries.GameData.init(GameData.java:110) ~[forge-1.19.2-43.2.0_mapped_official_1.19.2-recomp.jar%23180%23187!/:?]
-	at net.minecraftforge.registries.GameData.<clinit>(GameData.java:95) ~[forge-1.19.2-43.2.0_mapped_official_1.19.2-recomp.jar%23180%23187!/:?]
-	at net.minecraft.core.Registry.forge(Registry.java:435) ~[forge-1.19.2-43.2.0_mapped_official_1.19.2-recomp.jar%23181!/:?]
-	at net.minecraft.core.Registry.forge(Registry.java:419) ~[forge-1.19.2-43.2.0_mapped_official_1.19.2-recomp.jar%23181!/:?]
-	at net.minecraft.core.Registry.<clinit>(Registry.java:186) ~[forge-1.19.2-43.2.0_mapped_official_1.19.2-recomp.jar%23181!/:?]
-	at net.minecraft.server.Bootstrap.bootStrap(Bootstrap.java:43) ~[forge-1.19.2-43.2.0_mapped_official_1.19.2-recomp.jar%23181!/:?]
-	at net.minecraftforge.data.loading.DatagenModLoader.begin(DatagenModLoader.java:35) ~[forge-1.19.2-43.2.0_mapped_official_1.19.2-recomp.jar%23180%23187!/:?]
-	at net.minecraft.data.Main.main(Main.java:76) ~[forge-1.19.2-43.2.0_mapped_official_1.19.2-recomp.jar%23181!/:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
-	at net.minecraftforge.fml.loading.targets.ForgeDataUserdevLaunchHandler.lambda$launchService$0(ForgeDataUserdevLaunchHandler.java:28) ~[fmlloader-1.19.2-43.2.0.jar%2394!/:?]
-	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-10.0.9.jar%23107!/:?]
-	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-10.0.9.jar%23107!/:?]
-	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-10.0.9.jar%23107!/:?]
-	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) [modlauncher-10.0.9.jar%23107!/:?]
-	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) [modlauncher-10.0.9.jar%23107!/:?]
-	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-10.0.9.jar%23107!/:?]
-	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-10.0.9.jar%23107!/:?]
-	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) [bootstraplauncher-1.1.2.jar:?]
+[05авг.2023 16:32:10.858] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 1.19, --assetsDir, /Users/nickita_bulavka/.gradle/caches/forge_gradle/assets, --gameDir, ., --fml.forgeVersion, 43.2.0, --fml.mcVersion, 1.19.2, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20220805.130853, --mod, vampiresdelight, --all, --output, /Users/nickita_bulavka/Desktop/My Mods/Forge/Vampire's Delight/src/generated/resources, --existing, /Users/nickita_bulavka/Desktop/My Mods/Forge/Vampire's Delight/src/main/resources]
+[05авг.2023 16:32:10.863] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.3.1 by Oracle Corporation; OS Mac OS X arch x86_64 version 13.4
+[05авг.2023 16:32:11.099] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/Users/nickita_bulavka/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23119!/ Service=ModLauncher Env=CLIENT
+[05авг.2023 16:32:17.197] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file /Users/nickita_bulavka/.gradle/caches/modules-2/files-2.1/net.minecraftforge/javafmllanguage/1.19.2-43.2.0/5713dfd49576886a7ffc353f14f067ad42369592/javafmllanguage-1.19.2-43.2.0.jar is missing mods.toml file
+[05авг.2023 16:32:17.201] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file /Users/nickita_bulavka/.gradle/caches/modules-2/files-2.1/net.minecraftforge/lowcodelanguage/1.19.2-43.2.0/51c88985dd125457fb8b6c2c58a4f3b9349a6b57/lowcodelanguage-1.19.2-43.2.0.jar is missing mods.toml file
+[05авг.2023 16:32:17.203] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file /Users/nickita_bulavka/.gradle/caches/modules-2/files-2.1/net.minecraftforge/mclanguage/1.19.2-43.2.0/f4fa83ef8129c7f7cc5847fbafb07f7ae86c1bb/mclanguage-1.19.2-43.2.0.jar is missing mods.toml file
+[05авг.2023 16:32:17.205] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file /Users/nickita_bulavka/.gradle/caches/modules-2/files-2.1/net.minecraftforge/fmlcore/1.19.2-43.2.0/d4dcb5b809b7f035ac22b058941cf81f84451545/fmlcore-1.19.2-43.2.0.jar is missing mods.toml file
+[05авг.2023 16:32:17.357] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[05авг.2023 16:32:19.639] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[05авг.2023 16:32:19.658] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, /Users/nickita_bulavka/.gradle/caches/forge_gradle/assets, --assetIndex, 1.19, --mod, vampiresdelight, --all, --output, /Users/nickita_bulavka/Desktop/My Mods/Forge/Vampire's Delight/src/generated/resources, --existing, /Users/nickita_bulavka/Desktop/My Mods/Forge/Vampire's Delight/src/main/resources]
+[05авг.2023 16:32:19.965] [main/INFO] [mixin/]: Remapping refMap farmersdelight.refmap.json using /Users/nickita_bulavka/Desktop/My Mods/Forge/Vampire's Delight/build/createSrgToMcp/output.srg
+[05авг.2023 16:32:19.971] [main/INFO] [mixin/]: Remapping refMap vampirism.refmap.json using /Users/nickita_bulavka/Desktop/My Mods/Forge/Vampire's Delight/build/createSrgToMcp/output.srg
+[05авг.2023 16:32:20.604] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [vampiresdelight]
+[05авг.2023 16:32:24.943] [main/INFO] [net.minecraft.util.datafix.DataFixers/]: Building unoptimized datafixer
+[05авг.2023 16:32:30.852] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 43.2.0, for MC 1.19.2 with MCP 20220805.130853
+[05авг.2023 16:32:30.860] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v43.2.0 Initialized
+[05авг.2023 16:32:36.382] [main/WARN] [net.minecraft.server.packs.VanillaPackResources/]: Assets URL 'union:/Users/nickita_bulavka/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.19.2-43.2.0_mapped_official_1.19.2/forge-1.19.2-43.2.0_mapped_official_1.19.2-recomp.jar%23181!/assets/.mcassetsroot' uses unexpected schema
+[05авг.2023 16:32:36.383] [main/WARN] [net.minecraft.server.packs.VanillaPackResources/]: Assets URL 'union:/Users/nickita_bulavka/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.19.2-43.2.0_mapped_official_1.19.2/forge-1.19.2-43.2.0_mapped_official_1.19.2-recomp.jar%23181!/data/.mcassetsroot' uses unexpected schema
+[05авг.2023 16:32:38.718] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block
+[05авг.2023 16:32:38.758] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block finished after 34 ms
+[05авг.2023 16:32:38.759] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
+[05авг.2023 16:32:38.808] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 48 ms
+[05авг.2023 16:32:38.809] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item
+[05авг.2023 16:32:38.811] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item finished after 1 ms
+[05авг.2023 16:32:38.811] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: vampiresdelight
+[05авг.2023 16:32:38.865] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: vampiresdelight finished after 54 ms
+[05авг.2023 16:32:38.866] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: vampiresdelight
+[05авг.2023 16:32:38.874] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: vampiresdelight finished after 8 ms
+[05авг.2023 16:32:38.874] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 156 ms
+[05авг.2023 16:32:38.889] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 35, old count: 27, new count: 35, removed stale: 1, written: 8
