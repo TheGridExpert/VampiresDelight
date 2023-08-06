@@ -97,6 +97,10 @@ repositories {
         //url = "https://maven.paube.de/releases"
     //}
     maven { url "https://www.cursemaven.com" }
+    maven {
+        name = 'tterrag maven'
+        url = 'https://maven.tterrag.com/'
+    }
 }
 
 dependencies {
@@ -107,6 +111,9 @@ dependencies {
 
     // Mod support
     //implementation fg.deobf("de.teamlapen.werewolves:Werewolves:${mc_version}-${werewolves_version}")
+    implementation fg.deobf("com.simibubi.create:create-${create_minecraft_version}:${create_version}:slim") { transitive = false }
+    implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${flywheel_minecraft_version}:${flywheel_version}")
+    implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
 }
 
 jar {
