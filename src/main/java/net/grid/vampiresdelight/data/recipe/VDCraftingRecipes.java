@@ -2,6 +2,7 @@ package net.grid.vampiresdelight.data.recipe;
 
 import de.teamlapen.vampirism.core.ModBlocks;
 import de.teamlapen.vampirism.core.ModItems;
+import net.grid.vampiresdelight.common.registry.VDBlocks;
 import net.grid.vampiresdelight.data.builder.VDCuttingBoardRecipeBuilder;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.grid.vampiresdelight.VampiresDelight;
@@ -29,6 +30,14 @@ public class VDCraftingRecipes {
 
     // Crafting
     private static void recipesBlocks(Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(VDBlocks.CURSED_SPRUCE_CABINET.get())
+                .pattern("___")
+                .pattern("D D")
+                .pattern("___")
+                .define('_', ModBlocks.CURSED_SPRUCE_SLAB.get())
+                .define('D', ModBlocks.CURSED_SPRUCE_TRAPDOOR.get())
+                .unlockedBy("has_cursed_spruce_trapdoor", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.CURSED_SPRUCE_TRAPDOOR.get()))
+                .save(consumer);
         ShapedRecipeBuilder.shaped(VDItems.GARLIC_CRATE.get(), 1)
                 .pattern("###")
                 .pattern("###")

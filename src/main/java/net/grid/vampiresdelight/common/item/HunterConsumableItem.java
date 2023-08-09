@@ -1,9 +1,11 @@
 package net.grid.vampiresdelight.common.item;
 
+import de.teamlapen.vampirism.VampirismMod;
 import de.teamlapen.vampirism.api.VReference;
 import de.teamlapen.vampirism.api.entity.factions.IFaction;
 import de.teamlapen.vampirism.api.items.IFactionExclusiveItem;
 import de.teamlapen.vampirism.core.ModEffects;
+import net.grid.vampiresdelight.common.util.VDTextUtils;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -109,5 +111,6 @@ public class HunterConsumableItem extends Item implements IFactionExclusiveItem 
                 TextUtils.addFoodEffectTooltip(stack, tooltip, 1.0F);
             }
         }
+        VDTextUtils.addFactionFoodToolTips(tooltip, VampirismMod.proxy.getClientPlayer(), "HUNTER");
     }
 }

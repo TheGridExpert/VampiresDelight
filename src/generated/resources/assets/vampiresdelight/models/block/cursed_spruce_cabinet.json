@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "vampiresdelight:block/cursed_spruce_cabinet_front",
+    "side": "vampiresdelight:block/cursed_spruce_cabinet_side",
+    "top": "vampiresdelight:block/cursed_spruce_cabinet_top"
+  }
+}

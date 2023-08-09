@@ -1,7 +1,9 @@
 package net.grid.vampiresdelight.common.item;
 
+import de.teamlapen.vampirism.VampirismMod;
 import de.teamlapen.vampirism.core.ModEffects;
 import de.teamlapen.vampirism.util.Helper;
+import net.grid.vampiresdelight.common.util.VDTextUtils;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -41,5 +43,6 @@ public class CursedCupcakeItem extends VampireConsumableItem {
                 MutableComponent textEmpty = TextUtils.getTranslation("tooltip." + this);
                 tooltip.add(textEmpty.withStyle(ChatFormatting.BLUE));
         }
+        VDTextUtils.addFactionFoodToolTips(tooltip, VampirismMod.proxy.getClientPlayer(), "VAMPIRE");
     }
 }

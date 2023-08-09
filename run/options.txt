@@ -111,6 +111,8 @@ key_key.hotbar.6:key.keyboard.6
 key_key.hotbar.7:key.keyboard.7
 key_key.hotbar.8:key.keyboard.8
 key_key.hotbar.9:key.keyboard.9
+key_create.keyinfo.toolmenu:key.keyboard.left.alt
+key_create.keyinfo.toolbelt:key.keyboard.left.alt
 key_keys.vampirism.action:key.keyboard.r
 key_keys.vampirism.suck:key.keyboard.v
 key_keys.vampirism.select_skills:key.keyboard.p

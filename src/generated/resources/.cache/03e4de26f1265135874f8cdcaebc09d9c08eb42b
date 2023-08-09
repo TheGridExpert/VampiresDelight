@@ -1,6 +1,9 @@
-// 1.19.2	2023-08-05T16:32:38.877652	Tags for minecraft:item
+// 1.19.2	2023-08-08T18:01:07.221593	Tags for minecraft:item
 e5692d116719aab8d6597137a1f17eb35e051001 data/create/tags/items/upright_on_belt.json
+97fbca6f8393f536908a5366a6d60e519747446b data/farmersdelight/tags/items/cabinets/wooden.json
 0d6660c2177d69440666ec7a391b72ef43c0627d data/forge/tags/items/vegetables.json
 6c36feff34351bf9d9c3f388b9fa7d437ceb544e data/forge/tags/items/vegetables/garlic.json
 6c36feff34351bf9d9c3f388b9fa7d437ceb544e data/sereneseasons/tags/items/autumn_crops.json
 6c36feff34351bf9d9c3f388b9fa7d437ceb544e data/sereneseasons/tags/items/summer_crops.json
+d8aa09c9d10687a5a92369d29996f08af0aa24b6 data/vampiresdelight/tags/items/hunter_food.json
+c64bb0717e8c2253bf0373f6c8da382a9ab06fb1 data/vampiresdelight/tags/items/vampire_food.json

@@ -8,6 +8,7 @@ import de.teamlapen.vampirism.api.items.IFactionExclusiveItem;
 import de.teamlapen.vampirism.entity.player.vampire.VampirePlayer;
 import de.teamlapen.vampirism.items.VampirismItemBloodFoodItem;
 import de.teamlapen.vampirism.util.Helper;
+import net.grid.vampiresdelight.common.util.VDTextUtils;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.network.chat.MutableComponent;
@@ -121,5 +122,6 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
                 TextUtils.addFoodEffectTooltip(stack, tooltip, 1.0F);
             }
         }
+        VDTextUtils.addFactionFoodToolTips(tooltip, VampirismMod.proxy.getClientPlayer(), "VAMPIRE");
     }
 }

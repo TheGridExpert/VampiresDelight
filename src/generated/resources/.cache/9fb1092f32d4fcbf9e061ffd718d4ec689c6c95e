@@ -1,6 +1,7 @@
-// 1.19.2	2023-08-04T12:45:29.932627	Recipes
+// 1.19.2	2023-08-07T11:50:17.52295	Recipes
 5e1e5b793d56becfb6e9fcdf3dda9f399cdb3c53 data/vampiresdelight/advancements/recipes/farmersdelight/cooking/garlic_soup.json
 c8461acaceae70c274b97c6f0fcf5c9eed83fa6a data/vampiresdelight/advancements/recipes/farmersdelight/cooking/orchid_tea.json
+79f2544c8853a96daededa39703ee7c3a586b07a data/vampiresdelight/advancements/recipes/farmersdelight/cursed_spruce_cabinet.json
 214840baf58212763c6f5eea97507fc164bfb0d6 data/vampiresdelight/advancements/recipes/farmersdelight/garlic_crate.json
 43a9d86bd7edaa56e5217e096d8c12625aa9f859 data/vampiresdelight/advancements/recipes/farmersdelight/grilled_garlic.json
 34cbe446c9e899c0ae2d8c98e1ece83b4ae05f05 data/vampiresdelight/advancements/recipes/farmersdelight/grilled_garlic_from_campfire_cooking.json
@@ -8,6 +9,7 @@ c8461acaceae70c274b97c6f0fcf5c9eed83fa6a data/vampiresdelight/advancements/recip
 6aa02789bd241e8ede329d2e9de47718d61d7332 data/vampiresdelight/advancements/recipes/vampirism/garlic_from_crate.json
 6f19714dcfd9eda4dbfaa64a5252bcaf9ea32660 data/vampiresdelight/recipes/cooking/garlic_soup.json
 1c097bfc3383960c1a1a4541bbcd830ad2712ad7 data/vampiresdelight/recipes/cooking/orchid_tea.json
+8908ce5897fc9d43d57871c9f5167cf246e582cb data/vampiresdelight/recipes/cursed_spruce_cabinet.json
 29c32d089be757f79654a331d59ee53374b677c8 data/vampiresdelight/recipes/cutting/vampire_orchid.json
 f172d78187fbcf3b6a3536be571053d5137ac379 data/vampiresdelight/recipes/cutting/wild_garlic.json
 751c2f2551a2f73a645c58086b970a102f1bc5f5 data/vampiresdelight/recipes/garlic_crate.json

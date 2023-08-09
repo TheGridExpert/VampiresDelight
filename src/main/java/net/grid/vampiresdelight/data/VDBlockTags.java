@@ -24,7 +24,8 @@ public class VDBlockTags extends BlockTagsProvider {
 
     protected void registerBlockMineables() {
         tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_AXE).add(
-                VDBlocks.GARLIC_CRATE.get());
+                VDBlocks.GARLIC_CRATE.get(),
+                VDBlocks.CURSED_SPRUCE_CABINET.get());
     }
 
     protected void registerMinecraftTags() {

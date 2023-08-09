@@ -14,6 +14,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.FarmersDelight;
+import vectorwing.farmersdelight.common.item.FuelBlockItem;
+import vectorwing.farmersdelight.common.registry.ModBlocks;
 
 public class VDItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -21,9 +23,6 @@ public class VDItems {
     // Helper methods
     public static Item.Properties basicItem() {
         return new Item.Properties().tab(FarmersDelight.CREATIVE_TAB);
-    }
-    public static Item.Properties wildCropItem() {
-        return new Item.Properties();
     }
     public static Item.Properties foodItem(FoodProperties food) {
         return new Item.Properties().food(food).tab(FarmersDelight.CREATIVE_TAB);
@@ -42,7 +41,9 @@ public class VDItems {
     public static final RegistryObject<Item> GARLIC_CRATE = ITEMS.register("garlic_crate",
             () -> new BlockItem(VDBlocks.GARLIC_CRATE.get(), basicItem()));
     public static final RegistryObject<Item> WILD_GARLIC = ITEMS.register("wild_garlic",
-            () -> new BlockItem(VDBlocks.WILD_GARLIC.get(), wildCropItem()));
+            () -> new BlockItem(VDBlocks.WILD_GARLIC.get(), basicItem()));
+    public static final RegistryObject<Item> CURSED_SPRUCE_CABINET = ITEMS.register("cursed_spruce_cabinet",
+            () -> new FuelBlockItem(VDBlocks.CURSED_SPRUCE_CABINET.get(), basicItem(), 300));
 
     // Foodstuffs
     public static final RegistryObject<Item> GRILLED_GARLIC = ITEMS.register("grilled_garlic",

@@ -4,6 +4,7 @@ import de.teamlapen.vampirism.core.ModItems;
 import net.grid.vampiresdelight.common.registry.VDItems;
 import net.grid.vampiresdelight.common.tag.VDCompatibilityTags;
 import net.grid.vampiresdelight.common.tag.VDForgeTags;
+import net.grid.vampiresdelight.common.tag.VDTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -18,12 +19,18 @@ public class VDItemTags extends ItemTagsProvider {
 
     @Override
     protected void addTags() {
+        this.registerModTags();
         this.registerFarmersDelightTags();
         this.registerForgeTags();
         this.registerCompatibilityTags();
     }
 
+    private void registerModTags() {
+    }
+
     private void registerFarmersDelightTags() {
+        tag(ModTags.WOODEN_CABINETS)
+                .add(VDItems.CURSED_SPRUCE_CABINET.get());
     }
 
     @SuppressWarnings("unchecked")

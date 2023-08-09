@@ -1,13 +1,7 @@
 {
-  "farmersdelight:main/root": {
+  "vampirism:main/ancient_knowledge": {
     "criteria": {
-      "seeds": "2023-08-05 19:09:47 +0300"
-    },
-    "done": true
-  },
-  "minecraft:recipes/food/baked_potato_from_smoking": {
-    "criteria": {
-      "has_potato": "2023-08-05 19:31:59 +0300"
+      "blood_container": "2023-08-08 21:19:29 +0300"
     },
     "done": true
   },
@@ -17,29 +11,27 @@
     },
     "done": true
   },
+  "create:recipes/create.base/crafting/appliances/crafting_blueprint": {
+    "criteria": {
+      "has_item": "2023-08-07 12:02:56 +0300"
+    },
+    "done": true
+  },
   "vampiresdelight:recipes/farmersdelight/garlic_crate": {
     "criteria": {
       "has_garlic": "2023-08-05 19:10:46 +0300"
     },
     "done": true
   },
-  "minecraft:adventure/kill_all_mobs": {
+  "vampirism:recipes/vampirism/cursed_spruce_door": {
     "criteria": {
-      "minecraft:spider": "2023-08-05 19:33:05 +0300",
-      "minecraft:creeper": "2023-08-05 19:13:54 +0300",
-      "minecraft:husk": "2023-08-05 19:32:34 +0300"
+      "has_planks": "2023-08-07 11:55:57 +0300"
     },
-    "done": false
+    "done": true
   },
   "create:recipes/create.base/crafting/appliances/netherite_backtank": {
     "criteria": {
       "has_item": "2023-08-05 19:10:14 +0300"
-    },
-    "done": true
-  },
-  "minecraft:recipes/food/baked_potato": {
-    "criteria": {
-      "has_potato": "2023-08-05 19:31:59 +0300"
     },
     "done": true
   },
@@ -49,28 +41,19 @@
     },
     "done": true
   },
-  "vampiresdelight:recipes/farmersdelight/cooking/garlic_soup": {
-    "criteria": {
-      "has_any_ingredient": "2023-08-05 19:09:47 +0300"
-    },
-    "done": true
-  },
   "minecraft:adventure/adventuring_time": {
     "criteria": {
       "minecraft:river": "2023-08-05 19:11:06 +0300",
-      "minecraft:desert": "2023-08-05 19:09:09 +0300"
+      "minecraft:forest": "2023-08-07 14:06:51 +0300",
+      "minecraft:desert": "2023-08-05 19:09:09 +0300",
+      "minecraft:savanna": "2023-08-07 14:07:04 +0300",
+      "minecraft:plains": "2023-08-07 14:06:33 +0300"
     },
     "done": false
   },
-  "farmersdelight:recipes/farmersdelight/cabbage_crate": {
+  "minecraft:recipes/decorations/crafting_table": {
     "criteria": {
-      "has_cabbage": "2023-08-05 19:13:00 +0300"
-    },
-    "done": true
-  },
-  "farmersdelight:recipes/farmersdelight/cooking/dumplings": {
-    "criteria": {
-      "has_any_ingredient": "2023-08-05 19:13:00 +0300"
+      "has_planks": "2023-08-07 11:55:57 +0300"
     },
     "done": true
   },
@@ -80,15 +63,9 @@
     },
     "done": true
   },
-  "create:root": {
+  "minecraft:recipes/decorations/composter": {
     "criteria": {
-      "0": "2023-08-05 19:09:47 +0300"
-    },
-    "done": true
-  },
-  "vampirism:main/root": {
-    "criteria": {
-      "second": "2023-08-05 19:10:46 +0300"
+      "has_wood_slab": "2023-08-07 12:03:13 +0300"
     },
     "done": true
   },
@@ -98,21 +75,27 @@
     },
     "done": true
   },
+  "vampirism:recipes/vampirism/hunter/cross": {
+    "criteria": {
+      "has_planks": "2023-08-07 11:55:57 +0300"
+    },
+    "done": true
+  },
   "vampiresdelight:recipes/farmersdelight/grilled_garlic_from_smoking": {
     "criteria": {
       "grilled_garlic": "2023-08-05 19:10:46 +0300"
     },
     "done": true
   },
-  "farmersdelight:recipes/farmersdelight/cooking/beef_stew": {
-    "criteria": {
-      "has_any_ingredient": "2023-08-05 19:31:59 +0300"
-    },
-    "done": true
-  },
   "vampirism:recipes/food/general/garlic_bread": {
     "criteria": {
       "has_garlic": "2023-08-05 19:10:46 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/barrel": {
+    "criteria": {
+      "has_planks": "2023-08-07 11:55:57 +0300"
     },
     "done": true
   },
@@ -128,9 +111,27 @@
     },
     "done": true
   },
-  "create:belt": {
+  "vampirism:recipes/vampirism/cursed_spruce_sign": {
     "criteria": {
-      "0": "2023-08-05 19:40:09 +0300"
+      "has_planks": "2023-08-07 11:55:57 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/general/altar_cleansing": {
+    "criteria": {
+      "has_vampire_book": "2023-08-07 11:55:57 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/stick": {
+    "criteria": {
+      "has_planks": "2023-08-07 11:55:57 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/cursed_spruce_slab": {
+    "criteria": {
+      "has_planks": "2023-08-07 11:55:57 +0300"
     },
     "done": true
   },
@@ -146,9 +147,191 @@
     },
     "done": true
   },
+  "farmersdelight:main/root": {
+    "criteria": {
+      "seeds": "2023-08-05 19:09:47 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/baked_potato_from_smoking": {
+    "criteria": {
+      "has_potato": "2023-08-05 19:31:59 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/hunter/crucifix": {
+    "criteria": {
+      "planks": "2023-08-07 11:55:57 +0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_all_mobs": {
+    "criteria": {
+      "minecraft:spider": "2023-08-05 19:33:05 +0300",
+      "minecraft:creeper": "2023-08-05 19:13:54 +0300",
+      "minecraft:husk": "2023-08-05 19:32:34 +0300"
+    },
+    "done": false
+  },
+  "vampirism:vampire/become_vampire": {
+    "criteria": {
+      "main": "2023-08-09 10:28:21 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/general/throne": {
+    "criteria": {
+      "has_planks": "2023-08-07 11:55:57 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/cursed_spruce_fence": {
+    "criteria": {
+      "has_planks": "2023-08-07 11:55:57 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/vampire/vampire_clothing_crown": {
+    "criteria": {
+      "has_heart": "2023-08-08 23:01:47 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/alchemy_table": {
+    "criteria": {
+      "has_planks": "2023-08-07 11:55:57 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/general/vampire_rack": {
+    "criteria": {
+      "has_planks": "2023-08-07 11:55:57 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/baked_potato": {
+    "criteria": {
+      "has_potato": "2023-08-05 19:31:59 +0300"
+    },
+    "done": true
+  },
+  "vampiresdelight:recipes/farmersdelight/cooking/garlic_soup": {
+    "criteria": {
+      "has_any_ingredient": "2023-08-05 19:09:47 +0300"
+    },
+    "done": true
+  },
+  "vampiresdelight:recipes/farmersdelight/cursed_spruce_cabinet": {
+    "criteria": {
+      "has_cursed_spruce_trapdoor": "2023-08-07 12:03:08 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/farmersdelight/cabbage_crate": {
+    "criteria": {
+      "has_cabbage": "2023-08-05 19:13:00 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/farmersdelight/cooking/dumplings": {
+    "criteria": {
+      "has_any_ingredient": "2023-08-05 19:13:00 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/cursed_spruce_trapdoor": {
+    "criteria": {
+      "has_planks": "2023-08-07 11:55:57 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/cursed_spruce_pressure_place": {
+    "criteria": {
+      "has_planks": "2023-08-07 11:55:57 +0300"
+    },
+    "done": true
+  },
+  "create:root": {
+    "criteria": {
+      "0": "2023-08-05 19:09:47 +0300"
+    },
+    "done": true
+  },
+  "vampirism:main/root": {
+    "criteria": {
+      "second": "2023-08-05 19:10:46 +0300"
+    },
+    "done": true
+  },
+  "vampirism:hunter/become_hunter": {
+    "criteria": {
+      "main": "2023-08-08 23:34:14 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/farmersdelight/cooking/beef_stew": {
+    "criteria": {
+      "has_any_ingredient": "2023-08-05 19:31:59 +0300"
+    },
+    "done": true
+  },
+  "minecraft:story/root": {
+    "criteria": {
+      "crafting_table": "2023-08-07 12:02:56 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/vampire/vampire_clothing_boots": {
+    "criteria": {
+      "has_heart": "2023-08-08 23:01:47 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/vampire/vampire_clothing_hat": {
+    "criteria": {
+      "has_heart": "2023-08-08 23:01:47 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/cursed_spruce_stairs": {
+    "criteria": {
+      "has_planks": "2023-08-07 11:55:57 +0300"
+    },
+    "done": true
+  },
+  "create:belt": {
+    "criteria": {
+      "0": "2023-08-05 19:40:09 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/vampire/vampire_clothing_legs": {
+    "criteria": {
+      "has_heart": "2023-08-08 23:01:47 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/cursed_spruce_fence_gate": {
+    "criteria": {
+      "has_planks": "2023-08-07 11:55:57 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/vampire/altar_inspiration": {
+    "criteria": {
+      "has_planks": "2023-08-07 11:55:57 +0300"
+    },
+    "done": true
+  },
   "minecraft:recipes/food/baked_potato_from_campfire_cooking": {
     "criteria": {
       "has_potato": "2023-08-05 19:31:59 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/cursed_spruce_button": {
+    "criteria": {
+      "has_planks": "2023-08-07 11:55:57 +0300"
     },
     "done": true
   },

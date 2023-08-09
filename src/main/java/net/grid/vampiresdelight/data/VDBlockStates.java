@@ -8,7 +8,7 @@ import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraft.world.level.block.Block;
-import vectorwing.farmersdelight.FarmersDelight;
+import vectorwing.farmersdelight.common.block.CabinetBlock;
 
 public class VDBlockStates extends BlockStateProvider {
     public VDBlockStates(DataGenerator gen, ExistingFileHelper exFileHelper) {
@@ -25,6 +25,7 @@ public class VDBlockStates extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        this.cabinetBlock(VDBlocks.CURSED_SPRUCE_CABINET.get(), "cursed_spruce");
         this.wildCropBlock(VDBlocks.WILD_GARLIC.get());
     }
 
@@ -38,5 +39,15 @@ public class VDBlockStates extends BlockStateProvider {
         } else {
             this.simpleBlock(block, models().cross(blockName(block), resourceBlock(blockName(block))).renderType("cutout"));
         }
+    }
+
+    public void cabinetBlock(Block block, String woodType) {
+        this.horizontalBlock(block, state -> {
+            String suffix = state.getValue(CabinetBlock.OPEN) ? "_open" : "";
+            return models().orientable(blockName(block) + suffix,
+                    resourceBlock(woodType + "_cabinet_side"),
+                    resourceBlock(woodType + "_cabinet_front" + suffix),
+                    resourceBlock(woodType + "_cabinet_top"));
+        });
     }
 }
