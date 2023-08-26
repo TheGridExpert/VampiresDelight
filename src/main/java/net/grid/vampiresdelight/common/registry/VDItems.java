@@ -1,21 +1,21 @@
 package net.grid.vampiresdelight.common.registry;
 
+import de.teamlapen.vampirism.core.ModEffects;
 import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.FoodValues;
-import net.grid.vampiresdelight.common.item.CursedCupcakeItem;
-import net.grid.vampiresdelight.common.item.HunterConsumableItem;
-import net.grid.vampiresdelight.common.item.OrchidTeaItem;
+import net.grid.vampiresdelight.common.item.*;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.item.FuelBlockItem;
-import vectorwing.farmersdelight.common.registry.ModBlocks;
 
 public class VDItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -40,29 +40,44 @@ public class VDItems {
     // Blocks
     public static final RegistryObject<Item> GARLIC_CRATE = ITEMS.register("garlic_crate",
             () -> new BlockItem(VDBlocks.GARLIC_CRATE.get(), basicItem()));
-    public static final RegistryObject<Item> WILD_GARLIC = ITEMS.register("wild_garlic",
-            () -> new BlockItem(VDBlocks.WILD_GARLIC.get(), basicItem()));
+    public static final RegistryObject<Item> DARK_SPRUCE_CABINET = ITEMS.register("dark_spruce_cabinet",
+            () -> new FuelBlockItem(VDBlocks.DARK_SPRUCE_CABINET.get(), basicItem(), 300));
     public static final RegistryObject<Item> CURSED_SPRUCE_CABINET = ITEMS.register("cursed_spruce_cabinet",
             () -> new FuelBlockItem(VDBlocks.CURSED_SPRUCE_CABINET.get(), basicItem(), 300));
+    public static final RegistryObject<Item> WILD_GARLIC = ITEMS.register("wild_garlic",
+            () -> new BlockItem(VDBlocks.WILD_GARLIC.get(), basicItem()));
+
+
 
     // Foodstuffs
     public static final RegistryObject<Item> GRILLED_GARLIC = ITEMS.register("grilled_garlic",
             () -> new HunterConsumableItem(foodItem(FoodValues.GRILLED_GARLIC).tab(FarmersDelight.CREATIVE_TAB)));
     public static final RegistryObject<Item> ORCHID_TEA = ITEMS.register("orchid_tea",
             () -> new OrchidTeaItem(drinkItem()));
+    public static final RegistryObject<Item> HEART_PIECES = ITEMS.register("heart_pieces",
+            () -> new VampireConsumableItem(FoodValues.HEART_PIECES, FoodValues.NASTY));
 
     // Sweets
     public static final RegistryObject<Item> CURSED_CUPCAKE = ITEMS.register("cursed_cupcake",
-            () -> new CursedCupcakeItem((new FoodProperties.Builder()).nutrition(4).saturationMod(0.4f).build(),
-                    new FoodProperties.Builder().nutrition(1).saturationMod(0.2f).build()));
+            () -> new CursedCupcakeItem(FoodValues.CURSED_CUPCAKE, FoodValues.NASTY));
+    public static final RegistryObject<Item> BLOOD_PIE = ITEMS.register("blood_pie",
+            () -> new BlockItem(VDBlocks.BLOOD_PIE.get(), basicItem()));
+    public static final RegistryObject<Item> BLOOD_PIE_SLICE = ITEMS.register("blood_pie_slice",
+            () -> new VampireConsumableItem(FoodValues.BLOOD_PIE_SLICE, FoodValues.NASTY,
+                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0)));
+
+    // Basic Meals
+    public static final RegistryObject<Item> HEARTY_PATTY = ITEMS.register("hearty_patty",
+            () -> new VampireConsumableItem(FoodValues.HEARTY_PATTY, FoodValues.NASTY));
 
     // Soups and Stews
     public static final RegistryObject<Item> GARLIC_SOUP = ITEMS.register("garlic_soup",
             () -> new HunterConsumableItem(bowlFoodItem(FoodValues.GARLIC_SOUP), true));
 
-
-
-    public static void register(IEventBus eventBus) {
-        ITEMS.register(eventBus);
-    }
+    // Feasts
+    public static final RegistryObject<Item> WEIRD_JELLY_BLOCK = ITEMS.register("weird_jelly_block",
+            () -> new BlockItem(VDBlocks.WEIRD_JELLY_BLOCK.get(), basicItem().stacksTo(1)));
+    public static final RegistryObject<Item> WEIRD_JELLY = ITEMS.register("weird_jelly",
+            () -> new VampireConsumableItem(FoodValues.WEIRD_JELLY, FoodValues.NASTY, Items.BOWL,
+                    new MobEffectInstance(ModEffects.SUNSCREEN.get(), 300, 1), true));
 }

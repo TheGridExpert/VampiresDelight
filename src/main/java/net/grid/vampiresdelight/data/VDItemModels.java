@@ -32,6 +32,14 @@ public class VDItemModels extends ItemModelProvider {
         // Specific cases
         items.remove(VDItems.ORCHID_TEA.get());
 
+        // Blocks with special item sprites
+        Set<Item> spriteBlockItems = Sets.newHashSet(
+                VDItems.BLOOD_PIE.get(),
+                VDItems.WEIRD_JELLY_BLOCK.get()
+        );
+        takeAll(items, spriteBlockItems.toArray(new Item[0])).forEach(item -> withExistingParent(itemName(item), GENERATED).texture("layer0", resourceItem(itemName(item))));
+
+
         Set<Item> flatBlockItems = Sets.newHashSet(
                 VDItems.WILD_GARLIC.get());
         takeAll(items, flatBlockItems.toArray(new Item[0])).forEach(item -> itemGeneratedModel(item, resourceBlock(itemName(item))));

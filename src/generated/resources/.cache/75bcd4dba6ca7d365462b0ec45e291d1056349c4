@@ -1,7 +1,8 @@
-// 1.19.2	2023-08-07T11:50:17.524978	Tags for minecraft:block
+// 1.19.2	2023-08-17T11:58:16.379934	Tags for minecraft:block
+5bae4dbc64c5589b1d47509957ca99dd840b3379 data/farmersdelight/tags/blocks/mineable/knife.json
 d028c871dc3ee16b485923bba4983a5a235f8fcd data/farmersdelight/tags/blocks/wild_crops.json
 4d0aefd6a548941b7fcf339049d983311d7c38e0 data/minecraft/tags/blocks/crops.json
-eb715fd0afd09cdfede5f96a52170f17d45dfb98 data/minecraft/tags/blocks/mineable/axe.json
+1671115f33b1beb6d9bdf6d017e55d17e2117a6c data/minecraft/tags/blocks/mineable/axe.json
 d028c871dc3ee16b485923bba4983a5a235f8fcd data/minecraft/tags/blocks/small_flowers.json
 4d0aefd6a548941b7fcf339049d983311d7c38e0 data/sereneseasons/tags/blocks/autumn_crops.json
 4d0aefd6a548941b7fcf339049d983311d7c38e0 data/sereneseasons/tags/blocks/summer_crops.json

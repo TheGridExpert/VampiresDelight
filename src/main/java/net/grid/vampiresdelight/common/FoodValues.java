@@ -6,6 +6,18 @@ import vectorwing.farmersdelight.common.registry.ModEffects;
 
 public class FoodValues {
     // Vampires
+    public static final FoodProperties HEART_PIECES = (new FoodProperties.Builder())
+            .nutrition(10).saturationMod(0.8f).meat().fast().build();
+    public static final FoodProperties NASTY = (new FoodProperties.Builder())
+            .nutrition(1).saturationMod(0.1f).build();
+    public static final FoodProperties CURSED_CUPCAKE = (new FoodProperties.Builder())
+            .nutrition(4).saturationMod(0.4f).build();
+    public static final FoodProperties BLOOD_PIE_SLICE = (new FoodProperties.Builder())
+            .nutrition(5).saturationMod(0.6f).fast().build();
+    public static final FoodProperties HEARTY_PATTY = (new FoodProperties.Builder())
+            .nutrition(15).saturationMod(1.2f).build();
+    public static final FoodProperties WEIRD_JELLY = (new FoodProperties.Builder())
+            .nutrition(8).saturationMod(0.8f).build();
 
     // Hunters
     public static final FoodProperties GRILLED_GARLIC = (new FoodProperties.Builder())

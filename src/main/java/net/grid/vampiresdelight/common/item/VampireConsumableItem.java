@@ -21,10 +21,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -41,24 +38,50 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
     private final FoodProperties vampireFood;
     private final boolean hasFoodEffectTooltip;
     private final boolean hasCustomTooltip;
+    private final MobEffectInstance mobEffectInstance;
+    private final Item craftRemainder;
 
     public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood) {
         super(new Properties().tab(FarmersDelight.CREATIVE_TAB).food(humanFood));
         this.vampireFood = vampireFood;
+        this.craftRemainder = null;
+        this.mobEffectInstance = null;
         this.hasFoodEffectTooltip = false;
         this.hasCustomTooltip = false;
     }
 
-    public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood, boolean hasFoodEffectTooltip) {
+    public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood, MobEffectInstance mobEffectInstance) {
         super(new Properties().tab(FarmersDelight.CREATIVE_TAB).food(humanFood));
         this.vampireFood = vampireFood;
+        this.craftRemainder = null;
+        this.mobEffectInstance = mobEffectInstance;
+        this.hasFoodEffectTooltip = false;
+        this.hasCustomTooltip = false;
+    }
+
+    public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood, Item craftRemainder, MobEffectInstance mobEffectInstance, boolean hasFoodEffectTooltip) {
+        super(new Properties().tab(FarmersDelight.CREATIVE_TAB).food(humanFood).craftRemainder(craftRemainder).stacksTo(16));
+        this.vampireFood = vampireFood;
+        this.craftRemainder = craftRemainder;
+        this.mobEffectInstance = mobEffectInstance;
         this.hasFoodEffectTooltip = hasFoodEffectTooltip;
         this.hasCustomTooltip = false;
     }
 
-    public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood, boolean hasFoodEffectTooltip, boolean hasCustomTooltip) {
+    public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood, MobEffectInstance mobEffectInstance, boolean hasFoodEffectTooltip) {
         super(new Properties().tab(FarmersDelight.CREATIVE_TAB).food(humanFood));
         this.vampireFood = vampireFood;
+        this.craftRemainder = null;
+        this.mobEffectInstance = mobEffectInstance;
+        this.hasFoodEffectTooltip = hasFoodEffectTooltip;
+        this.hasCustomTooltip = false;
+    }
+
+    public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood, MobEffectInstance mobEffectInstance, boolean hasFoodEffectTooltip, boolean hasCustomTooltip) {
+        super(new Properties().tab(FarmersDelight.CREATIVE_TAB).food(humanFood));
+        this.vampireFood = vampireFood;
+        this.craftRemainder = null;
+        this.mobEffectInstance = mobEffectInstance;
         this.hasFoodEffectTooltip = hasFoodEffectTooltip;
         this.hasCustomTooltip = hasCustomTooltip;
     }
@@ -92,6 +115,8 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
 
         if (!Helper.isVampire(entityLiving)) {
             entityLiving.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 20 * 20));
+        } else {
+            entityLiving.addEffect(mobEffectInstance);
         }
 
         if (!stack.isEdible()) {
@@ -100,7 +125,7 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
                 CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayer) player, stack);
             }
         }
-        
+
         return stack;
     }
 

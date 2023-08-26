@@ -20,6 +20,7 @@ public class VDItemTags extends ItemTagsProvider {
     @Override
     protected void addTags() {
         this.registerModTags();
+        this.registerVampirismTags();
         this.registerFarmersDelightTags();
         this.registerForgeTags();
         this.registerCompatibilityTags();
@@ -28,8 +29,14 @@ public class VDItemTags extends ItemTagsProvider {
     private void registerModTags() {
     }
 
+    private void registerVampirismTags() {
+        tag(de.teamlapen.vampirism.core.ModTags.Items.HEART)
+                .add(VDItems.HEART_PIECES.get());
+    }
+
     private void registerFarmersDelightTags() {
         tag(ModTags.WOODEN_CABINETS)
+                .add(VDItems.DARK_SPRUCE_CABINET.get())
                 .add(VDItems.CURSED_SPRUCE_CABINET.get());
     }
 
@@ -41,7 +48,8 @@ public class VDItemTags extends ItemTagsProvider {
 
     public void registerCompatibilityTags() {
         tag(VDCompatibilityTags.CREATE_UPRIGHT_ON_BELT)
-                .add(VDItems.ORCHID_TEA.get());
+                .add(VDItems.ORCHID_TEA.get())
+                .add(VDItems.BLOOD_PIE.get());
 
         tag(VDCompatibilityTags.SERENE_SEASONS_AUTUMN_CROPS)
                 .add(ModItems.ITEM_GARLIC.get());

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:bread"
+    },
+    {
+      "tag": "vampirism:heart"
+    },
+    {
+      "tag": "forge:salad_ingredients"
+    },
+    {
+      "tag": "forge:crops/tomato"
+    },
+    {
+      "item": "vampirism:blood_bottle"
+    }
+  ],
+  "result": {
+    "item": "vampiresdelight:hearty_patty"
+  }
+}

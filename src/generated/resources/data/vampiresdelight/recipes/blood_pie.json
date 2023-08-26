@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "O": {
+      "item": "farmersdelight:pie_crust"
+    },
+    "b": {
+      "item": "vampirism:blood_bottle"
+    },
+    "w": {
+      "item": "minecraft:nether_wart"
+    },
+    "x": {
+      "item": "minecraft:sugar"
+    }
+  },
+  "pattern": [
+    "www",
+    "xxx",
+    "bOb"
+  ],
+  "result": {
+    "item": "vampiresdelight:blood_pie"
+  }
+}

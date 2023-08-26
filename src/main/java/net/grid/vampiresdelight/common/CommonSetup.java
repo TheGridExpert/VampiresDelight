@@ -19,8 +19,15 @@ public class CommonSetup {
     }
 
     public static void registerCompostableItems() {
+        // 65% chance
         ComposterBlock.COMPOSTABLES.put(de.teamlapen.vampirism.core.ModItems.ITEM_GARLIC.get(), 0.65F);
         ComposterBlock.COMPOSTABLES.put(VDItems.WILD_GARLIC.get(), 0.65F);
+
+        // 85% chance
+        ComposterBlock.COMPOSTABLES.put(VDItems.BLOOD_PIE_SLICE.get(), 0.85F);
+
+        // 100% chance
+        ComposterBlock.COMPOSTABLES.put(VDItems.BLOOD_PIE.get(), 1.0F);
     }
 
     public static void registerModIntegrations() {

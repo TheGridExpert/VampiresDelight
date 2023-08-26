@@ -90,16 +90,32 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
+    // Vampirism
     maven {
         url = "https://maven.maxanier.de/releases"
     }
+
+    // Werewolves
     //maven {
         //url = "https://maven.paube.de/releases"
     //}
+
+    // For Farmer's Delight and others
     maven { url "https://www.cursemaven.com" }
+
+    // Create
     maven {
         name = 'tterrag maven'
         url = 'https://maven.tterrag.com/'
+    }
+
+    // Apple Skin
+    maven { url "https://maven.ryanliptak.com/" }
+
+    // JEI
+    maven {
+        name = "Progwml6 maven"
+        url = "https://dvs1.progwml6.com/files/maven/"
     }
 }
 
@@ -109,11 +125,13 @@ dependencies {
     implementation fg.deobf("curse.maven:farmers-delight-398521:${farmersdelight_version}")
     implementation fg.deobf("de.teamlapen.vampirism:Vampirism:${mc_version}-${vampirism_version}")
 
-    // Mod support
     //implementation fg.deobf("de.teamlapen.werewolves:Werewolves:${mc_version}-${werewolves_version}")
+
     implementation fg.deobf("com.simibubi.create:create-${create_minecraft_version}:${create_version}:slim") { transitive = false }
     implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${flywheel_minecraft_version}:${flywheel_version}")
     implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
+
+    compileOnly fg.deobf("squeek.appleskin:appleskin-forge:${appleskin_version}:api")
 }
 
 jar {

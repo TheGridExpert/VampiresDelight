@@ -1,13 +1,24 @@
 {
   "block.vampiresdelight.garlic_crate": "Garlic Crate",
   "block.vampiresdelight.wild_garlic": "Wild Garlic",
+  "block.vampiresdelight.dark_spruce_cabinet": "Dark Spruce Cabinet",
   "block.vampiresdelight.cursed_spruce_cabinet": "Cursed Spruce Cabinet",
 
+  "block.vampiresdelight.blood_pie": "Blood Pie",
+  "item.vampiresdelight.blood_pie_slice": "Blood Pie Slice",
+  "block.vampiresdelight.weird_jelly_block": "Weird Jelly",
+  "item.vampiresdelight.weird_jelly": "Plate of Weird Jelly",
+
   "item.vampiresdelight.grilled_garlic": "Grilled Garlic",
+  "item.vampiresdelight.orchid_tea": "Orchid Tea",
+  "item.vampiresdelight.heart_pieces": "Heart Pieces",
+  "item.vampiresdelight.cursed_cupcake": "Cursed Cupcake",
+  "item.vampiresdelight.hearty_patty": "Hearty Patty",
   "item.vampiresdelight.garlic_soup": "Garlic Soup",
 
-  "item.vampiresdelight.orchid_tea": "Orchid Tea",
+  "enchantment.vampiresdelight.vampire_bite": "Vampire Bite",
+  "enchantment.vampiresdelight.vampire_bite.desc": "Heals the player proportionally to the amount of damage dealt",
+
   "farmersdelight.tooltip.orchid_tea": "Infects With Sanguinare",
-  "item.vampiresdelight.cursed_cupcake": "Cursed Cupcake",
   "farmersdelight.tooltip.cursed_cupcake": "Clears Garlic Effect"
 }

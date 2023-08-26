@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "vampirism:human_heart"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "vampiresdelight:heart_pieces"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

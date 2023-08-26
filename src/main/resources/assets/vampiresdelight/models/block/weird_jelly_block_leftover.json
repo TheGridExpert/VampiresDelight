@@ -1,0 +1,31 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"4": "vampiresdelight:block/dark_tray_bottom",
+		"6": "vampiresdelight:block/dark_tray_leftover",
+		"particle": "vampiresdelight:block/dark_tray_leftover"
+	},
+	"elements": [
+		{
+			"name": "plate",
+			"from": [2, 0, 2],
+			"to": [14, 1, 14],
+			"faces": {
+				"north": {"uv": [2, 8, 14, 9], "texture": "#4"},
+				"east": {"uv": [2, 8, 14, 9], "texture": "#4"},
+				"south": {"uv": [2, 8, 14, 9], "texture": "#4"},
+				"west": {"uv": [2, 8, 14, 9], "texture": "#4"},
+				"up": {"uv": [2, 2, 14, 14], "rotation": 270, "texture": "#6"},
+				"down": {"uv": [2, 2, 14, 14], "texture": "#4"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "weird_jelly_block_leftover",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [0]
+		}
+	]
+}

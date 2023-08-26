@@ -1,11 +1,16 @@
 package net.grid.vampiresdelight.client.event;
 
 import de.teamlapen.vampirism.VampirismMod;
+import de.teamlapen.vampirism.items.BloodBottleItem;
+import de.teamlapen.vampirism.items.GarlicBreadItem;
 import de.teamlapen.vampirism.items.VampirismItemBloodFoodItem;
 import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.util.VDHelper;
 import net.grid.vampiresdelight.common.util.VDTextUtils;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
@@ -27,10 +32,10 @@ public class ToolTipEvents {
 
         if (VDHelper.isVampireFood(stack)) {
             borderStartColor = new Color(124, 40, 124);
-            borderEndColor = new Color(50, 0, 50);
+            borderEndColor = new Color(50, 0, 70);
         } else if (VDHelper.isHunterFood(stack)) {
             borderStartColor = new Color(65, 65, 220);
-            borderEndColor = new Color(30, 30, 70);
+            borderEndColor = new Color(30, 30, 90);
         }
 
         if(borderStartColor != null){
@@ -42,11 +47,14 @@ public class ToolTipEvents {
     }
 
     @SubscribeEvent
-    public static void addTooltipToVampirismBloodFood(ItemTooltipEvent event) {
+    public static void addTooltipToVampirismFood(ItemTooltipEvent event) {
         Item food = event.getItemStack().getItem();
         List<Component> tooltip = event.getToolTip();
-        if (food instanceof VampirismItemBloodFoodItem) {
+        if (food instanceof VampirismItemBloodFoodItem || food instanceof BloodBottleItem) {
             VDTextUtils.addFactionFoodToolTips(tooltip, VampirismMod.proxy.getClientPlayer(), "VAMPIRE");
+        }
+        if (food instanceof GarlicBreadItem) {
+            VDTextUtils.addFactionFoodToolTips(tooltip, VampirismMod.proxy.getClientPlayer(), "HUNTER");
         }
     }
 }
