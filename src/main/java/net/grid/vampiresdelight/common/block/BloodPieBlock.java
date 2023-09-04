@@ -3,11 +3,10 @@ package net.grid.vampiresdelight.common.block;
 import de.teamlapen.vampirism.api.VReference;
 import de.teamlapen.vampirism.api.entity.factions.IFaction;
 import de.teamlapen.vampirism.api.entity.player.vampire.IVampirePlayer;
-import de.teamlapen.vampirism.api.entity.vampire.IVampire;
 import de.teamlapen.vampirism.api.items.IFactionExclusiveItem;
 import de.teamlapen.vampirism.entity.player.vampire.VampirePlayer;
 import de.teamlapen.vampirism.util.Helper;
-import net.grid.vampiresdelight.common.FoodValues;
+import net.grid.vampiresdelight.common.VDFoodValues;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
@@ -39,7 +38,7 @@ public class BloodPieBlock extends PieBlock implements IFactionExclusiveItem {
             return InteractionResult.PASS;
         } else {
             ItemStack sliceStack = this.getPieSliceItem();
-            FoodProperties vampireFood = FoodValues.BLOOD_PIE_SLICE;
+            FoodProperties vampireFood = VDFoodValues.BLOOD_PIE_SLICE;
 
             VampirePlayer.getOpt(playerIn).ifPresent(v -> v.drinkBlood(vampireFood.getNutrition(), vampireFood.getSaturationModifier()));
 

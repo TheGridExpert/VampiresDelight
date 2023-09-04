@@ -5,10 +5,7 @@ import net.grid.vampiresdelight.common.CommonSetup;
 import net.grid.vampiresdelight.common.Configuration;
 import net.grid.vampiresdelight.common.event.PlayerEvents;
 import net.grid.vampiresdelight.common.item.VampireCloakItem;
-import net.grid.vampiresdelight.common.registry.VDBlockEntityTypes;
-import net.grid.vampiresdelight.common.registry.VDBlocks;
-import net.grid.vampiresdelight.common.registry.VDEnchantments;
-import net.grid.vampiresdelight.common.registry.VDItems;
+import net.grid.vampiresdelight.common.registry.*;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -34,6 +31,7 @@ public class VampiresDelight {
         VDEnchantments.ENCHANTMENTS.register(eventBus);
         VDBlocks.BLOCKS.register(eventBus);
         VDBlockEntityTypes.TILES.register(eventBus);
+        VDEntities.ENTITIES.register(eventBus);
 
         MinecraftForge.EVENT_BUS.register(new PlayerEvents());
 

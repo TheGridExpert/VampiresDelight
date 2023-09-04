@@ -1,0 +1,33 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    [
+      {
+        "tag": "forge:raw_pork"
+      },
+      {
+        "tag": "forge:raw_beef"
+      }
+    ],
+    [
+      {
+        "tag": "forge:vegetables/potato"
+      },
+      {
+        "tag": "forge:vegetables/carrot"
+      }
+    ],
+    {
+      "tag": "forge:vegetables/beetroot"
+    },
+    {
+      "tag": "forge:vegetables/garlic"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "vampiresdelight:borscht"
+  }
+}

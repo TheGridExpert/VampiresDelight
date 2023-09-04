@@ -3,12 +3,17 @@ package net.grid.vampiresdelight.data.recipe;
 import de.teamlapen.vampirism.core.ModBlocks;
 import de.teamlapen.vampirism.core.ModItems;
 import net.grid.vampiresdelight.common.registry.VDItems;
+import net.grid.vampiresdelight.common.tag.VDForgeTags;
 import net.grid.vampiresdelight.data.builder.VDCookingPotRecipeBuilder;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 
 import java.util.function.Consumer;
+import java.util.stream.Stream;
 
 public class VDCookingRecipes {
     public static final int FAST_COOKING = 100;      // 5 seconds
@@ -39,8 +44,24 @@ public class VDCookingRecipes {
                 .addIngredient(ForgeTags.RAW_CHICKEN)
                 .addIngredient(VDItems.GRILLED_GARLIC.get())
                 .addIngredient(ForgeTags.VEGETABLES)
+                .unlockedByAnyIngredient(ModItems.ITEM_GARLIC.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(consumer);
+        /*
+        VDCookingPotRecipeBuilder.cookingPotRecipe(VDItems.BORSCHT.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
+                .addIngredient(Ingredient.fromValues(Stream.of(
+                        new Ingredient.TagValue(ForgeTags.RAW_PORK),
+                        new Ingredient.TagValue(ForgeTags.RAW_BEEF)
+                )))
+                .addIngredient(Ingredient.fromValues(Stream.of(
+                        new Ingredient.TagValue(ForgeTags.VEGETABLES_POTATO),
+                        new Ingredient.TagValue(ForgeTags.VEGETABLES_CARROT)
+                )))
+                .addIngredient(ForgeTags.VEGETABLES_BEETROOT)
+                .addIngredient(VDForgeTags.VEGETABLES_GARLIC)
                 .unlockedByAnyIngredient(VDItems.GRILLED_GARLIC.get(), ModItems.ITEM_GARLIC.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(consumer);
+         */
     }
 }

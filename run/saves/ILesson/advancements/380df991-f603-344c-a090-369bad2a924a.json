@@ -1,0 +1,99 @@
+{
+  "farmersdelight:main/root": {
+    "criteria": {
+      "seeds": "2023-09-04 12:18:30 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/vampire/garlic_finder": {
+    "criteria": {
+      "has_garlic": "2023-09-04 12:23:32 +0300"
+    },
+    "done": true
+  },
+  "create:root": {
+    "criteria": {
+      "0": "2023-09-04 12:18:30 +0300"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/root": {
+    "criteria": {
+      "consumed_item": "2023-09-04 12:20:42 +0300"
+    },
+    "done": true
+  },
+  "vampirism:main/root": {
+    "criteria": {
+      "second": "2023-09-04 12:23:32 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:main/place_feast": {
+    "criteria": {
+      "rice_roll_medley": "2023-09-04 12:20:15 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/farmersdelight/rice_roll_medley_block": {
+    "criteria": {
+      "has_rice_roll": "2023-09-04 12:20:27 +0300"
+    },
+    "done": true
+  },
+  "vampiresdelight:recipes/farmersdelight/cooking/borscht": {
+    "criteria": {
+      "has_any_ingredient": "2023-09-04 12:22:08 +0300"
+    },
+    "done": true
+  },
+  "vampiresdelight:recipes/farmersdelight/garlic_crate": {
+    "criteria": {
+      "has_garlic": "2023-09-04 12:23:32 +0300"
+    },
+    "done": true
+  },
+  "vampiresdelight:recipes/farmersdelight/grilled_garlic_from_smoking": {
+    "criteria": {
+      "grilled_garlic": "2023-09-04 12:23:32 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/food/general/garlic_bread": {
+    "criteria": {
+      "has_garlic": "2023-09-04 12:23:32 +0300"
+    },
+    "done": true
+  },
+  "vampiresdelight:recipes/farmersdelight/grilled_garlic": {
+    "criteria": {
+      "grilled_garlic": "2023-09-04 12:23:32 +0300"
+    },
+    "done": true
+  },
+  "vampiresdelight:recipes/farmersdelight/cooking/garlic_soup": {
+    "criteria": {
+      "has_any_ingredient": "2023-09-04 12:23:32 +0300"
+    },
+    "done": true
+  },
+  "vampiresdelight:recipes/farmersdelight/grilled_garlic_from_campfire_cooking": {
+    "criteria": {
+      "grilled_garlic": "2023-09-04 12:23:32 +0300"
+    },
+    "done": true
+  },
+  "vampiresdelight:recipes/vampirism/garlic_from_crate": {
+    "criteria": {
+      "has_garlic_crate": "2023-09-04 12:18:30 +0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:snowy_plains": "2023-09-04 12:17:38 +0300"
+    },
+    "done": false
+  },
+  "DataVersion": 3120
+}

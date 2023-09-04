@@ -20,5 +20,8 @@
   "enchantment.vampiresdelight.vampire_bite.desc": "Heals the player proportionally to the amount of damage dealt",
 
   "farmersdelight.tooltip.orchid_tea": "Infects With Sanguinare",
-  "farmersdelight.tooltip.cursed_cupcake": "Clears Garlic Effect"
+  "farmersdelight.tooltip.cursed_cupcake": "Clears Garlic Effect",
+
+  "vampiresdelight.food_tier.appetizing": "Appetizing",
+  "vampiresdelight.food_tier.disgusting": "Disgusting"
 }
