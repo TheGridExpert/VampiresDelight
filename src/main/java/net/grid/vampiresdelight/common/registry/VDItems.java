@@ -48,9 +48,7 @@ public class VDItems {
 
 
 
-    // Tools
-    public static final RegistryObject<Item> GRAPPLING_HOOK = ITEMS.register("grappling_hook",
-            () -> new GrapplingHookItem(new Item.Properties().durability(250)));
+
 
     // Foodstuffs
     public static final RegistryObject<Item> GRILLED_GARLIC = ITEMS.register("grilled_garlic",
@@ -59,6 +57,8 @@ public class VDItems {
             () -> new OrchidTeaItem(drinkItem()));
     public static final RegistryObject<Item> HEART_PIECES = ITEMS.register("heart_pieces",
             () -> new VampireConsumableItem(VDFoodValues.HEART_PIECES, VDFoodValues.NASTY));
+    public static final RegistryObject<Item> HUMAN_EYE = ITEMS.register("human_eye",
+            () -> new VampireConsumableItem(VDFoodValues.HUMAN_EYE, VDFoodValues.NASTY));
 
     // Sweets
     public static final RegistryObject<Item> CURSED_CUPCAKE = ITEMS.register("cursed_cupcake",
@@ -70,8 +70,14 @@ public class VDItems {
                     new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0)));
 
     // Basic Meals
+    public static final RegistryObject<Item> EYE_TOAST = ITEMS.register("eye_toast",
+            () -> new VampireConsumableItem(VDFoodValues.EYE_TOAST, VDFoodValues.NASTY));
     public static final RegistryObject<Item> HEARTY_PATTY = ITEMS.register("hearty_patty",
             () -> new VampireConsumableItem(VDFoodValues.HEARTY_PATTY, VDFoodValues.NASTY));
+    public static final RegistryObject<Item> HARDTACK = ITEMS.register("hardtack",
+            () -> new HardtackItem(bowlFoodItem(VDFoodValues.HARDTACK)));
+    public static final RegistryObject<Item> HARDTACK_WITH_JAM = ITEMS.register("hardtack_with_jam",
+            () -> new HardtackItem(bowlFoodItem(VDFoodValues.HARDTACK_WITH_JAM)));
 
     // Soups and Stews
     public static final RegistryObject<Item> GARLIC_SOUP = ITEMS.register("garlic_soup",

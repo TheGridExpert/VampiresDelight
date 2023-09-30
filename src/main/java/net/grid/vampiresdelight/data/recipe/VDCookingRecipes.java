@@ -47,11 +47,11 @@ public class VDCookingRecipes {
                 .unlockedByAnyIngredient(ModItems.ITEM_GARLIC.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(consumer);
-        /*
         VDCookingPotRecipeBuilder.cookingPotRecipe(VDItems.BORSCHT.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
                 .addIngredient(Ingredient.fromValues(Stream.of(
                         new Ingredient.TagValue(ForgeTags.RAW_PORK),
-                        new Ingredient.TagValue(ForgeTags.RAW_BEEF)
+                        new Ingredient.TagValue(ForgeTags.RAW_BEEF),
+                        new Ingredient.TagValue(ForgeTags.RAW_CHICKEN)
                 )))
                 .addIngredient(Ingredient.fromValues(Stream.of(
                         new Ingredient.TagValue(ForgeTags.VEGETABLES_POTATO),
@@ -62,6 +62,5 @@ public class VDCookingRecipes {
                 .unlockedByAnyIngredient(VDItems.GRILLED_GARLIC.get(), ModItems.ITEM_GARLIC.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(consumer);
-         */
     }
 }

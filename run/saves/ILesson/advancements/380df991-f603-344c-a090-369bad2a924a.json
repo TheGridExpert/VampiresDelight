@@ -1,7 +1,67 @@
 {
-  "farmersdelight:main/root": {
+  "vampirism:recipes/vampirism/dark_spruce_trapdoor": {
     "criteria": {
-      "seeds": "2023-09-04 12:18:30 +0300"
+      "has_planks": "2023-09-09 14:22:46 +0300"
+    },
+    "done": true
+  },
+  "vampiresdelight:recipes/farmersdelight/garlic_crate": {
+    "criteria": {
+      "has_garlic": "2023-09-04 12:23:32 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/cursed_spruce_door": {
+    "criteria": {
+      "has_planks": "2023-09-09 14:22:45 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/mangrove_pressure_plate": {
+    "criteria": {
+      "has_planks": "2023-09-17 23:08:14 +0300"
+    },
+    "done": true
+  },
+  "vampiresdelight:recipes/farmersdelight/grilled_garlic": {
+    "criteria": {
+      "grilled_garlic": "2023-09-04 12:23:32 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/mangrove_button": {
+    "criteria": {
+      "has_planks": "2023-09-17 23:08:15 +0300"
+    },
+    "done": true
+  },
+  "vampiresdelight:recipes/farmersdelight/blood_pie_from_slices": {
+    "criteria": {
+      "has_blood_pie_slice": "2023-09-09 14:21:17 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/dark_spruce_fence": {
+    "criteria": {
+      "has_planks": "2023-09-09 14:22:46 +0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:snowy_plains": "2023-09-04 12:17:38 +0300"
+    },
+    "done": false
+  },
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "has_planks": "2023-09-09 14:22:45 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/dark_spruce_slab": {
+    "criteria": {
+      "has_planks": "2023-09-09 14:22:46 +0300"
     },
     "done": true
   },
@@ -11,21 +71,9 @@
     },
     "done": true
   },
-  "create:root": {
-    "criteria": {
-      "0": "2023-09-04 12:18:30 +0300"
-    },
-    "done": true
-  },
   "minecraft:husbandry/root": {
     "criteria": {
       "consumed_item": "2023-09-04 12:20:42 +0300"
-    },
-    "done": true
-  },
-  "vampirism:main/root": {
-    "criteria": {
-      "second": "2023-09-04 12:23:32 +0300"
     },
     "done": true
   },
@@ -41,15 +89,15 @@
     },
     "done": true
   },
-  "vampiresdelight:recipes/farmersdelight/cooking/borscht": {
+  "vampirism:recipes/vampirism/hunter/cross": {
     "criteria": {
-      "has_any_ingredient": "2023-09-04 12:22:08 +0300"
+      "has_planks": "2023-09-09 14:22:45 +0300"
     },
     "done": true
   },
-  "vampiresdelight:recipes/farmersdelight/garlic_crate": {
+  "farmersdelight:recipes/farmersdelight/nether_salad": {
     "criteria": {
-      "has_garlic": "2023-09-04 12:23:32 +0300"
+      "has_bowl": "2023-09-11 13:06:44 +0300"
     },
     "done": true
   },
@@ -59,21 +107,63 @@
     },
     "done": true
   },
+  "vampirism:recipes/vampirism/dark_spruce_door": {
+    "criteria": {
+      "has_planks": "2023-09-09 14:22:46 +0300"
+    },
+    "done": true
+  },
   "vampirism:recipes/food/general/garlic_bread": {
     "criteria": {
       "has_garlic": "2023-09-04 12:23:32 +0300"
     },
     "done": true
   },
-  "vampiresdelight:recipes/farmersdelight/grilled_garlic": {
+  "minecraft:recipes/decorations/barrel": {
     "criteria": {
-      "grilled_garlic": "2023-09-04 12:23:32 +0300"
+      "has_planks": "2023-09-09 14:22:45 +0300"
     },
     "done": true
   },
-  "vampiresdelight:recipes/farmersdelight/cooking/garlic_soup": {
+  "vampirism:recipes/vampirism/dark_spruce_stairs": {
     "criteria": {
-      "has_any_ingredient": "2023-09-04 12:23:32 +0300"
+      "has_planks": "2023-09-09 14:22:46 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/mangrove_sign": {
+    "criteria": {
+      "has_planks": "2023-09-17 23:08:15 +0300"
+    },
+    "done": true
+  },
+  "vampiresdelight:recipes/farmersdelight/eye_toast": {
+    "criteria": {
+      "has_human_eye": "2023-09-13 21:45:49 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/cursed_spruce_sign": {
+    "criteria": {
+      "has_planks": "2023-09-09 14:22:45 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/general/altar_cleansing": {
+    "criteria": {
+      "has_vampire_book": "2023-09-09 14:22:45 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/stick": {
+    "criteria": {
+      "has_planks": "2023-09-09 14:22:45 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/cursed_spruce_slab": {
+    "criteria": {
+      "has_planks": "2023-09-09 14:22:45 +0300"
     },
     "done": true
   },
@@ -83,17 +173,209 @@
     },
     "done": true
   },
+  "vampirism:recipes/vampirism/dark_spruce_sign": {
+    "criteria": {
+      "has_planks": "2023-09-09 14:22:46 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/dark_spruce_fence_gate": {
+    "criteria": {
+      "has_planks": "2023-09-09 14:22:46 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:main/root": {
+    "criteria": {
+      "seeds": "2023-09-04 12:18:30 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/mangrove_window": {
+    "criteria": {
+      "has_ingredient": "2023-09-17 23:08:15 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/glow_item_frame": {
+    "criteria": {
+      "has_item_frame": "2023-09-09 14:21:31 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/hunter/crucifix": {
+    "criteria": {
+      "planks": "2023-09-09 14:22:45 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/mushroom_stew": {
+    "criteria": {
+      "has_bowl": "2023-09-11 13:06:44 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/farmersdelight/rope_from_safety_net": {
+    "criteria": {
+      "has_safety_net": "2023-09-13 21:46:36 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/general/throne": {
+    "criteria": {
+      "has_planks": "2023-09-09 14:22:45 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/dark_spruce_button": {
+    "criteria": {
+      "has_planks": "2023-09-09 14:22:46 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/cursed_spruce_fence": {
+    "criteria": {
+      "has_planks": "2023-09-09 14:22:45 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/alchemy_table": {
+    "criteria": {
+      "has_planks": "2023-09-09 14:22:45 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/mangrove_trapdoor": {
+    "criteria": {
+      "has_planks": "2023-09-17 23:08:15 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/general/vampire_rack": {
+    "criteria": {
+      "has_planks": "2023-09-09 14:22:45 +0300"
+    },
+    "done": true
+  },
+  "vampiresdelight:recipes/farmersdelight/cooking/garlic_soup": {
+    "criteria": {
+      "has_any_ingredient": "2023-09-04 12:23:32 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/farmersdelight/mixed_salad": {
+    "criteria": {
+      "has_bowl": "2023-09-11 13:06:44 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/mangrove_slab": {
+    "criteria": {
+      "has_planks": "2023-09-17 23:08:15 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/cursed_spruce_trapdoor": {
+    "criteria": {
+      "has_planks": "2023-09-09 14:22:45 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/cursed_spruce_pressure_place": {
+    "criteria": {
+      "has_planks": "2023-09-09 14:22:45 +0300"
+    },
+    "done": true
+  },
+  "create:root": {
+    "criteria": {
+      "0": "2023-09-04 12:18:30 +0300"
+    },
+    "done": true
+  },
+  "vampirism:hunter/betrayal": {
+    "criteria": {
+      "faction": "2023-09-14 11:05:27 +0300"
+    },
+    "done": false
+  },
+  "vampirism:main/root": {
+    "criteria": {
+      "second": "2023-09-04 12:23:32 +0300"
+    },
+    "done": true
+  },
+  "vampiresdelight:recipes/farmersdelight/cooking/borscht": {
+    "criteria": {
+      "has_any_ingredient": "2023-09-04 12:22:08 +0300"
+    },
+    "done": true
+  },
+  "vampirism:hunter/become_hunter": {
+    "criteria": {
+      "main": "2023-09-14 11:05:27 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/mangrove_fence": {
+    "criteria": {
+      "has_planks": "2023-09-17 23:08:15 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/cursed_spruce_stairs": {
+    "criteria": {
+      "has_planks": "2023-09-09 14:22:45 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/cursed_spruce_fence_gate": {
+    "criteria": {
+      "has_planks": "2023-09-09 14:22:45 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/vampire/altar_inspiration": {
+    "criteria": {
+      "has_planks": "2023-09-09 14:22:45 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/mangrove_stairs": {
+    "criteria": {
+      "has_planks": "2023-09-17 23:08:15 +0300"
+    },
+    "done": true
+  },
   "vampiresdelight:recipes/vampirism/garlic_from_crate": {
     "criteria": {
       "has_garlic_crate": "2023-09-04 12:18:30 +0300"
     },
     "done": true
   },
-  "minecraft:adventure/adventuring_time": {
+  "vampirism:recipes/vampirism/dark_spruce_pressure_place": {
     "criteria": {
-      "minecraft:snowy_plains": "2023-09-04 12:17:38 +0300"
+      "has_planks": "2023-09-09 14:22:46 +0300"
     },
-    "done": false
+    "done": true
+  },
+  "minecraft:recipes/redstone/mangrove_door": {
+    "criteria": {
+      "has_planks": "2023-09-17 23:08:15 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/cursed_spruce_button": {
+    "criteria": {
+      "has_planks": "2023-09-09 14:22:45 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/mangrove_fence_gate": {
+    "criteria": {
+      "has_planks": "2023-09-17 23:08:15 +0300"
+    },
+    "done": true
   },
   "DataVersion": 3120
 }

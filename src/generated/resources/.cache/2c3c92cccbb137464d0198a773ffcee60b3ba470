@@ -1,16 +1,18 @@
-// 1.19.2	2023-08-28T14:07:47.806415	Item Models: vampiresdelight
+// 1.19.2	2023-09-13T21:42:23.148001	Item Models: vampiresdelight
 170a9af502f3e985c770ec149cb0337ff0bfae35 assets/vampiresdelight/models/item/blood_pie.json
 b6714066f1bfb0f715d2c7d32d3e8d36251c247b assets/vampiresdelight/models/item/blood_pie_slice.json
 a187a667f1fe16de9316d8a684a970a955525333 assets/vampiresdelight/models/item/borscht.json
 5cca7a1f8ebbb7171b99fb8b97c2c8c53afcfccf assets/vampiresdelight/models/item/cursed_cupcake.json
 2c4f8ab97980b3768a4b1d5402aa06ab6ef91ed4 assets/vampiresdelight/models/item/cursed_spruce_cabinet.json
 eca634977a304d30a80a7b2beeb4efc839c09001 assets/vampiresdelight/models/item/dark_spruce_cabinet.json
+5b0e5d350868bf3bb2d87f449b9c0ee3e2397bfd assets/vampiresdelight/models/item/eye_toast.json
 f4b480f85c499f10b405467e0638470d067d9d34 assets/vampiresdelight/models/item/garlic_crate.json
 bd6d335173376c7a2fbac5fc6c337e941d7f8e33 assets/vampiresdelight/models/item/garlic_soup.json
-32bbbf030a343371fe43c9cf999047a24ff67e9c assets/vampiresdelight/models/item/grappling_hook.json
 99407061098f1ac1e4eee35a6e37240d0eac696f assets/vampiresdelight/models/item/grilled_garlic.json
+79165ca29d07f411ef829e6a64ff0baced3a51c2 assets/vampiresdelight/models/item/hardtack.json
 6f32b9086fd827abb8c96f0cabffe0f63736890d assets/vampiresdelight/models/item/heart_pieces.json
 e992e6049a4938c71103c9e23a1a5fac57ee6fbc assets/vampiresdelight/models/item/hearty_patty.json
+dc62e6626fa37113d9b3707e353dc0917bc41c0e assets/vampiresdelight/models/item/human_eye.json
 74744a30af05fe5754239b7c503ba7ede8cc3c4a assets/vampiresdelight/models/item/weird_jelly.json
 de080f4ed988f0bcd49e49bc77b59078dd06dd6f assets/vampiresdelight/models/item/weird_jelly_block.json
 fa6638d23d6c44fb09bd2eb2611645ea027909f4 assets/vampiresdelight/models/item/wild_garlic.json

@@ -95,6 +95,20 @@ public class VDCraftingRecipes {
                 .requires(ModItems.BLOOD_BOTTLE.get())
                 .unlockedBy("has_human_heart", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.HUMAN_HEART.get()))
                 .save(consumer);
+        ShapelessRecipeBuilder.shapeless(VDItems.EYE_TOAST.get())
+                .requires(ForgeTags.BREAD)
+                .requires(VDItems.HUMAN_EYE.get())
+                .requires(ForgeTags.CROPS_TOMATO)
+                .requires(ModItems.BLOOD_BOTTLE.get())
+                .unlockedBy("has_human_eye", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.HUMAN_EYE.get()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(VDItems.HARDTACK.get())
+                .requires(Items.WHEAT)
+                .requires(Items.WHEAT)
+                .requires(Items.WHEAT)
+                .requires(Items.WHEAT)
+                .unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
+                .save(consumer);
     }
 
     // Cutting
