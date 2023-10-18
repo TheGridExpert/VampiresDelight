@@ -59,6 +59,6 @@ public class OrchidTeaItem extends DrinkableItem implements IFactionExclusiveIte
         MutableComponent textEmpty = TextUtils.getTranslation("tooltip." + this);
         tooltip.add(textEmpty.withStyle(ChatFormatting.BLUE));
 
-        VDTextUtils.addFactionFoodToolTips(tooltip, VampirismMod.proxy.getClientPlayer(), "VAMPIRE");
+        VDTextUtils.addFactionFoodToolTips(tooltip, VampirismMod.proxy.getClientPlayer(), VReference.VAMPIRE_FACTION);
     }
 }

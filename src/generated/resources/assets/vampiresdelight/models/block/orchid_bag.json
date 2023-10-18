@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "vampiresdelight:block/orchid_bag_bottom",
+    "east": "vampiresdelight:block/orchid_bag_side",
+    "north": "vampiresdelight:block/orchid_bag_side_tied",
+    "particle": "vampiresdelight:block/orchid_bag_top",
+    "south": "vampiresdelight:block/orchid_bag_side_tied",
+    "up": "vampiresdelight:block/orchid_bag_top",
+    "west": "vampiresdelight:block/orchid_bag_side"
+  }
+}

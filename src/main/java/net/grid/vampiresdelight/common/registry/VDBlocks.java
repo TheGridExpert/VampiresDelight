@@ -26,6 +26,8 @@ public class VDBlocks {
     // Crop Storage
     public static final RegistryObject<Block> GARLIC_CRATE = BLOCKS.register("garlic_crate",
             () -> new Block(Block.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> ORCHID_BAG = BLOCKS.register("orchid_bag",
+            () -> new Block(Block.Properties.copy(Blocks.WHITE_WOOL)));
 
     // Building
     public static final RegistryObject<Block> DARK_SPRUCE_CABINET = BLOCKS.register("dark_spruce_cabinet",

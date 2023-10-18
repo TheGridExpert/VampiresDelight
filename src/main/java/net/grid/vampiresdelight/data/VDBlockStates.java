@@ -24,6 +24,7 @@ public class VDBlockStates extends BlockStateProvider {
         return ForgeRegistries.BLOCKS.getKey(block).getPath();
     }
 
+
     public ResourceLocation resourceBlock(String path) {
         return new ResourceLocation(VampiresDelight.MODID, "block/" + path);
     }
@@ -40,6 +41,16 @@ public class VDBlockStates extends BlockStateProvider {
         this.wildCropBlock(VDBlocks.WILD_GARLIC.get());
 
         this.feastBlock((FeastBlock) VDBlocks.WEIRD_JELLY_BLOCK.get());
+
+        String orchidBag = blockName(VDBlocks.ORCHID_BAG.get());
+        this.simpleBlock(VDBlocks.ORCHID_BAG.get(), models().withExistingParent(orchidBag, "cube")
+                .texture("particle", resourceBlock(orchidBag + "_top"))
+                .texture("down", resourceBlock(orchidBag + "_bottom"))
+                .texture("up", resourceBlock(orchidBag + "_top"))
+                .texture("north", resourceBlock(orchidBag + "_side_tied"))
+                .texture("south", resourceBlock(orchidBag + "_side_tied"))
+                .texture("east", resourceBlock(orchidBag + "_side"))
+                .texture("west", resourceBlock(orchidBag + "_side")));
     }
 
     public void wildCropBlock(Block block) {

@@ -14,17 +14,5 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class VDHelper {
-    public static boolean isVampireFood(ItemStack stack) {
-        return !stack.isEmpty() &&
-                stack.getItem() instanceof VampireConsumableItem ||
-                stack.getItem() instanceof VampirismItemBloodFoodItem ||
-                stack.getItem() instanceof OrchidTeaItem;
-    }
 
-    public static boolean isHunterFood(ItemStack stack) {
-        return !stack.isEmpty() &&
-                stack.getItem() instanceof HunterConsumableItem ||
-                stack.getItem() instanceof GarlicBreadItem ||
-                stack.getItem() instanceof HardtackItem;
-    }
 }

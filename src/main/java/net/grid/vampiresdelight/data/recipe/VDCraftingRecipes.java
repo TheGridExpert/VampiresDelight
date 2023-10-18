@@ -13,6 +13,7 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -58,6 +59,13 @@ public class VDCraftingRecipes {
                 .define('#', de.teamlapen.vampirism.core.ModItems.ITEM_GARLIC.get())
                 .unlockedBy("has_garlic", InventoryChangeTrigger.TriggerInstance.hasItems(de.teamlapen.vampirism.core.ModItems.ITEM_GARLIC.get()))
                 .save(consumer);
+        ShapedRecipeBuilder.shaped(VDItems.ORCHID_BAG.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', VDItems.ORCHID_PETALS.get())
+                .unlockedBy("has_orchid_petals", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.ORCHID_PETALS.get()))
+                .save(consumer);
     }
 
     private static void recipesMaterials(Consumer<FinishedRecipe> consumer) {
@@ -65,6 +73,20 @@ public class VDCraftingRecipes {
                 .requires(VDItems.GARLIC_CRATE.get())
                 .unlockedBy("has_garlic_crate", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.GARLIC_CRATE.get()))
                 .save(consumer, new ResourceLocation(VampiresDelight.MODID, "garlic_from_crate"));
+        ShapelessRecipeBuilder.shapeless(VDItems.ORCHID_PETALS.get(), 9)
+                .requires(VDItems.ORCHID_BAG.get())
+                .unlockedBy("has_orchid_bag", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.ORCHID_BAG.get()))
+                .save(consumer, new ResourceLocation(VampiresDelight.MODID, "orchid_petals_from_bag"));
+    }
+
+    private static void recipesFoodstuffs(Consumer<FinishedRecipe> consumer) {
+        ShapelessRecipeBuilder.shapeless(VDItems.BLOOD_DOUGH.get(), 3)
+                .requires(ModItems.BLOOD_BOTTLE.get())
+                .requires(Items.WHEAT)
+                .requires(Items.WHEAT)
+                .requires(Items.WHEAT)
+                .unlockedBy("has_rice", InventoryChangeTrigger.TriggerInstance.hasItems(vectorwing.farmersdelight.common.registry.ModItems.RICE.get()))
+                .save(consumer);
     }
 
     private static void recipesFoodBlocks(Consumer<FinishedRecipe> consumer) {
@@ -109,6 +131,12 @@ public class VDCraftingRecipes {
                 .requires(Items.WHEAT)
                 .unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
                 .save(consumer);
+        ShapelessRecipeBuilder.shapeless(VDItems.CURSED_CUPCAKE.get())
+                .requires(VDItems.BLOOD_BAGEL.get())
+                .requires(ForgeTags.MILK)
+                .requires(Items.SUGAR)
+                .unlockedBy("has_blood_bagel", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.BLOOD_BAGEL.get()))
+                .save(consumer);
     }
 
     // Cutting
@@ -125,8 +153,9 @@ public class VDCraftingRecipes {
                 .addResult(Items.LIGHT_GRAY_DYE, 2)
                 .addResultWithChance(Items.GREEN_DYE, 0.25F)
                 .build(consumer);
-        VDCuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModBlocks.VAMPIRE_ORCHID.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), Items.MAGENTA_DYE, 2)
-                .addResultWithChance(ModBlocks.CURSED_ROOTS.get(), 0.75F, 1)
+        VDCuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModBlocks.VAMPIRE_ORCHID.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), VDItems.ORCHID_PETALS.get(), 2)
+                .addResultWithChance(Items.MAGENTA_DYE, 0.75F, 2)
+                .addResultWithChance(ModBlocks.CURSED_ROOTS.get(), 0.30F, 1)
                 .build(consumer);
     }
 }

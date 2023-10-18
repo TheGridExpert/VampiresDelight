@@ -10,13 +10,17 @@ import vectorwing.farmersdelight.common.registry.ModEffects;
 public class VDFoodValues {
     // Vampires
     public static final FoodProperties NASTY = (new FoodProperties.Builder())
-            .nutrition(1).saturationMod(0.1f).build();
+            .nutrition(1).saturationMod(0.1f).effect(() -> new MobEffectInstance(MobEffects.HUNGER, 400, 0), 0.5F).build();
+    public static final FoodProperties BLOOD_DOUGH = (new FoodProperties.Builder())
+            .nutrition(2).saturationMod(0.3f).build();
     public static final FoodProperties HEART_PIECES = (new FoodProperties.Builder())
             .nutrition(10).saturationMod(0.8f).meat().fast().build();
     public static final FoodProperties HUMAN_EYE = (new FoodProperties.Builder())
             .nutrition(2).saturationMod(0.1f).meat().build();
     public static final FoodProperties CURSED_CUPCAKE = (new FoodProperties.Builder())
             .nutrition(4).saturationMod(0.4f).build();
+    public static final FoodProperties BLOOD_BAGEL = (new FoodProperties.Builder())
+            .nutrition(6).saturationMod(0.7f).build();
     public static final FoodProperties BLOOD_PIE_SLICE = (new FoodProperties.Builder())
             .nutrition(5).saturationMod(0.6f).fast().build();
     public static final FoodProperties EYE_TOAST = (new FoodProperties.Builder())

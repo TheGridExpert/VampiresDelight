@@ -1,6 +1,7 @@
 package net.grid.vampiresdelight.data;
 
 import de.teamlapen.vampirism.core.ModItems;
+import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.registry.VDItems;
 import net.grid.vampiresdelight.common.tag.VDCompatibilityTags;
 import net.grid.vampiresdelight.common.tag.VDForgeTags;
@@ -27,6 +28,25 @@ public class VDItemTags extends ItemTagsProvider {
     }
 
     private void registerModTags() {
+        tag(VDTags.VAMPIRE_FOOD)
+                .addTag(de.teamlapen.vampirism.core.ModTags.Items.HEART)
+                .add(VDItems.BLOOD_PIE.get())
+                .add(VDItems.BLOOD_PIE_SLICE.get())
+                .add(VDItems.CURSED_CUPCAKE.get())
+                .add(VDItems.EYE_TOAST.get())
+                .add(VDItems.HEARTY_PATTY.get())
+                .add(VDItems.ORCHID_TEA.get())
+                .add(VDItems.WEIRD_JELLY.get())
+                .add(VDItems.WEIRD_JELLY_BLOCK.get())
+                .add(VDItems.BLOOD_DOUGH.get())
+                .add(VDItems.BLOOD_BAGEL.get())
+                .add(VDItems.HUMAN_EYE.get());
+        tag(VDTags.HUNTER_FOOD)
+                .add(ModItems.GARLIC_BREAD.get())
+                .add(VDItems.BORSCHT.get())
+                .add(VDItems.GARLIC_SOUP.get())
+                .add(VDItems.GRILLED_GARLIC.get())
+                .add(VDItems.HARDTACK.get());
     }
 
     private void registerVampirismTags() {

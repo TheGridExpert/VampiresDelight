@@ -43,6 +43,8 @@ public class VDBlockTags extends BlockTagsProvider {
     private void registerFarmersDelightTags() {
         tag(ModTags.WILD_CROPS).add(
                 VDBlocks.WILD_GARLIC.get());
+        tag(ModTags.STRAW_BLOCKS).add(
+                VDBlocks.ORCHID_BAG.get());
     }
 
     private void registerCompatibilityTags() {

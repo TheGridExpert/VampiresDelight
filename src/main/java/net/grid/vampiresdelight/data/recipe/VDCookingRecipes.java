@@ -2,6 +2,7 @@ package net.grid.vampiresdelight.data.recipe;
 
 import de.teamlapen.vampirism.core.ModBlocks;
 import de.teamlapen.vampirism.core.ModItems;
+import de.teamlapen.vampirism.core.ModTags;
 import net.grid.vampiresdelight.common.registry.VDItems;
 import net.grid.vampiresdelight.common.tag.VDForgeTags;
 import net.grid.vampiresdelight.data.builder.VDCookingPotRecipeBuilder;
@@ -32,10 +33,20 @@ public class VDCookingRecipes {
     private static void cookMiscellaneous(Consumer<FinishedRecipe> consumer) {
         VDCookingPotRecipeBuilder.cookingPotRecipe(VDItems.ORCHID_TEA.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
                 .addIngredient(ForgeTags.MILK)
-                .addIngredient(ModBlocks.VAMPIRE_ORCHID.get())
-                .addIngredient(ModBlocks.VAMPIRE_ORCHID.get())
-                .unlockedByAnyIngredient(ModBlocks.VAMPIRE_ORCHID.get())
+                .addIngredient(VDItems.ORCHID_PETALS.get())
+                .addIngredient(VDItems.ORCHID_PETALS.get())
+                .unlockedByAnyIngredient(VDItems.ORCHID_PETALS.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
+                .build(consumer);
+        VDCookingPotRecipeBuilder.cookingPotRecipe(VDItems.WEIRD_JELLY_BLOCK.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
+                .addIngredient(Items.BONE)
+                .addIngredient(Items.SLIME_BALL)
+                .addIngredient(Items.SLIME_BALL)
+                .addIngredient(Items.SWEET_BERRIES)
+                .addIngredient(Items.SWEET_BERRIES)
+                .addIngredient(ModTags.Items.PURE_BLOOD)
+                .unlockedByAnyIngredient(VDItems.ORCHID_PETALS.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(consumer);
     }
 

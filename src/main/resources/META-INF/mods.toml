@@ -6,32 +6,32 @@ modId="vampiresdelight"
 version="0.1"
 displayName="Vampire's Delight"
 #logoFile="examplemod.png"
-credits="Vectorwing, Maxanier, Cheaterpaul"
+credits="Maxanier, Cheaterpaul, Vectorwing"
 authors="GridExpert"
 description='''
 Makes Vampirism and Farmer's Delight more compatible
 '''
 [[dependencies.vampiresdelight]]
-    modId="forge"
-    mandatory=true
-    versionRange="[43,)"
-    ordering="NONE"
-    side="BOTH"
+modId="forge"
+mandatory=true
+versionRange="[43,)"
+ordering="NONE"
+side="BOTH"
 [[dependencies.vampiresdelight]]
-    modId="minecraft"
-    mandatory=true
-    versionRange="[1.19.2,1.20)"
-    ordering="NONE"
-    side="BOTH"
+modId="minecraft"
+mandatory=true
+versionRange="[1.19.2,1.20)"
+ordering="NONE"
+side="BOTH"
 [[dependencies.vampiresdelight]]
-    modId="vampirism"
-    mandatory=true
-    versionRange="[1.9.4,)"
-    ordering="NONE"
-    side="BOTH"
+modId="vampirism"
+mandatory=true
+versionRange="[1.9.4,)"
+ordering="NONE"
+side="BOTH"
 [[dependencies.vampiresdelight]]
-    modId="farmersdelight"
-    mandatory=true
-    versionRange="[1.19-1.2.1,)"
-    ordering="NONE"
-    side="BOTH"
+modId="farmersdelight"
+mandatory=true
+versionRange="[1.19-1.2.1,)"
+ordering="NONE"
+side="BOTH"

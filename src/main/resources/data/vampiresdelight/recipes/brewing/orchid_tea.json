@@ -1,0 +1,22 @@
+{
+  "type": "farmersrespite:brewing",
+  "container": {
+    "item": "minecraft:glass_bottle"
+  },
+  "cookingtime": 2400,
+  "experience": 0.35,
+  "group": "orchid_tea",
+  "ingredients": [
+    {
+      "item": "vampiresdelight:orchid_petals"
+    },
+    {
+      "tag": "forge:milk"
+    }
+  ],
+  "needwater": false,
+  "recipe_book_tab": "drinks",
+  "result": {
+    "item": "vampiresdelight:orchid_tea"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "vampiresdelight:blood_dough"
+  },
+  "result": "vampiresdelight:blood_bagel"
+}

@@ -147,6 +147,6 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
                 TextUtils.addFoodEffectTooltip(stack, tooltip, 1.0F);
             }
         }
-        VDTextUtils.addFactionFoodToolTips(tooltip, VampirismMod.proxy.getClientPlayer(), "VAMPIRE");
+        VDTextUtils.addFactionFoodToolTips(tooltip, VampirismMod.proxy.getClientPlayer(), VReference.VAMPIRE_FACTION);
     }
 }

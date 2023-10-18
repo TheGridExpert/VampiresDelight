@@ -14,6 +14,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.FarmersDelight;
+import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.item.FuelBlockItem;
 
 public class VDItems {
@@ -39,6 +40,8 @@ public class VDItems {
     // Blocks
     public static final RegistryObject<Item> GARLIC_CRATE = ITEMS.register("garlic_crate",
             () -> new BlockItem(VDBlocks.GARLIC_CRATE.get(), basicItem()));
+    public static final RegistryObject<Item> ORCHID_BAG = ITEMS.register("orchid_bag",
+            () -> new BlockItem(VDBlocks.ORCHID_BAG.get(), basicItem()));
     public static final RegistryObject<Item> DARK_SPRUCE_CABINET = ITEMS.register("dark_spruce_cabinet",
             () -> new FuelBlockItem(VDBlocks.DARK_SPRUCE_CABINET.get(), basicItem(), 300));
     public static final RegistryObject<Item> CURSED_SPRUCE_CABINET = ITEMS.register("cursed_spruce_cabinet",
@@ -55,10 +58,16 @@ public class VDItems {
             () -> new HunterConsumableItem(foodItem(VDFoodValues.GRILLED_GARLIC).tab(FarmersDelight.CREATIVE_TAB)));
     public static final RegistryObject<Item> ORCHID_TEA = ITEMS.register("orchid_tea",
             () -> new OrchidTeaItem(drinkItem()));
+    public static final RegistryObject<Item> ORCHID_PETALS = ITEMS.register("orchid_petals", () -> new Item(basicItem()));
     public static final RegistryObject<Item> HEART_PIECES = ITEMS.register("heart_pieces",
             () -> new VampireConsumableItem(VDFoodValues.HEART_PIECES, VDFoodValues.NASTY));
     public static final RegistryObject<Item> HUMAN_EYE = ITEMS.register("human_eye",
             () -> new VampireConsumableItem(VDFoodValues.HUMAN_EYE, VDFoodValues.NASTY));
+    public static final RegistryObject<Item> BLOOD_DOUGH = ITEMS.register("blood_dough",
+            () -> new VampireConsumableItem(VDFoodValues.BLOOD_DOUGH, VDFoodValues.NASTY,
+                    new MobEffectInstance(MobEffects.HUNGER, 300, 0), false));
+    public static final RegistryObject<Item> BLOOD_BAGEL = ITEMS.register("blood_bagel",
+            () -> new VampireConsumableItem(VDFoodValues.BLOOD_BAGEL, VDFoodValues.NASTY));
 
     // Sweets
     public static final RegistryObject<Item> CURSED_CUPCAKE = ITEMS.register("cursed_cupcake",
@@ -76,8 +85,6 @@ public class VDItems {
             () -> new VampireConsumableItem(VDFoodValues.HEARTY_PATTY, VDFoodValues.NASTY));
     public static final RegistryObject<Item> HARDTACK = ITEMS.register("hardtack",
             () -> new HardtackItem(bowlFoodItem(VDFoodValues.HARDTACK)));
-    public static final RegistryObject<Item> HARDTACK_WITH_JAM = ITEMS.register("hardtack_with_jam",
-            () -> new HardtackItem(bowlFoodItem(VDFoodValues.HARDTACK_WITH_JAM)));
 
     // Soups and Stews
     public static final RegistryObject<Item> GARLIC_SOUP = ITEMS.register("garlic_soup",

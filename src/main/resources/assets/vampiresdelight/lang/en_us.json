@@ -1,5 +1,6 @@
 {
   "block.vampiresdelight.garlic_crate": "Garlic Crate",
+  "block.vampiresdelight.orchid_bag": "Orchid Bag",
   "block.vampiresdelight.wild_garlic": "Wild Garlic",
   "block.vampiresdelight.dark_spruce_cabinet": "Dark Spruce Cabinet",
   "block.vampiresdelight.cursed_spruce_cabinet": "Cursed Spruce Cabinet",
@@ -11,8 +12,11 @@
 
   "item.vampiresdelight.grilled_garlic": "Grilled Garlic",
   "item.vampiresdelight.orchid_tea": "Orchid Tea",
+  "item.vampiresdelight.orchid_petals": "Orchid Petals",
   "item.vampiresdelight.heart_pieces": "Heart Pieces",
   "item.vampiresdelight.human_eye": "Human Eye",
+  "item.vampiresdelight.blood_dough": "Blood Dough",
+  "item.vampiresdelight.blood_bagel": "Blood Bagel",
   "item.vampiresdelight.cursed_cupcake": "Cursed Cupcake",
   "item.vampiresdelight.eye_toast": "Eye Toast",
   "item.vampiresdelight.hearty_patty": "Hearty Patty",

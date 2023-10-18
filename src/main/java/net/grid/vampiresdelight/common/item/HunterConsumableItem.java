@@ -111,6 +111,6 @@ public class HunterConsumableItem extends Item implements IFactionExclusiveItem 
                 TextUtils.addFoodEffectTooltip(stack, tooltip, 1.0F);
             }
         }
-        VDTextUtils.addFactionFoodToolTips(tooltip, VampirismMod.proxy.getClientPlayer(), "HUNTER");
+        VDTextUtils.addFactionFoodToolTips(tooltip, VampirismMod.proxy.getClientPlayer(), VReference.HUNTER_FACTION);
     }
 }

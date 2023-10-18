@@ -8,10 +8,15 @@
   "result": [
     {
       "count": 2,
-      "item": "minecraft:magenta_dye"
+      "item": "vampiresdelight:orchid_petals"
     },
     {
       "chance": 0.75,
+      "count": 2,
+      "item": "minecraft:magenta_dye"
+    },
+    {
+      "chance": 0.3,
       "item": "vampirism:cursed_roots"
     }
   ],

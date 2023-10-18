@@ -1,4 +1,6 @@
-// 1.19.2	2023-09-13T21:42:23.148001	Item Models: vampiresdelight
+// 1.19.2	2023-10-18T15:46:25.812726	Item Models: vampiresdelight
+968807695594b87f6bc48bdaffd3da874c73c4cf assets/vampiresdelight/models/item/blood_bagel.json
+53dcc4aed24d668cf1244db6e7e06f0d803eae83 assets/vampiresdelight/models/item/blood_dough.json
 170a9af502f3e985c770ec149cb0337ff0bfae35 assets/vampiresdelight/models/item/blood_pie.json
 b6714066f1bfb0f715d2c7d32d3e8d36251c247b assets/vampiresdelight/models/item/blood_pie_slice.json
 a187a667f1fe16de9316d8a684a970a955525333 assets/vampiresdelight/models/item/borscht.json
@@ -13,6 +15,8 @@ bd6d335173376c7a2fbac5fc6c337e941d7f8e33 assets/vampiresdelight/models/item/garl
 6f32b9086fd827abb8c96f0cabffe0f63736890d assets/vampiresdelight/models/item/heart_pieces.json
 e992e6049a4938c71103c9e23a1a5fac57ee6fbc assets/vampiresdelight/models/item/hearty_patty.json
 dc62e6626fa37113d9b3707e353dc0917bc41c0e assets/vampiresdelight/models/item/human_eye.json
+283e5c9845c009cd055c8b3000ba55af57755fd0 assets/vampiresdelight/models/item/orchid_bag.json
+12c2773ab420d50f9812edfd9b187e4dba1b9955 assets/vampiresdelight/models/item/orchid_petals.json
 74744a30af05fe5754239b7c503ba7ede8cc3c4a assets/vampiresdelight/models/item/weird_jelly.json
 de080f4ed988f0bcd49e49bc77b59078dd06dd6f assets/vampiresdelight/models/item/weird_jelly_block.json
 fa6638d23d6c44fb09bd2eb2611645ea027909f4 assets/vampiresdelight/models/item/wild_garlic.json
