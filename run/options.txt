@@ -121,8 +121,8 @@ key_keys.vampirism.action1:key.keyboard.1:ALT
 key_keys.vampirism.action2:key.keyboard.2:ALT
 key_keys.vampirism.action3:key.keyboard.3:ALT
 key_keys.vampirism.minion_task:key.keyboard.unknown
-soundCategory_master:0.0
-soundCategory_music:1.0
+soundCategory_master:0.8891173
+soundCategory_music:0.0
 soundCategory_record:1.0
 soundCategory_weather:1.0
 soundCategory_block:1.0

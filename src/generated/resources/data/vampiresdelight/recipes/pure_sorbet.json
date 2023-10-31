@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "a": {
+      "item": "minecraft:apple"
+    },
+    "i": {
+      "item": "minecraft:ice"
+    },
+    "p": {
+      "tag": "vampirism:pure_blood"
+    },
+    "s": {
+      "item": "minecraft:sweet_berries"
+    },
+    "t": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " sa",
+    "ips",
+    "ti "
+  ],
+  "result": {
+    "item": "vampiresdelight:pure_sorbet"
+  }
+}

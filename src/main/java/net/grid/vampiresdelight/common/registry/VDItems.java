@@ -7,15 +7,13 @@ import net.grid.vampiresdelight.common.item.*;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.FarmersDelight;
-import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.item.FuelBlockItem;
+import vectorwing.farmersdelight.common.item.PopsicleItem;
 
 public class VDItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -70,6 +68,8 @@ public class VDItems {
             () -> new VampireConsumableItem(VDFoodValues.BLOOD_BAGEL, VDFoodValues.NASTY));
 
     // Sweets
+    public static final RegistryObject<Item> PURE_SORBET = ITEMS.register("pure_sorbet",
+            () -> new PopsicleItem(foodItem(VDFoodValues.PURE_SORBET)));
     public static final RegistryObject<Item> CURSED_CUPCAKE = ITEMS.register("cursed_cupcake",
             () -> new CursedCupcakeItem(VDFoodValues.CURSED_CUPCAKE, VDFoodValues.NASTY));
     public static final RegistryObject<Item> BLOOD_PIE = ITEMS.register("blood_pie",
@@ -81,8 +81,8 @@ public class VDItems {
     // Basic Meals
     public static final RegistryObject<Item> EYE_TOAST = ITEMS.register("eye_toast",
             () -> new VampireConsumableItem(VDFoodValues.EYE_TOAST, VDFoodValues.NASTY));
-    public static final RegistryObject<Item> HEARTY_PATTY = ITEMS.register("hearty_patty",
-            () -> new VampireConsumableItem(VDFoodValues.HEARTY_PATTY, VDFoodValues.NASTY));
+    public static final RegistryObject<Item> BAGEL_SANDWICH = ITEMS.register("bagel_sandwich",
+            () -> new VampireConsumableItem(VDFoodValues.BAGEL_SANDWICH, VDFoodValues.NASTY));
     public static final RegistryObject<Item> HARDTACK = ITEMS.register("hardtack",
             () -> new HardtackItem(bowlFoodItem(VDFoodValues.HARDTACK)));
 
@@ -97,5 +97,5 @@ public class VDItems {
             () -> new BlockItem(VDBlocks.WEIRD_JELLY_BLOCK.get(), basicItem().stacksTo(1)));
     public static final RegistryObject<Item> WEIRD_JELLY = ITEMS.register("weird_jelly",
             () -> new VampireConsumableItem(VDFoodValues.WEIRD_JELLY, VDFoodValues.NASTY, Items.BOWL,
-                    new MobEffectInstance(ModEffects.SUNSCREEN.get(), 300, 1), true));
+                    new MobEffectInstance(ModEffects.SUNSCREEN.get(), 200, 1), true));
 }

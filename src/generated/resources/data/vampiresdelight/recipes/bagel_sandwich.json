@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "vampiresdelight:blood_bagel"
+    },
+    {
+      "item": "farmersdelight:smoked_ham"
+    },
+    {
+      "item": "farmersdelight:fried_egg"
+    }
+  ],
+  "result": {
+    "item": "vampiresdelight:bagel_sandwich"
+  }
+}

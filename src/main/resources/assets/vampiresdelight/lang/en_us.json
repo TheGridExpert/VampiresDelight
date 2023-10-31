@@ -17,20 +17,25 @@
   "item.vampiresdelight.human_eye": "Human Eye",
   "item.vampiresdelight.blood_dough": "Blood Dough",
   "item.vampiresdelight.blood_bagel": "Blood Bagel",
+  "item.vampiresdelight.bagel_sandwich": "Bagel Sandwich",
   "item.vampiresdelight.cursed_cupcake": "Cursed Cupcake",
   "item.vampiresdelight.eye_toast": "Eye Toast",
-  "item.vampiresdelight.hearty_patty": "Hearty Patty",
   "item.vampiresdelight.hardtack": "Hardtack",
   "item.vampiresdelight.hardtack_with_jam": "Hardtack With Jam",
   "item.vampiresdelight.garlic_soup": "Garlic Soup",
   "item.vampiresdelight.borscht": "Borscht",
 
+  "effect.vampiresdelight.fog_vision": "Fog Vision",
+  "effect.vampiresdelight.fog_vision.0.desc": "Allows humans to see farther in vampire fog.",
+
   "enchantment.vampiresdelight.vampire_bite": "Vampire Bite",
-  "enchantment.vampiresdelight.vampire_bite.desc": "Heals the player proportionally to the amount of damage dealt",
+  "enchantment.vampiresdelight.vampire_bite.desc": "Heals the player proportionally to the amount of damage dealt.",
 
   "farmersdelight.tooltip.orchid_tea": "Infects With Sanguinare",
   "farmersdelight.tooltip.cursed_cupcake": "Clears Garlic Effect",
 
   "vampiresdelight.food_tier.appetizing": "Appetizing",
-  "vampiresdelight.food_tier.disgusting": "Disgusting"
+  "vampiresdelight.food_tier.disgusting": "Disgusting",
+
+  "vampiresdelight.subtitles.metal_pipe": "Metal pipe falls"
 }

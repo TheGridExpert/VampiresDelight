@@ -9,6 +9,11 @@ version = "${mod_version}-${mc_version}"
 group = 'net.grid.vampiresdelight'
 archivesBaseName = 'VampiresDelight'
 
+mixin {
+    add sourceSets.main, "vampiresdelight.refmap.json"
+    config "vampiresdelight.mixins.json"
+}
+
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
@@ -132,6 +137,9 @@ dependencies {
     implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
 
     compileOnly fg.deobf("squeek.appleskin:appleskin-forge:${appleskin_version}:api")
+
+    // Apply Mixin AP
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
 jar {

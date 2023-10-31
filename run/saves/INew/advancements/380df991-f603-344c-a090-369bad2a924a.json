@@ -5,14 +5,34 @@
     },
     "done": true
   },
+  "vampirism:main/vampire_forest": {
+    "criteria": {
+      "main": "2023-10-24 22:33:06 +0300"
+    },
+    "done": true
+  },
   "create:root": {
     "criteria": {
       "0": "2023-10-18 17:50:58 +0300"
     },
     "done": true
   },
+  "vampirism:hunter/become_hunter": {
+    "criteria": {
+      "main": "2023-10-24 22:33:50 +0300"
+    },
+    "done": true
+  },
+  "vampirism:vampire/become_vampire": {
+    "criteria": {
+      "main": "2023-10-24 22:33:56 +0300"
+    },
+    "done": true
+  },
   "minecraft:adventure/adventuring_time": {
     "criteria": {
+      "minecraft:windswept_hills": "2023-10-24 10:37:09 +0300",
+      "minecraft:beach": "2023-10-24 22:33:31 +0300",
       "minecraft:river": "2023-10-18 17:51:07 +0300",
       "minecraft:forest": "2023-10-18 17:50:08 +0300",
       "minecraft:flower_forest": "2023-10-18 17:50:37 +0300",

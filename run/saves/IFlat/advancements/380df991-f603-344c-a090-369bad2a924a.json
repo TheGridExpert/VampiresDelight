@@ -1,13 +1,7 @@
 {
-  "create:recipes/create.palettes/cut_diorite_slab_from_stone_types_diorite_stonecutting": {
+  "minecraft:recipes/building_blocks/purple_wool": {
     "criteria": {
-      "has_stone_types_diorite": "2023-08-18 13:15:27 +0300"
-    },
-    "done": true
-  },
-  "create:recipes/create.palettes/cut_diorite_brick_slab_from_stone_types_diorite_stonecutting": {
-    "criteria": {
-      "has_stone_types_diorite": "2023-08-18 13:15:27 +0300"
+      "has_white_wool": "2023-10-26 09:14:06 +0300"
     },
     "done": true
   },
@@ -35,6 +29,12 @@
     },
     "done": true
   },
+  "farmersdelight:recipes/farmersdelight/cooking/chicken_soup": {
+    "criteria": {
+      "has_any_ingredient": "2023-10-27 21:00:57 +0300"
+    },
+    "done": true
+  },
   "create:recipes/create.palettes/cut_andesite_slab_from_stone_types_andesite_stonecutting": {
     "criteria": {
       "has_stone_types_andesite": "2023-08-18 13:19:55 +0300"
@@ -53,15 +53,9 @@
     },
     "done": true
   },
-  "minecraft:recipes/building_blocks/polished_diorite_stairs_from_diorite_stonecutting": {
+  "minecraft:recipes/redstone/spruce_door": {
     "criteria": {
-      "has_diorite": "2023-08-18 13:15:27 +0300"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/stone_bricks_from_stone_stonecutting": {
-    "criteria": {
-      "has_stone": "2023-08-18 13:05:29 +0300"
+      "has_planks": "2023-10-25 23:51:42 +0300"
     },
     "done": true
   },
@@ -77,21 +71,45 @@
     },
     "done": true
   },
+  "minecraft:recipes/decorations/white_bed": {
+    "criteria": {
+      "has_white_wool": "2023-10-26 09:14:06 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/general/fire_place": {
+    "criteria": {
+      "has_logs": "2023-10-25 23:46:02 +0300"
+    },
+    "done": true
+  },
   "create:recipes/create.palettes/polished_cut_diorite_wall_from_stone_types_diorite_stonecutting": {
     "criteria": {
       "has_stone_types_diorite": "2023-08-18 13:15:27 +0300"
     },
     "done": true
   },
-  "minecraft:recipes/building_blocks/diorite_stairs_from_diorite_stonecutting": {
+  "minecraft:recipes/redstone/spruce_fence_gate": {
     "criteria": {
-      "has_diorite": "2023-08-18 13:15:27 +0300"
+      "has_planks": "2023-10-25 23:51:42 +0300"
     },
     "done": true
   },
-  "create:recipes/create.palettes/small_diorite_brick_slab_from_stone_types_diorite_stonecutting": {
+  "minecraft:recipes/decorations/crafting_table": {
     "criteria": {
-      "has_stone_types_diorite": "2023-08-18 13:15:27 +0300"
+      "has_planks": "2023-10-25 23:51:42 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/magenta_wool": {
+    "criteria": {
+      "has_white_wool": "2023-10-26 09:14:06 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/crafting/kinetics/light_gray_seat": {
+    "criteria": {
+      "has_wool": "2023-10-26 09:14:06 +0300"
     },
     "done": true
   },
@@ -107,21 +125,21 @@
     },
     "done": true
   },
-  "minecraft:recipes/building_blocks/polished_diorite_slab_from_polished_diorite_stonecutting": {
+  "minecraft:recipes/decorations/chest": {
     "criteria": {
-      "has_polished_diorite": "2023-08-18 13:15:33 +0300"
-    },
-    "done": true
-  },
-  "create:recipes/create.palettes/layered_diorite_from_stone_types_diorite_stonecutting": {
-    "criteria": {
-      "has_stone_types_diorite": "2023-08-18 13:15:27 +0300"
+      "has_lots_of_items": "2023-10-25 23:57:33 +0300"
     },
     "done": true
   },
   "minecraft:recipes/building_blocks/stone_slab_from_stone_stonecutting": {
     "criteria": {
       "has_stone": "2023-08-18 13:05:29 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/hunter/cross": {
+    "criteria": {
+      "has_planks": "2023-10-25 23:51:42 +0300"
     },
     "done": true
   },
@@ -137,6 +155,24 @@
     },
     "done": true
   },
+  "create:recipes/create.palettes/crafting/kinetics/blue_seat": {
+    "criteria": {
+      "has_wool": "2023-10-26 09:14:06 +0300"
+    },
+    "done": true
+  },
+  "vampiresdelight:recipes/farmersdelight/grilled_garlic_from_smoking": {
+    "criteria": {
+      "grilled_garlic": "2023-10-27 21:00:38 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/spruce_button": {
+    "criteria": {
+      "has_planks": "2023-10-25 23:51:42 +0300"
+    },
+    "done": true
+  },
   "create:recipes/create.palettes/cut_diorite_stairs_from_stone_types_diorite_stonecutting": {
     "criteria": {
       "has_stone_types_diorite": "2023-08-18 13:15:27 +0300"
@@ -149,27 +185,21 @@
     },
     "done": true
   },
-  "minecraft:recipes/misc/nether_brick": {
+  "farmersdelight:recipes/farmersdelight/cooking/vegetable_soup": {
     "criteria": {
-      "has_netherrack": "2023-08-18 13:05:40 +0300"
+      "has_any_ingredient": "2023-10-27 21:00:38 +0300"
     },
     "done": true
   },
-  "minecraft:recipes/building_blocks/stone_slab": {
+  "minecraft:recipes/building_blocks/cyan_wool": {
     "criteria": {
-      "has_stone": "2023-08-18 13:05:29 +0300"
+      "has_white_wool": "2023-10-26 09:14:06 +0300"
     },
     "done": true
   },
-  "minecraft:recipes/building_blocks/andesite_slab_from_andesite_stonecutting": {
+  "minecraft:recipes/misc/stick": {
     "criteria": {
-      "has_andesite": "2023-08-18 13:19:55 +0300"
-    },
-    "done": true
-  },
-  "create:recipes/create.palettes/cut_tuff_brick_stairs_from_stone_types_tuff_stonecutting": {
-    "criteria": {
-      "has_stone_types_tuff": "2023-08-18 13:19:57 +0300"
+      "has_planks": "2023-10-25 23:51:42 +0300"
     },
     "done": true
   },
@@ -191,27 +221,9 @@
     },
     "done": true
   },
-  "minecraft:recipes/tools/stone_shovel": {
+  "create:recipes/create.palettes/crafting/kinetics/yellow_seat": {
     "criteria": {
-      "has_cobblestone": "2023-08-18 13:06:09 +0300"
-    },
-    "done": true
-  },
-  "create:recipes/create.palettes/polished_cut_tuff_wall_from_stone_types_tuff_stonecutting": {
-    "criteria": {
-      "has_stone_types_tuff": "2023-08-18 13:19:57 +0300"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/mossy_cobblestone_slab": {
-    "criteria": {
-      "has_mossy_cobblestone": "2023-08-18 13:23:15 +0300"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/diorite_stairs": {
-    "criteria": {
-      "has_diorite": "2023-08-18 13:15:27 +0300"
+      "has_wool": "2023-10-26 09:14:06 +0300"
     },
     "done": true
   },
@@ -221,15 +233,15 @@
     },
     "done": true
   },
-  "create:recipes/create.palettes/cut_andesite_stairs_from_stone_types_andesite_stonecutting": {
+  "minecraft:recipes/building_blocks/gray_wool": {
     "criteria": {
-      "has_stone_types_andesite": "2023-08-18 13:19:55 +0300"
+      "has_white_wool": "2023-10-26 09:14:06 +0300"
     },
     "done": true
   },
-  "minecraft:recipes/building_blocks/andesite": {
+  "vampirism:recipes/vampirism/general/throne": {
     "criteria": {
-      "has_stone": "2023-08-18 13:15:27 +0300"
+      "has_planks": "2023-10-25 23:51:42 +0300"
     },
     "done": true
   },
@@ -269,9 +281,33 @@
     },
     "done": true
   },
+  "farmersdelight:recipes/food/cooking/rabbit_stew": {
+    "criteria": {
+      "has_any_ingredient": "2023-10-27 21:00:57 +0300"
+    },
+    "done": true
+  },
+  "vampirism:main/root": {
+    "criteria": {
+      "second": "2023-10-27 21:00:38 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/crafting/kinetics/lime_seat": {
+    "criteria": {
+      "has_wool": "2023-10-26 09:14:06 +0300"
+    },
+    "done": true
+  },
   "minecraft:recipes/building_blocks/mossy_cobblestone_stairs_from_mossy_cobblestone_stonecutting": {
     "criteria": {
       "has_mossy_cobblestone": "2023-08-18 13:23:15 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/farmersdelight/cooking/beef_stew": {
+    "criteria": {
+      "has_any_ingredient": "2023-10-27 21:00:38 +0300"
     },
     "done": true
   },
@@ -281,21 +317,21 @@
     },
     "done": true
   },
-  "create:recipes/create.palettes/polished_cut_diorite_slab_from_stone_types_diorite_stonecutting": {
-    "criteria": {
-      "has_stone_types_diorite": "2023-08-18 13:15:27 +0300"
-    },
-    "done": true
-  },
   "create:recipes/create.palettes/polished_cut_tuff_stairs_from_stone_types_tuff_stonecutting": {
     "criteria": {
       "has_stone_types_tuff": "2023-08-18 13:19:57 +0300"
     },
     "done": true
   },
-  "minecraft:recipes/redstone/stone_button": {
+  "minecraft:recipes/decorations/white_banner": {
     "criteria": {
-      "has_stone": "2023-08-18 13:05:29 +0300"
+      "has_white_wool": "2023-10-26 09:14:06 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/vampire/coffin_white": {
+    "criteria": {
+      "has_wool": "2023-10-26 09:14:06 +0300"
     },
     "done": true
   },
@@ -311,9 +347,15 @@
     },
     "done": true
   },
-  "create:recipes/create.palettes/polished_cut_andesite_stairs_from_stone_types_andesite_stonecutting": {
+  "farmersdelight:recipes/farmersdelight/cooking/vegetable_noodles": {
     "criteria": {
-      "has_stone_types_andesite": "2023-08-18 13:19:55 +0300"
+      "has_any_ingredient": "2023-10-27 21:00:57 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/vampire/altar_inspiration": {
+    "criteria": {
+      "has_planks": "2023-10-25 23:51:42 +0300"
     },
     "done": true
   },
@@ -323,15 +365,15 @@
     },
     "done": true
   },
-  "minecraft:recipes/building_blocks/polished_diorite_from_diorite_stonecutting": {
-    "criteria": {
-      "has_diorite": "2023-08-18 13:15:27 +0300"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/mossy_cobblestone_wall": {
     "criteria": {
       "has_mossy_cobblestone": "2023-08-18 13:23:15 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/crafting/kinetics/white_seat": {
+    "criteria": {
+      "has_wool": "2023-10-26 09:14:06 +0300"
     },
     "done": true
   },
@@ -371,15 +413,9 @@
     },
     "done": true
   },
-  "create:recipes/create.palettes/small_andesite_bricks_from_stone_types_andesite_stonecutting": {
+  "minecraft:recipes/building_blocks/blue_wool": {
     "criteria": {
-      "has_stone_types_andesite": "2023-08-18 13:19:55 +0300"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/diorite_wall": {
-    "criteria": {
-      "has_diorite": "2023-08-18 13:15:27 +0300"
+      "has_white_wool": "2023-10-26 09:14:06 +0300"
     },
     "done": true
   },
@@ -392,6 +428,576 @@
   "minecraft:story/mine_stone": {
     "criteria": {
       "get_stone": "2023-08-18 13:06:09 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/cut_diorite_wall_from_stone_types_diorite_stonecutting": {
+    "criteria": {
+      "has_stone_types_diorite": "2023-08-18 13:15:27 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/furnace": {
+    "criteria": {
+      "has_cobblestone": "2023-08-18 13:06:09 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/andesite_stairs": {
+    "criteria": {
+      "has_andesite": "2023-08-18 13:19:55 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/charcoal": {
+    "criteria": {
+      "has_log": "2023-10-25 23:46:02 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/spruce_planks": {
+    "criteria": {
+      "has_logs": "2023-10-25 23:46:02 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/orange_wool": {
+    "criteria": {
+      "has_white_wool": "2023-10-26 09:14:06 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/cobblestone_slab_from_cobblestone_stonecutting": {
+    "criteria": {
+      "has_cobblestone": "2023-08-18 13:06:09 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/crafting/kinetics/green_seat": {
+    "criteria": {
+      "has_wool": "2023-10-26 09:14:06 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/crafting/kinetics/red_seat": {
+    "criteria": {
+      "has_wool": "2023-10-26 09:14:06 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/small_diorite_brick_wall_from_stone_types_diorite_stonecutting": {
+    "criteria": {
+      "has_stone_types_diorite": "2023-08-18 13:15:27 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/polished_diorite_slab": {
+    "criteria": {
+      "has_polished_diorite": "2023-08-18 13:15:33 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/polished_andesite_slab_from_andesite_stonecutting": {
+    "criteria": {
+      "has_andesite": "2023-08-18 13:19:55 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/polished_cut_andesite_from_stone_types_andesite_stonecutting": {
+    "criteria": {
+      "has_stone_types_andesite": "2023-08-18 13:19:55 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/polished_andesite_from_andesite_stonecutting": {
+    "criteria": {
+      "has_andesite": "2023-08-18 13:19:55 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/small_diorite_bricks_from_stone_types_diorite_stonecutting": {
+    "criteria": {
+      "has_stone_types_diorite": "2023-08-18 13:15:27 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/crafting/kinetics/purple_seat": {
+    "criteria": {
+      "has_wool": "2023-10-26 09:14:06 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/layered_tuff_from_stone_types_tuff_stonecutting": {
+    "criteria": {
+      "has_stone_types_tuff": "2023-08-18 13:19:57 +0300"
+    },
+    "done": true
+  },
+  "vampiresdelight:recipes/farmersdelight/grilled_garlic_from_campfire_cooking": {
+    "criteria": {
+      "grilled_garlic": "2023-10-27 21:00:38 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:main/root": {
+    "criteria": {
+      "seeds": "2023-08-18 13:05:29 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/stone_brick_stairs_from_stone_stonecutting": {
+    "criteria": {
+      "has_stone": "2023-08-18 13:05:29 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/stone_hoe": {
+    "criteria": {
+      "has_cobblestone": "2023-08-18 13:06:09 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/polished_cut_diorite_from_stone_types_diorite_stonecutting": {
+    "criteria": {
+      "has_stone_types_diorite": "2023-08-18 13:15:27 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/spruce_fence": {
+    "criteria": {
+      "has_planks": "2023-10-25 23:51:42 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/small_andesite_brick_stairs_from_stone_types_andesite_stonecutting": {
+    "criteria": {
+      "has_stone_types_andesite": "2023-08-18 13:19:55 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/baked_potato_from_smoking": {
+    "criteria": {
+      "has_potato": "2023-10-27 21:00:38 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/crafting/kinetics/light_blue_seat": {
+    "criteria": {
+      "has_wool": "2023-10-26 09:14:06 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/alchemy_table": {
+    "criteria": {
+      "has_planks": "2023-10-25 23:51:42 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/cut_andesite_brick_slab_from_stone_types_andesite_stonecutting": {
+    "criteria": {
+      "has_stone_types_andesite": "2023-08-18 13:19:55 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/baked_potato": {
+    "criteria": {
+      "has_potato": "2023-10-27 21:00:38 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/white_carpet": {
+    "criteria": {
+      "has_white_wool": "2023-10-26 09:14:06 +0300"
+    },
+    "done": true
+  },
+  "vampiresdelight:recipes/farmersdelight/cooking/garlic_soup": {
+    "criteria": {
+      "has_any_ingredient": "2023-10-27 21:00:38 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/farmersdelight/oak_cabinet": {
+    "criteria": {
+      "has_oak_trapdoor": "2023-10-25 23:46:14 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/spruce_stairs": {
+    "criteria": {
+      "has_planks": "2023-10-25 23:51:42 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/polished_diorite_stairs_from_polished_diorite_stonecutting": {
+    "criteria": {
+      "has_polished_diorite": "2023-08-18 13:15:33 +0300"
+    },
+    "done": true
+  },
+  "create:root": {
+    "criteria": {
+      "0": "2023-08-18 13:05:29 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/tuff_pillar_from_stone_types_tuff_stonecutting": {
+    "criteria": {
+      "has_stone_types_tuff": "2023-08-18 13:19:57 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/polished_diorite_stairs": {
+    "criteria": {
+      "has_polished_diorite": "2023-08-18 13:15:33 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/small_diorite_brick_stairs_from_stone_types_diorite_stonecutting": {
+    "criteria": {
+      "has_stone_types_diorite": "2023-08-18 13:15:27 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/cut_andesite_brick_wall_from_stone_types_andesite_stonecutting": {
+    "criteria": {
+      "has_stone_types_andesite": "2023-08-18 13:19:55 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/cut_tuff_stairs_from_stone_types_tuff_stonecutting": {
+    "criteria": {
+      "has_stone_types_tuff": "2023-08-18 13:19:57 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/anvil": {
+    "criteria": {
+      "has_iron_block": "2023-08-18 13:25:39 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/gold_ingot_from_gold_block": {
+    "criteria": {
+      "has_gold_block": "2023-08-18 13:07:13 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/baked_potato_from_campfire_cooking": {
+    "criteria": {
+      "has_potato": "2023-10-27 21:00:38 +0300"
+    },
+    "done": true
+  },
+  "vampiresdelight:recipes/vampirism/garlic_from_crate": {
+    "criteria": {
+      "has_garlic_crate": "2023-10-25 23:50:05 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/cut_andesite_from_stone_types_andesite_stonecutting": {
+    "criteria": {
+      "has_stone_types_andesite": "2023-08-18 13:19:55 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/cut_diorite_slab_from_stone_types_diorite_stonecutting": {
+    "criteria": {
+      "has_stone_types_diorite": "2023-08-18 13:15:27 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/cut_diorite_brick_slab_from_stone_types_diorite_stonecutting": {
+    "criteria": {
+      "has_stone_types_diorite": "2023-08-18 13:15:27 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/spruce_sign": {
+    "criteria": {
+      "has_planks": "2023-10-25 23:51:42 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/lime_wool": {
+    "criteria": {
+      "has_white_wool": "2023-10-26 09:14:06 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/polished_diorite_stairs_from_diorite_stonecutting": {
+    "criteria": {
+      "has_diorite": "2023-08-18 13:15:27 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/black_wool": {
+    "criteria": {
+      "has_white_wool": "2023-10-26 09:14:06 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/stone_bricks_from_stone_stonecutting": {
+    "criteria": {
+      "has_stone": "2023-08-18 13:05:29 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/crafting/kinetics/gray_seat": {
+    "criteria": {
+      "has_wool": "2023-10-26 09:14:06 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/green_wool": {
+    "criteria": {
+      "has_white_wool": "2023-10-26 09:14:06 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/farmersdelight/cooking/fried_rice": {
+    "criteria": {
+      "has_any_ingredient": "2023-10-27 21:00:38 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/diorite_stairs_from_diorite_stonecutting": {
+    "criteria": {
+      "has_diorite": "2023-08-18 13:15:27 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/brown_wool": {
+    "criteria": {
+      "has_white_wool": "2023-10-26 09:14:06 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/small_diorite_brick_slab_from_stone_types_diorite_stonecutting": {
+    "criteria": {
+      "has_stone_types_diorite": "2023-08-18 13:15:27 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/vampire/garlic_finder": {
+    "criteria": {
+      "has_garlic": "2023-10-27 21:00:38 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/polished_diorite_slab_from_polished_diorite_stonecutting": {
+    "criteria": {
+      "has_polished_diorite": "2023-08-18 13:15:33 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/layered_diorite_from_stone_types_diorite_stonecutting": {
+    "criteria": {
+      "has_stone_types_diorite": "2023-08-18 13:15:27 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/farmersdelight/cooking/baked_cod_stew": {
+    "criteria": {
+      "has_any_ingredient": "2023-10-27 21:00:38 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/painting": {
+    "criteria": {
+      "has_wool": "2023-10-26 09:14:06 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/farmersdelight/cooking/ratatouille": {
+    "criteria": {
+      "has_any_ingredient": "2023-10-27 21:00:38 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/nether_brick": {
+    "criteria": {
+      "has_netherrack": "2023-08-18 13:05:40 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/general/altar_cleansing": {
+    "criteria": {
+      "has_vampire_book": "2023-10-25 23:51:42 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/stone_slab": {
+    "criteria": {
+      "has_stone": "2023-08-18 13:05:29 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/andesite_slab_from_andesite_stonecutting": {
+    "criteria": {
+      "has_andesite": "2023-08-18 13:19:55 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/cut_tuff_brick_stairs_from_stone_types_tuff_stonecutting": {
+    "criteria": {
+      "has_stone_types_tuff": "2023-08-18 13:19:57 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/crafting/kinetics/cyan_seat": {
+    "criteria": {
+      "has_wool": "2023-10-26 09:14:06 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/light_blue_wool": {
+    "criteria": {
+      "has_white_wool": "2023-10-26 09:14:06 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/stone_shovel": {
+    "criteria": {
+      "has_cobblestone": "2023-08-18 13:06:09 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:main/get_fd_seed": {
+    "criteria": {
+      "onion": "2023-10-27 21:00:38 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/polished_cut_tuff_wall_from_stone_types_tuff_stonecutting": {
+    "criteria": {
+      "has_stone_types_tuff": "2023-08-18 13:19:57 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/mossy_cobblestone_slab": {
+    "criteria": {
+      "has_mossy_cobblestone": "2023-08-18 13:23:15 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/diorite_stairs": {
+    "criteria": {
+      "has_diorite": "2023-08-18 13:15:27 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/spruce_slab": {
+    "criteria": {
+      "has_planks": "2023-10-25 23:51:42 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/crafting/kinetics/brown_seat": {
+    "criteria": {
+      "has_wool": "2023-10-26 09:14:06 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/crafting/kinetics/magenta_seat": {
+    "criteria": {
+      "has_wool": "2023-10-26 09:14:06 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/general/vampire_rack": {
+    "criteria": {
+      "has_planks": "2023-10-25 23:51:42 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/cut_andesite_stairs_from_stone_types_andesite_stonecutting": {
+    "criteria": {
+      "has_stone_types_andesite": "2023-08-18 13:19:55 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/andesite": {
+    "criteria": {
+      "has_stone": "2023-08-18 13:15:27 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/crafting/kinetics/black_seat": {
+    "criteria": {
+      "has_wool": "2023-10-26 09:14:06 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/polished_cut_diorite_slab_from_stone_types_diorite_stonecutting": {
+    "criteria": {
+      "has_stone_types_diorite": "2023-08-18 13:15:27 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/stone_button": {
+    "criteria": {
+      "has_stone": "2023-08-18 13:05:29 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/polished_cut_andesite_stairs_from_stone_types_andesite_stonecutting": {
+    "criteria": {
+      "has_stone_types_andesite": "2023-08-18 13:19:55 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/spruce_pressure_plate": {
+    "criteria": {
+      "has_planks": "2023-10-25 23:51:42 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/yellow_wool": {
+    "criteria": {
+      "has_white_wool": "2023-10-26 09:14:06 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/crafting/kinetics/orange_seat": {
+    "criteria": {
+      "has_wool": "2023-10-26 09:14:06 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/farmersdelight/cooking/fish_stew": {
+    "criteria": {
+      "has_any_ingredient": "2023-10-27 21:00:38 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/polished_diorite_from_diorite_stonecutting": {
+    "criteria": {
+      "has_diorite": "2023-08-18 13:15:27 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/spruce_window": {
+    "criteria": {
+      "has_ingredient": "2023-10-25 23:51:42 +0300"
+    },
+    "done": true
+  },
+  "vampiresdelight:recipes/farmersdelight/garlic_crate": {
+    "criteria": {
+      "has_garlic": "2023-10-27 21:00:38 +0300"
+    },
+    "done": true
+  },
+  "create:recipes/create.palettes/small_andesite_bricks_from_stone_types_andesite_stonecutting": {
+    "criteria": {
+      "has_stone_types_andesite": "2023-08-18 13:19:55 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/diorite_wall": {
+    "criteria": {
+      "has_diorite": "2023-08-18 13:15:27 +0300"
     },
     "done": true
   },
@@ -413,15 +1019,9 @@
     },
     "done": true
   },
-  "create:recipes/create.palettes/cut_diorite_wall_from_stone_types_diorite_stonecutting": {
+  "vampiresdelight:recipes/farmersdelight/grilled_garlic": {
     "criteria": {
-      "has_stone_types_diorite": "2023-08-18 13:15:27 +0300"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/furnace": {
-    "criteria": {
-      "has_cobblestone": "2023-08-18 13:06:09 +0300"
+      "grilled_garlic": "2023-10-27 21:00:38 +0300"
     },
     "done": true
   },
@@ -455,27 +1055,15 @@
     },
     "done": false
   },
-  "minecraft:recipes/building_blocks/andesite_stairs": {
-    "criteria": {
-      "has_andesite": "2023-08-18 13:19:55 +0300"
-    },
-    "done": true
-  },
   "create:recipes/create.palettes/small_andesite_brick_wall_from_stone_types_andesite_stonecutting": {
     "criteria": {
       "has_stone_types_andesite": "2023-08-18 13:19:55 +0300"
     },
     "done": true
   },
-  "minecraft:recipes/building_blocks/cobblestone_slab_from_cobblestone_stonecutting": {
+  "minecraft:recipes/decorations/composter": {
     "criteria": {
-      "has_cobblestone": "2023-08-18 13:06:09 +0300"
-    },
-    "done": true
-  },
-  "create:recipes/create.palettes/small_diorite_brick_wall_from_stone_types_diorite_stonecutting": {
-    "criteria": {
-      "has_stone_types_diorite": "2023-08-18 13:15:27 +0300"
+      "has_wood_slab": "2023-10-25 23:46:27 +0300"
     },
     "done": true
   },
@@ -497,39 +1085,21 @@
     },
     "done": true
   },
-  "minecraft:recipes/building_blocks/polished_diorite_slab": {
-    "criteria": {
-      "has_polished_diorite": "2023-08-18 13:15:33 +0300"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/cobblestone_wall": {
     "criteria": {
       "has_cobblestone": "2023-08-18 13:06:09 +0300"
     },
     "done": true
   },
-  "minecraft:recipes/building_blocks/polished_andesite_slab_from_andesite_stonecutting": {
+  "minecraft:recipes/decorations/barrel": {
     "criteria": {
-      "has_andesite": "2023-08-18 13:19:55 +0300"
+      "has_wood_slab": "2023-10-25 23:46:27 +0300"
     },
     "done": true
   },
-  "create:recipes/create.palettes/polished_cut_andesite_from_stone_types_andesite_stonecutting": {
+  "vampirism:recipes/food/general/garlic_bread": {
     "criteria": {
-      "has_stone_types_andesite": "2023-08-18 13:19:55 +0300"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/polished_andesite_from_andesite_stonecutting": {
-    "criteria": {
-      "has_andesite": "2023-08-18 13:19:55 +0300"
-    },
-    "done": true
-  },
-  "create:recipes/create.palettes/small_diorite_bricks_from_stone_types_diorite_stonecutting": {
-    "criteria": {
-      "has_stone_types_diorite": "2023-08-18 13:15:27 +0300"
+      "has_bread": "2023-10-27 21:00:36 +0300"
     },
     "done": true
   },
@@ -539,9 +1109,9 @@
     },
     "done": true
   },
-  "create:recipes/create.palettes/layered_tuff_from_stone_types_tuff_stonecutting": {
+  "create:recipes/create.palettes/crafting/kinetics/pink_seat": {
     "criteria": {
-      "has_stone_types_tuff": "2023-08-18 13:19:57 +0300"
+      "has_wool": "2023-10-26 09:14:06 +0300"
     },
     "done": true
   },
@@ -581,33 +1151,21 @@
     },
     "done": true
   },
-  "farmersdelight:main/root": {
+  "farmersdelight:recipes/farmersdelight/onion_crate": {
     "criteria": {
-      "seeds": "2023-08-18 13:05:29 +0300"
+      "has_onion": "2023-10-27 21:00:38 +0300"
     },
     "done": true
   },
-  "minecraft:recipes/building_blocks/stone_brick_stairs_from_stone_stonecutting": {
+  "vampirism:recipes/vampirism/alchemy_table/plant_oil": {
     "criteria": {
-      "has_stone": "2023-08-18 13:05:29 +0300"
+      "has_wheat_seeds": "2023-10-27 21:00:36 +0300"
     },
     "done": true
   },
-  "minecraft:recipes/tools/stone_hoe": {
+  "minecraft:recipes/transportation/carrot_on_a_stick": {
     "criteria": {
-      "has_cobblestone": "2023-08-18 13:06:09 +0300"
-    },
-    "done": true
-  },
-  "create:recipes/create.palettes/polished_cut_diorite_from_stone_types_diorite_stonecutting": {
-    "criteria": {
-      "has_stone_types_diorite": "2023-08-18 13:15:27 +0300"
-    },
-    "done": true
-  },
-  "create:recipes/create.palettes/small_andesite_brick_stairs_from_stone_types_andesite_stonecutting": {
-    "criteria": {
-      "has_stone_types_andesite": "2023-08-18 13:19:55 +0300"
+      "has_carrot": "2023-10-27 21:00:57 +0300"
     },
     "done": true
   },
@@ -617,9 +1175,21 @@
     },
     "done": true
   },
-  "create:recipes/create.palettes/cut_andesite_brick_slab_from_stone_types_andesite_stonecutting": {
+  "minecraft:recipes/building_blocks/pink_wool": {
     "criteria": {
-      "has_stone_types_andesite": "2023-08-18 13:19:55 +0300"
+      "has_white_wool": "2023-10-26 09:14:06 +0300"
+    },
+    "done": true
+  },
+  "vampirism:recipes/vampirism/hunter/crucifix": {
+    "criteria": {
+      "planks": "2023-10-25 23:51:42 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/farmersdelight/spruce_cabinet": {
+    "criteria": {
+      "has_spruce_trapdoor": "2023-10-25 23:47:23 +0300"
     },
     "done": true
   },
@@ -635,15 +1205,33 @@
     },
     "done": true
   },
+  "minecraft:recipes/redstone/spruce_trapdoor": {
+    "criteria": {
+      "has_planks": "2023-10-25 23:51:42 +0300"
+    },
+    "done": true
+  },
   "create:recipes/create.palettes/small_tuff_brick_stairs_from_stone_types_tuff_stonecutting": {
     "criteria": {
       "has_stone_types_tuff": "2023-08-18 13:19:57 +0300"
     },
     "done": true
   },
-  "minecraft:recipes/building_blocks/polished_diorite_stairs_from_polished_diorite_stonecutting": {
+  "farmersdelight:recipes/farmersdelight/cooking/dumplings": {
     "criteria": {
-      "has_polished_diorite": "2023-08-18 13:15:33 +0300"
+      "has_any_ingredient": "2023-10-27 21:00:38 +0300"
+    },
+    "done": true
+  },
+  "farmersdelight:recipes/farmersdelight/barbecue_stick": {
+    "criteria": {
+      "has_onion": "2023-10-27 21:00:38 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/stripped_spruce_wood": {
+    "criteria": {
+      "has_log": "2023-10-25 23:46:02 +0300"
     },
     "done": true
   },
@@ -653,27 +1241,9 @@
     },
     "done": true
   },
-  "create:root": {
+  "vampiresdelight:recipes/farmersdelight/cooking/borscht": {
     "criteria": {
-      "0": "2023-08-18 13:05:29 +0300"
-    },
-    "done": true
-  },
-  "create:recipes/create.palettes/tuff_pillar_from_stone_types_tuff_stonecutting": {
-    "criteria": {
-      "has_stone_types_tuff": "2023-08-18 13:19:57 +0300"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/polished_diorite_stairs": {
-    "criteria": {
-      "has_polished_diorite": "2023-08-18 13:15:33 +0300"
-    },
-    "done": true
-  },
-  "create:recipes/create.palettes/small_diorite_brick_stairs_from_stone_types_diorite_stonecutting": {
-    "criteria": {
-      "has_stone_types_diorite": "2023-08-18 13:15:27 +0300"
+      "has_any_ingredient": "2023-10-27 21:00:38 +0300"
     },
     "done": true
   },
@@ -683,15 +1253,15 @@
     },
     "done": true
   },
-  "create:recipes/create.palettes/cut_andesite_brick_wall_from_stone_types_andesite_stonecutting": {
-    "criteria": {
-      "has_stone_types_andesite": "2023-08-18 13:19:55 +0300"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/andesite_wall": {
     "criteria": {
       "has_andesite": "2023-08-18 13:19:55 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/light_gray_wool": {
+    "criteria": {
+      "has_white_wool": "2023-10-26 09:14:06 +0300"
     },
     "done": true
   },
@@ -701,9 +1271,9 @@
     },
     "done": true
   },
-  "create:recipes/create.palettes/cut_tuff_stairs_from_stone_types_tuff_stonecutting": {
+  "minecraft:recipes/building_blocks/red_wool": {
     "criteria": {
-      "has_stone_types_tuff": "2023-08-18 13:19:57 +0300"
+      "has_white_wool": "2023-10-26 09:14:06 +0300"
     },
     "done": true
   },
@@ -713,33 +1283,15 @@
     },
     "done": true
   },
-  "minecraft:recipes/decorations/anvil": {
-    "criteria": {
-      "has_iron_block": "2023-08-18 13:25:39 +0300"
-    },
-    "done": true
-  },
   "minecraft:recipes/tools/stone_axe": {
     "criteria": {
       "has_cobblestone": "2023-08-18 13:06:09 +0300"
     },
     "done": true
   },
-  "minecraft:recipes/misc/gold_ingot_from_gold_block": {
-    "criteria": {
-      "has_gold_block": "2023-08-18 13:07:13 +0300"
-    },
-    "done": true
-  },
   "minecraft:recipes/building_blocks/mossy_cobblestone_stairs": {
     "criteria": {
       "has_mossy_cobblestone": "2023-08-18 13:23:15 +0300"
-    },
-    "done": true
-  },
-  "create:recipes/create.palettes/cut_andesite_from_stone_types_andesite_stonecutting": {
-    "criteria": {
-      "has_stone_types_andesite": "2023-08-18 13:19:55 +0300"
     },
     "done": true
   },

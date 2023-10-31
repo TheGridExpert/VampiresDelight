@@ -6381,13 +6381,6 @@
     },
     "done": true
   },
-  "vampiresdelight:recipes/farmersdelight/hearty_patty": {
-    "criteria": {
-      "has_human_heart": "2023-10-09 20:23:24 +0300",
-      "has_the_recipe": "2023-10-09 20:23:24 +0300"
-    },
-    "done": true
-  },
   "create:spout": {
     "criteria": {
       "0": "2023-10-09 20:23:24 +0300"
@@ -9542,6 +9535,12 @@
     },
     "done": true
   },
+  "vampiresdelight:recipes/farmersdelight/pure_sorbet": {
+    "criteria": {
+      "has_pure_blood": "2023-10-27 22:13:51 +0300"
+    },
+    "done": true
+  },
   "minecraft:recipes/combat/shield": {
     "criteria": {
       "has_the_recipe": "2023-10-09 20:23:24 +0300",
@@ -10487,6 +10486,12 @@
   "vampirism:recipes/vampirism/general/altar_cleansing": {
     "criteria": {
       "has_vampire_book": "2023-09-09 14:22:45 +0300"
+    },
+    "done": true
+  },
+  "vampiresdelight:recipes/farmersdelight/bagel_sandwich": {
+    "criteria": {
+      "has_blood_bagel": "2023-10-27 20:30:42 +0300"
     },
     "done": true
   },

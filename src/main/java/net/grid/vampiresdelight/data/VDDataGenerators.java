@@ -19,6 +19,7 @@ public class VDDataGenerators {
         generator.addProvider(event.includeServer(), blockTags);
         generator.addProvider(event.includeServer(), new VDRecipes(generator));
         generator.addProvider(event.includeServer(), new VDItemTags(generator, blockTags, VampiresDelight.MODID, helper));
+        generator.addProvider(event.includeServer(), new VDBiomeTags(generator, VampiresDelight.MODID, helper));
 
         VDBlockStates blockStates = new VDBlockStates(generator, helper);
         generator.addProvider(event.includeClient(), blockStates);

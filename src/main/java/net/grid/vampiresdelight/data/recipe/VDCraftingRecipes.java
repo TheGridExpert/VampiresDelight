@@ -9,11 +9,14 @@ import net.minecraft.MethodsReturnNonnullByDefault;
 import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.registry.VDItems;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import vectorwing.farmersdelight.FarmersDelight;
+import net.minecraft.world.level.ItemLike;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -26,6 +29,7 @@ public class VDCraftingRecipes {
         // Crafting
         recipesBlocks(consumer);
         recipesMaterials(consumer);
+        recipesFoodstuffs(consumer);
         recipesFoodBlocks(consumer);
         recipesCraftedMeals(consumer);
         // Cutting
@@ -33,6 +37,8 @@ public class VDCraftingRecipes {
         cuttingFoods(consumer);
         cuttingFlowers(consumer);
     }
+
+    TagKey<Item> pure_blood = ModTags.Items.PURE_BLOOD;
 
     // Crafting
     private static void recipesBlocks(Consumer<FinishedRecipe> consumer) {
@@ -87,6 +93,17 @@ public class VDCraftingRecipes {
                 .requires(Items.WHEAT)
                 .unlockedBy("has_rice", InventoryChangeTrigger.TriggerInstance.hasItems(vectorwing.farmersdelight.common.registry.ModItems.RICE.get()))
                 .save(consumer);
+        ShapedRecipeBuilder.shaped(VDItems.PURE_SORBET.get(), 1)
+                .pattern(" sa")
+                .pattern("ips")
+                .pattern("ti ")
+                .define('p', ModTags.Items.PURE_BLOOD)
+                .define('s', Items.SWEET_BERRIES)
+                .define('a', Items.APPLE)
+                .define('i', Items.ICE)
+                .define('t', Items.STICK)
+                .unlockedBy("has_pure_blood", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.PURE_BLOOD_0.get()))
+                .save(consumer);
     }
 
     private static void recipesFoodBlocks(Consumer<FinishedRecipe> consumer) {
@@ -109,13 +126,11 @@ public class VDCraftingRecipes {
     }
 
     private static void recipesCraftedMeals(Consumer<FinishedRecipe> consumer) {
-        ShapelessRecipeBuilder.shapeless(VDItems.HEARTY_PATTY.get())
-                .requires(ForgeTags.BREAD)
-                .requires(ModTags.Items.HEART)
-                .requires(ForgeTags.SALAD_INGREDIENTS)
-                .requires(ForgeTags.CROPS_TOMATO)
-                .requires(ModItems.BLOOD_BOTTLE.get())
-                .unlockedBy("has_human_heart", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.HUMAN_HEART.get()))
+        ShapelessRecipeBuilder.shapeless(VDItems.BAGEL_SANDWICH.get())
+                .requires(VDItems.BLOOD_BAGEL.get())
+                .requires(vectorwing.farmersdelight.common.registry.ModItems.SMOKED_HAM.get())
+                .requires(vectorwing.farmersdelight.common.registry.ModItems.FRIED_EGG.get())
+                .unlockedBy("has_blood_bagel", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.BLOOD_BAGEL.get()))
                 .save(consumer);
         ShapelessRecipeBuilder.shapeless(VDItems.EYE_TOAST.get())
                 .requires(ForgeTags.BREAD)

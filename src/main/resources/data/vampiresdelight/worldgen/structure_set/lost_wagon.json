@@ -1,0 +1,26 @@
+{
+  "structures": [
+    {
+      "structure": "vampiresdelight:lost_wagon_1",
+      "weight": 1
+    },
+    {
+      "structure": "vampiresdelight:lost_wagon_2",
+      "weight": 1
+    },
+    {
+      "structure": "vampiresdelight:lost_wagon_3",
+      "weight": 1
+    },
+    {
+      "structure": "vampiresdelight:lost_wagon_4",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 69803261,
+    "spacing": 30,
+    "separation": 20,
+    "type": "minecraft:random_spread"
+  }
+}

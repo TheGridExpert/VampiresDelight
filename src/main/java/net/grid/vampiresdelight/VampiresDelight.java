@@ -29,6 +29,8 @@ public class VampiresDelight {
         VDItems.ITEMS.register(eventBus);
         VDEnchantments.ENCHANTMENTS.register(eventBus);
         VDBlocks.BLOCKS.register(eventBus);
+        VDEffects.EFFECTS.register(eventBus);
+        VDSounds.SOUNDS.register(eventBus);
         VDBlockEntityTypes.TILES.register(eventBus);
 
         MinecraftForge.EVENT_BUS.register(new PlayerEvents());

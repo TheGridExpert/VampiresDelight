@@ -1,7 +1,9 @@
 {
   "type": "farmersdelight:add_features_by_filter",
   "allowed_biomes": "#minecraft:is_overworld",
-  "denied_biomes": ["#forge:is_underground", "vampirism:vampire_forest"],
+  "denied_biomes": ["#forge:is_underground","minecraft:mushroom_fields","vampirism:vampire_forest"],
+  "min_temperature": 0.4,
+  "max_temperature": 0.9,
   "features": "vampiresdelight:patch_wild_garlic",
   "step": "vegetal_decoration"
 }

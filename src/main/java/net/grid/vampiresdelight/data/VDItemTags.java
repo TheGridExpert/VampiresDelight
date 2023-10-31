@@ -1,7 +1,6 @@
 package net.grid.vampiresdelight.data;
 
 import de.teamlapen.vampirism.core.ModItems;
-import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.registry.VDItems;
 import net.grid.vampiresdelight.common.tag.VDCompatibilityTags;
 import net.grid.vampiresdelight.common.tag.VDForgeTags;
@@ -34,7 +33,7 @@ public class VDItemTags extends ItemTagsProvider {
                 .add(VDItems.BLOOD_PIE_SLICE.get())
                 .add(VDItems.CURSED_CUPCAKE.get())
                 .add(VDItems.EYE_TOAST.get())
-                .add(VDItems.HEARTY_PATTY.get())
+                .add(VDItems.BAGEL_SANDWICH.get())
                 .add(VDItems.ORCHID_TEA.get())
                 .add(VDItems.WEIRD_JELLY.get())
                 .add(VDItems.WEIRD_JELLY_BLOCK.get())

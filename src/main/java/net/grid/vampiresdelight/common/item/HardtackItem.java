@@ -6,6 +6,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 
 public class HardtackItem extends ConsumableItem {
@@ -18,5 +19,10 @@ public class HardtackItem extends ConsumableItem {
         if (Helper.isHunter(consumer)) {
             consumer.addEffect(new MobEffectInstance(ModEffects.SATURATION.get(), 200));
         }
+    }
+
+    @Override
+    public int getUseDuration(@NotNull ItemStack stack) {
+        return 48;
     }
 }
