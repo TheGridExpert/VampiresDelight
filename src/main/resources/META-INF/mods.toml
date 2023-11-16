@@ -3,11 +3,11 @@ loaderVersion="[43,)"
 license="MIT"
 [[mods]]
 modId="vampiresdelight"
-version="0.1"
+version="0.0.1.0"
 displayName="Vampire's Delight"
 logoFile="logo.png"
 logoBlur=false
-credits="Maxanier, Cheaterpaul, Vectorwing"
+credits="Cheaterpaul, Maxanier, Vectorwing"
 authors="GridExpert"
 description='''
 Makes Vampirism and Farmer's Delight more compatible
