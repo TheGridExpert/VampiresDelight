@@ -14,6 +14,7 @@ import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.item.FuelBlockItem;
 import vectorwing.farmersdelight.common.item.PopsicleItem;
+import vectorwing.farmersdelight.common.item.RottenTomatoItem;
 
 public class VDItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -49,7 +50,9 @@ public class VDItems {
 
 
 
-
+    // Tools and Non-Food Stuff
+    public static final RegistryObject<Item> ALCHEMICAL_COCKTAIL = ITEMS.register("alchemical_cocktail",
+            () -> new AlchemicalCocktailItem(new Item.Properties().stacksTo(16).tab(FarmersDelight.CREATIVE_TAB)));
 
     // Foodstuffs
     public static final RegistryObject<Item> GRILLED_GARLIC = ITEMS.register("grilled_garlic",
@@ -62,7 +65,7 @@ public class VDItems {
     public static final RegistryObject<Item> HUMAN_EYE = ITEMS.register("human_eye",
             () -> new VampireConsumableItem(VDFoodValues.HUMAN_EYE, VDFoodValues.NASTY));
     public static final RegistryObject<Item> BLOOD_DOUGH = ITEMS.register("blood_dough",
-            () -> new VampireConsumableItem(VDFoodValues.BLOOD_DOUGH, VDFoodValues.NASTY,
+            () -> new VampireConsumableItem(VDFoodValues.BLOOD_DOUGH, VDFoodValues.NASTY_BLOOD_DOUGH,
                     new MobEffectInstance(MobEffects.HUNGER, 300, 0), false));
     public static final RegistryObject<Item> BLOOD_BAGEL = ITEMS.register("blood_bagel",
             () -> new VampireConsumableItem(VDFoodValues.BLOOD_BAGEL, VDFoodValues.NASTY));

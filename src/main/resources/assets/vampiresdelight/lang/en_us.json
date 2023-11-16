@@ -10,6 +10,8 @@
   "block.vampiresdelight.weird_jelly_block": "Weird Jelly",
   "item.vampiresdelight.weird_jelly": "Plate of Weird Jelly",
 
+  "item.vampiresdelight.alchemical_cocktail": "Alchemical Cocktail",
+
   "item.vampiresdelight.grilled_garlic": "Grilled Garlic",
   "item.vampiresdelight.orchid_tea": "Orchid Tea",
   "item.vampiresdelight.orchid_petals": "Orchid Petals",
@@ -18,6 +20,7 @@
   "item.vampiresdelight.blood_dough": "Blood Dough",
   "item.vampiresdelight.blood_bagel": "Blood Bagel",
   "item.vampiresdelight.bagel_sandwich": "Bagel Sandwich",
+  "item.vampiresdelight.pure_sorbet": "Pure Sorbet",
   "item.vampiresdelight.cursed_cupcake": "Cursed Cupcake",
   "item.vampiresdelight.eye_toast": "Eye Toast",
   "item.vampiresdelight.hardtack": "Hardtack",
@@ -31,11 +34,13 @@
   "enchantment.vampiresdelight.vampire_bite": "Vampire Bite",
   "enchantment.vampiresdelight.vampire_bite.desc": "Heals the player proportionally to the amount of damage dealt.",
 
-  "farmersdelight.tooltip.orchid_tea": "Infects With Sanguinare",
-  "farmersdelight.tooltip.cursed_cupcake": "Clears Garlic Effect",
+  "vampiresdelight.tooltip.orchid_tea": "Infects With Sanguinare",
+  "vampiresdelight.tooltip.cursed_cupcake": "Clears Garlic Effect",
 
   "vampiresdelight.food_tier.appetizing": "Appetizing",
   "vampiresdelight.food_tier.disgusting": "Disgusting",
 
-  "vampiresdelight.subtitles.metal_pipe": "Metal pipe falls"
+  "vampiresdelight.subtitles.metal_pipe": "Metal pipe falls",
+
+  "stat.vampiresdelight.gross_food_eaten": "Gross Food Eaten"
 }

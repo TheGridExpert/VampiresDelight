@@ -8,6 +8,7 @@ import de.teamlapen.vampirism.config.VampirismConfig;
 import de.teamlapen.vampirism.effects.SanguinareEffect;
 import de.teamlapen.vampirism.util.Helper;
 import net.grid.vampiresdelight.common.util.VDTextUtils;
+import net.grid.vampiresdelight.common.util.VDTooltipUtils;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -22,7 +23,6 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import vectorwing.farmersdelight.common.Configuration;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
 import vectorwing.farmersdelight.common.utility.TextUtils;
 
@@ -56,9 +56,9 @@ public class OrchidTeaItem extends DrinkableItem implements IFactionExclusiveIte
     @Override
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
-        MutableComponent textEmpty = TextUtils.getTranslation("tooltip." + this);
+        MutableComponent textEmpty = VDTextUtils.getTranslation("tooltip." + this);
         tooltip.add(textEmpty.withStyle(ChatFormatting.BLUE));
 
-        VDTextUtils.addFactionFoodToolTips(tooltip, VampirismMod.proxy.getClientPlayer(), VReference.VAMPIRE_FACTION);
+        VDTooltipUtils.addFactionFoodToolTips(tooltip, VampirismMod.proxy.getClientPlayer(), VReference.VAMPIRE_FACTION);
     }
 }

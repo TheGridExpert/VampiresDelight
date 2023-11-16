@@ -7,12 +7,8 @@ import de.teamlapen.vampirism.items.GarlicBreadItem;
 import de.teamlapen.vampirism.items.VampirismItemBloodFoodItem;
 import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.tag.VDTags;
-import net.grid.vampiresdelight.common.util.VDHelper;
-import net.grid.vampiresdelight.common.util.VDTextUtils;
-import net.minecraft.ChatFormatting;
+import net.grid.vampiresdelight.common.util.VDTooltipUtils;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
@@ -53,10 +49,10 @@ public class ToolTipEvents {
         Item food = event.getItemStack().getItem();
         List<Component> tooltip = event.getToolTip();
         if (food instanceof VampirismItemBloodFoodItem || food instanceof BloodBottleItem) {
-            VDTextUtils.addFactionFoodToolTips(tooltip, VampirismMod.proxy.getClientPlayer(), VReference.VAMPIRE_FACTION);
+            VDTooltipUtils.addFactionFoodToolTips(tooltip, VampirismMod.proxy.getClientPlayer(), VReference.VAMPIRE_FACTION);
         }
         if (food instanceof GarlicBreadItem) {
-            VDTextUtils.addFactionFoodToolTips(tooltip, VampirismMod.proxy.getClientPlayer(), VReference.HUNTER_FACTION);
+            VDTooltipUtils.addFactionFoodToolTips(tooltip, VampirismMod.proxy.getClientPlayer(), VReference.HUNTER_FACTION);
         }
     }
 }

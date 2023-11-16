@@ -5,6 +5,7 @@
 		"6": "vampiresdelight:block/dark_tray_leftover",
 		"particle": "vampiresdelight:block/dark_tray_leftover"
 	},
+	"render_type": "minecraft:translucent",
 	"elements": [
 		{
 			"name": "plate",

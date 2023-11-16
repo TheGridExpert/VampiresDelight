@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/VampiresDelight.main.iml" filepath="$PROJECT_DIR$/.idea/modules/VampiresDelight.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/VampiresDelight.test.iml" filepath="$PROJECT_DIR$/.idea/modules/VampiresDelight.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/net.grid.vampiresdelight.VampiresDelight.test.iml" filepath="$PROJECT_DIR$/.idea/modules/net.grid.vampiresdelight.VampiresDelight.test.iml" />
     </modules>
   </component>
 </project>

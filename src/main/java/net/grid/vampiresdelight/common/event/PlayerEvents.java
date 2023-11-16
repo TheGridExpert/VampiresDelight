@@ -3,16 +3,20 @@ package net.grid.vampiresdelight.common.event;
 import de.teamlapen.vampirism.api.EnumStrength;
 import de.teamlapen.vampirism.api.entity.vampire.IVampire;
 import de.teamlapen.vampirism.entity.player.vampire.VampirePlayer;
+import de.teamlapen.vampirism.items.GarlicBreadItem;
 import de.teamlapen.vampirism.items.VampirismItemBloodFoodItem;
 import de.teamlapen.vampirism.util.DamageHandler;
 import de.teamlapen.vampirism.util.Helper;
 import net.grid.vampiresdelight.common.item.HunterConsumableItem;
+import net.grid.vampiresdelight.common.item.VampireConsumableItem;
 import net.grid.vampiresdelight.common.registry.VDEffects;
+import net.grid.vampiresdelight.common.registry.VDStats;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 import net.minecraftforge.event.entity.living.MobEffectEvent;
@@ -33,19 +37,24 @@ public class PlayerEvents {
     public void onItemUse(LivingEntityUseItemEvent.@NotNull Finish event) {
         if (Helper.isVampire(event.getEntity())) {
             if (!event.getEntity().getCommandSenderWorld().isClientSide) {
-                if (event.getItem().getItem() instanceof HunterConsumableItem) {
+                Item item = event.getItem().getItem();
+                if (item instanceof HunterConsumableItem) {
                     if (event.getEntity() instanceof IVampire) {
                         DamageHandler.affectVampireGarlicDirect((IVampire) event.getEntity(), EnumStrength.MEDIUM);
-                    } else if (event.getEntity() instanceof Player) {
+                    } else if (event.getEntity() instanceof Player player) {
                         VampirePlayer.getOpt((Player) event.getEntity()).ifPresent(vampire -> DamageHandler.affectVampireGarlicDirect(vampire, EnumStrength.MEDIUM));
+                        player.awardStat(VDStats.gross_food_eaten);
                     }
                 }
-                if (event.getItem().getItem() instanceof VampirismItemBloodFoodItem) {
-                    if (!(event.getEntity() instanceof IVampire)) {
-                        RandomSource randomSource = event.getEntity().getRandom();
-                        if (randomSource.nextInt(2) < 1)
-                            event.getEntity().addEffect(new MobEffectInstance(MobEffects.HUNGER, 400, 0));
-                    }
+                if (item instanceof GarlicBreadItem && event.getEntity() instanceof Player player) {
+                    player.awardStat(VDStats.gross_food_eaten);
+                }
+            }
+        } else if (Helper.isHunter(event.getEntity())) {
+            if (!event.getEntity().getCommandSenderWorld().isClientSide) {
+                Item item = event.getItem().getItem();
+                if ((item instanceof VampirismItemBloodFoodItem || item instanceof VampireConsumableItem) && event.getEntity() instanceof Player player) {
+                    player.awardStat(VDStats.gross_food_eaten);
                 }
             }
         }

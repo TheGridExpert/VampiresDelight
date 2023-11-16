@@ -2,7 +2,9 @@
   "placeholder.metal_pipe": {
     "subtitle": "vampiresdelight.subtitles.metal_pipe",
     "sounds": [
-      "vampiresdelight:metal_pipe"
+      {
+        "name": "vampiresdelight:metal_pipe"
+      }
     ]
   },
   "world.triangle": {

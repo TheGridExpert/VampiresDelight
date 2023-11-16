@@ -9,6 +9,7 @@
 		"6": "vampiresdelight:block/dark_tray_leftover",
 		"particle": "vampiresdelight:block/weird_jelly_top"
 	},
+	"render_type": "minecraft:translucent",
 	"elements": [
 		{
 			"name": "plate",

@@ -17,4 +17,5 @@ public class VDSounds {
     // World
     public static final RegistryObject<SoundEvent> TRIANGLE = SOUNDS.register("world.triangle",
             () -> new SoundEvent(new ResourceLocation(VampiresDelight.MODID, "world.triangle")));
+    // https://pixabay.com/sound-effects/triangle-29016/
 }

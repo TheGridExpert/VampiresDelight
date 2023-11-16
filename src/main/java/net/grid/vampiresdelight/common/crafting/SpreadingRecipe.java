@@ -79,12 +79,14 @@ public class SpreadingRecipe implements Recipe<RecipeWrapper> {
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return VDRecipeSerializers.SPREADING.get();
+        //return VDRecipeSerializers.SPREADING.get();
+        return null;
     }
 
     @Override
     public RecipeType<?> getType() {
-        return VDRecipeTypes.SPREADING.get();
+        //return VDRecipeTypes.SPREADING.get();
+        return null;
     }
 
     public static class Serializer implements RecipeSerializer<SpreadingRecipe> {

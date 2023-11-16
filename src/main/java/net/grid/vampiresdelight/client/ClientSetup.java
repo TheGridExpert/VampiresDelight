@@ -8,15 +8,15 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 public class ClientSetup {
     public static void init(final FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
-            registerRenderLayers();
+            //registerRenderLayers();
             registerModIntegrations();
         });
     }
-
+    /*
     public static void registerRenderLayers() {
         ItemBlockRenderTypes.setRenderLayer(VDBlocks.WEIRD_JELLY_BLOCK.get(), RenderType.translucent());
     }
-
+     */
     public static void registerModIntegrations() {
         /**
         if (ModList.get().isLoaded("appleskin")) {
