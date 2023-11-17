@@ -52,7 +52,7 @@ public class VDItems {
 
     // Tools and Non-Food Stuff
     public static final RegistryObject<Item> ALCHEMICAL_COCKTAIL = ITEMS.register("alchemical_cocktail",
-            () -> new AlchemicalCocktailItem(new Item.Properties().stacksTo(16).tab(FarmersDelight.CREATIVE_TAB)));
+            () -> new AlchemicalCocktailItem(new Item.Properties().stacksTo(8).tab(FarmersDelight.CREATIVE_TAB)));
 
     // Foodstuffs
     public static final RegistryObject<Item> GRILLED_GARLIC = ITEMS.register("grilled_garlic",

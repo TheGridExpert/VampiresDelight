@@ -3,6 +3,7 @@ package net.grid.vampiresdelight.data;
 import net.grid.vampiresdelight.data.recipe.VDCookingRecipes;
 import net.grid.vampiresdelight.data.recipe.VDCraftingRecipes;
 import net.grid.vampiresdelight.data.recipe.VDSmeltingRecipes;
+import net.grid.vampiresdelight.data.recipe.VDVampirismRecipes;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -23,5 +24,6 @@ public class VDRecipes extends RecipeProvider {
         VDCraftingRecipes.register(consumer);
         VDSmeltingRecipes.register(consumer);
         VDCookingRecipes.register(consumer);
+        VDVampirismRecipes.register(consumer);
     }
 }

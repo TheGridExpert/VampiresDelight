@@ -115,7 +115,7 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
         if (!Helper.isVampire(entityLiving)) {
             entityLiving.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 20 * 20));
         } else {
-            entityLiving.addEffect(mobEffectInstance);
+            if (mobEffectInstance != null) entityLiving.addEffect(mobEffectInstance);
         }
 
         if (!stack.isEdible()) {
