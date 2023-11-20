@@ -88,9 +88,9 @@ public class VDCraftingRecipes {
     private static void recipesFoodstuffs(Consumer<FinishedRecipe> consumer) {
         ShapelessRecipeBuilder.shapeless(VDItems.BLOOD_DOUGH.get(), 3)
                 .requires(ModItems.BLOOD_BOTTLE.get())
-                .requires(Items.WHEAT)
-                .requires(Items.WHEAT)
-                .requires(Items.WHEAT)
+                .requires(ForgeTags.CROPS_RICE)
+                .requires(ForgeTags.CROPS_RICE)
+                .requires(ForgeTags.CROPS_RICE)
                 .unlockedBy("has_rice", InventoryChangeTrigger.TriggerInstance.hasItems(vectorwing.farmersdelight.common.registry.ModItems.RICE.get()))
                 .save(consumer);
         ShapedRecipeBuilder.shaped(VDItems.PURE_SORBET.get(), 1)
@@ -169,7 +169,7 @@ public class VDCraftingRecipes {
                 .addResultWithChance(Items.GREEN_DYE, 0.25F)
                 .build(consumer);
         VDCuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModBlocks.VAMPIRE_ORCHID.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), VDItems.ORCHID_PETALS.get(), 2)
-                .addResultWithChance(Items.MAGENTA_DYE, 0.75F, 2)
+                .addResultWithChance(VDItems.ORCHID_SEEDS.get(), 0.8F, 2)
                 .addResultWithChance(ModBlocks.CURSED_ROOTS.get(), 0.30F, 1)
                 .build(consumer);
     }

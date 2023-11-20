@@ -1,20 +1,26 @@
 package net.grid.vampiresdelight.common.registry;
 
+import de.teamlapen.vampirism.core.ModBlocks;
 import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.block.BloodPieBlock;
+import net.grid.vampiresdelight.common.block.VampireOrchidCropBlock;
 import net.grid.vampiresdelight.common.block.WeirdJellyBlock;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.GlassBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 import vectorwing.farmersdelight.common.block.HoneyGlazedHamBlock;
+import vectorwing.farmersdelight.common.block.OnionBlock;
 import vectorwing.farmersdelight.common.block.WildCropBlock;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
@@ -42,6 +48,10 @@ public class VDBlocks {
     // Wild Crops
     public static final RegistryObject<Block> WILD_GARLIC = BLOCKS.register("wild_garlic",
             () -> new WildCropBlock(MobEffects.BLINDNESS, 8, Block.Properties.copy(Blocks.TALL_GRASS)));
+
+    // Crops
+    public static final RegistryObject<Block> VAMPIRE_ORCHID_CROP = BLOCKS.register("vampire_orchid_crop",
+            () -> new VampireOrchidCropBlock(Block.Properties.of(Material.PLANT).color(MaterialColor.TERRACOTTA_MAGENTA).instabreak().noCollission().sound(SoundType.CROP)));
 
     // Feasts
     public static final RegistryObject<Block> WEIRD_JELLY_BLOCK = BLOCKS.register("weird_jelly_block",
