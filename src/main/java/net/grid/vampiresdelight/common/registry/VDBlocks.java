@@ -1,28 +1,17 @@
 package net.grid.vampiresdelight.common.registry;
 
-import de.teamlapen.vampirism.core.ModBlocks;
 import net.grid.vampiresdelight.VampiresDelight;
-import net.grid.vampiresdelight.common.block.BloodPieBlock;
-import net.grid.vampiresdelight.common.block.VampireOrchidCropBlock;
-import net.grid.vampiresdelight.common.block.WeirdJellyBlock;
+import net.grid.vampiresdelight.common.block.*;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.GlassBlock;
 import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
-import net.minecraft.world.level.material.PushReaction;
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import vectorwing.farmersdelight.common.block.CabinetBlock;
-import vectorwing.farmersdelight.common.block.HoneyGlazedHamBlock;
-import vectorwing.farmersdelight.common.block.OnionBlock;
-import vectorwing.farmersdelight.common.block.WildCropBlock;
-import vectorwing.farmersdelight.common.registry.ModItems;
+import vectorwing.farmersdelight.common.block.*;
 
 public class VDBlocks {
     public static final DeferredRegister<Block> BLOCKS =
@@ -40,6 +29,10 @@ public class VDBlocks {
             () -> new CabinetBlock(Block.Properties.copy(Blocks.BARREL)));
     public static final RegistryObject<Block> CURSED_SPRUCE_CABINET = BLOCKS.register("cursed_spruce_cabinet",
             () -> new CabinetBlock(Block.Properties.copy(Blocks.BARREL)));
+
+    // Farming
+    public static final RegistryObject<Block> CURSED_FARMLAND = BLOCKS.register("cursed_farmland",
+            () -> new CursedFarmlandBlock(Block.Properties.of(Material.DIRT, MaterialColor.TERRACOTTA_BROWN).strength(0.5f, 2.0f).sound(SoundType.GRAVEL)));
 
     // Pastries
     public static final RegistryObject<Block> BLOOD_PIE = BLOCKS.register("blood_pie",

@@ -17,7 +17,7 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 @Mod.EventBusSubscriber(modid = VampiresDelight.MODID)
-public class MappingEvents {
+public class MappingEventHandler {
     public static ResourceLocation mapping(String name) {
         return new ResourceLocation(VampiresDelight.MODID, name);
     }

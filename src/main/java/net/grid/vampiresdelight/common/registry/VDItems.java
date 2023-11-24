@@ -55,7 +55,9 @@ public class VDItems {
     public static final RegistryObject<Item> ALCHEMICAL_COCKTAIL = ITEMS.register("alchemical_cocktail",
             () -> new AlchemicalCocktailItem(new Item.Properties().stacksTo(8).tab(FarmersDelight.CREATIVE_TAB)));
 
-    // Crops
+    // Farming
+    public static final RegistryObject<Item> CURSED_FARMLAND = ITEMS.register("cursed_farmland",
+            () -> new BlockItem(VDBlocks.CURSED_FARMLAND.get(), new Item.Properties()));
     public static final RegistryObject<Item> ORCHID_SEEDS = ITEMS.register("orchid_seeds",
             () -> new ItemNameBlockItem(VDBlocks.VAMPIRE_ORCHID_CROP.get(), basicItem()));
 

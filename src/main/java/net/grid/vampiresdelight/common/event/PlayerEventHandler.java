@@ -28,9 +28,7 @@ import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
-public class PlayerEvents {
-    private final static Logger LOGGER = LogManager.getLogger(PlayerEvents.class);
-
+public class PlayerEventHandler {
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public void onItemUse(LivingEntityUseItemEvent.@NotNull Finish event) {
         if (Helper.isVampire(event.getEntity())) {

@@ -169,7 +169,7 @@ public class VDCraftingRecipes {
                 .addResultWithChance(Items.GREEN_DYE, 0.25F)
                 .build(consumer);
         VDCuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModBlocks.VAMPIRE_ORCHID.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), VDItems.ORCHID_PETALS.get(), 2)
-                .addResultWithChance(VDItems.ORCHID_SEEDS.get(), 0.8F, 2)
+                .addResultWithChance(VDItems.ORCHID_SEEDS.get(), 0.7F, 2)
                 .addResultWithChance(ModBlocks.CURSED_ROOTS.get(), 0.30F, 1)
                 .build(consumer);
     }
