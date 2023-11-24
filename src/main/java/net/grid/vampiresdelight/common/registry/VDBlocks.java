@@ -1,22 +1,17 @@
 package net.grid.vampiresdelight.common.registry;
 
 import net.grid.vampiresdelight.VampiresDelight;
-import net.grid.vampiresdelight.common.block.BloodPieBlock;
-import net.grid.vampiresdelight.common.block.WeirdJellyBlock;
+import net.grid.vampiresdelight.common.block.*;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.GlassBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.material.Material;
-import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import vectorwing.farmersdelight.common.block.CabinetBlock;
-import vectorwing.farmersdelight.common.block.HoneyGlazedHamBlock;
-import vectorwing.farmersdelight.common.block.WildCropBlock;
-import vectorwing.farmersdelight.common.registry.ModItems;
+import vectorwing.farmersdelight.common.block.*;
 
 public class VDBlocks {
     public static final DeferredRegister<Block> BLOCKS =
@@ -35,6 +30,10 @@ public class VDBlocks {
     public static final RegistryObject<Block> CURSED_SPRUCE_CABINET = BLOCKS.register("cursed_spruce_cabinet",
             () -> new CabinetBlock(Block.Properties.copy(Blocks.BARREL)));
 
+    // Farming
+    public static final RegistryObject<Block> CURSED_FARMLAND = BLOCKS.register("cursed_farmland",
+            () -> new CursedFarmlandBlock(Block.Properties.of(Material.DIRT, MaterialColor.TERRACOTTA_BROWN).strength(0.5f, 2.0f).sound(SoundType.GRAVEL)));
+
     // Pastries
     public static final RegistryObject<Block> BLOOD_PIE = BLOCKS.register("blood_pie",
             () -> new BloodPieBlock(Block.Properties.copy(Blocks.CAKE), VDItems.BLOOD_PIE_SLICE));
@@ -42,6 +41,10 @@ public class VDBlocks {
     // Wild Crops
     public static final RegistryObject<Block> WILD_GARLIC = BLOCKS.register("wild_garlic",
             () -> new WildCropBlock(MobEffects.BLINDNESS, 8, Block.Properties.copy(Blocks.TALL_GRASS)));
+
+    // Crops
+    public static final RegistryObject<Block> VAMPIRE_ORCHID_CROP = BLOCKS.register("vampire_orchid_crop",
+            () -> new VampireOrchidCropBlock(Block.Properties.of(Material.PLANT).color(MaterialColor.TERRACOTTA_MAGENTA).instabreak().noCollission().sound(SoundType.CROP)));
 
     // Feasts
     public static final RegistryObject<Block> WEIRD_JELLY_BLOCK = BLOCKS.register("weird_jelly_block",

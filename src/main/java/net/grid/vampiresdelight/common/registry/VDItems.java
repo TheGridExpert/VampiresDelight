@@ -15,6 +15,7 @@ import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.item.FuelBlockItem;
 import vectorwing.farmersdelight.common.item.PopsicleItem;
 import vectorwing.farmersdelight.common.item.RottenTomatoItem;
+import vectorwing.farmersdelight.common.registry.ModBlocks;
 
 public class VDItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -52,7 +53,13 @@ public class VDItems {
 
     // Tools and Non-Food Stuff
     public static final RegistryObject<Item> ALCHEMICAL_COCKTAIL = ITEMS.register("alchemical_cocktail",
-            () -> new AlchemicalCocktailItem(new Item.Properties().stacksTo(16).tab(FarmersDelight.CREATIVE_TAB)));
+            () -> new AlchemicalCocktailItem(new Item.Properties().stacksTo(8).tab(FarmersDelight.CREATIVE_TAB)));
+
+    // Farming
+    public static final RegistryObject<Item> CURSED_FARMLAND = ITEMS.register("cursed_farmland",
+            () -> new BlockItem(VDBlocks.CURSED_FARMLAND.get(), new Item.Properties()));
+    public static final RegistryObject<Item> ORCHID_SEEDS = ITEMS.register("orchid_seeds",
+            () -> new ItemNameBlockItem(VDBlocks.VAMPIRE_ORCHID_CROP.get(), basicItem()));
 
     // Foodstuffs
     public static final RegistryObject<Item> GRILLED_GARLIC = ITEMS.register("grilled_garlic",

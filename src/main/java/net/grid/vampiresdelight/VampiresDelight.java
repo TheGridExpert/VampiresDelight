@@ -3,7 +3,8 @@ package net.grid.vampiresdelight;
 import net.grid.vampiresdelight.client.ClientSetup;
 import net.grid.vampiresdelight.common.CommonSetup;
 import net.grid.vampiresdelight.common.Configuration;
-import net.grid.vampiresdelight.common.event.PlayerEvents;
+import net.grid.vampiresdelight.common.event.PlayerEventHandler;
+import net.grid.vampiresdelight.common.event.PlayerInteractEventHandler;
 import net.grid.vampiresdelight.common.registry.*;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -36,7 +37,8 @@ public class VampiresDelight {
         VDRecipeTypes.RECIPE_TYPES.register(eventBus);
         VDBlockEntityTypes.TILES.register(eventBus);
 
-        MinecraftForge.EVENT_BUS.register(new PlayerEvents());
+        MinecraftForge.EVENT_BUS.register(new PlayerEventHandler());
+        MinecraftForge.EVENT_BUS.register(new PlayerInteractEventHandler());
 
         MinecraftForge.EVENT_BUS.register(this);
     }

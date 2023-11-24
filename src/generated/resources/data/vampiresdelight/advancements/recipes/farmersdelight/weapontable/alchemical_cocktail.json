@@ -1,0 +1,41 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_alchemical_fire": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "vampirism:item_alchemical_fire"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_skill": {
+      "conditions": {
+        "skill": "vampirism:weapon_table"
+      },
+      "trigger": "vampirism:skill_unlocked"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vampiresdelight:weapontable/alchemical_cocktail"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_alchemical_fire",
+      "has_skill",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vampiresdelight:weapontable/alchemical_cocktail"
+    ]
+  }
+}
