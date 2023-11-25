@@ -4,10 +4,14 @@
 
 ### Additions
 - **Vampire Orchid** is now growable;
+- Added **Cursed Farmland** to grow **Vampire Orchid**;
 
 ### Updates
 - Cutting **Vampire Orchid** now drops **Orchid Seeds**;
 - Changed **Blood Dough** recipe to use **Rice** instead of **Wheat**;
+
+### Fixes
+- **Orchid Bad** now drops correctly;
 
 ## 0.0.1.1
 

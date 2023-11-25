@@ -5,6 +5,7 @@ import net.grid.vampiresdelight.common.registry.VDBlocks;
 import net.grid.vampiresdelight.common.tag.VDCompatibilityTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -24,13 +25,15 @@ public class VDBlockTags extends BlockTagsProvider {
     }
 
     protected void registerBlockMineables() {
-        tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_AXE).add(
+        tag(BlockTags.MINEABLE_WITH_AXE).add(
                 VDBlocks.GARLIC_CRATE.get(),
                 VDBlocks.DARK_SPRUCE_CABINET.get(),
                 VDBlocks.CURSED_SPRUCE_CABINET.get());
         tag(ModTags.MINEABLE_WITH_KNIFE).add(
                 VDBlocks.BLOOD_PIE.get(),
                 VDBlocks.WEIRD_JELLY_BLOCK.get());
+        tag(BlockTags.MINEABLE_WITH_SHOVEL).add(
+                VDBlocks.CURSED_FARMLAND.get());
     }
 
     protected void registerMinecraftTags() {
