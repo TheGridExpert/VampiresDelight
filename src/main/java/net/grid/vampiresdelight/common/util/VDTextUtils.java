@@ -95,6 +95,5 @@ public class VDTextUtils {
                 }
             }
         }
-
     }
 }

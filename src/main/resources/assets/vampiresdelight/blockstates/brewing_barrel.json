@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "stage=0": {
+      "model": "vampiresdelight:block/brewing_barrel"
+    },
+    "stage=1": {
+      "model": "vampiresdelight:block/brewing_barrel_working"
+    }
+  }
+}

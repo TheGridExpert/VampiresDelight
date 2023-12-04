@@ -36,6 +36,7 @@ public class VampiresDelight {
         VDRecipeSerializers.RECIPE_SERIALIZERS.register(eventBus);
         VDRecipeTypes.RECIPE_TYPES.register(eventBus);
         VDBlockEntityTypes.TILES.register(eventBus);
+        VDMenuTypes.MENU_TYPES.register(eventBus);
 
         MinecraftForge.EVENT_BUS.register(new PlayerEventHandler());
         MinecraftForge.EVENT_BUS.register(new PlayerInteractEventHandler());

@@ -17,6 +17,9 @@ public class VDBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, VampiresDelight.MODID);
 
+    // Workstations
+    public static final RegistryObject<Block> BREWING_BARREL = BLOCKS.register("brewing_barrel",
+            () -> new BrewingBarrelBlock(Block.Properties.copy(Blocks.BARREL)));
 
     // Crop Storage
     public static final RegistryObject<Block> GARLIC_CRATE = BLOCKS.register("garlic_crate",

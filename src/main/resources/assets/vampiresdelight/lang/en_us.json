@@ -1,4 +1,5 @@
 {
+  "block.vampiresdelight.brewing_barrel": "Brewing Barrel",
   "block.vampiresdelight.garlic_crate": "Garlic Crate",
   "block.vampiresdelight.orchid_bag": "Orchid Bag",
   "block.vampiresdelight.wild_garlic": "Wild Garlic",
@@ -42,6 +43,11 @@
 
   "vampiresdelight.food_tier.appetizing": "Appetizing",
   "vampiresdelight.food_tier.disgusting": "Disgusting",
+
+  "vampiresdelight.tooltip.brewing_barrel.empty": "Empty",
+  "vampiresdelight.container.brewing_barrel.poured_into": "Poured into: %s",
+  "vampiresdelight.tooltip.brewing_barrel.single_serving": "Holds 1 serving of:",
+  "vampiresdelight.tooltip.brewing_barrel.many_servings": "Holds %s servings of:",
 
   "vampiresdelight.subtitles.metal_pipe": "Metal pipe falls",
 

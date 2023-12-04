@@ -7,11 +7,10 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.ToolActions;
 import net.minecraftforge.event.level.BlockEvent;
-import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 public class PlayerInteractEventHandler {
-    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    @SubscribeEvent
     public void onCursedEarthClickedWithHoe(BlockEvent.BlockToolModificationEvent event) {
         if (event.isCanceled() || ! event.getToolAction().equals(ToolActions.HOE_TILL))
             return;

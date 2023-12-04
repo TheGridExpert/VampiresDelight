@@ -38,6 +38,8 @@ public class VDItems {
     // The neutral items go first, then the vampire and hunter ones
 
     // Blocks
+    public static final RegistryObject<Item> BREWING_BARREL = ITEMS.register("brewing_barrel",
+            () -> new BlockItem(VDBlocks.BREWING_BARREL.get(), basicItem()));
     public static final RegistryObject<Item> GARLIC_CRATE = ITEMS.register("garlic_crate",
             () -> new BlockItem(VDBlocks.GARLIC_CRATE.get(), basicItem()));
     public static final RegistryObject<Item> ORCHID_BAG = ITEMS.register("orchid_bag",
