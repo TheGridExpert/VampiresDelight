@@ -41,9 +41,6 @@
   "vampiresdelight.tooltip.orchid_tea": "Infects With Sanguinare",
   "vampiresdelight.tooltip.cursed_cupcake": "Clears Garlic Effect",
 
-  "vampiresdelight.food_tier.appetizing": "Appetizing",
-  "vampiresdelight.food_tier.disgusting": "Disgusting",
-
   "vampiresdelight.tooltip.brewing_barrel.empty": "Empty",
   "vampiresdelight.container.brewing_barrel.poured_into": "Poured into: %s",
   "vampiresdelight.tooltip.brewing_barrel.single_serving": "Holds 1 serving of:",

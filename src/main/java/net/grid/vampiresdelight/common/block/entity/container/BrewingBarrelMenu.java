@@ -16,10 +16,12 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.SlotItemHandler;
-import vectorwing.farmersdelight.common.block.entity.container.CookingPotMealSlot;
 
+import javax.annotation.Nonnull;
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Objects;
 
 public class BrewingBarrelMenu extends AbstractContainerMenu {
@@ -53,7 +55,7 @@ public class BrewingBarrelMenu extends AbstractContainerMenu {
         }
 
         // Meal Display
-        this.addSlot(new CookingPotMealSlot(inventory, 4, 115, 26));
+        this.addSlot(new BrewingBarrelMenu.BrewingBarrelMealSlot(inventory, 4, 115, 26));
 
         // Bowl Input
         this.addSlot(new SlotItemHandler(inventory, 5, 82, 56)
@@ -65,7 +67,7 @@ public class BrewingBarrelMenu extends AbstractContainerMenu {
         });
 
         // Bowl Output
-        this.addSlot(new BrewingBarrelResultSlot(playerInventory.player, blockEntity, inventory, 6, 115, 56));
+        this.addSlot(new BrewingBarrelMenu.BrewingBarrelResultSlot(playerInventory.player, blockEntity, inventory, 6, 115, 56));
 
         // Main Player Inventory
         int startPlayerInvY = startY * 4 + 12;
@@ -153,5 +155,73 @@ public class BrewingBarrelMenu extends AbstractContainerMenu {
         int i = this.brewingBarrelData.get(0);
         int j = this.brewingBarrelData.get(1);
         return j != 0 && i != 0 ? i * 33 / j : 0;
+    }
+
+    @ParametersAreNonnullByDefault
+    public static class BrewingBarrelMealSlot extends SlotItemHandler {
+        public BrewingBarrelMealSlot(IItemHandler inventoryIn, int index, int xPosition, int yPosition) {
+            super(inventoryIn, index, xPosition, yPosition);
+        }
+
+        @Override
+        public boolean mayPlace(ItemStack stack) {
+            return false;
+        }
+
+        @Override
+        public boolean mayPickup(Player playerIn) {
+            return false;
+        }
+    }
+
+    @ParametersAreNonnullByDefault
+    public static class BrewingBarrelResultSlot extends SlotItemHandler {
+        public final BrewingBarrelBlockEntity tileEntity;
+        private final Player player;
+        private int removeCount;
+
+        public BrewingBarrelResultSlot(Player player, BrewingBarrelBlockEntity tile, IItemHandler inventoryIn, int index, int xPosition, int yPosition) {
+            super(inventoryIn, index, xPosition, yPosition);
+            this.tileEntity = tile;
+            this.player = player;
+        }
+
+        @Override
+        public boolean mayPlace(ItemStack stack) {
+            return false;
+        }
+
+        @Override
+        @Nonnull
+        public ItemStack remove(int amount) {
+            if (this.hasItem()) {
+                this.removeCount += Math.min(amount, this.getItem().getCount());
+            }
+
+            return super.remove(amount);
+        }
+
+        @Override
+        public void onTake(Player thePlayer, ItemStack stack) {
+            this.checkTakeAchievements(stack);
+            super.onTake(thePlayer, stack);
+        }
+
+        @Override
+        protected void onQuickCraft(ItemStack stack, int amount) {
+            this.removeCount += amount;
+            this.checkTakeAchievements(stack);
+        }
+
+        @Override
+        protected void checkTakeAchievements(ItemStack stack) {
+            stack.onCraftedBy(this.player.level, this.player, this.removeCount);
+
+            if (!this.player.level.isClientSide) {
+                tileEntity.awardUsedRecipes(this.player);
+            }
+
+            this.removeCount = 0;
+        }
     }
 }

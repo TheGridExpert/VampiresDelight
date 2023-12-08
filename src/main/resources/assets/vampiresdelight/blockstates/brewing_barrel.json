@@ -1,10 +1,56 @@
 {
   "variants": {
-    "stage=0": {
+    "facing=down,brewing=false": {
+      "model": "vampiresdelight:block/brewing_barrel",
+      "x": 180
+    },
+    "facing=down,brewing=true": {
+      "model": "vampiresdelight:block/brewing_barrel_working",
+      "x": 180
+    },
+    "facing=east,brewing=false": {
+      "model": "vampiresdelight:block/brewing_barrel",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,brewing=true": {
+      "model": "vampiresdelight:block/brewing_barrel_working",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,brewing=false": {
+      "model": "vampiresdelight:block/brewing_barrel",
+      "x": 90
+    },
+    "facing=north,brewing=true": {
+      "model": "vampiresdelight:block/brewing_barrel_working",
+      "x": 90
+    },
+    "facing=south,brewing=false": {
+      "model": "vampiresdelight:block/brewing_barrel",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,brewing=true": {
+      "model": "vampiresdelight:block/brewing_barrel_working",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up,brewing=false": {
       "model": "vampiresdelight:block/brewing_barrel"
     },
-    "stage=1": {
+    "facing=up,brewing=true": {
       "model": "vampiresdelight:block/brewing_barrel_working"
+    },
+    "facing=west,brewing=false": {
+      "model": "vampiresdelight:block/brewing_barrel",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,brewing=true": {
+      "model": "vampiresdelight:block/brewing_barrel_working",
+      "x": 90,
+      "y": 270
     }
   }
 }

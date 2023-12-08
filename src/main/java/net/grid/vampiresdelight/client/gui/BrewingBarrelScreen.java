@@ -12,12 +12,15 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@OnlyIn(Dist.CLIENT)
 @ParametersAreNonnullByDefault
 public class BrewingBarrelScreen extends AbstractContainerScreen<BrewingBarrelMenu> {
     private static final ResourceLocation BACKGROUND_TEXTURE = new ResourceLocation(VampiresDelight.MODID, "textures/gui/brewing_barrel.png");
@@ -29,8 +32,9 @@ public class BrewingBarrelScreen extends AbstractContainerScreen<BrewingBarrelMe
 
     @Override
     public void render(PoseStack ms, final int mouseX, final int mouseY, float partialTicks) {
-        this.renderBackground(ms);
-        this.renderMealDisplayTooltip(ms, mouseX, mouseY);
+        super.render(ms, mouseX, mouseY, partialTicks);
+        //this.renderBackground(ms);
+        //this.renderMealDisplayTooltip(ms, mouseX, mouseY);
     }
 
     protected void renderMealDisplayTooltip(PoseStack ms, int mouseX, int mouseY) {
@@ -53,24 +57,22 @@ public class BrewingBarrelScreen extends AbstractContainerScreen<BrewingBarrelMe
         }
     }
 
+    /*
     @Override
     protected void renderLabels(PoseStack ms, int mouseX, int mouseY) {
         super.renderLabels(ms, mouseX, mouseY);
         this.font.draw(ms, this.playerInventoryTitle, 8.0f, (float) (this.imageHeight - 96 + 2), 4210752);
     }
+     */
 
     @Override
     protected void renderBg(PoseStack ms, float partialTicks, int mouseX, int mouseY) {
-        // Render UI background
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
-        if (this.minecraft == null)
-            return;
-
         RenderSystem.setShaderTexture(0, BACKGROUND_TEXTURE);
         this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight);
 
         // Render progress arrow
-        int l = this.menu.getBrewProgressionScaled();
-        this.blit(ms, this.leftPos + PROGRESS_BUBBLES.x, this.topPos + PROGRESS_BUBBLES.y, 176, 0, l + 1, PROGRESS_BUBBLES.height);
+        //int l = this.menu.getBrewProgressionScaled();
+        //this.blit(ms, this.leftPos + PROGRESS_BUBBLES.x, this.topPos + PROGRESS_BUBBLES.y, 176, 0, l + 1, PROGRESS_BUBBLES.height);
     }
 }
