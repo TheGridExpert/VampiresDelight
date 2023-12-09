@@ -9,13 +9,13 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.util.FakePlayer;
 import org.jetbrains.annotations.NotNull;
@@ -26,6 +26,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
 public class BloodWineBottleItem extends Item {
+
     public BloodWineBottleItem(Properties properties) {
         super(properties);
     }
@@ -50,7 +51,10 @@ public class BloodWineBottleItem extends Item {
             return new InteractionResultHolder<>(InteractionResult.SUCCESS, itemStack);
         }
 
-        Vec3 POVHit = getPlayerPOVHitResult(level, player, ClipContext.Fluid.NONE).getLocation();
+        HitResult hitResult = getPlayerPOVHitResult(level, player, ClipContext.Fluid.NONE);
+        if (!(hitResult instanceof BlockHitResult)) return new InteractionResultHolder<>(InteractionResult.FAIL, itemStack);
+
+        Vec3 POVHit = hitResult.getLocation();
         AABB aabb = new AABB(POVHit, POVHit).inflate(1f);
         ItemEntity pickUp = null;
         for (ItemEntity itemEntity : level.getEntitiesOfClass(ItemEntity.class, aabb)) {

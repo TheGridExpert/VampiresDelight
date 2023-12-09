@@ -44,7 +44,7 @@ public class BrewingBarrelMenu extends AbstractContainerMenu {
         int startX = 8;
         int startY = 18;
         int inputStartX = 33;
-        int inputStartY = 19;
+        int inputStartY = 17;
         int borderSlotSize = 18;
         for (int row = 0; row < 2; ++row) {
             for (int column = 0; column < 2; ++column) {
@@ -55,10 +55,10 @@ public class BrewingBarrelMenu extends AbstractContainerMenu {
         }
 
         // Meal Display
-        this.addSlot(new BrewingBarrelMenu.BrewingBarrelMealSlot(inventory, 4, 115, 26));
+        this.addSlot(new BrewingBarrelMenu.BrewingBarrelMealSlot(inventory, 4, 117, 26));
 
         // Bowl Input
-        this.addSlot(new SlotItemHandler(inventory, 5, 82, 56)
+        this.addSlot(new SlotItemHandler(inventory, 5, 84, 55)
         {
             @OnlyIn(Dist.CLIENT)
             public Pair<ResourceLocation, ResourceLocation> getNoItemIcon() {
@@ -67,7 +67,7 @@ public class BrewingBarrelMenu extends AbstractContainerMenu {
         });
 
         // Bowl Output
-        this.addSlot(new BrewingBarrelMenu.BrewingBarrelResultSlot(playerInventory.player, blockEntity, inventory, 6, 115, 56));
+        this.addSlot(new BrewingBarrelMenu.BrewingBarrelResultSlot(playerInventory.player, blockEntity, inventory, 6, 117, 55));
 
         // Main Player Inventory
         int startPlayerInvY = startY * 4 + 12;

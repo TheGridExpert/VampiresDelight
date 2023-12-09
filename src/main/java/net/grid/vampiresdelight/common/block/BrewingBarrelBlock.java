@@ -165,9 +165,6 @@ public class BrewingBarrelBlock extends BaseEntityBlock implements SimpleWaterlo
             tooltip.add(textServingsOf.withStyle(ChatFormatting.GRAY));
             MutableComponent textMealName = mealStack.getHoverName().copy();
             tooltip.add(textMealName.withStyle(mealStack.getRarity().color));
-        } else {
-            MutableComponent textEmpty = VDTextUtils.getTranslation("tooltip.brewing_barrel.empty");
-            tooltip.add(textEmpty.withStyle(ChatFormatting.GRAY));
         }
     }
 

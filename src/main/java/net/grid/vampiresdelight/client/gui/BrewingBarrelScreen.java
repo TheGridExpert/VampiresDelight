@@ -24,7 +24,7 @@ import java.util.List;
 @ParametersAreNonnullByDefault
 public class BrewingBarrelScreen extends AbstractContainerScreen<BrewingBarrelMenu> {
     private static final ResourceLocation BACKGROUND_TEXTURE = new ResourceLocation(VampiresDelight.MODID, "textures/gui/brewing_barrel.png");
-    private static final Rectangle PROGRESS_BUBBLES = new Rectangle(76, 30, 0, 12);
+    private static final Rectangle PROGRESS_BUBBLES = new Rectangle(75, 27, 0, 13);
 
     public BrewingBarrelScreen(BrewingBarrelMenu screenContainer, Inventory inv, Component titleIn) {
         super(screenContainer, inv, titleIn);
@@ -32,9 +32,10 @@ public class BrewingBarrelScreen extends AbstractContainerScreen<BrewingBarrelMe
 
     @Override
     public void render(PoseStack ms, final int mouseX, final int mouseY, float partialTicks) {
+        this.renderBackground(ms);
+        this.renderBg(ms, partialTicks, mouseX, mouseY);
+        this.renderMealDisplayTooltip(ms, mouseX, mouseY);
         super.render(ms, mouseX, mouseY, partialTicks);
-        //this.renderBackground(ms);
-        //this.renderMealDisplayTooltip(ms, mouseX, mouseY);
     }
 
     protected void renderMealDisplayTooltip(PoseStack ms, int mouseX, int mouseY) {
@@ -57,13 +58,11 @@ public class BrewingBarrelScreen extends AbstractContainerScreen<BrewingBarrelMe
         }
     }
 
-    /*
     @Override
     protected void renderLabels(PoseStack ms, int mouseX, int mouseY) {
         super.renderLabels(ms, mouseX, mouseY);
         this.font.draw(ms, this.playerInventoryTitle, 8.0f, (float) (this.imageHeight - 96 + 2), 4210752);
     }
-     */
 
     @Override
     protected void renderBg(PoseStack ms, float partialTicks, int mouseX, int mouseY) {
@@ -72,7 +71,7 @@ public class BrewingBarrelScreen extends AbstractContainerScreen<BrewingBarrelMe
         this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight);
 
         // Render progress arrow
-        //int l = this.menu.getBrewProgressionScaled();
-        //this.blit(ms, this.leftPos + PROGRESS_BUBBLES.x, this.topPos + PROGRESS_BUBBLES.y, 176, 0, l + 1, PROGRESS_BUBBLES.height);
+        int l = this.menu.getBrewProgressionScaled();
+        this.blit(ms, this.leftPos + PROGRESS_BUBBLES.x, this.topPos + PROGRESS_BUBBLES.y, 176, 0, l + 1, PROGRESS_BUBBLES.height);
     }
 }

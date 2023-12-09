@@ -8,7 +8,7 @@ import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.block.BrewingBarrelBlock;
 import net.grid.vampiresdelight.common.block.entity.container.BrewingBarrelMenu;
 import net.grid.vampiresdelight.common.block.entity.inventory.BrewingBarrelItemHandler;
-import net.grid.vampiresdelight.common.crafting.BrewingBarrelRecipe;
+import net.grid.vampiresdelight.common.crafting.BrewingBarrelRecipes;
 import net.grid.vampiresdelight.common.registry.VDBlockEntityTypes;
 import net.grid.vampiresdelight.common.registry.VDItems;
 import net.grid.vampiresdelight.common.registry.VDRecipeTypes;
@@ -215,7 +215,7 @@ public class BrewingBarrelBlockEntity extends SyncedBlockEntity implements MenuP
 
     public static void brewingTick(Level level, BlockPos pos, BlockState state, BrewingBarrelBlockEntity brewingBarrelBlockEntity) {
         boolean didInventoryChange = false;
-        Optional<BrewingBarrelRecipe> recipe = brewingBarrelBlockEntity.getMatchingRecipe(new RecipeWrapper(brewingBarrelBlockEntity.inventory));
+        Optional<BrewingBarrelRecipes> recipe = brewingBarrelBlockEntity.getMatchingRecipe(new RecipeWrapper(brewingBarrelBlockEntity.inventory));
 
         if (brewingBarrelBlockEntity.hasInput()) {
             if (recipe.isPresent() && brewingBarrelBlockEntity.canBrew(recipe.get())) {
@@ -243,16 +243,16 @@ public class BrewingBarrelBlockEntity extends SyncedBlockEntity implements MenuP
         }
     }
 
-    private Optional<BrewingBarrelRecipe> getMatchingRecipe(RecipeWrapper inventoryWrapper) {
+    private Optional<BrewingBarrelRecipes> getMatchingRecipe(RecipeWrapper inventoryWrapper) {
         if (level == null) return Optional.empty();
 
         if (lastRecipeID != null) {
             Recipe<RecipeWrapper> recipe = ((RecipeManagerAccessor) level.getRecipeManager())
                     .getRecipeMap(VDRecipeTypes.FERMENTING.get())
                     .get(lastRecipeID);
-            if (recipe instanceof BrewingBarrelRecipe) {
+            if (recipe instanceof BrewingBarrelRecipes) {
                 if (recipe.matches(inventoryWrapper, level)) {
-                    return Optional.of((BrewingBarrelRecipe) recipe);
+                    return Optional.of((BrewingBarrelRecipes) recipe);
                 }
                 if (recipe.getResultItem().sameItem(getMeal())) {
                     return Optional.empty();
@@ -261,7 +261,7 @@ public class BrewingBarrelBlockEntity extends SyncedBlockEntity implements MenuP
         }
 
         if (checkNewRecipe) {
-            Optional<BrewingBarrelRecipe> recipe = level.getRecipeManager().getRecipeFor(VDRecipeTypes.FERMENTING.get(), inventoryWrapper, level);
+            Optional<BrewingBarrelRecipes> recipe = level.getRecipeManager().getRecipeFor(VDRecipeTypes.FERMENTING.get(), inventoryWrapper, level);
             if (recipe.isPresent()) {
                 ResourceLocation newRecipeID = recipe.get().getId();
                 if (lastRecipeID != null && !lastRecipeID.equals(newRecipeID)) {
@@ -292,7 +292,7 @@ public class BrewingBarrelBlockEntity extends SyncedBlockEntity implements MenuP
         return false;
     }
 
-    protected boolean canBrew(BrewingBarrelRecipe recipe) {
+    protected boolean canBrew(BrewingBarrelRecipes recipe) {
         if (hasInput()) {
             ItemStack resultStack = recipe.getResultItem();
             if (resultStack.isEmpty()) {
@@ -314,7 +314,7 @@ public class BrewingBarrelBlockEntity extends SyncedBlockEntity implements MenuP
         }
     }
 
-    private boolean processCooking(BrewingBarrelRecipe recipe, BrewingBarrelBlockEntity brewingBarrel) {
+    private boolean processCooking(BrewingBarrelRecipes recipe, BrewingBarrelBlockEntity brewingBarrel) {
         if (level == null) return false;
 
         ++brewTime;
@@ -383,7 +383,7 @@ public class BrewingBarrelBlockEntity extends SyncedBlockEntity implements MenuP
         for (Object2IntMap.Entry<ResourceLocation> entry : usedRecipeTracker.object2IntEntrySet()) {
             level.getRecipeManager().byKey(entry.getKey()).ifPresent((recipe) -> {
                 list.add(recipe);
-                splitAndSpawnExperience((ServerLevel) level, pos, entry.getIntValue(), ((BrewingBarrelRecipe) recipe).getExperience());
+                splitAndSpawnExperience((ServerLevel) level, pos, entry.getIntValue(), ((BrewingBarrelRecipes) recipe).getExperience());
             });
         }
 
@@ -471,7 +471,7 @@ public class BrewingBarrelBlockEntity extends SyncedBlockEntity implements MenuP
     }
 
     public static void animationTick(Level level, BlockPos pos, BlockState state, BrewingBarrelBlockEntity blockEntity) {
-        Optional<BrewingBarrelRecipe> recipe = blockEntity.getMatchingRecipe(new RecipeWrapper(blockEntity.inventory));
+        Optional<BrewingBarrelRecipes> recipe = blockEntity.getMatchingRecipe(new RecipeWrapper(blockEntity.inventory));
         if (recipe.isPresent() && blockEntity.canBrew(recipe.get())) {
             state.setValue(BrewingBarrelBlock.BREWING, true);
         } else state.setValue(BrewingBarrelBlock.BREWING, false);

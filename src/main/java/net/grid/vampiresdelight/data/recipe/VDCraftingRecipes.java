@@ -4,19 +4,16 @@ import de.teamlapen.vampirism.core.ModBlocks;
 import de.teamlapen.vampirism.core.ModItems;
 import de.teamlapen.vampirism.core.ModTags;
 import net.grid.vampiresdelight.common.registry.VDBlocks;
+import net.grid.vampiresdelight.common.registry.VDRecipeSerializers;
 import net.grid.vampiresdelight.data.builder.VDCuttingBoardRecipeBuilder;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.registry.VDItems;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
-import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.ItemLike;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -36,9 +33,9 @@ public class VDCraftingRecipes {
         cuttingAnimalItems(consumer);
         cuttingFoods(consumer);
         cuttingFlowers(consumer);
+        // Other
+        SpecialRecipeBuilder.special(VDRecipeSerializers.BARREL_POURING.get()).save(consumer, "barrel_pouring");
     }
-
-    TagKey<Item> pure_blood = ModTags.Items.PURE_BLOOD;
 
     // Crafting
     private static void recipesBlocks(Consumer<FinishedRecipe> consumer) {
@@ -102,7 +99,7 @@ public class VDCraftingRecipes {
                 .define('a', Items.APPLE)
                 .define('i', Items.ICE)
                 .define('t', Items.STICK)
-                .unlockedBy("has_pure_blood", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.PURE_BLOOD_0.get()))
+                .unlockedBy("has_pure_blood", InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE))
                 .save(consumer);
     }
 

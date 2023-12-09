@@ -14,8 +14,6 @@ import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.item.FuelBlockItem;
 import vectorwing.farmersdelight.common.item.PopsicleItem;
-import vectorwing.farmersdelight.common.item.RottenTomatoItem;
-import vectorwing.farmersdelight.common.registry.ModBlocks;
 
 public class VDItems {
     public static final DeferredRegister<Item> ITEMS =

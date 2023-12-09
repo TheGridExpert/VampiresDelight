@@ -21,7 +21,7 @@ import net.minecraftforge.items.wrapper.RecipeWrapper;
 import org.jetbrains.annotations.Nullable;
 
 @SuppressWarnings("ClassCanBeRecord")
-public class BrewingBarrelRecipe implements Recipe<RecipeWrapper> {
+public class BrewingBarrelRecipes implements Recipe<RecipeWrapper> {
     public static final int INPUT_SLOTS = 4;
 
     private final ResourceLocation id;
@@ -32,7 +32,7 @@ public class BrewingBarrelRecipe implements Recipe<RecipeWrapper> {
     private final float experience;
     private final int brewTime;
 
-    public BrewingBarrelRecipe(ResourceLocation id, String group, NonNullList<Ingredient> inputItems, ItemStack output, ItemStack container, float experience, int cookTime) {
+    public BrewingBarrelRecipes(ResourceLocation id, String group, NonNullList<Ingredient> inputItems, ItemStack output, ItemStack container, float experience, int cookTime) {
         this.id = id;
         this.group = group;
         this.inputItems = inputItems;
@@ -127,7 +127,7 @@ public class BrewingBarrelRecipe implements Recipe<RecipeWrapper> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        BrewingBarrelRecipe that = (BrewingBarrelRecipe) o;
+        BrewingBarrelRecipes that = (BrewingBarrelRecipes) o;
 
         if (Float.compare(that.getExperience(), getExperience()) != 0) return false;
         if (getBrewTime() != that.getBrewTime()) return false;
@@ -150,24 +150,24 @@ public class BrewingBarrelRecipe implements Recipe<RecipeWrapper> {
         return result;
     }
 
-    public static class Serializer implements RecipeSerializer<BrewingBarrelRecipe> {
+    public static class Serializer implements RecipeSerializer<BrewingBarrelRecipes> {
         public Serializer() {
         }
 
         @Override
-        public BrewingBarrelRecipe fromJson(ResourceLocation recipeId, JsonObject json) {
+        public BrewingBarrelRecipes fromJson(ResourceLocation recipeId, JsonObject json) {
             final String groupIn = GsonHelper.getAsString(json, "group", "");
             final NonNullList<Ingredient> inputItemsIn = readIngredients(GsonHelper.getAsJsonArray(json, "ingredients"));
             if (inputItemsIn.isEmpty()) {
                 throw new JsonParseException("No ingredients for fermenting recipe");
-            } else if (inputItemsIn.size() > BrewingBarrelRecipe.INPUT_SLOTS) {
-                throw new JsonParseException("Too many ingredients for fermenting recipe! The max is " + BrewingBarrelRecipe.INPUT_SLOTS);
+            } else if (inputItemsIn.size() > BrewingBarrelRecipes.INPUT_SLOTS) {
+                throw new JsonParseException("Too many ingredients for fermenting recipe! The max is " + BrewingBarrelRecipes.INPUT_SLOTS);
             } else {
                 final ItemStack outputIn = CraftingHelper.getItemStack(GsonHelper.getAsJsonObject(json, "result"), true);
                 ItemStack container = GsonHelper.isValidNode(json, "container") ? CraftingHelper.getItemStack(GsonHelper.getAsJsonObject(json, "container"), true) : ItemStack.EMPTY;
                 final float experienceIn = GsonHelper.getAsFloat(json, "experience", 0.0F);
                 final int cookTimeIn = GsonHelper.getAsInt(json, "cookingtime", 200);
-                return new BrewingBarrelRecipe(recipeId, groupIn, inputItemsIn, outputIn, container, experienceIn, cookTimeIn);
+                return new BrewingBarrelRecipes(recipeId, groupIn, inputItemsIn, outputIn, container, experienceIn, cookTimeIn);
             }
         }
 
@@ -186,7 +186,7 @@ public class BrewingBarrelRecipe implements Recipe<RecipeWrapper> {
 
         @Nullable
         @Override
-        public BrewingBarrelRecipe fromNetwork(ResourceLocation recipeId, FriendlyByteBuf buffer) {
+        public BrewingBarrelRecipes fromNetwork(ResourceLocation recipeId, FriendlyByteBuf buffer) {
             String groupIn = buffer.readUtf();
             int i = buffer.readVarInt();
             NonNullList<Ingredient> inputItemsIn = NonNullList.withSize(i, Ingredient.EMPTY);
@@ -199,11 +199,11 @@ public class BrewingBarrelRecipe implements Recipe<RecipeWrapper> {
             ItemStack container = buffer.readItem();
             float experienceIn = buffer.readFloat();
             int cookTimeIn = buffer.readVarInt();
-            return new BrewingBarrelRecipe(recipeId, groupIn, inputItemsIn, outputIn, container, experienceIn, cookTimeIn);
+            return new BrewingBarrelRecipes(recipeId, groupIn, inputItemsIn, outputIn, container, experienceIn, cookTimeIn);
         }
 
         @Override
-        public void toNetwork(FriendlyByteBuf buffer, BrewingBarrelRecipe recipe) {
+        public void toNetwork(FriendlyByteBuf buffer, BrewingBarrelRecipes recipe) {
             buffer.writeUtf(recipe.group);
             buffer.writeVarInt(recipe.inputItems.size());
 
