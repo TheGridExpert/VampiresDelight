@@ -3,10 +3,12 @@ package net.grid.vampiresdelight.data;
 import de.teamlapen.vampirism.core.ModBlocks;
 import net.grid.vampiresdelight.common.registry.VDBlocks;
 import net.grid.vampiresdelight.common.tag.VDCompatibilityTags;
+import net.grid.vampiresdelight.common.tag.VDTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.tag.ModTags;
@@ -18,10 +20,17 @@ public class VDBlockTags extends BlockTagsProvider {
 
     @Override
     protected void addTags() {
+        this.registerModTags();
         this.registerBlockMineables();
         this.registerMinecraftTags();
         this.registerFarmersDelightTags();
         this.registerCompatibilityTags();
+    }
+
+    private void registerModTags() {
+        tag(VDTags.COOLERS).addTag(BlockTags.ICE).add(
+                Blocks.WATER
+        );
     }
 
     protected void registerBlockMineables() {

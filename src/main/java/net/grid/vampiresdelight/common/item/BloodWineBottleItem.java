@@ -12,7 +12,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
@@ -22,13 +21,15 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
-// credit: part of the code below was heavily inspired by Create
+/**
+ * Credits to the Create team for mechanic references
+ */
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
 public class BloodWineBottleItem extends Item {
 
     public BloodWineBottleItem(Properties properties) {
-        super(properties);
+        super(properties.defaultDurability(2));
     }
 
     @Override
@@ -64,19 +65,21 @@ public class BloodWineBottleItem extends Item {
             pickUp = itemEntity;
             break;
         }
-        if (pickUp == null) new InteractionResultHolder<>(InteractionResult.FAIL, itemStack);
+        if (pickUp != null) {
 
-        ItemStack pickedItem = pickUp.getItem().copy();
-        ItemStack toPour = pickedItem.split(1);
-        player.startUsingItem(mainHand);
+            ItemStack pickedItem = pickUp.getItem().copy();
+            ItemStack toPour = pickedItem.split(1);
+            player.startUsingItem(mainHand);
 
-        if (!level.isClientSide) {
-            itemStack.getOrCreateTag().put("Pouring", toPour.serializeNBT());
-            if (pickedItem.isEmpty()) pickUp.discard();
-            else pickUp.setItem(pickedItem);
+            if (!level.isClientSide) {
+                itemStack.getOrCreateTag().put("Pouring", toPour.serializeNBT());
+                if (pickedItem.isEmpty()) pickUp.discard();
+                else pickUp.setItem(pickedItem);
+            }
+
+            return new InteractionResultHolder<>(InteractionResult.SUCCESS, itemStack);
         }
-
-        return new InteractionResultHolder<>(InteractionResult.SUCCESS, itemStack);
+        return new InteractionResultHolder<>(InteractionResult.FAIL, itemStack);
     }
 
     @Override

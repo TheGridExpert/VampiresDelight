@@ -77,7 +77,7 @@ public class VDItems {
     public static final RegistryObject<Item> BLOOD_BAGEL = ITEMS.register("blood_bagel",
             () -> new VampireConsumableItem(VDFoodValues.BLOOD_BAGEL, VDFoodValues.NASTY));
     public static final RegistryObject<Item> BLOOD_WINE_BOTTLE = ITEMS.register("blood_wine_bottle",
-            () -> new BloodWineBottleItem(basicItem().defaultDurability(2)));
+            () -> new BloodWineBottleItem(basicItem()));
     public static final RegistryObject<Item> WINE_GLASS = ITEMS.register("wine_glass",
             () -> new WineGlassItem(drinkItem()));
 

@@ -3,6 +3,7 @@ package net.grid.vampiresdelight.data.recipe;
 import de.teamlapen.vampirism.core.ModBlocks;
 import de.teamlapen.vampirism.core.ModItems;
 import de.teamlapen.vampirism.core.ModTags;
+import de.teamlapen.vampirism.data.recipebuilder.ShapelessWeaponTableRecipeBuilder;
 import net.grid.vampiresdelight.common.registry.VDBlocks;
 import net.grid.vampiresdelight.common.registry.VDRecipeSerializers;
 import net.grid.vampiresdelight.data.builder.VDCuttingBoardRecipeBuilder;
@@ -33,6 +34,8 @@ public class VDCraftingRecipes {
         cuttingAnimalItems(consumer);
         cuttingFoods(consumer);
         cuttingFlowers(consumer);
+        // Vampirism
+        recipesWeaponTable(consumer);
         // Other
         SpecialRecipeBuilder.special(VDRecipeSerializers.BARREL_POURING.get()).save(consumer, "barrel_pouring");
     }
@@ -169,5 +172,16 @@ public class VDCraftingRecipes {
                 .addResultWithChance(VDItems.ORCHID_SEEDS.get(), 0.7F, 2)
                 .addResultWithChance(ModBlocks.CURSED_ROOTS.get(), 0.30F, 1)
                 .build(consumer);
+    }
+
+    // Vampirism
+    private static void recipesWeaponTable(Consumer<FinishedRecipe> consumer) {
+        ShapelessWeaponTableRecipeBuilder.shapelessWeaponTable(VDItems.ALCHEMICAL_COCKTAIL.get())
+                .lava(1)
+                .requires(Items.GLASS_BOTTLE)
+                .requires(ModItems.ITEM_ALCHEMICAL_FIRE.get(), 2)
+                .unlockedBy("has_alchemical_fire", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.ITEM_ALCHEMICAL_FIRE.get()))
+                .save(consumer);
+
     }
 }

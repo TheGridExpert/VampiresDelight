@@ -1,0 +1,22 @@
+{
+  "type": "vampiresdelight:fermenting",
+  "brewingtime": 1200,
+  "experience": 2.0,
+  "ingredients": [
+    {
+      "item": "vampirism:blood_bottle"
+    },
+    {
+      "item": "vampirism:blood_bottle"
+    },
+    {
+      "item": "vampirism:blood_bottle"
+    },
+    {
+      "item": "minecraft:sweet_berries"
+    }
+  ],
+  "result": {
+    "item": "vampiresdelight:blood_wine_bottle"
+  }
+}

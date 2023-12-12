@@ -11,8 +11,8 @@ import net.minecraft.world.item.crafting.CustomRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.Level;
 
-public class BarrelPouringRecipes extends CustomRecipe {
-    public BarrelPouringRecipes(ResourceLocation id) {
+public class BarrelPouringRecipe extends CustomRecipe {
+    public BarrelPouringRecipe(ResourceLocation id) {
         super(id);
     }
 

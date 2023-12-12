@@ -33,9 +33,9 @@ public class BrewingBarrelScreen extends AbstractContainerScreen<BrewingBarrelMe
     @Override
     public void render(PoseStack ms, final int mouseX, final int mouseY, float partialTicks) {
         this.renderBackground(ms);
-        this.renderBg(ms, partialTicks, mouseX, mouseY);
-        this.renderMealDisplayTooltip(ms, mouseX, mouseY);
         super.render(ms, mouseX, mouseY, partialTicks);
+        //this.renderBg(ms, partialTicks, mouseX, mouseY);
+        this.renderMealDisplayTooltip(ms, mouseX, mouseY);
     }
 
     protected void renderMealDisplayTooltip(PoseStack ms, int mouseX, int mouseY) {
