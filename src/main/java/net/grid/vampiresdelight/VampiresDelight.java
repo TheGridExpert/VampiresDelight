@@ -2,10 +2,11 @@ package net.grid.vampiresdelight;
 
 import net.grid.vampiresdelight.client.ClientSetup;
 import net.grid.vampiresdelight.common.CommonSetup;
-import net.grid.vampiresdelight.common.Configuration;
+import net.grid.vampiresdelight.common.VDConfiguration;
 import net.grid.vampiresdelight.common.event.PlayerEventHandler;
 import net.grid.vampiresdelight.common.event.PlayerInteractEventHandler;
 import net.grid.vampiresdelight.common.registry.*;
+import net.minecraft.world.inventory.RecipeBookType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -19,13 +20,14 @@ import org.apache.logging.log4j.Logger;
 public class VampiresDelight {
     public static final String MODID = "vampiresdelight";
     public static final Logger LOGGER = LogManager.getLogger();
+    public static final RecipeBookType RECIPE_TYPE_FERMENTING = RecipeBookType.create("FERMENTING");
     public VampiresDelight() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         eventBus.addListener(CommonSetup::init);
         eventBus.addListener(ClientSetup::init);
 
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Configuration.COMMON_CONFIG);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, VDConfiguration.COMMON_CONFIG);
 
         VDItems.ITEMS.register(eventBus);
         VDEnchantments.ENCHANTMENTS.register(eventBus);

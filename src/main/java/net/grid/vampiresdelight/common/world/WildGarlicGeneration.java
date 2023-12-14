@@ -1,7 +1,7 @@
 package net.grid.vampiresdelight.common.world;
 
 import net.grid.vampiresdelight.VampiresDelight;
-import net.grid.vampiresdelight.common.Configuration;
+import net.grid.vampiresdelight.common.VDConfiguration;
 import net.grid.vampiresdelight.common.registry.VDBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
@@ -38,7 +38,7 @@ public class WildGarlicGeneration {
         FEATURE_PATCH_WILD_GARLIC = register(new ResourceLocation(VampiresDelight.MODID, "patch_wild_garlic"),
                 ModBiomeFeatures.WILD_CROP.get(), wildCropWithFloorConfig(VDBlocks.WILD_GARLIC.get(), Blocks.TALL_GRASS, BlockPredicate.matchesTag(BLOCK_BELOW, BlockTags.DIRT), Blocks.COARSE_DIRT, BlockPredicate.matchesTag(BlockTags.DIRT)));
         PATCH_WILD_GARLIC = registerPlacement(new ResourceLocation(VampiresDelight.MODID, "patch_wild_garlic"),
-            FEATURE_PATCH_WILD_GARLIC, RarityFilter.onAverageOnceEvery(Configuration.CHANCE_WILD_GARLIC.get()), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+            FEATURE_PATCH_WILD_GARLIC, RarityFilter.onAverageOnceEvery(VDConfiguration.CHANCE_WILD_GARLIC.get()), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
     }
     public static Holder<PlacedFeature> plantBlockConfig(Block block, BlockPredicate plantedOn) {
         return PlacementUtils.filtered(

@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.0.1.3
+
+### Additions
+- Added **Brewing Barrel**
+- Added **Blood Wine**
+- Added **Wine Glass**
+
+### Updates
+- **Farmer Villagers** now buy **Garlic**
+- **Wandering Traders** now sell **Orchid Seeds**, **Orchid Petals**, **Garlic**, and **Cursed Earth**
+
 ## 0.0.1.2
 
 ### Additions

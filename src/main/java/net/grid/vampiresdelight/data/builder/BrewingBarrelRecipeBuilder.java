@@ -2,6 +2,7 @@ package net.grid.vampiresdelight.data.builder;
 
 import com.google.gson.JsonObject;
 import net.grid.vampiresdelight.VampiresDelight;
+import net.grid.vampiresdelight.client.recipebook.BrewingBarrelRecipeBookTab;
 import net.grid.vampiresdelight.common.registry.VDRecipeSerializers;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.advancements.Advancement;
@@ -21,6 +22,8 @@ import com.google.common.collect.Lists;
 import com.google.gson.JsonArray;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
+import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -30,6 +33,7 @@ import java.util.function.Consumer;
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public class BrewingBarrelRecipeBuilder {
+    private BrewingBarrelRecipeBookTab tab;
     private final List<Ingredient> ingredients = Lists.newArrayList();
     private final Item result;
     private final int count;
@@ -44,6 +48,7 @@ public class BrewingBarrelRecipeBuilder {
         this.brewTime = brewTime;
         this.experience = experience;
         this.container = container != null ? container.asItem() : null;
+        this.tab = null;
     }
 
     public static BrewingBarrelRecipeBuilder brewingBarrelRecipe(ItemLike mainResult, int count, int brewTime, float experience) {
@@ -94,6 +99,11 @@ public class BrewingBarrelRecipeBuilder {
         return this;
     }
 
+    public BrewingBarrelRecipeBuilder setRecipeBookTab(BrewingBarrelRecipeBookTab tab) {
+        this.tab = tab;
+        return this;
+    }
+
     public void build(Consumer<FinishedRecipe> consumerIn) {
         ResourceLocation location = ForgeRegistries.ITEMS.getKey(result);
         build(consumerIn, VampiresDelight.MODID + ":fermenting/" + location.getPath());
@@ -114,15 +124,16 @@ public class BrewingBarrelRecipeBuilder {
                     .rewards(AdvancementRewards.Builder.recipe(id))
                     .requirements(RequirementsStrategy.OR);
             ResourceLocation advancementId = new ResourceLocation(id.getNamespace(), "recipes/" + result.getItemCategory().getRecipeFolderName() + "/" + id.getPath());
-            consumerIn.accept(new BrewingBarrelRecipeBuilder.Result(id, result, count, ingredients, brewTime, experience, container, advancement, advancementId));
+            consumerIn.accept(new BrewingBarrelRecipeBuilder.Result(id, result, count, ingredients, brewTime, experience, container, tab, advancement, advancementId));
         } else {
-            consumerIn.accept(new BrewingBarrelRecipeBuilder.Result(id, result, count, ingredients, brewTime, experience, container));
+            consumerIn.accept(new BrewingBarrelRecipeBuilder.Result(id, result, count, ingredients, brewTime, experience, container, tab));
         }
     }
 
     public static class Result implements FinishedRecipe
     {
         private final ResourceLocation id;
+        private final BrewingBarrelRecipeBookTab tab;
         private final List<Ingredient> ingredients;
         private final Item result;
         private final int count;
@@ -132,8 +143,9 @@ public class BrewingBarrelRecipeBuilder {
         private final Advancement.Builder advancement;
         private final ResourceLocation advancementId;
 
-        public Result(ResourceLocation idIn, Item resultIn, int countIn, List<Ingredient> ingredientsIn, int brewTimeIn, float experienceIn, @Nullable Item containerIn, @Nullable Advancement.Builder advancement, @Nullable ResourceLocation advancementId) {
+        public Result(ResourceLocation idIn, Item resultIn, int countIn, List<Ingredient> ingredientsIn, int brewTimeIn, float experienceIn, @Nullable Item containerIn, @Nullable BrewingBarrelRecipeBookTab tabIn,  @Nullable Advancement.Builder advancement, @Nullable ResourceLocation advancementId) {
             this.id = idIn;
+            this.tab = tabIn;
             this.ingredients = ingredientsIn;
             this.result = resultIn;
             this.count = countIn;
@@ -144,12 +156,16 @@ public class BrewingBarrelRecipeBuilder {
             this.advancementId = advancementId;
         }
 
-        public Result(ResourceLocation idIn, Item resultIn, int countIn, List<Ingredient> ingredientsIn, int cookingTimeIn, float experienceIn, @Nullable Item containerIn) {
-            this(idIn, resultIn, countIn, ingredientsIn, cookingTimeIn, experienceIn, containerIn, null, null);
+        public Result(ResourceLocation idIn, Item resultIn, int countIn, List<Ingredient> ingredientsIn, int cookingTimeIn, float experienceIn, @Nullable Item containerIn, @Nullable BrewingBarrelRecipeBookTab tabIn) {
+            this(idIn, resultIn, countIn, ingredientsIn, cookingTimeIn, experienceIn, containerIn, tabIn, null, null);
         }
 
         @Override
         public void serializeRecipeData(JsonObject json) {
+            if (tab != null) {
+                json.addProperty("recipe_book_tab", tab.toString());
+            }
+
             JsonArray arrayIngredients = new JsonArray();
 
             for (Ingredient ingredient : ingredients) {

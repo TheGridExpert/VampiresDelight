@@ -3,6 +3,7 @@ package net.grid.vampiresdelight.data.recipe;
 import de.teamlapen.vampirism.core.ModBlocks;
 import de.teamlapen.vampirism.core.ModItems;
 import de.teamlapen.vampirism.core.ModTags;
+import net.grid.vampiresdelight.client.recipebook.BrewingBarrelRecipeBookTab;
 import net.grid.vampiresdelight.common.registry.VDItems;
 import net.grid.vampiresdelight.common.tag.VDForgeTags;
 import net.grid.vampiresdelight.data.builder.BrewingBarrelRecipeBuilder;
@@ -39,7 +40,7 @@ public class VDCookingRecipes {
                 .addIngredient(ForgeTags.MILK)
                 .addIngredient(VDItems.ORCHID_PETALS.get())
                 .addIngredient(VDItems.ORCHID_PETALS.get())
-                .unlockedByAnyIngredient(VDItems.ORCHID_PETALS.get())
+                .unlockedByAnyIngredient(VDItems.ORCHID_PETALS.get(), ModBlocks.VAMPIRE_ORCHID.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
                 .build(consumer);
         VDCookingPotRecipeBuilder.cookingPotRecipe(VDItems.WEIRD_JELLY_BLOCK.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
@@ -49,7 +50,7 @@ public class VDCookingRecipes {
                 .addIngredient(Items.SWEET_BERRIES)
                 .addIngredient(Items.SWEET_BERRIES)
                 .addIngredient(ModTags.Items.PURE_BLOOD)
-                .unlockedByAnyIngredient(VDItems.ORCHID_PETALS.get())
+                .unlockedByAnyIngredient(ModItems.PURE_BLOOD_0.get(), ModItems.PURE_BLOOD_1.get(), ModItems.PURE_BLOOD_2.get(), ModItems.PURE_BLOOD_3.get(), ModItems.PURE_BLOOD_4.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(consumer);
     }
@@ -57,15 +58,15 @@ public class VDCookingRecipes {
     private static void cookMeals(Consumer<FinishedRecipe> consumer) {
         VDCookingPotRecipeBuilder.cookingPotRecipe(VDItems.GARLIC_SOUP.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
                 .addIngredient(ForgeTags.RAW_CHICKEN)
-                .addIngredient(VDItems.GRILLED_GARLIC.get())
+                .addIngredient(VDForgeTags.VEGETABLES_GARLIC)
                 .addIngredient(ForgeTags.VEGETABLES)
-                .unlockedByAnyIngredient(ModItems.ITEM_GARLIC.get())
+                .unlockedByAnyIngredient(VDItems.GRILLED_GARLIC.get(), ModItems.ITEM_GARLIC.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(consumer);
         VDCookingPotRecipeBuilder.cookingPotRecipe(VDItems.BORSCHT.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
                 .addIngredient(Ingredient.fromValues(Stream.of(
                         new Ingredient.TagValue(ForgeTags.RAW_PORK),
-                        new Ingredient.TagValue(ForgeTags.RAW_BEEF),
+                        new Ingredient.ItemValue(new ItemStack(Items.BEEF)),
                         new Ingredient.TagValue(ForgeTags.RAW_CHICKEN)
                 )))
                 .addIngredient(Ingredient.fromValues(Stream.of(
@@ -83,9 +84,10 @@ public class VDCookingRecipes {
         BrewingBarrelRecipeBuilder.brewingBarrelRecipe(VDItems.BLOOD_WINE_BOTTLE.get(), 1, SLOW_FERMENTING, LARGE_EXP)
                 .addIngredient(ModItems.BLOOD_BOTTLE.get())
                 .addIngredient(ModItems.BLOOD_BOTTLE.get())
-                .addIngredient(ModItems.BLOOD_BOTTLE.get())
+                .addIngredient(Items.SUGAR)
                 .addIngredient(Items.SWEET_BERRIES)
                 .unlockedByAnyIngredient(ModItems.BLOOD_BOTTLE.get())
+                .setRecipeBookTab(BrewingBarrelRecipeBookTab.DRINKS)
                 .build(consumer);
     }
 }

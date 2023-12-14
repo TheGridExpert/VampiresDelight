@@ -1,4 +1,4 @@
-package net.grid.vampiresdelight.client.gui.overlay;
+package net.grid.vampiresdelight.client.gui;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;

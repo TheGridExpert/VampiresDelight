@@ -56,7 +56,6 @@ import javax.annotation.Nonnull;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.Random;
 
 public class BrewingBarrelBlockEntity extends SyncedBlockEntity implements MenuProvider, RecipeHolder {
     private ItemStackHandler createHandler() {

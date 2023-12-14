@@ -43,6 +43,7 @@
   "vampiresdelight.tooltip.orchid_tea": "Infects With Sanguinare",
   "vampiresdelight.tooltip.cursed_cupcake": "Clears Garlic Effect",
 
+  "vampiresdelight.container.recipe_book.fermentable": "Showing Fermentable",
   "vampiresdelight.container.brewing_barrel": "Brewing Barrel",
   "vampiresdelight.container.brewing_barrel.poured_into": "Poured into: %s",
   "vampiresdelight.tooltip.brewing_barrel.single_serving": "Holds 1 serving of:",

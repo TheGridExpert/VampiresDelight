@@ -3,6 +3,8 @@ package net.grid.vampiresdelight.common.crafting;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
+import net.grid.vampiresdelight.VampiresDelight;
+import net.grid.vampiresdelight.client.recipebook.BrewingBarrelRecipeBookTab;
 import net.grid.vampiresdelight.common.registry.VDItems;
 import net.grid.vampiresdelight.common.registry.VDRecipeSerializers;
 import net.grid.vampiresdelight.common.registry.VDRecipeTypes;
@@ -19,6 +21,10 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.items.wrapper.RecipeWrapper;
 import org.jetbrains.annotations.Nullable;
+import vectorwing.farmersdelight.FarmersDelight;
+import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
+
+import java.util.EnumSet;
 
 @SuppressWarnings("ClassCanBeRecord")
 public class BrewingBarrelRecipe implements Recipe<RecipeWrapper> {
@@ -26,15 +32,17 @@ public class BrewingBarrelRecipe implements Recipe<RecipeWrapper> {
 
     private final ResourceLocation id;
     private final String group;
+    private final BrewingBarrelRecipeBookTab tab;
     private final NonNullList<Ingredient> inputItems;
     private final ItemStack output;
     private final ItemStack container;
     private final float experience;
     private final int brewTime;
 
-    public BrewingBarrelRecipe(ResourceLocation id, String group, NonNullList<Ingredient> inputItems, ItemStack output, ItemStack container, float experience, int cookTime) {
+    public BrewingBarrelRecipe(ResourceLocation id, String group, @Nullable BrewingBarrelRecipeBookTab tab, NonNullList<Ingredient> inputItems, ItemStack output, ItemStack container, float experience, int cookTime) {
         this.id = id;
         this.group = group;
+        this.tab = tab;
         this.inputItems = inputItems;
         this.output = output;
 
@@ -58,6 +66,11 @@ public class BrewingBarrelRecipe implements Recipe<RecipeWrapper> {
     @Override
     public String getGroup() {
         return this.group;
+    }
+
+    @Nullable
+    public BrewingBarrelRecipeBookTab getRecipeBookTab() {
+        return this.tab;
     }
 
     @Override
@@ -133,6 +146,7 @@ public class BrewingBarrelRecipe implements Recipe<RecipeWrapper> {
         if (getBrewTime() != that.getBrewTime()) return false;
         if (!getId().equals(that.getId())) return false;
         if (!getGroup().equals(that.getGroup())) return false;
+        if (tab != that.tab) return false;
         if (!inputItems.equals(that.inputItems)) return false;
         if (!output.equals(that.output)) return false;
         return container.equals(that.container);
@@ -163,11 +177,16 @@ public class BrewingBarrelRecipe implements Recipe<RecipeWrapper> {
             } else if (inputItemsIn.size() > BrewingBarrelRecipe.INPUT_SLOTS) {
                 throw new JsonParseException("Too many ingredients for fermenting recipe! The max is " + BrewingBarrelRecipe.INPUT_SLOTS);
             } else {
+                final String tabKeyIn = GsonHelper.getAsString(json, "recipe_book_tab", null);
+                final BrewingBarrelRecipeBookTab tabIn = BrewingBarrelRecipeBookTab.findByName(tabKeyIn);
+                if (tabKeyIn != null && tabIn == null) {
+                    VampiresDelight.LOGGER.warn("Optional field 'recipe_book_tab' does not match any valid tab. If defined, must be one of the following: " + EnumSet.allOf(BrewingBarrelRecipeBookTab.class));
+                }
                 final ItemStack outputIn = CraftingHelper.getItemStack(GsonHelper.getAsJsonObject(json, "result"), true);
                 ItemStack container = GsonHelper.isValidNode(json, "container") ? CraftingHelper.getItemStack(GsonHelper.getAsJsonObject(json, "container"), true) : ItemStack.EMPTY;
                 final float experienceIn = GsonHelper.getAsFloat(json, "experience", 0.0F);
-                final int cookTimeIn = GsonHelper.getAsInt(json, "brewingtime", 200);
-                return new BrewingBarrelRecipe(recipeId, groupIn, inputItemsIn, outputIn, container, experienceIn, cookTimeIn);
+                final int cookTimeIn = GsonHelper.getAsInt(json, "brewingtime", 2000);
+                return new BrewingBarrelRecipe(recipeId, groupIn, tabIn, inputItemsIn, outputIn, container, experienceIn, cookTimeIn);
             }
         }
 
@@ -188,6 +207,7 @@ public class BrewingBarrelRecipe implements Recipe<RecipeWrapper> {
         @Override
         public BrewingBarrelRecipe fromNetwork(ResourceLocation recipeId, FriendlyByteBuf buffer) {
             String groupIn = buffer.readUtf();
+            BrewingBarrelRecipeBookTab tabIn = BrewingBarrelRecipeBookTab.findByName(buffer.readUtf());
             int i = buffer.readVarInt();
             NonNullList<Ingredient> inputItemsIn = NonNullList.withSize(i, Ingredient.EMPTY);
 
@@ -199,7 +219,7 @@ public class BrewingBarrelRecipe implements Recipe<RecipeWrapper> {
             ItemStack container = buffer.readItem();
             float experienceIn = buffer.readFloat();
             int cookTimeIn = buffer.readVarInt();
-            return new BrewingBarrelRecipe(recipeId, groupIn, inputItemsIn, outputIn, container, experienceIn, cookTimeIn);
+            return new BrewingBarrelRecipe(recipeId, groupIn, tabIn, inputItemsIn, outputIn, container, experienceIn, cookTimeIn);
         }
 
         @Override

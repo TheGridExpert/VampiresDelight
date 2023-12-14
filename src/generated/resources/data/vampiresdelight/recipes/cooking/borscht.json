@@ -8,7 +8,7 @@
         "tag": "forge:raw_pork"
       },
       {
-        "tag": "forge:raw_beef"
+        "item": "minecraft:beef"
       },
       {
         "tag": "forge:raw_chicken"

@@ -2,11 +2,18 @@ package net.grid.vampiresdelight.common;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 
-public class Configuration {
+public class VDConfiguration {
     public static ForgeConfigSpec COMMON_CONFIG;
     public static ForgeConfigSpec CLIENT_CONFIG;
 
     //COMMON
+    public static final String CATEGORY_SETTINGS = "settings";
+    public static ForgeConfigSpec.BooleanValue FARMERS_BUY_GARLIC;
+    public static ForgeConfigSpec.BooleanValue WANDERING_TRADER_SELLS_VAMPIRISM_ITEMS;
+
+    public static final String CATEGORY_RECIPE_BOOK = "recipe_book";
+    public static ForgeConfigSpec.BooleanValue ENABLE_RECIPE_BOOK_BREWING_BARREL;
+
     public static final String CATEGORY_WORLD = "world";
     public static ForgeConfigSpec.IntValue CHANCE_WILD_GARLIC;
 
@@ -19,6 +26,17 @@ public class Configuration {
     static {
         // COMMON
         ForgeConfigSpec.Builder COMMON_BUILDER = new ForgeConfigSpec.Builder();
+
+        COMMON_BUILDER.comment("Game settings").push(CATEGORY_SETTINGS);
+        FARMERS_BUY_GARLIC = COMMON_BUILDER.comment("Should Farmers buy garlic? (May reduce chances of other trades appearing)")
+                .define("farmersBuyGarlic", true);
+        WANDERING_TRADER_SELLS_VAMPIRISM_ITEMS = COMMON_BUILDER.comment("Should the Wandering Trader sell some of vampirism's and this mod's items? (Including seeds and some blocks)")
+                .define("wanderingTraderSellsVampirismItems", true);
+
+        COMMON_BUILDER.comment("Recipe book").push(CATEGORY_RECIPE_BOOK);
+        ENABLE_RECIPE_BOOK_BREWING_BARREL = COMMON_BUILDER.comment("Should the Brewing Barrel have a Recipe Book available on its interface?")
+                .define("enableRecipeBookBrewingBarrel", true);
+        COMMON_BUILDER.pop();
 
         COMMON_BUILDER.comment("World generation").push(CATEGORY_WORLD);
 

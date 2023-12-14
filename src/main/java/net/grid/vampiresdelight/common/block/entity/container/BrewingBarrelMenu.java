@@ -9,9 +9,11 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.player.StackedContents;
 import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.api.distmarker.Dist;
@@ -19,12 +21,13 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.SlotItemHandler;
+import net.minecraftforge.items.wrapper.RecipeWrapper;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Objects;
 
-public class BrewingBarrelMenu extends AbstractContainerMenu {
+public class BrewingBarrelMenu extends RecipeBookMenu<RecipeWrapper> {
     public static final ResourceLocation EMPTY_CONTAINER_SLOT_BOTTLE = new ResourceLocation(VampiresDelight.MODID, "item/empty_container_slot_bottle");
 
     public final BrewingBarrelBlockEntity blockEntity;
@@ -155,6 +158,55 @@ public class BrewingBarrelMenu extends AbstractContainerMenu {
         int i = this.brewingBarrelData.get(0);
         int j = this.brewingBarrelData.get(1);
         return j != 0 && i != 0 ? i * 33 / j : 0;
+    }
+
+    @Override
+    public void fillCraftSlotsStackedContents(StackedContents helper) {
+        for (int i = 0; i < inventory.getSlots(); i++) {
+            helper.accountSimpleStack(inventory.getStackInSlot(i));
+        }
+    }
+
+    @Override
+    public void clearCraftingContent() {
+        for (int i = 0; i < 6; i++) {
+            this.inventory.setStackInSlot(i, ItemStack.EMPTY);
+        }
+    }
+
+    @Override
+    public boolean recipeMatches(Recipe<? super RecipeWrapper> recipe) {
+        return recipe.matches(new RecipeWrapper(inventory), level);
+    }
+
+    @Override
+    public int getResultSlotIndex() {
+        return 5;
+    }
+
+    @Override
+    public int getGridWidth() {
+        return 2;
+    }
+
+    @Override
+    public int getGridHeight() {
+        return 2;
+    }
+
+    @Override
+    public int getSize() {
+        return 5;
+    }
+
+    @Override
+    public RecipeBookType getRecipeBookType() {
+        return VampiresDelight.RECIPE_TYPE_FERMENTING;
+    }
+
+    @Override
+    public boolean shouldMoveToInventory(int slot) {
+        return slot < (getGridWidth() * getGridHeight());
     }
 
     @ParametersAreNonnullByDefault
