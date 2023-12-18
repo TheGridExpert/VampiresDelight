@@ -49,7 +49,7 @@ public class OrchidTeaItem extends DrinkableItem implements IFactionExclusiveIte
                 consumer.addEffect(new MobEffectInstance(MobEffects.POISON, 60));
             }
         } else {
-            consumer.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 20 * 20));
+            consumer.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 400));
         }
     }
 

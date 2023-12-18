@@ -1,12 +1,16 @@
 modLoader="javafml"
 loaderVersion="[47,)"
+issueTrackerURL = "https://github.com/TheGridExpert/VampiresDelight/issues"
 license="MIT"
 [[mods]]
 modId="vampiresdelight"
 version="0.0.1.3"
 displayName="Vampire's Delight"
+displayURL = "https://github.com/TheGridExpert/VampiresDelight"
 logoFile="logo.png"
 logoBlur=false
+itemIcon = "vampiresdelight:garlic_crate"
+configBackground = "vampirism:textures/block/dark_stone_bricks.png"
 credits="Cheaterpaul, Maxanier, Vectorwing"
 authors="GridExpert"
 description='''

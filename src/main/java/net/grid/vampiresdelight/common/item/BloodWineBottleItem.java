@@ -115,7 +115,7 @@ public class BloodWineBottleItem extends Item {
 
     @Override
     public int getUseDuration(ItemStack stack) {
-        return 16;
+        return 32;
     }
 
     @Override
