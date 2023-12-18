@@ -40,9 +40,6 @@ public class VampiresDelight {
         VDBlockEntityTypes.TILES.register(eventBus);
         VDMenuTypes.MENU_TYPES.register(eventBus);
 
-        MinecraftForge.EVENT_BUS.register(new PlayerEventHandler());
-        MinecraftForge.EVENT_BUS.register(new PlayerInteractEventHandler());
-
         MinecraftForge.EVENT_BUS.register(this);
     }
 }

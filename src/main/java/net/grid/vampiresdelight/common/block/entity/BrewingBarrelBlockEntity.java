@@ -318,7 +318,7 @@ public class BrewingBarrelBlockEntity extends SyncedBlockEntity implements MenuP
                 if (recipe.matches(inventoryWrapper, level)) {
                     return Optional.of((BrewingBarrelRecipe) recipe);
                 }
-                if (recipe.getResultItem().sameItem(getMeal())) {
+                if (ItemStack.isSameItem(recipe.getResultItem(this.level.registryAccess()), getMeal())) {
                     return Optional.empty();
                 }
             }
@@ -358,14 +358,14 @@ public class BrewingBarrelBlockEntity extends SyncedBlockEntity implements MenuP
 
     protected boolean canBrew(BrewingBarrelRecipe recipe) {
         if (hasInput()) {
-            ItemStack resultStack = recipe.getResultItem();
+            ItemStack resultStack = recipe.getResultItem(this.level.registryAccess());
             if (resultStack.isEmpty()) {
                 return false;
             } else {
                 ItemStack storedMealStack = inventory.getStackInSlot(MEAL_DISPLAY_SLOT);
                 if (storedMealStack.isEmpty()) {
                     return true;
-                } else if (!storedMealStack.sameItem(resultStack)) {
+                } else if (!ItemStack.isSameItem(storedMealStack, resultStack)) {
                     return false;
                 } else if (storedMealStack.getCount() + resultStack.getCount() <= inventory.getSlotLimit(MEAL_DISPLAY_SLOT)) {
                     return true;
@@ -389,11 +389,11 @@ public class BrewingBarrelBlockEntity extends SyncedBlockEntity implements MenuP
 
         brewTime = 0;
         mealContainerStack = recipe.getOutputContainer();
-        ItemStack resultStack = recipe.getResultItem();
+        ItemStack resultStack = recipe.getResultItem(this.level.registryAccess());
         ItemStack storedMealStack = inventory.getStackInSlot(MEAL_DISPLAY_SLOT);
         if (storedMealStack.isEmpty()) {
             inventory.setStackInSlot(MEAL_DISPLAY_SLOT, resultStack.copy());
-        } else if (storedMealStack.sameItem(resultStack)) {
+        } else if (ItemStack.isSameItem(storedMealStack, resultStack)) {
             storedMealStack.grow(resultStack.getCount());
         }
         brewingBarrel.setRecipeUsed(recipe);
@@ -435,8 +435,8 @@ public class BrewingBarrelBlockEntity extends SyncedBlockEntity implements MenuP
     }
 
     @Override
-    public void awardUsedRecipes(Player player) {
-        List<Recipe<?>> usedRecipes = getUsedRecipesAndPopExperience(player.level, player.position());
+    public void awardUsedRecipes(Player player, List<ItemStack> items) {
+        List<Recipe<?>> usedRecipes = getUsedRecipesAndPopExperience(player.level(), player.position());
         player.awardRecipes(usedRecipes);
         usedRecipeTracker.clear();
     }
@@ -528,9 +528,9 @@ public class BrewingBarrelBlockEntity extends SyncedBlockEntity implements MenuP
     public boolean isContainerValid(ItemStack containerItem) {
         if (containerItem.isEmpty()) return false;
         if (!mealContainerStack.isEmpty()) {
-            return mealContainerStack.sameItem(containerItem);
+            return ItemStack.isSameItem(mealContainerStack, containerItem);
         } else {
-            return getMeal().getCraftingRemainingItem().sameItem(containerItem);
+            return ItemStack.isSameItem(getMeal(), containerItem);
         }
     }
 

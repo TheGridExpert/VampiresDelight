@@ -1,8 +1,6 @@
 {
     "pack": {
-        "description": "vampiresdelight resources",
-        "pack_format": 9,
-        "forge:resource_pack_format": 9,
-        "forge:data_pack_format": 10
+        "description": "Vampire's Delight resources",
+        "pack_format": 15
     }
 }

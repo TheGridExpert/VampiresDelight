@@ -1,24 +1,29 @@
 package net.grid.vampiresdelight.data;
 
 import de.teamlapen.vampirism.core.ModItems;
+import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.registry.VDItems;
 import net.grid.vampiresdelight.common.tag.VDCompatibilityTags;
 import net.grid.vampiresdelight.common.tag.VDForgeTags;
 import net.grid.vampiresdelight.common.tag.VDTags;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.data.tags.TagsProvider;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.tag.*;
 
+import java.util.concurrent.CompletableFuture;
+
 public class VDItemTags extends ItemTagsProvider {
-    public VDItemTags(DataGenerator generatorIn, BlockTagsProvider blockTagProvider, String modId, @Nullable ExistingFileHelper existingFileHelper) {
-        super(generatorIn, blockTagProvider, modId, existingFileHelper);
+    public VDItemTags(PackOutput output, CompletableFuture<HolderLookup.Provider> provider, CompletableFuture<TagsProvider.TagLookup<Block>> blockTagProvider, @Nullable ExistingFileHelper existingFileHelper) {
+        super(output, provider, blockTagProvider, VampiresDelight.MODID, existingFileHelper);
     }
 
     @Override
-    protected void addTags() {
+    protected void addTags(HolderLookup.Provider provider) {
         this.registerModTags();
         this.registerVampirismTags();
         this.registerFarmersDelightTags();

@@ -2,7 +2,6 @@ package net.grid.vampiresdelight.common.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
@@ -41,15 +40,17 @@ public class WeirdJellyBlock extends FeastBlock {
         return adjacentBlockState.is(this) || super.skipRendering(state, adjacentBlockState, side);
     }
 
+    @Override
     public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, float fl) {
         if (entity.isSuppressingBounce()) {
             super.fallOn(level, state, pos, entity, fl);
         } else {
-            entity.causeFallDamage(fl, 0.0F, DamageSource.FALL);
+            entity.causeFallDamage(fl, 0.0F, entity.damageSources().fall());
         }
 
     }
 
+    @Override
     public void updateEntityAfterFallOn(BlockGetter blockGetter, Entity entity) {
         if (entity.isSuppressingBounce()) {
             super.updateEntityAfterFallOn(blockGetter, entity);
@@ -66,6 +67,7 @@ public class WeirdJellyBlock extends FeastBlock {
         }
     }
 
+    @Override
     public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
         double d0 = Math.abs(entity.getDeltaMovement().y);
         if (d0 < 0.1D && !entity.isSteppingCarefully()) {

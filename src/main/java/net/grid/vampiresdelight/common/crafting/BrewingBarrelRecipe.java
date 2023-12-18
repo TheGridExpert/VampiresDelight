@@ -9,6 +9,7 @@ import net.grid.vampiresdelight.common.registry.VDItems;
 import net.grid.vampiresdelight.common.registry.VDRecipeSerializers;
 import net.grid.vampiresdelight.common.registry.VDRecipeTypes;
 import net.minecraft.core.NonNullList;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
@@ -79,7 +80,7 @@ public class BrewingBarrelRecipe implements Recipe<RecipeWrapper> {
     }
 
     @Override
-    public ItemStack getResultItem() {
+    public ItemStack getResultItem(RegistryAccess access) {
         return this.output;
     }
 
@@ -88,7 +89,7 @@ public class BrewingBarrelRecipe implements Recipe<RecipeWrapper> {
     }
 
     @Override
-    public ItemStack assemble(RecipeWrapper inv) {
+    public ItemStack assemble(RecipeWrapper inv, RegistryAccess access) {
         return this.output.copy();
     }
 

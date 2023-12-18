@@ -42,7 +42,7 @@ public class VDCraftingRecipes {
 
     // Crafting
     private static void recipesBlocks(Consumer<FinishedRecipe> consumer) {
-        ShapedRecipeBuilder.shaped(VDBlocks.DARK_SPRUCE_CABINET.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, VDBlocks.DARK_SPRUCE_CABINET.get())
                 .pattern("___")
                 .pattern("D D")
                 .pattern("___")
@@ -50,7 +50,7 @@ public class VDCraftingRecipes {
                 .define('D', ModBlocks.DARK_SPRUCE_TRAPDOOR.get())
                 .unlockedBy("has_dark_spruce_trapdoor", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.DARK_SPRUCE_TRAPDOOR.get()))
                 .save(consumer);
-        ShapedRecipeBuilder.shaped(VDBlocks.CURSED_SPRUCE_CABINET.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, VDBlocks.CURSED_SPRUCE_CABINET.get())
                 .pattern("___")
                 .pattern("D D")
                 .pattern("___")
@@ -58,14 +58,14 @@ public class VDCraftingRecipes {
                 .define('D', ModBlocks.CURSED_SPRUCE_TRAPDOOR.get())
                 .unlockedBy("has_cursed_spruce_trapdoor", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.CURSED_SPRUCE_TRAPDOOR.get()))
                 .save(consumer);
-        ShapedRecipeBuilder.shaped(VDItems.GARLIC_CRATE.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, VDItems.GARLIC_CRATE.get(), 1)
                 .pattern("###")
                 .pattern("###")
                 .pattern("###")
                 .define('#', de.teamlapen.vampirism.core.ModItems.ITEM_GARLIC.get())
                 .unlockedBy("has_garlic", InventoryChangeTrigger.TriggerInstance.hasItems(de.teamlapen.vampirism.core.ModItems.ITEM_GARLIC.get()))
                 .save(consumer);
-        ShapedRecipeBuilder.shaped(VDItems.ORCHID_BAG.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, VDItems.ORCHID_BAG.get(), 1)
                 .pattern("###")
                 .pattern("###")
                 .pattern("###")
@@ -75,25 +75,25 @@ public class VDCraftingRecipes {
     }
 
     private static void recipesMaterials(Consumer<FinishedRecipe> consumer) {
-        ShapelessRecipeBuilder.shapeless(de.teamlapen.vampirism.core.ModItems.ITEM_GARLIC.get(), 9)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, de.teamlapen.vampirism.core.ModItems.ITEM_GARLIC.get(), 9)
                 .requires(VDItems.GARLIC_CRATE.get())
                 .unlockedBy("has_garlic_crate", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.GARLIC_CRATE.get()))
                 .save(consumer, new ResourceLocation(VampiresDelight.MODID, "garlic_from_crate"));
-        ShapelessRecipeBuilder.shapeless(VDItems.ORCHID_PETALS.get(), 9)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.ORCHID_PETALS.get(), 9)
                 .requires(VDItems.ORCHID_BAG.get())
                 .unlockedBy("has_orchid_bag", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.ORCHID_BAG.get()))
                 .save(consumer, new ResourceLocation(VampiresDelight.MODID, "orchid_petals_from_bag"));
     }
 
     private static void recipesFoodstuffs(Consumer<FinishedRecipe> consumer) {
-        ShapelessRecipeBuilder.shapeless(VDItems.BLOOD_DOUGH.get(), 3)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.BLOOD_DOUGH.get(), 3)
                 .requires(ModItems.BLOOD_BOTTLE.get())
                 .requires(ForgeTags.CROPS_RICE)
                 .requires(ForgeTags.CROPS_RICE)
                 .requires(ForgeTags.CROPS_RICE)
                 .unlockedBy("has_rice", InventoryChangeTrigger.TriggerInstance.hasItems(vectorwing.farmersdelight.common.registry.ModItems.RICE.get()))
                 .save(consumer);
-        ShapedRecipeBuilder.shaped(VDItems.PURE_SORBET.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, VDItems.PURE_SORBET.get(), 1)
                 .pattern(" sa")
                 .pattern("ips")
                 .pattern("ti ")
@@ -107,7 +107,7 @@ public class VDCraftingRecipes {
     }
 
     private static void recipesFoodBlocks(Consumer<FinishedRecipe> consumer) {
-        ShapedRecipeBuilder.shaped(VDItems.BLOOD_PIE.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, VDItems.BLOOD_PIE.get(), 1)
                 .pattern("www")
                 .pattern("xxx")
                 .pattern("bOb")
@@ -117,7 +117,7 @@ public class VDCraftingRecipes {
                 .define('O', vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get())
                 .unlockedBy("has_pie_crust", InventoryChangeTrigger.TriggerInstance.hasItems(vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get()))
                 .save(consumer);
-        ShapedRecipeBuilder.shaped(VDItems.BLOOD_PIE.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, VDItems.BLOOD_PIE.get(), 1)
                 .pattern("##")
                 .pattern("##")
                 .define('#', VDItems.BLOOD_PIE_SLICE.get())
@@ -126,27 +126,27 @@ public class VDCraftingRecipes {
     }
 
     private static void recipesCraftedMeals(Consumer<FinishedRecipe> consumer) {
-        ShapelessRecipeBuilder.shapeless(VDItems.BAGEL_SANDWICH.get())
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.BAGEL_SANDWICH.get())
                 .requires(VDItems.BLOOD_BAGEL.get())
                 .requires(vectorwing.farmersdelight.common.registry.ModItems.SMOKED_HAM.get())
                 .requires(vectorwing.farmersdelight.common.registry.ModItems.FRIED_EGG.get())
                 .unlockedBy("has_blood_bagel", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.BLOOD_BAGEL.get()))
                 .save(consumer);
-        ShapelessRecipeBuilder.shapeless(VDItems.EYE_TOAST.get())
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.EYE_TOAST.get())
                 .requires(ForgeTags.BREAD)
                 .requires(VDItems.HUMAN_EYE.get())
                 .requires(ForgeTags.CROPS_TOMATO)
                 .requires(ModItems.BLOOD_BOTTLE.get())
                 .unlockedBy("has_human_eye", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.HUMAN_EYE.get()))
                 .save(consumer);
-        ShapelessRecipeBuilder.shapeless(VDItems.HARDTACK.get())
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.HARDTACK.get())
                 .requires(Items.WHEAT)
                 .requires(Items.WHEAT)
                 .requires(Items.WHEAT)
                 .requires(Items.WHEAT)
                 .unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
                 .save(consumer);
-        ShapelessRecipeBuilder.shapeless(VDItems.CURSED_CUPCAKE.get())
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.CURSED_CUPCAKE.get())
                 .requires(VDItems.BLOOD_BAGEL.get())
                 .requires(ForgeTags.MILK)
                 .requires(Items.SUGAR)
@@ -176,7 +176,7 @@ public class VDCraftingRecipes {
 
     // Vampirism
     private static void recipesWeaponTable(Consumer<FinishedRecipe> consumer) {
-        ShapelessWeaponTableRecipeBuilder.shapelessWeaponTable(VDItems.ALCHEMICAL_COCKTAIL.get())
+        ShapelessWeaponTableRecipeBuilder.shapelessWeaponTable(RecipeCategory.COMBAT, VDItems.ALCHEMICAL_COCKTAIL.get())
                 .lava(1)
                 .requires(Items.GLASS_BOTTLE)
                 .requires(ModItems.ITEM_ALCHEMICAL_FIRE.get(), 2)

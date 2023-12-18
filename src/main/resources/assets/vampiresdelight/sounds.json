@@ -1,12 +1,4 @@
 {
-  "placeholder.metal_pipe": {
-    "subtitle": "vampiresdelight.subtitles.metal_pipe",
-    "sounds": [
-      {
-        "name": "vampiresdelight:metal_pipe"
-      }
-    ]
-  },
   "world.triangle": {
     "sounds": [
       "vampiresdelight:triangles/triangle_1",

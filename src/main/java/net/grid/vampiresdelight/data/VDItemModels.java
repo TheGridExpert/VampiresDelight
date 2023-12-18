@@ -4,6 +4,7 @@ import com.google.common.collect.Sets;
 import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.registry.VDItems;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -20,8 +21,8 @@ public class VDItemModels extends ItemModelProvider {
 
     public static final String GENERATED = "item/generated";
 
-    public VDItemModels(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-        super(generator, VampiresDelight.MODID, existingFileHelper);
+    public VDItemModels(PackOutput output, ExistingFileHelper existingFileHelper) {
+        super(output, VampiresDelight.MODID, existingFileHelper);
     }
 
     @Override

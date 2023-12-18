@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "#": {
       "item": "vampiresdelight:blood_pie_slice"
@@ -11,5 +12,6 @@
   ],
   "result": {
     "item": "vampiresdelight:blood_pie"
-  }
+  },
+  "show_notification": true
 }

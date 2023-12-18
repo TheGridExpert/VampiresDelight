@@ -1,6 +1,7 @@
 package net.grid.vampiresdelight.common.event;
 
 import de.teamlapen.vampirism.core.ModBlocks;
+import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.registry.VDBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelAccessor;
@@ -8,10 +9,12 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.ToolActions;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 
+@Mod.EventBusSubscriber(modid = VampiresDelight.MODID)
 public class PlayerInteractEventHandler {
     @SubscribeEvent
-    public void onCursedEarthClickedWithHoe(BlockEvent.BlockToolModificationEvent event) {
+    public static void onCursedEarthClickedWithHoe(BlockEvent.BlockToolModificationEvent event) {
         if (event.isCanceled() || ! event.getToolAction().equals(ToolActions.HOE_TILL))
             return;
 

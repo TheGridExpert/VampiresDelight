@@ -10,6 +10,7 @@ import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -58,7 +59,7 @@ public class AlchemicalCocktailEntity extends ThrowableItemProjectile implements
             ParticleOptions iparticledata = new ItemParticleOption(ParticleTypes.ITEM, entityStack);
 
             for (int i = 0; i < 12; ++i) {
-                this.level.addParticle(iparticledata, this.getX(), this.getY(), this.getZ(),
+                this.level().addParticle(iparticledata, this.getX(), this.getY(), this.getZ(),
                         ((double) this.random.nextFloat() * 2.0D - 1.0D) * 0.1F,
                         ((double) this.random.nextFloat() * 2.0D - 1.0D) * 0.1F + 0.1F,
                         ((double) this.random.nextFloat() * 2.0D - 1.0D) * 0.1F);
@@ -70,7 +71,7 @@ public class AlchemicalCocktailEntity extends ThrowableItemProjectile implements
     protected void onHitEntity(EntityHitResult result) {
         super.onHitEntity(result);
         Entity entity = result.getEntity();
-        entity.hurt(DamageSource.thrown(this, this.getOwner()), 0);
+        entity.hurt(this.damageSources().thrown(this, this.getOwner()), 0);
         entity.setSecondsOnFire(16);
         setOnFire(result);
         this.playSound(SoundEvents.GLASS_BREAK, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
@@ -79,8 +80,8 @@ public class AlchemicalCocktailEntity extends ThrowableItemProjectile implements
     @Override
     protected void onHit(HitResult result) {
         super.onHit(result);
-        if (!this.level.isClientSide) {
-            this.level.broadcastEntityEvent(this, (byte) 3);
+        if (!this.level().isClientSide) {
+            this.level().broadcastEntityEvent(this, (byte) 3);
             setOnFire(result);
             this.playSound(SoundEvents.GLASS_BREAK, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
             this.discard();
@@ -88,17 +89,17 @@ public class AlchemicalCocktailEntity extends ThrowableItemProjectile implements
     }
 
     public void setOnFire(HitResult result) {
-        BlockPos blockPos = new BlockPos(result.getLocation());
+        BlockPos blockPos = BlockPos.containing(result.getLocation());
         for (int dx = -1; dx < 3; dx++) {
             for (int dy = -2; dy < 2; dy++) {
                 for (int dz = -1; dz < 3; dz++) {
                     BlockPos pos = blockPos.offset(dx, dy, dz);
-                    BlockState blockState = this.level.getBlockState(pos);
+                    BlockState blockState = this.level().getBlockState(pos);
                     Random random = new Random();
-                    if (blockState.getMaterial().isReplaceable() &&
-                            this.level.getBlockState(pos.below()).isFaceSturdy(this.level, pos.below(), Direction.UP) &&
+                    if (blockState.canBeReplaced() &&
+                            this.level().getBlockState(pos.below()).isFaceSturdy(this.level(), pos.below(), Direction.UP) &&
                             random.nextInt(4) != 0) {
-                        this.level.setBlockAndUpdate(pos, ModBlocks.ALCHEMICAL_FIRE.get().defaultBlockState());
+                        this.level().setBlockAndUpdate(pos, ModBlocks.ALCHEMICAL_FIRE.get().defaultBlockState());
                     }
                 }
             }
@@ -106,7 +107,7 @@ public class AlchemicalCocktailEntity extends ThrowableItemProjectile implements
     }
 
     @Override
-    public Packet<?> getAddEntityPacket() {
+    public Packet<ClientGamePacketListener> getAddEntityPacket() {
         return NetworkHooks.getEntitySpawningPacket(this);
     }
 

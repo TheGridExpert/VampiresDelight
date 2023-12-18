@@ -11,25 +11,23 @@ import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.item.FuelBlockItem;
 import vectorwing.farmersdelight.common.item.PopsicleItem;
 
 public class VDItems {
-    public static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, VampiresDelight.MODID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, VampiresDelight.MODID);
     // Helper methods
     public static Item.Properties basicItem() {
-        return new Item.Properties().tab(FarmersDelight.CREATIVE_TAB);
+        return new Item.Properties();
     }
     public static Item.Properties foodItem(FoodProperties food) {
-        return new Item.Properties().food(food).tab(FarmersDelight.CREATIVE_TAB);
+        return new Item.Properties().food(food);
     }
     public static Item.Properties bowlFoodItem(FoodProperties food) {
-        return new Item.Properties().food(food).craftRemainder(Items.BOWL).stacksTo(16).tab(FarmersDelight.CREATIVE_TAB);
+        return new Item.Properties().food(food).craftRemainder(Items.BOWL).stacksTo(16);
     }
     public static Item.Properties drinkItem() {
-        return new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16).tab(FarmersDelight.CREATIVE_TAB);
+        return new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16);
     }
 
 
@@ -51,9 +49,9 @@ public class VDItems {
 
 
 
-    // Tools and Non-Food Stuff
+    // Tools/Non-food
     public static final RegistryObject<Item> ALCHEMICAL_COCKTAIL = ITEMS.register("alchemical_cocktail",
-            () -> new AlchemicalCocktailItem(new Item.Properties().stacksTo(8).tab(FarmersDelight.CREATIVE_TAB)));
+            () -> new AlchemicalCocktailItem(basicItem().stacksTo(8)));
 
     // Farming
     public static final RegistryObject<Item> CURSED_FARMLAND = ITEMS.register("cursed_farmland",
@@ -63,7 +61,7 @@ public class VDItems {
 
     // Foodstuffs
     public static final RegistryObject<Item> GRILLED_GARLIC = ITEMS.register("grilled_garlic",
-            () -> new HunterConsumableItem(foodItem(VDFoodValues.GRILLED_GARLIC).tab(FarmersDelight.CREATIVE_TAB)));
+            () -> new HunterConsumableItem(foodItem(VDFoodValues.GRILLED_GARLIC)));
     public static final RegistryObject<Item> ORCHID_TEA = ITEMS.register("orchid_tea",
             () -> new OrchidTeaItem(drinkItem()));
     public static final RegistryObject<Item> ORCHID_PETALS = ITEMS.register("orchid_petals", () -> new Item(basicItem()));
@@ -80,17 +78,17 @@ public class VDItems {
             () -> new BloodWineBottleItem(basicItem()));
     public static final RegistryObject<Item> WINE_GLASS = ITEMS.register("wine_glass",
             () -> new WineGlassItem(drinkItem()));
+    public static final RegistryObject<Item> BLOOD_PIE = ITEMS.register("blood_pie",
+            () -> new BlockItem(VDBlocks.BLOOD_PIE.get(), basicItem()));
+    public static final RegistryObject<Item> BLOOD_PIE_SLICE = ITEMS.register("blood_pie_slice",
+            () -> new VampireConsumableItem(VDFoodValues.BLOOD_PIE_SLICE, VDFoodValues.NASTY,
+                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0)));
 
     // Sweets
     public static final RegistryObject<Item> PURE_SORBET = ITEMS.register("pure_sorbet",
             () -> new PopsicleItem(foodItem(VDFoodValues.PURE_SORBET)));
     public static final RegistryObject<Item> CURSED_CUPCAKE = ITEMS.register("cursed_cupcake",
             () -> new CursedCupcakeItem(VDFoodValues.CURSED_CUPCAKE, VDFoodValues.NASTY));
-    public static final RegistryObject<Item> BLOOD_PIE = ITEMS.register("blood_pie",
-            () -> new BlockItem(VDBlocks.BLOOD_PIE.get(), basicItem()));
-    public static final RegistryObject<Item> BLOOD_PIE_SLICE = ITEMS.register("blood_pie_slice",
-            () -> new VampireConsumableItem(VDFoodValues.BLOOD_PIE_SLICE, VDFoodValues.NASTY,
-                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0)));
 
     // Basic Meals
     public static final RegistryObject<Item> EYE_TOAST = ITEMS.register("eye_toast",

@@ -20,12 +20,12 @@ import java.util.function.Predicate;
 public class VDPotatoProjectileTypes {
     public static final PotatoCannonProjectileType
             GARLIC = create("garlic").damage(4)
-            .reloadTicks(15)
-            .velocity(1.4f)
-            .renderTumbling()
-            .soundPitch(1.2f)
-            .onEntityHit(garlicEffect(true))
-            .registerAndAssign(ModItems.ITEM_GARLIC.get()),
+                .reloadTicks(15)
+                .velocity(1.4f)
+                .renderTumbling()
+                .soundPitch(1.2f)
+                .onEntityHit(garlicEffect(true))
+                .registerAndAssign(ModItems.ITEM_GARLIC.get()),
             GRILLED_GARLIC = create("grilled_garlic").damage(3)
                     .reloadTicks(15)
                     .velocity(1.4f)
@@ -42,7 +42,7 @@ public class VDPotatoProjectileTypes {
     private static Predicate<EntityHitResult> garlicEffect(boolean recoverable) {
         return ray -> {
             Entity entity = ray.getEntity();
-            if (entity.level.isClientSide)
+            if (entity.level().isClientSide)
                 return true;
 
             if (entity instanceof LivingEntity || Helper.isVampire(entity) || !entity.getCommandSenderWorld().isClientSide) {

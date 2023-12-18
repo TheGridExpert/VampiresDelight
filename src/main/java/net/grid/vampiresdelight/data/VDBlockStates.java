@@ -5,6 +5,7 @@ import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.block.VampireOrchidCropBlock;
 import net.grid.vampiresdelight.common.registry.VDBlocks;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.properties.Property;
@@ -25,8 +26,8 @@ import java.util.List;
 
 public class VDBlockStates extends BlockStateProvider {
     private static final int DEFAULT_ANGLE_OFFSET = 180;
-    public VDBlockStates(DataGenerator gen, ExistingFileHelper exFileHelper) {
-        super(gen, VampiresDelight.MODID, exFileHelper);
+    public VDBlockStates(PackOutput output, ExistingFileHelper existingFileHelper) {
+        super(output, VampiresDelight.MODID, existingFileHelper);
     }
 
     private String blockName(Block block) {

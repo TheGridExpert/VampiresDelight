@@ -14,6 +14,7 @@ import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.registry.VDRecipeSerializers;
 import net.grid.vampiresdelight.common.registry.VDRecipeTypes;
 import net.minecraft.core.NonNullList;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
@@ -60,6 +61,10 @@ public class BloodShapelessRecipe implements CraftingRecipe {
         return VDRecipeTypes.BLOOD_CRAFTING_TYPE.get();
     }
 
+    @Override
+    public CraftingBookCategory category() {
+        return null;
+    }
 
     @NotNull
     @Override
@@ -69,7 +74,7 @@ public class BloodShapelessRecipe implements CraftingRecipe {
 
     @NotNull
     @Override
-    public ItemStack getResultItem() {
+    public ItemStack getResultItem(RegistryAccess access) {
         return this.result;
     }
 
@@ -105,7 +110,7 @@ public class BloodShapelessRecipe implements CraftingRecipe {
 
     @NotNull
     @Override
-    public ItemStack assemble(CraftingContainer container) {
+    public ItemStack assemble(CraftingContainer container, RegistryAccess access) {
         return this.result.copy();
     }
 

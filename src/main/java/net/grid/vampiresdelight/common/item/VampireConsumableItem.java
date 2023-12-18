@@ -41,7 +41,7 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
     private final Item craftRemainder;
 
     public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood) {
-        super(new Properties().tab(FarmersDelight.CREATIVE_TAB).food(humanFood));
+        super(new Properties().food(humanFood));
         this.vampireFood = vampireFood;
         this.craftRemainder = null;
         this.mobEffectInstance = null;
@@ -50,7 +50,7 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
     }
 
     public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood, MobEffectInstance mobEffectInstance) {
-        super(new Properties().tab(FarmersDelight.CREATIVE_TAB).food(humanFood));
+        super(new Properties().food(humanFood));
         this.vampireFood = vampireFood;
         this.craftRemainder = null;
         this.mobEffectInstance = mobEffectInstance;
@@ -59,7 +59,7 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
     }
 
     public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood, Item craftRemainder, MobEffectInstance mobEffectInstance, boolean hasFoodEffectTooltip) {
-        super(new Properties().tab(FarmersDelight.CREATIVE_TAB).food(humanFood).craftRemainder(craftRemainder).stacksTo(16));
+        super(new Properties().food(humanFood).craftRemainder(craftRemainder).stacksTo(16));
         this.vampireFood = vampireFood;
         this.craftRemainder = craftRemainder;
         this.mobEffectInstance = mobEffectInstance;
@@ -68,7 +68,7 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
     }
 
     public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood, MobEffectInstance mobEffectInstance, boolean hasFoodEffectTooltip) {
-        super(new Properties().tab(FarmersDelight.CREATIVE_TAB).food(humanFood));
+        super(new Properties().food(humanFood));
         this.vampireFood = vampireFood;
         this.craftRemainder = null;
         this.mobEffectInstance = mobEffectInstance;
@@ -77,7 +77,7 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
     }
 
     public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood, MobEffectInstance mobEffectInstance, boolean hasFoodEffectTooltip, boolean hasCustomTooltip) {
-        super(new Properties().tab(FarmersDelight.CREATIVE_TAB).food(humanFood));
+        super(new Properties().food(humanFood));
         this.vampireFood = vampireFood;
         this.craftRemainder = null;
         this.mobEffectInstance = mobEffectInstance;

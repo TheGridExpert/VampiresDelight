@@ -122,6 +122,6 @@ public class CursedFarmlandBlock extends FarmBlock {
             turnToCursedEarth(blockState, worldIn, pos);
         }
         //Super turns block to default dirt, so it mustn't be called here
-        entity.causeFallDamage(damage, 1.0F, DamageSource.FALL);
+        entity.causeFallDamage(damage, 1.0F, entity.damageSources().fall());
     }
 }

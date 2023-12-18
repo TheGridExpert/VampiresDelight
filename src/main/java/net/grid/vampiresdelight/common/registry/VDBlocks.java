@@ -6,8 +6,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -23,7 +22,7 @@ public class VDBlocks {
 
     // Crop Storage
     public static final RegistryObject<Block> GARLIC_CRATE = BLOCKS.register("garlic_crate",
-            () -> new Block(Block.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+            () -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> ORCHID_BAG = BLOCKS.register("orchid_bag",
             () -> new Block(Block.Properties.copy(Blocks.WHITE_WOOL)));
 
@@ -35,7 +34,7 @@ public class VDBlocks {
 
     // Farming
     public static final RegistryObject<Block> CURSED_FARMLAND = BLOCKS.register("cursed_farmland",
-            () -> new CursedFarmlandBlock(Block.Properties.of(Material.DIRT, MaterialColor.TERRACOTTA_BROWN).strength(0.5f, 2.0f).sound(SoundType.GRAVEL)));
+            () -> new CursedFarmlandBlock(Block.Properties.copy(Blocks.FARMLAND).strength(0.5f, 2.0f).sound(SoundType.GRAVEL).mapColor(MapColor.TERRACOTTA_BROWN)));
 
     // Pastries
     public static final RegistryObject<Block> BLOOD_PIE = BLOCKS.register("blood_pie",
@@ -47,7 +46,7 @@ public class VDBlocks {
 
     // Crops
     public static final RegistryObject<Block> VAMPIRE_ORCHID_CROP = BLOCKS.register("vampire_orchid_crop",
-            () -> new VampireOrchidCropBlock(Block.Properties.of(Material.PLANT).color(MaterialColor.TERRACOTTA_MAGENTA).instabreak().noCollission().sound(SoundType.CROP)));
+            () -> new VampireOrchidCropBlock(Block.Properties.copy(Blocks.WHEAT).mapColor(MapColor.TERRACOTTA_MAGENTA).instabreak().noCollission().sound(SoundType.CROP)));
 
     // Feasts
     public static final RegistryObject<Block> WEIRD_JELLY_BLOCK = BLOCKS.register("weird_jelly_block",

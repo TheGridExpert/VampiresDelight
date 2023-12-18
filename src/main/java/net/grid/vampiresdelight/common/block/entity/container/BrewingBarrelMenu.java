@@ -40,7 +40,7 @@ public class BrewingBarrelMenu extends RecipeBookMenu<RecipeWrapper> {
         this.blockEntity = blockEntity;
         this.inventory = blockEntity.getInventory();
         this.brewingBarrelData = brewingBarrelDataIn;
-        this.level = playerInventory.player.level;
+        this.level = playerInventory.player.level();
         this.canInteractWithCallable = ContainerLevelAccess.create(blockEntity.getLevel(), blockEntity.getBlockPos());
 
         // Ingredient Slots - 2 Rows x 2 Columns
@@ -76,7 +76,7 @@ public class BrewingBarrelMenu extends RecipeBookMenu<RecipeWrapper> {
         int startPlayerInvY = startY * 4 + 12;
         for (int row = 0; row < 3; ++row) {
             for (int column = 0; column < 9; ++column) {
-                this.addSlot(new Slot(playerInventory, 7 + (row * 9) + column, startX + (column * borderSlotSize),
+                this.addSlot(new Slot(playerInventory, 9 + (row * 9) + column, startX + (column * borderSlotSize),
                         startPlayerInvY + (row * borderSlotSize)));
             }
         }
@@ -92,7 +92,7 @@ public class BrewingBarrelMenu extends RecipeBookMenu<RecipeWrapper> {
     private static BrewingBarrelBlockEntity getTileEntity(final Inventory playerInventory, final FriendlyByteBuf data) {
         Objects.requireNonNull(playerInventory, "playerInventory cannot be null");
         Objects.requireNonNull(data, "data cannot be null");
-        final BlockEntity tileAtPos = playerInventory.player.level.getBlockEntity(data.readBlockPos());
+        final BlockEntity tileAtPos = playerInventory.player.level().getBlockEntity(data.readBlockPos());
         if (tileAtPos instanceof BrewingBarrelBlockEntity) {
             return (BrewingBarrelBlockEntity) tileAtPos;
         }
@@ -267,10 +267,10 @@ public class BrewingBarrelMenu extends RecipeBookMenu<RecipeWrapper> {
 
         @Override
         protected void checkTakeAchievements(ItemStack stack) {
-            stack.onCraftedBy(this.player.level, this.player, this.removeCount);
+            stack.onCraftedBy(this.player.level(), this.player, this.removeCount);
 
-            if (!this.player.level.isClientSide) {
-                tileEntity.awardUsedRecipes(this.player);
+            if (!this.player.level().isClientSide) {
+                tileEntity.awardUsedRecipes(this.player, tileEntity.getDroppableInventory());
             }
 
             this.removeCount = 0;

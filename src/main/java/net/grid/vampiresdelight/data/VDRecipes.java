@@ -5,6 +5,7 @@ import net.grid.vampiresdelight.data.recipe.VDCraftingRecipes;
 import net.grid.vampiresdelight.data.recipe.VDSmeltingRecipes;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
 
@@ -14,12 +15,12 @@ import java.util.function.Consumer;
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public class VDRecipes extends RecipeProvider {
-    public VDRecipes(DataGenerator generator) {
-        super(generator);
+    public VDRecipes(PackOutput output) {
+        super(output);
     }
 
     @Override
-    protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
+    protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
         VDCraftingRecipes.register(consumer);
         VDSmeltingRecipes.register(consumer);
         VDCookingRecipes.register(consumer);

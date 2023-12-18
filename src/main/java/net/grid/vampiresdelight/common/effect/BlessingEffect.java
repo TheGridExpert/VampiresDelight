@@ -28,7 +28,7 @@ public class BlessingEffect extends MobEffect {
     @Override
     public void applyEffectTick(LivingEntity entity, int amplifier) {
         if (!Helper.isVampire(entity)) {
-            resistPhantoms(entity.getLevel(), entity.getX(), entity.getY(), entity.getZ());
+            resistPhantoms(entity.level(), entity.getX(), entity.getY(), entity.getZ());
         } else {
             entity.removeEffect(VDEffects.BLESSING.get());
         }

@@ -3,7 +3,6 @@ package net.grid.vampiresdelight.common;
 import net.grid.vampiresdelight.common.entity.AlchemicalCocktailEntity;
 import net.grid.vampiresdelight.common.registry.VDItems;
 import net.grid.vampiresdelight.common.registry.VDStats;
-import net.grid.vampiresdelight.common.world.WildGarlicGeneration;
 import net.grid.vampiresdelight.integration.ModLoad;
 import net.grid.vampiresdelight.integration.create.VDPotatoProjectileTypes;
 import net.minecraft.core.Position;
@@ -26,7 +25,7 @@ public class CommonSetup {
             VDStats.registerModStats();
             registerDispenserBehaviors();
             registerCompostableItems();
-            WildGarlicGeneration.registerWildGarlicGeneration();
+            //WildGarlicGeneration.registerWildGarlicGeneration();
         });
     }
 
