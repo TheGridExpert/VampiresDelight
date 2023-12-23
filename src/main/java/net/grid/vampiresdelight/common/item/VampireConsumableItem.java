@@ -26,7 +26,6 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.Configuration;
 import vectorwing.farmersdelight.common.utility.TextUtils;
 import net.minecraft.network.chat.Component;
@@ -143,7 +142,7 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
                 tooltip.add(textEmpty.withStyle(ChatFormatting.BLUE));
             }
             if (this.hasFoodEffectTooltip) {
-                VDTextUtils.addFoodEffectTooltip(stack, tooltip, 1.0F);
+                TextUtils.addFoodEffectTooltip(stack, tooltip, 1.0F);
             }
         }
         VDTooltipUtils.addFactionFoodToolTips(tooltip, VampirismMod.proxy.getClientPlayer(), VReference.VAMPIRE_FACTION);

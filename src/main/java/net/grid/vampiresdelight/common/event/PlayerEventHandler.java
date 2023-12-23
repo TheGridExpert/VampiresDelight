@@ -26,6 +26,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
+import vectorwing.farmersdelight.common.item.DrinkableItem;
 
 @Mod.EventBusSubscriber(modid = VampiresDelight.MODID)
 public class PlayerEventHandler {
@@ -61,7 +62,7 @@ public class PlayerEventHandler {
         LivingEntity consumer = event.getEntity();
         InteractionHand hand = consumer.getUsedItemHand();
         ItemStack itemInHand = consumer.getItemInHand(hand);
-        if (Helper.isVampire(consumer) && itemInHand.getItem() instanceof ConsumableItem) {
+        if (Helper.isVampire(consumer) && itemInHand.getItem() instanceof ConsumableItem && !(itemInHand.getItem() instanceof DrinkableItem)) {
             MobEffect effect = event.getEffectInstance().getEffect();
             if (effect != VDEffects.FOG_VISION.get()) {
                 event.setResult(Event.Result.DENY);

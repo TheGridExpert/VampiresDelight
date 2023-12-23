@@ -22,8 +22,8 @@ public class VampireBiteEnchantment extends Enchantment {
 
     public static void healFromDamage(LivingEntity user, int level, float damage) {
         RandomSource randomSource = user.getRandom();
-        if (randomSource.nextInt(5) < 3) {
-            user.heal((float) level / 20 * damage);
+        if (randomSource.nextInt(5) < 3 && user instanceof Player player) {
+            player.heal((float) level / 20 * damage);
         }
     }
 
@@ -32,8 +32,8 @@ public class VampireBiteEnchantment extends Enchantment {
         @SubscribeEvent
         public static void onVampireBite(LivingHurtEvent event) {
             LivingEntity attacker = (LivingEntity) event.getSource().getEntity();
-            if (attacker instanceof Player) {
-                ItemStack weapon = ((Player) attacker).getMainHandItem();
+            if (attacker instanceof Player player) {
+                ItemStack weapon = player.getMainHandItem();
                 int enchantmentLevel = EnchantmentHelper.getItemEnchantmentLevel(VDEnchantments.VAMPIRE_BITE.get(), weapon);
                 Level level = event.getEntity().getCommandSenderWorld();
                 if (!level.isClientSide) {

@@ -21,19 +21,32 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import vectorwing.farmersdelight.common.item.DrinkableItem;
 
 import java.util.List;
 
-public class WineGlassItem extends VampireDrinkableItem {
-    public WineGlassItem(Properties properties) {
-        super(properties);
+public class OrchidTeaItemAlt extends DrinkableItem implements IFactionExclusiveItem {
+    public OrchidTeaItemAlt(Properties properties) {
+        super(properties, false, true);
+    }
+
+    @Nullable
+    @Override
+    public IFaction<?> getExclusiveFaction(@NotNull ItemStack stack) {
+        return VReference.VAMPIRE_FACTION;
     }
 
     @Override
     public void affectConsumer(ItemStack stack, Level level, LivingEntity consumer) {
         if (Helper.isVampire(consumer)) {
-            consumer.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 600, 1));
+            consumer.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 440));
+        } else if (Helper.canBecomeVampire((Player) consumer)) {
+            if (!VampirismConfig.SERVER.disableFangInfection.get()) {
+                SanguinareEffect.addRandom(consumer, true);
+                consumer.addEffect(new MobEffectInstance(MobEffects.POISON, 60));
+            }
         } else {
             consumer.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 400));
         }

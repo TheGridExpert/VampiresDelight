@@ -109,7 +109,7 @@ public class HunterConsumableItem extends Item implements IFactionExclusiveItem 
                 tooltip.add(textEmpty.withStyle(ChatFormatting.BLUE));
             }
             if (this.hasFoodEffectTooltip) {
-                VDTextUtils.addFoodEffectTooltip(stack, tooltip, 1.0F);
+                TextUtils.addFoodEffectTooltip(stack, tooltip, 1.0F);
             }
         }
         VDTooltipUtils.addFactionFoodToolTips(tooltip, VampirismMod.proxy.getClientPlayer(), VReference.HUNTER_FACTION);
