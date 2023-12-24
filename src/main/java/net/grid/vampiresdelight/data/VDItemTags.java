@@ -44,7 +44,9 @@ public class VDItemTags extends ItemTagsProvider {
                 .add(VDItems.WEIRD_JELLY_BLOCK.get())
                 .add(VDItems.BLOOD_DOUGH.get())
                 .add(VDItems.BLOOD_BAGEL.get())
-                .add(VDItems.HUMAN_EYE.get());
+                .add(VDItems.HUMAN_EYE.get())
+                .add(VDItems.BLOOD_WINE_BOTTLE.get())
+                .add(VDItems.WINE_GLASS.get());
         tag(VDTags.HUNTER_FOOD)
                 .add(ModItems.GARLIC_BREAD.get())
                 .add(VDItems.BORSCHT.get())

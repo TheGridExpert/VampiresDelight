@@ -84,8 +84,8 @@ public class VDCookingRecipes {
         BrewingBarrelRecipeBuilder.brewingBarrelRecipe(VDItems.BLOOD_WINE_BOTTLE.get(), 1, SLOW_FERMENTING, LARGE_EXP)
                 .addIngredient(ModItems.BLOOD_BOTTLE.get())
                 .addIngredient(ModItems.BLOOD_BOTTLE.get())
+                .addIngredient(ModItems.BLOOD_BOTTLE.get())
                 .addIngredient(Items.SUGAR)
-                .addIngredient(Items.SWEET_BERRIES)
                 .unlockedByAnyIngredient(ModItems.BLOOD_BOTTLE.get())
                 .setRecipeBookTab(BrewingBarrelRecipeBookTab.DRINKS)
                 .build(consumer);

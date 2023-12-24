@@ -112,7 +112,7 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
         worldIn.playSound(null, entityLiving.getX(), entityLiving.getY(), entityLiving.getZ(), SoundEvents.PLAYER_BURP, SoundSource.PLAYERS, 0.5F, worldIn.random.nextFloat() * 0.1F + 0.9F);
 
         if (!Helper.isVampire(entityLiving)) {
-            entityLiving.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 20 * 20));
+            entityLiving.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 400));
         } else {
             if (mobEffectInstance != null) entityLiving.addEffect(mobEffectInstance);
         }

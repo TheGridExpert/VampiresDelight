@@ -10,10 +10,10 @@
       "item": "vampirism:blood_bottle"
     },
     {
-      "item": "minecraft:sugar"
+      "item": "vampirism:blood_bottle"
     },
     {
-      "item": "minecraft:sweet_berries"
+      "item": "minecraft:sugar"
     }
   ],
   "recipe_book_tab": "drinks",

@@ -1,5 +1,9 @@
 package net.grid.vampiresdelight.common.item;
 
+import de.teamlapen.vampirism.REFERENCE;
+import de.teamlapen.vampirism.api.VReference;
+import de.teamlapen.vampirism.api.entity.factions.IFaction;
+import de.teamlapen.vampirism.api.items.IFactionExclusiveItem;
 import net.grid.vampiresdelight.common.registry.VDItems;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.nbt.CompoundTag;
@@ -18,6 +22,7 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.util.FakePlayer;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
@@ -26,10 +31,10 @@ import javax.annotation.ParametersAreNonnullByDefault;
  */
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
-public class BloodWineBottleItem extends Item {
+public class BloodWineBottleItem extends Item implements IFactionExclusiveItem {
 
     public BloodWineBottleItem(Properties properties) {
-        super(properties.defaultDurability(2));
+        super(properties.defaultDurability(4));
     }
 
     @Override
@@ -95,7 +100,9 @@ public class BloodWineBottleItem extends Item {
                 player.getInventory().placeItemBackInInventory(new ItemStack(VDItems.WINE_GLASS.get()));
             }
             compoundTag.remove("Pouring");
-            itemStack.hurtAndBreak(1, entity, p -> p.broadcastBreakEvent(p.getUsedItemHand()));
+            //itemStack.hurtAndBreak(1, entity, p -> p.broadcastBreakEvent(p.getUsedItemHand()));
+            itemStack.setDamageValue(itemStack.getDamageValue() + 1);
+            if (itemStack.getDamageValue() > 1) itemStack = new ItemStack(Items.GLASS_BOTTLE);
         }
 
         return itemStack;
@@ -121,5 +128,24 @@ public class BloodWineBottleItem extends Item {
     @Override
     public @NotNull UseAnim getUseAnimation(ItemStack itemStack) {
         return UseAnim.DRINK;
+    }
+
+    @Override
+    public ItemStack getCraftingRemainingItem(ItemStack itemStack) {
+        ItemStack item = itemStack.copy();
+        item.setDamageValue(item.getDamageValue() + 1);
+        if (item.getDamageValue() > 1) return new ItemStack(Items.GLASS_BOTTLE);
+        return item;
+    }
+
+    @Override
+    public boolean hasCraftingRemainingItem(ItemStack stack) {
+        return true;
+    }
+
+    @Nullable
+    @Override
+    public IFaction<?> getExclusiveFaction(@NotNull ItemStack stack) {
+        return VReference.VAMPIRE_FACTION;
     }
 }

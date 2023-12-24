@@ -6,10 +6,8 @@ import de.teamlapen.vampirism.api.entity.factions.IFaction;
 import de.teamlapen.vampirism.api.items.IFactionExclusiveItem;
 import de.teamlapen.vampirism.util.Helper;
 import net.grid.vampiresdelight.common.util.VDTooltipUtils;
-import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.stats.Stats;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -20,8 +18,10 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import vectorwing.farmersdelight.common.Configuration;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class VampireDrinkableItem extends DrinkableItem implements IFactionExclusiveItem {
@@ -72,9 +72,40 @@ public class VampireDrinkableItem extends DrinkableItem implements IFactionExclu
     public void affectHunter(ItemStack stack, Level level, LivingEntity consumer) {
     }
 
+    /**
+     * Do not override it, only in specific cases
+     */
     @Override
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
+        Player player = VampirismMod.proxy.getClientPlayer();
+        List<MobEffectInstance> effects = new ArrayList<>();
+
+        if (Configuration.FOOD_EFFECT_TOOLTIP.get() && player != null) {
+            if (Helper.isVampire(player)) {
+                tooltipVampire(stack, level, tooltip, isAdvanced, effects);
+            } else {
+                if (Helper.isHunter(player) && hasSpecialHunterImpact) {
+                    tooltipHunter(stack, level, tooltip, isAdvanced, effects);
+                } else {
+                    tooltipHuman(stack, level, tooltip, isAdvanced, effects);
+                }
+            }
+        }
+
         VDTooltipUtils.addFactionFoodToolTips(tooltip, VampirismMod.proxy.getClientPlayer(), VReference.VAMPIRE_FACTION);
+    }
+
+    /**
+     * Override those three to apply changes or effects to the consumer.
+     * affectHunter works if hasSpecialHunterImpact is true, use it if you need hunters to be affected differently than humans.
+     */
+    public void tooltipVampire(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced, List<MobEffectInstance> effects) {
+    }
+
+    public void tooltipHuman(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced, List<MobEffectInstance> effects) {
+    }
+
+    public void tooltipHunter(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced, List<MobEffectInstance> effects) {
     }
 }

@@ -28,6 +28,7 @@ public class VDCraftingRecipes {
         recipesBlocks(consumer);
         recipesMaterials(consumer);
         recipesFoodstuffs(consumer);
+        recipesPouring(consumer);
         recipesFoodBlocks(consumer);
         recipesCraftedMeals(consumer);
         // Cutting
@@ -103,6 +104,14 @@ public class VDCraftingRecipes {
                 .define('i', Items.ICE)
                 .define('t', Items.STICK)
                 .unlockedBy("has_pure_blood", InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE))
+                .save(consumer);
+    }
+
+    private static void recipesPouring(Consumer<FinishedRecipe> consumer) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.WINE_GLASS.get(), 1)
+                .requires(VDItems.BLOOD_WINE_BOTTLE.get())
+                .requires(Items.GLASS_BOTTLE)
+                .unlockedBy("has_blood_wine_bottle", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.BLOOD_WINE_BOTTLE.get()))
                 .save(consumer);
     }
 
