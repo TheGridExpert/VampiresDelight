@@ -31,7 +31,8 @@ public class VDFoodValues {
     public static final FoodProperties BAGEL_SANDWICH = (new FoodProperties.Builder())
             .nutrition(14).saturationMod(1.2f).build();
     public static final FoodProperties WEIRD_JELLY = (new FoodProperties.Builder())
-            .nutrition(8).saturationMod(0.8f).fast().alwaysEat().build();
+            .nutrition(8).saturationMod(0.8f).fast().alwaysEat()
+            .effect(() -> new MobEffectInstance(de.teamlapen.vampirism.core.ModEffects.SUNSCREEN.get(), 200, 1), 1.0F).build();
 
     // Hunters
     public static final FoodProperties GRILLED_GARLIC = (new FoodProperties.Builder())

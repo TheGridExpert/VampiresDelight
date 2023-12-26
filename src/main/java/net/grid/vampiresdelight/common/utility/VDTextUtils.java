@@ -37,9 +37,7 @@ public class VDTextUtils {
     public static void addFoodEffectTooltip(@NotNull FoodProperties foodStats, List<Component> lores, float durationFactor) {
         List<Pair<MobEffectInstance, Float>> effectList = foodStats.getEffects();
         List<Pair<Attribute, AttributeModifier>> attributeList = Lists.newArrayList();
-        if (effectList.isEmpty()) {
-            lores.add(Component.translatable("effect.none").withStyle(ChatFormatting.GRAY));
-        } else {
+        if (!effectList.isEmpty()) {
             for (Pair<MobEffectInstance, Float> effectPair : effectList) {
                 MobEffectInstance instance = effectPair.getFirst();
                 MutableComponent iformattabletextcomponent = Component.translatable(instance.getDescriptionId());
@@ -87,6 +85,5 @@ public class VDTextUtils {
                 }
             }
         }
-
     }
 }

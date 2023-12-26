@@ -130,13 +130,20 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
     @Override
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
+        Player player = VampirismMod.proxy.getClientPlayer();
+
         if (Configuration.FOOD_EFFECT_TOOLTIP.get()) {
             if (this.hasCustomTooltip) {
                 MutableComponent textEmpty = VDTextUtils.getTranslation("tooltip." + this);
                 tooltip.add(textEmpty.withStyle(ChatFormatting.BLUE));
             }
             if (this.hasFoodEffectTooltip) {
-                TextUtils.addFoodEffectTooltip(stack, tooltip, 1.0F);
+                assert player != null;
+                if (Helper.isVampire(player)) {
+                    VDTextUtils.addFoodEffectTooltip(vampireFood, tooltip, 1.0F);
+                } else {
+                    TextUtils.addFoodEffectTooltip(stack, tooltip, 1.0F);
+                }
             }
         }
         VDTooltipUtils.addFactionFoodToolTips(tooltip, VampirismMod.proxy.getClientPlayer(), VReference.VAMPIRE_FACTION);
