@@ -160,6 +160,31 @@ public class BrewingBarrelMenu extends RecipeBookMenu<RecipeWrapper> {
         return j != 0 && i != 0 ? i * 33 / j : 0;
     }
 
+    @OnlyIn(Dist.CLIENT)
+    public boolean isEnvironmentRight() {
+        return blockEntity.isEnvironmentRight();
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    public boolean isTemperatureModerate() {
+        return blockEntity.isTemperatureModerate();
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    public boolean isTemperatureCold() {
+        return blockEntity.isTemperatureCold();
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    public boolean isTemperatureHot() {
+        return blockEntity.isTemperatureHot();
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    public boolean isWet() {
+        return blockEntity.isWet();
+    }
+
     @Override
     public void fillCraftSlotsStackedContents(StackedContents helper) {
         for (int i = 0; i < inventory.getSlots(); i++) {

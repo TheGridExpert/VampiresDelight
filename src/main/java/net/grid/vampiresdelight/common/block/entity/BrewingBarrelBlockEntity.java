@@ -250,21 +250,26 @@ public class BrewingBarrelBlockEntity extends SyncedBlockEntity implements MenuP
         }
     }
 
-    public static boolean isTemperatureModerate(Level level, BlockPos pos) {
-        if (isTemperatureCold(level, pos) && isTemperatureHot(level, pos)) return true;
-
-        return !isTemperatureHot(level, pos) && !isTemperatureCold(level, pos);
+    public boolean isEnvironmentRight() {
+        if (isWet()) return false;
+        return isTemperatureModerate();
     }
 
-    public static boolean isTemperatureHot(Level level, BlockPos pos) {
-        BlockState stateBelow = level.getBlockState(pos.below());
+    public boolean isTemperatureModerate() {
+        if (isTemperatureCold() && isTemperatureHot()) return true;
 
-        if (level.getBiome(pos).is(Tags.Biomes.IS_HOT)) return true;
+        return !isTemperatureHot() && !isTemperatureCold();
+    }
+
+    public boolean isTemperatureHot() {
+        BlockState stateBelow = level.getBlockState(worldPosition.below());
+
+        if (level.getBiome(worldPosition).is(Tags.Biomes.IS_HOT)) return true;
 
         for (int dx = -2; dx < 3; dx++) {
             for (int dy = -2; dy < 3; dy++) {
                 for (int dz = -2; dz < 3; dz++) {
-                    BlockState nearestState = level.getBlockState(pos.offset(dx, dy, dz));
+                    BlockState nearestState = level.getBlockState(worldPosition.offset(dx, dy, dz));
                     if (nearestState.is(ModTags.HEAT_SOURCES)) {
                         if (nearestState.hasProperty(BlockStateProperties.LIT))
                             return nearestState.getValue(BlockStateProperties.LIT);
@@ -275,7 +280,7 @@ public class BrewingBarrelBlockEntity extends SyncedBlockEntity implements MenuP
         }
 
         if (stateBelow.is(ModTags.HEAT_CONDUCTORS)) {
-            BlockState stateFurtherBelow = level.getBlockState(pos.below(2));
+            BlockState stateFurtherBelow = level.getBlockState(worldPosition.below(2));
             if (stateFurtherBelow.is(ModTags.HEAT_SOURCES)) {
                 if (stateFurtherBelow.hasProperty(BlockStateProperties.LIT))
                     return stateFurtherBelow.getValue(BlockStateProperties.LIT);
@@ -286,25 +291,25 @@ public class BrewingBarrelBlockEntity extends SyncedBlockEntity implements MenuP
         return false;
     }
 
-    public static boolean isWet(Level level, BlockPos pos) {
+    public boolean isWet() {
         for (int dx = -2; dx < 3; dx++) {
             for (int dy = -2; dy < 3; dy++) {
                 for (int dz = -2; dz < 3; dz++) {
-                    BlockState nearestState = level.getBlockState(pos.offset(dx, dy, dz));
+                    BlockState nearestState = level.getBlockState(worldPosition.offset(dx, dy, dz));
                     if (nearestState.getBlock() == Blocks.WATER) return true;
                 }
             }
         }
-        return level.getBlockState(pos).getValue(BlockStateProperties.WATERLOGGED);
+        return level.getBlockState(worldPosition).getValue(BlockStateProperties.WATERLOGGED);
     }
 
-    public static boolean isTemperatureCold(Level level, BlockPos pos) {
-        BlockState stateBelow = level.getBlockState(pos.below());
+    public boolean isTemperatureCold() {
+        BlockState stateBelow = level.getBlockState(worldPosition.below());
 
         if (stateBelow.is(VDTags.COOLERS)) return true;
-        if (level.getBiome(pos).is(Tags.Biomes.IS_COLD)) return true;
+        if (level.getBiome(worldPosition).is(Tags.Biomes.IS_COLD)) return true;
 
-        return isWet(level, pos);
+        return false;
     }
 
     private Optional<BrewingBarrelRecipe> getMatchingRecipe(RecipeWrapper inventoryWrapper) {

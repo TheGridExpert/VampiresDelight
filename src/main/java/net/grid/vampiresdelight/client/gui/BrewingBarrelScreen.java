@@ -20,6 +20,7 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import vectorwing.farmersdelight.common.utility.TextUtils;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -32,6 +33,7 @@ import java.util.List;
 public class BrewingBarrelScreen extends AbstractContainerScreen<BrewingBarrelMenu> implements RecipeUpdateListener {
     private static final ResourceLocation RECIPE_BUTTON_LOCATION = new ResourceLocation("textures/gui/recipe_button.png");
     private static final ResourceLocation BACKGROUND_TEXTURE = new ResourceLocation(VampiresDelight.MODID, "textures/gui/brewing_barrel.png");
+    private static final Rectangle TEMPERATURE_ICON = new Rectangle(146, 23, 8, 22);
     private static final Rectangle PROGRESS_BUBBLES = new Rectangle(75, 27, 0, 13);
 
     private final BrewingBarrelRecipeBookComponent recipeBookComponent = new BrewingBarrelRecipeBookComponent();
@@ -84,7 +86,21 @@ public class BrewingBarrelScreen extends AbstractContainerScreen<BrewingBarrelMe
         }
 
         this.renderMealDisplayTooltip(gui, mouseX, mouseY);
+        this.renderTemperatureIndicatorTooltip(gui, mouseX, mouseY);
         this.recipeBookComponent.renderTooltip(gui, this.leftPos, this.topPos, mouseX, mouseY);
+    }
+
+    private void renderTemperatureIndicatorTooltip(GuiGraphics gui, int mouseX, int mouseY) {
+        if (this.isHovering(TEMPERATURE_ICON.x, TEMPERATURE_ICON.y, TEMPERATURE_ICON.width, TEMPERATURE_ICON.height, mouseX, mouseY)) {
+            if (!this.menu.isTemperatureModerate())
+                gui.renderTooltip(this.font, VDTextUtils.getTranslation("container.brewing_barrel." + (this.menu.isTemperatureHot() ? "hot" : "cold"), menu), mouseX, mouseY);
+
+            if (this.menu.isWet())
+                gui.renderTooltip(this.font, VDTextUtils.getTranslation("container.brewing_barrel.wet", menu), mouseX, mouseY);
+
+            if (this.menu.isEnvironmentRight())
+                gui.renderTooltip(this.font, VDTextUtils.getTranslation("container.brewing_barrel.right", menu), mouseX, mouseY);
+        }
     }
 
     protected void renderMealDisplayTooltip(GuiGraphics gui, int mouseX, int mouseY) {
@@ -122,6 +138,11 @@ public class BrewingBarrelScreen extends AbstractContainerScreen<BrewingBarrelMe
 
         RenderSystem.setShaderTexture(0, BACKGROUND_TEXTURE);
         gui.blit(BACKGROUND_TEXTURE, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight);
+
+        // Render temperature indicator icon
+        if (this.menu.isEnvironmentRight()) {
+            gui.blit(BACKGROUND_TEXTURE, this.leftPos + TEMPERATURE_ICON.x, this.topPos + TEMPERATURE_ICON.y, 176, 0, TEMPERATURE_ICON.width, TEMPERATURE_ICON.height);
+        }
 
         // Render progress arrow
         int l = this.menu.getBrewProgressionScaled();

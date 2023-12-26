@@ -45,6 +45,10 @@
 
   "vampiresdelight.container.recipe_book.fermentable": "Showing Fermentable",
   "vampiresdelight.container.brewing_barrel": "Brewing Barrel",
+  "vampiresdelight.container.brewing_barrel.wet": "Too wet",
+  "vampiresdelight.container.brewing_barrel.cold": "Too cold",
+  "vampiresdelight.container.brewing_barrel.hot": "Too hot",
+  "vampiresdelight.container.brewing_barrel.right": "Temperature is alright",
   "vampiresdelight.container.brewing_barrel.poured_into": "Poured into: %s",
   "vampiresdelight.tooltip.brewing_barrel.single_serving": "Holds 1 serving of:",
   "vampiresdelight.tooltip.brewing_barrel.many_servings": "Holds %s servings of:",
