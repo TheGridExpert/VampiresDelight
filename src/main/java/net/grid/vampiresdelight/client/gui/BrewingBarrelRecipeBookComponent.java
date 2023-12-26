@@ -2,7 +2,7 @@ package net.grid.vampiresdelight.client.gui;
 
 import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.crafting.BrewingBarrelRecipe;
-import net.grid.vampiresdelight.common.util.VDTextUtils;
+import net.grid.vampiresdelight.common.utility.VDTextUtils;
 import net.minecraft.client.gui.screens.recipebook.RecipeBookComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.Slot;

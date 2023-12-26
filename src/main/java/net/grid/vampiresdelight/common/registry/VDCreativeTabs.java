@@ -30,6 +30,7 @@ public class VDCreativeTabs {
         event.accept(VDItems.GRILLED_GARLIC);
         event.accept(VDItems.ORCHID_TEA);
         event.accept(VDItems.ORCHID_PETALS);
+        event.accept(VDItems.SUGARED_BERRIES);
         event.accept(VDItems.HEART_PIECES);
         event.accept(VDItems.HUMAN_EYE);
         event.accept(VDItems.BLOOD_DOUGH);

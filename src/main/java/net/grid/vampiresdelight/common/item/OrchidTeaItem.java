@@ -3,7 +3,7 @@ package net.grid.vampiresdelight.common.item;
 import de.teamlapen.vampirism.config.VampirismConfig;
 import de.teamlapen.vampirism.effects.SanguinareEffect;
 import de.teamlapen.vampirism.util.Helper;
-import net.grid.vampiresdelight.common.util.VDTextUtils;
+import net.grid.vampiresdelight.common.utility.VDTextUtils;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;

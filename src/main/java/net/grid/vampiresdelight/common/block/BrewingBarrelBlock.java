@@ -2,7 +2,7 @@ package net.grid.vampiresdelight.common.block;
 
 import net.grid.vampiresdelight.common.block.entity.BrewingBarrelBlockEntity;
 import net.grid.vampiresdelight.common.registry.VDBlockEntityTypes;
-import net.grid.vampiresdelight.common.util.VDTextUtils;
+import net.grid.vampiresdelight.common.utility.VDTextUtils;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

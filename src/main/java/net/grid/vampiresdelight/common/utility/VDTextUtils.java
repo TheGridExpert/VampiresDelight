@@ -1,4 +1,4 @@
-package net.grid.vampiresdelight.common.util;
+package net.grid.vampiresdelight.common.utility;
 
 
 import net.grid.vampiresdelight.VampiresDelight;
@@ -12,41 +12,33 @@ import net.minecraft.world.effect.MobEffectUtil;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import com.google.common.collect.Lists;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.world.entity.ai.attributes.Attribute;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
 import java.util.Map;
+import java.util.List;
 
 public class VDTextUtils {
     /**
-     * Basically just TextUtils, but made to work with vampire-only effects.
-     */
-    private static final MutableComponent NO_EFFECTS = Component.translatable("effect.none").withStyle(ChatFormatting.GRAY);
-
-    /**
-     * Syntactic sugar for custom translation keys. Always prefixed with the mod's ID in lang files (e.g. farmersdelight.your.key.here).
+     * Syntactic sugar for custom translation keys. Always prefixed with the mod's ID in lang files (e.g. vampiresdelight.your.key.here).
      */
     public static MutableComponent getTranslation(String key, Object... args) {
         return Component.translatable(VampiresDelight.MODID + "." + key, args);
     }
 
     /**
-     * An alternate version of PotionUtils.addPotionTooltip, that obtains the item's food-property potion effects instead.
+     * An alternate version of TextUtils.addFoodEffectTooltip, that uses FoodProperties instead of ItemStack.
      */
     @OnlyIn(Dist.CLIENT)
-    public static void addFoodEffectTooltip(ItemStack itemIn, List<Component> lores, float durationFactor) {
-        FoodProperties foodStats = itemIn.getItem().getFoodProperties();
-        if (foodStats == null) {
-            return;
-        }
+    public static void addFoodEffectTooltip(@NotNull FoodProperties foodStats, List<Component> lores, float durationFactor) {
         List<Pair<MobEffectInstance, Float>> effectList = foodStats.getEffects();
         List<Pair<Attribute, AttributeModifier>> attributeList = Lists.newArrayList();
         if (effectList.isEmpty()) {
-            lores.add(NO_EFFECTS);
+            lores.add(Component.translatable("effect.none").withStyle(ChatFormatting.GRAY));
         } else {
             for (Pair<MobEffectInstance, Float> effectPair : effectList) {
                 MobEffectInstance instance = effectPair.getFirst();
@@ -95,5 +87,6 @@ public class VDTextUtils {
                 }
             }
         }
+
     }
 }

@@ -4,8 +4,8 @@ import de.teamlapen.vampirism.VampirismMod;
 import de.teamlapen.vampirism.api.VReference;
 import de.teamlapen.vampirism.core.ModEffects;
 import de.teamlapen.vampirism.util.Helper;
-import net.grid.vampiresdelight.common.util.VDTextUtils;
-import net.grid.vampiresdelight.common.util.VDTooltipUtils;
+import net.grid.vampiresdelight.common.utility.VDTextUtils;
+import net.grid.vampiresdelight.common.utility.VDTooltipUtils;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -19,7 +19,6 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.Configuration;
-import vectorwing.farmersdelight.common.utility.TextUtils;
 
 import java.util.List;
 

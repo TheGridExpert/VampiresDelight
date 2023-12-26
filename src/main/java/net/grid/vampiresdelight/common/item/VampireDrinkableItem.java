@@ -5,7 +5,7 @@ import de.teamlapen.vampirism.api.VReference;
 import de.teamlapen.vampirism.api.entity.factions.IFaction;
 import de.teamlapen.vampirism.api.items.IFactionExclusiveItem;
 import de.teamlapen.vampirism.util.Helper;
-import net.grid.vampiresdelight.common.util.VDTooltipUtils;
+import net.grid.vampiresdelight.common.utility.VDTooltipUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;

@@ -11,8 +11,8 @@ import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.FuelBlockItem;
-import vectorwing.farmersdelight.common.item.PopsicleItem;
 
 public class VDItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, VampiresDelight.MODID);
@@ -64,7 +64,10 @@ public class VDItems {
             () -> new HunterConsumableItem(foodItem(VDFoodValues.GRILLED_GARLIC)));
     public static final RegistryObject<Item> ORCHID_TEA = ITEMS.register("orchid_tea",
             () -> new OrchidTeaItem(drinkItem()));
-    public static final RegistryObject<Item> ORCHID_PETALS = ITEMS.register("orchid_petals", () -> new Item(basicItem()));
+    public static final RegistryObject<Item> ORCHID_PETALS = ITEMS.register("orchid_petals",
+            () -> new Item(basicItem()));
+    public static final RegistryObject<Item> SUGARED_BERRIES = ITEMS.register("sugared_berries",
+            () -> new ConsumableItem(foodItem(VDFoodValues.SUGARED_BERRIES)));
     public static final RegistryObject<Item> HEART_PIECES = ITEMS.register("heart_pieces",
             () -> new VampireConsumableItem(VDFoodValues.HEART_PIECES, VDFoodValues.NASTY));
     public static final RegistryObject<Item> HUMAN_EYE = ITEMS.register("human_eye",
@@ -85,8 +88,7 @@ public class VDItems {
                     new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0)));
 
     // Sweets
-    public static final RegistryObject<Item> PURE_SORBET = ITEMS.register("pure_sorbet",
-            () -> new PopsicleItem(foodItem(VDFoodValues.PURE_SORBET)));
+    public static final RegistryObject<Item> PURE_SORBET = ITEMS.register("pure_sorbet", PureSorbetItem::new);
     public static final RegistryObject<Item> CURSED_CUPCAKE = ITEMS.register("cursed_cupcake",
             () -> new CursedCupcakeItem(VDFoodValues.CURSED_CUPCAKE, VDFoodValues.NASTY));
 

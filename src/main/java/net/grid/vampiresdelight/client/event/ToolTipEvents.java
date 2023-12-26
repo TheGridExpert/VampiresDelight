@@ -7,7 +7,7 @@ import de.teamlapen.vampirism.items.GarlicBreadItem;
 import de.teamlapen.vampirism.items.VampirismItemBloodFoodItem;
 import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.tag.VDTags;
-import net.grid.vampiresdelight.common.util.VDTooltipUtils;
+import net.grid.vampiresdelight.common.utility.VDTooltipUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;

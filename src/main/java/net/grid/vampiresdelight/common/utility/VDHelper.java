@@ -1,4 +1,4 @@
-package net.grid.vampiresdelight.common.util;
+package net.grid.vampiresdelight.common.utility;
 
 import net.minecraftforge.common.PlantType;
 

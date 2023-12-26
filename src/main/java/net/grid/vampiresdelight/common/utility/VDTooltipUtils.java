@@ -1,4 +1,4 @@
-package net.grid.vampiresdelight.common.util;
+package net.grid.vampiresdelight.common.utility;
 
 import de.teamlapen.vampirism.api.VReference;
 import de.teamlapen.vampirism.api.entity.factions.IPlayableFaction;

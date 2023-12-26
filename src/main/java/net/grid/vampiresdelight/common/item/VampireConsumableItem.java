@@ -7,8 +7,8 @@ import de.teamlapen.vampirism.api.entity.vampire.IVampire;
 import de.teamlapen.vampirism.api.items.IFactionExclusiveItem;
 import de.teamlapen.vampirism.entity.player.vampire.VampirePlayer;
 import de.teamlapen.vampirism.util.Helper;
-import net.grid.vampiresdelight.common.util.VDTextUtils;
-import net.grid.vampiresdelight.common.util.VDTooltipUtils;
+import net.grid.vampiresdelight.common.utility.VDTextUtils;
+import net.grid.vampiresdelight.common.utility.VDTooltipUtils;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.network.chat.MutableComponent;
@@ -37,12 +37,10 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
     private final boolean hasFoodEffectTooltip;
     private final boolean hasCustomTooltip;
     private final MobEffectInstance mobEffectInstance;
-    private final Item craftRemainder;
 
     public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood) {
         super(new Properties().food(humanFood));
         this.vampireFood = vampireFood;
-        this.craftRemainder = null;
         this.mobEffectInstance = null;
         this.hasFoodEffectTooltip = false;
         this.hasCustomTooltip = false;
@@ -51,7 +49,6 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
     public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood, MobEffectInstance mobEffectInstance) {
         super(new Properties().food(humanFood));
         this.vampireFood = vampireFood;
-        this.craftRemainder = null;
         this.mobEffectInstance = mobEffectInstance;
         this.hasFoodEffectTooltip = false;
         this.hasCustomTooltip = false;
@@ -60,7 +57,6 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
     public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood, Item craftRemainder, MobEffectInstance mobEffectInstance, boolean hasFoodEffectTooltip) {
         super(new Properties().food(humanFood).craftRemainder(craftRemainder).stacksTo(16));
         this.vampireFood = vampireFood;
-        this.craftRemainder = craftRemainder;
         this.mobEffectInstance = mobEffectInstance;
         this.hasFoodEffectTooltip = hasFoodEffectTooltip;
         this.hasCustomTooltip = false;
@@ -69,7 +65,6 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
     public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood, MobEffectInstance mobEffectInstance, boolean hasFoodEffectTooltip) {
         super(new Properties().food(humanFood));
         this.vampireFood = vampireFood;
-        this.craftRemainder = null;
         this.mobEffectInstance = mobEffectInstance;
         this.hasFoodEffectTooltip = hasFoodEffectTooltip;
         this.hasCustomTooltip = false;
@@ -78,7 +73,6 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
     public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood, MobEffectInstance mobEffectInstance, boolean hasFoodEffectTooltip, boolean hasCustomTooltip) {
         super(new Properties().food(humanFood));
         this.vampireFood = vampireFood;
-        this.craftRemainder = null;
         this.mobEffectInstance = mobEffectInstance;
         this.hasFoodEffectTooltip = hasFoodEffectTooltip;
         this.hasCustomTooltip = hasCustomTooltip;
@@ -98,7 +92,7 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
         }
 
         if (entityLiving instanceof Player player) {
-            assert stack.getItem().getFoodProperties() != null; //Don't shrink stack before retrieving food
+            //Don't shrink stack before retrieving food
             VampirePlayer.getOpt(player).ifPresent(v -> v.drinkBlood(vampireFood.getNutrition(), vampireFood.getSaturationModifier()));
         }
 

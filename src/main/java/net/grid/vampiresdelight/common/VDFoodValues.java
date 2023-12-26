@@ -36,9 +36,6 @@ public class VDFoodValues {
     // Hunters
     public static final FoodProperties GRILLED_GARLIC = (new FoodProperties.Builder())
             .nutrition(3).saturationMod(0.2f).build();
-    public static final FoodProperties PURE_SORBET = (new FoodProperties.Builder())
-            .nutrition(4).saturationMod(0.2f).fast().alwaysEat()
-            .effect(() -> new MobEffectInstance(VDEffects.FOG_VISION.get(), FoodValues.MEDIUM_DURATION, 0), 1.0F).build();
     public static final FoodProperties HARDTACK = (new FoodProperties.Builder())
             .nutrition(6).saturationMod(0.8f).build();
     public static final FoodProperties HARDTACK_WITH_JAM = (new FoodProperties.Builder())
@@ -51,4 +48,11 @@ public class VDFoodValues {
             .nutrition(14).saturationMod(0.9f)
             .effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), FoodValues.MEDIUM_DURATION, 0), 1.0F)
             .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, FoodValues.SHORT_DURATION, 0), 1.0F).build();
+
+    // Neutral
+    public static final FoodProperties SUGARED_BERRIES = (new FoodProperties.Builder())
+            .nutrition(3).saturationMod(0.3f).build();
+    public static final FoodProperties PURE_SORBET = (new FoodProperties.Builder())
+            .nutrition(4).saturationMod(0.2f).fast().alwaysEat()
+            .effect(() -> new MobEffectInstance(VDEffects.FOG_VISION.get(), FoodValues.MEDIUM_DURATION, 0), 1.0F).build();
 }
