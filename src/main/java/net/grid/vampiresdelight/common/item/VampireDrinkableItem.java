@@ -1,111 +1,103 @@
 package net.grid.vampiresdelight.common.item;
 
-import de.teamlapen.vampirism.VampirismMod;
-import de.teamlapen.vampirism.api.VReference;
-import de.teamlapen.vampirism.api.entity.factions.IFaction;
-import de.teamlapen.vampirism.api.items.IFactionExclusiveItem;
+import de.teamlapen.vampirism.api.entity.vampire.IVampire;
+import de.teamlapen.vampirism.entity.player.vampire.VampirePlayer;
 import de.teamlapen.vampirism.util.Helper;
-import net.grid.vampiresdelight.common.utility.VDTooltipUtils;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.effect.MobEffectInstance;
+import net.grid.vampiresdelight.common.utility.VDHelper;
+import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.ItemUtils;
+import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import vectorwing.farmersdelight.common.Configuration;
-import vectorwing.farmersdelight.common.item.DrinkableItem;
 
-import java.util.ArrayList;
-import java.util.List;
+public class VampireDrinkableItem extends VampireConsumableItem {
+    private final FoodProperties vampireFood;
+    private final FoodProperties hunterFood;
 
-public class VampireDrinkableItem extends DrinkableItem implements IFactionExclusiveItem {
-    private final boolean hasSpecialHunterImpact;
-
-    public VampireDrinkableItem(Item.Properties properties) {
-        super(properties);
-        this.hasSpecialHunterImpact = false;
+    public VampireDrinkableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood) {
+        super(vampireFood, humanFood, true, false, false);
+        this.vampireFood = vampireFood;
+        this.hunterFood = null;
     }
 
-    public VampireDrinkableItem(Item.Properties properties, boolean hasSpecialHumanImpact) {
-        super(properties, false, false);
-        this.hasSpecialHunterImpact = hasSpecialHumanImpact;
+    public VampireDrinkableItem(FoodProperties vampireFood, FoodProperties hunterFood, @NotNull FoodProperties humanFood) {
+        super(vampireFood, humanFood);
+        this.vampireFood = vampireFood;
+        this.hunterFood = hunterFood;
     }
 
-    @Nullable
+    public FoodProperties getHunterFood() {
+        return hunterFood;
+    }
+
     @Override
-    public IFaction<?> getExclusiveFaction(@NotNull ItemStack stack) {
-        return VReference.VAMPIRE_FACTION;
+    public int getUseDuration(ItemStack stack) {
+        return 32;
     }
 
-    /**
-     * Do not override it, only in specific cases
-     */
     @Override
-    public void affectConsumer(ItemStack stack, Level level, LivingEntity consumer) {
-        if (Helper.isVampire(consumer)) {
-            affectVampire(stack, level, consumer);
+    public UseAnim getUseAnimation(ItemStack stack) {
+        return UseAnim.DRINK;
+    }
+
+    @NotNull
+    @Override
+    public ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level worldIn, @NotNull LivingEntity entityLiving) {
+        if (!worldIn.isClientSide) {
+            this.affectConsumer(stack, worldIn, entityLiving);
+        }
+
+        if (entityLiving instanceof Player player) {
+            // Don't shrink stack before retrieving food
+            VampirePlayer.getOpt(player).ifPresent(v -> v.drinkBlood(vampireFood.getNutrition(), vampireFood.getSaturationModifier()));
+        }
+
+        if (entityLiving instanceof IVampire) {
+            ((IVampire) entityLiving).drinkBlood(vampireFood.getNutrition(), vampireFood.getSaturationModifier());
         } else {
-            if (hasSpecialHunterImpact && Helper.isHunter(consumer)) {
-                affectHunter(stack, level, consumer);
-            } else {
-                affectHuman(stack, level, consumer);
+            // We don't use entityLiving.eat because it applies human food effect to vampires
+            VDHelper.feedEntity(worldIn, stack, Helper.isHunter(entityLiving) && hunterFood != null ? hunterFood : stack.getFoodProperties(entityLiving), entityLiving);  // Applies human food effects only to humans
+        }
+        if (entityLiving instanceof Player player && !player.isCreative() || !(entityLiving instanceof Player)) {
+            stack.shrink(1);
+        }
+
+        worldIn.playSound(null, entityLiving.getX(), entityLiving.getY(), entityLiving.getZ(), SoundEvents.PLAYER_BURP, SoundSource.PLAYERS, 0.5F, worldIn.random.nextFloat() * 0.1F + 0.9F);
+
+        if (Helper.isVampire(entityLiving)) {
+            VDHelper.addFoodEffects(vampireFood, worldIn, entityLiving);
+        }
+
+        if (!stack.isEdible()) {
+            Player player = entityLiving instanceof Player ? (Player) entityLiving : null;
+            if (player instanceof ServerPlayer) {
+                CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayer) player, stack);
             }
         }
+
+        return stack;
     }
 
-    /**
-     * Override those three to apply changes or effects to the consumer.
-     * affectHunter works if hasSpecialHunterImpact is true, use it if you need hunters to be affected differently than humans.
-     */
-    public void affectVampire(ItemStack stack, Level level, LivingEntity consumer) {
-    }
-
-    public void affectHuman(ItemStack stack, Level level, LivingEntity consumer) {
-    }
-
-    public void affectHunter(ItemStack stack, Level level, LivingEntity consumer) {
-    }
-
-    /**
-     * Do not override it, only in specific cases
-     */
     @Override
-    @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
-        Player player = VampirismMod.proxy.getClientPlayer();
-        List<MobEffectInstance> effects = new ArrayList<>();
-
-        if (Configuration.FOOD_EFFECT_TOOLTIP.get() && player != null) {
-            if (Helper.isVampire(player)) {
-                tooltipVampire(stack, level, tooltip, isAdvanced, effects);
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+        ItemStack heldStack = player.getItemInHand(hand);
+        if (heldStack.isEdible()) {
+            if (player.canEat(heldStack.getFoodProperties(player).canAlwaysEat())) {
+                player.startUsingItem(hand);
+                return InteractionResultHolder.consume(heldStack);
             } else {
-                if (Helper.isHunter(player) && hasSpecialHunterImpact) {
-                    tooltipHunter(stack, level, tooltip, isAdvanced, effects);
-                } else {
-                    tooltipHuman(stack, level, tooltip, isAdvanced, effects);
-                }
+                return InteractionResultHolder.fail(heldStack);
             }
         }
-
-        VDTooltipUtils.addFactionFoodToolTips(tooltip, VampirismMod.proxy.getClientPlayer(), VReference.VAMPIRE_FACTION);
-    }
-
-    /**
-     * Override those three to apply changes or effects to the consumer.
-     * affectHunter works if hasSpecialHunterImpact is true, use it if you need hunters to be affected differently than humans.
-     */
-    public void tooltipVampire(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced, List<MobEffectInstance> effects) {
-    }
-
-    public void tooltipHuman(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced, List<MobEffectInstance> effects) {
-    }
-
-    public void tooltipHunter(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced, List<MobEffectInstance> effects) {
+        return ItemUtils.startUsingInstantly(level, player, hand);
     }
 }

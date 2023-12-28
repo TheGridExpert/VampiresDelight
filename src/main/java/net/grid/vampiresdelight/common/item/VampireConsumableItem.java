@@ -7,6 +7,7 @@ import de.teamlapen.vampirism.api.entity.vampire.IVampire;
 import de.teamlapen.vampirism.api.items.IFactionExclusiveItem;
 import de.teamlapen.vampirism.entity.player.vampire.VampirePlayer;
 import de.teamlapen.vampirism.util.Helper;
+import net.grid.vampiresdelight.common.utility.VDHelper;
 import net.grid.vampiresdelight.common.utility.VDTextUtils;
 import net.grid.vampiresdelight.common.utility.VDTooltipUtils;
 import net.minecraft.ChatFormatting;
@@ -15,8 +16,6 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
@@ -27,55 +26,55 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.Configuration;
-import vectorwing.farmersdelight.common.utility.TextUtils;
 import net.minecraft.network.chat.Component;
 
 import java.util.List;
+import java.util.Objects;
 
 public class VampireConsumableItem extends Item implements IFactionExclusiveItem {
     private final FoodProperties vampireFood;
     private final boolean hasFoodEffectTooltip;
+    private final boolean hasHumanFoodEffectTooltip;
     private final boolean hasCustomTooltip;
-    private final MobEffectInstance mobEffectInstance;
 
     public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood) {
         super(new Properties().food(humanFood));
         this.vampireFood = vampireFood;
-        this.mobEffectInstance = null;
         this.hasFoodEffectTooltip = false;
+        this.hasHumanFoodEffectTooltip = false;
         this.hasCustomTooltip = false;
     }
 
-    public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood, MobEffectInstance mobEffectInstance) {
+    public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood, boolean hasFoodEffectTooltip) {
         super(new Properties().food(humanFood));
         this.vampireFood = vampireFood;
-        this.mobEffectInstance = mobEffectInstance;
-        this.hasFoodEffectTooltip = false;
+        this.hasFoodEffectTooltip = hasFoodEffectTooltip;
+        this.hasHumanFoodEffectTooltip = false;
         this.hasCustomTooltip = false;
     }
 
-    public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood, Item craftRemainder, MobEffectInstance mobEffectInstance, boolean hasFoodEffectTooltip) {
+    public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood, boolean hasFoodEffectTooltip, boolean hasCustomTooltip) {
+        super(new Properties().food(humanFood));
+        this.vampireFood = vampireFood;
+        this.hasFoodEffectTooltip = hasFoodEffectTooltip;
+        this.hasHumanFoodEffectTooltip = false;
+        this.hasCustomTooltip = hasCustomTooltip;
+    }
+
+    public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood, boolean hasFoodEffectTooltip, boolean hasCustomTooltip, boolean hasHumanFoodEffectTooltip) {
+        super(new Properties().food(humanFood));
+        this.vampireFood = vampireFood;
+        this.hasFoodEffectTooltip = hasFoodEffectTooltip;
+        this.hasHumanFoodEffectTooltip = hasHumanFoodEffectTooltip;
+        this.hasCustomTooltip = hasCustomTooltip;
+    }
+
+    public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood, Item craftRemainder, boolean hasFoodEffectTooltip) {
         super(new Properties().food(humanFood).craftRemainder(craftRemainder).stacksTo(16));
         this.vampireFood = vampireFood;
-        this.mobEffectInstance = mobEffectInstance;
         this.hasFoodEffectTooltip = hasFoodEffectTooltip;
+        this.hasHumanFoodEffectTooltip = false;
         this.hasCustomTooltip = false;
-    }
-
-    public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood, MobEffectInstance mobEffectInstance, boolean hasFoodEffectTooltip) {
-        super(new Properties().food(humanFood));
-        this.vampireFood = vampireFood;
-        this.mobEffectInstance = mobEffectInstance;
-        this.hasFoodEffectTooltip = hasFoodEffectTooltip;
-        this.hasCustomTooltip = false;
-    }
-
-    public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood, MobEffectInstance mobEffectInstance, boolean hasFoodEffectTooltip, boolean hasCustomTooltip) {
-        super(new Properties().food(humanFood));
-        this.vampireFood = vampireFood;
-        this.mobEffectInstance = mobEffectInstance;
-        this.hasFoodEffectTooltip = hasFoodEffectTooltip;
-        this.hasCustomTooltip = hasCustomTooltip;
     }
 
     @Nullable
@@ -92,23 +91,24 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
         }
 
         if (entityLiving instanceof Player player) {
-            //Don't shrink stack before retrieving food
+            // Don't shrink stack before retrieving food
             VampirePlayer.getOpt(player).ifPresent(v -> v.drinkBlood(vampireFood.getNutrition(), vampireFood.getSaturationModifier()));
         }
 
         if (entityLiving instanceof IVampire) {
             ((IVampire) entityLiving).drinkBlood(vampireFood.getNutrition(), vampireFood.getSaturationModifier());
-            stack.shrink(1);
         } else {
-            entityLiving.eat(worldIn, stack); //Shrinks stack and applies human food effects
+            // We don't use entityLiving.eat because it applies human food effect to vampires
+            VDHelper.feedEntity(worldIn, stack, entityLiving);  // Applies human food effects only to humans
+        }
+        if (entityLiving instanceof Player player && !player.isCreative() || !(entityLiving instanceof Player)) {
+            stack.shrink(1);
         }
 
         worldIn.playSound(null, entityLiving.getX(), entityLiving.getY(), entityLiving.getZ(), SoundEvents.PLAYER_BURP, SoundSource.PLAYERS, 0.5F, worldIn.random.nextFloat() * 0.1F + 0.9F);
 
-        if (!Helper.isVampire(entityLiving)) {
-            entityLiving.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 400));
-        } else {
-            if (mobEffectInstance != null) entityLiving.addEffect(mobEffectInstance);
+        if (Helper.isVampire(entityLiving)) {
+            VDHelper.addFoodEffects(vampireFood, worldIn, entityLiving);
         }
 
         if (!stack.isEdible()) {
@@ -121,6 +121,10 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
         return stack;
     }
 
+    public FoodProperties getVampireFood() {
+        return vampireFood;
+    }
+
     /**
      * Override this to apply changes to the consumer (e.g. curing effects).
      */
@@ -131,6 +135,7 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
         Player player = VampirismMod.proxy.getClientPlayer();
+        assert player != null;
 
         if (Configuration.FOOD_EFFECT_TOOLTIP.get()) {
             if (this.hasCustomTooltip) {
@@ -138,14 +143,17 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
                 tooltip.add(textEmpty.withStyle(ChatFormatting.BLUE));
             }
             if (this.hasFoodEffectTooltip) {
-                assert player != null;
-                if (Helper.isVampire(player)) {
-                    VDTextUtils.addFoodEffectTooltip(vampireFood, tooltip, 1.0F);
-                } else {
-                    TextUtils.addFoodEffectTooltip(stack, tooltip, 1.0F);
+                FoodProperties foodProperties = Helper.isVampire(player) ? vampireFood : Objects.requireNonNull(stack.getFoodProperties(player));
+                if (!foodProperties.getEffects().isEmpty()) {
+                    if (Helper.isVampire(player))
+                        VDTextUtils.addFoodEffectTooltip(vampireFood, tooltip, 1.0F);
+                    else if (hasHumanFoodEffectTooltip) {
+                        VDTextUtils.addFoodEffectTooltip(Objects.requireNonNull(stack.getFoodProperties(player)), tooltip, 1.0F);
+                    }
                 }
             }
         }
-        VDTooltipUtils.addFactionFoodToolTips(tooltip, VampirismMod.proxy.getClientPlayer(), VReference.VAMPIRE_FACTION);
+
+        VDTooltipUtils.addFactionFoodToolTips(tooltip, player, VReference.VAMPIRE_FACTION);
     }
 }

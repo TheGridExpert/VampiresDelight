@@ -62,7 +62,7 @@ public class VDTextUtils {
                 lores.add(iformattabletextcomponent.withStyle(effect.getCategory().getTooltipFormatting()));
             }
         }
-
+        /*
         if (!attributeList.isEmpty()) {
             lores.add(CommonComponents.EMPTY);
             lores.add((Component.translatable("potion.whenDrank")).withStyle(ChatFormatting.DARK_PURPLE));
@@ -85,5 +85,6 @@ public class VDTextUtils {
                 }
             }
         }
+         */
     }
 }

@@ -1,6 +1,7 @@
 package net.grid.vampiresdelight.common.registry;
 
 import net.grid.vampiresdelight.VampiresDelight;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -10,18 +11,21 @@ import vectorwing.farmersdelight.common.registry.ModCreativeTabs;
 public class VDCreativeTabs {
     @SubscribeEvent
     public static void addItemsToCreativeTab(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTab() != ModCreativeTabs.TAB_FARMERS_DELIGHT.get()) return;
+        if (event.getTab() == ModCreativeTabs.TAB_FARMERS_DELIGHT.get())
+            addItemsToFDCreativeTab(event);
+        if (event.getTabKey() == CreativeModeTabs.COMBAT)
+            event.accept(VDItems.ALCHEMICAL_COCKTAIL);
+    }
+
+    private static void addItemsToFDCreativeTab(BuildCreativeModeTabContentsEvent event) {
         // Blocks
-        event.accept(VDItems.BREWING_BARREL);
+        //event.accept(VDItems.BREWING_BARREL);
         event.accept(VDItems.GARLIC_CRATE);
         event.accept(VDItems.ORCHID_BAG);
         event.accept(VDItems.DARK_SPRUCE_CABINET);
         event.accept(VDItems.CURSED_SPRUCE_CABINET);
         event.accept(VDItems.CURSED_FARMLAND);
         event.accept(VDItems.WILD_GARLIC);
-
-        // Tools/Non-food
-        event.accept(VDItems.ALCHEMICAL_COCKTAIL);
 
         // Farming
         event.accept(VDItems.ORCHID_SEEDS);

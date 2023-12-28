@@ -1,11 +1,8 @@
 package net.grid.vampiresdelight.common.registry;
 
-import de.teamlapen.vampirism.core.ModEffects;
 import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.VDFoodValues;
 import net.grid.vampiresdelight.common.item.*;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
@@ -63,7 +60,7 @@ public class VDItems {
     public static final RegistryObject<Item> GRILLED_GARLIC = ITEMS.register("grilled_garlic",
             () -> new HunterConsumableItem(foodItem(VDFoodValues.GRILLED_GARLIC)));
     public static final RegistryObject<Item> ORCHID_TEA = ITEMS.register("orchid_tea",
-            () -> new OrchidTeaItem(drinkItem()));
+            () -> new OrchidTeaItem(VDFoodValues.ORCHID_TEA_VAMPIRE, VDFoodValues.ORCHID_TEA_HUNTER));
     public static final RegistryObject<Item> ORCHID_PETALS = ITEMS.register("orchid_petals",
             () -> new Item(basicItem()));
     public static final RegistryObject<Item> SUGARED_BERRIES = ITEMS.register("sugared_berries",
@@ -73,19 +70,17 @@ public class VDItems {
     public static final RegistryObject<Item> HUMAN_EYE = ITEMS.register("human_eye",
             () -> new VampireConsumableItem(VDFoodValues.HUMAN_EYE, VDFoodValues.NASTY));
     public static final RegistryObject<Item> BLOOD_DOUGH = ITEMS.register("blood_dough",
-            () -> new VampireConsumableItem(VDFoodValues.BLOOD_DOUGH, VDFoodValues.NASTY_BLOOD_DOUGH,
-                    new MobEffectInstance(MobEffects.HUNGER, 300, 0), false));
+            () -> new VampireConsumableItem(VDFoodValues.BLOOD_DOUGH, VDFoodValues.NASTY_BLOOD_DOUGH, false));
     public static final RegistryObject<Item> BLOOD_BAGEL = ITEMS.register("blood_bagel",
             () -> new VampireConsumableItem(VDFoodValues.BLOOD_BAGEL, VDFoodValues.NASTY));
     public static final RegistryObject<Item> BLOOD_WINE_BOTTLE = ITEMS.register("blood_wine_bottle",
             () -> new BloodWineBottleItem(basicItem()));
     public static final RegistryObject<Item> WINE_GLASS = ITEMS.register("wine_glass",
-            () -> new WineGlassItem(drinkItem()));
+            () -> new VampireDrinkableItem(VDFoodValues.WINE_GLASS_VAMPIRE, VDFoodValues.WINE_GLASS_HUMAN));
     public static final RegistryObject<Item> BLOOD_PIE = ITEMS.register("blood_pie",
             () -> new BlockItem(VDBlocks.BLOOD_PIE.get(), basicItem()));
     public static final RegistryObject<Item> BLOOD_PIE_SLICE = ITEMS.register("blood_pie_slice",
-            () -> new VampireConsumableItem(VDFoodValues.BLOOD_PIE_SLICE, VDFoodValues.NASTY,
-                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0)));
+            () -> new VampireConsumableItem(VDFoodValues.BLOOD_PIE_SLICE, VDFoodValues.NASTY));
 
     // Sweets
     public static final RegistryObject<Item> PURE_SORBET = ITEMS.register("pure_sorbet", PureSorbetItem::new);
@@ -110,6 +105,5 @@ public class VDItems {
     public static final RegistryObject<Item> WEIRD_JELLY_BLOCK = ITEMS.register("weird_jelly_block",
             () -> new BlockItem(VDBlocks.WEIRD_JELLY_BLOCK.get(), basicItem().stacksTo(1)));
     public static final RegistryObject<Item> WEIRD_JELLY = ITEMS.register("weird_jelly",
-            () -> new VampireConsumableItem(VDFoodValues.WEIRD_JELLY, VDFoodValues.NASTY, Items.BOWL,
-                    new MobEffectInstance(ModEffects.SUNSCREEN.get(), 200, 1), true));
+            () -> new VampireConsumableItem(VDFoodValues.WEIRD_JELLY, VDFoodValues.NASTY, Items.BOWL, true));
 }

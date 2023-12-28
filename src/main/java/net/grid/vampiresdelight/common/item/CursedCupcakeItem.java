@@ -10,6 +10,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -40,10 +41,15 @@ public class CursedCupcakeItem extends VampireConsumableItem {
     @Override
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
+        Player player = VampirismMod.proxy.getClientPlayer();
+
         if (Configuration.FOOD_EFFECT_TOOLTIP.get()) {
+            if (Helper.isVampire(player)) {
                 MutableComponent textEmpty = VDTextUtils.getTranslation("tooltip." + this);
                 tooltip.add(textEmpty.withStyle(ChatFormatting.BLUE));
+            }
         }
+
         VDTooltipUtils.addFactionFoodToolTips(tooltip, VampirismMod.proxy.getClientPlayer(), VReference.VAMPIRE_FACTION);
     }
 }
