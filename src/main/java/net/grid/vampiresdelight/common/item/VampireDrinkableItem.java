@@ -23,14 +23,14 @@ public class VampireDrinkableItem extends VampireConsumableItem {
     private final FoodProperties vampireFood;
     private final FoodProperties hunterFood;
 
-    public VampireDrinkableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood) {
-        super(vampireFood, humanFood, true, false, false);
+    public VampireDrinkableItem(Properties properties, FoodProperties vampireFood) {
+        super(properties, vampireFood, true, false, false);
         this.vampireFood = vampireFood;
         this.hunterFood = null;
     }
 
-    public VampireDrinkableItem(FoodProperties vampireFood, FoodProperties hunterFood, @NotNull FoodProperties humanFood) {
-        super(vampireFood, humanFood);
+    public VampireDrinkableItem(Properties properties, FoodProperties vampireFood, FoodProperties hunterFood) {
+        super(properties, vampireFood);
         this.vampireFood = vampireFood;
         this.hunterFood = hunterFood;
     }
@@ -51,40 +51,50 @@ public class VampireDrinkableItem extends VampireConsumableItem {
 
     @NotNull
     @Override
-    public ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level worldIn, @NotNull LivingEntity entityLiving) {
-        if (!worldIn.isClientSide) {
-            this.affectConsumer(stack, worldIn, entityLiving);
+    public ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity consumer) {
+        if (!level.isClientSide) {
+            this.affectConsumer(stack, level, consumer);
         }
 
-        if (entityLiving instanceof Player player) {
+        if (consumer instanceof Player player) {
             // Don't shrink stack before retrieving food
             VampirePlayer.getOpt(player).ifPresent(v -> v.drinkBlood(vampireFood.getNutrition(), vampireFood.getSaturationModifier()));
         }
+        if (consumer instanceof IVampire) {
+            ((IVampire) consumer).drinkBlood(vampireFood.getNutrition(), vampireFood.getSaturationModifier());
+        } else if (!Helper.isVampire(consumer))
+            //consumer.eat(level, stack);
+            VDHelper.eatFood(level, consumer, stack, Helper.isHunter(consumer) && hunterFood != null ? hunterFood : stack.getFoodProperties(consumer));
 
-        if (entityLiving instanceof IVampire) {
-            ((IVampire) entityLiving).drinkBlood(vampireFood.getNutrition(), vampireFood.getSaturationModifier());
-        } else {
-            // We don't use entityLiving.eat because it applies human food effect to vampires
-            VDHelper.feedEntity(worldIn, stack, Helper.isHunter(entityLiving) && hunterFood != null ? hunterFood : stack.getFoodProperties(entityLiving), entityLiving);  // Applies human food effects only to humans
-        }
-        if (entityLiving instanceof Player player && !player.isCreative() || !(entityLiving instanceof Player)) {
+        if (consumer instanceof Player player && !player.isCreative() || !(consumer instanceof Player)) {
             stack.shrink(1);
         }
 
-        worldIn.playSound(null, entityLiving.getX(), entityLiving.getY(), entityLiving.getZ(), SoundEvents.PLAYER_BURP, SoundSource.PLAYERS, 0.5F, worldIn.random.nextFloat() * 0.1F + 0.9F);
+        level.playSound(null, consumer.getX(), consumer.getY(), consumer.getZ(), SoundEvents.PLAYER_BURP, SoundSource.PLAYERS, 0.5F, level.random.nextFloat() * 0.1F + 0.9F);
 
-        if (Helper.isVampire(entityLiving)) {
-            VDHelper.addFoodEffects(vampireFood, worldIn, entityLiving);
+        if (Helper.isVampire(consumer)) {
+            VDHelper.addFoodEffects(vampireFood, level, consumer);
         }
 
         if (!stack.isEdible()) {
-            Player player = entityLiving instanceof Player ? (Player) entityLiving : null;
+            Player player = consumer instanceof Player ? (Player) consumer : null;
             if (player instanceof ServerPlayer) {
                 CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayer) player, stack);
             }
         }
 
-        return stack;
+        ItemStack containerStack = stack.getCraftingRemainingItem();
+
+        if (stack.isEmpty()) {
+            return containerStack;
+        } else {
+            if (consumer instanceof Player player && !((Player) consumer).getAbilities().instabuild) {
+                if (!player.getInventory().add(containerStack)) {
+                    player.drop(containerStack, false);
+                }
+            }
+            return stack;
+        }
     }
 
     @Override

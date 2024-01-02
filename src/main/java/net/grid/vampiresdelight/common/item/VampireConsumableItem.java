@@ -16,6 +16,7 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
@@ -37,44 +38,36 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
     private final boolean hasHumanFoodEffectTooltip;
     private final boolean hasCustomTooltip;
 
-    public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood) {
-        super(new Properties().food(humanFood));
+    public VampireConsumableItem(Properties properties, FoodProperties vampireFood) {
+        super(properties);
         this.vampireFood = vampireFood;
         this.hasFoodEffectTooltip = false;
         this.hasHumanFoodEffectTooltip = false;
         this.hasCustomTooltip = false;
     }
 
-    public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood, boolean hasFoodEffectTooltip) {
-        super(new Properties().food(humanFood));
+    public VampireConsumableItem(Properties properties, FoodProperties vampireFood, boolean hasFoodEffectTooltip) {
+        super(properties);
         this.vampireFood = vampireFood;
         this.hasFoodEffectTooltip = hasFoodEffectTooltip;
         this.hasHumanFoodEffectTooltip = false;
         this.hasCustomTooltip = false;
     }
 
-    public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood, boolean hasFoodEffectTooltip, boolean hasCustomTooltip) {
-        super(new Properties().food(humanFood));
+    public VampireConsumableItem(Properties properties, FoodProperties vampireFood, boolean hasFoodEffectTooltip, boolean hasCustomTooltip) {
+        super(properties);
         this.vampireFood = vampireFood;
         this.hasFoodEffectTooltip = hasFoodEffectTooltip;
         this.hasHumanFoodEffectTooltip = false;
         this.hasCustomTooltip = hasCustomTooltip;
     }
 
-    public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood, boolean hasFoodEffectTooltip, boolean hasCustomTooltip, boolean hasHumanFoodEffectTooltip) {
-        super(new Properties().food(humanFood));
+    public VampireConsumableItem(Properties properties, FoodProperties vampireFood, boolean hasFoodEffectTooltip, boolean hasCustomTooltip, boolean hasHumanFoodEffectTooltip) {
+        super(properties);
         this.vampireFood = vampireFood;
         this.hasFoodEffectTooltip = hasFoodEffectTooltip;
         this.hasHumanFoodEffectTooltip = hasHumanFoodEffectTooltip;
         this.hasCustomTooltip = hasCustomTooltip;
-    }
-
-    public VampireConsumableItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood, Item craftRemainder, boolean hasFoodEffectTooltip) {
-        super(new Properties().food(humanFood).craftRemainder(craftRemainder).stacksTo(16));
-        this.vampireFood = vampireFood;
-        this.hasFoodEffectTooltip = hasFoodEffectTooltip;
-        this.hasHumanFoodEffectTooltip = false;
-        this.hasCustomTooltip = false;
     }
 
     @Nullable
@@ -85,40 +78,49 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
 
     @NotNull
     @Override
-    public ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level worldIn, @NotNull LivingEntity entityLiving) {
-        if (!worldIn.isClientSide) {
-            this.affectConsumer(stack, worldIn, entityLiving);
+    public ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity consumer) {
+        if (!level.isClientSide) {
+            this.affectConsumer(stack, level, consumer);
         }
 
-        if (entityLiving instanceof Player player) {
+        if (consumer instanceof Player player) {
             // Don't shrink stack before retrieving food
             VampirePlayer.getOpt(player).ifPresent(v -> v.drinkBlood(vampireFood.getNutrition(), vampireFood.getSaturationModifier()));
         }
-
-        if (entityLiving instanceof IVampire) {
-            ((IVampire) entityLiving).drinkBlood(vampireFood.getNutrition(), vampireFood.getSaturationModifier());
-        } else {
-            // We don't use entityLiving.eat because it applies human food effect to vampires
-            VDHelper.feedEntity(worldIn, stack, entityLiving);  // Applies human food effects only to humans
-        }
-        if (entityLiving instanceof Player player && !player.isCreative() || !(entityLiving instanceof Player)) {
+        if (consumer instanceof IVampire) {
+            ((IVampire) consumer).drinkBlood(vampireFood.getNutrition(), vampireFood.getSaturationModifier());
+        } else if (!Helper.isVampire(consumer))
+            consumer.eat(level, stack);
+        
+        if (consumer instanceof Player player && !player.isCreative() || !(consumer instanceof Player)) {
             stack.shrink(1);
         }
 
-        worldIn.playSound(null, entityLiving.getX(), entityLiving.getY(), entityLiving.getZ(), SoundEvents.PLAYER_BURP, SoundSource.PLAYERS, 0.5F, worldIn.random.nextFloat() * 0.1F + 0.9F);
+        level.playSound(null, consumer.getX(), consumer.getY(), consumer.getZ(), SoundEvents.PLAYER_BURP, SoundSource.PLAYERS, 0.5F, level.random.nextFloat() * 0.1F + 0.9F);
 
-        if (Helper.isVampire(entityLiving)) {
-            VDHelper.addFoodEffects(vampireFood, worldIn, entityLiving);
+        if (Helper.isVampire(consumer)) {
+            VDHelper.addFoodEffects(vampireFood, level, consumer);
         }
 
         if (!stack.isEdible()) {
-            Player player = entityLiving instanceof Player ? (Player) entityLiving : null;
+            Player player = consumer instanceof Player ? (Player) consumer : null;
             if (player instanceof ServerPlayer) {
                 CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayer) player, stack);
             }
         }
 
-        return stack;
+        ItemStack containerStack = stack.getCraftingRemainingItem();
+
+        if (stack.isEmpty()) {
+            return containerStack;
+        } else {
+            if (consumer instanceof Player player && !((Player) consumer).getAbilities().instabuild) {
+                if (!player.getInventory().add(containerStack)) {
+                    player.drop(containerStack, false);
+                }
+            }
+            return stack;
+        }
     }
 
     public FoodProperties getVampireFood() {

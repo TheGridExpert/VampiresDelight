@@ -17,15 +17,14 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.Configuration;
 
 import java.util.List;
 
 public class CursedCupcakeItem extends VampireConsumableItem {
-    public CursedCupcakeItem(FoodProperties vampireFood, @NotNull FoodProperties humanFood) {
-        super(vampireFood, humanFood);
+    public CursedCupcakeItem(Properties properties, FoodProperties vampireFood) {
+        super(properties, vampireFood);
     }
 
     @Override

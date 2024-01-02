@@ -26,6 +26,9 @@ public class VDItems {
     public static Item.Properties drinkItem() {
         return new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16);
     }
+    public static Item.Properties drinkItem(FoodProperties food) {
+        return new Item.Properties().food(food).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16);
+    }
 
 
     // The neutral items go first, then the vampire and hunter ones
@@ -60,38 +63,39 @@ public class VDItems {
     public static final RegistryObject<Item> GRILLED_GARLIC = ITEMS.register("grilled_garlic",
             () -> new HunterConsumableItem(foodItem(VDFoodValues.GRILLED_GARLIC)));
     public static final RegistryObject<Item> ORCHID_TEA = ITEMS.register("orchid_tea",
-            () -> new OrchidTeaItem(VDFoodValues.ORCHID_TEA_VAMPIRE, VDFoodValues.ORCHID_TEA_HUNTER));
+            () -> new OrchidTeaItem(drinkItem(), VDFoodValues.ORCHID_TEA_VAMPIRE, VDFoodValues.ORCHID_TEA_HUNTER));
     public static final RegistryObject<Item> ORCHID_PETALS = ITEMS.register("orchid_petals",
             () -> new Item(basicItem()));
     public static final RegistryObject<Item> SUGARED_BERRIES = ITEMS.register("sugared_berries",
             () -> new ConsumableItem(foodItem(VDFoodValues.SUGARED_BERRIES)));
     public static final RegistryObject<Item> HEART_PIECES = ITEMS.register("heart_pieces",
-            () -> new VampireConsumableItem(VDFoodValues.HEART_PIECES, VDFoodValues.NASTY));
+            () -> new VampireConsumableItem(foodItem(VDFoodValues.NASTY), VDFoodValues.HEART_PIECES));
     public static final RegistryObject<Item> HUMAN_EYE = ITEMS.register("human_eye",
-            () -> new VampireConsumableItem(VDFoodValues.HUMAN_EYE, VDFoodValues.NASTY));
+            () -> new VampireConsumableItem(foodItem(VDFoodValues.NASTY), VDFoodValues.HUMAN_EYE));
     public static final RegistryObject<Item> BLOOD_DOUGH = ITEMS.register("blood_dough",
-            () -> new VampireConsumableItem(VDFoodValues.BLOOD_DOUGH, VDFoodValues.NASTY_BLOOD_DOUGH, false));
+            () -> new VampireConsumableItem(foodItem(VDFoodValues.NASTY_BLOOD_DOUGH), VDFoodValues.BLOOD_DOUGH, false));
     public static final RegistryObject<Item> BLOOD_BAGEL = ITEMS.register("blood_bagel",
-            () -> new VampireConsumableItem(VDFoodValues.BLOOD_BAGEL, VDFoodValues.NASTY));
+            () -> new VampireConsumableItem(foodItem(VDFoodValues.NASTY), VDFoodValues.BLOOD_BAGEL));
     public static final RegistryObject<Item> BLOOD_WINE_BOTTLE = ITEMS.register("blood_wine_bottle",
             () -> new BloodWineBottleItem(basicItem()));
     public static final RegistryObject<Item> WINE_GLASS = ITEMS.register("wine_glass",
-            () -> new VampireDrinkableItem(VDFoodValues.WINE_GLASS_VAMPIRE, VDFoodValues.WINE_GLASS_HUMAN));
+            () -> new VampireDrinkableItem(drinkItem(VDFoodValues.WINE_GLASS_HUMAN), VDFoodValues.WINE_GLASS_VAMPIRE));
     public static final RegistryObject<Item> BLOOD_PIE = ITEMS.register("blood_pie",
             () -> new BlockItem(VDBlocks.BLOOD_PIE.get(), basicItem()));
     public static final RegistryObject<Item> BLOOD_PIE_SLICE = ITEMS.register("blood_pie_slice",
-            () -> new VampireConsumableItem(VDFoodValues.BLOOD_PIE_SLICE, VDFoodValues.NASTY));
+            () -> new VampireConsumableItem(foodItem(VDFoodValues.NASTY), VDFoodValues.BLOOD_PIE_SLICE));
 
     // Sweets
-    public static final RegistryObject<Item> PURE_SORBET = ITEMS.register("pure_sorbet", PureSorbetItem::new);
+    public static final RegistryObject<Item> PURE_SORBET = ITEMS.register("pure_sorbet",
+            () -> new PureSorbetItem(foodItem(VDFoodValues.PURE_SORBET)));
     public static final RegistryObject<Item> CURSED_CUPCAKE = ITEMS.register("cursed_cupcake",
-            () -> new CursedCupcakeItem(VDFoodValues.CURSED_CUPCAKE, VDFoodValues.NASTY));
+            () -> new CursedCupcakeItem(foodItem(VDFoodValues.NASTY), VDFoodValues.CURSED_CUPCAKE));
 
     // Basic Meals
     public static final RegistryObject<Item> EYE_TOAST = ITEMS.register("eye_toast",
-            () -> new VampireConsumableItem(VDFoodValues.EYE_TOAST, VDFoodValues.NASTY));
+            () -> new VampireConsumableItem(foodItem(VDFoodValues.NASTY), VDFoodValues.EYE_TOAST));
     public static final RegistryObject<Item> BAGEL_SANDWICH = ITEMS.register("bagel_sandwich",
-            () -> new VampireConsumableItem(VDFoodValues.BAGEL_SANDWICH, VDFoodValues.NASTY));
+            () -> new VampireConsumableItem(foodItem(VDFoodValues.NASTY), VDFoodValues.BAGEL_SANDWICH));
     public static final RegistryObject<Item> HARDTACK = ITEMS.register("hardtack",
             () -> new HardtackItem(bowlFoodItem(VDFoodValues.HARDTACK)));
 
@@ -105,5 +109,5 @@ public class VDItems {
     public static final RegistryObject<Item> WEIRD_JELLY_BLOCK = ITEMS.register("weird_jelly_block",
             () -> new BlockItem(VDBlocks.WEIRD_JELLY_BLOCK.get(), basicItem().stacksTo(1)));
     public static final RegistryObject<Item> WEIRD_JELLY = ITEMS.register("weird_jelly",
-            () -> new VampireConsumableItem(VDFoodValues.WEIRD_JELLY, VDFoodValues.NASTY, Items.BOWL, true));
+            () -> new VampireConsumableItem(bowlFoodItem(VDFoodValues.NASTY), VDFoodValues.WEIRD_JELLY, true));
 }

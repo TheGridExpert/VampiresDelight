@@ -29,8 +29,8 @@ import java.util.List;
 public class OrchidTeaItem extends VampireDrinkableItem {
     private final FoodProperties defaultFood;
 
-    public OrchidTeaItem(FoodProperties vampireFood, FoodProperties hunterFood) {
-        super(vampireFood, hunterFood, new FoodProperties.Builder().build());
+    public OrchidTeaItem(Properties properties, FoodProperties vampireFood, FoodProperties hunterFood) {
+        super(properties.food(new FoodProperties.Builder().build()), vampireFood, hunterFood);
         this.defaultFood = hunterFood;
     }
 

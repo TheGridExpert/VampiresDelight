@@ -31,6 +31,7 @@ import java.util.List;
 public class HunterConsumableItem extends Item implements IFactionExclusiveItem {
     private final boolean hasFoodEffectTooltip;
     private final boolean hasCustomTooltip;
+
     public HunterConsumableItem(Properties properties) {
         super(properties);
         this.hasFoodEffectTooltip = false;
