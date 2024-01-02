@@ -57,16 +57,18 @@ public class VDFoodValues {
     public static final FoodProperties PURE_SORBET = (new FoodProperties.Builder())
             .nutrition(4).saturationMod(0.2f).fast().alwaysEat()
             .effect(() -> new MobEffectInstance(VDEffects.FOG_VISION.get(), MEDIUM_DURATION), 1.0F).build();
+    public static final FoodProperties TRICOLOR_DANGO = (new FoodProperties.Builder())
+            .nutrition(7).saturationMod(0.7f).fast().build();
 
     // Handheld Foods
     public static final FoodProperties BLOOD_BAGEL = (new FoodProperties.Builder())
             .nutrition(6).saturationMod(0.7f).build();
     public static final FoodProperties BAGEL_SANDWICH = (new FoodProperties.Builder())
-            .nutrition(14).saturationMod(1.2f).build();
+            .nutrition(13).saturationMod(1.2f).build();
     public static final FoodProperties EYE_TOAST = (new FoodProperties.Builder())
-            .nutrition(7).saturationMod(0.8f).build();
+            .nutrition(8).saturationMod(0.8f).build();
     public static final FoodProperties HARDTACK = (new FoodProperties.Builder())
-            .nutrition(6).saturationMod(0.8f).build();
+            .nutrition(6).saturationMod(0.9f).build();
 
     // Bowl Foods
     public static final FoodProperties GARLIC_SOUP = (new FoodProperties.Builder())

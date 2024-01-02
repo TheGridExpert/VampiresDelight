@@ -46,7 +46,8 @@ public class VDItemTags extends ItemTagsProvider {
                 .add(VDItems.BLOOD_BAGEL.get())
                 .add(VDItems.HUMAN_EYE.get())
                 .add(VDItems.BLOOD_WINE_BOTTLE.get())
-                .add(VDItems.WINE_GLASS.get());
+                .add(VDItems.WINE_GLASS.get())
+                .add(VDItems.TRICOLOR_DANGO.get());
         tag(VDTags.HUNTER_FOOD)
                 .add(ModItems.GARLIC_BREAD.get())
                 .add(VDItems.BORSCHT.get())
@@ -75,6 +76,7 @@ public class VDItemTags extends ItemTagsProvider {
     public void registerCompatibilityTags() {
         tag(VDCompatibilityTags.CREATE_UPRIGHT_ON_BELT)
                 .add(VDItems.ORCHID_TEA.get())
+                .add(VDItems.WINE_GLASS.get())
                 .add(VDItems.BLOOD_PIE.get());
 
         tag(VDCompatibilityTags.SERENE_SEASONS_AUTUMN_CROPS)

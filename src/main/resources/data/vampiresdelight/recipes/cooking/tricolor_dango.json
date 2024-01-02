@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "vampiresdelight:blood_dough"
+    },
+    {
+      "item": "vampiresdelight:orchid_petals"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "container": {
+    "item": "minecraft:stick"
+  },
+  "recipe_book_tab": "misc",
+  "result": {
+    "item": "vampiresdelight:tricolor_dango"
+  }
+}
