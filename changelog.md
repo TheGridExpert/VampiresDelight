@@ -3,13 +3,20 @@
 ## 0.0.1.3
 
 ### Additions
-- Added **Brewing Barrel**
-- Added **Blood Wine**
-- Added **Wine Glass**
+- Added **Brewing Barrel** (test only);
+- Added **Blood Wine**;
+- Added **Wine Glass**;
+- Added **Tricolor Dango**;
+- Added **Sugared Berries**;
 
 ### Updates
-- **Farmer Villagers** now buy **Garlic**
-- **Wandering Traders** now sell **Orchid Seeds**, **Orchid Petals**, **Garlic**, and **Cursed Earth**
+- Several texture updates;
+- **Farmer Villagers** now buy **Garlic**;
+- **Wandering Traders** now sell **Orchid Seeds**, **Orchid Petals**, **Garlic**, and **Cursed Earth**;
+- Vampire food tooltip now shows custom fraction tooltips;
+
+### Fixes
+- Fix vampire bite crashing game;
 
 ## 0.0.1.2
 
