@@ -10,7 +10,6 @@ import net.minecraft.world.item.Item;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
-import vectorwing.farmersdelight.common.registry.ModItems;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -28,7 +27,7 @@ public class VDItemModels extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        Set<Item> items = ForgeRegistries.ITEMS.getValues().stream().filter(i -> VampiresDelight.MODID.equals(ForgeRegistries.ITEMS.getKey(i).getNamespace()))
+        Set<Item> items = ForgeRegistries.ITEMS.getValues().stream().filter(i -> VampiresDelight.MODID.equals(Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(i)).getNamespace()))
                 .collect(Collectors.toSet());
 
         // Items that use its own model in models/item (mostly because runData cannot locate farmersdelight:item/mug)
@@ -77,7 +76,7 @@ public class VDItemModels extends ItemModelProvider {
     }
 
     private String itemName(Item item) {
-        return ForgeRegistries.ITEMS.getKey(item).getPath();
+        return Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item)).getPath();
     }
 
     public ResourceLocation resourceBlock(String path) {
