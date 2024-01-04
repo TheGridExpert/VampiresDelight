@@ -1,5 +1,5 @@
 {
-  "parent": "vampiresdelight:item/mug",
+  "parent": "farmersdelight:item/mug",
   "textures": {
     "layer0": "vampiresdelight:item/orchid_tea"
   }
