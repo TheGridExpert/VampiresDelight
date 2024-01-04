@@ -3,7 +3,6 @@ package net.grid.vampiresdelight.data;
 import com.google.common.collect.Sets;
 import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.registry.VDItems;
-import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
@@ -11,6 +10,7 @@ import net.minecraft.world.item.Item;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
+import vectorwing.farmersdelight.common.registry.ModItems;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -20,6 +20,7 @@ import static vectorwing.farmersdelight.data.ItemModels.takeAll;
 public class VDItemModels extends ItemModelProvider {
 
     public static final String GENERATED = "item/generated";
+    public static final String HANDHELD = "item/handheld";
 
     public VDItemModels(PackOutput output, ExistingFileHelper existingFileHelper) {
         super(output, VampiresDelight.MODID, existingFileHelper);
@@ -30,8 +31,11 @@ public class VDItemModels extends ItemModelProvider {
         Set<Item> items = ForgeRegistries.ITEMS.getValues().stream().filter(i -> VampiresDelight.MODID.equals(ForgeRegistries.ITEMS.getKey(i).getNamespace()))
                 .collect(Collectors.toSet());
 
-        // Specific cases
-        items.remove(VDItems.ORCHID_TEA.get());
+        // Items that use its own model in models/item (mostly because runData cannot locate farmersdelight:item/mug)
+        Set<Item> specialItems = Sets.newHashSet(
+                VDItems.ORCHID_TEA.get(),
+                VDItems.WINE_GLASS.get());
+        takeAll(items, specialItems.toArray(new Item[0])).forEach(items::remove);
 
         // Blocks with special item sprites
         Set<Item> spriteBlockItems = Sets.newHashSet(
@@ -49,6 +53,12 @@ public class VDItemModels extends ItemModelProvider {
         // Blocks whose items look alike
         takeAll(items, i -> i instanceof BlockItem).forEach(item -> blockBasedModel(item, ""));
 
+        // Handheld items
+        Set<Item> handheldItems = Sets.newHashSet(
+                VDItems.TRICOLOR_DANGO.get()
+        );
+        takeAll(items, handheldItems.toArray(new Item[0])).forEach(item -> itemHandheldModel(item, resourceItem(itemName(item))));
+
         // Generated items
         items.forEach(item -> itemGeneratedModel(item, resourceItem(itemName(item))));
 
@@ -56,6 +66,10 @@ public class VDItemModels extends ItemModelProvider {
 
     public void blockBasedModel(Item item, String suffix) {
         withExistingParent(itemName(item), resourceBlock(itemName(item) + suffix));
+    }
+
+    public void itemHandheldModel(Item item, ResourceLocation texture) {
+        withExistingParent(itemName(item), HANDHELD).texture("layer0", texture);
     }
 
     public void itemGeneratedModel(Item item, ResourceLocation texture) {

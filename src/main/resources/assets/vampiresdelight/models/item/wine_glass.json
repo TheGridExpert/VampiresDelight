@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:item/generated",
+  "parent": "vampiresdelight:item/mug",
   "textures": {
     "layer0": "vampiresdelight:item/wine_glass"
   }
