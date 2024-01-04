@@ -1,6 +1,18 @@
 {
-  "parent": "farmersdelight:item/mug",
+  "parent": "minecraft:item/generated",
   "textures": {
     "layer0": "vampiresdelight:item/wine_glass"
+  },
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [0, -90, -68],
+      "translation": [0, 2, 1.5],
+      "scale": [0.5, 0.5, 0.5]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [135, 90, -68],
+      "translation": [0, 2, 1.5],
+      "scale": [0.5, 0.5, 0.5]
+    }
   }
 }
