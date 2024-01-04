@@ -31,13 +31,12 @@ public class VampireBiteEnchantment extends Enchantment {
     public static class VampireBiteEvent {
         @SubscribeEvent
         public static void onVampireBite(LivingHurtEvent event) {
-            LivingEntity attacker = (LivingEntity) event.getSource().getEntity();
-            if (attacker instanceof Player player) {
+            if (event.getSource().getEntity() instanceof Player player) {
                 ItemStack weapon = player.getMainHandItem();
                 int enchantmentLevel = EnchantmentHelper.getItemEnchantmentLevel(VDEnchantments.VAMPIRE_BITE.get(), weapon);
                 Level level = event.getEntity().getCommandSenderWorld();
                 if (!level.isClientSide) {
-                    healFromDamage(attacker, enchantmentLevel, event.getAmount());
+                    healFromDamage(player, enchantmentLevel, event.getAmount());
                 }
             }
         }
