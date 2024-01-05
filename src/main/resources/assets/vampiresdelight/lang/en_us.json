@@ -15,10 +15,13 @@
 
   "item.vampiresdelight.alchemical_cocktail": "Alchemical Cocktail",
 
+  "item.vampiresdelight.sugared_berries": "Sugared Berries",
+  "item.vampiresdelight.pure_sorbet": "Pure Sorbet",
+  "item.vampiresdelight.rice_dough": "Rice Dough",
+
   "item.vampiresdelight.orchid_seeds": "Orchid Seeds",
   "item.vampiresdelight.orchid_tea": "Orchid Tea",
   "item.vampiresdelight.orchid_petals": "Orchid Petals",
-  "item.vampiresdelight.sugared_berries": "Sugared Berries",
   "item.vampiresdelight.heart_pieces": "Heart Pieces",
   "item.vampiresdelight.human_eye": "Human Eye",
   "item.vampiresdelight.blood_dough": "Blood Dough",
@@ -34,7 +37,6 @@
   "item.vampiresdelight.garlic_soup": "Garlic Soup",
   "item.vampiresdelight.borscht": "Borscht",
   "item.vampiresdelight.hardtack": "Hardtack",
-  "item.vampiresdelight.pure_sorbet": "Pure Sorbet",
 
   "effect.vampiresdelight.fog_vision": "Fog Vision",
   "effect.vampiresdelight.fog_vision.0.desc": "Allows humans to see farther in vampire fog.",

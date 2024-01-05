@@ -1,5 +1,6 @@
 package net.grid.vampiresdelight.common;
 
+import de.teamlapen.vampirism.core.ModItems;
 import net.grid.vampiresdelight.common.entity.AlchemicalCocktailEntity;
 import net.grid.vampiresdelight.common.registry.VDItems;
 import net.grid.vampiresdelight.common.registry.VDStats;
@@ -8,15 +9,16 @@ import net.grid.vampiresdelight.integration.create.VDPotatoProjectileTypes;
 import net.minecraft.core.Position;
 import net.minecraft.core.dispenser.AbstractProjectileDispenseBehavior;
 import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import vectorwing.farmersdelight.common.entity.RottenTomatoEntity;
-import vectorwing.farmersdelight.common.registry.ModItems;
+import vectorwing.farmersdelight.common.block.entity.CookingPotBlockEntity;
 
-import java.util.Optional;
+import java.util.Map;
 
 public class CommonSetup {
     public static void init(final FMLCommonSetupEvent event) {
@@ -25,7 +27,7 @@ public class CommonSetup {
             VDStats.registerModStats();
             registerDispenserBehaviors();
             registerCompostableItems();
-            //WildGarlicGeneration.registerWildGarlicGeneration();
+            //registerCookingPotRemainders();
         });
     }
 
@@ -49,6 +51,21 @@ public class CommonSetup {
         // 100% chance
         ComposterBlock.COMPOSTABLES.put(VDItems.BLOOD_PIE.get(), 1.0F);
     }
+
+    /*
+    public static void registerCookingPotRemainders() {
+        Map<Item, Item> INGREDIENT_REMAINDER_OVERRIDES = Map.ofEntries(
+                Map.entry(ModItems.BLOOD_BOTTLE.get(), Items.GLASS_BOTTLE),
+                Map.entry(ModItems.VAMPIRE_BLOOD_BOTTLE.get(), Items.GLASS_BOTTLE),
+                Map.entry(ModItems.PURE_BLOOD_0.get(), Items.GLASS_BOTTLE),
+                Map.entry(ModItems.PURE_BLOOD_1.get(), Items.GLASS_BOTTLE),
+                Map.entry(ModItems.PURE_BLOOD_2.get(), Items.GLASS_BOTTLE),
+                Map.entry(ModItems.PURE_BLOOD_3.get(), Items.GLASS_BOTTLE),
+                Map.entry(ModItems.PURE_BLOOD_4.get(), Items.GLASS_BOTTLE));
+
+        CookingPotBlockEntity.INGREDIENT_REMAINDER_OVERRIDES.putAll(INGREDIENT_REMAINDER_OVERRIDES);
+    }
+     */
 
     public static void registerModIntegrations() {
         if (ModLoad.CREATE.isLoaded()) {

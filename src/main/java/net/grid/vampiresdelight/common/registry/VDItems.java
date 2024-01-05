@@ -72,6 +72,8 @@ public class VDItems {
             () -> new VampireConsumableItem(foodItem(VDFoodValues.NASTY), VDFoodValues.HEART_PIECES));
     public static final RegistryObject<Item> HUMAN_EYE = ITEMS.register("human_eye",
             () -> new VampireConsumableItem(foodItem(VDFoodValues.NASTY), VDFoodValues.HUMAN_EYE));
+    public static final RegistryObject<Item> RICE_DOUGH = ITEMS.register("rice_dough",
+            () -> new Item(foodItem(VDFoodValues.RICE_DOUGH)));
     public static final RegistryObject<Item> BLOOD_DOUGH = ITEMS.register("blood_dough",
             () -> new VampireConsumableItem(foodItem(VDFoodValues.NASTY_BLOOD_DOUGH), VDFoodValues.BLOOD_DOUGH, false));
     public static final RegistryObject<Item> BLOOD_BAGEL = ITEMS.register("blood_bagel",

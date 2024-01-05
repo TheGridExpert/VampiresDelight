@@ -6,13 +6,7 @@
       "item": "vampirism:blood_bottle"
     },
     {
-      "tag": "forge:crops/rice"
-    },
-    {
-      "tag": "forge:crops/rice"
-    },
-    {
-      "tag": "forge:crops/rice"
+      "item": "vampiresdelight:rice_dough"
     }
   ],
   "result": {

@@ -38,6 +38,8 @@ public class VDFoodValues {
     // Small foods
     public static final FoodProperties GRILLED_GARLIC = (new FoodProperties.Builder())
             .nutrition(3).saturationMod(0.2f).build();
+    public static final FoodProperties RICE_DOUGH = (new FoodProperties.Builder())
+            .nutrition(2).saturationMod(0.3f).effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.3F).build();
     public static final FoodProperties BLOOD_DOUGH = (new FoodProperties.Builder())
             .nutrition(2).saturationMod(0.3f)
             .effect(() -> new MobEffectInstance(MobEffects.HUNGER, BRIEF_DURATION), 0.3F).build();

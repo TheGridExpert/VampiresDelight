@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_blood_bottle": {
+    "has_rice": {
       "conditions": {
         "items": [
           {
             "items": [
-              "vampirism:blood_bottle"
+              "farmersdelight:rice"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "vampiresdelight:blood_dough"
+        "recipe": "vampiresdelight:rice_dough_from_eggs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_blood_bottle",
+      "has_rice",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "vampiresdelight:blood_dough"
+      "vampiresdelight:rice_dough_from_eggs"
     ]
   },
   "sends_telemetry_event": false

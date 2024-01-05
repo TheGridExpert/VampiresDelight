@@ -87,12 +87,24 @@ public class VDCraftingRecipes {
     }
 
     private static void recipesFoodstuffs(Consumer<FinishedRecipe> consumer) {
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.BLOOD_DOUGH.get(), 3)
-                .requires(ModItems.BLOOD_BOTTLE.get())
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.RICE_DOUGH.get(), 3)
+                .requires(Items.WATER_BUCKET)
                 .requires(ForgeTags.CROPS_RICE)
                 .requires(ForgeTags.CROPS_RICE)
                 .requires(ForgeTags.CROPS_RICE)
                 .unlockedBy("has_rice", InventoryChangeTrigger.TriggerInstance.hasItems(vectorwing.farmersdelight.common.registry.ModItems.RICE.get()))
+                .save(consumer, new ResourceLocation(VampiresDelight.MODID, "rice_dough_from_water"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.RICE_DOUGH.get(), 3)
+                .requires(ForgeTags.EGGS)
+                .requires(ForgeTags.CROPS_RICE)
+                .requires(ForgeTags.CROPS_RICE)
+                .requires(ForgeTags.CROPS_RICE)
+                .unlockedBy("has_rice", InventoryChangeTrigger.TriggerInstance.hasItems(vectorwing.farmersdelight.common.registry.ModItems.RICE.get()))
+                .save(consumer, new ResourceLocation(VampiresDelight.MODID, "rice_dough_from_eggs"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.BLOOD_DOUGH.get(), 3)
+                .requires(ModItems.BLOOD_BOTTLE.get())
+                .requires(VDItems.RICE_DOUGH.get())
+                .unlockedBy("has_blood_bottle", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BLOOD_BOTTLE.get()))
                 .save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, VDItems.PURE_SORBET.get(), 1)
                 .pattern(" sa")

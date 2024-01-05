@@ -4,7 +4,10 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "vampiresdelight:blood_dough"
+      "tag": "forge:dough/rice"
+    },
+    {
+      "item": "vampirism:blood_bottle"
     },
     {
       "item": "vampiresdelight:orchid_petals"

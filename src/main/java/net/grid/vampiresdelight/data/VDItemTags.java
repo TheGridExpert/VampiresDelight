@@ -69,6 +69,9 @@ public class VDItemTags extends ItemTagsProvider {
 
     @SuppressWarnings("unchecked")
     private void registerForgeTags() {
+        tag(ForgeTags.DOUGH).add(VDItems.RICE_DOUGH.get());
+        tag(VDForgeTags.DOUGH_RICE).add(VDItems.RICE_DOUGH.get());
+
         tag(ForgeTags.VEGETABLES).addTags(VDForgeTags.VEGETABLES_GARLIC);
         tag(VDForgeTags.VEGETABLES_GARLIC).add(ModItems.ITEM_GARLIC.get());
     }

@@ -37,6 +37,7 @@ public class VDCreativeTabs {
         event.accept(VDItems.SUGARED_BERRIES);
         event.accept(VDItems.HEART_PIECES);
         event.accept(VDItems.HUMAN_EYE);
+        event.accept(VDItems.RICE_DOUGH);
         event.accept(VDItems.BLOOD_DOUGH);
         event.accept(VDItems.BLOOD_BAGEL);
         event.accept(VDItems.BLOOD_WINE_BOTTLE);
