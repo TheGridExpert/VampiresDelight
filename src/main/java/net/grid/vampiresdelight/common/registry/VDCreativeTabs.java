@@ -25,6 +25,7 @@ public class VDCreativeTabs {
         event.accept(VDItems.DARK_SPRUCE_CABINET);
         event.accept(VDItems.CURSED_SPRUCE_CABINET);
         event.accept(VDItems.CURSED_FARMLAND);
+        event.accept(VDItems.OAK_WINE_SHELF);
         event.accept(VDItems.WILD_GARLIC);
 
         // Farming

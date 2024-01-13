@@ -1,0 +1,113 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "vampiresdelight:block/oak_wine_shelf",
+        "y": 270
+      },
+      "when": {
+        "facing": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/oak_wine_shelf_support",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "has_upper_support": "true"
+          }
+        ]
+      }
+    },
+
+
+
+    {
+      "apply": {
+        "model": "vampiresdelight:block/oak_wine_shelf",
+        "y": 0
+      },
+      "when": {
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/oak_wine_shelf_support",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "has_upper_support": "true"
+          }
+        ]
+      }
+    },
+
+
+
+    {
+      "apply": {
+        "model": "vampiresdelight:block/oak_wine_shelf",
+        "y": 90
+      },
+      "when": {
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/oak_wine_shelf_support",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "has_upper_support": "true"
+          }
+        ]
+      }
+    },
+
+
+
+    {
+      "apply": {
+        "model": "vampiresdelight:block/oak_wine_shelf",
+        "y": 180
+      },
+      "when": {
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/oak_wine_shelf_support",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "has_upper_support": "true"
+          }
+        ]
+      }
+    }
+  ]
+}

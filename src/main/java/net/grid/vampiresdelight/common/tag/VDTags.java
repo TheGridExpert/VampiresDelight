@@ -1,7 +1,6 @@
 package net.grid.vampiresdelight.common.tag;
 
 import net.grid.vampiresdelight.VampiresDelight;
-import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
@@ -11,7 +10,6 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
-import vectorwing.farmersdelight.FarmersDelight;
 
 public class VDTags {
     // Vampire and Hunter food.
