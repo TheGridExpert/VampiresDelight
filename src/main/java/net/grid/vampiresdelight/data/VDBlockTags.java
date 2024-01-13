@@ -45,6 +45,7 @@ public class VDBlockTags extends BlockTagsProvider {
                 VDBlocks.GARLIC_CRATE.get(),
                 VDBlocks.DARK_SPRUCE_CABINET.get(),
                 VDBlocks.CURSED_SPRUCE_CABINET.get(),
+                VDBlocks.OAK_WINE_SHELF.get(),
                 VDBlocks.BREWING_BARREL.get());
         tag(ModTags.MINEABLE_WITH_KNIFE).add(
                 VDBlocks.BLOOD_PIE.get(),

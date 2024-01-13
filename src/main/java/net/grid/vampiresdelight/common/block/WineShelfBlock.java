@@ -43,7 +43,7 @@ public class WineShelfBlock extends BaseEntityBlock {
     public static final List<BooleanProperty> SLOT_OCCUPIED_PROPERTIES = List.of(WINE_SHELF_SLOT_0_OCCUPIED, WINE_SHELF_SLOT_1_OCCUPIED, WINE_SHELF_SLOT_2_OCCUPIED, WINE_SHELF_SLOT_3_OCCUPIED);
 
     @Override
-    public @NotNull VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+    public @NotNull VoxelShape getShape(BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
         VoxelShape shape;
 
         switch (state.getValue(HorizontalDirectionalBlock.FACING)) {
@@ -64,14 +64,14 @@ public class WineShelfBlock extends BaseEntityBlock {
                 .setValue(HAS_UPPER_SUPPORT, false);
 
         for (BooleanProperty booleanproperty : SLOT_OCCUPIED_PROPERTIES) {
-            blockstate = blockstate.setValue(booleanproperty, Boolean.valueOf(false));
+            blockstate = blockstate.setValue(booleanproperty, Boolean.FALSE);
         }
 
         this.registerDefaultState(blockstate);
     }
 
     @Override
-    public @NotNull RenderShape getRenderShape(BlockState state) {
+    public @NotNull RenderShape getRenderShape(@NotNull BlockState state) {
         return RenderShape.MODEL;
     }
 
@@ -86,19 +86,19 @@ public class WineShelfBlock extends BaseEntityBlock {
     }
 
     @Override
-    public @NotNull BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor level, BlockPos blockPos, BlockPos facingPos) {
+    public @NotNull BlockState updateShape(BlockState state, @NotNull Direction facing, @NotNull BlockState facingState, @NotNull LevelAccessor level, @NotNull BlockPos blockPos, @NotNull BlockPos facingPos) {
         return super.updateShape(state.setValue(HAS_UPPER_SUPPORT, level.getBlockState(blockPos.above()).getBlock() instanceof WineShelfBlock), facing, facingState, level, blockPos, facingPos);
     }
 
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+    protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
         builder.add(HorizontalDirectionalBlock.FACING, HAS_UPPER_SUPPORT);
         SLOT_OCCUPIED_PROPERTIES.forEach(builder::add);
     }
 
     @Override
-    public InteractionResult use(BlockState state, Level pLevel, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
+    public @NotNull InteractionResult use(@NotNull BlockState state, Level pLevel, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hitResult) {
         BlockEntity blockEntity = pLevel.getBlockEntity(pos);
         if (blockEntity instanceof WineShelfBlockEntity wineshelfblockentity) {
             Optional<Vec2> optional = getRelativeHitCoordinatesForBlockFace(hitResult, state.getValue(HorizontalDirectionalBlock.FACING));
@@ -134,29 +134,15 @@ public class WineShelfBlock extends BaseEntityBlock {
             double d0 = vec3.x();
             double d1 = vec3.y();
             double d2 = vec3.z();
-            Optional optional;
-            switch (direction) {
-                case NORTH:
-                    optional = Optional.of(new Vec2((float) (1.0D - d0), (float) d1));
-                    break;
-                case SOUTH:
-                    optional = Optional.of(new Vec2((float) d0, (float) d1));
-                    break;
-                case WEST:
-                    optional = Optional.of(new Vec2((float) d2, (float) d1));
-                    break;
-                case EAST:
-                    optional = Optional.of(new Vec2((float) (1.0D - d2), (float) d1));
-                    break;
-                case DOWN:
-                case UP:
-                    optional = Optional.empty();
-                    break;
-                default:
-                    throw new IncompatibleClassChangeError();
-            }
 
-            return optional;
+            return switch (direction) {
+                case NORTH -> Optional.of(new Vec2((float) (1.0D - d0), (float) d1));
+                case SOUTH -> Optional.of(new Vec2((float) d0, (float) d1));
+                case WEST -> Optional.of(new Vec2((float) d2, (float) d1));
+                case EAST -> Optional.of(new Vec2((float) (1.0D - d2), (float) d1));
+                case DOWN, UP -> Optional.empty();
+                default -> throw new IncompatibleClassChangeError();
+            };
         }
     }
 
@@ -208,7 +194,7 @@ public class WineShelfBlock extends BaseEntityBlock {
         return new WineShelfBlockEntity(pos, state);
     }
 
-    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
+    public void onRemove(BlockState state, @NotNull Level level, @NotNull BlockPos pos, BlockState newState, boolean movedByPiston) {
         if (!state.is(newState.getBlock())) {
             BlockEntity blockentity = level.getBlockEntity(pos);
             if (blockentity instanceof WineShelfBlockEntity wineshelfblockentity) {
@@ -278,12 +264,12 @@ public class WineShelfBlock extends BaseEntityBlock {
     }
 
     @Override
-    public boolean hasAnalogOutputSignal(BlockState state) {
+    public boolean hasAnalogOutputSignal(@NotNull BlockState state) {
         return true;
     }
 
     @Override
-    public int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos) {
+    public int getAnalogOutputSignal(@NotNull BlockState state, Level level, @NotNull BlockPos pos) {
         if (level.isClientSide()) {
             return 0;
         } else {

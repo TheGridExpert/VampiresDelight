@@ -21,7 +21,6 @@ import java.util.Objects;
 import java.util.function.Predicate;
 
 public class WineShelfBlockEntity extends BlockEntity implements Container {
-    public static final int MAX_BOTTLES_IN_STORAGE = 4;
     private static final Logger LOGGER = LogUtils.getLogger();
     private final NonNullList<ItemStack> items = NonNullList.withSize(4, ItemStack.EMPTY);
     private int lastInteractedSlot = -1;
