@@ -21,20 +21,14 @@ import org.jetbrains.annotations.Nullable;
 public class WineShelfBlock extends Block {
     public static final BooleanProperty HAS_UPPER_SUPPORT = BooleanProperty.create("has_upper_support");
 
-    public static @NotNull VoxelShape makeShape(){
+    public static @NotNull VoxelShape makeShape(boolean has_support){
         VoxelShape shape = Shapes.empty();
         shape = Shapes.or(shape, Shapes.box(0, 0.5, 0, 1, 0.625, 1));
         shape = Shapes.or(shape, Shapes.box(0, 0, 0, 1, 0.125, 1));
-        shape = Shapes.or(shape, Shapes.box(0.4375, 0.09375, -0.0625, 0.5625, 0.21875, 0.875));
         shape = Shapes.or(shape, Shapes.box(0.4375, 0.125, 0.875, 0.5625, 0.5, 1));
-
-        return shape;
-    }
-
-    public static @NotNull VoxelShape makeSupportShape(){
-        VoxelShape shape = Shapes.empty();
-        shape = Shapes.or(shape, Shapes.box(0.4375, 0.59375, -0.0625, 0.5625, 0.71875, 0.875));
-        shape = Shapes.or(shape, Shapes.box(0.4375, 0.625, 0.875, 0.5625, 1, 1));
+        if (has_support) {
+            shape = Shapes.or(shape, Shapes.box(0.4375, 0.625, 0.875, 0.5625, 1, 1));
+        }
 
         return shape;
     }
@@ -44,19 +38,10 @@ public class WineShelfBlock extends Block {
         VoxelShape shape;
 
         switch (state.getValue(HorizontalDirectionalBlock.FACING)) {
-            case EAST -> shape = UtilLib.rotateShape(makeShape(), UtilLib.RotationAmount.NINETY);
-            case SOUTH -> shape = UtilLib.rotateShape(makeShape(), UtilLib.RotationAmount.HUNDRED_EIGHTY);
-            case WEST -> shape = UtilLib.rotateShape(makeShape(), UtilLib.RotationAmount.TWO_HUNDRED_SEVENTY);
-            default -> shape = makeShape();
-        }
-
-        if (state.getValue(HAS_UPPER_SUPPORT)) {
-            switch (state.getValue(HorizontalDirectionalBlock.FACING)) {
-                case EAST -> Shapes.or(shape, UtilLib.rotateShape(makeSupportShape(), UtilLib.RotationAmount.NINETY));
-                case SOUTH -> Shapes.or(shape, UtilLib.rotateShape(makeSupportShape(), UtilLib.RotationAmount.HUNDRED_EIGHTY));
-                case WEST -> Shapes.or(shape, UtilLib.rotateShape(makeSupportShape(), UtilLib.RotationAmount.TWO_HUNDRED_SEVENTY));
-                default -> Shapes.or(shape, makeSupportShape());
-            }
+            case EAST -> shape = UtilLib.rotateShape(makeShape(state.getValue(HAS_UPPER_SUPPORT)), UtilLib.RotationAmount.NINETY);
+            case SOUTH -> shape = UtilLib.rotateShape(makeShape(state.getValue(HAS_UPPER_SUPPORT)), UtilLib.RotationAmount.HUNDRED_EIGHTY);
+            case WEST -> shape = UtilLib.rotateShape(makeShape(state.getValue(HAS_UPPER_SUPPORT)), UtilLib.RotationAmount.TWO_HUNDRED_SEVENTY);
+            default -> shape = makeShape(state.getValue(HAS_UPPER_SUPPORT));
         }
 
         return shape;
