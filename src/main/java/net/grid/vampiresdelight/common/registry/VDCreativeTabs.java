@@ -24,11 +24,11 @@ public class VDCreativeTabs {
         event.accept(VDItems.ORCHID_BAG);
         event.accept(VDItems.DARK_SPRUCE_CABINET);
         event.accept(VDItems.CURSED_SPRUCE_CABINET);
-        event.accept(VDItems.CURSED_FARMLAND);
         event.accept(VDItems.OAK_WINE_SHELF);
-        event.accept(VDItems.WILD_GARLIC);
 
         // Farming
+        event.accept(VDItems.CURSED_FARMLAND);
+        event.accept(VDItems.WILD_GARLIC);
         event.accept(VDItems.ORCHID_SEEDS);
 
         // Foodstuffs
