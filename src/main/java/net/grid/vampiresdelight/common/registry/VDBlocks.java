@@ -35,6 +35,14 @@ public class VDBlocks {
             () -> new CabinetBlock(Block.Properties.copy(Blocks.BARREL)));
     public static final RegistryObject<Block> OAK_WINE_SHELF = BLOCKS.register("oak_wine_shelf",
             () -> new WineShelfBlock(Block.Properties.copy(Blocks.OAK_PLANKS).strength(1.5F)));
+    public static final RegistryObject<Block> SPRUCE_WINE_SHELF = BLOCKS.register("spruce_wine_shelf",
+            () -> new WineShelfBlock(Block.Properties.copy(Blocks.OAK_PLANKS).strength(1.5F)));
+    public static final RegistryObject<Block> BIRCH_WINE_SHELF = BLOCKS.register("birch_wine_shelf",
+            () -> new WineShelfBlock(Block.Properties.copy(Blocks.OAK_PLANKS).strength(1.5F)));
+    public static final RegistryObject<Block> JUNGLE_WINE_SHELF = BLOCKS.register("jungle_wine_shelf",
+            () -> new WineShelfBlock(Block.Properties.copy(Blocks.OAK_PLANKS).strength(1.5F)));
+    public static final RegistryObject<Block> ACACIA_WINE_SHELF = BLOCKS.register("acacia_wine_shelf",
+            () -> new WineShelfBlock(Block.Properties.copy(Blocks.OAK_PLANKS).strength(1.5F)));
 
     // Farming
     public static final RegistryObject<Block> CURSED_FARMLAND = BLOCKS.register("cursed_farmland",

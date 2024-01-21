@@ -101,7 +101,7 @@ public class VDCraftingRecipes {
                 .requires(ForgeTags.CROPS_RICE)
                 .unlockedBy("has_rice", InventoryChangeTrigger.TriggerInstance.hasItems(vectorwing.farmersdelight.common.registry.ModItems.RICE.get()))
                 .save(consumer, new ResourceLocation(VampiresDelight.MODID, "rice_dough_from_eggs"));
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.BLOOD_DOUGH.get(), 3)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.BLOOD_DOUGH.get(), 1)
                 .requires(ModItems.BLOOD_BOTTLE.get())
                 .requires(VDItems.RICE_DOUGH.get())
                 .unlockedBy("has_blood_bottle", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BLOOD_BOTTLE.get()))

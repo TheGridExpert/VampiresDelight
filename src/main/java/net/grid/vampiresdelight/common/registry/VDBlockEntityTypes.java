@@ -15,6 +15,10 @@ public class VDBlockEntityTypes {
             () -> BlockEntityType.Builder.of(BrewingBarrelBlockEntity::new, VDBlocks.BREWING_BARREL.get()).build(null));
     public static final RegistryObject<BlockEntityType<WineShelfBlockEntity>> WINE_SHELF = TILES.register("wine_shelf",
             () -> BlockEntityType.Builder.of(WineShelfBlockEntity::new,
-                            VDBlocks.OAK_WINE_SHELF.get())
+                            VDBlocks.OAK_WINE_SHELF.get(),
+                            VDBlocks.SPRUCE_WINE_SHELF.get(),
+                            VDBlocks.BIRCH_WINE_SHELF.get(),
+                            VDBlocks.JUNGLE_WINE_SHELF.get(),
+                            VDBlocks.ACACIA_WINE_SHELF.get())
                     .build(null));
 }

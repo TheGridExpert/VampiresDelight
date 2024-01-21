@@ -1,0 +1,7 @@
+{
+	"parent": "vampiresdelight:block/template_wine_shelf_support",
+  	"textures": {
+		"body": "vampiresdelight:block/jungle_wine_shelf",
+		"particle": "block/jungle_planks"
+	}
+}

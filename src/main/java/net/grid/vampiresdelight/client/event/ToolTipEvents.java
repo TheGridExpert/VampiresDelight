@@ -20,6 +20,8 @@ import net.minecraftforge.fml.common.Mod;
 import java.awt.*;
 import java.util.List;
 
+import static de.teamlapen.vampirism.items.BloodBottleFluidHandler.MULTIPLIER;
+
 @Mod.EventBusSubscriber(modid = VampiresDelight.MODID, value = Dist.CLIENT)
 public class ToolTipEvents {
     @SubscribeEvent
@@ -53,6 +55,12 @@ public class ToolTipEvents {
         }
         if (food instanceof GarlicBreadItem) {
             VDTooltipUtils.addFactionFoodToolTips(tooltip, VampirismMod.proxy.getClientPlayer(), VReference.HUNTER_FACTION);
+        }
+
+        // Just a thing for testing
+        if (food instanceof BloodBottleItem) {
+            int blood = event.getItemStack().getDamageValue() * MULTIPLIER;
+            //tooltip.add(Component.literal("Blood: " + blood));
         }
     }
 }

@@ -101,7 +101,7 @@ public class BloodWineBottleItem extends Item implements IFactionExclusiveItem {
             compoundTag.remove("Pouring");
             //itemStack.hurtAndBreak(1, entity, p -> p.broadcastBreakEvent(p.getUsedItemHand()));
             itemStack.setDamageValue(itemStack.getDamageValue() + 1);
-            if (itemStack.getDamageValue() > 1) itemStack = new ItemStack(Items.GLASS_BOTTLE);
+            if (itemStack.getDamageValue() > 3) itemStack = new ItemStack(Items.GLASS_BOTTLE);
         }
 
         return itemStack;
@@ -133,7 +133,7 @@ public class BloodWineBottleItem extends Item implements IFactionExclusiveItem {
     public ItemStack getCraftingRemainingItem(ItemStack itemStack) {
         ItemStack item = itemStack.copy();
         item.setDamageValue(item.getDamageValue() + 1);
-        if (item.getDamageValue() > 1) return new ItemStack(Items.GLASS_BOTTLE);
+        if (item.getDamageValue() > 3) return new ItemStack(Items.GLASS_BOTTLE);
         return item;
     }
 
