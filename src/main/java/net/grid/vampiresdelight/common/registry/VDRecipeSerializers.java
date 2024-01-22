@@ -3,6 +3,7 @@ package net.grid.vampiresdelight.common.registry;
 import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.crafting.BarrelPouringRecipe;
 import net.grid.vampiresdelight.common.crafting.BrewingBarrelRecipe;
+import net.grid.vampiresdelight.common.crafting.crafting_table.BloodShapelessRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.ShapelessRecipe;
 import net.minecraft.world.item.crafting.SimpleCraftingRecipeSerializer;
@@ -18,5 +19,5 @@ public class VDRecipeSerializers {
     public static final RegistryObject<SimpleCraftingRecipeSerializer<?>> BARREL_POURING =
             RECIPE_SERIALIZERS.register("barrel_pouring", () -> new SimpleCraftingRecipeSerializer<>(BarrelPouringRecipe::new));
 
-    public static final RegistryObject<RecipeSerializer> BLOOD_SHAPELESS_RECIPE = RECIPE_SERIALIZERS.register("crafting_blood_shapeless", ShapelessRecipe.Serializer::new);
+    public static final RegistryObject<RecipeSerializer<?>> BLOOD_SHAPELESS_RECIPE = RECIPE_SERIALIZERS.register("blood_shapeless_crafting", BloodShapelessRecipe.Serializer::new);
 }

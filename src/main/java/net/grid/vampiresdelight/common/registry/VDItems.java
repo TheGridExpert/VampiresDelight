@@ -54,6 +54,14 @@ public class VDItems {
             () -> new FuelBlockItem(VDBlocks.JUNGLE_WINE_SHELF.get(), basicItem(), 300));
     public static final RegistryObject<Item> ACACIA_WINE_SHELF = ITEMS.register("acacia_wine_shelf",
             () -> new FuelBlockItem(VDBlocks.ACACIA_WINE_SHELF.get(), basicItem(), 300));
+    public static final RegistryObject<Item> DARK_OAK_WINE_SHELF = ITEMS.register("dark_oak_wine_shelf",
+            () -> new FuelBlockItem(VDBlocks.DARK_OAK_WINE_SHELF.get(), basicItem(), 300));
+    public static final RegistryObject<Item> MANGROVE_WINE_SHELF = ITEMS.register("mangrove_wine_shelf",
+            () -> new FuelBlockItem(VDBlocks.MANGROVE_WINE_SHELF.get(), basicItem(), 300));
+    public static final RegistryObject<Item> CHERRY_WINE_SHELF = ITEMS.register("cherry_wine_shelf",
+            () -> new FuelBlockItem(VDBlocks.CHERRY_WINE_SHELF.get(), basicItem(), 300));
+    public static final RegistryObject<Item> BAMBOO_WINE_SHELF = ITEMS.register("bamboo_wine_shelf",
+            () -> new FuelBlockItem(VDBlocks.BAMBOO_WINE_SHELF.get(), basicItem(), 300));
     public static final RegistryObject<Item> WILD_GARLIC = ITEMS.register("wild_garlic",
             () -> new BlockItem(VDBlocks.WILD_GARLIC.get(), basicItem()));
 

@@ -5,6 +5,7 @@ import net.grid.vampiresdelight.VampiresDelight;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.eventbus.api.Cancelable;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -25,7 +26,8 @@ public class CraftingEventHandler {
                     if (stack.getItem() == ModItems.BLOOD_BOTTLE.get()) {
                         if (stack.getDamageValue() * MULTIPLIER < 900) {
                             //event.setCanceled(true);
-                            event.setResult(Event.Result.DENY);
+                            //event.setResult(Event.Result.DENY);
+                            //event.setResult(null);
                         }
                     }
                 }

@@ -1,9 +1,14 @@
 {
-  "world.triangle": {
+  "triangle": {
     "sounds": [
-      "vampiresdelight:triangles/triangle_1",
-      "vampiresdelight:triangles/triangle_2",
-      "vampiresdelight:triangles/triangle_3"
+      "vampiresdelight:triangle_1",
+      "vampiresdelight:triangle_2",
+      "vampiresdelight:triangle_3"
+    ]
+  },
+  "item.pouring_wine": {
+    "sounds": [
+      "vampiresdelight:pouring_wine"
     ]
   }
 }

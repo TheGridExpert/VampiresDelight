@@ -32,15 +32,23 @@ public class VDBlocks {
     public static final RegistryObject<Block> CURSED_SPRUCE_CABINET = BLOCKS.register("cursed_spruce_cabinet",
             () -> new CabinetBlock(Block.Properties.copy(Blocks.BARREL)));
     public static final RegistryObject<Block> OAK_WINE_SHELF = BLOCKS.register("oak_wine_shelf",
-            () -> new WineShelfBlock(Block.Properties.copy(Blocks.OAK_PLANKS).strength(1.5F)));
+            () -> new WineShelfBlock(Block.Properties.copy(Blocks.OAK_PLANKS)));
     public static final RegistryObject<Block> SPRUCE_WINE_SHELF = BLOCKS.register("spruce_wine_shelf",
-            () -> new WineShelfBlock(Block.Properties.copy(Blocks.OAK_PLANKS).strength(1.5F)));
+            () -> new WineShelfBlock(Block.Properties.copy(Blocks.SPRUCE_PLANKS)));
     public static final RegistryObject<Block> BIRCH_WINE_SHELF = BLOCKS.register("birch_wine_shelf",
-            () -> new WineShelfBlock(Block.Properties.copy(Blocks.OAK_PLANKS).strength(1.5F)));
+            () -> new WineShelfBlock(Block.Properties.copy(Blocks.BIRCH_PLANKS)));
     public static final RegistryObject<Block> JUNGLE_WINE_SHELF = BLOCKS.register("jungle_wine_shelf",
-            () -> new WineShelfBlock(Block.Properties.copy(Blocks.OAK_PLANKS).strength(1.5F)));
+            () -> new WineShelfBlock(Block.Properties.copy(Blocks.JUNGLE_PLANKS)));
     public static final RegistryObject<Block> ACACIA_WINE_SHELF = BLOCKS.register("acacia_wine_shelf",
-            () -> new WineShelfBlock(Block.Properties.copy(Blocks.OAK_PLANKS).strength(1.5F)));
+            () -> new WineShelfBlock(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+    public static final RegistryObject<Block> DARK_OAK_WINE_SHELF = BLOCKS.register("dark_oak_wine_shelf",
+            () -> new WineShelfBlock(Block.Properties.copy(Blocks.DARK_OAK_PLANKS)));
+    public static final RegistryObject<Block> MANGROVE_WINE_SHELF = BLOCKS.register("mangrove_wine_shelf",
+            () -> new WineShelfBlock(Block.Properties.copy(Blocks.MANGROVE_PLANKS)));
+    public static final RegistryObject<Block> CHERRY_WINE_SHELF = BLOCKS.register("cherry_wine_shelf",
+            () -> new WineShelfBlock(Block.Properties.copy(Blocks.CHERRY_PLANKS)));
+    public static final RegistryObject<Block> BAMBOO_WINE_SHELF = BLOCKS.register("bamboo_wine_shelf",
+            () -> new WineShelfBlock(Block.Properties.copy(Blocks.BAMBOO_PLANKS)));
 
     // Farming
     public static final RegistryObject<Block> CURSED_FARMLAND = BLOCKS.register("cursed_farmland",

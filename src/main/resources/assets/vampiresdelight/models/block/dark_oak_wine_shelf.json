@@ -1,0 +1,7 @@
+{
+	"parent": "vampiresdelight:block/template_wine_shelf",
+  	"textures": {
+		"body": "vampiresdelight:block/dark_oak_wine_shelf",
+		"particle": "block/dark_oak_planks"
+	}
+}

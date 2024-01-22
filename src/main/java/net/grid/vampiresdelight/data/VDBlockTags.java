@@ -48,6 +48,10 @@ public class VDBlockTags extends BlockTagsProvider {
                 VDBlocks.BIRCH_WINE_SHELF.get(),
                 VDBlocks.JUNGLE_WINE_SHELF.get(),
                 VDBlocks.ACACIA_WINE_SHELF.get(),
+                VDBlocks.DARK_OAK_WINE_SHELF.get(),
+                VDBlocks.MANGROVE_WINE_SHELF.get(),
+                VDBlocks.CHERRY_WINE_SHELF.get(),
+                VDBlocks.BAMBOO_WINE_SHELF.get(),
                 VDBlocks.BREWING_BARREL.get());
         tag(ModTags.MINEABLE_WITH_KNIFE).add(
                 VDBlocks.BLOOD_PIE.get(),

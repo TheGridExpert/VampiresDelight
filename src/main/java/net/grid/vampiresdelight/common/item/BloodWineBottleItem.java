@@ -1,11 +1,14 @@
 package net.grid.vampiresdelight.common.item;
 
+import com.simibubi.create.AllSoundEvents;
 import de.teamlapen.vampirism.api.VReference;
 import de.teamlapen.vampirism.api.entity.factions.IFaction;
 import de.teamlapen.vampirism.api.items.IFactionExclusiveItem;
 import net.grid.vampiresdelight.common.registry.VDItems;
+import net.grid.vampiresdelight.common.registry.VDSounds;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
@@ -128,6 +131,13 @@ public class BloodWineBottleItem extends Item implements IFactionExclusiveItem {
     public @NotNull UseAnim getUseAnimation(ItemStack itemStack) {
         return UseAnim.DRINK;
     }
+
+    /*
+    @Override
+    public SoundEvent getDrinkingSound() {
+        return VDSounds.POURING_WINE.get();
+    }
+     */
 
     @Override
     public ItemStack getCraftingRemainingItem(ItemStack itemStack) {

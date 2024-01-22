@@ -57,7 +57,7 @@ public class WineShelfBlock extends BaseEntityBlock {
     }
 
     public WineShelfBlock(Properties properties) {
-        super(properties);
+        super(properties.strength(1.5F));
 
         BlockState blockstate = this.stateDefinition.any()
                 .setValue(HorizontalDirectionalBlock.FACING, Direction.NORTH)

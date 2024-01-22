@@ -29,6 +29,10 @@ public class VDCreativeTabs {
         event.accept(VDItems.BIRCH_WINE_SHELF);
         event.accept(VDItems.JUNGLE_WINE_SHELF);
         event.accept(VDItems.ACACIA_WINE_SHELF);
+        event.accept(VDItems.DARK_OAK_WINE_SHELF);
+        event.accept(VDItems.MANGROVE_WINE_SHELF);
+        event.accept(VDItems.CHERRY_WINE_SHELF);
+        event.accept(VDItems.BAMBOO_WINE_SHELF);
 
         // Farming
         event.accept(VDItems.CURSED_FARMLAND);

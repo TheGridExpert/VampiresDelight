@@ -1,0 +1,360 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "vampiresdelight:block/mangrove_wine_shelf",
+        "y": 270
+      },
+      "when": {
+        "facing": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/mangrove_wine_shelf_support",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "has_upper_support": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/blood_wine_bottle_slot_top_left",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "slot_0_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/blood_wine_bottle_slot_top_right",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "slot_1_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/blood_wine_bottle_slot_bottom_left",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "slot_2_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/blood_wine_bottle_slot_bottom_right",
+        "y": 270
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "west"
+          },
+          {
+            "slot_3_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/mangrove_wine_shelf",
+        "y": 0
+      },
+      "when": {
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/mangrove_wine_shelf_support",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "has_upper_support": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/blood_wine_bottle_slot_top_left",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "slot_0_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/blood_wine_bottle_slot_top_right",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "slot_1_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/blood_wine_bottle_slot_bottom_left",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "slot_2_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/blood_wine_bottle_slot_bottom_right",
+        "y": 0
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "north"
+          },
+          {
+            "slot_3_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/mangrove_wine_shelf",
+        "y": 90
+      },
+      "when": {
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/mangrove_wine_shelf_support",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "has_upper_support": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/blood_wine_bottle_slot_top_left",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "slot_0_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/blood_wine_bottle_slot_top_right",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "slot_1_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/blood_wine_bottle_slot_bottom_left",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "slot_2_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/blood_wine_bottle_slot_bottom_right",
+        "y": 90
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "east"
+          },
+          {
+            "slot_3_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/mangrove_wine_shelf",
+        "y": 180
+      },
+      "when": {
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/mangrove_wine_shelf_support",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "has_upper_support": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/blood_wine_bottle_slot_top_left",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "slot_0_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/blood_wine_bottle_slot_top_right",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "slot_1_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/blood_wine_bottle_slot_bottom_left",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "slot_2_occupied": "true"
+          }
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/blood_wine_bottle_slot_bottom_right",
+        "y": 180
+      },
+      "when": {
+        "AND": [
+          {
+            "facing": "south"
+          },
+          {
+            "slot_3_occupied": "true"
+          }
+        ]
+      }
+    }
+  ]
+}
