@@ -63,6 +63,10 @@ public class VDFoodValues {
             .nutrition(7).saturationMod(0.7f).fast().build();
 
     // Handheld Foods
+    public static final FoodProperties RICE_BREAD = (new FoodProperties.Builder())
+            .nutrition(5).saturationMod(0.6F).build();
+    public static final FoodProperties FISH_BURGER = (new FoodProperties.Builder())
+            .nutrition(10).saturationMod(0.8f).build();
     public static final FoodProperties BLOOD_BAGEL = (new FoodProperties.Builder())
             .nutrition(6).saturationMod(0.7f).build();
     public static final FoodProperties BAGEL_SANDWICH = (new FoodProperties.Builder())

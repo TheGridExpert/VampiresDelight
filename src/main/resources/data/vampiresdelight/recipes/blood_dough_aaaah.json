@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:blood_crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "vampirism:blood_bottle"
+    },
+    {
+      "item": "minecraft:diamond"
+    }
+  ],
+  "result": {
+    "item": "vampiresdelight:blood_dough"
+  }
+}

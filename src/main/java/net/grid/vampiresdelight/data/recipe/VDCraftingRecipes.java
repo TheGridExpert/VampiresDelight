@@ -6,11 +6,13 @@ import de.teamlapen.vampirism.core.ModTags;
 import de.teamlapen.vampirism.data.recipebuilder.ShapelessWeaponTableRecipeBuilder;
 import net.grid.vampiresdelight.common.registry.VDBlocks;
 import net.grid.vampiresdelight.common.registry.VDRecipeSerializers;
+import net.grid.vampiresdelight.common.tag.VDForgeTags;
 import net.grid.vampiresdelight.data.builder.VDCuttingBoardRecipeBuilder;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.registry.VDItems;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
@@ -147,6 +149,13 @@ public class VDCraftingRecipes {
     }
 
     private static void recipesCraftedMeals(Consumer<FinishedRecipe> consumer) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.FISH_BURGER.get())
+                .requires(VDForgeTags.BREAD_RICE)
+                .requires(ForgeTags.COOKED_FISHES)
+                .requires(ForgeTags.SALAD_INGREDIENTS)
+                .requires(VDForgeTags.VEGETABLES_GARLIC)
+                .unlockedBy("has_garlic", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.ITEM_GARLIC.get()))
+                .save(consumer);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.BAGEL_SANDWICH.get())
                 .requires(VDItems.BLOOD_BAGEL.get())
                 .requires(vectorwing.farmersdelight.common.registry.ModItems.SMOKED_HAM.get())

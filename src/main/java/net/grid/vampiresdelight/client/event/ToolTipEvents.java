@@ -5,10 +5,12 @@ import de.teamlapen.vampirism.api.VReference;
 import de.teamlapen.vampirism.items.BloodBottleItem;
 import de.teamlapen.vampirism.items.GarlicBreadItem;
 import de.teamlapen.vampirism.items.VampirismItemBloodFoodItem;
+import de.teamlapen.vampirism.util.Helper;
 import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.tag.VDTags;
 import net.grid.vampiresdelight.common.utility.VDTooltipUtils;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
@@ -26,6 +28,9 @@ import static de.teamlapen.vampirism.items.BloodBottleFluidHandler.MULTIPLIER;
 public class ToolTipEvents {
     @SubscribeEvent
     public static void onTooltipColorEvent(RenderTooltipEvent.Color event) {
+        Player player = VampirismMod.proxy.getClientPlayer();
+        assert player != null;
+
         ItemStack stack = event.getItemStack();
         Color borderStartColor = null;
         Color borderEndColor = null;
@@ -33,7 +38,7 @@ public class ToolTipEvents {
         if (stack.is(VDTags.VAMPIRE_FOOD)) {
             borderStartColor = new Color(124, 40, 124);
             borderEndColor = new Color(50, 0, 70);
-        } else if (stack.is(VDTags.HUNTER_FOOD)) {
+        } else if (stack.is(VDTags.HUNTER_FOOD) && Helper.isVampire(player)) {
             borderStartColor = new Color(65, 65, 220);
             borderEndColor = new Color(30, 30, 90);
         }

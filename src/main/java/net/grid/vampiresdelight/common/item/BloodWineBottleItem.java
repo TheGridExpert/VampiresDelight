@@ -132,12 +132,10 @@ public class BloodWineBottleItem extends Item implements IFactionExclusiveItem {
         return UseAnim.DRINK;
     }
 
-    /*
     @Override
     public SoundEvent getDrinkingSound() {
-        return VDSounds.POURING_WINE.get();
+        return VDSounds.POURING.get();
     }
-     */
 
     @Override
     public ItemStack getCraftingRemainingItem(ItemStack itemStack) {

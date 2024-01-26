@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "vampiresdelight:rice_dough"
+  },
+  "result": "vampiresdelight:rice_bread"
+}

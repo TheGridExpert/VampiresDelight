@@ -25,14 +25,11 @@ public class BloodShapelessRecipe extends ShapelessRecipe {
 
     @Override
     public boolean matches(@NotNull CraftingContainer inv, @NotNull Level level) {
-        java.util.List<ItemStack> ingredients = new java.util.ArrayList<>();
         boolean areAllBottlesFull = true;
 
         for(int j = 0; j < inv.getContainerSize(); ++j) {
             ItemStack itemstack = inv.getItem(j);
             if (!itemstack.isEmpty()) {
-                ingredients.add(itemstack);
-
                 if (itemstack.getItem() == ModItems.BLOOD_BOTTLE.get() &&
                         itemstack.getDamageValue() * MULTIPLIER < 900) {
                     areAllBottlesFull = false;

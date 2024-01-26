@@ -12,6 +12,6 @@ public class VDSounds {
 
     public static final RegistryObject<SoundEvent> TRIANGLE = SOUNDS.register("triangle",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(VampiresDelight.MODID, "triangle")));
-    public static final RegistryObject<SoundEvent> POURING_WINE = SOUNDS.register("item.pouring_wine",
-            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(VampiresDelight.MODID, "item.pouring_wine")));
+    public static final RegistryObject<SoundEvent> POURING = SOUNDS.register("item.pouring",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(VampiresDelight.MODID, "item.pouring")));
 }

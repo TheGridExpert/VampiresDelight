@@ -19,5 +19,5 @@ public class VDRecipeSerializers {
     public static final RegistryObject<SimpleCraftingRecipeSerializer<?>> BARREL_POURING =
             RECIPE_SERIALIZERS.register("barrel_pouring", () -> new SimpleCraftingRecipeSerializer<>(BarrelPouringRecipe::new));
 
-    public static final RegistryObject<RecipeSerializer<?>> BLOOD_SHAPELESS_RECIPE = RECIPE_SERIALIZERS.register("blood_shapeless_crafting", BloodShapelessRecipe.Serializer::new);
+    public static final RegistryObject<RecipeSerializer<?>> BLOOD_SHAPELESS_RECIPE = RECIPE_SERIALIZERS.register("blood_crafting_shapeless", BloodShapelessRecipe.Serializer::new);
 }

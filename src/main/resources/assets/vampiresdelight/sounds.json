@@ -6,9 +6,9 @@
       "vampiresdelight:triangle_3"
     ]
   },
-  "item.pouring_wine": {
+  "item.pouring": {
     "sounds": [
-      "vampiresdelight:pouring_wine"
+      "vampiresdelight:pouring"
     ]
   }
 }

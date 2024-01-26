@@ -47,6 +47,7 @@ public class VDCreativeTabs {
         event.accept(VDItems.HEART_PIECES);
         event.accept(VDItems.HUMAN_EYE);
         event.accept(VDItems.RICE_DOUGH);
+        event.accept(VDItems.RICE_BREAD);
         event.accept(VDItems.BLOOD_DOUGH);
         event.accept(VDItems.BLOOD_BAGEL);
         event.accept(VDItems.BLOOD_WINE_BOTTLE);
@@ -62,6 +63,7 @@ public class VDCreativeTabs {
         // Basic Meals
         event.accept(VDItems.EYE_TOAST);
         event.accept(VDItems.BAGEL_SANDWICH);
+        event.accept(VDItems.FISH_BURGER);
         event.accept(VDItems.HARDTACK);
 
         // Soups and Stews

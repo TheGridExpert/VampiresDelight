@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:bread/rice"
+    },
+    {
+      "tag": "forge:cooked_fishes"
+    },
+    {
+      "tag": "forge:salad_ingredients"
+    },
+    {
+      "tag": "forge:vegetables/garlic"
+    }
+  ],
+  "result": {
+    "item": "vampiresdelight:fish_burger"
+  }
+}

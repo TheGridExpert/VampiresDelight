@@ -8,6 +8,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
 public class VDForgeTags {
+    public static final TagKey<Item> BREAD_RICE = forgeItemTag("bread/rice");
+
     public static final TagKey<Item> DOUGH_RICE = forgeItemTag("dough/rice");
 
     public static final TagKey<Item> VEGETABLES_GARLIC = forgeItemTag("vegetables/garlic");

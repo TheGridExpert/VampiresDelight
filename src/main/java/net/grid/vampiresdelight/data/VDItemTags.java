@@ -10,6 +10,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.data.tags.TagsProvider;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -53,7 +54,8 @@ public class VDItemTags extends ItemTagsProvider {
                 .add(VDItems.BORSCHT.get())
                 .add(VDItems.GARLIC_SOUP.get())
                 .add(VDItems.GRILLED_GARLIC.get())
-                .add(VDItems.HARDTACK.get());
+                .add(VDItems.HARDTACK.get())
+                .add(VDItems.FISH_BURGER.get());
     }
 
     private void registerVampirismTags() {
@@ -69,6 +71,9 @@ public class VDItemTags extends ItemTagsProvider {
 
     @SuppressWarnings("unchecked")
     private void registerForgeTags() {
+        tag(ForgeTags.BREAD).addTag((VDForgeTags.BREAD_RICE));
+        tag(VDForgeTags.BREAD_RICE).add(VDItems.RICE_BREAD.get());
+
         tag(ForgeTags.DOUGH).add(VDItems.RICE_DOUGH.get());
         tag(VDForgeTags.DOUGH_RICE).add(VDItems.RICE_DOUGH.get());
 
