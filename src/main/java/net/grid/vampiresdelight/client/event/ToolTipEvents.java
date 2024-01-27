@@ -7,6 +7,7 @@ import de.teamlapen.vampirism.items.GarlicBreadItem;
 import de.teamlapen.vampirism.items.VampirismItemBloodFoodItem;
 import de.teamlapen.vampirism.util.Helper;
 import net.grid.vampiresdelight.VampiresDelight;
+import net.grid.vampiresdelight.common.VDConfiguration;
 import net.grid.vampiresdelight.common.tag.VDTags;
 import net.grid.vampiresdelight.common.utility.VDTooltipUtils;
 import net.minecraft.network.chat.Component;
@@ -30,6 +31,9 @@ public class ToolTipEvents {
     public static void onTooltipColorEvent(RenderTooltipEvent.Color event) {
         Player player = VampirismMod.proxy.getClientPlayer();
         assert player != null;
+
+        if (!VDConfiguration.COLORED_TOOLTIPS.get())
+            return;
 
         ItemStack stack = event.getItemStack();
         Color borderStartColor = null;

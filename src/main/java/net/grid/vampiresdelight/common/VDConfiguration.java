@@ -14,12 +14,10 @@ public class VDConfiguration {
     public static final String CATEGORY_RECIPE_BOOK = "recipe_book";
     public static ForgeConfigSpec.BooleanValue ENABLE_RECIPE_BOOK_BREWING_BARREL;
 
-    public static final String CATEGORY_WORLD = "world";
-    public static ForgeConfigSpec.IntValue CHANCE_WILD_GARLIC;
-
     // CLIENT
     public static final String CATEGORY_CLIENT = "client";
     public static ForgeConfigSpec.BooleanValue COLORED_TOOLTIPS;
+    public static ForgeConfigSpec.BooleanValue HUNTER_TOOLTIPS_FOR_EVERYONE;
     public static ForgeConfigSpec.BooleanValue SPECIAL_APPLE_SKIN_TOOLTIP;
 
 
@@ -38,12 +36,6 @@ public class VDConfiguration {
                 .define("enableRecipeBookBrewingBarrel", true);
         COMMON_BUILDER.pop();
 
-        COMMON_BUILDER.comment("World generation").push(CATEGORY_WORLD);
-
-        COMMON_BUILDER.comment("Wild Garlic generation").push("wild_garlic");
-        CHANCE_WILD_GARLIC = COMMON_BUILDER.comment("Chance of generating clusters. Smaller value = more frequent.")
-                .defineInRange("chance", 120, 0, Integer.MAX_VALUE);
-
         COMMON_BUILDER.pop();
         COMMON_CONFIG = COMMON_BUILDER.build();
 
@@ -55,6 +47,8 @@ public class VDConfiguration {
 
         COLORED_TOOLTIPS = CLIENT_BUILDER.comment("Should the mod change the color of tooltips?")
                 .define("coloredTooltips", true);
+        HUNTER_TOOLTIPS_FOR_EVERYONE = CLIENT_BUILDER.comment("Hunter food tooltips and color be shown for all fractions? (Only shown to vampires by default)")
+                .define("hunterTooltipsForEveryone", false);
         SPECIAL_APPLE_SKIN_TOOLTIP = CLIENT_BUILDER.comment("Hides AppleSkin food tooltips if you're a Vampire. You'll be shown blood values instead")
                 .define("specialAppleSkinTooltip", true);
 

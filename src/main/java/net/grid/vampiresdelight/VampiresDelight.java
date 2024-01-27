@@ -28,6 +28,7 @@ public class VampiresDelight {
         eventBus.addListener(ClientSetup::init);
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, VDConfiguration.COMMON_CONFIG);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, VDConfiguration.CLIENT_CONFIG);
 
         VDItems.ITEMS.register(eventBus);
         VDEnchantments.ENCHANTMENTS.register(eventBus);

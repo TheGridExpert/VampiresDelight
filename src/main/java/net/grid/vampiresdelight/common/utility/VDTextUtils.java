@@ -62,29 +62,5 @@ public class VDTextUtils {
                 lores.add(iformattabletextcomponent.withStyle(effect.getCategory().getTooltipFormatting()));
             }
         }
-        /*
-        if (!attributeList.isEmpty()) {
-            lores.add(CommonComponents.EMPTY);
-            lores.add((Component.translatable("potion.whenDrank")).withStyle(ChatFormatting.DARK_PURPLE));
-
-            for (Pair<Attribute, AttributeModifier> pair : attributeList) {
-                AttributeModifier modifier = pair.getSecond();
-                double amount = modifier.getAmount();
-                double formattedAmount;
-                if (modifier.getOperation() != AttributeModifier.Operation.MULTIPLY_BASE && modifier.getOperation() != AttributeModifier.Operation.MULTIPLY_TOTAL) {
-                    formattedAmount = modifier.getAmount();
-                } else {
-                    formattedAmount = modifier.getAmount() * 100.0D;
-                }
-
-                if (amount > 0.0D) {
-                    lores.add((Component.translatable("attribute.modifier.plus." + modifier.getOperation().toValue(), ItemStack.ATTRIBUTE_MODIFIER_FORMAT.format(formattedAmount), Component.translatable(pair.getFirst().getDescriptionId()))).withStyle(ChatFormatting.BLUE));
-                } else if (amount < 0.0D) {
-                    formattedAmount = formattedAmount * -1.0D;
-                    lores.add((Component.translatable("attribute.modifier.take." + modifier.getOperation().toValue(), ItemStack.ATTRIBUTE_MODIFIER_FORMAT.format(formattedAmount), Component.translatable(pair.getFirst().getDescriptionId()))).withStyle(ChatFormatting.RED));
-                }
-            }
-        }
-         */
     }
 }
