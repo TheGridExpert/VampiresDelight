@@ -8,6 +8,7 @@ import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.FuelBlockItem;
 
@@ -110,6 +111,8 @@ public class VDItems {
     // Sweets
     public static final RegistryObject<Item> PURE_SORBET = ITEMS.register("pure_sorbet",
             () -> new PureSorbetItem(foodItem(VDFoodValues.PURE_SORBET)));
+    public static final RegistryObject<Item> ORCHID_COOKIE = ITEMS.register("orchid_cookie",
+            () -> new VampireConsumableItem(foodItem(VDFoodValues.NASTY_BLINDNESS), VDFoodValues.ORCHID_COOKIE));
     public static final RegistryObject<Item> CURSED_CUPCAKE = ITEMS.register("cursed_cupcake",
             () -> new CursedCupcakeItem(foodItem(VDFoodValues.NASTY), VDFoodValues.CURSED_CUPCAKE));
     public static final RegistryObject<Item> TRICOLOR_DANGO = ITEMS.register("tricolor_dango",

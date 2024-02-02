@@ -17,6 +17,10 @@ public class VDFoodValues {
     public static final FoodProperties NASTY = (new FoodProperties.Builder())
             .nutrition(1).saturationMod(0.1f)
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, FLEETING_DURATION), 1.0F).build();
+    public static final FoodProperties NASTY_BLINDNESS = (new FoodProperties.Builder())
+            .nutrition(1).saturationMod(0.1f)
+            .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, FLEETING_DURATION), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.BLINDNESS, 200), 1.0F).build();
     public static final FoodProperties NASTY_BLOOD_DOUGH = (new FoodProperties.Builder())
             .nutrition(1).saturationMod(0.1f)
             .effect(() -> new MobEffectInstance(MobEffects.HUNGER, BRIEF_DURATION), 0.5F)
@@ -49,6 +53,8 @@ public class VDFoodValues {
             .nutrition(2).saturationMod(0.1f).meat().build();
 
     // Sweets and desserts
+    public static final FoodProperties ORCHID_COOKIE = (new FoodProperties.Builder())
+            .nutrition(2).saturationMod(0.4f).fast().build();
     public static final FoodProperties SUGARED_BERRIES = (new FoodProperties.Builder())
             .nutrition(3).saturationMod(0.3f).build();
     public static final FoodProperties CURSED_CUPCAKE = (new FoodProperties.Builder())

@@ -119,6 +119,18 @@ public class VDCraftingRecipes {
                 .define('t', Items.STICK)
                 .unlockedBy("has_pure_blood", InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE))
                 .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.ORCHID_COOKIE.get(), 8)
+                .requires(VDItems.ORCHID_PETALS.get())
+                .requires(Items.WHEAT)
+                .requires(Items.WHEAT)
+                .unlockedBy("has_orchid_petals", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.ORCHID_PETALS.get()))
+                .save(consumer, new ResourceLocation(VampiresDelight.MODID, "orchid_cookie_from_wheat"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.ORCHID_COOKIE.get(), 8)
+                .requires(VDItems.ORCHID_PETALS.get())
+                .requires(ForgeTags.CROPS_RICE)
+                .requires(ForgeTags.CROPS_RICE)
+                .unlockedBy("has_orchid_petals", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.ORCHID_PETALS.get()))
+                .save(consumer, new ResourceLocation(VampiresDelight.MODID, "orchid_cookie_from_rice"));
     }
 
     private static void recipesPouring(Consumer<FinishedRecipe> consumer) {
