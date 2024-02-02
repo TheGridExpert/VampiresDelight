@@ -23,6 +23,10 @@ public class VDBlockEntityTypes {
                             VDBlocks.DARK_OAK_WINE_SHELF.get(),
                             VDBlocks.MANGROVE_WINE_SHELF.get(),
                             VDBlocks.CHERRY_WINE_SHELF.get(),
-                            VDBlocks.BAMBOO_WINE_SHELF.get())
+                            VDBlocks.BAMBOO_WINE_SHELF.get(),
+                            VDBlocks.CRIMSON_WINE_SHELF.get(),
+                            VDBlocks.WARPED_WINE_SHELF.get(),
+                            VDBlocks.CURSED_SPRUCE_WINE_SHELF.get(),
+                            VDBlocks.DARK_SPRUCE_WINE_SHELF.get())
                     .build(null));
 }

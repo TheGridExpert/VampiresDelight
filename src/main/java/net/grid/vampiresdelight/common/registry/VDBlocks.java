@@ -49,6 +49,14 @@ public class VDBlocks {
             () -> new WineShelfBlock(Block.Properties.copy(Blocks.CHERRY_PLANKS)));
     public static final RegistryObject<Block> BAMBOO_WINE_SHELF = BLOCKS.register("bamboo_wine_shelf",
             () -> new WineShelfBlock(Block.Properties.copy(Blocks.BAMBOO_PLANKS)));
+    public static final RegistryObject<Block> CRIMSON_WINE_SHELF = BLOCKS.register("crimson_wine_shelf",
+            () -> new WineShelfBlock(Block.Properties.copy(Blocks.CRIMSON_PLANKS)));
+    public static final RegistryObject<Block> WARPED_WINE_SHELF = BLOCKS.register("warped_wine_shelf",
+            () -> new WineShelfBlock(Block.Properties.copy(Blocks.WARPED_PLANKS)));
+    public static final RegistryObject<Block> CURSED_SPRUCE_WINE_SHELF = BLOCKS.register("cursed_spruce_wine_shelf",
+            () -> new WineShelfBlock(Block.Properties.of().ignitedByLava().mapColor(MapColor.CRIMSON_HYPHAE).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> DARK_SPRUCE_WINE_SHELF = BLOCKS.register("dark_spruce_wine_shelf",
+            () -> new WineShelfBlock(Block.Properties.of().ignitedByLava().mapColor(MapColor.COLOR_GRAY).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 
     // Farming
     public static final RegistryObject<Block> CURSED_FARMLAND = BLOCKS.register("cursed_farmland",

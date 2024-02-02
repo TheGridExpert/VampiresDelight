@@ -24,6 +24,7 @@ public class VDCreativeTabs {
         event.accept(VDItems.ORCHID_BAG);
         event.accept(VDItems.DARK_SPRUCE_CABINET);
         event.accept(VDItems.CURSED_SPRUCE_CABINET);
+        event.accept(VDItems.CURSED_FARMLAND);
         event.accept(VDItems.OAK_WINE_SHELF);
         event.accept(VDItems.SPRUCE_WINE_SHELF);
         event.accept(VDItems.BIRCH_WINE_SHELF);
@@ -33,9 +34,12 @@ public class VDCreativeTabs {
         event.accept(VDItems.MANGROVE_WINE_SHELF);
         event.accept(VDItems.CHERRY_WINE_SHELF);
         event.accept(VDItems.BAMBOO_WINE_SHELF);
+        event.accept(VDItems.CRIMSON_WINE_SHELF);
+        event.accept(VDItems.WARPED_WINE_SHELF);
+        event.accept(VDItems.CURSED_SPRUCE_WINE_SHELF);
+        event.accept(VDItems.DARK_SPRUCE_WINE_SHELF);
 
         // Farming
-        event.accept(VDItems.CURSED_FARMLAND);
         event.accept(VDItems.WILD_GARLIC);
         event.accept(VDItems.ORCHID_SEEDS);
 
