@@ -2,6 +2,6 @@
 	"parent": "vampiresdelight:block/template_wine_shelf",
   	"textures": {
 		"body": "vampiresdelight:block/cursed_spruce_wine_shelf",
-		"particle": "block/cursed_spruce_planks"
+		"particle": "vampirism:block/cursed_spruce_planks"
 	}
 }
