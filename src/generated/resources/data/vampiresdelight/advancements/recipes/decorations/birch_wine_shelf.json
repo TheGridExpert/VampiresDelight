@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_blood_dough": {
+    "has_birch_slab": {
       "conditions": {
         "items": [
           {
             "items": [
-              "vampiresdelight:blood_dough"
+              "minecraft:birch_slab"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "vampiresdelight:blood_dough_from_smelting"
+        "recipe": "vampiresdelight:birch_wine_shelf"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_blood_dough",
+      "has_birch_slab",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "vampiresdelight:blood_dough_from_smelting"
+      "vampiresdelight:birch_wine_shelf"
     ]
   },
   "sends_telemetry_event": false

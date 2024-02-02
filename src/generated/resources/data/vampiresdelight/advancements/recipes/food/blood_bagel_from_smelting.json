@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_blood_dough": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "vampiresdelight:blood_dough"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vampiresdelight:blood_bagel_from_smelting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_blood_dough",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vampiresdelight:blood_bagel_from_smelting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

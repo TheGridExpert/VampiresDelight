@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_rice_dough": {
+    "has_oak_slab": {
       "conditions": {
         "items": [
           {
             "items": [
-              "vampiresdelight:rice_dough"
+              "minecraft:oak_slab"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "vampiresdelight:rice_dough_from_smelting"
+        "recipe": "vampiresdelight:oak_wine_shelf"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_rice_dough",
+      "has_oak_slab",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "vampiresdelight:rice_dough_from_smelting"
+      "vampiresdelight:oak_wine_shelf"
     ]
   },
   "sends_telemetry_event": false

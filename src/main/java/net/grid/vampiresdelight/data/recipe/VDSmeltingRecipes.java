@@ -20,20 +20,20 @@ public class VDSmeltingRecipes {
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(VDItems.RICE_DOUGH.get()), RecipeCategory.FOOD,
                         VDItems.RICE_BREAD.get(), 0.35F, 200)
                 .unlockedBy("has_rice_dough", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.RICE_DOUGH.get()))
-                .save(consumer, new ResourceLocation(VampiresDelight.MODID, "rice_dough") + "_from_smelting");
+                .save(consumer, new ResourceLocation(VampiresDelight.MODID, "rice_bread") + "_from_smelting");
         SimpleCookingRecipeBuilder.smoking(Ingredient.of(VDItems.RICE_DOUGH.get()), RecipeCategory.FOOD,
                         VDItems.RICE_BREAD.get(), 0.35F, 100)
                 .unlockedBy("has_rice_dough", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.RICE_DOUGH.get()))
-                .save(consumer, new ResourceLocation(VampiresDelight.MODID, "rice_dough") + "_from_smoking");
+                .save(consumer, new ResourceLocation(VampiresDelight.MODID, "rice_bread") + "_from_smoking");
 
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(VDItems.BLOOD_DOUGH.get()), RecipeCategory.FOOD,
                         VDItems.BLOOD_BAGEL.get(), 0.35F, 200)
                 .unlockedBy("has_blood_dough", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.BLOOD_DOUGH.get()))
-                .save(consumer, new ResourceLocation(VampiresDelight.MODID, "blood_dough") + "_from_smelting");
+                .save(consumer, new ResourceLocation(VampiresDelight.MODID, "blood_bagel") + "_from_smelting");
         SimpleCookingRecipeBuilder.smoking(Ingredient.of(VDItems.BLOOD_DOUGH.get()), RecipeCategory.FOOD,
                         VDItems.BLOOD_BAGEL.get(), 0.35F, 100)
                 .unlockedBy("has_blood_dough", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.BLOOD_DOUGH.get()))
-                .save(consumer, new ResourceLocation(VampiresDelight.MODID, "blood_dough") + "_from_smoking");
+                .save(consumer, new ResourceLocation(VampiresDelight.MODID, "blood_bagel") + "_from_smoking");
     }
 
     private static void foodSmeltingRecipes(String name, ItemLike ingredient, ItemLike result, float experience, Consumer<FinishedRecipe> consumer) {

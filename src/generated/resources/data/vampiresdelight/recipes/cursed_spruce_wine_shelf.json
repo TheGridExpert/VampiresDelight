@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "vampirism:cursed_spruce_planks"
+    },
+    "S": {
+      "item": "vampirism:cursed_spruce_slab"
+    }
+  },
+  "pattern": [
+    "SSS",
+    " P ",
+    "SSS"
+  ],
+  "result": {
+    "item": "vampiresdelight:cursed_spruce_wine_shelf"
+  },
+  "show_notification": true
+}

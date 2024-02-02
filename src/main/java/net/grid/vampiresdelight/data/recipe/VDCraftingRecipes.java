@@ -17,6 +17,7 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Blocks;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -60,6 +61,110 @@ public class VDCraftingRecipes {
                 .define('_', ModBlocks.CURSED_SPRUCE_SLAB.get())
                 .define('D', ModBlocks.CURSED_SPRUCE_TRAPDOOR.get())
                 .unlockedBy("has_cursed_spruce_trapdoor", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.CURSED_SPRUCE_TRAPDOOR.get()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, VDBlocks.OAK_WINE_SHELF.get())
+                .pattern("SSS")
+                .pattern(" P ")
+                .pattern("SSS")
+                .define('S', Blocks.OAK_SLAB)
+                .define('P', Blocks.OAK_PLANKS)
+                .unlockedBy("has_oak_slab", InventoryChangeTrigger.TriggerInstance.hasItems(Blocks.OAK_SLAB))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, VDBlocks.SPRUCE_WINE_SHELF.get())
+                .pattern("SSS")
+                .pattern(" P ")
+                .pattern("SSS")
+                .define('S', Blocks.SPRUCE_SLAB)
+                .define('P', Blocks.SPRUCE_PLANKS)
+                .unlockedBy("has_spruce_slab", InventoryChangeTrigger.TriggerInstance.hasItems(Blocks.SPRUCE_SLAB))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, VDBlocks.BIRCH_WINE_SHELF.get())
+                .pattern("SSS")
+                .pattern(" P ")
+                .pattern("SSS")
+                .define('S', Blocks.BIRCH_SLAB)
+                .define('P', Blocks.BIRCH_PLANKS)
+                .unlockedBy("has_birch_slab", InventoryChangeTrigger.TriggerInstance.hasItems(Blocks.BIRCH_SLAB))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, VDBlocks.JUNGLE_WINE_SHELF.get())
+                .pattern("SSS")
+                .pattern(" P ")
+                .pattern("SSS")
+                .define('S', Blocks.JUNGLE_SLAB)
+                .define('P', Blocks.JUNGLE_PLANKS)
+                .unlockedBy("has_jungle_slab", InventoryChangeTrigger.TriggerInstance.hasItems(Blocks.JUNGLE_SLAB))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, VDBlocks.ACACIA_WINE_SHELF.get())
+                .pattern("SSS")
+                .pattern(" P ")
+                .pattern("SSS")
+                .define('S', Blocks.ACACIA_SLAB)
+                .define('P', Blocks.ACACIA_PLANKS)
+                .unlockedBy("has_acacia_slab", InventoryChangeTrigger.TriggerInstance.hasItems(Blocks.ACACIA_SLAB))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, VDBlocks.DARK_OAK_WINE_SHELF.get())
+                .pattern("SSS")
+                .pattern(" P ")
+                .pattern("SSS")
+                .define('S', Blocks.DARK_OAK_SLAB)
+                .define('P', Blocks.DARK_OAK_PLANKS)
+                .unlockedBy("has_dark_oak_slab", InventoryChangeTrigger.TriggerInstance.hasItems(Blocks.DARK_OAK_SLAB))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, VDBlocks.MANGROVE_WINE_SHELF.get())
+                .pattern("SSS")
+                .pattern(" P ")
+                .pattern("SSS")
+                .define('S', Blocks.MANGROVE_SLAB)
+                .define('P', Blocks.MANGROVE_PLANKS)
+                .unlockedBy("has_mangrove_slab", InventoryChangeTrigger.TriggerInstance.hasItems(Blocks.MANGROVE_SLAB))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, VDBlocks.CHERRY_WINE_SHELF.get())
+                .pattern("SSS")
+                .pattern(" P ")
+                .pattern("SSS")
+                .define('S', Blocks.CHERRY_SLAB)
+                .define('P', Blocks.CHERRY_PLANKS)
+                .unlockedBy("has_cherry_slab", InventoryChangeTrigger.TriggerInstance.hasItems(Blocks.CHERRY_SLAB))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, VDBlocks.BAMBOO_WINE_SHELF.get())
+                .pattern("SSS")
+                .pattern(" P ")
+                .pattern("SSS")
+                .define('S', Blocks.BAMBOO_SLAB)
+                .define('P', Blocks.BAMBOO_PLANKS)
+                .unlockedBy("has_bamboo_slab", InventoryChangeTrigger.TriggerInstance.hasItems(Blocks.BAMBOO_SLAB))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, VDBlocks.CRIMSON_WINE_SHELF.get())
+                .pattern("SSS")
+                .pattern(" P ")
+                .pattern("SSS")
+                .define('S', Blocks.CRIMSON_SLAB)
+                .define('P', Blocks.CRIMSON_PLANKS)
+                .unlockedBy("has_crimson_slab", InventoryChangeTrigger.TriggerInstance.hasItems(Blocks.CRIMSON_SLAB))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, VDBlocks.WARPED_WINE_SHELF.get())
+                .pattern("SSS")
+                .pattern(" P ")
+                .pattern("SSS")
+                .define('S', Blocks.WARPED_SLAB)
+                .define('P', Blocks.WARPED_PLANKS)
+                .unlockedBy("has_warped_slab", InventoryChangeTrigger.TriggerInstance.hasItems(Blocks.WARPED_SLAB))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, VDBlocks.CURSED_SPRUCE_WINE_SHELF.get())
+                .pattern("SSS")
+                .pattern(" P ")
+                .pattern("SSS")
+                .define('S', ModBlocks.CURSED_SPRUCE_SLAB.get())
+                .define('P', ModBlocks.CURSED_SPRUCE_PLANKS.get())
+                .unlockedBy("has_cursed_spruce_slab", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.CURSED_SPRUCE_SLAB.get()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, VDBlocks.DARK_SPRUCE_WINE_SHELF.get())
+                .pattern("SSS")
+                .pattern(" P ")
+                .pattern("SSS")
+                .define('S', ModBlocks.DARK_SPRUCE_SLAB.get())
+                .define('P', ModBlocks.DARK_SPRUCE_PLANKS.get())
+                .unlockedBy("has_dark_spruce_slab", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.DARK_SPRUCE_SLAB.get()))
                 .save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, VDItems.GARLIC_CRATE.get(), 1)
                 .pattern("###")

@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "vampiresdelight:rice_dough_from_smoking"
+        "recipe": "vampiresdelight:rice_bread_from_smelting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "vampiresdelight:rice_dough_from_smoking"
+      "vampiresdelight:rice_bread_from_smelting"
     ]
   },
   "sends_telemetry_event": false
