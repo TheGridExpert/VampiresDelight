@@ -15,6 +15,8 @@ public class VDTags {
     // Vampire and Hunter food.
     public static final TagKey<Item> VAMPIRE_FOOD = modItemTag("vampire_food");
     public static final TagKey<Item> HUNTER_FOOD = modItemTag("hunter_food");
+    // Vampire and Hunter food that can be fed to minions.
+    public static final TagKey<Item> MINION_VAMPIRE_FOOD = modItemTag("minion_vampire_food");
 
     // Cold blocks brewing barrel won't work on.
     public static final TagKey<Block> COOLERS = modBlockTag("coolers");

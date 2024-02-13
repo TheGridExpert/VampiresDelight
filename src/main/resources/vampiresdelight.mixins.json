@@ -5,7 +5,9 @@
   "refmap": "vampiresdelight.refmap.json",
   "mixins": [
     "MixinRenderHandler",
-    "MixinVampirismSwordItem"
+    "MixinVampirismSwordItem",
+    "VampireMinionsEatSweetsMixin",
+    "accessor.BloodStatsAccessor"
   ],
   "client": [
   ],

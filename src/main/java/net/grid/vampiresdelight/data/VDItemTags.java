@@ -48,7 +48,8 @@ public class VDItemTags extends ItemTagsProvider {
                 .add(VDItems.HUMAN_EYE.get())
                 .add(VDItems.BLOOD_WINE_BOTTLE.get())
                 .add(VDItems.WINE_GLASS.get())
-                .add(VDItems.TRICOLOR_DANGO.get());
+                .add(VDItems.TRICOLOR_DANGO.get())
+                .add(VDItems.ORCHID_COOKIE.get());
         tag(VDTags.HUNTER_FOOD)
                 .add(ModItems.GARLIC_BREAD.get())
                 .add(VDItems.BORSCHT.get())
@@ -56,6 +57,8 @@ public class VDItemTags extends ItemTagsProvider {
                 .add(VDItems.GRILLED_GARLIC.get())
                 .add(VDItems.HARDTACK.get())
                 .add(VDItems.FISH_BURGER.get());
+        tag(VDTags.MINION_VAMPIRE_FOOD)
+                .add(VDItems.ORCHID_COOKIE.get());
     }
 
     private void registerVampirismTags() {
