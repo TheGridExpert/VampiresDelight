@@ -1,5 +1,6 @@
 package net.grid.vampiresdelight.common;
 
+import de.teamlapen.vampirism.core.ModItems;
 import net.grid.vampiresdelight.common.entity.AlchemicalCocktailEntity;
 import net.grid.vampiresdelight.common.registry.VDItems;
 import net.grid.vampiresdelight.common.registry.VDStats;
@@ -9,10 +10,12 @@ import net.minecraft.core.Position;
 import net.minecraft.core.dispenser.AbstractProjectileDispenseBehavior;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import vectorwing.farmersdelight.common.block.entity.CookingPotBlockEntity;
 
 public class CommonSetup {
     public static void init(final FMLCommonSetupEvent event) {
@@ -20,6 +23,7 @@ public class CommonSetup {
         event.enqueueWork(() -> {
             VDStats.registerModStats();
             registerDispenserBehaviors();
+            //registerIngredientRemainderOverrides();
             registerCompostableItems();
         });
     }
@@ -32,6 +36,10 @@ public class CommonSetup {
                 return new AlchemicalCocktailEntity(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
             }
         });
+    }
+
+    public static void registerIngredientRemainderOverrides() {
+        CookingPotBlockEntity.INGREDIENT_REMAINDER_OVERRIDES.put(ModItems.BLOOD_BOTTLE.get(), Items.GLASS_BOTTLE);
     }
 
     public static void registerCompostableItems() {

@@ -31,6 +31,7 @@ public class VDCookingRecipes {
         // Cooking
         cookMiscellaneous(consumer);
         cookMeals(consumer);
+        fermentingAlternatives(consumer);
         // Fermenting
         fermenting(consumer);
     }
@@ -77,6 +78,19 @@ public class VDCookingRecipes {
                 .addIngredient(VDForgeTags.VEGETABLES_GARLIC)
                 .unlockedByAnyIngredient(VDItems.GRILLED_GARLIC.get(), ModItems.ITEM_GARLIC.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(consumer);
+    }
+
+    // Temporary
+    private static void fermentingAlternatives(Consumer<FinishedRecipe> consumer) {
+        VDCookingPotRecipeBuilder.cookingPotRecipe(VDItems.BLOOD_WINE_BOTTLE.get(), 1, SLOW_FERMENTING, LARGE_EXP)
+                .addIngredient(ModItems.BLOOD_BOTTLE.get())
+                .addIngredient(ModItems.BLOOD_BOTTLE.get())
+                .addIngredient(ModItems.BLOOD_BOTTLE.get())
+                .addIngredient(Items.SWEET_BERRIES)
+                .addIngredient(Items.SUGAR)
+                .unlockedByAnyIngredient(ModItems.BLOOD_BOTTLE.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
                 .build(consumer);
     }
 

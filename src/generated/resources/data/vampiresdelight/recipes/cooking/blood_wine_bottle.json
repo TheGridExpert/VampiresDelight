@@ -1,0 +1,26 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 1200,
+  "experience": 2.0,
+  "ingredients": [
+    {
+      "item": "vampirism:blood_bottle"
+    },
+    {
+      "item": "vampirism:blood_bottle"
+    },
+    {
+      "item": "vampirism:blood_bottle"
+    },
+    {
+      "item": "minecraft:sweet_berries"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "item": "vampiresdelight:blood_wine_bottle"
+  }
+}
