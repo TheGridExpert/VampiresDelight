@@ -236,6 +236,11 @@ public class VDCraftingRecipes {
                 .requires(ForgeTags.CROPS_RICE)
                 .unlockedBy("has_orchid_petals", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.ORCHID_PETALS.get()))
                 .save(consumer, new ResourceLocation(VampiresDelight.MODID, "orchid_cookie_from_rice"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.SUGARED_BERRIES.get(), 8)
+                .requires(Items.SWEET_BERRIES)
+                .requires(Items.SUGAR)
+                .unlockedBy("has_sweet_berries", InventoryChangeTrigger.TriggerInstance.hasItems(Items.SWEET_BERRIES))
+                .save(consumer);
     }
 
     private static void recipesPouring(Consumer<FinishedRecipe> consumer) {

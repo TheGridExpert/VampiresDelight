@@ -1,5 +1,8 @@
 {
   "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:stick"
+  },
   "cookingtime": 200,
   "experience": 1.0,
   "ingredients": [
@@ -16,10 +19,7 @@
       "item": "minecraft:sugar"
     }
   ],
-  "container": {
-    "item": "minecraft:stick"
-  },
-  "recipe_book_tab": "misc",
+  "recipe_book_tab": "drinks",
   "result": {
     "item": "vampiresdelight:tricolor_dango"
   }

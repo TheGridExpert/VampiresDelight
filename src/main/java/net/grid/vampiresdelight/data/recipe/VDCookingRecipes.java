@@ -54,6 +54,14 @@ public class VDCookingRecipes {
                 .unlockedByAnyIngredient(ModItems.PURE_BLOOD_0.get(), ModItems.PURE_BLOOD_1.get(), ModItems.PURE_BLOOD_2.get(), ModItems.PURE_BLOOD_3.get(), ModItems.PURE_BLOOD_4.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(consumer);
+        VDCookingPotRecipeBuilder.cookingPotRecipe(VDItems.TRICOLOR_DANGO.get(), 1, NORMAL_COOKING, MEDIUM_EXP, Items.STICK)
+                .addIngredient(VDForgeTags.DOUGH_RICE)
+                .addIngredient(ModItems.BLOOD_BOTTLE.get())
+                .addIngredient(VDItems.ORCHID_PETALS.get())
+                .addIngredient(Items.SUGAR)
+                .unlockedByAnyIngredient(VDItems.ORCHID_PETALS.get(), ModItems.BLOOD_BOTTLE.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
+                .build(consumer);
     }
 
     private static void cookMeals(Consumer<FinishedRecipe> consumer) {
@@ -83,7 +91,7 @@ public class VDCookingRecipes {
 
     // Temporary
     private static void fermentingAlternatives(Consumer<FinishedRecipe> consumer) {
-        VDCookingPotRecipeBuilder.cookingPotRecipe(VDItems.BLOOD_WINE_BOTTLE.get(), 1, SLOW_FERMENTING, LARGE_EXP)
+        VDCookingPotRecipeBuilder.cookingPotRecipe(VDItems.BLOOD_WINE_BOTTLE.get(), 1, SLOW_FERMENTING, LARGE_EXP, Items.GLASS_BOTTLE)
                 .addIngredient(ModItems.BLOOD_BOTTLE.get())
                 .addIngredient(ModItems.BLOOD_BOTTLE.get())
                 .addIngredient(ModItems.BLOOD_BOTTLE.get())
