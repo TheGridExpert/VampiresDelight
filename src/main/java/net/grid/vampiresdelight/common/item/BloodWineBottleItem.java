@@ -1,6 +1,5 @@
 package net.grid.vampiresdelight.common.item;
 
-import com.simibubi.create.AllSoundEvents;
 import de.teamlapen.vampirism.api.VReference;
 import de.teamlapen.vampirism.api.entity.factions.IFaction;
 import de.teamlapen.vampirism.api.items.IFactionExclusiveItem;
@@ -16,6 +15,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
@@ -35,8 +35,25 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @ParametersAreNonnullByDefault
 public class BloodWineBottleItem extends Item implements IFactionExclusiveItem {
 
+    public static final int SERVINGS = 4;
+
     public BloodWineBottleItem(Properties properties) {
-        super(properties.defaultDurability(4));
+        super(properties.defaultDurability(SERVINGS).setNoRepair());
+    }
+
+    @Override
+    public boolean isEnchantable(@NotNull ItemStack stack) {
+        return false;
+    }
+
+    @Override
+    public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
+        return false;
+    }
+
+    @Override
+    public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
+        return false;
     }
 
     @Override
@@ -102,7 +119,6 @@ public class BloodWineBottleItem extends Item implements IFactionExclusiveItem {
                 player.getInventory().placeItemBackInInventory(new ItemStack(VDItems.WINE_GLASS.get()));
             }
             compoundTag.remove("Pouring");
-            //itemStack.hurtAndBreak(1, entity, p -> p.broadcastBreakEvent(p.getUsedItemHand()));
             itemStack.setDamageValue(itemStack.getDamageValue() + 1);
             if (itemStack.getDamageValue() > 3) itemStack = new ItemStack(Items.GLASS_BOTTLE);
         }

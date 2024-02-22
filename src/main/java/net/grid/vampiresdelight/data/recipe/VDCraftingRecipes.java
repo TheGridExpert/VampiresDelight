@@ -1,9 +1,11 @@
 package net.grid.vampiresdelight.data.recipe;
 
+import de.teamlapen.vampirism.REFERENCE;
 import de.teamlapen.vampirism.core.ModBlocks;
 import de.teamlapen.vampirism.core.ModItems;
 import de.teamlapen.vampirism.core.ModTags;
 import de.teamlapen.vampirism.data.recipebuilder.ShapelessWeaponTableRecipeBuilder;
+import net.grid.vampiresdelight.common.crafting.crafting_table.BloodSyrupRecipe;
 import net.grid.vampiresdelight.common.registry.VDBlocks;
 import net.grid.vampiresdelight.common.registry.VDRecipeSerializers;
 import net.grid.vampiresdelight.common.tag.VDForgeTags;
@@ -42,6 +44,7 @@ public class VDCraftingRecipes {
         recipesWeaponTable(consumer);
         // Other
         SpecialRecipeBuilder.special(VDRecipeSerializers.BARREL_POURING.get()).save(consumer, "barrel_pouring");
+        SpecialRecipeBuilder.special(VDRecipeSerializers.BLOOD_SYRUP.get()).save(consumer, VampiresDelight.MODID + ":blood_syrup_crafting");
     }
 
     // Crafting

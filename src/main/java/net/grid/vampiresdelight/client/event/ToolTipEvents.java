@@ -10,6 +10,8 @@ import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.VDConfiguration;
 import net.grid.vampiresdelight.common.tag.VDTags;
 import net.grid.vampiresdelight.common.utility.VDTooltipUtils;
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -66,10 +68,9 @@ public class ToolTipEvents {
             VDTooltipUtils.addFactionFoodToolTips(tooltip, VampirismMod.proxy.getClientPlayer(), VReference.HUNTER_FACTION);
         }
 
-        // Just a thing for testing
-        if (food instanceof BloodBottleItem) {
+        if (food instanceof BloodBottleItem && Screen.hasShiftDown()) {
             int blood = event.getItemStack().getDamageValue() * MULTIPLIER;
-            //tooltip.add(Component.literal("Blood: " + blood));
+            tooltip.add(Component.literal(blood + "/900").withStyle(ChatFormatting.YELLOW));
         }
     }
 }

@@ -3,6 +3,7 @@ package net.grid.vampiresdelight.common.item;
 import de.teamlapen.vampirism.VampirismMod;
 import de.teamlapen.vampirism.api.entity.vampire.IVampire;
 import de.teamlapen.vampirism.entity.player.vampire.VampirePlayer;
+import de.teamlapen.vampirism.entity.vampire.DrinkBloodContext;
 import de.teamlapen.vampirism.util.Helper;
 import net.grid.vampiresdelight.common.registry.VDEffects;
 import net.grid.vampiresdelight.common.utility.VDHelper;
@@ -52,10 +53,10 @@ public class PureSorbetItem extends PopsicleItem {
 
         if (consumer instanceof Player player) {
             // Don't shrink stack before retrieving food
-            VampirePlayer.getOpt(player).ifPresent(v -> v.drinkBlood(foodProperties.getNutrition(), foodProperties.getSaturationModifier()));
+            VampirePlayer.getOpt(player).ifPresent(v -> v.drinkBlood(foodProperties.getNutrition(), foodProperties.getSaturationModifier(), new DrinkBloodContext(stack)));
         }
         if (consumer instanceof IVampire) {
-            ((IVampire) consumer).drinkBlood(foodProperties.getNutrition(), foodProperties.getSaturationModifier());
+            ((IVampire) consumer).drinkBlood(foodProperties.getNutrition(), foodProperties.getSaturationModifier(), new DrinkBloodContext(stack));
         } else if (!Helper.isVampire(consumer))
             consumer.eat(level, stack);
 

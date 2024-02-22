@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_blood_dough": {
+    "blood_bagel": {
       "conditions": {
         "items": [
           {
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_blood_dough",
+      "blood_bagel",
       "has_the_recipe"
     ]
   ],

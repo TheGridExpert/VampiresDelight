@@ -1,5 +1,6 @@
 package net.grid.vampiresdelight.data;
 
+import de.teamlapen.vampirism.core.ModBlocks;
 import de.teamlapen.vampirism.core.ModItems;
 import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.registry.VDItems;
@@ -10,6 +11,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.data.tags.TagsProvider;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -35,6 +37,7 @@ public class VDItemTags extends ItemTagsProvider {
     private void registerModTags() {
         tag(VDTags.VAMPIRE_FOOD)
                 .addTag(de.teamlapen.vampirism.core.ModTags.Items.HEART)
+                .add(ModItems.BLOOD_BOTTLE.get())
                 .add(VDItems.BLOOD_PIE.get())
                 .add(VDItems.BLOOD_PIE_SLICE.get())
                 .add(VDItems.CURSED_CUPCAKE.get())
@@ -59,6 +62,11 @@ public class VDItemTags extends ItemTagsProvider {
                 .add(VDItems.FISH_BURGER.get());
         tag(VDTags.MINION_VAMPIRE_FOOD)
                 .add(VDItems.ORCHID_COOKIE.get());
+        tag(VDTags.BLOOD_SYRUP_INGREDIENTS)
+                .add(Items.APPLE)
+                .add(Items.SWEET_BERRIES)
+                .add(Items.GLOW_BERRIES)
+                .add(VDItems.ORCHID_PETALS.get());
     }
 
     private void registerVampirismTags() {

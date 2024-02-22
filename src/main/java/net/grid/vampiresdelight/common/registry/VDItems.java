@@ -8,7 +8,6 @@ import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.FuelBlockItem;
 
@@ -89,6 +88,8 @@ public class VDItems {
     // Foodstuffs
     public static final RegistryObject<Item> GRILLED_GARLIC = ITEMS.register("grilled_garlic",
             () -> new HunterConsumableItem(foodItem(VDFoodValues.GRILLED_GARLIC)));
+    public static final RegistryObject<Item> BLOOD_SYRUP = ITEMS.register("blood_syrup",
+            () -> new VampireDrinkableItem(drinkItem(VDFoodValues.NASTY), VDFoodValues.BLOOD_SYRUP));
     public static final RegistryObject<Item> ORCHID_TEA = ITEMS.register("orchid_tea",
             () -> new OrchidTeaItem(drinkItem(), VDFoodValues.ORCHID_TEA_VAMPIRE, VDFoodValues.ORCHID_TEA_HUNTER));
     public static final RegistryObject<Item> ORCHID_PETALS = ITEMS.register("orchid_petals",

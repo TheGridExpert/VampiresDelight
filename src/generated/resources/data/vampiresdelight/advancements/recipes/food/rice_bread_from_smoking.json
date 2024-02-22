@@ -1,7 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_rice_dough": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vampiresdelight:rice_bread_from_smoking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "rice_bread": {
       "conditions": {
         "items": [
           {
@@ -12,17 +18,11 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
-    },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "vampiresdelight:rice_bread_from_smoking"
-      },
-      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_rice_dough",
+      "rice_bread",
       "has_the_recipe"
     ]
   ],

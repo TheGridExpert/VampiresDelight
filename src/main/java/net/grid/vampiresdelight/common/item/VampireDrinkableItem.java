@@ -2,6 +2,7 @@ package net.grid.vampiresdelight.common.item;
 
 import de.teamlapen.vampirism.api.entity.vampire.IVampire;
 import de.teamlapen.vampirism.entity.player.vampire.VampirePlayer;
+import de.teamlapen.vampirism.entity.vampire.DrinkBloodContext;
 import de.teamlapen.vampirism.util.Helper;
 import net.grid.vampiresdelight.common.utility.VDHelper;
 import net.minecraft.advancements.CriteriaTriggers;
@@ -58,10 +59,10 @@ public class VampireDrinkableItem extends VampireConsumableItem {
 
         if (consumer instanceof Player player) {
             // Don't shrink stack before retrieving food
-            VampirePlayer.getOpt(player).ifPresent(v -> v.drinkBlood(vampireFood.getNutrition(), vampireFood.getSaturationModifier()));
+            VampirePlayer.getOpt(player).ifPresent(v -> v.drinkBlood(vampireFood.getNutrition(), vampireFood.getSaturationModifier(), new DrinkBloodContext(stack)));
         }
         if (consumer instanceof IVampire) {
-            ((IVampire) consumer).drinkBlood(vampireFood.getNutrition(), vampireFood.getSaturationModifier());
+            ((IVampire) consumer).drinkBlood(vampireFood.getNutrition(), vampireFood.getSaturationModifier(), new DrinkBloodContext(stack));
         } else if (!Helper.isVampire(consumer))
             //consumer.eat(level, stack);
             VDHelper.eatFood(level, consumer, stack, Helper.isHunter(consumer) && hunterFood != null ? hunterFood : stack.getFoodProperties(consumer));

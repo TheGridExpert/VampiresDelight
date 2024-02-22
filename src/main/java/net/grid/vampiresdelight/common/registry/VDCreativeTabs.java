@@ -45,6 +45,7 @@ public class VDCreativeTabs {
 
         // Foodstuffs
         event.accept(VDItems.GRILLED_GARLIC);
+        event.accept(VDItems.BLOOD_SYRUP);
         event.accept(VDItems.ORCHID_TEA);
         event.accept(VDItems.ORCHID_PETALS);
         event.accept(VDItems.SUGARED_BERRIES);

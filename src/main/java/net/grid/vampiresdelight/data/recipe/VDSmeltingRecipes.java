@@ -15,36 +15,23 @@ import java.util.function.Consumer;
 
 public class VDSmeltingRecipes {
     public static void register(Consumer<FinishedRecipe> consumer) {
-        foodSmeltingRecipes("grilled_garlic", ModItems.ITEM_GARLIC.get(), VDItems.GRILLED_GARLIC.get(), 0.35F, consumer);
-
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(VDItems.RICE_DOUGH.get()), RecipeCategory.FOOD,
-                        VDItems.RICE_BREAD.get(), 0.35F, 200)
-                .unlockedBy("has_rice_dough", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.RICE_DOUGH.get()))
-                .save(consumer, new ResourceLocation(VampiresDelight.MODID, "rice_bread") + "_from_smelting");
-        SimpleCookingRecipeBuilder.smoking(Ingredient.of(VDItems.RICE_DOUGH.get()), RecipeCategory.FOOD,
-                        VDItems.RICE_BREAD.get(), 0.35F, 100)
-                .unlockedBy("has_rice_dough", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.RICE_DOUGH.get()))
-                .save(consumer, new ResourceLocation(VampiresDelight.MODID, "rice_bread") + "_from_smoking");
-
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(VDItems.BLOOD_DOUGH.get()), RecipeCategory.FOOD,
-                        VDItems.BLOOD_BAGEL.get(), 0.35F, 200)
-                .unlockedBy("has_blood_dough", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.BLOOD_DOUGH.get()))
-                .save(consumer, new ResourceLocation(VampiresDelight.MODID, "blood_bagel") + "_from_smelting");
-        SimpleCookingRecipeBuilder.smoking(Ingredient.of(VDItems.BLOOD_DOUGH.get()), RecipeCategory.FOOD,
-                        VDItems.BLOOD_BAGEL.get(), 0.35F, 100)
-                .unlockedBy("has_blood_dough", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.BLOOD_DOUGH.get()))
-                .save(consumer, new ResourceLocation(VampiresDelight.MODID, "blood_bagel") + "_from_smoking");
+        multipleSmeltingRecipes("grilled_garlic", ModItems.ITEM_GARLIC.get(), VDItems.GRILLED_GARLIC.get(),
+                0.35F, true, true, true, consumer);
+        multipleSmeltingRecipes("rice_bread", VDItems.RICE_DOUGH.get(), VDItems.RICE_BREAD.get(),
+                0.35F, true, true, false, consumer);
+        multipleSmeltingRecipes("blood_bagel", VDItems.BLOOD_DOUGH.get(), VDItems.BLOOD_BAGEL.get(),
+                0.35F, true, true, false, consumer);
     }
 
-    private static void foodSmeltingRecipes(String name, ItemLike ingredient, ItemLike result, float experience, Consumer<FinishedRecipe> consumer) {
+    private static void multipleSmeltingRecipes(String name, ItemLike ingredient, ItemLike result, float experience, boolean hasSmeltingRecipe, boolean hasSmokingRecipe, boolean hasCampfireRecipe, Consumer<FinishedRecipe> consumer) {
         String namePrefix = new ResourceLocation(VampiresDelight.MODID, name).toString();
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient), RecipeCategory.FOOD, result, experience, 200)
+        if (hasSmeltingRecipe) SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient), RecipeCategory.FOOD, result, experience, 200)
                 .unlockedBy(name, InventoryChangeTrigger.TriggerInstance.hasItems(ingredient))
                 .save(consumer);
-        SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(ingredient), RecipeCategory.FOOD, result, experience, 600)
+        if (hasCampfireRecipe) SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(ingredient), RecipeCategory.FOOD, result, experience, 600)
                 .unlockedBy(name, InventoryChangeTrigger.TriggerInstance.hasItems(ingredient))
                 .save(consumer, namePrefix + "_from_campfire_cooking");
-        SimpleCookingRecipeBuilder.smoking(Ingredient.of(ingredient), RecipeCategory.FOOD, result, experience, 100)
+        if (hasSmokingRecipe) SimpleCookingRecipeBuilder.smoking(Ingredient.of(ingredient), RecipeCategory.FOOD, result, experience, 100)
                 .unlockedBy(name, InventoryChangeTrigger.TriggerInstance.hasItems(ingredient))
                 .save(consumer, namePrefix + "_from_smoking");
     }

@@ -6,6 +6,7 @@ import de.teamlapen.vampirism.api.entity.factions.IFaction;
 import de.teamlapen.vampirism.api.entity.vampire.IVampire;
 import de.teamlapen.vampirism.api.items.IFactionExclusiveItem;
 import de.teamlapen.vampirism.entity.player.vampire.VampirePlayer;
+import de.teamlapen.vampirism.entity.vampire.DrinkBloodContext;
 import de.teamlapen.vampirism.util.Helper;
 import net.grid.vampiresdelight.common.utility.VDHelper;
 import net.grid.vampiresdelight.common.utility.VDTextUtils;
@@ -16,7 +17,6 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.stats.Stats;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
@@ -85,10 +85,10 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
 
         if (consumer instanceof Player player) {
             // Don't shrink stack before retrieving food
-            VampirePlayer.getOpt(player).ifPresent(v -> v.drinkBlood(vampireFood.getNutrition(), vampireFood.getSaturationModifier()));
+            VampirePlayer.getOpt(player).ifPresent(v -> v.drinkBlood(vampireFood.getNutrition(), vampireFood.getSaturationModifier(), new DrinkBloodContext(stack)));
         }
         if (consumer instanceof IVampire) {
-            ((IVampire) consumer).drinkBlood(vampireFood.getNutrition(), vampireFood.getSaturationModifier());
+            ((IVampire) consumer).drinkBlood(vampireFood.getNutrition(), vampireFood.getSaturationModifier(), new DrinkBloodContext(stack));
         } else if (!Helper.isVampire(consumer))
             consumer.eat(level, stack);
         

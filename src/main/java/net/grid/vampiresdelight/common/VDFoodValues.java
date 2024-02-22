@@ -38,6 +38,8 @@ public class VDFoodValues {
     public static final FoodProperties ORCHID_TEA_HUNTER = (new FoodProperties.Builder()).alwaysEat()
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 400), 1.0F)
             .effect(() -> new MobEffectInstance(MobEffects.BLINDNESS, 200), 1.0F).build();
+    public static final FoodProperties BLOOD_SYRUP = (new FoodProperties.Builder())
+            .nutrition(11).alwaysEat().build();
 
     // Small foods
     public static final FoodProperties GRILLED_GARLIC = (new FoodProperties.Builder())

@@ -2,8 +2,11 @@ package net.grid.vampiresdelight.common.registry;
 
 import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.crafting.BrewingBarrelRecipe;
+import net.grid.vampiresdelight.common.crafting.crafting_table.BloodSyrupRecipe;
 import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.crafting.SimpleCraftingRecipeSerializer;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
