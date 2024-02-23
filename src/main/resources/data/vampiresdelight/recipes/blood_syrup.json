@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "type": "forge:nbt",
+      "item": "vampirism:blood_bottle",
+      "tag": "{Damage:0}"
+    },
+    {
+      "tag": "vampiresdelight:blood_syrup_ingredients"
+    }
+  ],
+  "result": {
+    "item": "vampiresdelight:blood_syrup"
+  }
+}
