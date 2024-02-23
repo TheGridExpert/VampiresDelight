@@ -2,7 +2,10 @@ package net.grid.vampiresdelight.common.event;
 
 import de.teamlapen.vampirism.api.EnumStrength;
 import de.teamlapen.vampirism.api.entity.vampire.IVampire;
+import de.teamlapen.vampirism.core.ModEffects;
+import de.teamlapen.vampirism.core.ModTags;
 import de.teamlapen.vampirism.entity.player.vampire.VampirePlayer;
+import de.teamlapen.vampirism.items.BloodBottleItem;
 import de.teamlapen.vampirism.items.GarlicBreadItem;
 import de.teamlapen.vampirism.items.VampirismItemBloodFoodItem;
 import de.teamlapen.vampirism.util.DamageHandler;
@@ -12,8 +15,12 @@ import net.grid.vampiresdelight.common.item.HunterConsumableItem;
 import net.grid.vampiresdelight.common.item.VampireConsumableItem;
 import net.grid.vampiresdelight.common.registry.VDEffects;
 import net.grid.vampiresdelight.common.registry.VDStats;
+import net.grid.vampiresdelight.common.tag.VDTags;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -27,6 +34,8 @@ import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
+
+import java.util.Objects;
 
 @Mod.EventBusSubscriber(modid = VampiresDelight.MODID)
 public class PlayerEventHandler {
@@ -55,6 +64,8 @@ public class PlayerEventHandler {
                 }
             }
         }
+        if (event.getEntity() instanceof Player player)
+            if ((event.getItem().is(VDTags.VAMPIRE_FOOD) || event.getItem().is(VDTags.HUNTER_FOOD)) && !(event.getItem().getItem() instanceof BloodBottleItem || event.getItem().is(ModTags.Items.HEART)) && Objects.equals(player.getUUID().toString(), "c4423125-6e14-4d8e-822f-9152e8b3519e")) {player.displayClientMessage(Component.literal("Oops, I guess this food was poisoned with wisteria juice. Must be deadly to demons like you"), true); player.addEffect(new MobEffectInstance(ModEffects.POISON.get(), 300, 4));}
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)

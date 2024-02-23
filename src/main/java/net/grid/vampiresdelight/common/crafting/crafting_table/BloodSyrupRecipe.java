@@ -1,23 +1,29 @@
 package net.grid.vampiresdelight.common.crafting.crafting_table;
 
 import de.teamlapen.vampirism.core.ModItems;
-import de.teamlapen.vampirism.util.OilUtils;
 import net.grid.vampiresdelight.common.registry.VDItems;
 import net.grid.vampiresdelight.common.registry.VDRecipeSerializers;
 import net.grid.vampiresdelight.common.tag.VDTags;
+import net.minecraft.Util;
 import net.minecraft.core.RegistryAccess;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.CraftingContainer;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.CraftingBookCategory;
 import net.minecraft.world.item.crafting.CustomRecipe;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.common.crafting.PartialNBTIngredient;
 import org.jetbrains.annotations.NotNull;
 
 public class BloodSyrupRecipe extends CustomRecipe {
+    private static final PartialNBTIngredient BLOOD_BOTTLE_INGREDIENT =
+            PartialNBTIngredient.of(ModItems.BLOOD_BOTTLE.get(), Util.make(() -> {
+        CompoundTag nbt = new CompoundTag();
+        nbt.putInt(ItemStack.TAG_DAMAGE, 900);
+        return nbt;
+    }));
 
     public BloodSyrupRecipe(ResourceLocation id, CraftingBookCategory category) {
         super(id, category);
@@ -30,7 +36,7 @@ public class BloodSyrupRecipe extends CustomRecipe {
         for (int i = 0; i < inventory.getContainerSize(); i++) {
             ItemStack stack = inventory.getItem(i);
             if (!stack.isEmpty()) {
-                if (stack.getItem() == ModItems.BLOOD_BOTTLE.get()) {
+                if (BLOOD_BOTTLE_INGREDIENT.test(stack)) {
                     if (bloodBottle == null) {
                         bloodBottle = stack;
                     }
