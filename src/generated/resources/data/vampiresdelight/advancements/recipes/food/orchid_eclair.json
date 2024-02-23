@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_blood_bottle": {
+    "has_orchid_petals": {
       "conditions": {
         "items": [
           {
             "items": [
-              "vampirism:blood_bottle"
+              "vampiresdelight:orchid_petals"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "vampiresdelight:blood_syrup"
+        "recipe": "vampiresdelight:orchid_eclair"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_blood_bottle",
+      "has_orchid_petals",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "vampiresdelight:blood_syrup"
+      "vampiresdelight:orchid_eclair"
     ]
   },
   "sends_telemetry_event": false

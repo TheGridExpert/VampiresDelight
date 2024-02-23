@@ -41,7 +41,6 @@ public class VDCraftingRecipes {
         recipesWeaponTable(consumer);
         // Other
         SpecialRecipeBuilder.special(VDRecipeSerializers.BARREL_POURING.get()).save(consumer, "barrel_pouring");
-        //SpecialRecipeBuilder.special(VDRecipeSerializers.BLOOD_SYRUP.get()).save(consumer, VampiresDelight.MODID + ":blood_syrup_crafting");
     }
 
     // Crafting
@@ -236,10 +235,25 @@ public class VDCraftingRecipes {
                 .requires(ForgeTags.CROPS_RICE)
                 .unlockedBy("has_orchid_petals", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.ORCHID_PETALS.get()))
                 .save(consumer, new ResourceLocation(VampiresDelight.MODID, "orchid_cookie_from_rice"));
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.SUGARED_BERRIES.get(), 8)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.SUGARED_BERRIES.get(), 1)
                 .requires(Items.SWEET_BERRIES)
                 .requires(Items.SUGAR)
                 .unlockedBy("has_sweet_berries", InventoryChangeTrigger.TriggerInstance.hasItems(Items.SWEET_BERRIES))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.ORCHID_ECLAIR.get(), 1)
+                .requires(VDItems.ORCHID_PETALS.get())
+                .requires(ForgeTags.BREAD)
+                .requires(Items.SWEET_BERRIES)
+                .unlockedBy("has_orchid_petals", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.ORCHID_PETALS.get()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.ORCHID_ICE_CREAM.get(), 1)
+                .requires(VDItems.ORCHID_PETALS.get())
+                .requires(VDItems.ORCHID_PETALS.get())
+                .requires(ForgeTags.MILK)
+                .requires(ForgeTags.MILK)
+                .requires(Items.SUGAR)
+                .requires(Items.BOWL)
+                .unlockedBy("has_orchid_petals", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.ORCHID_PETALS.get()))
                 .save(consumer);
     }
 

@@ -52,7 +52,10 @@ public class VDItemTags extends ItemTagsProvider {
                 .add(VDItems.BLOOD_WINE_BOTTLE.get())
                 .add(VDItems.WINE_GLASS.get())
                 .add(VDItems.TRICOLOR_DANGO.get())
-                .add(VDItems.ORCHID_COOKIE.get());
+                .add(VDItems.ORCHID_COOKIE.get())
+                .add(VDItems.BLOOD_SYRUP.get())
+                .add(VDItems.ORCHID_ECLAIR.get())
+                .add(VDItems.ORCHID_ICE_CREAM.get());
         tag(VDTags.HUNTER_FOOD)
                 .add(ModItems.GARLIC_BREAD.get())
                 .add(VDItems.BORSCHT.get())

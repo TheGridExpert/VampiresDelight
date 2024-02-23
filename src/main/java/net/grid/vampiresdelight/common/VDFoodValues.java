@@ -57,6 +57,10 @@ public class VDFoodValues {
     // Sweets and desserts
     public static final FoodProperties ORCHID_COOKIE = (new FoodProperties.Builder())
             .nutrition(2).saturationMod(0.4f).fast().build();
+    public static final FoodProperties ORCHID_ECLAIR = (new FoodProperties.Builder())
+            .nutrition(7).saturationMod(0.6f).fast().build();
+    public static final FoodProperties ORCHID_ICE_CREAM = (new FoodProperties.Builder())
+            .nutrition(6).saturationMod(0.5f).fast().build();
     public static final FoodProperties SUGARED_BERRIES = (new FoodProperties.Builder())
             .nutrition(3).saturationMod(0.3f).build();
     public static final FoodProperties CURSED_CUPCAKE = (new FoodProperties.Builder())

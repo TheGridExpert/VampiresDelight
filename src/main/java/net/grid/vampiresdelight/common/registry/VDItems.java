@@ -122,6 +122,10 @@ public class VDItems {
             () -> new PureSorbetItem(foodItem(VDFoodValues.PURE_SORBET)));
     public static final RegistryObject<Item> ORCHID_COOKIE = ITEMS.register("orchid_cookie",
             () -> new VampireConsumableItem(foodItem(VDFoodValues.NASTY_BLINDNESS), VDFoodValues.ORCHID_COOKIE));
+    public static final RegistryObject<Item> ORCHID_ECLAIR = ITEMS.register("orchid_eclair",
+            () -> new VampireConsumableItem(foodItem(VDFoodValues.NASTY_BLINDNESS), VDFoodValues.ORCHID_ECLAIR));
+    public static final RegistryObject<Item> ORCHID_ICE_CREAM = ITEMS.register("orchid_ice_cream",
+            () -> new VampireConsumableItem(bowlFoodItem(VDFoodValues.NASTY_BLINDNESS), VDFoodValues.ORCHID_ICE_CREAM));
     public static final RegistryObject<Item> CURSED_CUPCAKE = ITEMS.register("cursed_cupcake",
             () -> new CursedCupcakeItem(foodItem(VDFoodValues.NASTY), VDFoodValues.CURSED_CUPCAKE));
     public static final RegistryObject<Item> TRICOLOR_DANGO = ITEMS.register("tricolor_dango",

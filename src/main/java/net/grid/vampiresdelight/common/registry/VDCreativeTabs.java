@@ -63,6 +63,8 @@ public class VDCreativeTabs {
         // Sweets
         event.accept(VDItems.PURE_SORBET);
         event.accept(VDItems.ORCHID_COOKIE);
+        event.accept(VDItems.ORCHID_ECLAIR);
+        event.accept(VDItems.ORCHID_ICE_CREAM);
         event.accept(VDItems.CURSED_CUPCAKE);
         event.accept(VDItems.TRICOLOR_DANGO);
 
