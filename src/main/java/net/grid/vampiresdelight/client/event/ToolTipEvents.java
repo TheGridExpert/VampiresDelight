@@ -9,6 +9,7 @@ import de.teamlapen.vampirism.util.Helper;
 import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.VDConfiguration;
 import net.grid.vampiresdelight.common.tag.VDTags;
+import net.grid.vampiresdelight.common.utility.VDHelper;
 import net.grid.vampiresdelight.common.utility.VDTooltipUtils;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -24,6 +25,7 @@ import net.minecraftforge.fml.common.Mod;
 
 import java.awt.*;
 import java.util.List;
+import java.util.Objects;
 
 import static de.teamlapen.vampirism.items.BloodBottleFluidHandler.MULTIPLIER;
 
@@ -68,7 +70,7 @@ public class ToolTipEvents {
             VDTooltipUtils.addFactionFoodToolTips(tooltip, VampirismMod.proxy.getClientPlayer(), VReference.HUNTER_FACTION);
         }
 
-        if (food instanceof BloodBottleItem && Screen.hasShiftDown()) {
+        if (food instanceof BloodBottleItem && Screen.hasShiftDown() && VDHelper.isDebugger(Objects.requireNonNull(event.getEntity()))) {
             int blood = event.getItemStack().getDamageValue() * MULTIPLIER;
             tooltip.add(Component.literal(blood + "/900").withStyle(ChatFormatting.YELLOW));
         }
