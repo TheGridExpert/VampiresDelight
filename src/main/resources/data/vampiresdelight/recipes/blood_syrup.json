@@ -5,7 +5,7 @@
     {
       "type": "forge:nbt",
       "item": "vampirism:blood_bottle",
-      "tag": "{Damage:0}"
+      "tag": "{Damage:9}"
     },
     {
       "tag": "vampiresdelight:blood_syrup_ingredients"

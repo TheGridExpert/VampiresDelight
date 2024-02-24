@@ -225,6 +225,7 @@ public class WineShelfBlock extends BaseEntityBlock {
             shape = Shapes.or(shape, Shapes.box(0.4375, 0.625, 0.875, 0.5625, 1, 1));
         }
 
+        /*
         if (state.getValue(SLOT_OCCUPIED_PROPERTIES.get(0))) {
             shape = Shapes.or(shape, Shapes.box(0.59375, 0.625, 0.375, 0.90625, 0.9375, 1));
             shape = Shapes.or(shape, Shapes.box(0.6875, 0.71875, 0.125, 0.8125, 0.84375, 0.375));
@@ -249,6 +250,7 @@ public class WineShelfBlock extends BaseEntityBlock {
             shape = Shapes.or(shape, Shapes.box(0.15625, 0.1875, 0.0625, 0.34375, 0.375, 0.125));
             shape = Shapes.or(shape, Shapes.box(0.1875, 0.21875, 0, 0.3125, 0.34375, 0.0625));
         }
+         */
 
         return shape;
     }

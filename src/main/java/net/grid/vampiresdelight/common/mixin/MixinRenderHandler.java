@@ -2,10 +2,10 @@ package net.grid.vampiresdelight.common.mixin;
 
 import de.teamlapen.vampirism.client.renderer.RenderHandler;
 import de.teamlapen.vampirism.config.VampirismConfig;
-import de.teamlapen.vampirism.entity.player.vampire.VampirePlayer;
 import de.teamlapen.vampirism.util.Helper;
-import net.grid.vampiresdelight.common.registry.VDEffects;
+import net.grid.vampiresdelight.common.utility.VDRenderUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.TickEvent;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
@@ -21,14 +21,12 @@ public class MixinRenderHandler {
 
     @Inject(at = @At("TAIL"), method = "onClientTick(Lnet/minecraftforge/event/TickEvent$ClientTickEvent;)V", remap = false)
     public void onFogClientTick(TickEvent.@NotNull ClientTickEvent event, CallbackInfo ci) {
-        assert Minecraft.getInstance().player != null;
-        VampirePlayer vampire = VampirePlayer.getOpt(Minecraft.getInstance().player).resolve().orElse(null);
-        if (Minecraft.getInstance().player.tickCount % 10 == 0) {
-            if ((VampirismConfig.CLIENT.renderVampireForestFog.get() ||
-                    VampirismConfig.SERVER.enforceRenderForestFog.get()) &&
-                    (Helper.isEntityInArtificalVampireFogArea(Minecraft.getInstance().player) ||
-                            Helper.isEntityInVampireBiome(Minecraft.getInstance().player))) {
-                vampireBiomeFogDistanceMultiplier += vampire != null && Minecraft.getInstance().player.hasEffect(VDEffects.FOG_VISION.get()) ? 1 : 0;
+        Player player = Minecraft.getInstance().player;
+        assert player != null;
+        if (player.tickCount % 10 == 0) {
+            if ((VampirismConfig.CLIENT.renderVampireForestFog.get() || VampirismConfig.SERVER.enforceRenderForestFog.get()) &&
+                    (Helper.isEntityInArtificalVampireFogArea(player) || Helper.isEntityInVampireBiome(player))) {
+                vampireBiomeFogDistanceMultiplier += VDRenderUtils.getFogDistanceMultiplier(player);
             }
         }
     }
