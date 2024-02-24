@@ -59,7 +59,12 @@
   "item.vampiresdelight.hardtack": "Hardtack",
 
   "effect.vampiresdelight.fog_vision": "Fog Vision",
-  "effect.vampiresdelight.fog_vision.0.desc": "Allows humans to see farther in vampire fog.",
+  "effect.vampiresdelight.fog_vision.0.desc": "Allows to see farther in vampire fog.",
+
+  "item.minecraft.potion.effect.fog_vision": "Potion of Fog Vision",
+  "item.minecraft.splash_potion.effect.fog_vision": "Splash Potion of Fog Vision",
+  "item.minecraft.lingering_potion.effect.fog_vision": "Lingering Potion of Fog Vision",
+  "item.minecraft.tipped_arrow.effect.fog_vision": "Arrow of Fog Vision",
 
   "enchantment.vampiresdelight.vampire_bite": "Vampire Bite",
   "enchantment.vampiresdelight.vampire_bite.desc": "Heals the player proportionally to the amount of damage dealt.",

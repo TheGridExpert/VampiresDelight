@@ -31,6 +31,8 @@ public class VampiresDelight {
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, VDConfiguration.CLIENT_CONFIG);
 
         VDItems.ITEMS.register(eventBus);
+        VDPotions.POTIONS.register(eventBus);
+        VDOils.OILS.register(eventBus);
         VDEnchantments.ENCHANTMENTS.register(eventBus);
         VDBlocks.BLOCKS.register(eventBus);
         VDEffects.EFFECTS.register(eventBus);
