@@ -61,10 +61,10 @@ public class VDCookingRecipes {
                 .build(consumer, itemLocationCooking(VDItems.WEIRD_JELLY_BLOCK.get()));
         CookingPotRecipeBuilder.cookingPotRecipe(VDItems.TRICOLOR_DANGO.get(), 1, NORMAL_COOKING, MEDIUM_EXP, Items.STICK)
                 .addIngredient(VDForgeTags.DOUGH_RICE)
-                .addIngredient(ModItems.BLOOD_BOTTLE.get())
+                .addIngredient(VDItems.BLOOD_SYRUP.get())
                 .addIngredient(VDItems.ORCHID_PETALS.get())
                 .addIngredient(Items.SUGAR)
-                .unlockedByAnyIngredient(VDItems.ORCHID_PETALS.get(), ModItems.BLOOD_BOTTLE.get())
+                .unlockedByAnyIngredient(VDItems.ORCHID_PETALS.get(), VDItems.BLOOD_SYRUP.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
                 .build(consumer, itemLocationCooking(VDItems.TRICOLOR_DANGO.get()));
     }
@@ -97,12 +97,12 @@ public class VDCookingRecipes {
     // Temporary
     private static void fermentingAlternatives(Consumer<FinishedRecipe> consumer) {
         CookingPotRecipeBuilder.cookingPotRecipe(VDItems.BLOOD_WINE_BOTTLE.get(), 1, SLOW_FERMENTING, LARGE_EXP, Items.GLASS_BOTTLE)
-                .addIngredient(ModItems.BLOOD_BOTTLE.get())
-                .addIngredient(ModItems.BLOOD_BOTTLE.get())
-                .addIngredient(ModItems.BLOOD_BOTTLE.get())
+                .addIngredient(VDItems.BLOOD_SYRUP.get())
+                .addIngredient(VDItems.BLOOD_SYRUP.get())
+                .addIngredient(VDItems.BLOOD_SYRUP.get())
                 .addIngredient(Items.SWEET_BERRIES)
                 .addIngredient(Items.SUGAR)
-                .unlockedByAnyIngredient(ModItems.BLOOD_BOTTLE.get())
+                .unlockedByAnyIngredient(VDItems.BLOOD_SYRUP.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
                 .build(consumer, itemLocationCooking(VDItems.BLOOD_WINE_BOTTLE.get()));
     }

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_pie_crust": {
+    "has_blood_syrup": {
       "conditions": {
         "items": [
           {
             "items": [
-              "farmersdelight:pie_crust"
+              "vampiresdelight:blood_syrup"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_pie_crust",
+      "has_blood_syrup",
       "has_the_recipe"
     ]
   ],

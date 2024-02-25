@@ -34,7 +34,6 @@ public class VDConfiguration {
         COMMON_BUILDER.comment("Recipe book").push(CATEGORY_RECIPE_BOOK);
         ENABLE_RECIPE_BOOK_BREWING_BARREL = COMMON_BUILDER.comment("Should the Brewing Barrel have a Recipe Book available on its interface?")
                 .define("enableRecipeBookBrewingBarrel", true);
-        COMMON_BUILDER.pop();
 
         COMMON_BUILDER.pop();
         COMMON_CONFIG = COMMON_BUILDER.build();

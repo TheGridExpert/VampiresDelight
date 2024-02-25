@@ -217,9 +217,9 @@ public class VDCraftingRecipes {
                 .unlockedBy("has_rice", InventoryChangeTrigger.TriggerInstance.hasItems(vectorwing.farmersdelight.common.registry.ModItems.RICE.get()))
                 .save(consumer, new ResourceLocation(VampiresDelight.MODID, "rice_dough_from_eggs"));
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.BLOOD_DOUGH.get(), 1)
-                .requires(ModItems.BLOOD_BOTTLE.get())
+                .requires(VDItems.BLOOD_SYRUP.get())
                 .requires(VDItems.RICE_DOUGH.get())
-                .unlockedBy("has_blood_bottle", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BLOOD_BOTTLE.get()))
+                .unlockedBy("has_blood_syrup", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.BLOOD_SYRUP.get()))
                 .save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, VDItems.PURE_SORBET.get(), 1)
                 .pattern(" sa")
@@ -259,7 +259,7 @@ public class VDCraftingRecipes {
                 .requires(VDItems.ORCHID_PETALS.get())
                 .requires(VDItems.ORCHID_PETALS.get())
                 .requires(ForgeTags.MILK)
-                .requires(ForgeTags.MILK)
+                .requires(Items.ICE)
                 .requires(Items.SUGAR)
                 .requires(Items.BOWL)
                 .unlockedBy("has_orchid_petals", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.ORCHID_PETALS.get()))
@@ -280,10 +280,10 @@ public class VDCraftingRecipes {
                 .pattern("xxx")
                 .pattern("bOb")
                 .define('w', Items.NETHER_WART)
-                .define('b', ModItems.BLOOD_BOTTLE.get())
+                .define('b', VDItems.BLOOD_SYRUP.get())
                 .define('x', Items.SUGAR)
                 .define('O', vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get())
-                .unlockedBy("has_pie_crust", InventoryChangeTrigger.TriggerInstance.hasItems(vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get()))
+                .unlockedBy("has_blood_syrup", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.BLOOD_SYRUP.get()))
                 .save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, VDItems.BLOOD_PIE.get(), 1)
                 .pattern("##")
@@ -311,7 +311,7 @@ public class VDCraftingRecipes {
                 .requires(ForgeTags.BREAD)
                 .requires(VDItems.HUMAN_EYE.get())
                 .requires(ForgeTags.CROPS_TOMATO)
-                .requires(ModItems.BLOOD_BOTTLE.get())
+                .requires(VDItems.BLOOD_SYRUP.get())
                 .unlockedBy("has_human_eye", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.HUMAN_EYE.get()))
                 .save(consumer);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.HARDTACK.get())
