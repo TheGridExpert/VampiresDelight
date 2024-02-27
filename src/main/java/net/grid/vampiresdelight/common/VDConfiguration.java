@@ -14,6 +14,9 @@ public class VDConfiguration {
     public static final String CATEGORY_RECIPE_BOOK = "recipe_book";
     public static ForgeConfigSpec.BooleanValue ENABLE_RECIPE_BOOK_BREWING_BARREL;
 
+    public static final String CATEGORY_WORLD = "world";
+    public static ForgeConfigSpec.BooleanValue GENERATE_VD_CHEST_LOOT;
+
     // CLIENT
     public static final String CATEGORY_CLIENT = "client";
     public static ForgeConfigSpec.BooleanValue COLORED_TOOLTIPS;
@@ -50,6 +53,10 @@ public class VDConfiguration {
                 .define("hunterTooltipsForEveryone", false);
         SPECIAL_APPLE_SKIN_TOOLTIP = CLIENT_BUILDER.comment("Hides AppleSkin food tooltips if you're a Vampire. You'll be shown blood values instead")
                 .define("specialAppleSkinTooltip", true);
+
+        COMMON_BUILDER.comment("World generation").push(CATEGORY_WORLD);
+        GENERATE_VD_CHEST_LOOT = COMMON_BUILDER.comment("Should this mod add some of its items as extra chest loot across Minecraft and Vampirism structures?")
+                .define("generateVDChestLoot", true);
 
         CLIENT_BUILDER.pop();
         CLIENT_CONFIG = CLIENT_BUILDER.build();

@@ -2,6 +2,7 @@ package net.grid.vampiresdelight.data;
 
 import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.data.loot.VDBlockLootTables;
+import net.grid.vampiresdelight.data.loot.VDChestLootTables;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -32,7 +33,8 @@ public class VDDataGenerators {
         generator.addProvider(event.includeServer(), new VDItemTags(output, lookupProvider, blockTags.contentsGetter(), helper));
         generator.addProvider(event.includeServer(), new VDBiomeTags(output, lookupProvider, helper));
         generator.addProvider(event.includeServer(), new LootTableProvider(output, Collections.emptySet(), List.of(
-                new LootTableProvider.SubProviderEntry(VDBlockLootTables::new, LootContextParamSets.BLOCK)
+                new LootTableProvider.SubProviderEntry(VDBlockLootTables::new, LootContextParamSets.BLOCK),
+                new LootTableProvider.SubProviderEntry(VDChestLootTables::new, LootContextParamSets.CHEST)
         )));
 
         VDBlockStates blockStates = new VDBlockStates(output, helper);

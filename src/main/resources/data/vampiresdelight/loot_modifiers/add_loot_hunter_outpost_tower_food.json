@@ -1,0 +1,11 @@
+{
+  "type": "vampiresdelight:add_loot_table",
+  "conditions":
+  [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "vampirism:chests/hunter_outpost_tower_food"
+    }
+  ],
+  "lootTable": "vampiresdelight:chests/vd_hunter_outpost_tower_food"
+}

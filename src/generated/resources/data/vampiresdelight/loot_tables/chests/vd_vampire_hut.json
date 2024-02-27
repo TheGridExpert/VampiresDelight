@@ -1,0 +1,90 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "enchantments": [
+                "vampiresdelight:vampire_bite"
+              ],
+              "function": "minecraft:enchant_randomly"
+            }
+          ],
+          "name": "minecraft:book",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:empty",
+          "weight": 8
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "vampiresdelight:orchid_cookie",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "vampiresdelight:orchid_tea",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "vampiresdelight:bagel_sandwich",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "vampiresdelight:human_eye",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "vampiresdelight:blood_pie_slice",
+          "weight": 3
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 8.0,
+        "min": 5.0
+      }
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 35.0,
+                "min": 10.0
+              },
+              "treasure": true
+            }
+          ],
+          "name": "farmersdelight:iron_knife",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:empty",
+          "weight": 8
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "vampiresdelight:chests/vd_vampire_hut"
+}

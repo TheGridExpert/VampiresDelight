@@ -42,6 +42,7 @@ public class VampiresDelight {
         VDRecipeTypes.RECIPE_TYPES.register(eventBus);
         VDBlockEntityTypes.TILES.register(eventBus);
         VDMenuTypes.MENU_TYPES.register(eventBus);
+        VDLootModifiers.LOOT_MODIFIERS.register(eventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }

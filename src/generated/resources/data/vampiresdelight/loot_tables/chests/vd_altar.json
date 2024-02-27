@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "enchantments": [
+                "vampiresdelight:vampire_bite"
+              ],
+              "function": "minecraft:enchant_randomly"
+            }
+          ],
+          "name": "minecraft:book",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:empty",
+          "weight": 4
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "vampiresdelight:chests/vd_altar"
+}

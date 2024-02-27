@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "vampiresdelight:alchemical_cocktail",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:empty",
+          "weight": 4
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 3.0,
+        "min": 0.0
+      }
+    }
+  ],
+  "random_sequence": "vampiresdelight:chests/vd_hunter_outpost_tower_special"
+}

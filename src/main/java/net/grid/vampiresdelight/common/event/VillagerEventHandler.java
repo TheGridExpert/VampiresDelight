@@ -24,7 +24,7 @@ import java.util.List;
 
 @Mod.EventBusSubscriber(modid = VampiresDelight.MODID)
 @ParametersAreNonnullByDefault
-public class VillagerEvents {
+public class VillagerEventHandler {
     @SubscribeEvent
     public static void onVillagerTrades(VillagerTradesEvent event) {
         if (!VDConfiguration.FARMERS_BUY_GARLIC.get()) return;
