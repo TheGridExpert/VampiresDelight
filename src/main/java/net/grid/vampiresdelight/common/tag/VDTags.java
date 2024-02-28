@@ -23,8 +23,8 @@ public class VDTags {
     // Cold blocks brewing barrel won't work on.
     public static final TagKey<Block> COOLERS = modBlockTag("coolers");
 
-    // Biomes lost wagon spawns in.
-    public static final TagKey<Biome> HAS_LOST_WAGON = modBiomeTag("has_structure/lost_wagon");
+    // Biomes lost carriage spawns in.
+    public static final TagKey<Biome> HAS_LOST_CARRIAGE = modBiomeTag("has_structure/lost_carriage");
 
 
     private static TagKey<Item> modItemTag(String path) {

@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 481920014,
+    "separation": 15,
+    "spacing": 28
+  },
+  "structures": [
+    {
+      "structure": "vampiresdelight:lost_carriage",
+      "weight": 1
+    }
+  ]
+}

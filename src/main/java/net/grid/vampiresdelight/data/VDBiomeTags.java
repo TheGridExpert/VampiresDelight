@@ -3,7 +3,6 @@ package net.grid.vampiresdelight.data;
 import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.tag.VDTags;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.world.level.biome.Biomes;
@@ -23,7 +22,7 @@ public class VDBiomeTags extends BiomeTagsProvider {
     }
 
     private void registerModTags() {
-        tag(VDTags.HAS_LOST_WAGON)
+        tag(VDTags.HAS_LOST_CARRIAGE)
                 .add(Biomes.TAIGA)
                 .add(Biomes.SWAMP)
                 .add(Biomes.PLAINS)

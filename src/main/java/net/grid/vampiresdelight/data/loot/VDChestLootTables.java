@@ -3,6 +3,7 @@ package net.grid.vampiresdelight.data.loot;
 import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.registry.VDEnchantments;
 import net.grid.vampiresdelight.common.registry.VDItems;
+import net.grid.vampiresdelight.common.registry.VDLootTables;
 import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
@@ -14,13 +15,36 @@ import net.minecraft.world.level.storage.loot.functions.EnchantRandomlyFunction;
 import net.minecraft.world.level.storage.loot.functions.EnchantWithLevelsFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
 import java.util.function.BiConsumer;
 
 public class VDChestLootTables implements LootTableSubProvider {
     @Override
-    public void generate(BiConsumer<ResourceLocation, LootTable.Builder> output) {
+    public void generate(@NotNull BiConsumer<ResourceLocation, LootTable.Builder> output) {
+        lootModifiers(output);
+        lootChests(output);
+    }
+
+    public void lootChests(BiConsumer<ResourceLocation, LootTable.Builder> output) {
+        output.accept(VDLootTables.CHEST_LOST_CARRIAGE, LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(UniformGenerator.between(9, 25))
+                        .add(LootItem.lootTableItem(Items.BREAD).setWeight(10))
+                        .add(LootItem.lootTableItem(de.teamlapen.vampirism.core.ModItems.GARLIC_BREAD.get()).setWeight(10))
+                        .add(LootItem.lootTableItem(de.teamlapen.vampirism.core.ModItems.ITEM_GARLIC.get()).setWeight(10))
+                        .add(LootItem.lootTableItem(Items.COBWEB).setWeight(20))
+                        .add(LootItem.lootTableItem(Items.WHEAT).setWeight(15))
+                        .add(LootItem.lootTableItem(Items.POTATO).setWeight(10))
+                        .add(LootItem.lootTableItem(Items.CARROT).setWeight(10))
+                        .add(LootItem.lootTableItem(Items.APPLE).setWeight(10))
+                        .add(LootItem.lootTableItem(Items.IRON_INGOT).setWeight(5))
+                        .add(LootItem.lootTableItem(Items.EMERALD).setWeight(5))
+                )
+        );
+    }
+
+    public void lootModifiers(BiConsumer<ResourceLocation, LootTable.Builder> output) {
         output.accept(new ResourceLocation(VampiresDelight.MODID, "chests/vd_vampire_dungeon"), LootTable.lootTable()
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
                         .add(LootItem.lootTableItem(Items.BOOK).setWeight(3)

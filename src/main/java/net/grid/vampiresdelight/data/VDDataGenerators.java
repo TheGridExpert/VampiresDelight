@@ -1,6 +1,7 @@
 package net.grid.vampiresdelight.data;
 
 import net.grid.vampiresdelight.VampiresDelight;
+import net.grid.vampiresdelight.common.registry.VDLootTables;
 import net.grid.vampiresdelight.data.loot.VDBlockLootTables;
 import net.grid.vampiresdelight.data.loot.VDChestLootTables;
 import net.minecraft.core.HolderLookup;
@@ -13,7 +14,6 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
@@ -30,9 +30,10 @@ public class VDDataGenerators {
         VDBlockTags blockTags = new VDBlockTags(output, lookupProvider, helper);
         generator.addProvider(event.includeServer(), blockTags);
         generator.addProvider(event.includeServer(), new VDRecipes(output));
+        generator.addProvider(event.includeServer(), new VDRegistrySets(output, lookupProvider));
         generator.addProvider(event.includeServer(), new VDItemTags(output, lookupProvider, blockTags.contentsGetter(), helper));
         generator.addProvider(event.includeServer(), new VDBiomeTags(output, lookupProvider, helper));
-        generator.addProvider(event.includeServer(), new LootTableProvider(output, Collections.emptySet(), List.of(
+        generator.addProvider(event.includeServer(), new LootTableProvider(output, VDLootTables.getLootTables(), List.of(
                 new LootTableProvider.SubProviderEntry(VDBlockLootTables::new, LootContextParamSets.BLOCK),
                 new LootTableProvider.SubProviderEntry(VDChestLootTables::new, LootContextParamSets.CHEST)
         )));

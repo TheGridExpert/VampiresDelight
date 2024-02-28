@@ -34,6 +34,9 @@ public class VampiresDelight {
         VDPotions.POTIONS.register(eventBus);
         VDOils.OILS.register(eventBus);
         VDEnchantments.ENCHANTMENTS.register(eventBus);
+        VDStructures.STRUCTURE_TYPES.register(eventBus);
+        VDStructures.STRUCTURE_PIECES.register(eventBus);
+        VDStructures.STRUCTURE_PROCESSOR_TYPES.register(eventBus);
         VDBlocks.BLOCKS.register(eventBus);
         VDEffects.EFFECTS.register(eventBus);
         VDSounds.SOUNDS.register(eventBus);
