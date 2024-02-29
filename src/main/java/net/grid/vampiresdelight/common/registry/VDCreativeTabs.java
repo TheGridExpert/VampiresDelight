@@ -22,6 +22,7 @@ public class VDCreativeTabs {
         //event.accept(VDItems.BREWING_BARREL);
         event.accept(VDItems.GARLIC_CRATE);
         event.accept(VDItems.ORCHID_BAG);
+        event.accept(VDItems.SPIRIT_LANTERN);
         event.accept(VDItems.DARK_SPRUCE_CABINET);
         event.accept(VDItems.CURSED_SPRUCE_CABINET);
         event.accept(VDItems.CURSED_FARMLAND);

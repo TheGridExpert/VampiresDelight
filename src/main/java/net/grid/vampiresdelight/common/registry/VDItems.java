@@ -40,6 +40,8 @@ public class VDItems {
             () -> new BlockItem(VDBlocks.GARLIC_CRATE.get(), basicItem()));
     public static final RegistryObject<Item> ORCHID_BAG = ITEMS.register("orchid_bag",
             () -> new BlockItem(VDBlocks.ORCHID_BAG.get(), basicItem()));
+    public static final RegistryObject<Item> SPIRIT_LANTERN = ITEMS.register("spirit_lantern",
+            () -> new BlockItem(VDBlocks.SPIRIT_LANTERN.get(), basicItem()));
     public static final RegistryObject<Item> DARK_SPRUCE_CABINET = ITEMS.register("dark_spruce_cabinet",
             () -> new FuelBlockItem(VDBlocks.DARK_SPRUCE_CABINET.get(), basicItem(), 300));
     public static final RegistryObject<Item> CURSED_SPRUCE_CABINET = ITEMS.register("cursed_spruce_cabinet",

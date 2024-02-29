@@ -6,11 +6,17 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.block.*;
+
+import java.util.function.ToIntFunction;
 
 public class VDBlocks {
     public static final DeferredRegister<Block> BLOCKS =
@@ -27,6 +33,10 @@ public class VDBlocks {
             () -> new Block(Block.Properties.copy(Blocks.WHITE_WOOL)));
 
     // Building
+    public static final RegistryObject<Block> SPIRIT_LANTERN = BLOCKS.register("spirit_lantern",
+            () -> new SpiritLanternBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).forceSolidOn()
+                    .requiresCorrectToolForDrops().strength(3.5F).sound(SoundType.LANTERN)
+                    .lightLevel((state) -> 12).noOcclusion().pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> DARK_SPRUCE_CABINET = BLOCKS.register("dark_spruce_cabinet",
             () -> new CabinetBlock(Block.Properties.copy(Blocks.BARREL)));
     public static final RegistryObject<Block> CURSED_SPRUCE_CABINET = BLOCKS.register("cursed_spruce_cabinet",

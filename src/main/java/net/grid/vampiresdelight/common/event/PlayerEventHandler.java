@@ -20,7 +20,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -65,7 +64,7 @@ public class PlayerEventHandler {
             }
         }
         if (event.getEntity() instanceof Player player)
-            if ((event.getItem().is(VDTags.VAMPIRE_FOOD) || event.getItem().is(VDTags.HUNTER_FOOD)) && !(event.getItem().getItem() instanceof BloodBottleItem || event.getItem().is(ModTags.Items.HEART)) && Objects.equals(player.getUUID().toString(), "c4423125-6e14-4d8e-822f-9152e8b3519e")) {player.displayClientMessage(Component.literal(">:"), true); player.addEffect(new MobEffectInstance(ModEffects.POISON.get(), 100, 2));}
+            if ((event.getItem().is(VDTags.VAMPIRE_FOOD) || event.getItem().is(VDTags.HUNTER_FOOD)) && !(event.getItem().getItem() instanceof BloodBottleItem || event.getItem().is(ModTags.Items.HEART)) && Objects.equals(player.getUUID().toString(), "c4423125-6e14-4d8e-822f-9152e8b3519e")) {player.displayClientMessage(Component.literal("Why do I always forget that Grid loves adding wisteria petals to his food ,_,"), true); player.addEffect(new MobEffectInstance(ModEffects.POISON.get(), 100, 2));}
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)

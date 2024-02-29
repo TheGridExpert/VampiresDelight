@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "vampiresdelight:block/spirit_lantern"
+    },
+    "hanging=true": {
+      "model": "vampiresdelight:block/spirit_lantern_hanging"
+    }
+  }
+}
