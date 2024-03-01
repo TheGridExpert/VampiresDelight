@@ -60,7 +60,8 @@ public class VDFoodValues {
     public static final FoodProperties ORCHID_ECLAIR = (new FoodProperties.Builder())
             .nutrition(7).saturationMod(0.6f).fast().build();
     public static final FoodProperties ORCHID_ICE_CREAM = (new FoodProperties.Builder())
-            .nutrition(6).saturationMod(0.5f).fast().build();
+            .nutrition(6).saturationMod(0.5f).fast()
+            .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, FLEETING_DURATION), 1.0F).build();
     public static final FoodProperties SUGARED_BERRIES = (new FoodProperties.Builder())
             .nutrition(3).saturationMod(0.3f).build();
     public static final FoodProperties CURSED_CUPCAKE = (new FoodProperties.Builder())
@@ -73,6 +74,9 @@ public class VDFoodValues {
             .effect(() -> new MobEffectInstance(VDEffects.FOG_VISION.get(), BRIEF_DURATION), 1.0F).build();
     public static final FoodProperties TRICOLOR_DANGO = (new FoodProperties.Builder())
             .nutrition(7).saturationMod(0.7f).fast().build();
+    public static final FoodProperties SNOW_WHITE_ICE_CREAM = (new FoodProperties.Builder())
+            .nutrition(6).saturationMod(0.6f).fast()
+            .effect(() -> new MobEffectInstance(VDEffects.BLESSING.get(), SHORT_DURATION), 1.0F).build();
 
     // Handheld Foods
     public static final FoodProperties RICE_BREAD = (new FoodProperties.Builder())

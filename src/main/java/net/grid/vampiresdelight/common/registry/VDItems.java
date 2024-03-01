@@ -132,6 +132,8 @@ public class VDItems {
             () -> new CursedCupcakeItem(foodItem(VDFoodValues.NASTY), VDFoodValues.CURSED_CUPCAKE));
     public static final RegistryObject<Item> TRICOLOR_DANGO = ITEMS.register("tricolor_dango",
             () -> new VampireConsumableItem(foodItem(VDFoodValues.NASTY), VDFoodValues.TRICOLOR_DANGO));
+    public static final RegistryObject<Item> SNOW_WHITE_ICE_CREAM = ITEMS.register("snow_white_ice_cream",
+            () -> new HunterConsumableItem(foodItem(VDFoodValues.SNOW_WHITE_ICE_CREAM)));
 
     // Basic Meals
     public static final RegistryObject<Item> FISH_BURGER = ITEMS.register("fish_burger",

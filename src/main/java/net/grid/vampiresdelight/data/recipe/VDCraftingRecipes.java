@@ -264,6 +264,14 @@ public class VDCraftingRecipes {
                 .requires(Items.BOWL)
                 .unlockedBy("has_orchid_petals", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.ORCHID_PETALS.get()))
                 .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.SNOW_WHITE_ICE_CREAM.get(), 1)
+                .requires(Items.COCOA_BEANS)
+                .requires(ForgeTags.MILK)
+                .requires(ModTags.Items.HOLY_WATER)
+                .requires(Items.SUGAR)
+                .requires(Items.BOWL)
+                .unlockedBy("has_holy_water", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.HOLY_WATER_BOTTLE_NORMAL.get(), ModItems.HOLY_WATER_BOTTLE_ENHANCED.get(), ModItems.HOLY_WATER_BOTTLE_ULTIMATE.get()))
+                .save(consumer);
     }
 
     private static void recipesPouring(Consumer<FinishedRecipe> consumer) {

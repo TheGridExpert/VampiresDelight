@@ -62,7 +62,8 @@ public class VDItemTags extends ItemTagsProvider {
                 .add(VDItems.GARLIC_SOUP.get())
                 .add(VDItems.GRILLED_GARLIC.get())
                 .add(VDItems.HARDTACK.get())
-                .add(VDItems.FISH_BURGER.get());
+                .add(VDItems.FISH_BURGER.get())
+                .add(VDItems.SNOW_WHITE_ICE_CREAM.get());
         tag(VDTags.MINION_VAMPIRE_FOOD)
                 .add(VDItems.ORCHID_COOKIE.get());
         tag(VDTags.BLOOD_SYRUP_INGREDIENTS)
