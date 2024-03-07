@@ -42,7 +42,7 @@ public class VDItemTags extends ItemTagsProvider {
                 .add(VDItems.BLOOD_PIE.get())
                 .add(VDItems.BLOOD_PIE_SLICE.get())
                 .add(VDItems.CURSED_CUPCAKE.get())
-                .add(VDItems.EYE_TOAST.get())
+                .add(VDItems.EYE_CROISSANT.get())
                 .add(VDItems.BAGEL_SANDWICH.get())
                 .add(VDItems.ORCHID_TEA.get())
                 .add(VDItems.WEIRD_JELLY.get())

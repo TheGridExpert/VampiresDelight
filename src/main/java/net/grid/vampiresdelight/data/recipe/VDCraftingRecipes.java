@@ -315,11 +315,12 @@ public class VDCraftingRecipes {
                 .requires(vectorwing.farmersdelight.common.registry.ModItems.FRIED_EGG.get())
                 .unlockedBy("has_blood_bagel", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.BLOOD_BAGEL.get()))
                 .save(consumer);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.EYE_TOAST.get())
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.EYE_CROISSANT.get())
                 .requires(ForgeTags.BREAD)
                 .requires(VDItems.HUMAN_EYE.get())
+                .requires(VDItems.HUMAN_EYE.get())
+                .requires(ForgeTags.SALAD_INGREDIENTS)
                 .requires(ForgeTags.CROPS_TOMATO)
-                .requires(VDItems.BLOOD_SYRUP.get())
                 .unlockedBy("has_human_eye", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.HUMAN_EYE.get()))
                 .save(consumer);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.HARDTACK.get())

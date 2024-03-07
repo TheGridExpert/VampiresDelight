@@ -95,8 +95,8 @@ public class VDFoodValues {
             .nutrition(6).saturationMod(0.7f).build();
     public static final FoodProperties BAGEL_SANDWICH = (new FoodProperties.Builder())
             .nutrition(13).saturationMod(1.2f).build();
-    public static final FoodProperties EYE_TOAST = (new FoodProperties.Builder())
-            .nutrition(8).saturationMod(0.8f).build();
+    public static final FoodProperties EYE_CROISSANT = (new FoodProperties.Builder())
+            .nutrition(10).saturationMod(0.8f).build();
     public static final FoodProperties HARDTACK = (new FoodProperties.Builder())
             .nutrition(6).saturationMod(0.9f).build();
 

@@ -9,13 +9,16 @@
       "item": "vampiresdelight:human_eye"
     },
     {
-      "tag": "forge:crops/tomato"
+      "item": "vampiresdelight:human_eye"
     },
     {
-      "item": "vampiresdelight:blood_syrup"
+      "tag": "forge:salad_ingredients"
+    },
+    {
+      "tag": "forge:crops/tomato"
     }
   ],
   "result": {
-    "item": "vampiresdelight:eye_toast"
+    "item": "vampiresdelight:eye_croissant"
   }
 }

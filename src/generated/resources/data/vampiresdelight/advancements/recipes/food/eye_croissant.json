@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "vampiresdelight:eye_toast"
+        "recipe": "vampiresdelight:eye_croissant"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "vampiresdelight:eye_toast"
+      "vampiresdelight:eye_croissant"
     ]
   },
   "sends_telemetry_event": false

@@ -72,7 +72,7 @@ public class VDCreativeTabs {
         event.accept(VDItems.SNOW_WHITE_ICE_CREAM);
 
         // Basic Meals
-        event.accept(VDItems.EYE_TOAST);
+        event.accept(VDItems.EYE_CROISSANT);
         event.accept(VDItems.BAGEL_SANDWICH);
         event.accept(VDItems.FISH_BURGER);
         event.accept(VDItems.HARDTACK);
