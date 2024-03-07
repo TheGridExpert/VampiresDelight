@@ -69,6 +69,7 @@ public class VDCreativeTabs {
         event.accept(VDItems.ORCHID_ICE_CREAM);
         event.accept(VDItems.TRICOLOR_DANGO);
         event.accept(VDItems.CURSED_CUPCAKE);
+        event.accept(VDItems.DARK_ICE_CREAM);
         event.accept(VDItems.SNOW_WHITE_ICE_CREAM);
 
         // Basic Meals

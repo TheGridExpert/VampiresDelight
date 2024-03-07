@@ -21,6 +21,10 @@ public class VDFoodValues {
             .nutrition(1).saturationMod(0.1f)
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, FLEETING_DURATION), 1.0F)
             .effect(() -> new MobEffectInstance(MobEffects.BLINDNESS, 200), 1.0F).build();
+    public static final FoodProperties NASTY_DARKNESS = (new FoodProperties.Builder())
+            .nutrition(1).saturationMod(0.1f)
+            .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, FLEETING_DURATION), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.DARKNESS, 200), 1.0F).build();
     public static final FoodProperties NASTY_BLOOD_DOUGH = (new FoodProperties.Builder())
             .nutrition(1).saturationMod(0.1f)
             .effect(() -> new MobEffectInstance(MobEffects.HUNGER, BRIEF_DURATION), 0.5F)
@@ -40,10 +44,9 @@ public class VDFoodValues {
             .effect(() -> new MobEffectInstance(MobEffects.BLINDNESS, 200), 1.0F).build();
     public static final FoodProperties BLOOD_SYRUP = (new FoodProperties.Builder())
             .nutrition(11).alwaysEat().build();
-
     public static final FoodProperties MULLED_WINE_GLASS_VAMPIRE = (new FoodProperties.Builder()).alwaysEat()
             .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 200, 1), 1.0F)
-            .effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 600), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 600), 1.0F)
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 300), 1.0F).build();
     public static final FoodProperties MULLED_WINE_GLASS_HUMAN = (new FoodProperties.Builder()).alwaysEat()
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 400), 1.0F)
@@ -82,6 +85,9 @@ public class VDFoodValues {
             .effect(() -> new MobEffectInstance(VDEffects.FOG_VISION.get(), BRIEF_DURATION), 1.0F).build();
     public static final FoodProperties TRICOLOR_DANGO = (new FoodProperties.Builder())
             .nutrition(7).saturationMod(0.7f).fast().build();
+    public static final FoodProperties DARK_ICE_CREAM = (new FoodProperties.Builder())
+            .nutrition(6).saturationMod(0.6f).fast()
+            .effect(() -> new MobEffectInstance(MobEffects.JUMP, BRIEF_DURATION), 1.0F).build();
     public static final FoodProperties SNOW_WHITE_ICE_CREAM = (new FoodProperties.Builder())
             .nutrition(6).saturationMod(0.6f).fast()
             .effect(() -> new MobEffectInstance(VDEffects.BLESSING.get(), SHORT_DURATION), 1.0F).build();

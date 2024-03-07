@@ -130,10 +130,12 @@ public class VDItems {
             () -> new VampireConsumableItem(foodItem(VDFoodValues.NASTY_BLINDNESS), VDFoodValues.ORCHID_ECLAIR));
     public static final RegistryObject<Item> ORCHID_ICE_CREAM = ITEMS.register("orchid_ice_cream",
             () -> new VampireConsumableItem(bowlFoodItem(VDFoodValues.NASTY_BLINDNESS), VDFoodValues.ORCHID_ICE_CREAM));
-    public static final RegistryObject<Item> CURSED_CUPCAKE = ITEMS.register("cursed_cupcake",
-            () -> new CursedCupcakeItem(foodItem(VDFoodValues.NASTY), VDFoodValues.CURSED_CUPCAKE));
     public static final RegistryObject<Item> TRICOLOR_DANGO = ITEMS.register("tricolor_dango",
             () -> new VampireConsumableItem(foodItem(VDFoodValues.NASTY), VDFoodValues.TRICOLOR_DANGO));
+    public static final RegistryObject<Item> CURSED_CUPCAKE = ITEMS.register("cursed_cupcake",
+            () -> new CursedCupcakeItem(foodItem(VDFoodValues.NASTY), VDFoodValues.CURSED_CUPCAKE));
+    public static final RegistryObject<Item> DARK_ICE_CREAM = ITEMS.register("dark_ice_cream",
+            () -> new VampireConsumableItem(foodItem(VDFoodValues.NASTY_DARKNESS), VDFoodValues.DARK_ICE_CREAM));
     public static final RegistryObject<Item> SNOW_WHITE_ICE_CREAM = ITEMS.register("snow_white_ice_cream",
             () -> new HunterConsumableItem(foodItem(VDFoodValues.SNOW_WHITE_ICE_CREAM)));
 

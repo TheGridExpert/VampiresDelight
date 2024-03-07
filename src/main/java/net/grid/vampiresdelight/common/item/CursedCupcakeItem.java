@@ -43,6 +43,7 @@ public class CursedCupcakeItem extends VampireConsumableItem {
         Player player = VampirismMod.proxy.getClientPlayer();
 
         if (Configuration.FOOD_EFFECT_TOOLTIP.get()) {
+            assert player != null;
             if (Helper.isVampire(player)) {
                 MutableComponent textEmpty = VDTextUtils.getTranslation("tooltip." + this);
                 tooltip.add(textEmpty.withStyle(ChatFormatting.BLUE));
