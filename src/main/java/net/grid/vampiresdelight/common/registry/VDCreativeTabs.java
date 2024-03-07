@@ -58,6 +58,7 @@ public class VDCreativeTabs {
         event.accept(VDItems.BLOOD_BAGEL);
         event.accept(VDItems.BLOOD_WINE_BOTTLE);
         event.accept(VDItems.WINE_GLASS);
+        event.accept(VDItems.MULLED_WINE_GLASS);
         event.accept(VDItems.BLOOD_PIE);
         event.accept(VDItems.BLOOD_PIE_SLICE);
 
@@ -66,8 +67,8 @@ public class VDCreativeTabs {
         event.accept(VDItems.ORCHID_COOKIE);
         event.accept(VDItems.ORCHID_ECLAIR);
         event.accept(VDItems.ORCHID_ICE_CREAM);
-        event.accept(VDItems.CURSED_CUPCAKE);
         event.accept(VDItems.TRICOLOR_DANGO);
+        event.accept(VDItems.CURSED_CUPCAKE);
         event.accept(VDItems.SNOW_WHITE_ICE_CREAM);
 
         // Basic Meals

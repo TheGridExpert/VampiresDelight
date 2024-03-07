@@ -74,5 +74,14 @@ public class ToolTipEvents {
             int blood = event.getItemStack().getDamageValue() * MULTIPLIER;
             tooltip.add(Component.literal(blood + "/900").withStyle(ChatFormatting.YELLOW));
         }
+        else if (event.getItemStack().isDamageableItem() && Screen.hasShiftDown() && VDHelper.isDebugger(Objects.requireNonNull(event.getEntity()))) {
+            int maxDamage = event.getItemStack().getMaxDamage();
+            int damage = event.getItemStack().getDamageValue();
+            int durability = maxDamage - damage;
+
+            tooltip.add(Component.literal("Max damage: " + maxDamage).withStyle(ChatFormatting.DARK_PURPLE));
+            tooltip.add(Component.literal("Damage: " + damage).withStyle(ChatFormatting.DARK_PURPLE));
+            tooltip.add(Component.literal("Durability: " + durability).withStyle(ChatFormatting.DARK_PURPLE));
+        }
     }
 }

@@ -114,6 +114,8 @@ public class VDItems {
             () -> new BloodWineBottleItem(basicItem()));
     public static final RegistryObject<Item> WINE_GLASS = ITEMS.register("wine_glass",
             () -> new VampireDrinkableItem(drinkItem(VDFoodValues.WINE_GLASS_HUMAN), VDFoodValues.WINE_GLASS_VAMPIRE));
+    public static final RegistryObject<Item> MULLED_WINE_GLASS = ITEMS.register("mulled_wine_glass",
+            () -> new VampireDrinkableItem(drinkItem(VDFoodValues.MULLED_WINE_GLASS_HUMAN), VDFoodValues.MULLED_WINE_GLASS_VAMPIRE));
     public static final RegistryObject<Item> BLOOD_PIE = ITEMS.register("blood_pie",
             () -> new BlockItem(VDBlocks.BLOOD_PIE.get(), basicItem()));
     public static final RegistryObject<Item> BLOOD_PIE_SLICE = ITEMS.register("blood_pie_slice",

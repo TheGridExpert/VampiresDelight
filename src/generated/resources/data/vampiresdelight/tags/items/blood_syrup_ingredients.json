@@ -1,8 +1,8 @@
 {
   "values": [
+    "#minecraft:leaves",
     "minecraft:apple",
     "minecraft:sweet_berries",
-    "minecraft:glow_berries",
-    "vampiresdelight:orchid_petals"
+    "minecraft:glow_berries"
   ]
 }

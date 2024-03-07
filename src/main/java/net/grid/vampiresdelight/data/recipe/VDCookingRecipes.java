@@ -65,8 +65,20 @@ public class VDCookingRecipes {
                 .addIngredient(VDItems.ORCHID_PETALS.get())
                 .addIngredient(Items.SUGAR)
                 .unlockedByAnyIngredient(VDItems.ORCHID_PETALS.get(), VDItems.BLOOD_SYRUP.get())
-                .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
                 .build(consumer, itemLocationCooking(VDItems.TRICOLOR_DANGO.get()));
+        CookingPotRecipeBuilder.cookingPotRecipe(VDItems.MULLED_WINE_GLASS.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
+                .addIngredient(VDItems.WINE_GLASS.get())
+                .addIngredient(Ingredient.fromValues(Stream.of(
+                        new Ingredient.ItemValue(new ItemStack(ModBlocks.CURSED_ROOTS.get())),
+                        new Ingredient.ItemValue(new ItemStack(ModBlocks.CURSED_SPRUCE_SAPLING.get())),
+                        new Ingredient.ItemValue(new ItemStack(ModBlocks.DARK_SPRUCE_SAPLING.get())),
+                        new Ingredient.ItemValue(new ItemStack(ModBlocks.DARK_SPRUCE_LEAVES.get()))
+                )))
+                .addIngredient(Items.SUGAR)
+                .unlockedByAnyIngredient(VDItems.WINE_GLASS.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
+                .build(consumer, itemLocationCooking(VDItems.MULLED_WINE_GLASS.get()));
     }
 
     private static void cookMeals(Consumer<FinishedRecipe> consumer) {

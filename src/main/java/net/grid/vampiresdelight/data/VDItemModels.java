@@ -33,7 +33,8 @@ public class VDItemModels extends ItemModelProvider {
         // Items that use its own model in models/item (mostly because runData cannot locate farmersdelight:item/mug)
         Set<Item> specialItems = Sets.newHashSet(
                 VDItems.ORCHID_TEA.get(),
-                VDItems.WINE_GLASS.get());
+                VDItems.WINE_GLASS.get(),
+                VDItems.MULLED_WINE_GLASS.get());
         takeAll(items, specialItems.toArray(new Item[0])).forEach(items::remove);
 
         // Blocks with special item sprites

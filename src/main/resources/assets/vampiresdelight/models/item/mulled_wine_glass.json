@@ -1,0 +1,6 @@
+{
+  "parent": "farmersdelight:item/mug",
+  "textures": {
+    "layer0": "vampiresdelight:item/mulled_wine_glass"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "vampiresdelight:wine_glass"
+    },
+    [
+      {
+        "item": "vampirism:cursed_roots"
+      },
+      {
+        "item": "vampirism:cursed_spruce_sapling"
+      },
+      {
+        "item": "vampirism:dark_spruce_sapling"
+      },
+      {
+        "item": "vampirism:dark_spruce_leaves"
+      }
+    ],
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "item": "vampiresdelight:mulled_wine_glass"
+  }
+}

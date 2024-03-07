@@ -41,6 +41,14 @@ public class VDFoodValues {
     public static final FoodProperties BLOOD_SYRUP = (new FoodProperties.Builder())
             .nutrition(11).alwaysEat().build();
 
+    public static final FoodProperties MULLED_WINE_GLASS_VAMPIRE = (new FoodProperties.Builder()).alwaysEat()
+            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 200, 1), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 600), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 300), 1.0F).build();
+    public static final FoodProperties MULLED_WINE_GLASS_HUMAN = (new FoodProperties.Builder()).alwaysEat()
+            .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 400), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 200), 1.0F).build();
+
     // Small foods
     public static final FoodProperties GRILLED_GARLIC = (new FoodProperties.Builder())
             .nutrition(3).saturationMod(0.2f).build();

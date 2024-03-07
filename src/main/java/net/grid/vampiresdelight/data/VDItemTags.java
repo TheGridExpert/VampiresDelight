@@ -11,6 +11,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.data.tags.TagsProvider;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
@@ -55,7 +56,8 @@ public class VDItemTags extends ItemTagsProvider {
                 .add(VDItems.ORCHID_COOKIE.get())
                 .add(VDItems.BLOOD_SYRUP.get())
                 .add(VDItems.ORCHID_ECLAIR.get())
-                .add(VDItems.ORCHID_ICE_CREAM.get());
+                .add(VDItems.ORCHID_ICE_CREAM.get())
+                .add(VDItems.MULLED_WINE_GLASS.get());
         tag(VDTags.HUNTER_FOOD)
                 .add(ModItems.GARLIC_BREAD.get())
                 .add(VDItems.BORSCHT.get())
@@ -67,10 +69,10 @@ public class VDItemTags extends ItemTagsProvider {
         tag(VDTags.MINION_VAMPIRE_FOOD)
                 .add(VDItems.ORCHID_COOKIE.get());
         tag(VDTags.BLOOD_SYRUP_INGREDIENTS)
+                .addTag(ItemTags.LEAVES)
                 .add(Items.APPLE)
                 .add(Items.SWEET_BERRIES)
-                .add(Items.GLOW_BERRIES)
-                .add(VDItems.ORCHID_PETALS.get());
+                .add(Items.GLOW_BERRIES);
     }
 
     private void registerVampirismTags() {
