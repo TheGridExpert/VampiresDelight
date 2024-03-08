@@ -265,12 +265,21 @@ public class VDCraftingRecipes {
                 .unlockedBy("has_orchid_petals", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.ORCHID_PETALS.get()))
                 .save(consumer);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.SNOW_WHITE_ICE_CREAM.get(), 1)
-                .requires(Items.COCOA_BEANS)
-                .requires(ForgeTags.MILK)
                 .requires(ModTags.Items.HOLY_WATER)
+                .requires(ForgeTags.MILK)
+                .requires(Items.COCOA_BEANS)
+                .requires(Items.ICE)
                 .requires(Items.SUGAR)
-                .requires(Items.BOWL)
                 .unlockedBy("has_holy_water", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.HOLY_WATER_BOTTLE_NORMAL.get(), ModItems.HOLY_WATER_BOTTLE_ENHANCED.get(), ModItems.HOLY_WATER_BOTTLE_ULTIMATE.get()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.DARK_ICE_CREAM.get(), 1)
+                .requires(VDItems.BLOOD_SYRUP.get())
+                .requires(ForgeTags.GRAIN)
+                .requires(ForgeTags.GRAIN)
+                .requires(Items.ICE)
+                .requires(Items.ICE)
+                .requires(Items.INK_SAC)
+                .unlockedBy("has_blood_syrup", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.BLOOD_SYRUP.get()))
                 .save(consumer);
     }
 
@@ -372,6 +381,16 @@ public class VDCraftingRecipes {
     }
 
     private static void recipesAlchemyTable(Consumer<FinishedRecipe> consumer) {
+        AlchemyTableRecipeBuilder
+                .builder(VDOils.BLESSING)
+                .bloodOilIngredient()
+                .input(potion(VDPotions.BLESSING.get(), VDPotions.STRONG_BLESSING.get(), VDPotions.LONG_BLESSING.get()))
+                .build(consumer, new ResourceLocation(VampiresDelight.MODID, "blessing_oil"));
+        AlchemyTableRecipeBuilder
+                .builder(VDOils.CLOTHES_DISSOLVING)
+                .bloodOilIngredient()
+                .input(potion(VDPotions.CLOTHES_DISSOLVING.get()))
+                .build(consumer, new ResourceLocation(VampiresDelight.MODID, "clothes_dissolving_oil"));
         AlchemyTableRecipeBuilder
                 .builder(VDOils.FOG_VISION)
                 .bloodOilIngredient()

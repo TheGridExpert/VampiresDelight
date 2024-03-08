@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "vampiresdelight:item/dark_ice_cream"
+  }
+}

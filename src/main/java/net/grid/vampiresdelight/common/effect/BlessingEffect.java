@@ -1,5 +1,6 @@
 package net.grid.vampiresdelight.common.effect;
 
+import de.teamlapen.vampirism.entity.GhostEntity;
 import de.teamlapen.vampirism.util.Helper;
 import net.grid.vampiresdelight.common.registry.VDEffects;
 import net.grid.vampiresdelight.common.registry.VDSounds;
@@ -15,20 +16,22 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 
 public class BlessingEffect extends MobEffect {
 
     public BlessingEffect() {
-        super(MobEffectCategory.NEUTRAL, FastColor.ARGB32.color(100, 255, 223, 136));
+        super(MobEffectCategory.BENEFICIAL, FastColor.ARGB32.color(100, 250, 218, 94));
     }
 
     @Override
-    public void applyEffectTick(LivingEntity entity, int amplifier) {
+    public void applyEffectTick(@NotNull LivingEntity entity, int amplifier) {
         if (!Helper.isVampire(entity)) {
-            resistPhantoms(entity.level(), entity.getX(), entity.getY(), entity.getZ());
+            resistUnholy(entity.level(), entity, entity.getX(), entity.getY(), entity.getZ());
         } else {
             entity.removeEffect(VDEffects.BLESSING.get());
         }
@@ -39,9 +42,10 @@ public class BlessingEffect extends MobEffect {
         return true;
     }
 
-    public static void resistPhantoms(final LevelAccessor world, final double x, final double y, final double z) {
+    public static void resistUnholy(final LevelAccessor world, @NotNull LivingEntity user, final double x, final double y, final double z) {
         Vec3 center = new Vec3(x, y, z);
-        List<LivingEntity> unsortedEntityFound = world.getEntitiesOfClass(LivingEntity.class, new AABB(center, center).inflate(6.0), e -> true);
+        double distanceMultiplier = Objects.requireNonNull(user.getEffect(VDEffects.BLESSING.get())).getAmplifier() + 1;
+        List<LivingEntity> unsortedEntityFound = world.getEntitiesOfClass(LivingEntity.class, new AABB(center, center).inflate(6.0 * distanceMultiplier), e -> true);
         List<LivingEntity> sortedEntitiesFound = unsortedEntityFound.stream().sorted(Comparator.comparingDouble(t -> t.distanceToSqr(center))).toList();
 
         for (LivingEntity entity : sortedEntitiesFound) {
@@ -49,7 +53,7 @@ public class BlessingEffect extends MobEffect {
             double entityY = entity.getY();
             double entityZ = entity.getZ();
 
-            if (entity instanceof Phantom) {
+            if (entity instanceof Phantom || entity instanceof GhostEntity) {
                 if (!entity.getEntityData().isEmpty()) {
                     entity.remove(Entity.RemovalReason.DISCARDED);
 

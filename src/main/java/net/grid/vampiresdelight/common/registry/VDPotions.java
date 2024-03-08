@@ -3,6 +3,7 @@ package net.grid.vampiresdelight.common.registry;
 import de.teamlapen.vampirism.api.VampirismAPI;
 import de.teamlapen.vampirism.api.items.ExtendedPotionMix;
 import de.teamlapen.vampirism.core.ModBlocks;
+import de.teamlapen.vampirism.core.ModTags;
 import de.teamlapen.vampirism.effects.VampirismPotion.HunterPotion;
 import net.grid.vampiresdelight.VampiresDelight;
 import net.minecraft.core.registries.Registries;
@@ -11,6 +12,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.common.util.NonNullSupplier;
@@ -21,6 +23,20 @@ public class VDPotions {
     public static final DeferredRegister<Potion> POTIONS = DeferredRegister.create(Registries.POTION, VampiresDelight.MODID);
 
     //Hunter
+    public static final RegistryObject<HunterPotion> BLESSING = POTIONS.register("blessing",
+            () -> new HunterPotion(null, new MobEffectInstance(VDEffects.BLESSING.get(), 3600)));
+    public static final RegistryObject<HunterPotion> LONG_BLESSING = POTIONS.register("long_blessing",
+            () -> new HunterPotion("blessing", new MobEffectInstance(VDEffects.BLESSING.get(), 9600)));
+    public static final RegistryObject<HunterPotion> STRONG_BLESSING = POTIONS.register("strong_blessing",
+            () -> new HunterPotion("blessing", new MobEffectInstance(VDEffects.BLESSING.get(), 800, 1)));
+    public static final RegistryObject<HunterPotion> VERY_LONG_BLESSING = POTIONS.register("very_long_blessing",
+            () -> new HunterPotion("blessing", new MobEffectInstance(VDEffects.BLESSING.get(), 96000)));
+    public static final RegistryObject<HunterPotion> LONG_STRONG_BLESSING = POTIONS.register("long_strong_blessing",
+            () -> new HunterPotion("blessing", new MobEffectInstance(VDEffects.BLESSING.get(), 2400, 1)));
+
+    public static final RegistryObject<HunterPotion> CLOTHES_DISSOLVING = POTIONS.register("clothes_dissolving",
+            () -> new HunterPotion(null, new MobEffectInstance(VDEffects.CLOTHES_DISSOLVING.get(), 600)));
+
     public static final RegistryObject<HunterPotion> FOG_VISION = POTIONS.register("fog_vision",
             () -> new HunterPotion(null, new MobEffectInstance(VDEffects.FOG_VISION.get(), 3600)));
     public static final RegistryObject<HunterPotion> LONG_FOG_VISION = POTIONS.register("long_fog_vision",
@@ -33,6 +49,14 @@ public class VDPotions {
             () -> new HunterPotion("fog_vision", new MobEffectInstance(VDEffects.FOG_VISION.get(), 2400, 1)));
 
     public static void registerPotionMixes() {
+        master(BLESSING, () -> Ingredient.of(ModTags.Items.HOLY_WATER), 16, 8);
+        durable(BLESSING, LONG_BLESSING);
+        strong(BLESSING, STRONG_BLESSING);
+        veryDurable(LONG_BLESSING, VERY_LONG_BLESSING);
+        veryStrong(VERY_LONG_BLESSING, LONG_STRONG_BLESSING);
+
+        master(CLOTHES_DISSOLVING, () -> Ingredient.of(Blocks.WITHER_SKELETON_SKULL), 16, 8);
+
         master(FOG_VISION, () -> Ingredient.of(ModBlocks.VAMPIRE_ORCHID.get()), 16, 8);
         durable(FOG_VISION, LONG_FOG_VISION);
         strong(FOG_VISION, STRONG_FOG_VISION);

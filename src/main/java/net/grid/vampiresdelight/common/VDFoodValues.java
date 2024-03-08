@@ -72,7 +72,7 @@ public class VDFoodValues {
             .nutrition(7).saturationMod(0.6f).fast().build();
     public static final FoodProperties ORCHID_ICE_CREAM = (new FoodProperties.Builder())
             .nutrition(6).saturationMod(0.5f).fast()
-            .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, FLEETING_DURATION), 1.0F).build();
+            .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, SHORT_DURATION), 1.0F).build();
     public static final FoodProperties SUGARED_BERRIES = (new FoodProperties.Builder())
             .nutrition(3).saturationMod(0.3f).build();
     public static final FoodProperties CURSED_CUPCAKE = (new FoodProperties.Builder())

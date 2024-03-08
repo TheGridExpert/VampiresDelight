@@ -7,12 +7,15 @@ public class VDConfiguration {
     public static ForgeConfigSpec CLIENT_CONFIG;
 
     //COMMON
-    public static final String CATEGORY_SETTINGS = "settings";
+    public static final String CATEGORY_VILLAGE = "village";
     public static ForgeConfigSpec.BooleanValue FARMERS_BUY_GARLIC;
     public static ForgeConfigSpec.BooleanValue WANDERING_TRADER_SELLS_VAMPIRISM_ITEMS;
 
     public static final String CATEGORY_RECIPE_BOOK = "recipe_book";
     public static ForgeConfigSpec.BooleanValue ENABLE_RECIPE_BOOK_BREWING_BARREL;
+
+    public static final String CATEGORY_EFFECTS = "effects";
+    public static ForgeConfigSpec.BooleanValue ARMOR_DISSOLVES_FULLY;
 
     public static final String CATEGORY_WORLD = "world";
     public static ForgeConfigSpec.BooleanValue GENERATE_VD_CHEST_LOOT;
@@ -28,7 +31,7 @@ public class VDConfiguration {
         // COMMON
         ForgeConfigSpec.Builder COMMON_BUILDER = new ForgeConfigSpec.Builder();
 
-        COMMON_BUILDER.comment("Game settings").push(CATEGORY_SETTINGS);
+        COMMON_BUILDER.comment("Village").push(CATEGORY_VILLAGE);
         FARMERS_BUY_GARLIC = COMMON_BUILDER.comment("Should Farmers buy garlic? (May reduce chances of other trades appearing)")
                 .define("farmersBuyGarlic", true);
         WANDERING_TRADER_SELLS_VAMPIRISM_ITEMS = COMMON_BUILDER.comment("Should the Wandering Trader sell some of vampirism's and this mod's items? (Including seeds and some blocks)")
@@ -37,6 +40,14 @@ public class VDConfiguration {
         COMMON_BUILDER.comment("Recipe book").push(CATEGORY_RECIPE_BOOK);
         ENABLE_RECIPE_BOOK_BREWING_BARREL = COMMON_BUILDER.comment("Should the Brewing Barrel have a Recipe Book available on its interface?")
                 .define("enableRecipeBookBrewingBarrel", true);
+
+        COMMON_BUILDER.comment("Effects").push(CATEGORY_EFFECTS);
+        ARMOR_DISSOLVES_FULLY = COMMON_BUILDER.comment("Should 'weak' armor such as leather and chain dissolve fully because of Clothes Dissolving effect?")
+                .define("armorDissolvesFully", true);
+
+        COMMON_BUILDER.comment("World generation").push(CATEGORY_WORLD);
+        GENERATE_VD_CHEST_LOOT = COMMON_BUILDER.comment("Should this mod add some of its items as extra chest loot across Minecraft and Vampirism structures?")
+                .define("generateVDChestLoot", true);
 
         COMMON_BUILDER.pop();
         COMMON_CONFIG = COMMON_BUILDER.build();
@@ -53,10 +64,6 @@ public class VDConfiguration {
                 .define("hunterTooltipsForEveryone", false);
         SPECIAL_APPLE_SKIN_TOOLTIP = CLIENT_BUILDER.comment("Hides AppleSkin food tooltips if you're a Vampire. You'll be shown blood values instead")
                 .define("specialAppleSkinTooltip", true);
-
-        COMMON_BUILDER.comment("World generation").push(CATEGORY_WORLD);
-        GENERATE_VD_CHEST_LOOT = COMMON_BUILDER.comment("Should this mod add some of its items as extra chest loot across Minecraft and Vampirism structures?")
-                .define("generateVDChestLoot", true);
 
         CLIENT_BUILDER.pop();
         CLIENT_CONFIG = CLIENT_BUILDER.build();

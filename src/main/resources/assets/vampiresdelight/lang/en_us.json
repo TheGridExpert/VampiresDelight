@@ -41,6 +41,7 @@
   "item.vampiresdelight.orchid_cookie": "Orchid Cookie",
   "item.vampiresdelight.orchid_eclair": "Orchid Eclair",
   "item.vampiresdelight.orchid_ice_cream": "Orchid Ice Cream",
+  "item.vampiresdelight.dark_ice_cream": "Dark Ice Cream",
   "item.vampiresdelight.heart_pieces": "Heart Pieces",
   "item.vampiresdelight.human_eye": "Human Eye",
   "item.vampiresdelight.eye_croissant": "Eye Croissant",
@@ -61,6 +62,24 @@
   "item.vampiresdelight.hardtack": "Hardtack",
   "item.vampiresdelight.snow_white_ice_cream": "Snow-White Ice Cream",
 
+  "effect.vampiresdelight.blessing": "Blessing",
+  "effect.vampiresdelight.blessing.0.desc": "Protects from evil spirits such as phantoms and ghosts.",
+
+  "item.minecraft.potion.effect.blessing": "Potion of Blessing",
+  "item.minecraft.splash_potion.effect.blessing": "Splash Potion of Blessing",
+  "item.minecraft.lingering_potion.effect.blessing": "Lingering Potion of Blessing",
+  "item.minecraft.tipped_arrow.effect.blessing": "Arrow of Blessing",
+  "oil.vampiresdelight.blessing": "Blessing",
+
+  "effect.vampiresdelight.clothes_dissolving": "Clothes Dissolving",
+  "effect.vampiresdelight.clothes_dissolving.0.desc": "Dissolves armor worn by player or mob.",
+
+  "item.minecraft.potion.effect.clothes_dissolving": "Potion of Clothes Dissolving",
+  "item.minecraft.splash_potion.effect.clothes_dissolving": "Splash Potion of Clothes Dissolving",
+  "item.minecraft.lingering_potion.effect.clothes_dissolving": "Lingering Potion of Clothes Dissolving",
+  "item.minecraft.tipped_arrow.effect.clothes_dissolving": "Arrow of Clothes Dissolving",
+  "oil.vampiresdelight.clothes_dissolving": "Clothes Dissolving",
+
   "effect.vampiresdelight.fog_vision": "Fog Vision",
   "effect.vampiresdelight.fog_vision.0.desc": "Allows to see farther in vampire fog.",
 
@@ -68,6 +87,7 @@
   "item.minecraft.splash_potion.effect.fog_vision": "Splash Potion of Fog Vision",
   "item.minecraft.lingering_potion.effect.fog_vision": "Lingering Potion of Fog Vision",
   "item.minecraft.tipped_arrow.effect.fog_vision": "Arrow of Fog Vision",
+  "oil.vampiresdelight.fog_vision": "Fog Vision",
 
   "enchantment.vampiresdelight.vampire_bite": "Vampire Bite",
   "enchantment.vampiresdelight.vampire_bite.desc": "Heals the player proportionally to the amount of damage dealt.",
