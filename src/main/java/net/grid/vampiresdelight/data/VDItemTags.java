@@ -11,11 +11,10 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.data.tags.TagsProvider;
-import net.minecraft.tags.ItemTags;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.tag.*;
 
@@ -27,7 +26,7 @@ public class VDItemTags extends ItemTagsProvider {
     }
 
     @Override
-    protected void addTags(HolderLookup.Provider provider) {
+    protected void addTags(HolderLookup.@NotNull Provider provider) {
         this.registerModTags();
         this.registerVampirismTags();
         this.registerFarmersDelightTags();
@@ -97,6 +96,9 @@ public class VDItemTags extends ItemTagsProvider {
 
         tag(ForgeTags.DOUGH).add(VDItems.RICE_DOUGH.get());
         tag(VDForgeTags.DOUGH_RICE).add(VDItems.RICE_DOUGH.get());
+
+        tag(VDForgeTags.COOKED_BAT).add(VDItems.COOKED_BAT.get(), VDItems.COOKED_BAT_CHOPS.get());
+        tag(VDForgeTags.RAW_BAT).add(VDItems.RAW_BAT.get(), VDItems.RAW_BAT_CHOPS.get());
 
         tag(ForgeTags.VEGETABLES).addTags(VDForgeTags.VEGETABLES_GARLIC);
         tag(VDForgeTags.VEGETABLES_GARLIC).add(ModItems.ITEM_GARLIC.get());

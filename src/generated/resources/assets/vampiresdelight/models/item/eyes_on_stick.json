@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "vampiresdelight:item/eyes_on_stick"
+  }
+}

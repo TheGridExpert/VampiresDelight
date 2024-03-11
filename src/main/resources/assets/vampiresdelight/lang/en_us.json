@@ -23,17 +23,16 @@
   "block.vampiresdelight.cursed_spruce_wine_shelf": "Cursed Spruce Wine Shelf",
   "block.vampiresdelight.dark_spruce_wine_shelf": "Dark Spruce Wine Shelf",
 
-  "block.vampiresdelight.blood_pie": "Blood Pie",
-  "item.vampiresdelight.blood_pie_slice": "Blood Pie Slice",
-  "block.vampiresdelight.weird_jelly_block": "Weird Jelly",
-  "item.vampiresdelight.weird_jelly": "Plate of Weird Jelly",
-
   "item.vampiresdelight.alchemical_cocktail": "Alchemical Cocktail",
 
   "item.vampiresdelight.sugared_berries": "Sugared Berries",
   "item.vampiresdelight.pure_sorbet": "Pure Sorbet",
   "item.vampiresdelight.rice_dough": "Rice Dough",
   "item.vampiresdelight.rice_bread": "Rice Bread",
+  "item.vampiresdelight.raw_bat": "Raw Bat",
+  "item.vampiresdelight.raw_bat_chops": "Raw Bat Chops",
+  "item.vampiresdelight.cooked_bat": "Cooked Bat",
+  "item.vampiresdelight.cooked_bat_chops": "Cooked Bat Chops",
 
   "item.vampiresdelight.orchid_seeds": "Orchid Seeds",
   "item.vampiresdelight.orchid_petals": "Orchid Petals",
@@ -54,6 +53,11 @@
   "item.vampiresdelight.wine_glass": "Wine Glass",
   "item.vampiresdelight.mulled_wine_glass": "Mulled Wine Glass",
   "item.vampiresdelight.cursed_cupcake": "Cursed Cupcake",
+
+  "block.vampiresdelight.blood_pie": "Blood Pie",
+  "item.vampiresdelight.blood_pie_slice": "Blood Pie Slice",
+  "block.vampiresdelight.weird_jelly_block": "Weird Jelly",
+  "item.vampiresdelight.weird_jelly": "Plate of Weird Jelly",
 
   "item.vampiresdelight.grilled_garlic": "Grilled Garlic",
   "item.vampiresdelight.fish_burger": "Fish Burger",

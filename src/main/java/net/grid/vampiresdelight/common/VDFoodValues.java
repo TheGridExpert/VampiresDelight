@@ -64,6 +64,22 @@ public class VDFoodValues {
             .nutrition(10).saturationMod(0.8f).meat().fast().build();
     public static final FoodProperties HUMAN_EYE = (new FoodProperties.Builder())
             .nutrition(2).saturationMod(0.1f).meat().build();
+    public static final FoodProperties RAW_BAT = (new FoodProperties.Builder())
+            .nutrition(2).saturationMod(0.3f).meat().fast()
+            .effect(() -> new MobEffectInstance(MobEffects.WITHER, 600), 0.4F).build();
+    public static final FoodProperties RAW_BAT_CHOPS = (new FoodProperties.Builder())
+            .nutrition(1).saturationMod(0.3f).meat().fast()
+            .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600), 0.4F).build();
+    public static final FoodProperties GRILLED_BAT_HUMAN = (new FoodProperties.Builder())
+            .nutrition(6).saturationMod(0.5f).meat()
+            .effect(() -> new MobEffectInstance(MobEffects.WITHER, 400), 0.1F).build();
+    public static final FoodProperties GRILLED_BAT_VAMPIRE = (new FoodProperties.Builder())
+            .nutrition(6).saturationMod(0.5f).meat().build();
+    public static final FoodProperties GRILLED_BAT_CHOPS_HUMAN = (new FoodProperties.Builder())
+            .nutrition(3).saturationMod(0.2f).meat().fast()
+            .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 400), 0.1F).build();
+    public static final FoodProperties GRILLED_BAT_CHOPS_VAMPIRE = (new FoodProperties.Builder())
+            .nutrition(3).saturationMod(0.2f).meat().fast().build();
 
     // Sweets and desserts
     public static final FoodProperties ORCHID_COOKIE = (new FoodProperties.Builder())
@@ -101,6 +117,8 @@ public class VDFoodValues {
             .nutrition(6).saturationMod(0.7f).build();
     public static final FoodProperties BAGEL_SANDWICH = (new FoodProperties.Builder())
             .nutrition(13).saturationMod(1.2f).build();
+    public static final FoodProperties EYES_ON_STICK = (new FoodProperties.Builder())
+            .nutrition(8).saturationMod(0.8f).build();
     public static final FoodProperties EYE_CROISSANT = (new FoodProperties.Builder())
             .nutrition(10).saturationMod(0.8f).build();
     public static final FoodProperties HARDTACK = (new FoodProperties.Builder())

@@ -28,7 +28,9 @@ import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.function.Consumer;
+import java.util.stream.Stream;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
@@ -232,6 +234,11 @@ public class VDCraftingRecipes {
                 .define('t', Items.STICK)
                 .unlockedBy("has_pure_blood", InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE))
                 .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.SUGARED_BERRIES.get(), 1)
+                .requires(Items.SWEET_BERRIES)
+                .requires(Items.SUGAR)
+                .unlockedBy("has_sweet_berries", InventoryChangeTrigger.TriggerInstance.hasItems(Items.SWEET_BERRIES))
+                .save(consumer);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.ORCHID_COOKIE.get(), 8)
                 .requires(VDItems.ORCHID_PETALS.get())
                 .requires(Items.WHEAT)
@@ -244,10 +251,11 @@ public class VDCraftingRecipes {
                 .requires(ForgeTags.CROPS_RICE)
                 .unlockedBy("has_orchid_petals", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.ORCHID_PETALS.get()))
                 .save(consumer, new ResourceLocation(VampiresDelight.MODID, "orchid_cookie_from_rice"));
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.SUGARED_BERRIES.get(), 1)
-                .requires(Items.SWEET_BERRIES)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.CURSED_CUPCAKE.get())
+                .requires(VDItems.BLOOD_BAGEL.get())
+                .requires(ForgeTags.MILK)
                 .requires(Items.SUGAR)
-                .unlockedBy("has_sweet_berries", InventoryChangeTrigger.TriggerInstance.hasItems(Items.SWEET_BERRIES))
+                .unlockedBy("has_blood_bagel", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.BLOOD_BAGEL.get()))
                 .save(consumer);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.ORCHID_ECLAIR.get(), 1)
                 .requires(VDItems.ORCHID_PETALS.get())
@@ -324,6 +332,17 @@ public class VDCraftingRecipes {
                 .requires(vectorwing.farmersdelight.common.registry.ModItems.FRIED_EGG.get())
                 .unlockedBy("has_blood_bagel", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.BLOOD_BAGEL.get()))
                 .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.EYES_ON_STICK.get())
+                .requires(VDItems.HUMAN_EYE.get())
+                .requires(VDItems.HUMAN_EYE.get())
+                .requires(ForgeTags.CROPS_TOMATO)
+                .requires(Ingredient.fromValues(Stream.of(
+                        new Ingredient.ItemValue(new ItemStack(Items.BROWN_MUSHROOM)),
+                        new Ingredient.ItemValue(new ItemStack(Items.RED_MUSHROOM))
+                )))
+                .requires(Items.STICK)
+                .unlockedBy("has_human_eye", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.HUMAN_EYE.get()))
+                .save(consumer);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.EYE_CROISSANT.get())
                 .requires(ForgeTags.BREAD)
                 .requires(VDItems.HUMAN_EYE.get())
@@ -339,18 +358,14 @@ public class VDCraftingRecipes {
                 .requires(Items.WHEAT)
                 .unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
                 .save(consumer);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.CURSED_CUPCAKE.get())
-                .requires(VDItems.BLOOD_BAGEL.get())
-                .requires(ForgeTags.MILK)
-                .requires(Items.SUGAR)
-                .unlockedBy("has_blood_bagel", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.BLOOD_BAGEL.get()))
-                .save(consumer);
     }
 
     // Cutting
     private static void cuttingAnimalItems(Consumer<FinishedRecipe> consumer) {
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.HUMAN_HEART.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), VDItems.HEART_PIECES.get(), 2)
                 .build(consumer, itemLocationCutting(ModItems.HUMAN_HEART.get()));
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(VDItems.RAW_BAT.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), VDItems.RAW_BAT_CHOPS.get(), 2)
+                .build(consumer, itemLocationCutting(VDItems.RAW_BAT.get()));
     }
 
     private static void cuttingFoods(Consumer<FinishedRecipe> consumer) {
@@ -403,9 +418,9 @@ public class VDCraftingRecipes {
     }
 
     public static ResourceLocation itemLocationCutting(Item item) {
-        return new ResourceLocation(VampiresDelight.MODID + ":cutting/" + ForgeRegistries.ITEMS.getKey(item).getPath());
+        return new ResourceLocation(VampiresDelight.MODID + ":cutting/" + Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item)).getPath());
     }
     public static ResourceLocation blockLocationCutting(Block block) {
-        return new ResourceLocation(VampiresDelight.MODID + ":cutting/" + ForgeRegistries.BLOCKS.getKey(block).getPath());
+        return new ResourceLocation(VampiresDelight.MODID + ":cutting/" + Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block)).getPath());
     }
 }

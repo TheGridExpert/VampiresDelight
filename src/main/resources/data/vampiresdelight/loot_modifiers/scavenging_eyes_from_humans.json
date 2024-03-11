@@ -1,5 +1,5 @@
 {
-  "type": "farmersdelight:add_item",
+  "type": "vampiresdelight:add_item",
   "conditions": [
     {
       "condition": "minecraft:entity_properties",
@@ -42,13 +42,13 @@
           "predicate": {
             "type": "minecraft:wandering_trader"
           }
-        },
-        {
-          "condition": "minecraft:random_chance_with_looting",
-          "chance": 0.4,
-          "looting_multiplier": 0.1
         }
       ]
+    },
+    {
+      "condition": "minecraft:random_chance_with_looting",
+      "chance": 0.4,
+      "looting_multiplier": 0.1
     }
   ],
   "item": "vampiresdelight:human_eye"

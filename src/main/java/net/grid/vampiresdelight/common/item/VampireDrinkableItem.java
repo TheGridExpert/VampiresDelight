@@ -20,6 +20,8 @@ import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Objects;
+
 public class VampireDrinkableItem extends VampireConsumableItem {
     private final FoodProperties vampireFood;
     private final FoodProperties hunterFood;
@@ -41,12 +43,12 @@ public class VampireDrinkableItem extends VampireConsumableItem {
     }
 
     @Override
-    public int getUseDuration(ItemStack stack) {
+    public int getUseDuration(@NotNull ItemStack stack) {
         return 32;
     }
 
     @Override
-    public UseAnim getUseAnimation(ItemStack stack) {
+    public @NotNull UseAnim getUseAnimation(@NotNull ItemStack stack) {
         return UseAnim.DRINK;
     }
 
@@ -99,10 +101,10 @@ public class VampireDrinkableItem extends VampireConsumableItem {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, Player player, @NotNull InteractionHand hand) {
         ItemStack heldStack = player.getItemInHand(hand);
         if (heldStack.isEdible()) {
-            if (player.canEat(heldStack.getFoodProperties(player).canAlwaysEat())) {
+            if (player.canEat(Objects.requireNonNull(heldStack.getFoodProperties(player)).canAlwaysEat())) {
                 player.startUsingItem(hand);
                 return InteractionResultHolder.consume(heldStack);
             } else {

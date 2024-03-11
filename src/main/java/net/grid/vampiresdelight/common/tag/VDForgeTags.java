@@ -12,6 +12,9 @@ public class VDForgeTags {
 
     public static final TagKey<Item> DOUGH_RICE = forgeItemTag("dough/rice");
 
+    public static final TagKey<Item> RAW_BAT = forgeItemTag("raw_bat");
+    public static final TagKey<Item> COOKED_BAT = forgeItemTag("cooked_bat");
+
     public static final TagKey<Item> VEGETABLES_GARLIC = forgeItemTag("vegetables/garlic");
 
 

@@ -17,6 +17,10 @@ public class VDSmeltingRecipes {
     public static void register(Consumer<FinishedRecipe> consumer) {
         multipleSmeltingRecipes("grilled_garlic", ModItems.ITEM_GARLIC.get(), VDItems.GRILLED_GARLIC.get(),
                 0.35F, true, true, true, consumer);
+        multipleSmeltingRecipes("cooked_bat", VDItems.RAW_BAT.get(), VDItems.COOKED_BAT.get(),
+                0.35F, true, true, true, consumer);
+        multipleSmeltingRecipes("cooked_bat_chops", VDItems.RAW_BAT_CHOPS.get(), VDItems.COOKED_BAT_CHOPS.get(),
+                0.35F, true, true, true, consumer);
         multipleSmeltingRecipes("rice_bread", VDItems.RICE_DOUGH.get(), VDItems.RICE_BREAD.get(),
                 0.35F, true, true, false, consumer);
         multipleSmeltingRecipes("blood_bagel", VDItems.BLOOD_DOUGH.get(), VDItems.BLOOD_BAGEL.get(),

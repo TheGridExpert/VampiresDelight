@@ -56,6 +56,10 @@ public class VDCreativeTabs {
         event.accept(VDItems.RICE_BREAD);
         event.accept(VDItems.BLOOD_DOUGH);
         event.accept(VDItems.BLOOD_BAGEL);
+        event.accept(VDItems.RAW_BAT);
+        event.accept(VDItems.RAW_BAT_CHOPS);
+        event.accept(VDItems.COOKED_BAT);
+        event.accept(VDItems.COOKED_BAT_CHOPS);
         event.accept(VDItems.BLOOD_WINE_BOTTLE);
         event.accept(VDItems.WINE_GLASS);
         event.accept(VDItems.MULLED_WINE_GLASS);
@@ -73,6 +77,7 @@ public class VDCreativeTabs {
         event.accept(VDItems.SNOW_WHITE_ICE_CREAM);
 
         // Basic Meals
+        event.accept(VDItems.EYES_ON_STICK);
         event.accept(VDItems.EYE_CROISSANT);
         event.accept(VDItems.BAGEL_SANDWICH);
         event.accept(VDItems.FISH_BURGER);

@@ -2,8 +2,6 @@ package net.grid.vampiresdelight.common.item;
 
 import de.teamlapen.vampirism.VampirismMod;
 import de.teamlapen.vampirism.api.VReference;
-import de.teamlapen.vampirism.api.entity.factions.IFaction;
-import de.teamlapen.vampirism.api.items.IFactionExclusiveItem;
 import de.teamlapen.vampirism.core.ModEffects;
 import net.grid.vampiresdelight.common.utility.VDTextUtils;
 import net.grid.vampiresdelight.common.utility.VDTooltipUtils;
@@ -28,7 +26,7 @@ import vectorwing.farmersdelight.common.utility.TextUtils;
 
 import java.util.List;
 
-public class HunterConsumableItem extends Item implements IFactionExclusiveItem {
+public class HunterConsumableItem extends Item {
     private final boolean hasFoodEffectTooltip;
     private final boolean hasCustomTooltip;
 
@@ -49,17 +47,14 @@ public class HunterConsumableItem extends Item implements IFactionExclusiveItem 
         this.hasFoodEffectTooltip = hasFoodEffectTooltip;
         this.hasCustomTooltip = hasCustomTooltip;
     }
-
-    @Nullable
-    @Override
-    public IFaction<?> getExclusiveFaction(@NotNull ItemStack stack) {
-        return VReference.HUNTER_FACTION;
-    }
-
     @NotNull
     @Override
     public ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity consumer) {
         if (!level.isClientSide) {
+            if (consumer.hasEffect(ModEffects.SANGUINARE.get())) {
+                consumer.removeEffect(ModEffects.SANGUINARE.get());
+            }
+
             this.affectConsumer(stack, level, consumer);
         }
 
@@ -96,14 +91,11 @@ public class HunterConsumableItem extends Item implements IFactionExclusiveItem 
      * Override this to apply changes to the consumer (e.g. curing effects).
      */
     public void affectConsumer(ItemStack stack, Level level, LivingEntity consumer) {
-        if (consumer.hasEffect(ModEffects.SANGUINARE.get())) {
-            consumer.removeEffect(ModEffects.SANGUINARE.get());
-        }
     }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
+    public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
         if (Configuration.FOOD_EFFECT_TOOLTIP.get()) {
             if (this.hasCustomTooltip) {
                 MutableComponent textEmpty = VDTextUtils.getTranslation("tooltip." + this);

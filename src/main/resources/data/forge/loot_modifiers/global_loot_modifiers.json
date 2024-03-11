@@ -8,6 +8,8 @@
     "vampiresdelight:add_loot_hunter_outpost_tent",
     "vampiresdelight:add_loot_hunter_outpost_tower_food",
     "vampiresdelight:add_loot_hunter_outpost_tower_special",
+    "vampiresdelight:scavenging_cooked_bat",
+    "vampiresdelight:scavenging_raw_bat",
     "vampiresdelight:scavenging_eyes_from_humans"
   ]
 }

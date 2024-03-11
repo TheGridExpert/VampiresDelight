@@ -19,18 +19,18 @@ import java.util.function.Supplier;
 import static net.minecraft.world.level.storage.loot.LootTable.createStackSplitter;
 
 /**
- * The reason for making it a separate class is because of Configuration.
- * It has to be changed to VDConfiguration here.
-*/
-public class AddLootTableModifier extends LootModifier {
-    public static final Supplier<Codec<AddLootTableModifier>> CODEC = Suppliers.memoize(() ->
+ * Credits to Commoble for this implementation!
+ * VDAddLootTableModifier is Farmer's Delight's AddLootTableModifier adapted for Vampire's Delight
+ */
+public class VDAddLootTableModifier extends LootModifier {
+    public static final Supplier<Codec<VDAddLootTableModifier>> CODEC = Suppliers.memoize(() ->
             RecordCodecBuilder.create(inst -> codecStart(inst)
                     .and(ResourceLocation.CODEC.fieldOf("lootTable").forGetter((m) -> m.lootTable))
-                    .apply(inst, AddLootTableModifier::new)));
+                    .apply(inst, VDAddLootTableModifier::new)));
 
     private final ResourceLocation lootTable;
 
-    protected AddLootTableModifier(LootItemCondition[] conditionsIn, ResourceLocation lootTable) {
+    protected VDAddLootTableModifier(LootItemCondition[] conditionsIn, ResourceLocation lootTable) {
         super(conditionsIn);
         this.lootTable = lootTable;
     }

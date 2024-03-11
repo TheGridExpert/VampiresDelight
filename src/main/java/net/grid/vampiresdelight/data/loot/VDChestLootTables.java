@@ -4,6 +4,7 @@ import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.registry.VDEnchantments;
 import net.grid.vampiresdelight.common.registry.VDItems;
 import net.grid.vampiresdelight.common.registry.VDLootTables;
+import net.grid.vampiresdelight.common.registry.VDPotions;
 import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
@@ -13,6 +14,7 @@ import net.minecraft.world.level.storage.loot.entries.EmptyLootItem;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.EnchantRandomlyFunction;
 import net.minecraft.world.level.storage.loot.functions.EnchantWithLevelsFunction;
+import net.minecraft.world.level.storage.loot.functions.SetPotionFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import org.jetbrains.annotations.NotNull;
@@ -46,18 +48,12 @@ public class VDChestLootTables implements LootTableSubProvider {
 
     public void lootModifiers(BiConsumer<ResourceLocation, LootTable.Builder> output) {
         output.accept(new ResourceLocation(VampiresDelight.MODID, "chests/vd_vampire_dungeon"), LootTable.lootTable()
-                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
-                        .add(LootItem.lootTableItem(Items.BOOK).setWeight(3)
-                                .apply((new EnchantRandomlyFunction.Builder()).withEnchantment(VDEnchantments.VAMPIRE_BITE.get())))
-                        .add(EmptyLootItem.emptyItem().setWeight(8))
-                )
+                .withPool(vampiresBiteBookLoot(3, 8))
+                .withPool(clothesDissolvingLoot())
         );
         output.accept(new ResourceLocation(VampiresDelight.MODID, "chests/vd_vampire_hut"), LootTable.lootTable()
-                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
-                        .add(LootItem.lootTableItem(Items.BOOK).setWeight(3)
-                                .apply((new EnchantRandomlyFunction.Builder()).withEnchantment(VDEnchantments.VAMPIRE_BITE.get())))
-                        .add(EmptyLootItem.emptyItem().setWeight(8))
-                )
+                .withPool(vampiresBiteBookLoot(3, 8))
+                .withPool(clothesDissolvingLoot())
                 .withPool(LootPool.lootPool().setRolls(UniformGenerator.between(5, 8))
                         .add(LootItem.lootTableItem(VDItems.ORCHID_COOKIE.get()).setWeight(10))
                         .add(LootItem.lootTableItem(VDItems.ORCHID_TEA.get()).setWeight(3))
@@ -72,18 +68,12 @@ public class VDChestLootTables implements LootTableSubProvider {
                 )
         );
         output.accept(new ResourceLocation(VampiresDelight.MODID, "chests/vd_altar"), LootTable.lootTable()
-                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
-                        .add(LootItem.lootTableItem(Items.BOOK).setWeight(6)
-                                .apply((new EnchantRandomlyFunction.Builder()).withEnchantment(VDEnchantments.VAMPIRE_BITE.get())))
-                        .add(EmptyLootItem.emptyItem().setWeight(4))
-                )
+                .withPool(vampiresBiteBookLoot(6, 4))
+                .withPool(clothesDissolvingLoot())
         );
         output.accept(new ResourceLocation(VampiresDelight.MODID, "chests/vd_crypt"), LootTable.lootTable()
-                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
-                        .add(LootItem.lootTableItem(Items.BOOK).setWeight(3)
-                                .apply((new EnchantRandomlyFunction.Builder()).withEnchantment(VDEnchantments.VAMPIRE_BITE.get())))
-                        .add(EmptyLootItem.emptyItem().setWeight(4))
-                )
+                .withPool(vampiresBiteBookLoot(3, 4))
+                .withPool(clothesDissolvingLoot())
         );
         output.accept(new ResourceLocation(VampiresDelight.MODID, "chests/vd_hunter_outpost_tent"), LootTable.lootTable()
                 .withPool(LootPool.lootPool().setRolls(UniformGenerator.between(5, 8))
@@ -103,5 +93,19 @@ public class VDChestLootTables implements LootTableSubProvider {
                         .add(EmptyLootItem.emptyItem().setWeight(4))
                 )
         );
+    }
+
+    public static LootPool.Builder vampiresBiteBookLoot(int bookWeight, int emptyWeight) {
+        return LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                .add(LootItem.lootTableItem(Items.BOOK).setWeight(bookWeight)
+                        .apply((new EnchantRandomlyFunction.Builder()).withEnchantment(VDEnchantments.VAMPIRE_BITE.get())))
+                .add(EmptyLootItem.emptyItem().setWeight(emptyWeight));
+    }
+
+    public static LootPool.Builder clothesDissolvingLoot() {
+        return LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                .add(LootItem.lootTableItem(Items.SPLASH_POTION).setWeight(1)
+                        .apply(SetPotionFunction.setPotion(VDPotions.CLOTHES_DISSOLVING.get())))
+                .add(EmptyLootItem.emptyItem().setWeight(49));
     }
 }

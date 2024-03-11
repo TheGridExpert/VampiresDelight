@@ -2,9 +2,7 @@ package net.grid.vampiresdelight.common.item;
 
 import de.teamlapen.vampirism.VampirismMod;
 import de.teamlapen.vampirism.api.VReference;
-import de.teamlapen.vampirism.api.entity.factions.IFaction;
 import de.teamlapen.vampirism.api.entity.vampire.IVampire;
-import de.teamlapen.vampirism.api.items.IFactionExclusiveItem;
 import de.teamlapen.vampirism.entity.player.vampire.VampirePlayer;
 import de.teamlapen.vampirism.entity.vampire.DrinkBloodContext;
 import de.teamlapen.vampirism.util.Helper;
@@ -32,7 +30,7 @@ import net.minecraft.network.chat.Component;
 import java.util.List;
 import java.util.Objects;
 
-public class VampireConsumableItem extends Item implements IFactionExclusiveItem {
+public class VampireConsumableItem extends Item {
     private final FoodProperties vampireFood;
     private final boolean hasFoodEffectTooltip;
     private final boolean hasHumanFoodEffectTooltip;
@@ -68,12 +66,6 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
         this.hasFoodEffectTooltip = hasFoodEffectTooltip;
         this.hasHumanFoodEffectTooltip = hasHumanFoodEffectTooltip;
         this.hasCustomTooltip = hasCustomTooltip;
-    }
-
-    @Nullable
-    @Override
-    public IFaction<?> getExclusiveFaction(@NotNull ItemStack stack) {
-        return VReference.VAMPIRE_FACTION;
     }
 
     @NotNull
@@ -135,7 +127,7 @@ public class VampireConsumableItem extends Item implements IFactionExclusiveItem
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
+    public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
         Player player = VampirismMod.proxy.getClientPlayer();
         assert player != null;
 

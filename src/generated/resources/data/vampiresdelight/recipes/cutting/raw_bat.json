@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "vampiresdelight:raw_bat"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "vampiresdelight:raw_bat_chops"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

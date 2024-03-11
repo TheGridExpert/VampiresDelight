@@ -15,7 +15,7 @@ public class HardtackItem extends ConsumableItem {
     }
 
     @Override
-    public void affectConsumer(ItemStack stack, Level level, LivingEntity consumer) {
+    public void affectConsumer(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity consumer) {
         if (Helper.isHunter(consumer)) {
             consumer.addEffect(new MobEffectInstance(ModEffects.SATURATION.get(), 200));
         }

@@ -1,8 +1,5 @@
 package net.grid.vampiresdelight.common.item;
 
-import de.teamlapen.vampirism.api.VReference;
-import de.teamlapen.vampirism.api.entity.factions.IFaction;
-import de.teamlapen.vampirism.api.items.IFactionExclusiveItem;
 import net.grid.vampiresdelight.common.registry.VDItems;
 import net.grid.vampiresdelight.common.registry.VDSounds;
 import net.minecraft.MethodsReturnNonnullByDefault;
@@ -24,7 +21,6 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.util.FakePlayer;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
@@ -33,7 +29,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
  */
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
-public class BloodWineBottleItem extends Item implements IFactionExclusiveItem {
+public class BloodWineBottleItem extends Item {
 
     public static final int SERVINGS = 4;
 
@@ -164,11 +160,5 @@ public class BloodWineBottleItem extends Item implements IFactionExclusiveItem {
     @Override
     public boolean hasCraftingRemainingItem(ItemStack stack) {
         return true;
-    }
-
-    @Nullable
-    @Override
-    public IFaction<?> getExclusiveFaction(@NotNull ItemStack stack) {
-        return VReference.VAMPIRE_FACTION;
     }
 }

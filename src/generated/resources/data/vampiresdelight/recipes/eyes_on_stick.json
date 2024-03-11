@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "vampiresdelight:human_eye"
+    },
+    {
+      "item": "vampiresdelight:human_eye"
+    },
+    {
+      "tag": "forge:crops/tomato"
+    },
+    [
+      {
+        "item": "minecraft:brown_mushroom"
+      },
+      {
+        "item": "minecraft:red_mushroom"
+      }
+    ],
+    {
+      "item": "minecraft:stick"
+    }
+  ],
+  "result": {
+    "item": "vampiresdelight:eyes_on_stick"
+  }
+}

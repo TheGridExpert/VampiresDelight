@@ -110,6 +110,14 @@ public class VDItems {
             () -> new VampireConsumableItem(foodItem(VDFoodValues.NASTY_BLOOD_DOUGH), VDFoodValues.BLOOD_DOUGH, false));
     public static final RegistryObject<Item> BLOOD_BAGEL = ITEMS.register("blood_bagel",
             () -> new VampireConsumableItem(foodItem(VDFoodValues.NASTY), VDFoodValues.BLOOD_BAGEL));
+    public static final RegistryObject<Item> RAW_BAT = ITEMS.register("raw_bat",
+            () -> new VampireConsumableItem(foodItem(VDFoodValues.RAW_BAT), VDFoodValues.RAW_BAT));
+    public static final RegistryObject<Item> RAW_BAT_CHOPS = ITEMS.register("raw_bat_chops",
+            () -> new VampireConsumableItem(foodItem(VDFoodValues.RAW_BAT_CHOPS), VDFoodValues.RAW_BAT_CHOPS));
+    public static final RegistryObject<Item> COOKED_BAT = ITEMS.register("cooked_bat",
+            () -> new VampireConsumableItem(foodItem(VDFoodValues.GRILLED_BAT_HUMAN), VDFoodValues.GRILLED_BAT_VAMPIRE));
+    public static final RegistryObject<Item> COOKED_BAT_CHOPS = ITEMS.register("cooked_bat_chops",
+            () -> new VampireConsumableItem(foodItem(VDFoodValues.GRILLED_BAT_CHOPS_HUMAN), VDFoodValues.GRILLED_BAT_CHOPS_VAMPIRE));
     public static final RegistryObject<Item> BLOOD_WINE_BOTTLE = ITEMS.register("blood_wine_bottle",
             () -> new BloodWineBottleItem(basicItem()));
     public static final RegistryObject<Item> WINE_GLASS = ITEMS.register("wine_glass",
@@ -142,6 +150,8 @@ public class VDItems {
     // Basic Meals
     public static final RegistryObject<Item> FISH_BURGER = ITEMS.register("fish_burger",
             () -> new HunterConsumableItem(foodItem(VDFoodValues.FISH_BURGER)));
+    public static final RegistryObject<Item> EYES_ON_STICK = ITEMS.register("eyes_on_stick",
+            () -> new VampireConsumableItem(foodItem(VDFoodValues.NASTY), VDFoodValues.EYES_ON_STICK));
     public static final RegistryObject<Item> EYE_CROISSANT = ITEMS.register("eye_croissant",
             () -> new VampireConsumableItem(foodItem(VDFoodValues.NASTY), VDFoodValues.EYE_CROISSANT));
     public static final RegistryObject<Item> BAGEL_SANDWICH = ITEMS.register("bagel_sandwich",

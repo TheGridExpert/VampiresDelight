@@ -3,8 +3,6 @@ package net.grid.vampiresdelight;
 import net.grid.vampiresdelight.client.ClientSetup;
 import net.grid.vampiresdelight.common.CommonSetup;
 import net.grid.vampiresdelight.common.VDConfiguration;
-import net.grid.vampiresdelight.common.event.PlayerEventHandler;
-import net.grid.vampiresdelight.common.event.PlayerInteractEventHandler;
 import net.grid.vampiresdelight.common.registry.*;
 import net.minecraft.world.inventory.RecipeBookType;
 import net.minecraftforge.common.MinecraftForge;
