@@ -44,6 +44,7 @@
   "item.vampiresdelight.heart_pieces": "Heart Pieces",
   "item.vampiresdelight.human_eye": "Human Eye",
   "item.vampiresdelight.eye_croissant": "Eye Croissant",
+  "item.vampiresdelight.eyes_on_stick": "Eyes on Stick",
   "item.vampiresdelight.blood_syrup": "Blood Syrup",
   "item.vampiresdelight.blood_dough": "Blood Dough",
   "item.vampiresdelight.blood_bagel": "Blood Bagel",
@@ -108,6 +109,8 @@
   "vampiresdelight.container.brewing_barrel.poured_into": "Poured into: %s",
   "vampiresdelight.tooltip.brewing_barrel.single_serving": "Holds 1 serving of:",
   "vampiresdelight.tooltip.brewing_barrel.many_servings": "Holds %s servings of:",
+
+  "vampiresdelight.jei.pouring": "Pouring",
 
   "stat.vampiresdelight.gross_food_eaten": "Gross Food Eaten"
 }

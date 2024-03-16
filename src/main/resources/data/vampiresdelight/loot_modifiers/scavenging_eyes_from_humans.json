@@ -1,5 +1,5 @@
 {
-  "type": "vampiresdelight:add_item",
+  "type": "farmersdelight:add_item",
   "conditions": [
     {
       "condition": "minecraft:entity_properties",
