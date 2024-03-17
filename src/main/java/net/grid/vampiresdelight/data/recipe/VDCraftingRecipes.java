@@ -4,6 +4,7 @@ import de.teamlapen.vampirism.core.ModBlocks;
 import de.teamlapen.vampirism.core.ModItems;
 import de.teamlapen.vampirism.core.ModTags;
 import de.teamlapen.vampirism.data.recipebuilder.AlchemyTableRecipeBuilder;
+import de.teamlapen.vampirism.data.recipebuilder.ShapedWeaponTableRecipeBuilder;
 import de.teamlapen.vampirism.data.recipebuilder.ShapelessWeaponTableRecipeBuilder;
 import de.teamlapen.vampirism.util.NBTIngredient;
 import net.grid.vampiresdelight.common.registry.*;
@@ -397,12 +398,19 @@ public class VDCraftingRecipes {
     // Vampirism
     private static void recipesWeaponTable(Consumer<FinishedRecipe> consumer) {
         ShapelessWeaponTableRecipeBuilder.shapelessWeaponTable(RecipeCategory.COMBAT, VDItems.ALCHEMICAL_COCKTAIL.get())
-                .lava(1)
                 .requires(Items.GLASS_BOTTLE)
                 .requires(ModItems.ITEM_ALCHEMICAL_FIRE.get(), 2)
                 .unlockedBy("has_alchemical_fire", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.ITEM_ALCHEMICAL_FIRE.get()))
                 .save(consumer);
-
+        ShapedWeaponTableRecipeBuilder.shapedWeaponTable(RecipeCategory.COMBAT, VDBlocks.SPIRIT_LANTERN.get())
+                .pattern(" gg ")
+                .pattern("gssg")
+                .pattern("gssg")
+                .pattern(" gg ")
+                .define('g', Items.GOLD_NUGGET)
+                .define('s', ModItems.SOUL_ORB_VAMPIRE.get())
+                .unlockedBy("has_vampire_soul", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SOUL_ORB_VAMPIRE.get()))
+                .save(consumer);
     }
 
     private static void recipesAlchemyTable(Consumer<FinishedRecipe> consumer) {
