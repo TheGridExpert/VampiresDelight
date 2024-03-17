@@ -1,6 +1,5 @@
 package net.grid.vampiresdelight.common.registry;
 
-import de.teamlapen.vampirism.core.ModBlocks;
 import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.block.*;
 import net.minecraft.world.effect.MobEffects;
