@@ -1,5 +1,6 @@
 package net.grid.vampiresdelight.common.item.enchantment;
 
+import de.teamlapen.vampirism.items.VampirismVampireSwordItem;
 import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.registry.VDEnchantments;
 import net.minecraft.util.RandomSource;
@@ -60,7 +61,7 @@ public class VampireBiteEnchantment extends Enchantment {
 
     @Override
     public boolean canApplyAtEnchantingTable(@NotNull ItemStack stack) {
-        return false;
+        return stack.getItem() instanceof VampirismVampireSwordItem;
     }
 
     @Override
