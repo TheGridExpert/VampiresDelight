@@ -1,5 +1,6 @@
 package net.grid.vampiresdelight.common.registry;
 
+import de.teamlapen.vampirism.core.ModBlocks;
 import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.block.*;
 import net.minecraft.world.effect.MobEffects;
@@ -22,7 +23,13 @@ public class VDBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, VampiresDelight.MODID);
 
+    private static ToIntFunction<BlockState> litBlockEmission(int lightValue) {
+        return (state) -> state.getValue(BlockStateProperties.LIT) ? lightValue : 0;
+    }
+
     // Workstations
+    public static final RegistryObject<Block> DARK_STONE_STOVE = BLOCKS.register("dark_stone_stove",
+            () -> new DarkStoneStoveBlock(BlockBehaviour.Properties.of().mapColor(MapColor.DEEPSLATE).requiresCorrectToolForDrops().strength(2f, 10f).sound(SoundType.STONE).lightLevel(litBlockEmission(13))));
     public static final RegistryObject<Block> BREWING_BARREL = BLOCKS.register("brewing_barrel",
             () -> new BrewingBarrelBlock(Block.Properties.copy(Blocks.BARREL)));
 

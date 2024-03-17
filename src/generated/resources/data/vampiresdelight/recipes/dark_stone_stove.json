@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:campfire"
+    },
+    "d": {
+      "tag": "vampirism:dark_stone"
+    },
+    "i": {
+      "tag": "forge:ingots/iron"
+    }
+  },
+  "pattern": [
+    "iii",
+    "d d",
+    "dCd"
+  ],
+  "result": {
+    "item": "vampiresdelight:dark_stone_stove"
+  },
+  "show_notification": true
+}

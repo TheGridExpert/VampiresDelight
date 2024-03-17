@@ -21,6 +21,7 @@ import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.registries.ForgeRegistries;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import org.jetbrains.annotations.NotNull;
@@ -56,6 +57,15 @@ public class VDCraftingRecipes {
 
     // Crafting
     private static void recipesBlocks(Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, VDBlocks.DARK_STONE_STOVE.get())
+                .pattern("iii")
+                .pattern("d d")
+                .pattern("dCd")
+                .define('i', Tags.Items.INGOTS_IRON)
+                .define('d', ModTags.Items.DARK_STONE)
+                .define('C', Blocks.CAMPFIRE)
+                .unlockedBy("has_campfire", InventoryChangeTrigger.TriggerInstance.hasItems(Blocks.CAMPFIRE))
+                .save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, VDBlocks.DARK_SPRUCE_CABINET.get())
                 .pattern("___")
                 .pattern("D D")

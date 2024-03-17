@@ -13,6 +13,7 @@ import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import vectorwing.farmersdelight.common.tag.CompatibilityTags;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.concurrent.CompletableFuture;
@@ -56,10 +57,15 @@ public class VDBlockTags extends BlockTagsProvider {
                 VDBlocks.WARPED_WINE_SHELF.get(),
                 VDBlocks.CURSED_SPRUCE_WINE_SHELF.get(),
                 VDBlocks.DARK_SPRUCE_WINE_SHELF.get(),
-                VDBlocks.BREWING_BARREL.get());
+                VDBlocks.BREWING_BARREL.get()
+        );
         tag(ModTags.MINEABLE_WITH_KNIFE).add(
                 VDBlocks.BLOOD_PIE.get(),
-                VDBlocks.WEIRD_JELLY_BLOCK.get());
+                VDBlocks.WEIRD_JELLY_BLOCK.get()
+        );
+        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
+                VDBlocks.DARK_STONE_STOVE.get()
+        );
         tag(BlockTags.MINEABLE_WITH_SHOVEL).add(
                 VDBlocks.CURSED_FARMLAND.get());
     }
@@ -76,9 +82,14 @@ public class VDBlockTags extends BlockTagsProvider {
                 VDBlocks.WILD_GARLIC.get());
         tag(ModTags.STRAW_BLOCKS).add(
                 VDBlocks.ORCHID_BAG.get());
+        tag(ModTags.HEAT_SOURCES).add(
+                VDBlocks.DARK_STONE_STOVE.get()
+        );
     }
 
     private void registerCompatibilityTags() {
+        tag(CompatibilityTags.CREATE_PASSIVE_BOILER_HEATERS).add(
+                VDBlocks.DARK_STONE_STOVE.get());
         tag(VDCompatibilityTags.SERENE_SEASONS_AUTUMN_CROPS_BLOCK).add(
                 ModBlocks.GARLIC.get());
         tag(VDCompatibilityTags.SERENE_SEASONS_SUMMER_CROPS_BLOCK).add(

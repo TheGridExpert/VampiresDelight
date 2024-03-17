@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "vampiresdelight:block/dark_stone_stove_bottom",
+    "front": "vampiresdelight:block/dark_stone_stove_front",
+    "side": "vampiresdelight:block/dark_stone_stove_side",
+    "top": "vampiresdelight:block/dark_stone_stove_top"
+  }
+}

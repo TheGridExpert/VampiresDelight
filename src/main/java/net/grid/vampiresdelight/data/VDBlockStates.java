@@ -2,6 +2,7 @@ package net.grid.vampiresdelight.data;
 
 import de.teamlapen.vampirism.blocks.GarlicBlock;
 import net.grid.vampiresdelight.VampiresDelight;
+import net.grid.vampiresdelight.common.block.DarkStoneStoveBlock;
 import net.grid.vampiresdelight.common.block.VampireOrchidCropBlock;
 import net.grid.vampiresdelight.common.registry.VDBlocks;
 import net.minecraft.data.DataGenerator;
@@ -18,6 +19,7 @@ import net.minecraft.world.level.block.Block;
 import vectorwing.farmersdelight.common.block.BuddingTomatoBlock;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 import vectorwing.farmersdelight.common.block.FeastBlock;
+import vectorwing.farmersdelight.common.block.StoveBlock;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
 
 import javax.annotation.Nullable;
@@ -49,6 +51,17 @@ public class VDBlockStates extends BlockStateProvider {
         this.cabinetBlock(VDBlocks.CURSED_SPRUCE_CABINET.get(), "cursed_spruce");
 
         this.wildCropBlock(VDBlocks.WILD_GARLIC.get());
+
+        this.horizontalBlock(VDBlocks.DARK_STONE_STOVE.get(), state -> {
+            String name = blockName(VDBlocks.DARK_STONE_STOVE.get());
+            String suffix = state.getValue(DarkStoneStoveBlock.LIT) ? "_on" : "";
+
+            return models().orientableWithBottom(name + suffix,
+                    resourceBlock(name + "_side"),
+                    resourceBlock(name + "_front" + suffix),
+                    resourceBlock(name + "_bottom"),
+                    resourceBlock(name + "_top" + suffix));
+        });
 
         getVariantBuilder(VDBlocks.VAMPIRE_ORCHID_CROP.get())
                 .partialState().with(VampireOrchidCropBlock.AGE, 0).modelForState().modelFile(models().getExistingFile(modLoc("vampire_orchid_crop_stage0"))).addModel()

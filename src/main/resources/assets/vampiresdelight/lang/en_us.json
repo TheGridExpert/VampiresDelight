@@ -1,4 +1,5 @@
 {
+  "block.vampiresdelight.dark_stone_stove": "Dark Stone Stove",
   "block.vampiresdelight.brewing_barrel": "Brewing Barrel",
   "block.vampiresdelight.garlic_crate": "Garlic Crate",
   "block.vampiresdelight.orchid_bag": "Orchid Bag",
@@ -99,6 +100,8 @@
 
   "vampiresdelight.tooltip.orchid_tea": "Infects With Sanguinare",
   "vampiresdelight.tooltip.cursed_cupcake": "Clears Garlic Effect",
+
+  "itemGroup.vampiresdelight": "Vampire's Delight",
 
   "vampiresdelight.container.recipe_book.fermentable": "Showing Fermentable",
   "vampiresdelight.container.brewing_barrel": "Brewing Barrel",

@@ -1,94 +1,105 @@
 package net.grid.vampiresdelight.common.registry;
 
 import net.grid.vampiresdelight.VampiresDelight;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import vectorwing.farmersdelight.common.registry.ModCreativeTabs;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.RegistryObject;
 
 @Mod.EventBusSubscriber(modid = VampiresDelight.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class VDCreativeTabs {
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, VampiresDelight.MODID);
+
+    public static final RegistryObject<CreativeModeTab> TAB_VAMPIRES_DELIGHT = CREATIVE_TABS.register(VampiresDelight.MODID,
+            () -> CreativeModeTab.builder()
+                    .title(Component.translatable("itemGroup.vampiresdelight"))
+                    .icon(() -> new ItemStack(VDBlocks.DARK_STONE_STOVE.get()))
+                    .displayItems((displayParams, output) -> {
+                        // Blocks
+                        output.accept(VDItems.DARK_STONE_STOVE.get());
+                        //output.accept(VDItems.BREWING_BARREL.get());
+                        output.accept(VDItems.GARLIC_CRATE.get());
+                        output.accept(VDItems.ORCHID_BAG.get());
+                        output.accept(VDItems.DARK_SPRUCE_CABINET.get());
+                        output.accept(VDItems.CURSED_SPRUCE_CABINET.get());
+                        output.accept(VDItems.CURSED_FARMLAND.get());
+                        output.accept(VDItems.OAK_WINE_SHELF.get());
+                        output.accept(VDItems.SPRUCE_WINE_SHELF.get());
+                        output.accept(VDItems.BIRCH_WINE_SHELF.get());
+                        output.accept(VDItems.JUNGLE_WINE_SHELF.get());
+                        output.accept(VDItems.ACACIA_WINE_SHELF.get());
+                        output.accept(VDItems.DARK_OAK_WINE_SHELF.get());
+                        output.accept(VDItems.MANGROVE_WINE_SHELF.get());
+                        output.accept(VDItems.CHERRY_WINE_SHELF.get());
+                        output.accept(VDItems.BAMBOO_WINE_SHELF.get());
+                        output.accept(VDItems.CRIMSON_WINE_SHELF.get());
+                        output.accept(VDItems.WARPED_WINE_SHELF.get());
+                        output.accept(VDItems.CURSED_SPRUCE_WINE_SHELF.get());
+                        output.accept(VDItems.DARK_SPRUCE_WINE_SHELF.get());
+                        output.accept(VDItems.SPIRIT_LANTERN.get());
+
+                        // Farming
+                        output.accept(VDItems.WILD_GARLIC.get());
+                        output.accept(VDItems.ORCHID_SEEDS.get());
+
+                        // Foodstuffs
+                        output.accept(VDItems.GRILLED_GARLIC.get());
+                        output.accept(VDItems.BLOOD_SYRUP.get());
+                        output.accept(VDItems.ORCHID_TEA.get());
+                        output.accept(VDItems.ORCHID_PETALS.get());
+                        output.accept(VDItems.SUGARED_BERRIES.get());
+                        output.accept(VDItems.HEART_PIECES.get());
+                        output.accept(VDItems.HUMAN_EYE.get());
+                        output.accept(VDItems.RICE_DOUGH.get());
+                        output.accept(VDItems.RICE_BREAD.get());
+                        output.accept(VDItems.BLOOD_DOUGH.get());
+                        output.accept(VDItems.BLOOD_BAGEL.get());
+                        output.accept(VDItems.RAW_BAT.get());
+                        output.accept(VDItems.RAW_BAT_CHOPS.get());
+                        output.accept(VDItems.COOKED_BAT.get());
+                        output.accept(VDItems.COOKED_BAT_CHOPS.get());
+                        output.accept(VDItems.BLOOD_WINE_BOTTLE.get());
+                        output.accept(VDItems.WINE_GLASS.get());
+                        output.accept(VDItems.MULLED_WINE_GLASS.get());
+                        output.accept(VDItems.BLOOD_PIE.get());
+                        output.accept(VDItems.BLOOD_PIE_SLICE.get());
+
+                        // Sweets
+                        output.accept(VDItems.PURE_SORBET.get());
+                        output.accept(VDItems.ORCHID_COOKIE.get());
+                        output.accept(VDItems.ORCHID_ECLAIR.get());
+                        output.accept(VDItems.ORCHID_ICE_CREAM.get());
+                        output.accept(VDItems.TRICOLOR_DANGO.get());
+                        output.accept(VDItems.CURSED_CUPCAKE.get());
+                        output.accept(VDItems.DARK_ICE_CREAM.get());
+                        output.accept(VDItems.SNOW_WHITE_ICE_CREAM.get());
+
+                        // Basic Meals
+                        output.accept(VDItems.EYES_ON_STICK.get());
+                        output.accept(VDItems.EYE_CROISSANT.get());
+                        output.accept(VDItems.BAGEL_SANDWICH.get());
+                        output.accept(VDItems.FISH_BURGER.get());
+                        output.accept(VDItems.HARDTACK.get());
+
+                        // Soups and Stews
+                        output.accept(VDItems.GARLIC_SOUP.get());
+                        output.accept(VDItems.BORSCHT.get());
+
+                        // Feasts
+                        output.accept(VDItems.WEIRD_JELLY_BLOCK.get());
+                        output.accept(VDItems.WEIRD_JELLY.get());
+                    })
+                    .build());
+
     @SubscribeEvent
     public static void addItemsToCreativeTab(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTab() == ModCreativeTabs.TAB_FARMERS_DELIGHT.get())
-            addItemsToFDCreativeTab(event);
         if (event.getTabKey() == CreativeModeTabs.COMBAT)
             event.accept(VDItems.ALCHEMICAL_COCKTAIL);
-    }
-
-    private static void addItemsToFDCreativeTab(BuildCreativeModeTabContentsEvent event) {
-        // Blocks
-        //event.accept(VDItems.BREWING_BARREL);
-        event.accept(VDItems.GARLIC_CRATE);
-        event.accept(VDItems.ORCHID_BAG);
-        event.accept(VDItems.SPIRIT_LANTERN);
-        event.accept(VDItems.DARK_SPRUCE_CABINET);
-        event.accept(VDItems.CURSED_SPRUCE_CABINET);
-        event.accept(VDItems.CURSED_FARMLAND);
-        event.accept(VDItems.OAK_WINE_SHELF);
-        event.accept(VDItems.SPRUCE_WINE_SHELF);
-        event.accept(VDItems.BIRCH_WINE_SHELF);
-        event.accept(VDItems.JUNGLE_WINE_SHELF);
-        event.accept(VDItems.ACACIA_WINE_SHELF);
-        event.accept(VDItems.DARK_OAK_WINE_SHELF);
-        event.accept(VDItems.MANGROVE_WINE_SHELF);
-        event.accept(VDItems.CHERRY_WINE_SHELF);
-        event.accept(VDItems.BAMBOO_WINE_SHELF);
-        event.accept(VDItems.CRIMSON_WINE_SHELF);
-        event.accept(VDItems.WARPED_WINE_SHELF);
-        event.accept(VDItems.CURSED_SPRUCE_WINE_SHELF);
-        event.accept(VDItems.DARK_SPRUCE_WINE_SHELF);
-
-        // Farming
-        event.accept(VDItems.WILD_GARLIC);
-        event.accept(VDItems.ORCHID_SEEDS);
-
-        // Foodstuffs
-        event.accept(VDItems.GRILLED_GARLIC);
-        event.accept(VDItems.BLOOD_SYRUP);
-        event.accept(VDItems.ORCHID_TEA);
-        event.accept(VDItems.ORCHID_PETALS);
-        event.accept(VDItems.SUGARED_BERRIES);
-        event.accept(VDItems.HEART_PIECES);
-        event.accept(VDItems.HUMAN_EYE);
-        event.accept(VDItems.RICE_DOUGH);
-        event.accept(VDItems.RICE_BREAD);
-        event.accept(VDItems.BLOOD_DOUGH);
-        event.accept(VDItems.BLOOD_BAGEL);
-        event.accept(VDItems.RAW_BAT);
-        event.accept(VDItems.RAW_BAT_CHOPS);
-        event.accept(VDItems.COOKED_BAT);
-        event.accept(VDItems.COOKED_BAT_CHOPS);
-        event.accept(VDItems.BLOOD_WINE_BOTTLE);
-        event.accept(VDItems.WINE_GLASS);
-        event.accept(VDItems.MULLED_WINE_GLASS);
-        event.accept(VDItems.BLOOD_PIE);
-        event.accept(VDItems.BLOOD_PIE_SLICE);
-
-        // Sweets
-        event.accept(VDItems.PURE_SORBET);
-        event.accept(VDItems.ORCHID_COOKIE);
-        event.accept(VDItems.ORCHID_ECLAIR);
-        event.accept(VDItems.ORCHID_ICE_CREAM);
-        event.accept(VDItems.TRICOLOR_DANGO);
-        event.accept(VDItems.CURSED_CUPCAKE);
-        event.accept(VDItems.DARK_ICE_CREAM);
-        event.accept(VDItems.SNOW_WHITE_ICE_CREAM);
-
-        // Basic Meals
-        event.accept(VDItems.EYES_ON_STICK);
-        event.accept(VDItems.EYE_CROISSANT);
-        event.accept(VDItems.BAGEL_SANDWICH);
-        event.accept(VDItems.FISH_BURGER);
-        event.accept(VDItems.HARDTACK);
-
-        // Soups and Stews
-        event.accept(VDItems.GARLIC_SOUP);
-        event.accept(VDItems.BORSCHT);
-
-        // Feasts
-        event.accept(VDItems.WEIRD_JELLY_BLOCK);
-        event.accept(VDItems.WEIRD_JELLY);
     }
 }
