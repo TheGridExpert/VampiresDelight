@@ -34,12 +34,12 @@ public class VDItemModels extends ItemModelProvider {
         Set<Item> specialItems = Sets.newHashSet(
                 VDItems.ORCHID_TEA.get(),
                 VDItems.WINE_GLASS.get(),
-                VDItems.MULLED_WINE_GLASS.get());
+                VDItems.MULLED_WINE_GLASS.get(),
+                VDItems.SPIRIT_LANTERN.get());
         takeAll(items, specialItems.toArray(new Item[0])).forEach(items::remove);
 
         // Blocks with special item sprites
         Set<Item> spriteBlockItems = Sets.newHashSet(
-                VDItems.SPIRIT_LANTERN.get(),
                 VDItems.BLOOD_PIE.get(),
                 VDItems.ORCHID_SEEDS.get(),
                 VDItems.WEIRD_JELLY_BLOCK.get()

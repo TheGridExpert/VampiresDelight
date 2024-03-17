@@ -1,0 +1,42 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_skill": {
+      "conditions": {
+        "skill": "vampirism:weapon_table"
+      },
+      "trigger": "vampirism:skill_unlocked"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vampiresdelight:weapontable/spirit_lantern"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_vampire_soul": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "vampirism:soul_orb_vampire"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_vampire_soul",
+      "has_skill",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vampiresdelight:weapontable/spirit_lantern"
+    ]
+  },
+  "sends_telemetry_event": false
+}
