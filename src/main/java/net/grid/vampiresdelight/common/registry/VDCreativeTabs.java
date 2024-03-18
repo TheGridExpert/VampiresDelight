@@ -81,6 +81,8 @@ public class VDCreativeTabs {
                         output.accept(VDItems.SNOW_WHITE_ICE_CREAM.get());
 
                         // Basic Meals
+                        output.accept(VDItems.BLOOD_SAUSAGE.get());
+                        output.accept(VDItems.BLOOD_HOT_DOG.get());
                         output.accept(VDItems.EYES_ON_STICK.get());
                         output.accept(VDItems.EYE_CROISSANT.get());
                         output.accept(VDItems.BAGEL_SANDWICH.get());

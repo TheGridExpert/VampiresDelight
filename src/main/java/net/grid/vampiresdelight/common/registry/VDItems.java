@@ -152,6 +152,10 @@ public class VDItems {
     // Basic Meals
     public static final RegistryObject<Item> FISH_BURGER = ITEMS.register("fish_burger",
             () -> new HunterConsumableItem(foodItem(VDFoodValues.FISH_BURGER)));
+    public static final RegistryObject<Item> BLOOD_SAUSAGE = ITEMS.register("blood_sausage",
+            () -> new VampireConsumableItem(foodItem(VDFoodValues.NASTY), VDFoodValues.BLOOD_SAUSAGE));
+    public static final RegistryObject<Item> BLOOD_HOT_DOG = ITEMS.register("blood_hot_dog",
+            () -> new VampireConsumableItem(foodItem(VDFoodValues.NASTY), VDFoodValues.BLOOD_HOT_DOG));
     public static final RegistryObject<Item> EYES_ON_STICK = ITEMS.register("eyes_on_stick",
             () -> new VampireConsumableItem(foodItem(VDFoodValues.NASTY), VDFoodValues.EYES_ON_STICK));
     public static final RegistryObject<Item> EYE_CROISSANT = ITEMS.register("eye_croissant",

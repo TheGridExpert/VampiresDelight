@@ -113,6 +113,10 @@ public class VDFoodValues {
             .nutrition(5).saturationMod(0.6F).build();
     public static final FoodProperties FISH_BURGER = (new FoodProperties.Builder())
             .nutrition(10).saturationMod(0.8f).build();
+    public static final FoodProperties BLOOD_SAUSAGE = (new FoodProperties.Builder())
+            .nutrition(9).saturationMod(0.8f).build();
+    public static final FoodProperties BLOOD_HOT_DOG = (new FoodProperties.Builder())
+            .nutrition(13).saturationMod(0.9f).build();
     public static final FoodProperties BLOOD_BAGEL = (new FoodProperties.Builder())
             .nutrition(6).saturationMod(0.7f).build();
     public static final FoodProperties BAGEL_SANDWICH = (new FoodProperties.Builder())

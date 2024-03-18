@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "vampiresdelight:blood_syrup"
+    },
+    {
+      "tag": "forge:vegetables/onion"
+    },
+    [
+      {
+        "tag": "forge:cooked_beef"
+      },
+      {
+        "tag": "forge:cooked_chicken"
+      },
+      {
+        "tag": "forge:cooked_mutton"
+      },
+      {
+        "tag": "forge:cooked_pork"
+      }
+    ]
+  ],
+  "result": {
+    "item": "vampiresdelight:blood_sausage"
+  }
+}

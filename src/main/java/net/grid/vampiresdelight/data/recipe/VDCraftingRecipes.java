@@ -337,6 +337,22 @@ public class VDCraftingRecipes {
                 .requires(VDForgeTags.VEGETABLES_GARLIC)
                 .unlockedBy("has_garlic", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.ITEM_GARLIC.get()))
                 .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.BLOOD_SAUSAGE.get())
+                .requires(VDItems.BLOOD_SYRUP.get())
+                .requires(ForgeTags.VEGETABLES_ONION)
+                .requires(Ingredient.fromValues(Stream.of(
+                        new Ingredient.TagValue(ForgeTags.COOKED_BEEF),
+                        new Ingredient.TagValue(ForgeTags.COOKED_CHICKEN),
+                        new Ingredient.TagValue(ForgeTags.COOKED_MUTTON),
+                        new Ingredient.TagValue(ForgeTags.COOKED_PORK)
+                )))
+                .unlockedBy("has_blood_syrup", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.BLOOD_SYRUP.get()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.BLOOD_HOT_DOG.get())
+                .requires(VDItems.BLOOD_SAUSAGE.get())
+                .requires(ForgeTags.BREAD)
+                .unlockedBy("has_blood_sausage", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.BLOOD_SAUSAGE.get()))
+                .save(consumer);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.BAGEL_SANDWICH.get())
                 .requires(VDItems.BLOOD_BAGEL.get())
                 .requires(vectorwing.farmersdelight.common.registry.ModItems.SMOKED_HAM.get())
