@@ -16,11 +16,6 @@
       "predicate": {
         "type": "minecraft:bat"
       }
-    },
-    {
-      "condition": "minecraft:random_chance_with_looting",
-      "chance": 1,
-      "looting_multiplier": 0.1
     }
   ],
   "item": "vampiresdelight:cooked_bat"
