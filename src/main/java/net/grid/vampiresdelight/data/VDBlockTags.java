@@ -64,7 +64,8 @@ public class VDBlockTags extends BlockTagsProvider {
                 VDBlocks.WEIRD_JELLY_BLOCK.get()
         );
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
-                VDBlocks.DARK_STONE_STOVE.get()
+                VDBlocks.DARK_STONE_STOVE.get(),
+                VDBlocks.SPIRIT_LANTERN.get()
         );
         tag(BlockTags.MINEABLE_WITH_SHOVEL).add(
                 VDBlocks.CURSED_FARMLAND.get());

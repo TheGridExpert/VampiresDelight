@@ -44,6 +44,8 @@ public class VDBlockLootTables extends BlockLootSubProvider {
         dropSelf(VDBlocks.DARK_SPRUCE_WINE_SHELF.get());
 
         dropOther(VDBlocks.CURSED_FARMLAND.get(), ModBlocks.CURSED_EARTH.get());
+
+        dropSelf(VDBlocks.SPIRIT_LANTERN.get());
     }
 
     protected void dropNamedContainer(Block block) {
