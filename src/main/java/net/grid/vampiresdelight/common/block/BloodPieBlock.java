@@ -5,6 +5,7 @@ import de.teamlapen.vampirism.api.entity.factions.IFaction;
 import de.teamlapen.vampirism.api.entity.player.vampire.IVampirePlayer;
 import de.teamlapen.vampirism.api.items.IFactionExclusiveItem;
 import de.teamlapen.vampirism.entity.player.vampire.VampirePlayer;
+import de.teamlapen.vampirism.entity.vampire.DrinkBloodContext;
 import de.teamlapen.vampirism.util.Helper;
 import net.grid.vampiresdelight.common.VDFoodValues;
 import net.minecraft.advancements.CriteriaTriggers;
@@ -40,10 +41,10 @@ public class BloodPieBlock extends PieBlock implements IFactionExclusiveItem {
             ItemStack sliceStack = this.getPieSliceItem();
             FoodProperties vampireFood = VDFoodValues.BLOOD_PIE_SLICE;
 
-            VampirePlayer.getOpt(playerIn).ifPresent(v -> v.drinkBlood(vampireFood.getNutrition(), vampireFood.getSaturationModifier()));
+            VampirePlayer.getOpt(playerIn).ifPresent(v -> v.drinkBlood(vampireFood.getNutrition(), vampireFood.getSaturationModifier(), new DrinkBloodContext(sliceStack)));
 
             if (playerIn instanceof IVampirePlayer) {
-                ((IVampirePlayer) playerIn).drinkBlood(vampireFood.getNutrition(), vampireFood.getSaturationModifier());
+                ((IVampirePlayer) playerIn).drinkBlood(vampireFood.getNutrition(), vampireFood.getSaturationModifier(), new DrinkBloodContext(sliceStack));
             } else {
                 playerIn.eat(level, sliceStack); //Shrinks stack and applies human food effects
             }
