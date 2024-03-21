@@ -4,8 +4,6 @@ import net.grid.vampiresdelight.common.entity.AlchemicalCocktailEntity;
 import net.grid.vampiresdelight.common.registry.VDItems;
 import net.grid.vampiresdelight.common.registry.VDPotions;
 import net.grid.vampiresdelight.common.registry.VDStats;
-import net.grid.vampiresdelight.integration.ModLoad;
-import net.grid.vampiresdelight.integration.create.VDPotatoProjectileTypes;
 import net.minecraft.core.Position;
 import net.minecraft.core.dispenser.AbstractProjectileDispenseBehavior;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -56,8 +54,10 @@ public class CommonSetup {
     }
 
     public static void registerModIntegrations() {
+        /*
         if (ModLoad.CREATE.isLoaded()) {
             VDPotatoProjectileTypes.register();
         }
+         */
     }
 }

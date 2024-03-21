@@ -1,5 +1,5 @@
 package net.grid.vampiresdelight.integration.create;
-
+/*
 import com.simibubi.create.Create;
 import com.simibubi.create.content.equipment.potatoCannon.PotatoCannonProjectileType;
 import de.teamlapen.vampirism.api.EnumStrength;
@@ -13,7 +13,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.EntityHitResult;
-import net.minecraftforge.eventbus.api.IEventBus;
 
 import java.util.function.Predicate;
 
@@ -59,3 +58,4 @@ public class VDPotatoProjectileTypes {
         public static void register() {
     }
 }
+*/
