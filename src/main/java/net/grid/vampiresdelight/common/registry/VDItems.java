@@ -146,6 +146,10 @@ public class VDItems {
             () -> new CursedCupcakeItem(foodItem(VDFoodValues.NASTY), VDFoodValues.CURSED_CUPCAKE));
     public static final RegistryObject<Item> DARK_ICE_CREAM = ITEMS.register("dark_ice_cream",
             () -> new VampireConsumableItem(foodItem(VDFoodValues.NASTY_DARKNESS), VDFoodValues.DARK_ICE_CREAM));
+    public static final RegistryObject<Item> ORCHID_CAKE = ITEMS.register("orchid_cake",
+            () -> new BlockItem(VDBlocks.ORCHID_CAKE.get(), basicItem()));
+    public static final RegistryObject<Item> ORCHID_CAKE_SLICE = ITEMS.register("orchid_cake_slice",
+            () -> new VampireConsumableItem(foodItem(VDFoodValues.NASTY_BLINDNESS), VDFoodValues.ORCHID_CAKE_SLICE));
     public static final RegistryObject<Item> SNOW_WHITE_ICE_CREAM = ITEMS.register("snow_white_ice_cream",
             () -> new HunterConsumableItem(foodItem(VDFoodValues.SNOW_WHITE_ICE_CREAM)));
 

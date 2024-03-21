@@ -1,0 +1,22 @@
+{
+    "textures": {
+        "particle": "vampiresdelight:block/orchid_cake_side",
+        "bottom": "vampiresdelight:block/orchid_cake_bottom",
+        "top": "vampiresdelight:block/orchid_cake_top",
+        "side": "vampiresdelight:block/orchid_cake_side",
+        "inside": "vampiresdelight:block/orchid_cake_inner"
+    },
+    "elements": [
+        {   "from": [ 9, 0, 1 ],
+            "to": [ 15, 8, 15 ],
+            "faces": {
+                "down":  { "texture": "#bottom", "cullface": "down" },
+                "up":    { "texture": "#top" },
+                "north": { "texture": "#side" },
+                "south": { "texture": "#side" },
+                "west":  { "texture": "#inside" },
+                "east":  { "texture": "#side" }
+            }
+        }
+    ]
+}

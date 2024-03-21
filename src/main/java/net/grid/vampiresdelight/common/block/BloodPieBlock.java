@@ -22,13 +22,11 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.block.PieBlock;
 
 import java.util.function.Supplier;
 
-public class BloodPieBlock extends PieBlock implements IFactionExclusiveItem {
+public class BloodPieBlock extends PieBlock {
     public BloodPieBlock(Properties properties, Supplier<Item> pieSlice) {
         super(properties, pieSlice);
     }
@@ -49,17 +47,11 @@ public class BloodPieBlock extends PieBlock implements IFactionExclusiveItem {
                 playerIn.eat(level, sliceStack); //Shrinks stack and applies human food effects
             }
 
-            playerIn.getFoodData().eat(sliceStack.getItem(), sliceStack);
+            //playerIn.getFoodData().eat(sliceStack.getItem(), sliceStack);
             if (!Helper.isVampire(playerIn)) {
-                playerIn.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 20 * 20));
+                playerIn.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 400));
             } else {
                 playerIn.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0));
-            }
-
-            if (!sliceStack.isEdible()) {
-                if (playerIn instanceof ServerPlayer) {
-                    CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayer) playerIn, sliceStack);
-                }
             }
 
             int bites = state.getValue(BITES);
@@ -71,10 +63,5 @@ public class BloodPieBlock extends PieBlock implements IFactionExclusiveItem {
             level.playSound(null, pos, SoundEvents.GENERIC_EAT, SoundSource.PLAYERS, 0.8F, 0.8F);
             return InteractionResult.SUCCESS;
         }
-    }
-
-    @Override
-    public @Nullable IFaction<?> getExclusiveFaction(@NotNull ItemStack stack) {
-        return VReference.VAMPIRE_FACTION;
     }
 }

@@ -104,6 +104,9 @@ public class VDFoodValues {
     public static final FoodProperties DARK_ICE_CREAM = (new FoodProperties.Builder())
             .nutrition(6).saturationMod(0.6f).fast()
             .effect(() -> new MobEffectInstance(MobEffects.JUMP, BRIEF_DURATION), 1.0F).build();
+    public static final FoodProperties ORCHID_CAKE_SLICE = (new FoodProperties.Builder())
+            .nutrition(3).saturationMod(0.2f).fast()
+            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, FLEETING_DURATION), 1.0F).build();
     public static final FoodProperties SNOW_WHITE_ICE_CREAM = (new FoodProperties.Builder())
             .nutrition(6).saturationMod(0.6f).fast()
             .effect(() -> new MobEffectInstance(VDEffects.BLESSING.get(), SHORT_DURATION), 1.0F).build();

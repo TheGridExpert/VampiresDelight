@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "vampiresdelight:block/yellow_orchid_candle_cake"
+    },
+    "lit=true": {
+      "model": "vampiresdelight:block/yellow_orchid_candle_cake_lit"
+    }
+  }
+}

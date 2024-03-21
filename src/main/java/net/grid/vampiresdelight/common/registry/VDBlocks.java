@@ -5,6 +5,7 @@ import net.grid.vampiresdelight.common.block.*;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CandleCakeBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -16,6 +17,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.block.*;
 
+import java.util.function.Supplier;
 import java.util.function.ToIntFunction;
 
 public class VDBlocks {
@@ -93,4 +95,47 @@ public class VDBlocks {
     // Feasts
     public static final RegistryObject<Block> WEIRD_JELLY_BLOCK = BLOCKS.register("weird_jelly_block",
             () -> new WeirdJellyBlock(Block.Properties.copy(Blocks.SLIME_BLOCK), VDItems.WEIRD_JELLY, true));
+
+    // Cakes
+    public static final RegistryObject<Block> ORCHID_CAKE = BLOCKS.register("orchid_cake",
+            () -> new ConsumableCakeBlock(Block.Properties.copy(Blocks.CAKE).mapColor(MapColor.TERRACOTTA_PURPLE), VDItems.BLOOD_PIE_SLICE));
+    public static final RegistryObject<Block> ORCHID_CANDLE_CAKE = BLOCKS.register("orchid_candle_cake",
+            () -> candleCakeBlock(Blocks.CANDLE, ORCHID_CAKE, MapColor.TERRACOTTA_PURPLE));
+    public static final RegistryObject<Block> WHITE_ORCHID_CANDLE_CAKE = BLOCKS.register("white_orchid_candle_cake",
+            () -> candleCakeBlock(Blocks.WHITE_CANDLE, ORCHID_CAKE, MapColor.TERRACOTTA_PURPLE));
+    public static final RegistryObject<Block> ORANGE_ORCHID_CANDLE_CAKE = BLOCKS.register("orange_orchid_candle_cake",
+            () -> candleCakeBlock(Blocks.ORANGE_CANDLE, ORCHID_CAKE, MapColor.TERRACOTTA_PURPLE));
+    public static final RegistryObject<Block> MAGENTA_ORCHID_CANDLE_CAKE = BLOCKS.register("magenta_orchid_candle_cake",
+            () -> candleCakeBlock(Blocks.MAGENTA_CANDLE, ORCHID_CAKE, MapColor.TERRACOTTA_PURPLE));
+    public static final RegistryObject<Block> LIGHT_BLUE_ORCHID_CANDLE_CAKE = BLOCKS.register("light_blue_orchid_candle_cake",
+            () -> candleCakeBlock(Blocks.LIGHT_BLUE_CANDLE, ORCHID_CAKE, MapColor.TERRACOTTA_PURPLE));
+    public static final RegistryObject<Block> YELLOW_ORCHID_CANDLE_CAKE = BLOCKS.register("yellow_orchid_candle_cake",
+            () -> candleCakeBlock(Blocks.YELLOW_CANDLE, ORCHID_CAKE, MapColor.TERRACOTTA_PURPLE));
+    public static final RegistryObject<Block> LIME_ORCHID_CANDLE_CAKE = BLOCKS.register("lime_orchid_candle_cake",
+            () -> candleCakeBlock(Blocks.LIME_CANDLE, ORCHID_CAKE, MapColor.TERRACOTTA_PURPLE));
+    public static final RegistryObject<Block> PINK_ORCHID_CANDLE_CAKE = BLOCKS.register("pink_orchid_candle_cake",
+            () -> candleCakeBlock(Blocks.PINK_CANDLE, ORCHID_CAKE, MapColor.TERRACOTTA_PURPLE));
+    public static final RegistryObject<Block> GRAY_ORCHID_CANDLE_CAKE = BLOCKS.register("gray_orchid_candle_cake",
+            () -> candleCakeBlock(Blocks.GRAY_CANDLE, ORCHID_CAKE, MapColor.TERRACOTTA_PURPLE));
+    public static final RegistryObject<Block> LIGHT_GRAY_ORCHID_CANDLE_CAKE = BLOCKS.register("light_gray_orchid_candle_cake",
+            () -> candleCakeBlock(Blocks.LIGHT_GRAY_CANDLE, ORCHID_CAKE, MapColor.TERRACOTTA_PURPLE));
+    public static final RegistryObject<Block> CYAN_ORCHID_CANDLE_CAKE = BLOCKS.register("cyan_orchid_candle_cake",
+            () -> candleCakeBlock(Blocks.CYAN_CANDLE, ORCHID_CAKE, MapColor.TERRACOTTA_PURPLE));
+    public static final RegistryObject<Block> PURPLE_ORCHID_CANDLE_CAKE = BLOCKS.register("purple_orchid_candle_cake",
+            () -> candleCakeBlock(Blocks.PURPLE_CANDLE, ORCHID_CAKE, MapColor.TERRACOTTA_PURPLE));
+    public static final RegistryObject<Block> BLUE_ORCHID_CANDLE_CAKE = BLOCKS.register("blue_orchid_candle_cake",
+            () -> candleCakeBlock(Blocks.BLUE_CANDLE, ORCHID_CAKE, MapColor.TERRACOTTA_PURPLE));
+    public static final RegistryObject<Block> BROWN_ORCHID_CANDLE_CAKE = BLOCKS.register("brown_orchid_candle_cake",
+            () -> candleCakeBlock(Blocks.BROWN_CANDLE, ORCHID_CAKE, MapColor.TERRACOTTA_PURPLE));
+    public static final RegistryObject<Block> GREEN_ORCHID_CANDLE_CAKE = BLOCKS.register("green_orchid_candle_cake",
+            () -> candleCakeBlock(Blocks.GREEN_CANDLE, ORCHID_CAKE, MapColor.TERRACOTTA_PURPLE));
+    public static final RegistryObject<Block> RED_ORCHID_CANDLE_CAKE = BLOCKS.register("red_orchid_candle_cake",
+            () -> candleCakeBlock(Blocks.RED_CANDLE, ORCHID_CAKE, MapColor.TERRACOTTA_PURPLE));
+    public static final RegistryObject<Block> BLACK_ORCHID_CANDLE_CAKE = BLOCKS.register("black_orchid_candle_cake",
+            () -> candleCakeBlock(Blocks.BLACK_CANDLE, ORCHID_CAKE, MapColor.TERRACOTTA_PURPLE));
+
+    public static ConsumableCandleCakeBlock candleCakeBlock(Block candleBlock, Supplier<Block> cakeBlock, MapColor mapColor) {
+        return new ConsumableCandleCakeBlock(Block.Properties.copy(Blocks.CAKE)
+                .mapColor(mapColor).lightLevel(litBlockEmission(3)), cakeBlock, candleBlock);
+    }
 }
