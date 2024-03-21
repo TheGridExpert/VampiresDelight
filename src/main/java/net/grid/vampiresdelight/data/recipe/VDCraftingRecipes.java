@@ -327,6 +327,26 @@ public class VDCraftingRecipes {
                 .define('#', VDItems.BLOOD_PIE_SLICE.get())
                 .unlockedBy("has_blood_pie_slice", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.BLOOD_PIE_SLICE.get()))
                 .save(consumer, new ResourceLocation(VampiresDelight.MODID, "blood_pie_from_slices"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, VDItems.ORCHID_CAKE.get(), 1)
+                .pattern("mmm")
+                .pattern("oso")
+                .pattern("www")
+                .define('m', ForgeTags.MILK)
+                .define('o', VDItems.ORCHID_PETALS.get())
+                .define('s', Items.SUGAR)
+                .define('w', ForgeTags.GRAIN_WHEAT)
+                .unlockedBy("has_orchid_petals", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.ORCHID_PETALS.get()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.ORCHID_CAKE.get(), 1)
+                .requires(VDItems.ORCHID_CAKE_SLICE.get())
+                .requires(VDItems.ORCHID_CAKE_SLICE.get())
+                .requires(VDItems.ORCHID_CAKE_SLICE.get())
+                .requires(VDItems.ORCHID_CAKE_SLICE.get())
+                .requires(VDItems.ORCHID_CAKE_SLICE.get())
+                .requires(VDItems.ORCHID_CAKE_SLICE.get())
+                .requires(VDItems.ORCHID_CAKE_SLICE.get())
+                .unlockedBy("has_orchid_cake_slice", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.ORCHID_CAKE_SLICE.get()))
+                .save(consumer, new ResourceLocation(VampiresDelight.MODID, "orchid_cake_from_slices"));
     }
 
     private static void recipesCraftedMeals(Consumer<FinishedRecipe> consumer) {
@@ -398,6 +418,8 @@ public class VDCraftingRecipes {
     private static void cuttingFoods(Consumer<FinishedRecipe> consumer) {
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(VDItems.BLOOD_PIE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), VDItems.BLOOD_PIE_SLICE.get(), 4)
                 .build(consumer, itemLocationCutting(VDItems.BLOOD_PIE.get()));
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(VDItems.ORCHID_CAKE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), VDItems.ORCHID_CAKE_SLICE.get(), 7)
+                .build(consumer, itemLocationCutting(VDItems.ORCHID_CAKE.get()));
     }
 
     private static void cuttingFlowers(Consumer<FinishedRecipe> consumer) {

@@ -40,10 +40,6 @@ public class VDBlockTags extends BlockTagsProvider {
                 Blocks.WATER
         );
 
-        tag(VDTags.DROPS_ORCHID_CAKE_SLICE).add(
-                VDBlocks.ORCHID_CAKE.get()
-        );
-
         ConsumableCandleCakeBlock.getAllCandleCakes().forEach(block -> {
             String name = ForgeRegistries.BLOCKS.getKey(block).getPath();
             if (name.contains("orchid"))

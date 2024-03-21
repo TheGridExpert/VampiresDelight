@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "vampiresdelight:orchid_cake_slice"
+    },
+    {
+      "item": "vampiresdelight:orchid_cake_slice"
+    },
+    {
+      "item": "vampiresdelight:orchid_cake_slice"
+    },
+    {
+      "item": "vampiresdelight:orchid_cake_slice"
+    },
+    {
+      "item": "vampiresdelight:orchid_cake_slice"
+    },
+    {
+      "item": "vampiresdelight:orchid_cake_slice"
+    },
+    {
+      "item": "vampiresdelight:orchid_cake_slice"
+    }
+  ],
+  "result": {
+    "item": "vampiresdelight:orchid_cake"
+  }
+}

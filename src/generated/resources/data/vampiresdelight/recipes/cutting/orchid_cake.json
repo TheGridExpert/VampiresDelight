@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "vampiresdelight:orchid_cake"
+    }
+  ],
+  "result": [
+    {
+      "count": 7,
+      "item": "vampiresdelight:orchid_cake_slice"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}
