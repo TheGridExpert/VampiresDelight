@@ -94,6 +94,8 @@ public class VDCreativeTabs {
                         output.accept(VDItems.BORSCHT.get());
 
                         // Feasts
+                        output.accept(VDItems.ORCHID_CAKE.get());
+                        output.accept(VDItems.ORCHID_CAKE_SLICE.get());
                         output.accept(VDItems.WEIRD_JELLY_BLOCK.get());
                         output.accept(VDItems.WEIRD_JELLY.get());
                     })

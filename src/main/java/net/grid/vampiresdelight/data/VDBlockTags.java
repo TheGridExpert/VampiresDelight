@@ -2,6 +2,7 @@ package net.grid.vampiresdelight.data;
 
 import de.teamlapen.vampirism.core.ModBlocks;
 import net.grid.vampiresdelight.VampiresDelight;
+import net.grid.vampiresdelight.common.block.ConsumableCandleCakeBlock;
 import net.grid.vampiresdelight.common.registry.VDBlocks;
 import net.grid.vampiresdelight.common.tag.VDCompatibilityTags;
 import net.grid.vampiresdelight.common.tag.VDTags;
@@ -11,6 +12,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.tag.CompatibilityTags;
@@ -37,6 +39,18 @@ public class VDBlockTags extends BlockTagsProvider {
                 .addTag(BlockTags.ICE).add(
                 Blocks.WATER
         );
+
+        tag(VDTags.DROPS_ORCHID_CAKE_SLICE).add(
+                VDBlocks.ORCHID_CAKE.get()
+        );
+
+        ConsumableCandleCakeBlock.getAllCandleCakes().forEach(block -> {
+            String name = ForgeRegistries.BLOCKS.getKey(block).getPath();
+            if (name.contains("orchid"))
+                    tag(VDTags.DROPS_ORCHID_CAKE_SLICE).add(block);
+
+            tag(BlockTags.CANDLE_CAKES).add(block);
+        });
     }
 
     protected void registerBlockMineables() {
@@ -59,10 +73,13 @@ public class VDBlockTags extends BlockTagsProvider {
                 VDBlocks.DARK_SPRUCE_WINE_SHELF.get(),
                 VDBlocks.BREWING_BARREL.get()
         );
-        tag(ModTags.MINEABLE_WITH_KNIFE).add(
-                VDBlocks.BLOOD_PIE.get(),
-                VDBlocks.WEIRD_JELLY_BLOCK.get()
-        );
+        tag(ModTags.MINEABLE_WITH_KNIFE)
+                .addTag(VDTags.DROPS_ORCHID_CAKE_SLICE)
+                .add(
+                        VDBlocks.BLOOD_PIE.get(),
+                        VDBlocks.WEIRD_JELLY_BLOCK.get(),
+                        VDBlocks.ORCHID_CAKE.get()
+                );
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
                 VDBlocks.DARK_STONE_STOVE.get(),
                 VDBlocks.SPIRIT_LANTERN.get()

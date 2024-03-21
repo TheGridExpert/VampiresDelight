@@ -20,6 +20,8 @@ public class VDTags {
     // Secondary blood syrup ingredients
     public static final TagKey<Item> BLOOD_SYRUP_INGREDIENTS = modItemTag("blood_syrup_ingredients");
 
+    // Orchid cake variants that drop the cake slice when sliced by a knife.
+    public static final TagKey<Block> DROPS_ORCHID_CAKE_SLICE = modBlockTag("drops_orchid_cake_slice");
     // Cold blocks brewing barrel won't work on.
     public static final TagKey<Block> COOLERS = modBlockTag("coolers");
 
