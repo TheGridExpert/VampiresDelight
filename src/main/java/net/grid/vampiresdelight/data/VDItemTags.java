@@ -73,14 +73,6 @@ public class VDItemTags extends ItemTagsProvider {
                 .add(VDItems.SNOW_WHITE_ICE_CREAM.get());
         tag(VDTags.MINION_VAMPIRE_FOOD)
                 .add(VDItems.ORCHID_COOKIE.get());
-        tag(VDTags.BLOOD_SYRUP_INGREDIENTS)
-                .add(Items.APPLE)
-                .add(Items.SWEET_BERRIES)
-                .add(Items.GLOW_BERRIES)
-                .add(ModBlocks.CURSED_ROOTS.get().asItem())
-                .add(ModBlocks.DARK_SPRUCE_LEAVES.get().asItem())
-                .add(ModBlocks.DARK_SPRUCE_SAPLING.get().asItem())
-                .add(ModBlocks.CURSED_SPRUCE_SAPLING.get().asItem());
     }
 
     private void registerVampirismTags() {

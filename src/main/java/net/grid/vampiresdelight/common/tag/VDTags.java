@@ -17,8 +17,6 @@ public class VDTags {
     public static final TagKey<Item> HUNTER_FOOD = modItemTag("hunter_food");
     // Vampire and Hunter food that can be fed to minions.
     public static final TagKey<Item> MINION_VAMPIRE_FOOD = modItemTag("minion_vampire_food");
-    // Secondary blood syrup ingredients
-    public static final TagKey<Item> BLOOD_SYRUP_INGREDIENTS = modItemTag("blood_syrup_ingredients");
 
     // Orchid cake variants that drop the cake slice when sliced by a knife.
     public static final TagKey<Block> DROPS_ORCHID_CAKE_SLICE = modBlockTag("drops_orchid_cake_slice");

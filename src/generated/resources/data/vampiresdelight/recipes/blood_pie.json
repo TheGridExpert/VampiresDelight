@@ -8,6 +8,9 @@
     "b": {
       "item": "vampiresdelight:blood_syrup"
     },
+    "s": {
+      "item": "minecraft:sweet_berries"
+    },
     "w": {
       "item": "minecraft:nether_wart"
     },
@@ -16,8 +19,8 @@
     }
   },
   "pattern": [
-    "www",
-    "xxx",
+    "sss",
+    "wxw",
     "bOb"
   ],
   "result": {

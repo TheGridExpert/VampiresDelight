@@ -72,7 +72,7 @@ public class PlayerEventHandler {
         LivingEntity consumer = event.getEntity();
         InteractionHand hand = consumer.getUsedItemHand();
         ItemStack itemInHand = consumer.getItemInHand(hand);
-        if (Helper.isVampire(consumer) && itemInHand.getItem() instanceof ConsumableItem && !(itemInHand.getItem() instanceof DrinkableItem)) {
+        if (Helper.isVampire(consumer) && itemInHand.getItem() instanceof ConsumableItem) {
             MobEffect effect = event.getEffectInstance().getEffect();
             if (effect != VDEffects.FOG_VISION.get()) {
                 event.setResult(Event.Result.DENY);

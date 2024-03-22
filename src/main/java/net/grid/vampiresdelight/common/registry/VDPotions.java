@@ -24,15 +24,15 @@ public class VDPotions {
 
     //Hunter
     public static final RegistryObject<HunterPotion> BLESSING = POTIONS.register("blessing",
-            () -> new HunterPotion(null, new MobEffectInstance(VDEffects.BLESSING.get(), 3600)));
+            () -> new HunterPotion(null, new MobEffectInstance(VDEffects.BLESSING.get(), 7200)));
     public static final RegistryObject<HunterPotion> LONG_BLESSING = POTIONS.register("long_blessing",
-            () -> new HunterPotion("blessing", new MobEffectInstance(VDEffects.BLESSING.get(), 9600)));
+            () -> new HunterPotion("blessing", new MobEffectInstance(VDEffects.BLESSING.get(), 19200)));
     public static final RegistryObject<HunterPotion> STRONG_BLESSING = POTIONS.register("strong_blessing",
-            () -> new HunterPotion("blessing", new MobEffectInstance(VDEffects.BLESSING.get(), 800, 1)));
+            () -> new HunterPotion("blessing", new MobEffectInstance(VDEffects.BLESSING.get(), 1600, 1)));
     public static final RegistryObject<HunterPotion> VERY_LONG_BLESSING = POTIONS.register("very_long_blessing",
-            () -> new HunterPotion("blessing", new MobEffectInstance(VDEffects.BLESSING.get(), 96000)));
+            () -> new HunterPotion("blessing", new MobEffectInstance(VDEffects.BLESSING.get(), 192000)));
     public static final RegistryObject<HunterPotion> LONG_STRONG_BLESSING = POTIONS.register("long_strong_blessing",
-            () -> new HunterPotion("blessing", new MobEffectInstance(VDEffects.BLESSING.get(), 2400, 1)));
+            () -> new HunterPotion("blessing", new MobEffectInstance(VDEffects.BLESSING.get(), 4800, 1)));
 
     public static final RegistryObject<HunterPotion> CLOTHES_DISSOLVING = POTIONS.register("clothes_dissolving",
             () -> new HunterPotion(null, new MobEffectInstance(VDEffects.CLOTHES_DISSOLVING.get(), 600)));
@@ -49,7 +49,7 @@ public class VDPotions {
             () -> new HunterPotion("fog_vision", new MobEffectInstance(VDEffects.FOG_VISION.get(), 2400, 1)));
 
     public static void registerPotionMixes() {
-        master(BLESSING, () -> Ingredient.of(ModTags.Items.HOLY_WATER), 16, 8);
+        master(BLESSING, () -> Ingredient.of(ModTags.Items.HOLY_WATER), 8, 4);
         durable(BLESSING, LONG_BLESSING);
         strong(BLESSING, STRONG_BLESSING);
         veryDurable(LONG_BLESSING, VERY_LONG_BLESSING);

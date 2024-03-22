@@ -3,15 +3,42 @@
   "category": "misc",
   "ingredients": [
     {
+      "item": "minecraft:glass_bottle"
+    },
+    {
       "type": "forge:nbt",
       "item": "vampirism:blood_bottle",
       "nbt": "{Damage:9}"
     },
     {
       "tag": "vampiresdelight:blood_syrup_ingredients"
-    }
+    },
+    [
+      {
+        "item": "minecraft:apple"
+      },
+      {
+        "item": "minecraft:sweet_berries"
+      },
+      {
+        "item": "minecraft:glow_berries"
+      },
+      {
+        "item": "vampirism:cursed_roots"
+      },
+      {
+        "item": "vampirism:dark_spruce_leaves"
+      },
+      {
+        "item": "vampirism:dark_spruce_sapling"
+      },
+      {
+        "item": "vampirism:cursed_spruce_sapling"
+      }
+    ]
   ],
   "result": {
+    "count": 2,
     "item": "vampiresdelight:blood_syrup"
   }
 }

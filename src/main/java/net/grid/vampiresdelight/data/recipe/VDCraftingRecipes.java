@@ -297,7 +297,12 @@ public class VDCraftingRecipes {
                 .requires(ForgeTags.GRAIN)
                 .requires(Items.ICE)
                 .requires(Items.ICE)
-                .requires(Items.INK_SAC)
+                .requires(Ingredient.fromValues(Stream.of(
+                        new Ingredient.ItemValue(new ItemStack(Items.INK_SAC)),
+                        new Ingredient.ItemValue(new ItemStack(ModBlocks.CURSED_SPRUCE_SAPLING.get())),
+                        new Ingredient.ItemValue(new ItemStack(ModBlocks.DARK_SPRUCE_SAPLING.get())),
+                        new Ingredient.ItemValue(new ItemStack(ModBlocks.DARK_SPRUCE_LEAVES.get()))
+                )))
                 .unlockedBy("has_blood_syrup", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.BLOOD_SYRUP.get()))
                 .save(consumer);
     }
@@ -312,12 +317,13 @@ public class VDCraftingRecipes {
 
     private static void recipesFoodBlocks(Consumer<FinishedRecipe> consumer) {
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, VDItems.BLOOD_PIE.get(), 1)
-                .pattern("www")
-                .pattern("xxx")
+                .pattern("sss")
+                .pattern("wxw")
                 .pattern("bOb")
                 .define('w', Items.NETHER_WART)
                 .define('b', VDItems.BLOOD_SYRUP.get())
                 .define('x', Items.SUGAR)
+                .define('s', Items.SWEET_BERRIES)
                 .define('O', vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get())
                 .unlockedBy("has_blood_syrup", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.BLOOD_SYRUP.get()))
                 .save(consumer);
@@ -375,7 +381,7 @@ public class VDCraftingRecipes {
                 .save(consumer);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.BAGEL_SANDWICH.get())
                 .requires(VDItems.BLOOD_BAGEL.get())
-                .requires(vectorwing.farmersdelight.common.registry.ModItems.SMOKED_HAM.get())
+                .requires(ForgeTags.COOKED_BACON)
                 .requires(vectorwing.farmersdelight.common.registry.ModItems.FRIED_EGG.get())
                 .unlockedBy("has_blood_bagel", InventoryChangeTrigger.TriggerInstance.hasItems(VDItems.BLOOD_BAGEL.get()))
                 .save(consumer);

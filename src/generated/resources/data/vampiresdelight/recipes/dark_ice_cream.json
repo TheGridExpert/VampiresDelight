@@ -17,9 +17,20 @@
     {
       "item": "minecraft:ice"
     },
-    {
-      "item": "minecraft:ink_sac"
-    }
+    [
+      {
+        "item": "minecraft:ink_sac"
+      },
+      {
+        "item": "vampirism:cursed_spruce_sapling"
+      },
+      {
+        "item": "vampirism:dark_spruce_sapling"
+      },
+      {
+        "item": "vampirism:dark_spruce_leaves"
+      }
+    ]
   ],
   "result": {
     "item": "vampiresdelight:dark_ice_cream"

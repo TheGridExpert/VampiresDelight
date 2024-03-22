@@ -13,7 +13,7 @@ public class VDFoodValues {
     public static final int MEDIUM_DURATION = 3600;    // 3 minutes
     public static final int LONG_DURATION = 6000;    // 5 minutes
 
-    // Gross
+    // Nasty
     public static final FoodProperties NASTY = (new FoodProperties.Builder())
             .nutrition(1).saturationMod(0.1f)
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, FLEETING_DURATION), 1.0F).build();
@@ -43,10 +43,10 @@ public class VDFoodValues {
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 400), 1.0F)
             .effect(() -> new MobEffectInstance(MobEffects.BLINDNESS, 200), 1.0F).build();
     public static final FoodProperties BLOOD_SYRUP = (new FoodProperties.Builder())
-            .nutrition(11).alwaysEat().build();
+            .nutrition(5).alwaysEat().build();
     public static final FoodProperties MULLED_WINE_GLASS_VAMPIRE = (new FoodProperties.Builder()).alwaysEat()
             .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 200, 1), 1.0F)
-            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 600), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 1200), 1.0F)
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 300), 1.0F).build();
     public static final FoodProperties MULLED_WINE_GLASS_HUMAN = (new FoodProperties.Builder()).alwaysEat()
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 400), 1.0F)
@@ -58,7 +58,7 @@ public class VDFoodValues {
     public static final FoodProperties RICE_DOUGH = (new FoodProperties.Builder())
             .nutrition(2).saturationMod(0.3f).effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.3F).build();
     public static final FoodProperties BLOOD_DOUGH = (new FoodProperties.Builder())
-            .nutrition(2).saturationMod(0.3f)
+            .nutrition(5).saturationMod(0.3f)
             .effect(() -> new MobEffectInstance(MobEffects.HUNGER, BRIEF_DURATION), 0.3F).build();
     public static final FoodProperties HEART_PIECES = (new FoodProperties.Builder())
             .nutrition(10).saturationMod(0.8f).meat().fast().build();
@@ -85,49 +85,49 @@ public class VDFoodValues {
     public static final FoodProperties ORCHID_COOKIE = (new FoodProperties.Builder())
             .nutrition(2).saturationMod(0.4f).fast().build();
     public static final FoodProperties ORCHID_ECLAIR = (new FoodProperties.Builder())
-            .nutrition(7).saturationMod(0.6f).fast().build();
+            .nutrition(9).saturationMod(0.7f).fast().build();
     public static final FoodProperties ORCHID_ICE_CREAM = (new FoodProperties.Builder())
-            .nutrition(6).saturationMod(0.5f).fast()
+            .nutrition(7).saturationMod(0.5f).fast()
             .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, SHORT_DURATION), 1.0F).build();
     public static final FoodProperties SUGARED_BERRIES = (new FoodProperties.Builder())
             .nutrition(3).saturationMod(0.3f).build();
     public static final FoodProperties CURSED_CUPCAKE = (new FoodProperties.Builder())
-            .nutrition(4).saturationMod(0.4f).fast().alwaysEat().build();
+            .nutrition(11).saturationMod(0.8f).fast().alwaysEat().build();
     public static final FoodProperties BLOOD_PIE_SLICE = (new FoodProperties.Builder())
-            .nutrition(4).saturationMod(0.4f).fast()
+            .nutrition(7).saturationMod(0.6f).fast()
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, BRIEF_DURATION), 1.0F).build();
     public static final FoodProperties PURE_SORBET = (new FoodProperties.Builder())
-            .nutrition(4).saturationMod(0.2f).fast().alwaysEat()
+            .nutrition(16).saturationMod(0.8f).fast().alwaysEat()
             .effect(() -> new MobEffectInstance(VDEffects.FOG_VISION.get(), BRIEF_DURATION), 1.0F).build();
     public static final FoodProperties TRICOLOR_DANGO = (new FoodProperties.Builder())
-            .nutrition(7).saturationMod(0.7f).fast().build();
+            .nutrition(13).saturationMod(1.4f).fast().build();
     public static final FoodProperties DARK_ICE_CREAM = (new FoodProperties.Builder())
-            .nutrition(6).saturationMod(0.6f).fast()
+            .nutrition(10).saturationMod(0.8f).fast()
             .effect(() -> new MobEffectInstance(MobEffects.JUMP, BRIEF_DURATION), 1.0F).build();
     public static final FoodProperties ORCHID_CAKE_SLICE = (new FoodProperties.Builder())
             .nutrition(3).saturationMod(0.2f).fast()
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, FLEETING_DURATION), 1.0F).build();
     public static final FoodProperties SNOW_WHITE_ICE_CREAM = (new FoodProperties.Builder())
-            .nutrition(6).saturationMod(0.6f).fast()
-            .effect(() -> new MobEffectInstance(VDEffects.BLESSING.get(), SHORT_DURATION), 1.0F).build();
+            .nutrition(8).saturationMod(0.6f).fast()
+            .effect(() -> new MobEffectInstance(VDEffects.BLESSING.get(), MEDIUM_DURATION), 1.0F).build();
 
     // Handheld Foods
     public static final FoodProperties RICE_BREAD = (new FoodProperties.Builder())
             .nutrition(5).saturationMod(0.6F).build();
     public static final FoodProperties FISH_BURGER = (new FoodProperties.Builder())
-            .nutrition(10).saturationMod(0.8f).build();
+            .nutrition(13).saturationMod(1.1f).build();
     public static final FoodProperties BLOOD_SAUSAGE = (new FoodProperties.Builder())
-            .nutrition(9).saturationMod(0.8f).build();
+            .nutrition(12).saturationMod(1.0f).build();
     public static final FoodProperties BLOOD_HOT_DOG = (new FoodProperties.Builder())
-            .nutrition(13).saturationMod(0.9f).build();
+            .nutrition(16).saturationMod(1.4f).build();
     public static final FoodProperties BLOOD_BAGEL = (new FoodProperties.Builder())
-            .nutrition(6).saturationMod(0.7f).build();
+            .nutrition(9).saturationMod(0.8f).build();
     public static final FoodProperties BAGEL_SANDWICH = (new FoodProperties.Builder())
-            .nutrition(13).saturationMod(1.2f).build();
+            .nutrition(16).saturationMod(1.4f).build();
     public static final FoodProperties EYES_ON_STICK = (new FoodProperties.Builder())
-            .nutrition(8).saturationMod(0.8f).build();
+            .nutrition(8).saturationMod(0.7f).build();
     public static final FoodProperties EYE_CROISSANT = (new FoodProperties.Builder())
-            .nutrition(10).saturationMod(0.8f).build();
+            .nutrition(11).saturationMod(1.0f).build();
     public static final FoodProperties HARDTACK = (new FoodProperties.Builder())
             .nutrition(6).saturationMod(0.9f).build();
 
@@ -136,7 +136,7 @@ public class VDFoodValues {
             .nutrition(12).saturationMod(0.6f)
             .effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), MEDIUM_DURATION), 1.0F).build();
     public static final FoodProperties BORSCHT = (new FoodProperties.Builder())
-            .nutrition(14).saturationMod(0.9f)
+            .nutrition(15).saturationMod(0.9f)
             .effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), MEDIUM_DURATION), 1.0F)
             .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, SHORT_DURATION), 1.0F).build();
 
@@ -145,6 +145,6 @@ public class VDFoodValues {
 
     // Feast Portions
     public static final FoodProperties WEIRD_JELLY = (new FoodProperties.Builder())
-            .nutrition(8).saturationMod(0.8f).fast().alwaysEat()
-            .effect(() -> new MobEffectInstance(de.teamlapen.vampirism.core.ModEffects.SUNSCREEN.get(), 300), 1.0F).build();
+            .nutrition(7).saturationMod(0.8f).fast().alwaysEat()
+            .effect(() -> new MobEffectInstance(de.teamlapen.vampirism.core.ModEffects.SUNSCREEN.get(), BRIEF_DURATION), 1.0F).build();
 }
