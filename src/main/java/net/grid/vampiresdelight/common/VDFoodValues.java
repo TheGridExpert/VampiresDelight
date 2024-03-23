@@ -85,14 +85,14 @@ public class VDFoodValues {
     public static final FoodProperties ORCHID_COOKIE = (new FoodProperties.Builder())
             .nutrition(2).saturationMod(0.4f).fast().build();
     public static final FoodProperties ORCHID_ECLAIR = (new FoodProperties.Builder())
-            .nutrition(9).saturationMod(0.7f).fast().build();
+            .nutrition(8).saturationMod(0.7f).fast().build();
     public static final FoodProperties ORCHID_ICE_CREAM = (new FoodProperties.Builder())
             .nutrition(7).saturationMod(0.5f).fast()
             .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, SHORT_DURATION), 1.0F).build();
     public static final FoodProperties SUGARED_BERRIES = (new FoodProperties.Builder())
             .nutrition(3).saturationMod(0.3f).build();
     public static final FoodProperties CURSED_CUPCAKE = (new FoodProperties.Builder())
-            .nutrition(11).saturationMod(0.8f).fast().alwaysEat().build();
+            .nutrition(10).saturationMod(0.8f).fast().alwaysEat().build();
     public static final FoodProperties BLOOD_PIE_SLICE = (new FoodProperties.Builder())
             .nutrition(7).saturationMod(0.6f).fast()
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, BRIEF_DURATION), 1.0F).build();
@@ -117,13 +117,13 @@ public class VDFoodValues {
     public static final FoodProperties FISH_BURGER = (new FoodProperties.Builder())
             .nutrition(13).saturationMod(1.1f).build();
     public static final FoodProperties BLOOD_SAUSAGE = (new FoodProperties.Builder())
-            .nutrition(12).saturationMod(1.0f).build();
+            .nutrition(11).saturationMod(1.0f).build();
     public static final FoodProperties BLOOD_HOT_DOG = (new FoodProperties.Builder())
-            .nutrition(16).saturationMod(1.4f).build();
+            .nutrition(15).saturationMod(1.4f).build();
     public static final FoodProperties BLOOD_BAGEL = (new FoodProperties.Builder())
-            .nutrition(9).saturationMod(0.8f).build();
+            .nutrition(8).saturationMod(0.8f).build();
     public static final FoodProperties BAGEL_SANDWICH = (new FoodProperties.Builder())
-            .nutrition(16).saturationMod(1.4f).build();
+            .nutrition(15).saturationMod(1.4f).build();
     public static final FoodProperties EYES_ON_STICK = (new FoodProperties.Builder())
             .nutrition(8).saturationMod(0.7f).build();
     public static final FoodProperties EYE_CROISSANT = (new FoodProperties.Builder())

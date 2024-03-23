@@ -10,9 +10,6 @@
       "item": "vampirism:blood_bottle",
       "nbt": "{Damage:9}"
     },
-    {
-      "tag": "vampiresdelight:blood_syrup_ingredients"
-    },
     [
       {
         "item": "minecraft:apple"
