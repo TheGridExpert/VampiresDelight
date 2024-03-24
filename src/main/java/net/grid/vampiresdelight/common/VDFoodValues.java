@@ -32,9 +32,11 @@ public class VDFoodValues {
 
     // Drinks
     public static final FoodProperties WINE_GLASS_VAMPIRE = (new FoodProperties.Builder()).alwaysEat()
+            .nutrition(5).saturationMod(0.6f)
             .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 200, 1), 1.0F)
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 300), 1.0F).build();
     public static final FoodProperties WINE_GLASS_HUMAN = (new FoodProperties.Builder()).alwaysEat()
+            .nutrition(1).saturationMod(0.1f)
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 400), 1.0F)
             .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 200), 1.0F).build();
     public static final FoodProperties ORCHID_TEA_VAMPIRE = (new FoodProperties.Builder()).alwaysEat()
@@ -45,10 +47,12 @@ public class VDFoodValues {
     public static final FoodProperties BLOOD_SYRUP = (new FoodProperties.Builder())
             .nutrition(5).alwaysEat().build();
     public static final FoodProperties MULLED_WINE_GLASS_VAMPIRE = (new FoodProperties.Builder()).alwaysEat()
+            .nutrition(6).saturationMod(0.6f)
             .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 200, 1), 1.0F)
-            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 1200), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 4800), 1.0F)
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 300), 1.0F).build();
     public static final FoodProperties MULLED_WINE_GLASS_HUMAN = (new FoodProperties.Builder()).alwaysEat()
+            .nutrition(1).saturationMod(0.1f)
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 400), 1.0F)
             .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 200), 1.0F).build();
 
@@ -98,12 +102,12 @@ public class VDFoodValues {
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, BRIEF_DURATION), 1.0F).build();
     public static final FoodProperties PURE_SORBET = (new FoodProperties.Builder())
             .nutrition(16).saturationMod(0.8f).fast().alwaysEat()
-            .effect(() -> new MobEffectInstance(VDEffects.FOG_VISION.get(), BRIEF_DURATION), 1.0F).build();
+            .effect(() -> new MobEffectInstance(VDEffects.FOG_VISION.get(), MEDIUM_DURATION), 1.0F).build();
     public static final FoodProperties TRICOLOR_DANGO = (new FoodProperties.Builder())
             .nutrition(13).saturationMod(1.4f).fast().build();
     public static final FoodProperties DARK_ICE_CREAM = (new FoodProperties.Builder())
             .nutrition(10).saturationMod(0.8f).fast()
-            .effect(() -> new MobEffectInstance(MobEffects.JUMP, BRIEF_DURATION), 1.0F).build();
+            .effect(() -> new MobEffectInstance(MobEffects.JUMP, SHORT_DURATION), 1.0F).build();
     public static final FoodProperties ORCHID_CAKE_SLICE = (new FoodProperties.Builder())
             .nutrition(3).saturationMod(0.2f).fast()
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, FLEETING_DURATION), 1.0F).build();

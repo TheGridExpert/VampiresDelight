@@ -39,7 +39,7 @@ public class VampireConsumableItem extends Item {
     public VampireConsumableItem(Properties properties, FoodProperties vampireFood) {
         super(properties);
         this.vampireFood = vampireFood;
-        this.hasFoodEffectTooltip = false;
+        this.hasFoodEffectTooltip = true;
         this.hasHumanFoodEffectTooltip = false;
         this.hasCustomTooltip = false;
     }
