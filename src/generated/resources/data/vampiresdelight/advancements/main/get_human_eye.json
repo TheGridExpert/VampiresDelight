@@ -1,0 +1,38 @@
+{
+  "parent": "vampiresdelight:main/get_vampire_orchid",
+  "criteria": {
+    "human_eye": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "vampiresdelight:human_eye"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "vampiresdelight.advancement.get_human_eye.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "vampiresdelight:human_eye"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "vampiresdelight.advancement.get_human_eye"
+    }
+  },
+  "requirements": [
+    [
+      "human_eye"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

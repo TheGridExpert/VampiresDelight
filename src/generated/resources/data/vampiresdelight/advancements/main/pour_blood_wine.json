@@ -1,0 +1,30 @@
+{
+  "parent": "vampiresdelight:main/get_vampire_orchid",
+  "criteria": {
+    "pour_blood_wine": {
+      "conditions": {},
+      "trigger": "vampiresdelight:blood_wine_poured"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "vampiresdelight.advancement.pour_blood_wine.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "vampiresdelight:wine_glass"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "vampiresdelight.advancement.pour_blood_wine"
+    }
+  },
+  "requirements": [
+    [
+      "pour_blood_wine"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

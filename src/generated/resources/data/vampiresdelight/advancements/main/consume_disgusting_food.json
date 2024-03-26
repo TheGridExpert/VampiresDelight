@@ -1,0 +1,30 @@
+{
+  "parent": "vampiresdelight:main/root",
+  "criteria": {
+    "disgusting_food": {
+      "conditions": {},
+      "trigger": "vampiresdelight:disgusting_food_consumed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "vampiresdelight.advancement.consume_disgusting_food.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "vampirism:human_heart"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "vampiresdelight.advancement.consume_disgusting_food"
+    }
+  },
+  "requirements": [
+    [
+      "disgusting_food"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

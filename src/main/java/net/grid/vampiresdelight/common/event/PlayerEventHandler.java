@@ -13,10 +13,12 @@ import de.teamlapen.vampirism.util.Helper;
 import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.item.HunterConsumableItem;
 import net.grid.vampiresdelight.common.item.VampireConsumableItem;
+import net.grid.vampiresdelight.common.registry.VDAdvancements;
 import net.grid.vampiresdelight.common.registry.VDEffects;
 import net.grid.vampiresdelight.common.registry.VDStats;
 import net.grid.vampiresdelight.common.tag.VDTags;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -32,13 +34,12 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
-import vectorwing.farmersdelight.common.item.DrinkableItem;
 
 import java.util.Objects;
 
 @Mod.EventBusSubscriber(modid = VampiresDelight.MODID)
 public class PlayerEventHandler {
-    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    @SubscribeEvent
     public static void onItemUse(LivingEntityUseItemEvent.@NotNull Finish event) {
         if (Helper.isVampire(event.getEntity())) {
             if (!event.getEntity().getCommandSenderWorld().isClientSide) {
@@ -48,23 +49,25 @@ public class PlayerEventHandler {
                         DamageHandler.affectVampireGarlicDirect((IVampire) event.getEntity(), EnumStrength.MEDIUM);
                     } else if (event.getEntity() instanceof Player player) {
                         VampirePlayer.getOpt((Player) event.getEntity()).ifPresent(vampire -> DamageHandler.affectVampireGarlicDirect(vampire, EnumStrength.MEDIUM));
-                        player.awardStat(VDStats.gross_food_eaten);
+                        player.awardStat(VDStats.disgusting_food_consumed);
+                        VDAdvancements.DISGUSTING_FOOD_CONSUMED.trigger((ServerPlayer) player);
                     }
                 }
                 if (item instanceof GarlicBreadItem && event.getEntity() instanceof Player player) {
-                    player.awardStat(VDStats.gross_food_eaten);
+                    player.awardStat(VDStats.disgusting_food_consumed);
+                    VDAdvancements.DISGUSTING_FOOD_CONSUMED.trigger((ServerPlayer) player);
                 }
             }
-        } else if (Helper.isHunter(event.getEntity())) {
+        } else {
             if (!event.getEntity().getCommandSenderWorld().isClientSide) {
                 Item item = event.getItem().getItem();
                 if ((item instanceof VampirismItemBloodFoodItem || item instanceof VampireConsumableItem) && event.getEntity() instanceof Player player) {
-                    player.awardStat(VDStats.gross_food_eaten);
+                    player.awardStat(VDStats.disgusting_food_consumed);
+                    VDAdvancements.DISGUSTING_FOOD_CONSUMED.trigger((ServerPlayer) player);
                 }
             }
         }
-        if (event.getEntity() instanceof Player player)
-            if ((event.getItem().is(VDTags.VAMPIRE_FOOD) || event.getItem().is(VDTags.HUNTER_FOOD)) && !(event.getItem().getItem() instanceof BloodBottleItem || event.getItem().is(ModTags.Items.HEART)) && Objects.equals(player.getUUID().toString(), "c4423125-6e14-4d8e-822f-9152e8b3519e")) {player.displayClientMessage(Component.literal("Why do I always forget that Grid loves adding wisteria petals to his food ,_,"), true); player.addEffect(new MobEffectInstance(ModEffects.POISON.get(), 100, 2));}
+        if (event.getEntity() instanceof Player player) if ((event.getItem().is(VDTags.VAMPIRE_FOOD) || event.getItem().is(VDTags.HUNTER_FOOD)) && !(event.getItem().getItem() instanceof BloodBottleItem || event.getItem().is(ModTags.Items.HEART)) && Objects.equals(player.getUUID().toString(), "c4423125-6e14-4d8e-822f-9152e8b3519e")) {player.displayClientMessage(Component.literal("Why do I always forget that Grid loves adding wisteria petals to his food ,_,"), true); player.addEffect(new MobEffectInstance(ModEffects.POISON.get(), 100, 2));}
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)

@@ -14,7 +14,7 @@ import java.util.Map;
 public class VDStats {
     private static final Map<ResourceLocation, StatFormatter> ALL_STATS = new HashMap<>();
 
-    public static final ResourceLocation gross_food_eaten = add( "gross_food_eaten");
+    public static final ResourceLocation disgusting_food_consumed = add( "disgusting_food_consumed");
 
     public static void registerModStats() {
         ALL_STATS.forEach(VDStats::register);
@@ -26,10 +26,6 @@ public class VDStats {
 
     private static ResourceLocation add(String name, @SuppressWarnings("SameParameterValue") StatFormatter formatter) {
         return add(new ResourceLocation(VampiresDelight.MODID, name), formatter);
-    }
-
-    private static ResourceLocation add(ResourceLocation id) {
-        return add(id, StatFormatter.DEFAULT);
     }
 
     private static ResourceLocation add(ResourceLocation id, @SuppressWarnings("SameParameterValue") StatFormatter formatter) {

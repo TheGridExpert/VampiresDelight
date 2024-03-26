@@ -1,9 +1,11 @@
 package net.grid.vampiresdelight.common.item;
 
+import net.grid.vampiresdelight.common.registry.VDAdvancements;
 import net.grid.vampiresdelight.common.registry.VDItems;
 import net.grid.vampiresdelight.common.registry.VDSounds;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -117,6 +119,7 @@ public class BloodWineBottleItem extends Item {
             compoundTag.remove("Pouring");
             itemStack.setDamageValue(itemStack.getDamageValue() + 1);
             if (itemStack.getDamageValue() > 3) itemStack = new ItemStack(Items.GLASS_BOTTLE);
+            VDAdvancements.BLOOD_WINE_POURED.trigger((ServerPlayer) player);
         }
 
         return itemStack;

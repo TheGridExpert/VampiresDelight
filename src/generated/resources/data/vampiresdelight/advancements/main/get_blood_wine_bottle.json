@@ -1,0 +1,39 @@
+{
+  "parent": "vampiresdelight:main/get_vampire_orchid",
+  "criteria": {
+    "blood_wine_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "vampiresdelight:blood_wine_bottle"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "vampiresdelight.advancement.get_blood_wine_bottle.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "vampiresdelight:blood_wine_bottle",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "vampiresdelight.advancement.get_blood_wine_bottle"
+    }
+  },
+  "requirements": [
+    [
+      "blood_wine_bottle"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

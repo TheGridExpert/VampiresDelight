@@ -1,6 +1,7 @@
 package net.grid.vampiresdelight.common;
 
 import net.grid.vampiresdelight.common.entity.AlchemicalCocktailEntity;
+import net.grid.vampiresdelight.common.registry.VDAdvancements;
 import net.grid.vampiresdelight.common.registry.VDItems;
 import net.grid.vampiresdelight.common.registry.VDPotions;
 import net.grid.vampiresdelight.common.registry.VDStats;
@@ -15,13 +16,15 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 public class CommonSetup {
     public static void init(final FMLCommonSetupEvent event) {
-        registerModIntegrations();
         event.enqueueWork(() -> {
             VDPotions.registerPotionMixes();
             VDStats.registerModStats();
             registerDispenserBehaviors();
             registerCompostableItems();
         });
+
+        registerModIntegrations();
+        VDAdvancements.register();
     }
 
     public static void registerDispenserBehaviors() {

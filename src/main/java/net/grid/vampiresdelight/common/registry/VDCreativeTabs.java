@@ -54,12 +54,12 @@ public class VDCreativeTabs {
                         output.accept(VDItems.ORCHID_TEA.get());
                         output.accept(VDItems.ORCHID_PETALS.get());
                         output.accept(VDItems.SUGARED_BERRIES.get());
-                        output.accept(VDItems.HEART_PIECES.get());
-                        output.accept(VDItems.HUMAN_EYE.get());
                         output.accept(VDItems.RICE_DOUGH.get());
                         output.accept(VDItems.RICE_BREAD.get());
                         output.accept(VDItems.BLOOD_DOUGH.get());
                         output.accept(VDItems.BLOOD_BAGEL.get());
+                        output.accept(VDItems.HEART_PIECES.get());
+                        output.accept(VDItems.HUMAN_EYE.get());
                         output.accept(VDItems.RAW_BAT.get());
                         output.accept(VDItems.RAW_BAT_CHOPS.get());
                         output.accept(VDItems.COOKED_BAT.get());

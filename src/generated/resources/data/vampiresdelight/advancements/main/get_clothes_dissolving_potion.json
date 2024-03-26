@@ -1,0 +1,67 @@
+{
+  "parent": "vampiresdelight:main/root",
+  "criteria": {
+    "clothes_dissolving_lingering_potion": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:lingering_potion"
+            ],
+            "potion": "vampiresdelight:clothes_dissolving"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "clothes_dissolving_potion": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:potion"
+            ],
+            "potion": "vampiresdelight:clothes_dissolving"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "clothes_dissolving_splash_potion": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:splash_potion"
+            ],
+            "potion": "vampiresdelight:clothes_dissolving"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "vampiresdelight.advancement.get_clothes_dissolving_potion.desc"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "item": "minecraft:splash_potion"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "vampiresdelight.advancement.get_clothes_dissolving_potion"
+    }
+  },
+  "requirements": [
+    [
+      "clothes_dissolving_potion",
+      "clothes_dissolving_splash_potion",
+      "clothes_dissolving_lingering_potion"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -30,6 +30,7 @@ public class VDDataGenerators {
         VDBlockTags blockTags = new VDBlockTags(output, lookupProvider, helper);
         generator.addProvider(event.includeServer(), blockTags);
         generator.addProvider(event.includeServer(), new VDRecipes(output));
+        generator.addProvider(event.includeServer(), new VDAdvancementProvider(output, lookupProvider, helper));
         generator.addProvider(event.includeServer(), new VDRegistrySets(output, lookupProvider));
         generator.addProvider(event.includeServer(), new VDItemTags(output, lookupProvider, blockTags.contentsGetter(), helper));
         generator.addProvider(event.includeServer(), new VDBiomeTags(output, lookupProvider, helper));

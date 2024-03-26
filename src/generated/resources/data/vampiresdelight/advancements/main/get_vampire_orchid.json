@@ -1,0 +1,38 @@
+{
+  "parent": "vampiresdelight:main/root",
+  "criteria": {
+    "vampire_orchid": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "vampirism:vampire_orchid"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "vampiresdelight.advancement.get_vampire_orchid.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "vampirism:vampire_orchid"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "vampiresdelight.advancement.get_vampire_orchid"
+    }
+  },
+  "requirements": [
+    [
+      "vampire_orchid"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

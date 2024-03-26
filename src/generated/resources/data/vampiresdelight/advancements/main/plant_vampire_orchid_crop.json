@@ -1,0 +1,37 @@
+{
+  "parent": "vampiresdelight:main/get_vampire_orchid",
+  "criteria": {
+    "vampire_orchid": {
+      "conditions": {
+        "location": [
+          {
+            "block": "vampiresdelight:vampire_orchid_crop",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "vampiresdelight.advancement.plant_vampire_orchid_crop.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "vampiresdelight:orchid_petals"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "vampiresdelight.advancement.plant_vampire_orchid_crop"
+    }
+  },
+  "requirements": [
+    [
+      "vampire_orchid"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

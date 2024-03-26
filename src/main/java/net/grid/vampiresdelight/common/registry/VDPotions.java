@@ -55,7 +55,7 @@ public class VDPotions {
         veryDurable(LONG_BLESSING, VERY_LONG_BLESSING);
         veryStrong(VERY_LONG_BLESSING, LONG_STRONG_BLESSING);
 
-        master(CLOTHES_DISSOLVING, () -> Ingredient.of(Blocks.WITHER_SKELETON_SKULL), 16, 8);
+        master(CLOTHES_DISSOLVING, () -> Ingredient.of(Blocks.WITHER_SKELETON_SKULL), 16, 12);
 
         master(FOG_VISION, () -> Ingredient.of(ModBlocks.VAMPIRE_ORCHID.get()), 16, 8);
         durable(FOG_VISION, LONG_FOG_VISION);

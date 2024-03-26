@@ -104,8 +104,8 @@ public class VDChestLootTables implements LootTableSubProvider {
 
     public static LootPool.Builder clothesDissolvingLoot() {
         return LootPool.lootPool().setRolls(ConstantValue.exactly(1))
-                .add(LootItem.lootTableItem(Items.SPLASH_POTION).setWeight(1)
+                .add(LootItem.lootTableItem(Items.SPLASH_POTION).setWeight(2)
                         .apply(SetPotionFunction.setPotion(VDPotions.CLOTHES_DISSOLVING.get())))
-                .add(EmptyLootItem.emptyItem().setWeight(49));
+                .add(EmptyLootItem.emptyItem().setWeight(48));
     }
 }
