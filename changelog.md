@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.1.7b
+
+### Updates
+- Tooltips modified and added:
+  - **Spirit Lantern**'s tooltip is now hidden in order to save space on screen. Hold shift to view it;
+  - **Dandelion Beer Bottle** and **Blood Wine Bottle** now have a tooltip explaining how to pour drinks. Hold shift to view it;
+- **Alchemical Cocktail** can now be used by non-hunters;
+
+### Fixes
+- Fixed a bug which made gui tooltips be highlighted with orange;
+
 ## 0.1.7
 
 ### Additions

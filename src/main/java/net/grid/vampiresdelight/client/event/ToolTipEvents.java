@@ -2,20 +2,15 @@ package net.grid.vampiresdelight.client.event;
 
 import de.teamlapen.vampirism.VampirismMod;
 import de.teamlapen.vampirism.api.VReference;
-import de.teamlapen.vampirism.core.ModItems;
 import de.teamlapen.vampirism.items.BloodBottleItem;
 import de.teamlapen.vampirism.items.GarlicBreadItem;
 import de.teamlapen.vampirism.items.VampirismItemBloodFoodItem;
 import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.VDConfiguration;
-import net.grid.vampiresdelight.common.registry.VDItems;
 import net.grid.vampiresdelight.common.tag.VDTags;
 import net.grid.vampiresdelight.common.utility.VDHelper;
 import net.grid.vampiresdelight.common.utility.VDIntegrationUtils;
-import net.grid.vampiresdelight.common.utility.VDTextUtils;
 import net.grid.vampiresdelight.common.utility.VDTooltipUtils;
-import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -27,7 +22,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 import java.awt.*;
-import java.io.File;
 import java.util.List;
 
 @Mod.EventBusSubscriber(modid = VampiresDelight.MODID, value = Dist.CLIENT)
@@ -61,7 +55,7 @@ public class ToolTipEvents {
             setBorderColors(vampireStartColor, vampireEndColor, event);
         } else if (stack.is(VDTags.HUNTER_FOOD) && player != null && VDHelper.isVampire(player)) {
             setBorderColors(hunterStartColor, hunterEndColor, event);
-        } else if (stack.is(VDTags.WEREWOLF_ONLY_FOOD) || VDHelper.isSame(item, VDIntegrationUtils.WOLF_BERRIES)) {
+        } else if (stack.is(VDTags.WEREWOLF_ONLY_FOOD)) {
             setBorderColors(werewolfStartColor, werewolfEndColor, event);
         }
     }
@@ -87,31 +81,8 @@ public class ToolTipEvents {
                 VDTooltipUtils.addWerewolfFactionFoodToolTips(tooltip, player);
             }
 
-            if (Screen.hasShiftDown() && VDHelper.isDev()) {
-                try {
-                    if (itemStack.is(ModItems.BLOOD_BOTTLE.get())) {
-                        int blood = itemStack.getDamageValue() * VReference.FOOD_TO_FLUID_BLOOD;
-                        tooltip.add(Component.literal(blood + "/900").withStyle(ChatFormatting.YELLOW));
-                    }
-                    else if (itemStack.isDamageableItem()) {
-                        int maxDamage = itemStack.getMaxDamage();
-                        int damage = itemStack.getDamageValue();
-                        int durability = maxDamage - damage;
-
-                        tooltip.add(Component.literal("Durability: " + durability + "/" + maxDamage).withStyle(ChatFormatting.GOLD));
-                        tooltip.add(Component.literal("Damage: " + damage).withStyle(ChatFormatting.GOLD));
-                    }
-                } catch (NullPointerException e) {
-                    VampiresDelight.LOGGER.error("Failed to get the damage value of ItemStack", e);
-                }
-
-                //tooltip.add(Component.literal("Color Test 1").withStyle(Style.EMPTY.withColor(new Color(66, 33, 133).getRGB()).withObfuscated(true)));
-                //tooltip.add(Component.literal("Color Test 2").withStyle(Style.EMPTY.withColor(new Color(90, 90, 200).getRGB()).withUnderlined(true)));
-            }
-        }
-
-        if ((itemStack.is(VDItems.ORCHID_COOKIE.get()) || itemStack.is(VDItems.WOLF_BERRY_COOKIE.get())) && (VDIntegrationUtils.isModPresent("tlskincape") || new File("").toPath().toAbsolutePath().toString().contains("tlauncher"))) {
-            tooltip.add(VDTextUtils.getTranslation("text.pirated").withStyle(ChatFormatting.RED));
+            //tooltip.add(Component.literal("Color Test 1").withStyle(Style.EMPTY.withColor(new Color(66, 33, 133).getRGB()).withObfuscated(true)));
+            //tooltip.add(Component.literal("Color Test 2").withStyle(Style.EMPTY.withColor(new Color(90, 90, 200).getRGB()).withUnderlined(true)));
         }
     }
 }

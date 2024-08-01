@@ -1,6 +1,10 @@
 {
   "values": [
     "vampiresdelight:wolf_berry_cookie",
-    "vampiresdelight:wolf_berry_ice_cream"
+    "vampiresdelight:wolf_berry_ice_cream",
+    {
+      "id": "werewolves:wolf_berries",
+      "required": false
+    }
   ]
 }

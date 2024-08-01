@@ -6,6 +6,7 @@ import net.grid.vampiresdelight.common.registry.VDItems;
 import net.grid.vampiresdelight.common.tag.VDCompatibilityTags;
 import net.grid.vampiresdelight.common.tag.VDForgeTags;
 import net.grid.vampiresdelight.common.tag.VDTags;
+import net.grid.vampiresdelight.common.utility.VDIntegrationUtils;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -78,7 +79,8 @@ public class VDItemTags extends ItemTagsProvider {
                 .add(VDItems.SNOW_WHITE_ICE_CREAM.get());
         tag(VDTags.WEREWOLF_ONLY_FOOD)
                 .add(VDItems.WOLF_BERRY_COOKIE.get())
-                .add(VDItems.WOLF_BERRY_ICE_CREAM.get());
+                .add(VDItems.WOLF_BERRY_ICE_CREAM.get())
+                .addOptional(VDIntegrationUtils.WOLF_BERRIES);
         tag(VDTags.NOT_ROTTEN_FOOD)
                 .add(VDItems.DANDELION_BEER_MUG.get())
                 .add(VDItems.COOKED_BAT.get())

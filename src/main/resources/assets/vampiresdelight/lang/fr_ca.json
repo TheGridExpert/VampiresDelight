@@ -167,8 +167,8 @@
   "vampiresdelight.tooltip.cursed_cupcake": "Élimine l'effet de l'ail",
   "vampiresdelight.tooltip.spirit_lantern": "Permet au joueur de voir un peu plus loin dans le brouillard des vampires tout en tenant",
   "vampiresdelight.tooltip.alchemical_cocktail.burn_land_disabled": "Impossible de brûler le sol à cause des paramètres de ce serveur",
-  "vampiresdelight.tooltip.pourable_drink_item": "To pour the drink from this bottle into a glass, hold the bottle with one hand and the Glass Bottle with the other. Then press and hold the left mouse button",
-  "vampiresdelight.tooltip.holdShiftForInfo": "Hold [%s] for info",
+  "vampiresdelight.tooltip.pourable_drink_item": "Pour verser la boisson de cette bouteille dans un verre, tenez la bouteille d'une main et la bouteille en verre de l'autre. Appuyez ensuite sur le bouton gauche de la souris et maintenez-le enfoncé",
+  "vampiresdelight.tooltip.holdShiftForInfo": "Maintenez [%s] pour infos",
   "vampiresdelight.tooltip.shift": "Shift",
 
   "vampiresdelight.tooltip.blood_wine_bottle.single_serving": "Contient %s portion de vin",
@@ -177,7 +177,6 @@
   "vampiresdelight.tooltip.dandelion_beer_bottle.multiple_servings": "Contient %s des portions de bière",
 
   "vampiresdelight.text.planted_on": "Doit être planté sur des terres labourée corrompue",
-  "vampiresdelight.text.pirated": "Regardez cette chose délicieuse. Et si vous avez téléchargé le mod depuis la ressource officielle, par exemple CurseForge ou Modrinth, L'auteur du mod aurait pu se le permettre également. Merci de votre compréhension, s'il vous plaît, ne piratez pas le mod.",
 
   "itemGroup.vampiresdelight": "Vampire's Delight",
 

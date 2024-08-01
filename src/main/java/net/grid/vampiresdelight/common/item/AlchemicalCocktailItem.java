@@ -1,8 +1,5 @@
 package net.grid.vampiresdelight.common.item;
 
-import de.teamlapen.vampirism.api.VReference;
-import de.teamlapen.vampirism.api.entity.factions.IFaction;
-import de.teamlapen.vampirism.api.items.IFactionExclusiveItem;
 import net.grid.vampiresdelight.common.VDConfiguration;
 import net.grid.vampiresdelight.common.entity.AlchemicalCocktailEntity;
 import net.grid.vampiresdelight.common.registry.VDItems;
@@ -28,7 +25,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class AlchemicalCocktailItem extends Item implements IFactionExclusiveItem {
+public class AlchemicalCocktailItem extends Item {
     public AlchemicalCocktailItem(Properties properties) {
         super(properties);
     }
@@ -51,11 +48,6 @@ public class AlchemicalCocktailItem extends Item implements IFactionExclusiveIte
         }
 
         return InteractionResultHolder.sidedSuccess(heldStack, level.isClientSide());
-    }
-
-    @Override
-    public @Nullable IFaction<?> getExclusiveFaction(ItemStack stack) {
-        return VReference.HUNTER_FACTION;
     }
 
     @Override
