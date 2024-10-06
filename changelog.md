@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.7c
+
+### Fixes
+- Fixed a bug that crashed the game when bat-related food effect tooltips were displayed and `batMeatWithersHumans` was set to `false`;
+
 ## 0.1.7b
 
 ### Updates

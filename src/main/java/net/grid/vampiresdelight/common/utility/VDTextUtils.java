@@ -32,18 +32,20 @@ public class VDTextUtils {
 
         for (Pair<MobEffectInstance, Float> effectPair : effectList) {
             MobEffectInstance instance = effectPair.getFirst();
-            MutableComponent iformattabletextcomponent = Component.translatable(instance.getDescriptionId());
-            MobEffect effect = instance.getEffect();
+            if (instance != null) {
+                MutableComponent iformattabletextcomponent = Component.translatable(instance.getDescriptionId());
+                MobEffect effect = instance.getEffect();
 
-            if (instance.getAmplifier() > 0) {
-                iformattabletextcomponent = Component.translatable("potion.withAmplifier", iformattabletextcomponent, Component.translatable("potion.potency." + instance.getAmplifier()));
+                if (instance.getAmplifier() > 0) {
+                    iformattabletextcomponent = Component.translatable("potion.withAmplifier", iformattabletextcomponent, Component.translatable("potion.potency." + instance.getAmplifier()));
+                }
+
+                if (instance.getDuration() > 20) {
+                    iformattabletextcomponent = Component.translatable("potion.withDuration", iformattabletextcomponent, MobEffectUtil.formatDuration(instance, 1.0F));
+                }
+
+                tooltip.add(iformattabletextcomponent.withStyle(effect.getCategory().getTooltipFormatting()));
             }
-
-            if (instance.getDuration() > 20) {
-                iformattabletextcomponent = Component.translatable("potion.withDuration", iformattabletextcomponent, MobEffectUtil.formatDuration(instance, 1.0F));
-            }
-
-            tooltip.add(iformattabletextcomponent.withStyle(effect.getCategory().getTooltipFormatting()));
         }
     }
 }
