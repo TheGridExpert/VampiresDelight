@@ -5,9 +5,7 @@ import net.grid.vampiresdelight.common.network.OpenWeatheredLetterPacket;
 import net.grid.vampiresdelight.common.registry.VDItems;
 import net.grid.vampiresdelight.common.registry.VDRegistries;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.core.Registry;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -21,6 +19,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 
 import java.util.List;
+import java.util.Optional;
 
 public class WeatheredLetterItem extends Item {
     public WeatheredLetterItem(Properties properties) {
@@ -46,15 +45,13 @@ public class WeatheredLetterItem extends Item {
         tooltipComponents.add(WeatheredLetter.get(stack).author().withStyle(ChatFormatting.GRAY));
     }
 
-    public static void generateCreativeTab(CreativeModeTab.Output output) {
-        ClientLevel level = Minecraft.getInstance().level;
+    public static void generateCreativeTab(CreativeModeTab.ItemDisplayParameters displayParameters, CreativeModeTab.Output output) {
+        Optional<HolderLookup.RegistryLookup<WeatheredLetter>> registryLookup = displayParameters.holders().lookup(VDRegistries.WEATHERED_LETTER);
 
-        if (level != null) {
-            Registry<WeatheredLetter> registry = level.registryAccess().registryOrThrow(VDRegistries.WEATHERED_LETTER);
-
-            registry.stream().findAny().ifPresent(letter -> output.accept(makeLetter(letter), CreativeModeTab.TabVisibility.PARENT_TAB_ONLY));
-            registry.stream().forEach(letter -> output.accept(makeLetter(letter), CreativeModeTab.TabVisibility.SEARCH_TAB_ONLY));
-        }
+        registryLookup.ifPresent(lookup -> {
+            lookup.listElements().findAny().ifPresent(letter -> output.accept(makeLetter(letter.value()), CreativeModeTab.TabVisibility.PARENT_TAB_ONLY));
+            lookup.listElements().forEach(letter -> output.accept(makeLetter(letter.value()), CreativeModeTab.TabVisibility.SEARCH_TAB_ONLY));
+        });
     }
 
     public static ItemStack makeLetter(WeatheredLetter letter) {

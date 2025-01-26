@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.10c
+
+### Updates
+- Cooking spot at hunter outpost generation has been fixed, and it now finally spawns as intended. The structure itself has also been updated, and it is now sometimes generated instead of the alchemy building and not the stables;
+- A few new tents storing crops are now generated at hunter outposts as a variant of existing tents;
+
+### Fixes
+- Fixed the weathered letter creative tab generation conflicting because of referring to client on server;
+
 ## 0.1.10b
 
 ### Fixes
@@ -43,7 +52,7 @@
 ## 0.1.9
 
 ### Additions
-- Non-human food values in the food are now also stored in data components as well, and they can be modified using data packs or commands. However, it may cause various bugs. If you find any please report them. These new components are:
+- Non-human food values in the food are now stored in data components as well, and they can be modified using data packs or commands. However, it may cause various bugs. If you find any please report them. These new components are:
   - `vampiresdelight:vampire_food`;
   - `vampiresdelight:hunter_food`;
   - `vampiresdelight:werewolf_food`;
@@ -125,7 +134,7 @@
 
 ### Updates
 - Tooltips modified and added:
-  - **Spirit Lantern**'s tooltip is now hidden in order to save space on screen. Hold shift to view it;
+  - **Spirit Lantern**'s tooltip is now hidden to save space on screen. Hold shift to view it;
   - **Dandelion Beer Bottle** and **Blood Wine Bottle** now have a tooltip explaining how to pour drinks. Hold shift to view it;
 - **Alchemical Cocktail** can now be used by non-hunters;
 
@@ -256,7 +265,7 @@
   - `vampiresdelight:blood_food` - makes food restore blood bar for vampires. The value is the same as human food;
 
 ### Updates
-- Renamed **Clothes Dissolving** effect to just **Dissolving** in order to avoid unnecessary questions;
+- Renamed **Clothes Dissolving** effect to just **Dissolving** to avoid unnecessary questions;
 - Tweaked config file appearance;
 - **Pure Sorbet**, **Orchid Ice Cream**, **Dark Ice Cream**, and **Snow-White Ice Cream** now clear fire from the consumer and can always be eaten;
 - **Cursed Cupcake** no longer heals player, but gives regeneration effect;
@@ -362,7 +371,7 @@
 - The damage **Clothes Dissolving** effect deals to armor can now be reduced by Unbreaking enchantment;
 - **Clothes Dissolving** potion is now creative only, and can't be crafted;
 - Wandering traders now sell **Black Mushrooms**;
-- Recalculated **Vampire Bite** enchantment's healing values. Level 1 now has 20% to healing, level 2 has 25%, and level 3 has 30% (can be configured). Max healing value is now 2 hearts;
+- Recalculated **Vampire Bite** enchantment's healing values. Level 1 now has 20% to healing, level 2 has 25%, and level 3 has 30% (can be configured). Maximum healing value is now 2 hearts;
 
 ### Fixes
 - Fixed Hardtack giving bowl after being eaten;

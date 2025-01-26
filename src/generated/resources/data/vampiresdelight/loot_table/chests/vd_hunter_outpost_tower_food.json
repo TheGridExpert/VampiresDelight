@@ -10,20 +10,14 @@
           "weight": 5
         },
         {
-          "type": "minecraft:item",
-          "name": "farmersdelight:cabbage",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:item",
-          "name": "farmersdelight:rice",
-          "weight": 5
+          "type": "minecraft:empty",
+          "weight": 8
         }
       ],
       "rolls": {
         "type": "minecraft:uniform",
-        "max": 10.0,
-        "min": 5.0
+        "max": 6.0,
+        "min": 4.0
       }
     }
   ],

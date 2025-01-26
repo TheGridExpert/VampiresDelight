@@ -71,7 +71,7 @@ public class VDCreativeTabs {
                         // Tools
                         add(VDItems.SILVER_KNIFE.get(), VDIntegrationUtils.WEREWOLVES, output);
                         add(VDItems.ALCHEMICAL_COCKTAIL.get(), output);
-                        WeatheredLetterItem.generateCreativeTab(output);
+                        WeatheredLetterItem.generateCreativeTab(displayParams, output);
 
                         // Farming
                         add(VDItems.BLACK_MUSHROOM_BLOCK.get(), output);

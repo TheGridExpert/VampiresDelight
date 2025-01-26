@@ -21,11 +21,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:beetroot",
-          "weight": 10
-        },
-        {
-          "type": "minecraft:item",
           "name": "farmersdelight:cabbage",
           "weight": 10
         },
@@ -36,18 +31,13 @@
         },
         {
           "type": "minecraft:item",
-          "name": "vampirism:garlic",
-          "weight": 15
-        },
-        {
-          "type": "minecraft:item",
           "name": "minecraft:charcoal",
           "weight": 15
         }
       ],
       "rolls": {
         "type": "minecraft:uniform",
-        "max": 24.0,
+        "max": 20.0,
         "min": 10.0
       }
     },
