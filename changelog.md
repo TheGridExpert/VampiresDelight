@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.7d
+
+- ### Updates
+- Changed food effects:
+  - **Snow_White Ice Cream**: `4` to `3,5`;
+  - **Blood Wine Glass**: changed `Regeneration II for 10 seconds` to `Regeneration for 15 seconds`;
+  - **Orchid Tea**: changed `Regeneration for 20 seconds` to `10 seconds`;
+  - **Mulled Wine Glass**: replaced `Regeneration` with `Haste for  3 minutes`;
+  - **Orchid Ice Cream**: replaced `Resistance` with `Vampire Fire Protection II for 1 minute`;
+  - **Dandelion Beer Mug**: replaced `Strength` with `Haste for 3 minutes` and added half a point of saturation;
+  - **Borscht**: replaced `Resistance` with `Absorption for 1 minute 30 seconds`;
+  - **Wolf Berry Ice Cream**: replaced `Resistance` with `Haste for 2 minutes`;
+
 ## 0.1.7c
 
 ### Fixes
@@ -44,7 +57,7 @@
   - **Blood Wine Glass**;
   - **Daisy Tea**;
 - Changed food values:
-  - **Snow_White Ice Cream**: `4` to `3,5`;
+  - **Snow-White Ice Cream**: `4` to `3,5`;
 - **Vampire Bite** enchantment now heals at least half a heart on a successful hit;
 
 ### Translations
