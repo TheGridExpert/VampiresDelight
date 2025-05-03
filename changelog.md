@@ -2,7 +2,15 @@
 
 ## 0.1.10c
 
-### Updates
+- ### Updates
+- Changed food effects:
+  - **Blood Wine Glass**: changed `Regeneration II for 10 seconds` to `Regeneration for 15 seconds`;
+  - **Orchid Tea**: changed `Regeneration for 20 seconds` to `10 seconds`;
+  - **Mulled Wine Glass**: replaced `Regeneration` with `Haste for  3 minutes`;
+  - **Orchid Ice Cream**: replaced `Resistance` with `Vampire Fire Protection II for 1 minute`;
+  - **Dandelion Beer Mug**: replaced `Strength` with `Haste for 3 minutes` and added half a point of saturation;
+  - **Borscht**: replaced `Resistance` with `Absorption for 1 minute 30 seconds`;
+  - **Wolf Berry Ice Cream**: replaced `Resistance` with `Haste for 2 minutes`;
 - Cooking spot at hunter outpost generation has been fixed, and it now finally spawns as intended. The structure itself has also been updated, and it is now sometimes generated instead of the alchemy building and not the stables;
 - A few new tents storing crops are now generated at hunter outposts as a variant of existing tents;
 
