@@ -1,11 +1,14 @@
 package net.grid.vampiresdelight.common.constant;
 
+import de.teamlapen.vampirism.core.ModEffects;
 import net.grid.vampiresdelight.common.VDConfiguration;
 import net.grid.vampiresdelight.common.misc.VDFoodPropertiesBuilder;
 import net.grid.vampiresdelight.common.registry.VDEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
+
+import java.util.function.Supplier;
 
 import static vectorwing.farmersdelight.common.FoodValues.comfort;
 import static vectorwing.farmersdelight.common.FoodValues.nourishment;
@@ -47,13 +50,13 @@ public class VDFoodValues {
 
     // Drinks
     public static final FoodProperties DANDELION_BEER_MUG = new FoodProperties.Builder().alwaysEdible()
-            .nutrition(3).saturationModifier(0.3f)
-            .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, SHORT_DURATION), 1.0F)
-            .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 300), 1.0F).build();
+            .nutrition(4).saturationModifier(0.3f)
+            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, MEDIUM_DURATION), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 200), 1.0F).build();
     
     public static final FoodProperties BLOOD_WINE_GLASS_VAMPIRE = new FoodProperties.Builder().alwaysEdible()
             .nutrition(7).saturationModifier(0.6f)
-            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, MOMENT_DURATION, 1), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 300), 1.0F)
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 300), 1.0F).build();
     
     public static final FoodProperties BLOOD_WINE_GLASS_HUMAN = new FoodProperties.Builder().alwaysEdible()
@@ -65,7 +68,7 @@ public class VDFoodValues {
             .effect(() -> new MobEffectInstance(MobEffects.POISON, 60), 1.0F).build();
     
     public static final FoodProperties ORCHID_TEA_VAMPIRE = new FoodProperties.Builder().alwaysEdible()
-            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, FLEETING_DURATION), 1.0F).build();
+            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, MOMENT_DURATION), 1.0F).build();
     
     public static final FoodProperties ORCHID_TEA_IMMUNE = new FoodProperties.Builder().alwaysEdible()
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, FLEETING_DURATION), 1.0F)
@@ -76,9 +79,8 @@ public class VDFoodValues {
     
     public static final FoodProperties MULLED_WINE_GLASS_VAMPIRE = new FoodProperties.Builder().alwaysEdible()
             .nutrition(8).saturationModifier(0.7f)
-            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, MOMENT_DURATION, 1), 1.0F)
-            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 4800), 1.0F)
-            .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 300), 1.0F).build();
+            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, MEDIUM_DURATION), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 200), 1.0F).build();
     
     public static final FoodProperties MULLED_WINE_GLASS_HUMAN = new FoodProperties.Builder().alwaysEdible()
             .nutrition(1).saturationModifier(0.1f)
@@ -105,15 +107,15 @@ public class VDFoodValues {
     
     public static final FoodProperties RAW_BAT = new FoodProperties.Builder()
             .nutrition(2).saturationModifier(0.3f)    
-            .effect(() -> new MobEffectInstance(VDConfiguration.BAT_MEAT_WITHERS_HUMANS.get() ? MobEffects.WITHER : MobEffects.POISON, FLEETING_DURATION), 0.4F).build();
+            .effect(batMeatWitherEffect(FLEETING_DURATION), 0.4F).build();
     
     public static final FoodProperties RAW_BAT_CHOPS = new FoodProperties.Builder()
             .nutrition(1).saturationModifier(0.3f).fast()
-            .effect(() -> new MobEffectInstance(VDConfiguration.BAT_MEAT_WITHERS_HUMANS.get() ? MobEffects.WITHER : MobEffects.POISON, FLEETING_DURATION), 0.2F).build();
+            .effect(batMeatWitherEffect(FLEETING_DURATION), 0.2F).build();
     
     public static final FoodProperties GRILLED_BAT_HUMAN = new FoodProperties.Builder()
             .nutrition(6).saturationModifier(0.5f)    
-            .effect(() -> new MobEffectInstance(VDConfiguration.BAT_MEAT_WITHERS_HUMANS.get() ? MobEffects.WITHER : MobEffects.POISON, FLEETING_DURATION), 0.2F).build();
+            .effect(batMeatWitherEffect(FLEETING_DURATION), 0.2F).build();
     
     public static final FoodProperties GRILLED_BAT_VAMPIRE = new FoodProperties.Builder()
             .nutrition(6).saturationModifier(0.5f).build();
@@ -121,7 +123,7 @@ public class VDFoodValues {
     public static final FoodProperties GRILLED_BAT_CHOPS_HUMAN = new FoodProperties.Builder()
             .nutrition(3).saturationModifier(0.2f).fast()
             .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 400), 0.1F)
-            .effect(() -> new MobEffectInstance(VDConfiguration.BAT_MEAT_WITHERS_HUMANS.get() ? MobEffects.WITHER : MobEffects.POISON, FLEETING_DURATION), 0.1F).build();
+            .effect(batMeatWitherEffect(FLEETING_DURATION), 0.1F).build();
     
     public static final FoodProperties GRILLED_BAT_CHOPS_VAMPIRE = new FoodProperties.Builder()
             .nutrition(3).saturationModifier(0.2f).fast().build();
@@ -136,7 +138,7 @@ public class VDFoodValues {
     
     public static final FoodProperties ORCHID_ICE_CREAM = new FoodProperties.Builder()
             .nutrition(7).saturationModifier(0.5f).fast()
-            .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, SHORT_DURATION), 1.0F).build();
+            .effect(() -> new MobEffectInstance(ModEffects.FIRE_PROTECTION, SHORT_DURATION, 1), 1.0F).build();
     
     public static final FoodProperties SUGARED_BERRIES = new FoodProperties.Builder()
             .nutrition(3).saturationModifier(0.3f).build();
@@ -169,8 +171,8 @@ public class VDFoodValues {
             .effect(() -> new MobEffectInstance(VDEffects.BLESSING, MEDIUM_DURATION), 1.0F).build();
     
     public static final FoodProperties WOLF_BERRY_ICE_CREAM = new FoodProperties.Builder()
-            .nutrition(7).saturationModifier(0.5f).fast().alwaysEdible()
-            .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, SHORT_DURATION), 1.0F).build();
+            .nutrition(8).saturationModifier(0.5f).fast().alwaysEdible()
+            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 2400), 1.0F).build();
     
 
     // Handheld Foods
@@ -203,7 +205,7 @@ public class VDFoodValues {
     
     public static final FoodProperties BAT_TACO_HUMAN = new FoodProperties.Builder()
             .nutrition(8).saturationModifier(0.5f)
-            .effect(() -> new MobEffectInstance(VDConfiguration.BAT_MEAT_WITHERS_HUMANS.get() ? MobEffects.WITHER : MobEffects.POISON, FLEETING_DURATION), 0.2F).build();
+            .effect(batMeatWitherEffect(FLEETING_DURATION), 0.2F).build();
     
     public static final FoodProperties HARDTACK_HUMAN = new VDFoodPropertiesBuilder()
             .nutrition(6).saturationModifier(0.9f).eatSeconds(2.4f).build();
@@ -228,7 +230,7 @@ public class VDFoodValues {
     public static final FoodProperties BORSCHT = new FoodProperties.Builder()
             .nutrition(16).saturationModifier(0.75f)
             .effect(() -> comfort(MEDIUM_DURATION), 1.0F)
-            .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, SHORT_DURATION), 1.0F).build();
+            .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 1800), 1.0F).build();
     
 
     // Plated Foods
@@ -251,4 +253,8 @@ public class VDFoodValues {
                     return new MobEffectInstance(de.teamlapen.vampirism.core.ModEffects.SUNSCREEN, SHORT_DURATION);
                 }
             }, 1.0F).build();
+
+    public static Supplier<MobEffectInstance> batMeatWitherEffect(int duration) {
+        return () -> new MobEffectInstance(VDConfiguration.BAT_MEAT_WITHERS_HUMANS.get() ? MobEffects.WITHER : MobEffects.POISON, duration);
+    }
 }
