@@ -2,7 +2,7 @@
 
 ## 0.1.10c
 
-- ### Updates
+### Updates
 - Changed food effects:
   - **Blood Wine Glass**: changed `Regeneration II for 10 seconds` to `Regeneration for 15 seconds`;
   - **Orchid Tea**: changed `Regeneration for 20 seconds` to `10 seconds`;
