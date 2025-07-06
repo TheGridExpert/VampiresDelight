@@ -160,12 +160,12 @@
   "oil.vampiresdelight.fog_vision": "迷雾视觉",
 
   "enchantment.vampiresdelight.vampire_bite": "吸血鬼之咬",
-  "enchantment.vampiresdelight.vampire_bite.desc": "依玩家造成的伤害治愈玩家",
+  "enchantment.vampiresdelight.vampire_bite.desc": "依玩家造成的伤害成比例治愈玩家",
 
   "vampiresdelight.tooltip.daisy_tea": "治愈虚弱，失明，\n缓慢与反胃",
   "vampiresdelight.tooltip.orchid_tea": "感染吸血之疾",
   "vampiresdelight.tooltip.cursed_cupcake": "清除大蒜效果",
-  "vampiresdelight.tooltip.spirit_lantern": "让拿着它的玩家在吸血鬼森林迷雾中看得更远",
+  "vampiresdelight.tooltip.spirit_lantern": "让拿着它的玩家在吸血鬼森林迷雾中看得更远一点",
   "vampiresdelight.tooltip.alchemical_cocktail.burn_land_disabled": "因为服务器设置，不能在地面上燃烧",
   "vampiresdelight.tooltip.pourable_drink_item": "要将饮料从这个酒瓶倒入玻璃瓶中，就先一只手拿着酒瓶，另一只手拿着玻璃瓶，然后按住右键。",
   "vampiresdelight.tooltip.holdShiftForInfo": "按住 [%s] 以了解更多信息",
