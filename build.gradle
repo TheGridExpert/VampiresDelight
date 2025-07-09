@@ -155,7 +155,6 @@ processResources {
             mod_name: mod_name,
             mod_display_name: mod_display_name,
             mod_license: mod_license,
-            credits: credits,
 
             forge_version: forge_version,
             forge_version_range: forge_version_range,

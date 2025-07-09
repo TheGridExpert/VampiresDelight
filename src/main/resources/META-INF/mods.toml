@@ -12,7 +12,16 @@ logoFile="logo.png"
 logoBlur=false
 itemIcon = "vampiresdelight:dark_stone_stove"
 configBackground = "vampiresdelight:textures/block/dark_stone_small_bricks.png"
-credits="${credits}"
+credits='''\n
+    - Cheaterpaul (Vampirism and code assistance)
+    - Maxanier (Vampirism)
+    - Vectorwing (Farmer's Delight)
+    - Lunofe/Zin (code and balance)
+Translators:
+    - DimensionPainter (Russian)
+    - Cursed Shadow (French)
+    - stairs (Chinese)
+'''
 authors="GridExpert"
 description='''
 Makes Vampirism and Farmer's Delight more compatible
