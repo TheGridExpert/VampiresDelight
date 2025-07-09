@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.10d
+
+### Translations
+- Added:
+  - zh_Cn (Thanks, chairs!);
+
 ## 0.1.10c
 
 ### Updates
