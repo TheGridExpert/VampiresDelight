@@ -136,7 +136,6 @@ tasks.withType(ProcessResources).configureEach {
             mod_display_name: mod_display_name,
             mod_version: mod_version,
             mod_license: mod_license,
-            credits: credits,
 
             minecraft_version: minecraft_version,
             minecraft_version_range: minecraft_version_range,
