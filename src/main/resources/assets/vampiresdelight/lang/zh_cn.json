@@ -123,7 +123,7 @@
   "block.vampiresdelight.red_orchid_candle_cake": "插上红色蜡烛的兰花蛋糕",
   "block.vampiresdelight.black_candle_cake": "插上黑色蜡烛的兰花蛋糕",
 
-  "item.vampiresdelight.grilled_garlic": "烤大蒜",
+  "item.vampiresdelight.roasted_garlic": "烤大蒜",
   "item.vampiresdelight.fish_burger": "鱼香汉堡",
   "item.vampiresdelight.garlic_soup": "大蒜汤",
   "item.vampiresdelight.borscht": "罗宋汤",
@@ -173,7 +173,7 @@
   "vampiresdelight.tooltip.alchemical_cocktail.splash_radius": "溅射半径： %s",
   "vampiresdelight.tooltip.pourable_drink_item": "要将饮料从这个酒瓶倒入玻璃瓶中，就先一只手拿着酒瓶，另一只手拿着玻璃瓶，然后按住右键。",
   "vampiresdelight.tooltip.for_faction": "阵营: %s",
-  "vampiresdelight.tooltip.holdShiftForInfo": "按住 [%s] 以了解更多信息",
+  "vampiresdelight.tooltip.hold_shift_for_info": "按住 [%s] 以了解更多信息",
   "vampiresdelight.tooltip.shift": "Shift",
 
   "vampiresdelight.tooltip.blood_wine_bottle.single_serving": "包含 %s 份酒",
@@ -181,7 +181,7 @@
   "vampiresdelight.tooltip.dandelion_beer_bottle.single_serving": "包含 %s 份酒",
   "vampiresdelight.tooltip.dandelion_beer_bottle.multiple_servings": "包含 %s 份酒",
 
-  "vampiresdelight.text.planted_on": "必须被种植在诅咒耕地或血染耕地上",
+  "vampiresdelight.text.planted_on_vampire_soil": "必须被种植在诅咒耕地或血染耕地上",
 
   "itemGroup.vampiresdelight": "血族乐事",
 
