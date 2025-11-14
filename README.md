@@ -36,6 +36,7 @@
 - [Cheaterpaul](https://paube.de) (Code)
 - [Lunofe (Zin)](https://github.com/lunofe) (Code/Balance)
 - [Fluffy_Nuar](https://github.com/fluffy-nuar) (Ideas)
+- [HidekiHrk](https://github.com/HidekiHrk) (Code)
 
 ### Translators
 

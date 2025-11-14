@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.11
+
+### Fixes
+- Fixed **Botany Pots** mod integration (Thanks, HidekiHrk!); 
+
 ## 0.1.10d
 
 ### Translations
