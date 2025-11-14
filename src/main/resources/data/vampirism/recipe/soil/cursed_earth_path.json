@@ -1,14 +1,13 @@
 {
-  "type": "botanypots:soil",
-  "input": {
-    "item": "vampirism:cursed_earth_path"
-  },
-  "display": {
-    "block": "vampirism:cursed_earth_path"
-  },
-  "categories": [
-    "dirt",
-    "cursed_earth"
+  "bookshelf:load_conditions": [
+    {
+      "type": "bookshelf:block_exists",
+      "values": [
+        "vampirism:cursed_earth_path"
+      ]
+    }
   ],
-  "growthModifier": 0.5
+  "type": "botanypots:block_derived_soil",
+  "block": "vampirism:cursed_earth_path",
+  "growth_modifier": 0.05
 }

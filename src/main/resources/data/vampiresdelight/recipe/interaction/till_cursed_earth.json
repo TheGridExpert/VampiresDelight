@@ -1,9 +1,9 @@
 {
   "type": "botanypots:pot_interaction",
-  "held_ingredient": {
+  "held_item": {
     "tag": "minecraft:hoes"
   },
-  "soil_ingredient": [
+  "soil_item": [
     {
       "item": "vampirism:cursed_grass"
     },
@@ -14,12 +14,11 @@
       "item": "vampirism:cursed_earth_path"
     }
   ],
-  "soil_output": {
-    "item": "vampiresdelight:cursed_farmland",
-    "count": 1
+  "new_soil": {
+    "id": "vampiresdelight:cursed_farmland"
   },
-  "sound": {
-    "sound": "minecraft:item.hoe.till",
-    "category": "blocks"
+  "sound_effect": {
+    "id": "minecraft:item.hoe.till",
+    "category": "BLOCKS"
   }
 }

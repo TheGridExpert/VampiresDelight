@@ -1,15 +1,13 @@
 {
-  "type": "botanypots:soil",
-  "input": {
-    "item": "vampirism:cursed_grass"
-  },
-  "display": {
-    "block": "vampirism:cursed_grass"
-  },
-  "categories": [
-    "dirt",
-    "grass",
-    "cursed_earth"
+  "bookshelf:load_conditions": [
+    {
+      "type": "bookshelf:block_exists",
+      "values": [
+        "vampirism:cursed_grass"
+      ]
+    }
   ],
-  "growthModifier": 1
+  "type": "botanypots:block_derived_soil",
+  "block": "vampirism:cursed_grass",
+  "growth_modifier": 0.10
 }

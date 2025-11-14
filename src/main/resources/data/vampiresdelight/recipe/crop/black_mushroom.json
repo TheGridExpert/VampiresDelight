@@ -1,24 +1,37 @@
 {
-  "type": "botanypots:crop",
-  "seed": {
+  "type": "botanypots:block_derived_crop",
+  "input": {
     "item": "vampiresdelight:black_mushroom"
   },
-  "categories": [
-    "stone",
-    "mushroom",
-    "mulch",
-    "cursed_earth"
-  ],
   "growthTicks": 1200,
-  "display": {
-    "block": "vampiresdelight:black_mushroom"
+  "block": "vampiresdelight:black_mushroom",
+  "soil": {
+    "type": "bookshelf:either",
+    "fabric:type": "bookshelf:either",
+    "ingredients": [
+      {
+        "type": "bookshelf:block_tag",
+        "fabric:type": "bookshelf:block_tag",
+        "tag": "minecraft:mushroom_grow_block"
+      },
+      {
+        "tag": "botanypots:soil/mushroom"
+      },
+      {
+        "item": "vampiresdelight:bloody_soil"
+      },
+      {
+        "item": "vampiresdelight:bloody_soil_farmland"
+      },
+      {
+        "item": "vampiresdelight:cursed_farmland"
+      }
+    ]
   },
   "drops": [
     {
-      "chance": 1.00,
-      "output": {
-        "item": "vampiresdelight:black_mushroom"
-      }
+      "type": "botanypots:loot_table",
+      "table_id": "vampiresdelight:botanypots/vampiresdelight/crop/black_mushroom"
     }
   ]
 }

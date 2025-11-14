@@ -1,16 +1,13 @@
 {
-  "type": "botanypots:soil",
-  "input": {
-    "item": "vampiresdelight:cursed_farmland"
-  },
-  "display": {
-    "block": "vampiresdelight:cursed_farmland"
-  },
-  "categories": [
-    "dirt",
-    "farmland",
-    "cursed_earth",
-    "cursed_farmland"
+  "bookshelf:load_conditions": [
+    {
+      "type": "bookshelf:block_exists",
+      "values": [
+        "vampiresdelight:cursed_farmland"
+      ]
+    }
   ],
-  "growthModifier": 1.05
+  "type": "botanypots:block_derived_soil",
+  "block": "vampiresdelight:cursed_farmland",
+  "growth_modifier": 0.105
 }
