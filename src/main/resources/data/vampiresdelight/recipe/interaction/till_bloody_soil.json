@@ -1,0 +1,16 @@
+{
+  "type": "botanypots:pot_interaction",
+  "held_item": {
+    "tag": "minecraft:hoes"
+  },
+  "soil_item": {
+      "item": "vampiresdelight:bloody_soil"
+  },
+  "new_soil": {
+    "id": "vampiresdelight:bloody_soil_farmland"
+  },
+  "sound_effect": {
+    "id": "minecraft:item.hoe.till",
+    "category": "BLOCKS"
+  }
+}

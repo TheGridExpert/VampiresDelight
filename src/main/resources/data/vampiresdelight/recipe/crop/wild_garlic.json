@@ -1,24 +1,23 @@
 {
-  "type": "botanypots:crop",
-  "seed": {
+  "type": "botanypots:block_derived_crop",
+  "input": {
     "item": "vampiresdelight:wild_garlic"
   },
-  "categories": [
-    "dirt"
-  ],
   "growthTicks": 1200,
-  "display": {
-    "type": "botanypots:aging",
-    "block": "vampiresdelight:wild_garlic"
+  "block": "vampiresdelight:wild_garlic",
+  "soil": {
+    "type": "bookshelf:either",
+    "fabric:type": "bookshelf:either",
+    "ingredients": [
+      {
+        "tag": "botanypots:soil/dirt"
+      }
+    ]
   },
   "drops": [
     {
-      "chance": 1.00,
-      "output": {
-        "item": "vampirism:item_garlic"
-      },
-      "minRolls": 1,
-      "maxRolls": 2
+      "type": "botanypots:loot_table",
+      "table_id": "vampiresdelight:botanypots/vampirism/crop/wild_garlic"
     }
   ]
 }

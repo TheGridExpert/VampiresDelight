@@ -1,40 +1,29 @@
 {
-  "type": "botanypots:crop",
-  "seed": {
+  "type": "botanypots:block_derived_crop",
+  "input": {
     "item": "vampiresdelight:orchid_seeds"
   },
-  "categories": [
-    "cursed_farmland"
-  ],
   "growthTicks": 1200,
-  "display": {
-    "type": "botanypots:aging",
-    "block": "vampiresdelight:vampire_orchid_crop"
+  "block": "vampiresdelight:vampire_orchid_crop",
+  "soil": {
+    "type": "bookshelf:either",
+    "fabric:type": "bookshelf:either",
+    "ingredients": [
+      {
+        "item": "vampiresdelight:bloody_soil"
+      },
+      {
+        "item": "vampiresdelight:bloody_soil_farmland"
+      },
+      {
+        "item": "vampiresdelight:cursed_farmland"
+      }
+    ]
   },
   "drops": [
     {
-      "chance": 1.00,
-      "output": {
-        "item": "vampiresdelight:orchid_petals"
-      },
-      "minRolls": 1,
-      "maxRolls": 2
-    },
-    {
-      "chance": 0.05,
-      "output": {
-        "item": "vampiresdelight:orchid_petals"
-      },
-      "minRolls": 1,
-      "maxRolls": 2
-    },
-    {
-      "chance": 0.05,
-      "output": {
-        "item": "vampiresdelight:orchid_seeds"
-      },
-      "minRolls": 1,
-      "maxRolls": 2
+      "type": "botanypots:loot_table",
+      "table_id": "vampiresdelight:botanypots/vampiresdelight/crop/vampire_orchid_crop"
     }
   ]
 }

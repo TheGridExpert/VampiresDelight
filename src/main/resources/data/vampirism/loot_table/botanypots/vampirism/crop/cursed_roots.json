@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "vampirism:cursed_roots"
+        }
+      ]
+    }
+  ],
+  "random_sequence": "vampirism:cursed_roots"
+}

@@ -1,21 +1,29 @@
 {
-  "type": "botanypots:crop",
-  "seed": {
+  "type": "botanypots:block_derived_crop",
+  "input": {
     "item": "vampirism:vampire_orchid"
   },
-  "categories": [
-    "cursed_earth"
-  ],
   "growthTicks": 1200,
-  "display": {
-    "block": "vampirism:vampire_orchid"
+  "block": "vampirism:vampire_orchid",
+  "soil": {
+    "type": "bookshelf:either",
+    "fabric:type": "bookshelf:either",
+    "ingredients": [
+      {
+        "item": "vampiresdelight:bloody_soil"
+      },
+      {
+        "item": "vampiresdelight:bloody_soil_farmland"
+      },
+      {
+        "item": "vampiresdelight:cursed_farmland"
+      }
+    ]
   },
   "drops": [
     {
-      "chance": 1.00,
-      "output": {
-        "item": "vampirism:vampire_orchid"
-      }
+      "type": "botanypots:loot_table",
+      "table_id": "vampirism:botanypots/vampirism/crop/vampire_orchid"
     }
   ]
 }
