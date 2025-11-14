@@ -3,7 +3,8 @@
 ## 0.1.11
 
 ### Fixes
-- Fixed **Botany Pots** mod integration (Thanks, HidekiHrk!); 
+- Fixed **Botany Pots** mod integration (Thanks, HidekiHrk!);
+- Fixed infinite wine and beer when pouring using a crafting table;
 
 ## 0.1.10d
 

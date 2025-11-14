@@ -45,12 +45,14 @@ public class PourableBottleItem extends Item implements ICustomUseItem {
     private final PlacedPourableBottleBlock placedBottleBlock;
     private final Item serving;
     private final Item servingContainer;
+    private final int servings;
 
     public PourableBottleItem(Properties properties, PlacedPourableBottleBlock placedBottleBlock, Item serving, Item servingContainer, int servings) {
-        super(properties.durability(servings).setNoRepair());
+        super(properties.durability(servings).stacksTo(1).setNoRepair());
         this.placedBottleBlock = placedBottleBlock;
         this.serving = serving;
         this.servingContainer = servingContainer;
+        this.servings = servings;
     }
 
     @Override
@@ -205,11 +207,11 @@ public class PourableBottleItem extends Item implements ICustomUseItem {
     }
 
     @Override
-    public ItemStack getCraftingRemainingItem(ItemStack itemStack) {
-        ItemStack item = itemStack.copy();
-        item.setDamageValue(item.getDamageValue() + 1);
-        if (item.getDamageValue() > 3) return new ItemStack(servingContainer);
-        return item;
+    public ItemStack getCraftingRemainingItem(ItemStack stack) {
+        ItemStack copyStack = stack.copy();
+        copyStack.setDamageValue(copyStack.getDamageValue() + 1);
+        if (copyStack.getDamageValue() >= this.servings) return new ItemStack(servingContainer);
+        return copyStack;
     }
 
     @Override
