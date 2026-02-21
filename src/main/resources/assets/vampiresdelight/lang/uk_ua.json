@@ -280,7 +280,9 @@
   "vampiresdelight.configuration.wanderingTraderSellsVampirismItems.tooltip": "Чи повинен мандрівний крамар продавати деякі предмети з Vampirism та цього мода? (Включаючи насіння і деякі блоки)",
 
   "vampiresdelight.configuration.overrides": "Перевизначення",
-  "vampiresdelight.configuration.overrideFoodPropertiesForFactions": "§eПеревизначати значення їжі предметів для фракцій",
+  "vampiresdelight.configuration.enableFDFoodEffectsDespiteFaction": "Увімкнути ефекти їжі незалежно від фракції",
+  "vampiresdelight.configuration.enableFDFoodEffectsDespiteFaction.tooltip": "Якщо увімкнено, всі гравці отримуватимуть ефекти їжі від страв з Farmer's Delight незалежно від своєї фракції. Наприклад, вампіри все одно отримуватимуть ефекти, але не насичення.",
+  "vampiresdelight.configuration.overrideFoodPropertiesForFactions": "Перевизначати значення їжі предметів для фракцій",
   "vampiresdelight.configuration.overrideFoodPropertiesForFactions.tooltip": "Чи повинен цей мод перевизначати значення їжі всіх ванільних та предметів з інших модів, щоб вони використовували специфічні для конкретної фракції? Якщо ввімкнути цю опцію, то компоненти з цього мода можна буде використовувати для будь-якого іншого предмета. Наприклад, якщо предмет має компонент `vampiresdelight:vampire_food`, він буде використовувати значення їжі для вампірів з компонента, а не стандартне, як у людей. Вимкніть цю функцію, якщо вона викликає конфлікти з іншими модами.",
 
   "vampiresdelight.configuration.blocks": "Блоки",

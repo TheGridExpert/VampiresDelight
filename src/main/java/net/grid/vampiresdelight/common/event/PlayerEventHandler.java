@@ -4,6 +4,7 @@ import de.teamlapen.vampirism.api.EnumStrength;
 import de.teamlapen.vampirism.core.ModItems;
 import de.teamlapen.vampirism.items.VampirismItemBloodFoodItem;
 import net.grid.vampiresdelight.VampiresDelight;
+import net.grid.vampiresdelight.common.VDConfiguration;
 import net.grid.vampiresdelight.common.item.FactionalConsumableItem;
 import net.grid.vampiresdelight.common.item.VampireConsumableItem;
 import net.grid.vampiresdelight.common.item.WerewolfConsumableItem;
@@ -74,7 +75,7 @@ public class PlayerEventHandler {
         LivingEntity consumer = event.getEntity();
         ItemStack itemInHand = consumer.getItemInHand(consumer.getUsedItemHand());
         Item item = itemInHand.getItem();
-        if (VDHelper.isVampire(consumer) && item instanceof ConsumableItem && !itemInHand.has(VDDataComponents.VAMPIRE_FOOD)) {
+        if (VDHelper.isVampire(consumer) && item instanceof ConsumableItem && !itemInHand.has(VDDataComponents.VAMPIRE_FOOD) && !VDConfiguration.ENABLE_FD_FOOD_EFFECTS_DESPITE_FACTION.get()) {
             event.setResult(MobEffectEvent.Applicable.Result.DO_NOT_APPLY);
         }
     }

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.11b
+
+### Additions
+- Added a new config:
+  - `enableFDFoodEffectsDespiteFaction`:
+  - `false` by default;
+
 ## 0.1.11
 
 ### Fixes

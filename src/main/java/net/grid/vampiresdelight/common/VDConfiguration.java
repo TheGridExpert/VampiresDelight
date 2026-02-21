@@ -12,7 +12,8 @@ public class VDConfiguration {
     public static final ModConfigSpec.BooleanValue WANDERING_TRADER_SELLS_VAMPIRISM_ITEMS;
 
     public static final String CATEGORY_OVERRIDES = "overrides";
-    public static ModConfigSpec.BooleanValue OVERRIDE_FOOD_PROPERTIES_FOR_FACTIONS;
+    public static final ModConfigSpec.BooleanValue ENABLE_FD_FOOD_EFFECTS_DESPITE_FACTION;
+    public static final ModConfigSpec.BooleanValue OVERRIDE_FOOD_PROPERTIES_FOR_FACTIONS;
 
     public static final String CATEGORY_BLOCKS = "blocks";
     public static final ModConfigSpec.DoubleValue BLOODY_SOIL_BOOST_CHANCE;
@@ -79,6 +80,9 @@ public class VDConfiguration {
         COMMON_BUILDER.pop();
 
         COMMON_BUILDER.push(CATEGORY_OVERRIDES);
+        ENABLE_FD_FOOD_EFFECTS_DESPITE_FACTION = COMMON_BUILDER
+                .comment("If true, all players receive food effects from Farmer's Delight food items regardless of their faction. For example vampires would still get the effects but no hunger.")
+                .define("enableFDFoodEffectsDespiteFaction", false);
         OVERRIDE_FOOD_PROPERTIES_FOR_FACTIONS = COMMON_BUILDER
                 .comment("Should this mod override the food values of all vanilla and modded items to use faction-specific properties? Enabling this option makes components from this mod usable for any item. For instance, if an item has the `vampiresdelight:vampire_food` data component, it will use the food value from the component instead of the default one for vampires. Disable this if it causes conflicts with other mods.")
                 .define("overrideFoodPropertiesForFactions", true);

@@ -266,7 +266,9 @@
   "vampiresdelight.configuration.wanderingTraderSellsVampirismItems.tooltip": "Le marchand ambulant devrait-il vendre une partie du vampirism et des objets de ce mod? (Y compris les graines et quelques blocs)",
 
   "vampiresdelight.configuration.overrides": "Remplacer",
-  "vampiresdelight.configuration.overrideFoodPropertiesForFactions": "§eRemplacer les propriétés alimentaires des objets pour les factions",
+  "vampiresdelight.configuration.enableFDFoodEffectsDespiteFaction": "Enable food effects despite faction",
+  "vampiresdelight.configuration.enableFDFoodEffectsDespiteFaction.tooltip": "If true, all players receive food effects from Farmer's Delight food items regardless of their faction. For example vampires would still get the effects but no hunger.",
+  "vampiresdelight.configuration.overrideFoodPropertiesForFactions": "Remplacer les propriétés alimentaires des objets pour les factions",
   "vampiresdelight.configuration.overrideFoodPropertiesForFactions.tooltip": "Ce mod doit-il remplacer les valeurs de nourriture de tous les objets vanilla et moddés pour utiliser les propriétés spécifiques à la faction ? L'activation de cette option rend les composants de ce mod utilisables pour n'importe quel objet. Par exemple, si un objet possède le composant de données `vampiresdelight:vampire_food`, il utilisera la valeur de nourriture du composant au lieu de celle par défaut pour les vampires. Désactivez cette option si elle provoque des conflits avec d'autres mods.",
 
   "vampiresdelight.configuration.blocks": "Blocs",

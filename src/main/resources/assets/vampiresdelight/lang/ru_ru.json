@@ -280,7 +280,9 @@
   "vampiresdelight.configuration.wanderingTraderSellsVampirismItems.tooltip": "Должен ли странствующий торговец продавать некоторые предметы из Vampirism и этого мода? (Включая семена и некоторые блоки)",
 
   "vampiresdelight.configuration.overrides": "Переопределения",
-  "vampiresdelight.configuration.overrideFoodPropertiesForFactions": "§eПереопредлять значения еды предметов для особых фракций",
+  "vampiresdelight.configuration.enableFDFoodEffectsDespiteFaction": "Включить эффекты еды вне зависимости от фракции",
+  "vampiresdelight.configuration.enableFDFoodEffectsDespiteFaction.tooltip": "Если включено, все игроки будут получать эффекты еды от еды из Farmer's Delight вне зависимости от своей фракции. Например, вампиры всё равно будут получать эффекты, но не насыщение.",
+  "vampiresdelight.configuration.overrideFoodPropertiesForFactions": "Переопредлять значения еды предметов для особых фракций",
   "vampiresdelight.configuration.overrideFoodPropertiesForFactions.tooltip": "Должен ли этот мод переопределять значения еды всех ванильных и предметов из других модов, чтобы они использовали специфические для конкретной фракции? Если включить эту опцию, то компоненты из этого мода можно будет использовать для любого другого предмета. Например, если у предмета есть компонент `vampiresdelight:vampire_food`, он будет использовать значение еды для вампиров из компонента, а не стандартное, как у людей. Отключите эту функцию, если она вызывает конфликты с другими модами.",
 
   "vampiresdelight.configuration.blocks": "Блоки",
