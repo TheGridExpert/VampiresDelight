@@ -52,7 +52,7 @@ public class VDHUDOverlays {
             if (!super.shouldRenderOverlay(minecraft, player, guiGraphics, guiTicks))
                 return false;
 
-            return Configuration.NOURISHED_HUNGER_OVERLAY.get() && VDHelper.isVampire(player);
+            return Configuration.ENABLE_NOURISHMENT_HUNGER_OVERLAY.get() && VDHelper.isVampire(player);
         }
     }
 

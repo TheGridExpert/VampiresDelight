@@ -118,20 +118,69 @@ public class VDItemTagProvider extends ItemTagsProvider {
     }
 
     private void registerFarmersDelightTags() {
-        tag(ModTags.KNIFE_ENCHANTABLE)
+        tag(ModTags.Items.KNIFE_ENCHANTABLE)
                 .add(ModItems.HUNTER_AXE_NORMAL.get())
                 .add(ModItems.HUNTER_AXE_ENHANCED.get())
                 .add(ModItems.HUNTER_AXE_ULTIMATE.get())
                 .add(ModItems.STAKE.get());
 
-        tag(ModTags.KNIVES)
+        tag(ModTags.Items.KNIVES)
                 .add(VDItems.SILVER_KNIFE.get());
 
-        tag(ModTags.WOODEN_CABINETS)
+        tag(ModTags.Items.CABINETS_WOODEN)
                 .add(VDItems.DARK_SPRUCE_CABINET.get())
                 .add(VDItems.CURSED_SPRUCE_CABINET.get())
                 .add(VDItems.JACARANDA_CABINET.get())
                 .add(VDItems.MAGIC_CABINET.get());
+
+        tag(ModTags.Items.SNACKS)
+                .add(VDItems.BAGEL_SANDWICH.get())
+                .add(VDItems.BLOOD_HOT_DOG.get())
+                .add(VDItems.BLOOD_SAUSAGE.get())
+                .add(VDItems.EYE_CROISSANT.get())
+                .add(VDItems.EYES_ON_STICK.get())
+                .add(VDItems.FISH_BURGER.get())
+                .add(VDItems.BAT_TACO.get())
+                .add(VDItems.BLOOD_BAGEL.get());
+
+        tag(ModTags.Items.MEALS)
+                .add(VDItems.ORCHID_CREAM_SOUP.get())
+                .add(VDItems.BLACK_MUSHROOM_SOUP.get())
+                .add(VDItems.GARLIC_SOUP.get())
+                .add(VDItems.BORSCHT.get())
+                .add(VDItems.ORCHID_CURRY.get())
+                .add(VDItems.BLACK_MUSHROOM_NOODLES.get());
+
+        tag(ModTags.Items.SWEETS)
+                .add(VDItems.ORCHID_COOKIE.get())
+                .add(VDItems.ORCHID_CAKE_SLICE.get())
+                .add(VDItems.BLOOD_PIE_SLICE.get())
+                .add(VDItems.ORCHID_ECLAIR.get())
+                .add(VDItems.ORCHID_ICE_CREAM.get())
+                .add(VDItems.DARK_ICE_CREAM.get())
+                .add(VDItems.SNOW_WHITE_ICE_CREAM.get())
+                .add(VDItems.WOLF_BERRY_ICE_CREAM.get())
+                .add(VDItems.TRICOLOR_DANGO.get())
+                .add(VDItems.PURE_SORBET.get())
+                .add(VDItems.CURSED_CUPCAKE.get());
+
+        tag(ModTags.Items.DRINKS)
+                .add(VDItems.ORCHID_TEA.get())
+                .add(VDItems.DANDELION_BEER_MUG.get())
+                .add(VDItems.BLOOD_WINE_GLASS.get())
+                .add(VDItems.MULLED_WINE_GLASS.get());
+
+        tag(ModTags.Items.FEASTS)
+                .add(VDItems.WEIRD_JELLY_BLOCK.get());
+
+        tag(Tags.Items.FOODS_SOUP)
+                .add(VDItems.ORCHID_CREAM_SOUP.get())
+                .add(VDItems.BLACK_MUSHROOM_SOUP.get())
+                .add(VDItems.GARLIC_SOUP.get())
+                .add(VDItems.BORSCHT.get());
+
+        tag(Tags.Items.FOODS_PIE)
+                .add(VDItems.BLOOD_PIE_SLICE.get());
     }
 
     private void registerCommonTags() {
@@ -172,7 +221,7 @@ public class VDItemTagProvider extends ItemTagsProvider {
                 .add(VDItems.WOLF_BERRY_COOKIE.get());
 
         // Blood dough should not be in FOODS_DOUGH as it's vampire food
-        tag(VDCommonTags.FOODS_DOUGH)
+        tag(VDCommonTags.Items.FOODS_DOUGH)
                 .addTag(VDCommonTags.FOODS_DOUGH_RICE);
         tag(VDCommonTags.FOODS_DOUGH_RICE)
                 .add(VDItems.RICE_DOUGH.get());
@@ -204,7 +253,7 @@ public class VDItemTagProvider extends ItemTagsProvider {
                 .add(VDItems.WEIRD_JELLY_BLOCK.get())
                 .add(VDItems.ORCHID_CAKE.get());
 
-        tag(VDCommonTags.TOOLS_KNIFE)
+        tag(VDCommonTags.Items.TOOLS_KNIFE)
                 .add(VDItems.SILVER_KNIFE.get());
     }
 

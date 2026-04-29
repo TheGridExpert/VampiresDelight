@@ -1,17 +1,17 @@
 {
   "entries": [
-    "vampiresdelight:slicing_orchid_cake",
-    "vampiresdelight:scavenging_eyes_from_humans",
-    "vampiresdelight:add_loot_vampire_altar",
-    "vampiresdelight:add_mob_loot_bat",
-    "vampiresdelight:add_loot_hunter_outpost_tower_special",
-    "vampiresdelight:slicing_blood_pie",
     "vampiresdelight:add_loot_crypt",
     "vampiresdelight:add_loot_hunter_outpost_tent",
     "vampiresdelight:add_loot_hunter_outpost_tower_food",
-    "vampiresdelight:add_mob_loot_cooked_bat",
+    "vampiresdelight:add_loot_hunter_outpost_tower_special",
+    "vampiresdelight:add_loot_vampire_altar",
     "vampiresdelight:add_loot_vampire_dungeon",
-    "vampiresdelight:add_loot_vampire_hut"
+    "vampiresdelight:add_loot_vampire_hut",
+    "vampiresdelight:add_mob_loot_bat",
+    "vampiresdelight:add_mob_loot_cooked_bat",
+    "vampiresdelight:scavenging_eyes_from_humans",
+    "vampiresdelight:slicing_blood_pie",
+    "vampiresdelight:slicing_orchid_cake"
   ],
   "replace": false
 }

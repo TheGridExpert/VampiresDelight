@@ -87,7 +87,7 @@ public class VDBlockTagProvider extends BlockTagsProvider {
                 VDBlocks.BLOODY_SOIL.get(),
                 VDBlocks.BLOODY_SOIL_FARMLAND.get());
 
-        tag(ModTags.MINEABLE_WITH_KNIFE)
+        tag(ModTags.Blocks.MINEABLE_WITH_KNIFE)
                 .addTag(VDTags.DROPS_ORCHID_CAKE_SLICE)
                 .add(
                         VDBlocks.BLOOD_PIE.get(),
@@ -117,26 +117,29 @@ public class VDBlockTagProvider extends BlockTagsProvider {
     }
 
     private void registerFarmersDelightTags() {
-        tag(ModTags.WILD_CROPS).add(
+        tag(ModTags.Blocks.WILD_CROPS).add(
                 VDBlocks.WILD_GARLIC.get());
 
-        tag(ModTags.STRAW_BLOCKS).add(
+        tag(ModTags.Blocks.STRAW_BLOCKS).add(
                 VDBlocks.ORCHID_BAG.get());
 
-        tag(ModTags.COMPOST_ACTIVATORS).add(
+        tag(ModTags.Blocks.COMPOST_ACTIVATORS).add(
                 VDBlocks.BLACK_MUSHROOM.get(),
                 VDBlocks.BLOODY_SOIL.get(),
                 VDBlocks.BLOODY_SOIL_FARMLAND.get());
-        tag(ModTags.UNAFFECTED_BY_RICH_SOIL).add(
+        tag(ModTags.Blocks.UNAFFECTED_BY_RICH_SOIL).add(
                 VDBlocks.BLACK_MUSHROOM.get());
-        tag(ModTags.MUSHROOM_COLONY_GROWABLE_ON).add(
+        tag(ModTags.Blocks.MUSHROOM_COLONY_GROWABLE_ON).add(
                 VDBlocks.BLOODY_SOIL.get());
 
-        tag(ModTags.TRAY_HEAT_SOURCES).add(
+        tag(ModTags.Blocks.TRAY_HEAT_SOURCES).add(
                 ModBlocks.FIRE_PLACE.get());
 
-        tag(ModTags.HEAT_SOURCES).add(
+        tag(ModTags.Blocks.HEAT_SOURCES).add(
                 VDBlocks.DARK_STONE_STOVE.get());
+
+        tag(ModTags.Blocks.FEASTS)
+                .add(VDBlocks.WEIRD_JELLY_BLOCK.get());
     }
 
     private void registerCommonTags() {

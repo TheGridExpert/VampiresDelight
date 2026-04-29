@@ -78,15 +78,16 @@ configurations {
 }
 
 repositories {
-    // CurseMaven
+    // Modrinth Maven
     exclusiveContent {
         forRepository {
             maven {
-                url "https://cursemaven.com"
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
             }
         }
         filter {
-            includeGroup "curse.maven"
+            includeGroup "maven.modrinth"
         }
     }
 
@@ -109,8 +110,8 @@ repositories {
 }
 
 dependencies {
-    implementation "curse.maven:farmers-delight-398521:${farmersdelight_version}"
-    implementation "curse.maven:vampirism-become-a-vampire-233029:${vampirism_version}"
+    implementation "maven.modrinth:farmers-delight:${farmers_delight_version}"
+    implementation "maven.modrinth:vampirism:${vampirism_version}"
 
     // AppleSkin
     compileOnly "squeek.appleskin:appleskin-neoforge:${appleskin_version}:api"
@@ -126,7 +127,7 @@ dependencies {
 
     // Werewolves
     if (include_werewolves.toBoolean())
-        runtimeOnly "curse.maven:werewolves-become-a-beast-417851:${werewolves_version}"
+        runtimeOnly "maven.modrinth:werewolves:${werewolves_version}"
 }
 
 tasks.withType(ProcessResources).configureEach {
@@ -145,7 +146,7 @@ tasks.withType(ProcessResources).configureEach {
             loader_version_range: loader_version_range,
 
             vampirism_version_range: vampirism_version_range,
-            farmersdelight_version_range: farmersdelight_version_range
+            farmers_delight_version_range: farmers_delight_version_range
     ]
     inputs.properties replaceProperties
 

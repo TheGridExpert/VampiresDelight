@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.12
+
+### Updates
+- Updated to Farmer's Delight 1.3;
+- There is now some chance to obtain gold and diamonds while scavenging enhanced and ultimate hunter armor of swiftness respectively;
+- Added FD new tags support: `farmersdelight:snacks`, `farmersdelight:meals`, `farmersdelight:sweets`, `farmersdelight:drinks`, `farmersdelight:feasts`, `c:foods/soup`, `c:foods/pie`;
+
+### Fixes
+- The top texture of the weird jelly leftover is now aligned with other stages;
+
+### Translations
+- Renamed some advancements;
+
 ## 0.1.11b
 
 ### Additions

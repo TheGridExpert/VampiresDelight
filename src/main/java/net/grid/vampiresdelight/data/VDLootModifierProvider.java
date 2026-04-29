@@ -86,7 +86,7 @@ public class VDLootModifierProvider extends GlobalLootModifierProvider {
         return new VDAddItemModifier(new LootItemCondition[]{
                 LootItemEntityPropertyCondition.hasProperties(
                         LootContext.EntityTarget.ATTACKER,
-                        EntityPredicate.Builder.entity().equipment(EntityEquipmentPredicate.Builder.equipment().mainhand(ItemPredicate.Builder.item().of(ModTags.KNIVES)).build()).build()).build(),
+                        EntityPredicate.Builder.entity().equipment(EntityEquipmentPredicate.Builder.equipment().mainhand(ItemPredicate.Builder.item().of(ModTags.Items.KNIVES)).build()).build()).build(),
                 AnyOfCondition.anyOf(condition).build()
         }, item, 1);
     }
@@ -98,7 +98,7 @@ public class VDLootModifierProvider extends GlobalLootModifierProvider {
         return new VDAddItemModifier(new LootItemCondition[]{
                 LootItemEntityPropertyCondition.hasProperties(
                         LootContext.EntityTarget.ATTACKER,
-                        EntityPredicate.Builder.entity().equipment(EntityEquipmentPredicate.Builder.equipment().mainhand(ItemPredicate.Builder.item().of(ModTags.KNIVES)).build()).build()).build(),
+                        EntityPredicate.Builder.entity().equipment(EntityEquipmentPredicate.Builder.equipment().mainhand(ItemPredicate.Builder.item().of(ModTags.Items.KNIVES)).build()).build()).build(),
                 condition.build()
         }, item, 1);
     }
@@ -111,7 +111,7 @@ public class VDLootModifierProvider extends GlobalLootModifierProvider {
         return new VDAddItemModifier(new LootItemCondition[]{
                 LootItemEntityPropertyCondition.hasProperties(
                         LootContext.EntityTarget.ATTACKER,
-                        EntityPredicate.Builder.entity().equipment(EntityEquipmentPredicate.Builder.equipment().mainhand(ItemPredicate.Builder.item().of(ModTags.KNIVES)).build()).build()).build(),
+                        EntityPredicate.Builder.entity().equipment(EntityEquipmentPredicate.Builder.equipment().mainhand(ItemPredicate.Builder.item().of(ModTags.Items.KNIVES)).build()).build()).build(),
                 conditionTarget.build(), conditionLooting.build()
         }, item, 1);
     }
@@ -123,7 +123,7 @@ public class VDLootModifierProvider extends GlobalLootModifierProvider {
             condition[i] = LootItemBlockStatePropertyCondition.hasBlockStateProperties(slicedBlock[i]);
         }
         return new VDPastrySlicingModifier(new LootItemCondition[]{
-                MatchTool.toolMatches(ItemPredicate.Builder.item().of(ModTags.KNIVES)).build(),
+                MatchTool.toolMatches(ItemPredicate.Builder.item().of(ModTags.Items.KNIVES)).build(),
                 AnyOfCondition.anyOf(condition).build()
         }, receivedItem);
     }

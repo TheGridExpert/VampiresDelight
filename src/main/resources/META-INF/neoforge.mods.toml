@@ -59,6 +59,6 @@ side="BOTH"
 [[dependencies.${mod_id}]]
 modId="farmersdelight"
 type="required"
-versionRange="${farmersdelight_version_range}"
+versionRange="${farmers_delight_version_range}"
 ordering="AFTER"
 side="BOTH"

@@ -4,9 +4,7 @@ import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.client.extension.PourableBottleItemExtension;
 import net.grid.vampiresdelight.client.gui.VDHUDOverlays;
 import net.grid.vampiresdelight.client.particle.BlessingParticle;
-import net.grid.vampiresdelight.client.renderer.DarkStoneStoveRenderer;
 import net.grid.vampiresdelight.common.item.AlchemicalCocktailItem;
-import net.grid.vampiresdelight.common.registry.VDBlockEntityTypes;
 import net.grid.vampiresdelight.common.registry.VDEntityTypes;
 import net.grid.vampiresdelight.common.registry.VDItems;
 import net.grid.vampiresdelight.common.registry.VDParticleTypes;
@@ -55,11 +53,6 @@ public class ClientSetupEventHandler {
     @SubscribeEvent
     public static void registerGuiLayers(RegisterGuiLayersEvent event) {
         VDHUDOverlays.register(event);
-    }
-
-    @SubscribeEvent
-    public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerBlockEntityRenderer(VDBlockEntityTypes.DARK_STONE_STOVE.get(), DarkStoneStoveRenderer::new);
     }
 
     @SubscribeEvent

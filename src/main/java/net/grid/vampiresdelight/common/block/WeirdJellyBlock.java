@@ -1,7 +1,6 @@
 package net.grid.vampiresdelight.common.block;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
@@ -11,33 +10,25 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.BooleanOp;
-import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
-import vectorwing.farmersdelight.common.block.FeastBlock;
+import vectorwing.farmersdelight.common.block.RotatedFeastBlock;
 
 import java.util.function.Supplier;
 
 // Jelly is 85% transparent
-public class WeirdJellyBlock extends FeastBlock {
+public class WeirdJellyBlock extends RotatedFeastBlock {
+
+    public static VoxelShape[] JELLY_SHAPES = {
+            Block.box(3, 1, 8, 8, 8, 13),
+            Block.box(3, 1, 8, 13, 8, 13),
+            Shapes.join(Block.box(3, 1, 8, 8, 8, 13), Block.box(8, 1, 3, 13, 8, 13), BooleanOp.OR),
+            Block.box(3, 1, 3, 13, 8, 13)
+    };
     protected static final VoxelShape PLATE_SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 1.0D, 14.0D);
-    protected static final VoxelShape JELLY_SHAPE = Shapes.joinUnoptimized(PLATE_SHAPE, Block.box(3.0D, 1.0D, 3.0D, 13.0D, 8.0D, 13.0D), BooleanOp.OR);
 
     public WeirdJellyBlock(Properties properties, Supplier<Item> servingItem, boolean hasLeftovers) {
-        super(properties, servingItem, hasLeftovers);
-    }
-
-    @Override
-    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return state.getValue(SERVINGS) == 0 ? PLATE_SHAPE : JELLY_SHAPE;
-    }
-
-    @Override
-    @OnlyIn(Dist.CLIENT)
-    public boolean skipRendering(BlockState state, BlockState adjacentBlockState, Direction side) {
-        return adjacentBlockState.is(this) || super.skipRendering(state, adjacentBlockState, side);
+        super(properties, servingItem, hasLeftovers, JELLY_SHAPES, PLATE_SHAPE);
     }
 
     @Override

@@ -1,0 +1,46 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "vampirism:armor_of_swiftness_head_ultimate"
+        },
+        {
+          "item": "vampirism:armor_of_swiftness_chest_ultimate"
+        },
+        {
+          "item": "vampirism:armor_of_swiftness_legs_ultimate"
+        },
+        {
+          "item": "vampirism:armor_of_swiftness_feet_ultimate"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 2,
+        "id": "minecraft:leather"
+      }
+    },
+    {
+      "chance": 0.4,
+      "item": {
+        "count": 1,
+        "id": "minecraft:diamond"
+      }
+    }
+  ],
+  "tool": [
+    {
+      "type": "farmersdelight:item_ability",
+      "action": "shears_dig"
+    },
+    {
+      "tag": "c:tools/shear"
+    }
+  ]
+}

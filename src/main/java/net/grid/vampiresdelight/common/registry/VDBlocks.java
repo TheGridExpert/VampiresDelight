@@ -26,8 +26,8 @@ public class VDBlocks {
     }
 
     // Workstations
-    public static final DeferredBlock<DarkStoneStoveBlock> DARK_STONE_STOVE = BLOCKS.register("dark_stone_stove",
-            () -> new DarkStoneStoveBlock(Block.Properties.of().mapColor(MapColor.DEEPSLATE).requiresCorrectToolForDrops().strength(2f, 10f).sound(SoundType.STONE).lightLevel(litBlockEmission(13))));
+    public static final DeferredBlock<StoveBlock> DARK_STONE_STOVE = BLOCKS.register("dark_stone_stove",
+            () -> new StoveBlock(Block.Properties.of().mapColor(MapColor.DEEPSLATE).requiresCorrectToolForDrops().strength(2f, 10f).sound(SoundType.STONE).lightLevel(litBlockEmission(13))));
 
     // Crop Storage
     public static final DeferredBlock<Block> GARLIC_CRATE = BLOCKS.register("garlic_crate",

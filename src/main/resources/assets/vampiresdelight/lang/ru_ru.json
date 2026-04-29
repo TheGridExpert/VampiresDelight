@@ -198,13 +198,13 @@
   "vampiresdelight.advancement.root": "Vampire's Delight",
   "vampiresdelight.advancement.root.desc": "Высокая кухня вампирского рода ждёт вас!",
 
-  "vampiresdelight.advancement.consume_disgusting_food": "Отвратительно!",
+  "vampiresdelight.advancement.consume_disgusting_food": "Мерзость!",
   "vampiresdelight.advancement.consume_disgusting_food.desc": "Съешьте любую мерзкую еду, не предназначенную для вашего вида.",
 
   "vampiresdelight.advancement.get_weathered_letter": "Столетние фанфики",
   "vampiresdelight.advancement.get_weathered_letter.desc": "Найдите обветренное письмо в данже или структуре, связанной с модом.",
 
-  "vampiresdelight.advancement.pour_dandelion_beer": "Я знал, что у вас, хряцких эльфов, нет чести! Нет уважения! Нет ПИВА!",
+  "vampiresdelight.advancement.pour_dandelion_beer": "Я знал, что у вас, эльфов, нет чести!",
   "vampiresdelight.advancement.pour_dandelion_beer.desc": "Налейте одуванчиковое пиво в кружку своими двумя руками, не заходя в верстак.",
   "vampiresdelight.advancement.place_dandelion_beer_bottle_on_shelf": "Он не варил его с тех пор, как...",
   "vampiresdelight.advancement.place_dandelion_beer_bottle_on_shelf.desc": "Поставьте бутылку одуванчикового пива на винную полку. Да, винную.",
@@ -214,20 +214,20 @@
 
   "vampiresdelight.advancement.get_vampire_orchid": "Твой лучший друг",
   "vampiresdelight.advancement.get_vampire_orchid.desc": "Найдите вампирскую орхидею в лесу вампиров или купите у странствующего торговца.",
-  "vampiresdelight.advancement.plant_vampire_orchid_crop": "Красота и польза",
+  "vampiresdelight.advancement.plant_vampire_orchid_crop": "Болезненная красота",
   "vampiresdelight.advancement.plant_vampire_orchid_crop.desc": "Посадите семена вампирской орхидеи на проклятую или кровавую пашню.",
-  "vampiresdelight.advancement.get_orchid_tea": "Чай со вкусом халапеньо",
+  "vampiresdelight.advancement.get_orchid_tea": "Больно лишь впервые",
   "vampiresdelight.advancement.get_orchid_tea.desc": "Сварите орхидейный чай. Он может заразить сангвинаре, если его выпьет человек. Может быть слегка острым.",
 
   "vampiresdelight.advancement.pour_blood_wine": "Вкус кровавого вина не изменился...",
   "vampiresdelight.advancement.pour_blood_wine.desc": "Налейте кровавое вино в бокал своими двумя руками, не заходя в верстак.",
-  "vampiresdelight.advancement.place_blood_wine_bottle_on_shelf": "Местный бар",
+  "vampiresdelight.advancement.place_blood_wine_bottle_on_shelf": "Бутылка ждёт своего часа",
   "vampiresdelight.advancement.place_blood_wine_bottle_on_shelf.desc": "Поставьте бутылку кровавого вина на винную полку.",
 
   "vampiresdelight.advancement.get_human_eye": "Смешная нарезка детей",
   "vampiresdelight.advancement.get_human_eye.desc": "Вырежьте человеческий глаз человекоподобного существа, вроде жителя или охотника на вампиров.",
 
-  "vampiresdelight.advancement.get_clothes_dissolving_potion": "Лучший подарок для любого мужчины",
+  "vampiresdelight.advancement.get_clothes_dissolving_potion": "Лучший подарок для мужчины",
   "vampiresdelight.advancement.get_clothes_dissolving_potion.desc": "Добудьте зелье, растворяющее одежду, и познайте смысл жизни. Не спрашивайте меня, как его достать, лучше спросите эльфа.",
 
   "vampiresdelight.subtitles.block.bottle_breaks": "Стеклянная бутылка разбивается",

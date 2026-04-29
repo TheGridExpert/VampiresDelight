@@ -90,7 +90,7 @@ public class PlayerInteractEventHandler {
     public static void onCakeInteraction(PlayerInteractEvent.RightClickBlock event) {
         ItemStack toolStack = event.getEntity().getItemInHand(event.getHand());
 
-        if (!toolStack.is(ModTags.KNIVES)) {
+        if (!toolStack.is(ModTags.Items.KNIVES)) {
             return;
         }
 

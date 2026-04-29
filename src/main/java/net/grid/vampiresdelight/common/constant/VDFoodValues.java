@@ -10,10 +10,10 @@ import net.minecraft.world.food.FoodProperties;
 
 import java.util.function.Supplier;
 
-import static vectorwing.farmersdelight.common.FoodValues.comfort;
 import static vectorwing.farmersdelight.common.FoodValues.nourishment;
 
 public class VDFoodValues {
+    
     public static final int MOMENT_DURATION = 200;    // 10 seconds
     public static final int FLEETING_DURATION = 400;    // 20 seconds
     public static final int BRIEF_DURATION = 600;    // 30 seconds
@@ -217,19 +217,19 @@ public class VDFoodValues {
     // Bowl Foods
     public static final FoodProperties ORCHID_CREAM_SOUP = new FoodProperties.Builder()
             .nutrition(14).saturationModifier(0.75f)
-            .effect(() -> comfort(LONG_DURATION), 1.0F).build();
+            .effect(() -> nourishment(LONG_DURATION), 1.0F).build();
     
     public static final FoodProperties BLACK_MUSHROOM_SOUP = new FoodProperties.Builder()
             .nutrition(12).saturationModifier(0.7f)
-            .effect(() -> comfort(MEDIUM_DURATION), 1.0F).build();
+            .effect(() -> nourishment(MEDIUM_DURATION), 1.0F).build();
     
     public static final FoodProperties GARLIC_SOUP = new FoodProperties.Builder()
             .nutrition(14).saturationModifier(0.75f)
-            .effect(() -> comfort(MEDIUM_DURATION), 1.0F).build();
+            .effect(() -> nourishment(MEDIUM_DURATION), 1.0F).build();
     
     public static final FoodProperties BORSCHT = new FoodProperties.Builder()
             .nutrition(16).saturationModifier(0.75f)
-            .effect(() -> comfort(MEDIUM_DURATION), 1.0F)
+            .effect(() -> nourishment(MEDIUM_DURATION), 1.0F)
             .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 1800), 1.0F).build();
     
 

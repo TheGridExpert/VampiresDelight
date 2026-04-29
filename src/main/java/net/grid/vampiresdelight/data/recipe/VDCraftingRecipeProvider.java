@@ -148,18 +148,18 @@ public class VDCraftingRecipeProvider {
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.RICE_DOUGH.get(), 3)
                 .requires(Tags.Items.BUCKETS_WATER)
-                .requires(VDCommonTags.CROPS_RICE)
-                .requires(VDCommonTags.CROPS_RICE)
-                .requires(VDCommonTags.CROPS_RICE)
-                .unlockedBy("has_rice", has(VDCommonTags.CROPS_RICE))
+                .requires(VDCommonTags.Items.CROPS_RICE)
+                .requires(VDCommonTags.Items.CROPS_RICE)
+                .requires(VDCommonTags.Items.CROPS_RICE)
+                .unlockedBy("has_rice", has(VDCommonTags.Items.CROPS_RICE))
                 .save(output, ResourceLocation.fromNamespaceAndPath(VampiresDelight.MODID, "rice_dough_from_water"));
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.RICE_DOUGH.get(), 3)
                 .requires(Tags.Items.EGGS)
-                .requires(VDCommonTags.CROPS_RICE)
-                .requires(VDCommonTags.CROPS_RICE)
-                .requires(VDCommonTags.CROPS_RICE)
-                .unlockedBy("has_rice", has(VDCommonTags.CROPS_RICE))
+                .requires(VDCommonTags.Items.CROPS_RICE)
+                .requires(VDCommonTags.Items.CROPS_RICE)
+                .requires(VDCommonTags.Items.CROPS_RICE)
+                .unlockedBy("has_rice", has(VDCommonTags.Items.CROPS_RICE))
                 .save(output, ResourceLocation.fromNamespaceAndPath(VampiresDelight.MODID, "rice_dough_from_eggs"));
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.BLOOD_DOUGH.get(), 1)
@@ -195,14 +195,14 @@ public class VDCraftingRecipeProvider {
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.ORCHID_COOKIE.get(), 8)
                 .requires(VDItems.ORCHID_PETALS.get())
-                .requires(VDCommonTags.CROPS_RICE)
-                .requires(VDCommonTags.CROPS_RICE)
+                .requires(VDCommonTags.Items.CROPS_RICE)
+                .requires(VDCommonTags.Items.CROPS_RICE)
                 .unlockedBy(hasItem(VDItems.ORCHID_PETALS.get()), has(VDItems.ORCHID_PETALS.get()))
                 .save(output, ResourceLocation.fromNamespaceAndPath(VampiresDelight.MODID, "orchid_cookie_from_rice"));
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.CURSED_CUPCAKE.get())
                 .requires(VDItems.BLOOD_BAGEL.get())
-                .requires(VDCommonTags.FOODS_MILK)
+                .requires(Tags.Items.DRINKS_MILK)
                 .requires(Items.SUGAR)
                 .unlockedBy(hasItem(VDItems.BLOOD_BAGEL.get()), has(VDItems.BLOOD_BAGEL.get()))
                 .save(output);
@@ -217,7 +217,7 @@ public class VDCraftingRecipeProvider {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.ORCHID_ICE_CREAM.get(), 1)
                 .requires(VDItems.ORCHID_PETALS.get())
                 .requires(VDItems.ORCHID_PETALS.get())
-                .requires(VDCommonTags.FOODS_MILK)
+                .requires(Tags.Items.DRINKS_MILK)
                 .requires(Items.ICE)
                 .requires(Items.SUGAR)
                 .requires(Items.BOWL)
@@ -226,7 +226,7 @@ public class VDCraftingRecipeProvider {
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.SNOW_WHITE_ICE_CREAM.get(), 1)
                 .requires(ModTags.Items.HOLY_WATER)
-                .requires(VDCommonTags.FOODS_MILK)
+                .requires(Tags.Items.DRINKS_MILK)
                 .requires(Items.COCOA_BEANS)
                 .requires(Items.ICE)
                 .requires(Items.SUGAR)
@@ -235,8 +235,8 @@ public class VDCraftingRecipeProvider {
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.DARK_ICE_CREAM.get(), 1)
                 .requires(VDItems.BLOOD_SYRUP.get())
-                .requires(VDCommonTags.CROPS_GRAIN)
-                .requires(VDCommonTags.CROPS_GRAIN)
+                .requires(VDCommonTags.Items.CROPS_GRAIN)
+                .requires(VDCommonTags.Items.CROPS_GRAIN)
                 .requires(Items.ICE)
                 .requires(Items.ICE)
                 .requires(Ingredient.fromValues(Stream.of(
@@ -287,7 +287,7 @@ public class VDCraftingRecipeProvider {
                 .pattern("mmm")
                 .pattern("oso")
                 .pattern("www")
-                .define('m', VDCommonTags.FOODS_MILK)
+                .define('m', Tags.Items.DRINKS_MILK)
                 .define('o', VDItems.ORCHID_PETALS.get())
                 .define('s', Items.SUGAR)
                 .define('w', Tags.Items.CROPS_WHEAT)
@@ -310,14 +310,14 @@ public class VDCraftingRecipeProvider {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.FISH_BURGER.get())
                 .requires(VDCommonTags.FOODS_BREADS_RICE)
                 .requires(Tags.Items.FOODS_COOKED_FISH)
-                .requires(VDCommonTags.FOODS_LEAFY_GREEN)
+                .requires(VDCommonTags.Items.FOODS_LEAFY_GREEN)
                 .requires(VDCommonTags.CROPS_GARLIC)
                 .unlockedBy("has_garlic", has(VDCommonTags.CROPS_GARLIC))
                 .save(output);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.BLOOD_SAUSAGE.get())
                 .requires(VDItems.BLOOD_SYRUP.get())
-                .requires(VDCommonTags.CROPS_ONION)
+                .requires(VDCommonTags.Items.CROPS_ONION)
                 .requires(Tags.Items.FOODS_COOKED_MEAT)
                 .unlockedBy(hasItem(VDItems.BLOOD_SYRUP.get()), has(VDItems.BLOOD_SYRUP.get()))
                 .save(output);
@@ -330,7 +330,7 @@ public class VDCraftingRecipeProvider {
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.BAGEL_SANDWICH.get())
                 .requires(VDItems.BLOOD_BAGEL.get())
-                .requires(VDCommonTags.FOODS_COOKED_BACON)
+                .requires(VDCommonTags.Items.FOODS_COOKED_BACON)
                 .requires(vectorwing.farmersdelight.common.registry.ModItems.FRIED_EGG.get())
                 .unlockedBy(hasItem(VDItems.BLOOD_BAGEL.get()), has(VDItems.BLOOD_BAGEL.get()))
                 .save(output);
@@ -338,7 +338,7 @@ public class VDCraftingRecipeProvider {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.EYES_ON_STICK.get())
                 .requires(VDItems.HUMAN_EYE.get())
                 .requires(VDItems.HUMAN_EYE.get())
-                .requires(VDCommonTags.CROPS_TOMATO)
+                .requires(VDCommonTags.Items.CROPS_TOMATO)
                 .requires(Ingredient.fromValues(Stream.of(
                         new Ingredient.ItemValue(new ItemStack(Items.BROWN_MUSHROOM)),
                         new Ingredient.ItemValue(new ItemStack(Items.RED_MUSHROOM))
@@ -351,16 +351,16 @@ public class VDCraftingRecipeProvider {
                 .requires(Tags.Items.FOODS_BREAD)
                 .requires(VDItems.HUMAN_EYE.get())
                 .requires(VDItems.HUMAN_EYE.get())
-                .requires(VDCommonTags.FOODS_LEAFY_GREEN)
-                .requires(VDCommonTags.CROPS_TOMATO)
+                .requires(VDCommonTags.Items.FOODS_LEAFY_GREEN)
+                .requires(VDCommonTags.Items.CROPS_TOMATO)
                 .unlockedBy(hasItem(VDItems.HUMAN_EYE.get()), has(VDItems.HUMAN_EYE.get()))
                 .save(output);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, VDItems.BAT_TACO.get())
                 .requires(Tags.Items.FOODS_BREAD)
                 .requires(VDCommonTags.FOODS_COOKED_BAT)
-                .requires(VDCommonTags.FOODS_LEAFY_GREEN)
-                .requires(VDCommonTags.CROPS_TOMATO)
+                .requires(VDCommonTags.Items.FOODS_LEAFY_GREEN)
+                .requires(VDCommonTags.Items.CROPS_TOMATO)
                 .unlockedBy("has_cooked_bat", has(VDCommonTags.FOODS_COOKED_BAT))
                 .save(output);
 

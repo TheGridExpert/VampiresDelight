@@ -198,13 +198,13 @@
   "vampiresdelight.advancement.root": "Vampire's Delight",
   "vampiresdelight.advancement.root.desc": "Висока кухня вампирського роду чекає на вас!",
 
-  "vampiresdelight.advancement.consume_disgusting_food": "Огидно!",
+  "vampiresdelight.advancement.consume_disgusting_food": "Гидота!",
   "vampiresdelight.advancement.consume_disgusting_food.desc": "З'їжте будь-яку огидну їжу, не розраховану на вашу расу.",
 
   "vampiresdelight.advancement.get_weathered_letter": "Сторічні фанфіки",
   "vampiresdelight.advancement.get_weathered_letter.desc": "Знайдіть вивітрений лист у данжі або структурі, пов'язаній з модом.",
 
-  "vampiresdelight.advancement.pour_dandelion_beer": "Я знав, що у вас, клятих ельфів, нема честі! Нема поваги! Нема ПИВА!",
+  "vampiresdelight.advancement.pour_dandelion_beer": "Я знав, що у вас, ельфів, нема честі!",
   "vampiresdelight.advancement.pour_dandelion_beer.desc": "Налийте кульбабове пиво в скляну пляшку двома вашими руками без верстака.",
   "vampiresdelight.advancement.place_dandelion_beer_bottle_on_shelf": "Він не варив йього з тих пір, як...",
   "vampiresdelight.advancement.place_dandelion_beer_bottle_on_shelf.desc": "Поставте пляшку кульбабового пива на винну полицю. Так, винну.",
@@ -214,20 +214,20 @@
 
   "vampiresdelight.advancement.get_vampire_orchid": "Твій найкращий друг",
   "vampiresdelight.advancement.get_vampire_orchid.desc": "Знайдіть вампірську орхідею в вампірському лісі або купіть її у мандрівного крамарю.",
-  "vampiresdelight.advancement.plant_vampire_orchid_crop": "Краса і користь",
+  "vampiresdelight.advancement.plant_vampire_orchid_crop": "Болісна краса",
   "vampiresdelight.advancement.plant_vampire_orchid_crop.desc": "Посадіть насіння вампірської орхідеї на прокляту або криваву рілля.",
-  "vampiresdelight.advancement.get_orchid_tea": "Чай зі смаком халапеньйо",
+  "vampiresdelight.advancement.get_orchid_tea": "Боляче лише вперше",
   "vampiresdelight.advancement.get_orchid_tea.desc": "Зваріть орхідеєвий чай. Він може заразити Sanguinare, якщо його вип'є людина. Може бути трошечки пікантним.",
 
-  "vampiresdelight.advancement.pour_blood_wine": "Смак кривавого вина ніяк не змінився...",
+  "vampiresdelight.advancement.pour_blood_wine": "Смак кривавого вина не змінився...",
   "vampiresdelight.advancement.pour_blood_wine.desc": "Налийте кров'яне вино в скляну пляшку двома вашими руками без верстака.",
-  "vampiresdelight.advancement.place_blood_wine_bottle_on_shelf": "Місцевий бар",
+  "vampiresdelight.advancement.place_blood_wine_bottle_on_shelf": "Істина у вині",
   "vampiresdelight.advancement.place_blood_wine_bottle_on_shelf.desc": "Поставте пляшку кривавого вина на винну полицю.",
 
   "vampiresdelight.advancement.get_human_eye": "Смішна нарізка дітей",
   "vampiresdelight.advancement.get_human_eye.desc": "За допомогою ножа виколупуйте людське око з будь-якої людиноподібної істоти, наприклад, селянина чи мисливця.",
 
-  "vampiresdelight.advancement.get_clothes_dissolving_potion": "Найкращий подарунок для будь-якого чоловіка",
+  "vampiresdelight.advancement.get_clothes_dissolving_potion": "Найкращий подарунок для чоловіка",
   "vampiresdelight.advancement.get_clothes_dissolving_potion.desc": "Дістаньте зілля, розчиняюче одяг, та пізнайте сенс життя. Не питайте мене, як його дістати, краще запитайте ельфа.",
 
   "vampiresdelight.subtitles.block.bottle_breaks": "Скляна пляшка розбивається",

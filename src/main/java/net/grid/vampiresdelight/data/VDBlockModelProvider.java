@@ -26,7 +26,7 @@ public class VDBlockModelProvider extends BlockModelProvider {
     @Override
     protected void registerModels() {
         // Pies
-        pieBlock(VDBlocks.BLOOD_PIE.get());
+        //pieBlock(VDBlocks.BLOOD_PIE.get());
 
         // Wine shelves
         wineShelfBlock(VDBlocks.OAK_WINE_SHELF.get(), Blocks.OAK_PLANKS);

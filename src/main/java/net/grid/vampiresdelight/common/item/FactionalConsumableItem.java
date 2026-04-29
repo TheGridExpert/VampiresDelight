@@ -108,7 +108,7 @@ public class FactionalConsumableItem extends Item {
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         Player player = VampirismMod.proxy.getClientPlayer();
 
-        if (Configuration.FOOD_EFFECT_TOOLTIP.get() && hasAnyFoodTooltip(stack, player)) {
+        if (Configuration.ENABLE_FOOD_EFFECT_TOOLTIP.get() && hasAnyFoodTooltip(stack, player)) {
             if (hasCustomTooltip(stack, player)) {
                 VDTooltipUtils.addFormattedTooltip("tooltip." + VDNameUtils.itemName(this), tooltipComponents, ChatFormatting.BLUE);
             }

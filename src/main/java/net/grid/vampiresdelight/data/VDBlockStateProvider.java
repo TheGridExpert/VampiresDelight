@@ -13,10 +13,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.Block;
-import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
-import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
-import net.neoforged.neoforge.client.model.generators.ModelFile;
-import net.neoforged.neoforge.client.model.generators.MultiPartBlockStateBuilder;
+import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.block.*;
@@ -57,7 +54,7 @@ public class VDBlockStateProvider extends BlockStateProvider {
 
         this.horizontalBlock(VDBlocks.DARK_STONE_STOVE.get(), state -> {
             String name = blockName(VDBlocks.DARK_STONE_STOVE.get());
-            String suffix = state.getValue(DarkStoneStoveBlock.LIT) ? "_on" : "";
+            String suffix = state.getValue(StoveBlock.LIT) ? "_on" : "";
 
             return models().orientableWithBottom(name + suffix,
                     resourceBlock(name + "_side"),
@@ -175,16 +172,36 @@ public class VDBlockStateProvider extends BlockStateProvider {
     }
 
     public void pieBlock(Block block) {
-        getVariantBuilder(block)
-                .forAllStates(state -> {
-                            int bites = state.getValue(PieBlock.BITES);
-                            String suffix = bites > 0 ? "_slice" + bites : "";
-                            return ConfiguredModel.builder()
-                                    .modelFile(existingModel(blockName(block) + suffix))
-                                    .rotationY(((int) state.getValue(PieBlock.FACING).toYRot() + DEFAULT_ANGLE_OFFSET) % 360)
-                                    .build();
-                        }
-                );
+        getVariantBuilder(block).forAllStates(state -> {
+            int bites = state.getValue(PieBlock.BITES);
+            return ConfiguredModel.builder()
+                    .modelFile(bites > 0 ? modelPieSlice(blockName(block), bites) : modelPie(blockName(block)))
+                    .rotationY(((int) state.getValue(PieBlock.FACING).toYRot() + DEFAULT_ANGLE_OFFSET) % 360)
+                    .build();
+        });
+    }
+
+    private ModelFile modelPie(String baseName) {
+        return models().withExistingParent(baseName, resourceFDBlock("template_pie"))
+                .texture("bottom", resourceFDBlock("pie_bottom"))
+                .texture("side", resourceFDBlock("pie_side"))
+                .texture("top", resourceVDBlock(baseName + "_top"));
+    }
+
+    private ModelFile modelPieSlice(String baseName, int bites) {
+        return models().withExistingParent(baseName + "_slice" + bites, resourceFDBlock("template_pie_slice" + bites))
+                .texture("bottom", resourceFDBlock("pie_bottom"))
+                .texture("side", resourceFDBlock("pie_side"))
+                .texture("inner", resourceVDBlock(baseName + "_inner"))
+                .texture("top", resourceVDBlock(baseName + "_top"));
+    }
+
+    public ResourceLocation resourceVDBlock(String path) {
+        return ResourceLocation.fromNamespaceAndPath(VampiresDelight.MODID, ModelProvider.BLOCK_FOLDER + "/" + path);
+    }
+
+    public ResourceLocation resourceFDBlock(String path) {
+        return ResourceLocation.fromNamespaceAndPath(FarmersDelight.MODID, ModelProvider.BLOCK_FOLDER + "/" + path);
     }
 
     public void hugeBlackMushroomBlock(Block block) {
