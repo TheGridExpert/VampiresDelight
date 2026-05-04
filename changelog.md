@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.12b
+
+### Fixes
+- The **Wolf Berry Ice Cream** recipe now uses the correct milk tag;
+
 ## 0.1.12
 
 ### Updates
