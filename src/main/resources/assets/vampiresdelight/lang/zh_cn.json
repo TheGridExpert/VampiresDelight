@@ -355,9 +355,9 @@
   "vampiresdelight.configuration.hunterFoodTooltipEndColor": "猎人提示框结束颜色",
   "vampiresdelight.configuration.hunterFoodTooltipEndColor.tooltip": "猎人食物提示框轮廓结束颜色（hex）应为多少？（轮廓终点处）",
   "vampiresdelight.configuration.werewolfFoodTooltipStartColor": "狼人提示框起始颜色",
-  "vampiresdelight.configuration.werewolfFoodTooltipStartColor.tooltip": "狼人食物提示框轮廓起始颜色（hex）应为多少？ [仅限狼人模组（Werewolves）]（轮廓起点处）",
+  "vampiresdelight.configuration.werewolfFoodTooltipStartColor.tooltip": "狼人食物提示框轮廓起始颜色（hex）应为多少？（轮廓起点处） [仅限狼人模组（Werewolves）]",
   "vampiresdelight.configuration.werewolfFoodTooltipEndColor": "狼人提示框结束颜色",
-  "vampiresdelight.configuration.werewolfFoodTooltipEndColor.tooltip": "狼人食物提示框轮廓结束颜色（hex）应为多少？ [仅限狼人模组（Werewolves）]（轮廓终点处）",
+  "vampiresdelight.configuration.werewolfFoodTooltipEndColor.tooltip": "狼人食物提示框轮廓结束颜色（hex）应为多少？（轮廓终点处） [仅限狼人模组（Werewolves）]",
 
   "vampiresdelight.configuration.appleskin": "苹果皮（AppleSkin）",
   "vampiresdelight.configuration.correctAppleSkinTooltips": "调整AppleSkin提示框",
