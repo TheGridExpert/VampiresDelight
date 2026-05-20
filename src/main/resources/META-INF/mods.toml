@@ -11,6 +11,8 @@ displayName="${mod_name}"
 updateJSONURL="${mod_update_url}"
 logoFile="logo.png"
 logoBlur=false
+itemIcon = "vampiresdelight:dark_stone_stove"
+configBackground = "vampiresdelight:textures/block/dark_stone_small_bricks.png"
 credits='''\n
   - Cheaterpaul (Vampirism and code assistance)
   - Maxanier (Vampirism)

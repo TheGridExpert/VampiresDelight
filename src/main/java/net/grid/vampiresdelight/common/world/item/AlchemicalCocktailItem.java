@@ -66,7 +66,7 @@ public class AlchemicalCocktailItem extends Item {
     }
 
     public static boolean isMetalPipe(ItemStack stack) {
-        return stack.getHoverName().toString().toLowerCase().replace(" ", "").contains("metal pipe") && stack.getItem() == VDItems.ALCHEMICAL_COCKTAIL.get();
+        return stack.getItem() == VDItems.ALCHEMICAL_COCKTAIL.get() && stack.getHoverName().getString().toLowerCase().replace(" ", "").contains("metalpipe");
     }
 
     public static double getSplashRadius() {

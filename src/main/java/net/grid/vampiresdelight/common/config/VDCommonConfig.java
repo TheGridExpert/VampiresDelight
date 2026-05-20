@@ -64,7 +64,7 @@ public class VDCommonConfig {
                 .defineInRange("alchemicalCocktailSplashRadius", 3.5, 1.0, 99.0);
         ALCHEMICAL_COCKTAIL_STACK_SIZE = builder
                 .comment("What should be the maximum stack size of the Alchemical Cocktail?")
-                .defineInRange("alchemicalCocktailStackSize", 8, 1, 99);
+                .defineInRange("alchemicalCocktailStackSize", 8, 1, 64);
         builder.pop();
 
         builder.push(CATEGORY_EFFECTS);

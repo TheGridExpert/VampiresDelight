@@ -19,6 +19,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import org.jetbrains.annotations.Nullable;
 
+@SuppressWarnings("removal")
 public class VDJEISpillingBloodRecipeCategory implements IRecipeCategory<VDJEISpillingBloodRecipe> {
 
     private final Component title;

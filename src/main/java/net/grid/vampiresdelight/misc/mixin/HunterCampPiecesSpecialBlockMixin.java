@@ -24,7 +24,7 @@ import vectorwing.farmersdelight.common.block.state.CookingPotSupport;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
 
 @Mixin(HunterCampPieces.SpecialBlock.class)
-public class MixinHunterCampPiecesSpecialBlock {
+public class HunterCampPiecesSpecialBlockMixin {
 
     @Final
     @Shadow(remap = false)

@@ -10,6 +10,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.models.model.ModelLocationUtils;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import vectorwing.farmersdelight.data.ItemModels;
@@ -108,10 +109,19 @@ public class VDItemModelProvider extends BaseItemModelGenerator {
 
         Stream.of(
                 VDItems.SILVER_KNIFE.registryObjectOrThrow(),
-                VDItems.ALCHEMICAL_COCKTAIL,
                 VDItems.TRICOLOR_DANGO,
                 VDItems.EYES_ON_STICK
         ).forEach(item -> withExistingParent(item.get(), ResourceLocation.withDefaultNamespace("item/handheld")).texture("layer0", ModelLocationUtils.getModelLocation(item.get())));
+
+        ItemModelBuilder metalPipe = withExistingParent("metal_pipe", ResourceLocation.withDefaultNamespace("item/handheld"))
+                .texture("layer0", ResourceLocation.fromNamespaceAndPath(VampiresDelight.MODID, "item/metal_pipe"));
+
+        withExistingParent(VDItems.ALCHEMICAL_COCKTAIL.get(), ResourceLocation.withDefaultNamespace("item/handheld"))
+                .texture("layer0", ModelLocationUtils.getModelLocation(VDItems.ALCHEMICAL_COCKTAIL.get()))
+                .override()
+                .predicate(ResourceLocation.fromNamespaceAndPath(VampiresDelight.MODID, "metal_pipe"), 1.0F)
+                .model(metalPipe)
+                .end();
     }
 
     private static String itemName(Item item) {

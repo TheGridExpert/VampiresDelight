@@ -6,11 +6,14 @@ import net.grid.vampiresdelight.client.particle.DispelParticle;
 import net.grid.vampiresdelight.client.renderer.WineShelfRenderer;
 import net.grid.vampiresdelight.common.core.VDBlockEntities;
 import net.grid.vampiresdelight.common.core.VDEntityTypes;
+import net.grid.vampiresdelight.common.core.VDItems;
 import net.grid.vampiresdelight.common.core.VDParticles;
 import net.grid.vampiresdelight.common.util.VDIntegrationUtils;
 import net.grid.vampiresdelight.common.world.block.WineShelfBlock;
+import net.grid.vampiresdelight.common.world.item.AlchemicalCocktailItem;
 import net.grid.vampiresdelight.integration.appleskin.AppleSkinEventHandler;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -30,6 +33,16 @@ public class VDClientEventHandler {
         if (VDIntegrationUtils.isModPresent(VDIntegrationUtils.APPLESKIN)) {
             AppleSkinEventHandler.init();
         }
+
+        event.enqueueWork(VDClientEventHandler::registerItemProperties);
+    }
+
+    private static void registerItemProperties() {
+        ItemProperties.register(
+                VDItems.ALCHEMICAL_COCKTAIL.get(),
+                ResourceLocation.fromNamespaceAndPath(VampiresDelight.MODID, "metal_pipe"),
+                (stack, level, entity, seed) -> stack.hasCustomHoverName() && AlchemicalCocktailItem.isMetalPipe(stack) ? 1.0F : 0.0F
+        );
     }
 
     @SubscribeEvent

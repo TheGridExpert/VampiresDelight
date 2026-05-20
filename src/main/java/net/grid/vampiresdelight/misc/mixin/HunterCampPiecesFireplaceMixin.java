@@ -21,7 +21,7 @@ import vectorwing.farmersdelight.common.block.state.CookingPotSupport;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
 
 @Mixin(HunterCampPieces.Fireplace.class)
-public class MixinHunterCampPiecesFireplace {
+public class HunterCampPiecesFireplaceMixin {
 
     @Inject(at = @At("TAIL"), method = "postProcess(Lnet/minecraft/world/level/WorldGenLevel;Lnet/minecraft/world/level/StructureManager;Lnet/minecraft/world/level/chunk/ChunkGenerator;Lnet/minecraft/util/RandomSource;Lnet/minecraft/world/level/levelgen/structure/BoundingBox;Lnet/minecraft/world/level/ChunkPos;Lnet/minecraft/core/BlockPos;)V")
     public void placeCookingPot(WorldGenLevel worldIn, StructureManager structureManager, ChunkGenerator chunkGenerator, RandomSource random, BoundingBox structureBoundingBoxIn, ChunkPos chunkPos, BlockPos blockPos, CallbackInfo ci) {

@@ -1,5 +1,94 @@
 # Changelog
 
+## 0.1.13
+
+> Note: This version is not a direct continuation of the previous 1.20.1 release — it was rewritten from scratch, drawing on content from 1.21.1 while keeping its own differences and improvements. This entry lists only the changes relative to the old 1.20.1 version.
+
+### Changed
+
+**Vampire Orchid**
+- The crop now has 6 growth stages instead of 3, starting with a new small sprout stage. It no longer grows into a full Vampire Orchid block — instead, the final stage drops orchid petals and seeds when broken;
+- Cutting the Vampire Orchid flower now gives very few petals, the main result is seeds now. This should encourage growing the crop properly and make automation simpler;
+- Growth logic is now clearer: the crop grows 35% faster in vampire fog, 20% faster out of direct sunlight, and 40% slower under direct sunlight. Otherwise, it behaves like any normal crop;
+- The crop now has a tooltip explaining how it grows;
+
+**Farming**
+- Cursed Farmland now supports all normal crops in addition to cursed ones. Bloody Soil and Bloody Soil Farmland still support only vampire crops;
+- Bloody Soil and Bloody Soil Farmland can now be obtained by pouring pure blood onto Rich Soil and Rich Soil Farmland respectively;
+
+**Effects**
+- Nourishment from Farmer's Delight now correctly affects vampires: health recovery no longer drains blood while under the effect;
+- The Blessing effect was renamed to Consecration and optimized: instead of clearing all spirits within a radius, it now only removes entities that start targeting the player;
+- Consecration and Fog Vision no longer have multiple amplifiers — each now has a single level. Consecration no longer has a defined range of effect, so there's nothing to amplify, and Fog Vision now reaches further by default, so the stronger potion variants were removed;
+- The Dissolving effect is now marked as unobtainable with a tooltip, can be removed via config;
+
+**Food and Items**
+- Cooked Bat and Cooked Chops were renamed to Grilled Bat and Grilled Chops;
+
+**Structures**
+- Cooking Pots in Hunter Camps are now generated with food in them. As of now, the list consists of: Beef Stew, Onion Soup, Vegetable Soup, and Chicken Soup;
+
+**Textures and Models**
+- Updated the Spirit Lantern and Cursed Farmland textures;
+- Wine Shelves now render bottles inside them manually instead of being a part of the block state. This significantly shortens the block state files;
+
+**Advancements**
+- Several advancements were renamed or reworded:
+  - "Local Brewery" —> "He Hasn't Brewed It Since...";
+  - "Local Bar" —> "In Vino Veritas";
+  - "Funny Cuts of Children" —> "An Eye-Catching Display";
+  - "Both Beauty and Health" —> "Afflictive Beauty";
+  - "Tea with the taste of jalapeño" —> "Only Stings at First";
+  - "Blood Wine Tastes the Same as I Remember" —> "Tastes the Same as I Remember...";
+- The `pour_dandelion_beer` advancement's title was shortened, and the root advancement's description was reworded;
+
+**Configuration**
+- Added `coloredTooltipsForVampirismItems` (`true` by default): controls whether tooltips of Vampirism's items (Garlic Bread, Human Heart, etc.) are recolored;
+- Added `factionTooltips` (`true` by default): controls whether items show a tooltip with the faction they belong to;
+- Added `showDissolvingPotionWarning` (`true` by default): controls the tooltip marking Dissolving potions as not intended for survival;
+- `disableVampireBite` was replaced with `enableVampireBite` (`true` by default) — the option is now phrased as an enable toggle instead of a disable one;
+- `replaceWeirdJellySunscreenWithJumpboost` was renamed to `replaceWeirdJellySunscreenWithJumpBoost` to fix its capitalization;
+- The food tooltip color options (`vampireFoodTooltipStartColor`, `vampireFoodTooltipEndColor`, and their hunter and werewolf equivalents) now take a hex string (e.g. `#7c287c`) instead of a list of RGB values (e.g. `124, 40, 124`);
+- Changed default values:
+  - `vampireBiteChanceLevel1`: `20` —> `25`;
+  - `vampireBiteChanceLevel2`: `25` —> `30`;
+  - `vampireBiteChanceLevel3`: `30` —> `35`;
+  - `cookingPotInHunterCampSpawnChance`: `60` —> `40`;
+- Removed `generateVDChestLoot`;
+
+**Tags**
+- New tags added:
+  - `bloody_soil` (block);
+  - `wine_shelves` and `wine_shelves_wooden` (block) — these replace the old single `wine_shelf` tag;
+  - `unholy_spirits` and `drops_human_eye` (entity);
+  - `blood_syrup_ingredients` (item) — used in Blood Syrup recipe;
+  - `without_wild_garlic` (biome);
+- Tags removed:
+  - `drops_orchid_cake_slice` (block);
+  - `vampire_food`, `hunter_food`, `werewolf_only_food`, and `not_rotten_food` (item) — faction food is now handled in code instead of tags;
+  - `has_structure/lost_carriage` (biome) — the structure was removed;
+
+**Integrations**
+- Farmer's Respite compatibility was improved: Daisy Tea and Orchid Tea now have dedicated fluid types and can be brewed in the Kettle properly. Create compatibility was also added — the drinks can be emptied and their fluid poured into glasses;
+
+### Removed
+- The Lost Carriage structure;
+- The `get_clothes_dissolving_potion` advancement ("The Best Present for Any Man"): it is impossible to obtain in survival;
+- Leftover Brewing Barrel translation entries — the block was planned as a workstation but never added. It may return later, but there is no reason to keep the entries for now;
+- The mod's special commands — they were mainly used for testing and are now obsolete;
+
+### Technical
+- This version is made for Farmer's Delight 1.3 or newer. All recipes now use modern FD tags;
+- The mod now builds against the Modrinth Maven instead of the CurseForge Maven. This doesn't affect gameplay, but makes versioning less messy;
+- Werewolves mod is now integrated at a deeper level:
+  - Werewolves' code is accessed at compile time, so it can be used directly instead of relying on workarounds;
+  - Faction food for Werewolves is handled directly;
+  - All item and block resources are data-generated rather than created manually;
+  - Werewolves-specific items and blocks are registered only if Werewolves is installed. They are not just inaccessible and hidden as they used to be and will disappear if Werewolves is removed;
+- Almost all data is now generated through code; the only remaining exceptions are external integrations;
+- The mixin config plugin class (`VDMixinConfigPlugin`) was removed, as it is no longer needed;
+- The Dark Stone Stove now reuses Farmer's Delight's Stove block entity instead of a duplicate that did the same thing;
+
 ## 0.1.7e
 
 ### Translations
@@ -8,7 +97,7 @@
 
 ## 0.1.7d
 
-- ### Updates
+### Updates
 - Changed food effects:
   - **Snow_White Ice Cream**: `4` to `3,5`;
   - **Blood Wine Glass**: changed `Regeneration II for 10 seconds` to `Regeneration for 15 seconds`;

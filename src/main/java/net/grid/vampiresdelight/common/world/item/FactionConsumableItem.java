@@ -111,7 +111,7 @@ public class FactionConsumableItem extends Item {
         if (!level.isClientSide) {
             if (hasGarlic) {
                 consumer.removeEffect(ModEffects.SANGUINARE.get());
-                VDEntityUtils.affectVampireEntityWithGarlic(consumer, EnumStrength.WEAK);
+                VDEntityUtils.affectVampireEntityWithGarlic(consumer, EnumStrength.MEDIUM);
             }
 
             if (features != null) {
