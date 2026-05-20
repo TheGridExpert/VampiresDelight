@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_jacaranda_slab": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "werewolves:jacaranda_slab"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vampiresdelight:jacaranda_wine_shelf"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_jacaranda_slab",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vampiresdelight:jacaranda_wine_shelf"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,7 +1,4 @@
-@MethodsReturnNonnullByDefault
-@ParametersAreNonnullByDefault
+@NonnullDefault
 package net.grid.vampiresdelight.client.renderer;
 
-import net.minecraft.MethodsReturnNonnullByDefault;
-
-import javax.annotation.ParametersAreNonnullByDefault;
+import org.lwjgl.system.NonnullDefault;

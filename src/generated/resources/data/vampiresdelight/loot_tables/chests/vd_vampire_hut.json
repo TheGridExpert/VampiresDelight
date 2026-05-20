@@ -71,7 +71,7 @@
                 "max": 35.0,
                 "min": 10.0
               },
-              "treasure": true
+              "treasure": false
             }
           ],
           "name": "farmersdelight:iron_knife",

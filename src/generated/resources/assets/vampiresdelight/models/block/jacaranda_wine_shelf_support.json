@@ -1,0 +1,6 @@
+{
+  "parent": "vampiresdelight:block/template_wine_shelf_support",
+  "textures": {
+    "shelf": "vampiresdelight:block/jacaranda_wine_shelf"
+  }
+}

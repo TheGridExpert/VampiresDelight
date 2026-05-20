@@ -1,6 +1,6 @@
 {
-  "type": "forge:add_features",
-  "biomes": "#vampirism:has_faction/vampire",
+  "type": "farmersdelight:add_features_by_filter",
+  "allowed_biomes": "#vampirism:has_faction/vampire",
   "features": "vampiresdelight:patch_black_mushroom",
   "step": "vegetal_decoration"
 }

@@ -9,7 +9,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "vampiresdelight.advancement.consume_disgusting_food.desc"
+      "translate": "advancement.vampiresdelight.consume_disgusting_food.desc"
     },
     "frame": "task",
     "hidden": false,
@@ -18,7 +18,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "vampiresdelight.advancement.consume_disgusting_food"
+      "translate": "advancement.vampiresdelight.consume_disgusting_food"
     }
   },
   "requirements": [

@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
+    "G": {
       "item": "vampirism:item_garlic"
     }
   },
   "pattern": [
-    "###",
-    "###",
-    "###"
+    "GGG",
+    "GGG",
+    "GGG"
   ],
   "result": {
     "item": "vampiresdelight:garlic_crate"

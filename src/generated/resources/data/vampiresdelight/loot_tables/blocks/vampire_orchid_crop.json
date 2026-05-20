@@ -1,0 +1,128 @@
+{
+  "type": "minecraft:block",
+  "functions": [
+    {
+      "function": "minecraft:explosion_decay"
+    }
+  ],
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "vampiresdelight:vampire_orchid_crop",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "age": "5"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 3.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "vampiresdelight:orchid_petals"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "vampiresdelight:vampire_orchid_crop",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "age": "5"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "vampiresdelight:orchid_seeds"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "vampiresdelight:vampire_orchid_crop",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "age": "5"
+          }
+        },
+        {
+          "chance": 0.5,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "vampiresdelight:orchid_seeds"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "vampiresdelight:vampire_orchid_crop",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "age": "5"
+          }
+        },
+        {
+          "chance": 0.3,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "vampirism:cursed_roots"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "block": "vampiresdelight:vampire_orchid_crop",
+            "condition": "minecraft:block_state_property",
+            "properties": {
+              "age": "5"
+            }
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "vampiresdelight:orchid_seeds"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "vampiresdelight:blocks/vampire_orchid_crop"
+}

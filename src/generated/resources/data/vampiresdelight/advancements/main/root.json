@@ -9,7 +9,7 @@
     "announce_to_chat": false,
     "background": "vampiresdelight:textures/block/dark_stone_small_bricks.png",
     "description": {
-      "translate": "vampiresdelight.advancement.root.desc"
+      "translate": "advancement.vampiresdelight.root.desc"
     },
     "frame": "task",
     "hidden": false,
@@ -18,7 +18,7 @@
     },
     "show_toast": false,
     "title": {
-      "translate": "vampiresdelight.advancement.root"
+      "translate": "advancement.vampiresdelight.root"
     }
   },
   "requirements": [

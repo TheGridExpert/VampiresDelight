@@ -1,0 +1,82 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "vampiresdelight:block/spirit_lantern"
+      },
+      "when": {
+        "facing": "north",
+        "hanging": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/spirit_lantern_hanging"
+      },
+      "when": {
+        "facing": "north",
+        "hanging": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/spirit_lantern",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "hanging": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/spirit_lantern_hanging",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "hanging": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/spirit_lantern",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "hanging": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/spirit_lantern_hanging",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "hanging": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/spirit_lantern",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "hanging": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "vampiresdelight:block/spirit_lantern_hanging",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "hanging": "true"
+      }
+    }
+  ]
+}

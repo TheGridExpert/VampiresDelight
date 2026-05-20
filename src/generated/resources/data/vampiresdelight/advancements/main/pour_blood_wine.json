@@ -15,7 +15,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "vampiresdelight.advancement.pour_blood_wine.desc"
+      "translate": "advancement.vampiresdelight.pour_blood_wine.desc"
     },
     "frame": "task",
     "hidden": false,
@@ -24,7 +24,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "vampiresdelight.advancement.pour_blood_wine"
+      "translate": "advancement.vampiresdelight.pour_blood_wine"
     }
   },
   "requirements": [

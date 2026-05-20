@@ -5,17 +5,17 @@
     "C": {
       "item": "minecraft:campfire"
     },
-    "d": {
+    "D": {
       "item": "vampirism:dark_stone_bricks"
     },
-    "i": {
+    "I": {
       "tag": "forge:ingots/iron"
     }
   },
   "pattern": [
-    "iii",
-    "d d",
-    "dCd"
+    "III",
+    "D D",
+    "DCD"
   ],
   "result": {
     "item": "vampiresdelight:dark_stone_stove"

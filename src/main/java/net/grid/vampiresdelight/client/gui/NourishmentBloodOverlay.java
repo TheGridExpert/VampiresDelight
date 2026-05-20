@@ -1,10 +1,11 @@
 package net.grid.vampiresdelight.client.gui;
 
 import com.mojang.blaze3d.systems.RenderSystem;
+import de.teamlapen.vampirism.api.client.VIngameOverlays;
 import de.teamlapen.vampirism.entity.player.vampire.VampirePlayer;
+import de.teamlapen.vampirism.util.Helper;
 import net.grid.vampiresdelight.VampiresDelight;
-import net.grid.vampiresdelight.common.mixin.accessor.BloodStatsAccessor;
-import net.grid.vampiresdelight.common.utility.VDHelper;
+import net.grid.vampiresdelight.misc.mixin.accessor.BloodStatsAccessor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.resources.ResourceLocation;
@@ -22,14 +23,16 @@ import vectorwing.farmersdelight.common.registry.ModEffects;
 import java.util.Random;
 
 public class NourishmentBloodOverlay {
+
+    private static final ResourceLocation ICONS_TEXTURE = ResourceLocation.fromNamespaceAndPath(VampiresDelight.MODID, "textures/gui/icons.png");
+
+    static final ResourceLocation BLOOD_BAR_ID = VIngameOverlays.BLOOD_BAR_ID;
+
     public static int bloodIconsOffset;
-    private static final ResourceLocation ICONS_TEXTURE = new ResourceLocation(VampiresDelight.MODID, "textures/gui/icons.png");
 
     public static void init() {
         MinecraftForge.EVENT_BUS.register(new NourishmentBloodOverlay());
     }
-
-    static final ResourceLocation BLOOD_BAR_ID = VDHelper.BLOOD_BAR_ELEMENT;
 
     @SubscribeEvent
     public void onRenderGuiOverlayPost(RenderGuiOverlayEvent.Post event) {
@@ -37,14 +40,14 @@ public class NourishmentBloodOverlay {
             Minecraft mc = Minecraft.getInstance();
             ForgeGui gui = (ForgeGui) mc.gui;
             boolean isMounted = mc.player != null && mc.player.getVehicle() instanceof LivingEntity;
-            if (!isMounted && !mc.options.hideGui && gui.shouldDrawSurvivalElements() && VDHelper.isVampire(mc.player)) {
+            if (!isMounted && !mc.options.hideGui && gui.shouldDrawSurvivalElements() && Helper.isVampire(mc.player)) {
                 renderNourishmentOverlay(gui, event.getGuiGraphics());
             }
         }
     }
 
     public static void renderNourishmentOverlay(ForgeGui gui, GuiGraphics graphics) {
-        if (!Configuration.NOURISHED_HUNGER_OVERLAY.get()) {
+        if (!Configuration.ENABLE_NOURISHMENT_HUNGER_OVERLAY.get()) {
             return;
         }
 

@@ -1,7 +1,6 @@
 {
   "parent": "vampiresdelight:block/template_wine_shelf_support",
   "textures": {
-    "body": "vampiresdelight:block/mangrove_wine_shelf",
-    "particle": "minecraft:block/mangrove_planks"
+    "shelf": "vampiresdelight:block/mangrove_wine_shelf"
   }
 }

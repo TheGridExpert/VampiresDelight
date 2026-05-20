@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "P": {
+      "item": "werewolves:jacaranda_planks"
+    },
+    "S": {
+      "item": "werewolves:jacaranda_slab"
+    }
+  },
+  "pattern": [
+    "SSS",
+    " P ",
+    "SSS"
+  ],
+  "result": {
+    "item": "vampiresdelight:jacaranda_wine_shelf"
+  },
+  "show_notification": true
+}

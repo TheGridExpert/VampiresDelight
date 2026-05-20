@@ -2,23 +2,23 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "m": {
+    "M": {
       "tag": "forge:milk"
     },
-    "o": {
+    "O": {
       "item": "vampiresdelight:orchid_petals"
     },
-    "s": {
+    "S": {
       "item": "minecraft:sugar"
     },
-    "w": {
+    "W": {
       "tag": "forge:grain/wheat"
     }
   },
   "pattern": [
-    "mmm",
-    "oso",
-    "www"
+    "MMM",
+    "OSO",
+    "WWW"
   ],
   "result": {
     "item": "vampiresdelight:orchid_cake"

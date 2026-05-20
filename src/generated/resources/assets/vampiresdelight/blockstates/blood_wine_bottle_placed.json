@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "vampiresdelight:block/blood_wine_bottle_placed"
+      "model": "vampiresdelight:block/blood_wine_bottle"
     }
   }
 }

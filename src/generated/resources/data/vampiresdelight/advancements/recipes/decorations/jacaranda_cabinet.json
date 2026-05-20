@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_jacaranda_trapdoor": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "werewolves:jacaranda_trapdoor"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vampiresdelight:jacaranda_cabinet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_jacaranda_trapdoor",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vampiresdelight:jacaranda_cabinet"
+    ]
+  },
+  "sends_telemetry_event": false
+}

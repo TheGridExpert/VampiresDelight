@@ -2,7 +2,7 @@
   "parent": "farmersdelight:block/template_farmland_custom",
   "textures": {
     "bottom": "vampirism:block/cursed_earth",
-    "side": "vampirism:block/cursed_earth",
+    "side": "vampiresdelight:block/cursed_farmland_moist_side",
     "top": "vampiresdelight:block/cursed_farmland_moist"
   }
 }

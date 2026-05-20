@@ -1,14 +1,8 @@
 {
   "block.vampiresdelight.gray_bar_stool": "Grey Bar Stool",
   "block.vampiresdelight.light_gray_bar_stool": "Light Grey Bar Stool",
-
-  "item.vampiresdelight.orchid_cookie": "Orchid Biscuit",
-  "item.vampiresdelight.tricolor_dango": "Tricolour Dango",
-
   "block.vampiresdelight.gray_orchid_candle_cake": "Orchid Cake with Grey Candle",
   "block.vampiresdelight.light_gray_orchid_candle_cake": "Orchid Cake with Light Grey Candle",
 
-  "item.vampiresdelight.wolf_berry_cookie": "Wolf Berry Biscuit",
-
-  "vampiresdelight.advancement.plant_vampire_orchid_crop.desc": "Plant vampire orchid seeds on cursed farmland. To make one, plough cursed earth or grass with hoe."
+  "effect.vampiresdelight.dissolving.description": "Gradually damages all worn armour. Leather, chainmail, and golden armour can break entirely."
 }

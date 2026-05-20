@@ -1,8 +1,7 @@
 {
-  "parent": "farmersdelight:block/pie",
+  "parent": "farmersdelight:block/template_pie",
   "textures": {
     "bottom": "farmersdelight:block/pie_bottom",
-    "particle": "vampiresdelight:block/blood_pie_top",
     "side": "farmersdelight:block/pie_side",
     "top": "vampiresdelight:block/blood_pie_top"
   }

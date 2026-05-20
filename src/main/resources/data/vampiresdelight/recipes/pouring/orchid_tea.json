@@ -1,0 +1,11 @@
+{
+  "type": "farmersrespite:kettle_pouring",
+  "amount": 250,
+  "container": {
+    "item": "minecraft:glass_bottle"
+  },
+  "fluid": "vampiresdelight:orchid_tea",
+  "output": {
+    "item": "vampiresdelight:orchid_tea"
+  }
+}

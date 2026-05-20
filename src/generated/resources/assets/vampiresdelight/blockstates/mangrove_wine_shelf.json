@@ -2,105 +2,6 @@
   "multipart": [
     {
       "apply": {
-        "model": "vampiresdelight:block/mangrove_wine_shelf",
-        "y": 270
-      },
-      "when": {
-        "facing": "west"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/mangrove_wine_shelf_support",
-        "y": 270
-      },
-      "when": {
-        "facing": "west",
-        "has_upper_support": "true"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/blood_wine_bottle_slot_top_left",
-        "y": 270
-      },
-      "when": {
-        "facing": "west",
-        "slot_0": "wine_bottle"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/blood_wine_bottle_slot_top_right",
-        "y": 270
-      },
-      "when": {
-        "facing": "west",
-        "slot_1": "wine_bottle"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/blood_wine_bottle_slot_bottom_left",
-        "y": 270
-      },
-      "when": {
-        "facing": "west",
-        "slot_2": "wine_bottle"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/blood_wine_bottle_slot_bottom_right",
-        "y": 270
-      },
-      "when": {
-        "facing": "west",
-        "slot_3": "wine_bottle"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/dandelion_beer_bottle_slot_top_left",
-        "y": 270
-      },
-      "when": {
-        "facing": "west",
-        "slot_0": "beer_bottle"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/dandelion_beer_bottle_slot_top_right",
-        "y": 270
-      },
-      "when": {
-        "facing": "west",
-        "slot_1": "beer_bottle"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/dandelion_beer_bottle_slot_bottom_left",
-        "y": 270
-      },
-      "when": {
-        "facing": "west",
-        "slot_2": "beer_bottle"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/dandelion_beer_bottle_slot_bottom_right",
-        "y": 270
-      },
-      "when": {
-        "facing": "west",
-        "slot_3": "beer_bottle"
-      }
-    },
-    {
-      "apply": {
         "model": "vampiresdelight:block/mangrove_wine_shelf"
       },
       "when": {
@@ -114,78 +15,6 @@
       "when": {
         "facing": "north",
         "has_upper_support": "true"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/blood_wine_bottle_slot_top_left"
-      },
-      "when": {
-        "facing": "north",
-        "slot_0": "wine_bottle"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/blood_wine_bottle_slot_top_right"
-      },
-      "when": {
-        "facing": "north",
-        "slot_1": "wine_bottle"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/blood_wine_bottle_slot_bottom_left"
-      },
-      "when": {
-        "facing": "north",
-        "slot_2": "wine_bottle"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/blood_wine_bottle_slot_bottom_right"
-      },
-      "when": {
-        "facing": "north",
-        "slot_3": "wine_bottle"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/dandelion_beer_bottle_slot_top_left"
-      },
-      "when": {
-        "facing": "north",
-        "slot_0": "beer_bottle"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/dandelion_beer_bottle_slot_top_right"
-      },
-      "when": {
-        "facing": "north",
-        "slot_1": "beer_bottle"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/dandelion_beer_bottle_slot_bottom_left"
-      },
-      "when": {
-        "facing": "north",
-        "slot_2": "beer_bottle"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/dandelion_beer_bottle_slot_bottom_right"
-      },
-      "when": {
-        "facing": "north",
-        "slot_3": "beer_bottle"
       }
     },
     {
@@ -209,86 +38,6 @@
     },
     {
       "apply": {
-        "model": "vampiresdelight:block/blood_wine_bottle_slot_top_left",
-        "y": 90
-      },
-      "when": {
-        "facing": "east",
-        "slot_0": "wine_bottle"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/blood_wine_bottle_slot_top_right",
-        "y": 90
-      },
-      "when": {
-        "facing": "east",
-        "slot_1": "wine_bottle"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/blood_wine_bottle_slot_bottom_left",
-        "y": 90
-      },
-      "when": {
-        "facing": "east",
-        "slot_2": "wine_bottle"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/blood_wine_bottle_slot_bottom_right",
-        "y": 90
-      },
-      "when": {
-        "facing": "east",
-        "slot_3": "wine_bottle"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/dandelion_beer_bottle_slot_top_left",
-        "y": 90
-      },
-      "when": {
-        "facing": "east",
-        "slot_0": "beer_bottle"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/dandelion_beer_bottle_slot_top_right",
-        "y": 90
-      },
-      "when": {
-        "facing": "east",
-        "slot_1": "beer_bottle"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/dandelion_beer_bottle_slot_bottom_left",
-        "y": 90
-      },
-      "when": {
-        "facing": "east",
-        "slot_2": "beer_bottle"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/dandelion_beer_bottle_slot_bottom_right",
-        "y": 90
-      },
-      "when": {
-        "facing": "east",
-        "slot_3": "beer_bottle"
-      }
-    },
-    {
-      "apply": {
         "model": "vampiresdelight:block/mangrove_wine_shelf",
         "y": 180
       },
@@ -308,82 +57,21 @@
     },
     {
       "apply": {
-        "model": "vampiresdelight:block/blood_wine_bottle_slot_top_left",
-        "y": 180
+        "model": "vampiresdelight:block/mangrove_wine_shelf",
+        "y": 270
       },
       "when": {
-        "facing": "south",
-        "slot_0": "wine_bottle"
+        "facing": "west"
       }
     },
     {
       "apply": {
-        "model": "vampiresdelight:block/blood_wine_bottle_slot_top_right",
-        "y": 180
+        "model": "vampiresdelight:block/mangrove_wine_shelf_support",
+        "y": 270
       },
       "when": {
-        "facing": "south",
-        "slot_1": "wine_bottle"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/blood_wine_bottle_slot_bottom_left",
-        "y": 180
-      },
-      "when": {
-        "facing": "south",
-        "slot_2": "wine_bottle"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/blood_wine_bottle_slot_bottom_right",
-        "y": 180
-      },
-      "when": {
-        "facing": "south",
-        "slot_3": "wine_bottle"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/dandelion_beer_bottle_slot_top_left",
-        "y": 180
-      },
-      "when": {
-        "facing": "south",
-        "slot_0": "beer_bottle"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/dandelion_beer_bottle_slot_top_right",
-        "y": 180
-      },
-      "when": {
-        "facing": "south",
-        "slot_1": "beer_bottle"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/dandelion_beer_bottle_slot_bottom_left",
-        "y": 180
-      },
-      "when": {
-        "facing": "south",
-        "slot_2": "beer_bottle"
-      }
-    },
-    {
-      "apply": {
-        "model": "vampiresdelight:block/dandelion_beer_bottle_slot_bottom_right",
-        "y": 180
-      },
-      "when": {
-        "facing": "south",
-        "slot_3": "beer_bottle"
+        "facing": "west",
+        "has_upper_support": "true"
       }
     }
   ]

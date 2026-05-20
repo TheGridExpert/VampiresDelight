@@ -1,0 +1,9 @@
+{
+  "type": "farmersdelight:add_features_by_filter",
+  "allowed_biomes": "#minecraft:is_overworld",
+  "denied_biomes": "#vampiresdelight:without_wild_garlic",
+  "features": "vampiresdelight:patch_wild_garlic",
+  "max_temperature": 0.9,
+  "min_temperature": 0.4,
+  "step": "vegetal_decoration"
+}

@@ -1,6 +1,0 @@
-{
-  "parent": "vampiresdelight:item/template_bottle_pouring",
-  "textures": {
-    "layer0": "vampiresdelight:item/dandelion_beer_bottle"
-  }
-}

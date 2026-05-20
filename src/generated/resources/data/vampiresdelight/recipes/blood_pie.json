@@ -2,26 +2,26 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "O": {
-      "item": "farmersdelight:pie_crust"
-    },
-    "b": {
+    "B": {
       "item": "vampiresdelight:blood_syrup"
     },
-    "s": {
+    "C": {
+      "item": "farmersdelight:pie_crust"
+    },
+    "G": {
+      "item": "minecraft:sugar"
+    },
+    "S": {
       "item": "minecraft:sweet_berries"
     },
-    "w": {
+    "W": {
       "item": "minecraft:nether_wart"
-    },
-    "x": {
-      "item": "minecraft:sugar"
     }
   },
   "pattern": [
-    "sss",
-    "wxw",
-    "bOb"
+    "SSS",
+    "WGW",
+    "BCB"
   ],
   "result": {
     "item": "vampiresdelight:blood_pie"

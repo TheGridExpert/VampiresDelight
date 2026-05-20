@@ -1,94 +1,65 @@
 plugins {
     id 'eclipse'
+    id 'idea'
     id 'maven-publish'
-    id 'net.minecraftforge.gradle' version '5.1.+'
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
-    id 'org.spongepowered.mixin' version '0.7+'
+    id 'org.spongepowered.mixin' version '0.7.+'
 }
 
-version = "${mc_version}-${mod_version}"
-group = 'net.grid.vampiresdelight'
-archivesBaseName = 'VampiresDelight'
+version = "${minecraft_version}-${mod_version}"
+group = mod_group_id
 
-mixin {
-    add sourceSets.main, "vampiresdelight.refmap.json"
-    config "vampiresdelight.mixins.json"
+base {
+    archivesName = 'VampiresDelight'
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
+
 minecraft {
-    mappings channel: "${mappings_channel}", version: "${mappings_version}-${mc_version}"
+    mappings channel: mapping_channel, version: mapping_version
+
+    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+
+    copyIdeResources = true
+
     runs {
-        client {
-            workingDirectory project.file('run')
-
-            property 'mixin.env.remapRefMap', 'true'
-
-            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
-
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-
-            property 'forge.logging.console.level', 'debug'
-
-            property 'forge.enabledGameTestNamespaces', 'vampiresdelight'
-
-            mods {
-                vampiresdelight {
-                    source sourceSets.main
-                }
-            }
-        }
-
-        server {
-            workingDirectory project.file('run')
-
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-
-            property 'forge.logging.console.level', 'debug'
-
-            property 'forge.enabledGameTestNamespaces', 'vampiresdelight'
-
-            mods {
-                vampiresdelight {
-                    source sourceSets.main
-                }
-            }
-        }
-
-        gameTestServer {
+        configureEach {
             workingDirectory project.file('run')
 
             property 'forge.logging.markers', 'REGISTRIES'
 
             property 'forge.logging.console.level', 'debug'
 
-            property 'forge.enabledGameTestNamespaces', 'vampiresdelight'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
 
             mods {
-                vampiresdelight {
+                "${mod_id}" {
                     source sourceSets.main
                 }
             }
         }
 
+        client {
+            property 'forge.enabledGameTestNamespaces', mod_id
+        }
+
+        server {
+            property 'forge.enabledGameTestNamespaces', mod_id
+            args '--nogui'
+        }
+
+        gameTestServer {
+            property 'forge.enabledGameTestNamespaces', mod_id
+        }
+
         data {
-            workingDirectory project.file('run')
+            workingDirectory project.file('run-data')
 
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-
-            property 'forge.logging.console.level', 'debug'
-
-            args '--mod', 'vampiresdelight', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), "--existing", file("src/main/resources"), "--existing-mod", "farmersdelight", "--existing-mod", "vampirism"
-
-            environment 'target', 'fmluserdevdata'
-
-            mods {
-                vampiresdelight {
-                    source sourceSets.main
-                }
-            }
+            args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), '--existing-mod', 'farmersdelight', '--existing-mod', 'vampirism'
         }
     }
 }
@@ -96,22 +67,25 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-    // Vampirism
-    maven {
-        url = "https://maven.maxanier.de/releases"
-    }
-
-    // For Farmer's Delight and others
-    maven {
-        url "https://www.cursemaven.com"
-    }
-
-    // Apple Skin
-    maven {
-        url "https://maven.ryanliptak.com/"
+    // Modrinth
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
+            }
+        }
+        forRepositories(fg.repository)
+        filter {
+            includeGroup "maven.modrinth"
+        }
     }
 
     // JEI
+    maven {
+        name = "Progwml6's maven"
+        url = "https://dvs1.progwml6.com/files/maven/"
+    }
     maven {
         name = "Jared's maven"
         url = "https://maven.blamejared.com/"
@@ -120,78 +94,107 @@ repositories {
         name = "ModMaven"
         url = "https://modmaven.dev"
     }
+
+    // AppleSkin
+    maven {
+        url "https://maven.ryanliptak.com/"
+    }
+
+    // Extra Mods
+    flatDir {
+        name 'localMods'
+        dirs 'libs'
+    }
 }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
+    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-    implementation fg.deobf("curse.maven:farmers-delight-398521:${farmersdelight_version}")
-    implementation fg.deobf("de.teamlapen.vampirism:Vampirism:${mc_version}-${vampirism_version}")
-
-    // AppleSkin
-    compileOnly fg.deobf("squeek.appleskin:appleskin-forge:mc1.20.1-${appleskin_version}:api")
-    compileOnly fg.deobf("squeek.appleskin:appleskin-forge:mc1.20.1-${appleskin_version}")
-    if (include_appleskin.toBoolean())
-        runtimeOnly fg.deobf("squeek.appleskin:appleskin-forge:mc1.20.1-${appleskin_version}")
-    
-    // JEI
-    compileOnly(fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}"))
-    compileOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}"))
-
-    runtimeOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}"))
-
-    // Werewolves
-    if (include_werewolves.toBoolean())
-        runtimeOnly fg.deobf("curse.maven:werewolves-become-a-beast-417851:${werewolves_version}")
-
-    // Apply Mixin AP
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+
+    implementation fg.deobf("maven.modrinth:farmers-delight:${minecraft_version}-${farmers_delight_version}")
+    implementation fg.deobf("maven.modrinth:vampirism:${minecraft_version}-${vampirism_version}")
+
+    if (include_werewolves.toBoolean()) {
+        implementation fg.deobf("maven.modrinth:werewolves:${minecraft_version}-${werewolves_version}")
+    }
+
+    if (include_jei.toBoolean()) {
+        compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
+        compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
+        runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
+    }
+
+    if (include_appleskin.toBoolean()) {
+        compileOnly fg.deobf("squeek.appleskin:appleskin-forge:mc${minecraft_version}-${appleskin_version}:api")
+        runtimeOnly fg.deobf("squeek.appleskin:appleskin-forge:mc${minecraft_version}-${appleskin_version}")
+    }
+
+    fileTree(dir: 'libs', include: '*.jar').each { jar ->
+        def base = jar.name - ~/\.jar$/
+        def lastDash = base.lastIndexOf('-')
+        if (lastDash <= 0) {
+            throw new GradleException("libs/${jar.name}: filename must contain '-' separating name and version")
+        }
+        def modName = base.substring(0, lastDash)
+        def modVersion = base.substring(lastDash + 1)
+        runtimeOnly fg.deobf("blank:${modName}:${modVersion}")
+    }
 }
 
-processResources {
+tasks.named('processResources', ProcessResources).configure {
     var replaceProperties = [
             mod_version: mod_version,
             mod_id: mod_id,
             mod_name: mod_name,
-            mod_display_name: mod_display_name,
             mod_license: mod_license,
+            mod_authors: mod_authors,
+            mod_description: mod_description,
+            mod_issue_tracker: mod_issue_tracker,
+            mod_update_url: mod_update_url,
+
+            minecraft_version: minecraft_version,
+            minecraft_version_range: minecraft_version_range,
 
             forge_version: forge_version,
             forge_version_range: forge_version_range,
             loader_version_range: loader_version_range,
 
-            mc_version: mc_version,
-            mc_version_range: mc_version_range,
+            farmers_delight_version: farmers_delight_version,
+            farmers_delight_version_range: farmers_delight_version_range,
 
+            vampirism_version: vampirism_version,
             vampirism_version_range: vampirism_version_range,
-            farmersdelight_version_range: farmersdelight_version_range
+
+            werewolves_version_range: werewolves_version_range
     ]
     inputs.properties replaceProperties
 
-    filesMatching(['META-INF/mods.toml']) {
+    filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
         expand replaceProperties + [project: project]
     }
 }
 
-jar {
+tasks.named('jar', Jar).configure {
     manifest {
         attributes([
-                "Specification-Title"     : "vampiresdelight",
-                "Specification-Vendor"    : "grid",
-                "Specification-Version"   : "1", // We are version 1 of ourselves
-                "Implementation-Title"    : "VampiresDelight",
-                "Implementation-Version"  : "${mod_version}",
-                "Implementation-Vendor"   : "grid",
-                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+                'Specification-Title'     : mod_id,
+                'Specification-Vendor'    : mod_authors,
+                'Specification-Version'   : '1',
+                'Implementation-Title'    : project.name,
+                'Implementation-Version'  : project.jar.archiveVersion,
+                'Implementation-Vendor'   : mod_authors,
+                'Implementation-Timestamp': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+                'MixinConfigs'            : 'vampiresdelight.mixins.json'
         ])
     }
-}
 
-jar.finalizedBy('reobfJar')
+    finalizedBy 'reobfJar'
+}
 
 publishing {
     publications {
-        mavenJava(MavenPublication) {
+        register('mavenJava', MavenPublication) {
             artifact jar
         }
     }
@@ -202,6 +205,11 @@ publishing {
     }
 }
 
+mixin {
+    add sourceSets.main, 'vampiresdelight.refmap.json'
+    config 'vampiresdelight.mixins.json'
+}
+
 tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+    options.encoding = 'UTF-8'
 }

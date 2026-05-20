@@ -1,9 +1,5 @@
 {
   "values": [
-    "vampirism:vampire_book",
-    {
-      "id": "guideapi_vp:vampirism-guidebook",
-      "required": false
-    }
+    "vampirism:vampire_book"
   ]
 }

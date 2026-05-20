@@ -1,7 +1,0 @@
-{
-  "type": "vampiresdelight:lost_carriage",
-  "biomes": "#vampiresdelight:has_structure/lost_carriage",
-  "spawn_overrides": {},
-  "step": "surface_structures",
-  "terrain_adaptation": "beard_thin"
-}

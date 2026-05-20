@@ -1,0 +1,7 @@
+{
+  "parent": "farmersdelight:block/template_crop_cross",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "cross": "vampiresdelight:block/vampire_orchid_crop_stage3"
+  }
+}

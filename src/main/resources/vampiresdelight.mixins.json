@@ -1,28 +1,32 @@
 {
   "required": true,
-  "package": "net.grid.vampiresdelight.common.mixin",
+  "package": "net.grid.vampiresdelight.misc.mixin",
   "compatibilityLevel": "JAVA_17",
   "refmap": "vampiresdelight.refmap.json",
-  "plugin": "net.grid.vampiresdelight.common.mixin.plugin.VDMixinConfigPlugin",
   "mixins": [
-    "MixinConsumableItem",
-    "MixinEnchantment",
-    "MixinFoodHelper",
+    "EnchantmentMixin",
+    "FeatureMixin",
+    "LivingEntityMixin",
     "MixinHunterCampPiecesFireplace",
     "MixinHunterCampPiecesSpecialBlock",
-    "MixinLivingEntity",
-    "MixinModPlayerEventHandler",
-    "MixinPowderSnowBlock",
-    "MixinRenderHandler",
-    "MixinSetOilFunction",
+    "MobMixin",
+    "NourishmentEffectMixin",
+    "SetOilFunctionMixin",
+    "TextUtilsMixin",
+    "TrunkPlacerMixin",
     "accessor.BloodStatsAccessor",
     "accessor.StructurePieceAccessor",
+    "accessor.StructureTemplatePoolAccessor",
     "accessor.VampirismItemBloodFoodItemAccessor"
   ],
   "client": [
+    "RenderHandlerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
   },
-  "minVersion": "0.8"
+  "overwrites": {
+    "requireAnnotations": true
+  },
+  "minVersion": "0.7"
 }

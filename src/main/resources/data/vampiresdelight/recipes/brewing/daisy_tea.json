@@ -1,11 +1,11 @@
 {
   "type": "farmersrespite:brewing",
-  "container": {
-    "item": "minecraft:glass_bottle"
+  "base": {
+    "count": 1000,
+    "fluid": "minecraft:water"
   },
-  "cookingtime": 2400,
+  "brewingtime": 2400,
   "experience": 0.35,
-  "group": "daisy_tea",
   "ingredients": [
     {
       "item": "minecraft:oxeye_daisy"
@@ -14,9 +14,8 @@
       "item": "minecraft:oxeye_daisy"
     }
   ],
-  "needwater": true,
-  "recipe_book_tab": "drinks",
   "result": {
-    "item": "vampiresdelight:daisy_tea"
+    "count": 1000,
+    "fluid": "vampiresdelight:daisy_tea"
   }
 }

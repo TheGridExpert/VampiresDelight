@@ -1,0 +1,7 @@
+{
+  "parent": "vampiresdelight:block/template_bottle_placed",
+  "textures": {
+    "bottle": "vampiresdelight:block/dandelion_beer_bottle",
+    "particle": "vampiresdelight:block/dandelion_beer_bottle"
+  }
+}

@@ -15,7 +15,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "vampiresdelight.advancement.pour_dandelion_beer.desc"
+      "translate": "advancement.vampiresdelight.pour_dandelion_beer.desc"
     },
     "frame": "task",
     "hidden": false,
@@ -24,7 +24,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "vampiresdelight.advancement.pour_dandelion_beer"
+      "translate": "advancement.vampiresdelight.pour_dandelion_beer"
     }
   },
   "requirements": [

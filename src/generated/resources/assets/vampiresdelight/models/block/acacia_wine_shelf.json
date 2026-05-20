@@ -1,7 +1,6 @@
 {
   "parent": "vampiresdelight:block/template_wine_shelf",
   "textures": {
-    "body": "vampiresdelight:block/acacia_wine_shelf",
-    "particle": "minecraft:block/acacia_planks"
+    "shelf": "vampiresdelight:block/acacia_wine_shelf"
   }
 }

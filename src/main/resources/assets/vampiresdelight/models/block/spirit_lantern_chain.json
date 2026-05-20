@@ -1,7 +1,8 @@
 {
+	"credit": "Made by GridExpert",
 	"parent": "block/block",
 	"textures": {
-		"0": "vampiresdelight:block/spirit_lantern",
+		"lantern": "vampiresdelight:block/spirit_lantern",
 		"particle": "block/gold_block"
 	},
 	"render_type": "minecraft:cutout",
@@ -12,8 +13,8 @@
 			"shade": false,
 			"rotation": {"angle": 45, "axis": "y", "origin": [8, 1, 8]},
 			"faces": {
-				"north": {"uv": [6, 3, 9, 7], "texture": "#0"},
-				"south": {"uv": [6, 3, 9, 7], "texture": "#0"}
+				"north": {"uv": [6, 3, 9, 7], "texture": "#lantern"},
+				"south": {"uv": [6, 3, 9, 7], "texture": "#lantern"}
 			}
 		},
 		{
@@ -22,8 +23,8 @@
 			"shade": false,
 			"rotation": {"angle": 45, "axis": "y", "origin": [8, 1, 8]},
 			"faces": {
-				"east": {"uv": [6, 9, 9, 11], "texture": "#0"},
-				"west": {"uv": [6, 9, 9, 11], "texture": "#0"}
+				"east": {"uv": [6, 9, 9, 11], "texture": "#lantern"},
+				"west": {"uv": [6, 9, 9, 11], "texture": "#lantern"}
 			}
 		},
 		{
@@ -32,8 +33,8 @@
 			"shade": false,
 			"rotation": {"angle": 45, "axis": "y", "origin": [8, 1, 8]},
 			"faces": {
-				"east": {"uv": [6, 7, 9, 9], "texture": "#0"},
-				"west": {"uv": [6, 7, 9, 9], "texture": "#0"}
+				"east": {"uv": [6, 7, 9, 9], "texture": "#lantern"},
+				"west": {"uv": [6, 7, 9, 9], "texture": "#lantern"}
 			}
 		}
 	]

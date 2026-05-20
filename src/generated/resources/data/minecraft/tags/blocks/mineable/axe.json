@@ -1,28 +1,11 @@
 {
   "values": [
-    "vampiresdelight:garlic_crate",
+    "#vampiresdelight:wine_shelves_wooden",
     "vampiresdelight:dark_spruce_cabinet",
     "vampiresdelight:cursed_spruce_cabinet",
     "vampiresdelight:jacaranda_cabinet",
     "vampiresdelight:magic_cabinet",
-    "vampiresdelight:black_mushroom_block",
-    "vampiresdelight:black_mushroom_stem",
-    "vampiresdelight:black_mushroom",
-    "vampiresdelight:oak_wine_shelf",
-    "vampiresdelight:spruce_wine_shelf",
-    "vampiresdelight:birch_wine_shelf",
-    "vampiresdelight:jungle_wine_shelf",
-    "vampiresdelight:acacia_wine_shelf",
-    "vampiresdelight:dark_oak_wine_shelf",
-    "vampiresdelight:mangrove_wine_shelf",
-    "vampiresdelight:cherry_wine_shelf",
-    "vampiresdelight:bamboo_wine_shelf",
-    "vampiresdelight:crimson_wine_shelf",
-    "vampiresdelight:warped_wine_shelf",
-    "vampiresdelight:cursed_spruce_wine_shelf",
-    "vampiresdelight:dark_spruce_wine_shelf",
-    "vampiresdelight:jacaranda_wine_shelf",
-    "vampiresdelight:magic_wine_shelf",
+    "vampiresdelight:garlic_crate",
     "vampiresdelight:white_bar_stool",
     "vampiresdelight:orange_bar_stool",
     "vampiresdelight:magenta_bar_stool",
@@ -38,6 +21,8 @@
     "vampiresdelight:brown_bar_stool",
     "vampiresdelight:green_bar_stool",
     "vampiresdelight:red_bar_stool",
-    "vampiresdelight:black_bar_stool"
+    "vampiresdelight:black_bar_stool",
+    "vampiresdelight:black_mushroom_block",
+    "vampiresdelight:black_mushroom_stem"
   ]
 }

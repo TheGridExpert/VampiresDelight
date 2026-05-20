@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/cake_slice2",
+  "textures": {
+    "bottom": "vampiresdelight:block/orchid_cake_bottom",
+    "inside": "vampiresdelight:block/orchid_cake_inner",
+    "particle": "vampiresdelight:block/orchid_cake_side",
+    "side": "vampiresdelight:block/orchid_cake_side",
+    "top": "vampiresdelight:block/orchid_cake_top"
+  }
+}

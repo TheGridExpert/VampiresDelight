@@ -8,7 +8,7 @@
             "condition": "minecraft:location_check",
             "predicate": {
               "block": {
-                "tag": "vampiresdelight:wine_shelf"
+                "tag": "vampiresdelight:wine_shelves"
               }
             }
           },
@@ -28,7 +28,7 @@
   "display": {
     "announce_to_chat": false,
     "description": {
-      "translate": "vampiresdelight.advancement.place_dandelion_beer_bottle_on_shelf.desc"
+      "translate": "advancement.vampiresdelight.place_dandelion_beer_bottle_on_shelf.desc"
     },
     "frame": "task",
     "hidden": false,
@@ -37,7 +37,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "vampiresdelight.advancement.place_dandelion_beer_bottle_on_shelf"
+      "translate": "advancement.vampiresdelight.place_dandelion_beer_bottle_on_shelf"
     }
   },
   "requirements": [

@@ -1,0 +1,47 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "vampiresdelight:weird_jelly_block",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "servings": "4"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "vampiresdelight:weird_jelly_block"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "block": "vampiresdelight:weird_jelly_block",
+            "condition": "minecraft:block_state_property",
+            "properties": {
+              "servings": "4"
+            }
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bowl"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "vampiresdelight:blocks/weird_jelly_block"
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "P": {
+      "item": "werewolves:magic_planks"
+    },
+    "S": {
+      "item": "werewolves:magic_slab"
+    }
+  },
+  "pattern": [
+    "SSS",
+    " P ",
+    "SSS"
+  ],
+  "result": {
+    "item": "vampiresdelight:magic_wine_shelf"
+  },
+  "show_notification": true
+}

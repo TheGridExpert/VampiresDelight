@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
+    "O": {
       "item": "vampiresdelight:orchid_petals"
     }
   },
   "pattern": [
-    "###",
-    "###",
-    "###"
+    "OOO",
+    "OOO",
+    "OOO"
   ],
   "result": {
     "item": "vampiresdelight:orchid_bag"

@@ -4,7 +4,19 @@
       "model": "vampiresdelight:block/vampire_orchid_crop_stage0"
     },
     "age=1": {
+      "model": "vampiresdelight:block/vampire_orchid_crop_stage0"
+    },
+    "age=2": {
       "model": "vampiresdelight:block/vampire_orchid_crop_stage1"
+    },
+    "age=3": {
+      "model": "vampiresdelight:block/vampire_orchid_crop_stage1"
+    },
+    "age=4": {
+      "model": "vampiresdelight:block/vampire_orchid_crop_stage2"
+    },
+    "age=5": {
+      "model": "vampiresdelight:block/vampire_orchid_crop_stage3"
     }
   }
 }

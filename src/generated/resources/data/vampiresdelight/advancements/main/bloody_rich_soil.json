@@ -1,0 +1,30 @@
+{
+  "parent": "vampiresdelight:main/plant_vampire_orchid_crop",
+  "criteria": {
+    "bloody_soil": {
+      "conditions": {},
+      "trigger": "vampiresdelight:rich_soil_bloodied"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.vampiresdelight.bloody_rich_soil.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "vampiresdelight:bloody_soil"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.vampiresdelight.bloody_rich_soil"
+    }
+  },
+  "requirements": [
+    [
+      "bloody_soil"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

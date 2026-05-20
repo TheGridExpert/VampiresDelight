@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "werewolves:wolf_berries"
+    },
+    {
+      "item": "werewolves:wolf_berries"
+    },
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "item": "minecraft:ice"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "item": "vampiresdelight:wolf_berry_ice_cream"
+  }
+}

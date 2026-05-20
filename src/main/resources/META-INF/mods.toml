@@ -1,56 +1,65 @@
 modLoader="javafml"
 loaderVersion="${loader_version_range}"
-issueTrackerURL = "https://github.com/TheGridExpert/VampiresDelight/issues"
 license="${mod_license}"
+issueTrackerURL="${mod_issue_tracker}"
+accessTransformer="META-INF/accesstransformer.cfg"
 
 [[mods]]
-modId="vampiresdelight"
+modId="${mod_id}"
 version="${mod_version}"
-displayName="${mod_display_name}"
-displayURL = "https://github.com/TheGridExpert/VampiresDelight"
+displayName="${mod_name}"
+updateJSONURL="${mod_update_url}"
 logoFile="logo.png"
 logoBlur=false
-itemIcon = "vampiresdelight:dark_stone_stove"
-configBackground = "vampiresdelight:textures/block/dark_stone_small_bricks.png"
 credits='''\n
-    - Cheaterpaul (Vampirism and code assistance)
-    - Maxanier (Vampirism)
-    - Vectorwing (Farmer's Delight)
-    - Lunofe/Zin (code and balance)
+  - Cheaterpaul (Vampirism and code assistance)
+  - Maxanier (Vampirism)
+  - Vectorwing (Farmer's Delight)
+  - Lunofe/Zin (code and balance)
+  - HidekiHrk (code)
 Translators:
-    - DimensionPainter (Russian)
-    - Cursed Shadow (French)
-    - stairs (Chinese)
+  - DimensionPainter (Russian)
+  - Cursed Shadow (French)
+  - Chairs (Chinese)
 '''
-authors="GridExpert"
-description='''
-Makes Vampirism and Farmer's Delight more compatible
-'''
+authors="${mod_authors}"
+description='''${mod_description}'''
 
-[[dependencies.vampiresdelight]]
+[[mixins]]
+config="vampiresdelight.mixins.json"
+
+[[dependencies.${mod_id}]]
 modId="forge"
 mandatory=true
 versionRange="${forge_version_range}"
-ordering="NONE"
+ordering="AFTER"
 side="BOTH"
 
-[[dependencies.vampiresdelight]]
+[[dependencies.${mod_id}]]
 modId="minecraft"
 mandatory=true
-versionRange="${mc_version_range}"
-ordering="NONE"
+versionRange="${minecraft_version_range}"
+ordering="AFTER"
 side="BOTH"
 
-[[dependencies.vampiresdelight]]
+[[dependencies.${mod_id}]]
+modId="farmersdelight"
+mandatory=true
+versionRange="${farmers_delight_version_range}"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.${mod_id}]]
 modId="vampirism"
 mandatory=true
 versionRange="${vampirism_version_range}"
-ordering="NONE"
+ordering="AFTER"
 side="BOTH"
 
 [[dependencies.vampiresdelight]]
-modId="farmersdelight"
-mandatory=true
-versionRange="${farmersdelight_version_range}"
-ordering="NONE"
+modId="werewolves"
+mandatory=false
+versionRange="${werewolves_version_range}"
+ordering="AFTER"
 side="BOTH"
+

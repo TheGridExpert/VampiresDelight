@@ -1,0 +1,6 @@
+{
+  "parent": "vampiresdelight:block/template_wine_shelf",
+  "textures": {
+    "shelf": "vampiresdelight:block/magic_wine_shelf"
+  }
+}

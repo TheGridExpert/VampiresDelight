@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/cake",
+  "textures": {
+    "bottom": "vampiresdelight:block/orchid_cake_bottom",
+    "particle": "vampiresdelight:block/orchid_cake_side",
+    "side": "vampiresdelight:block/orchid_cake_side",
+    "top": "vampiresdelight:block/orchid_cake_top"
+  }
+}

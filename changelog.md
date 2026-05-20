@@ -1,16 +1,46 @@
 # Changelog
 
-## 0.1.7e
+## 0.1.12b
+
+### Fixes
+- The **Wolf Berry Ice Cream** recipe now uses the correct milk tag;
+
+## 0.1.12
+
+### Updates
+- Updated to Farmer's Delight 1.3;
+- There is now some chance to obtain gold and diamonds while scavenging enhanced and ultimate hunter armor of swiftness respectively;
+- Added FD new tags support: `farmersdelight:snacks`, `farmersdelight:meals`, `farmersdelight:sweets`, `farmersdelight:drinks`, `farmersdelight:feasts`, `c:foods/soup`, `c:foods/pie`;
+
+### Fixes
+- The top texture of the weird jelly leftover is now aligned with other stages;
+
+### Translations
+- Renamed some advancements;
+
+## 0.1.11b
+
+### Additions
+- Added a new config:
+  - `enableFDFoodEffectsDespiteFaction`:
+  - `false` by default;
+
+## 0.1.11
+
+### Fixes
+- Fixed **Botany Pots** mod integration (Thanks, HidekiHrk!);
+- Fixed infinite wine and beer when pouring using a crafting table;
+
+## 0.1.10d
 
 ### Translations
 - Added:
   - zh_Cn (Thanks, chairs!);
 
-## 0.1.7d
+## 0.1.10c
 
-- ### Updates
+### Updates
 - Changed food effects:
-  - **Snow_White Ice Cream**: `4` to `3,5`;
   - **Blood Wine Glass**: changed `Regeneration II for 10 seconds` to `Regeneration for 15 seconds`;
   - **Orchid Tea**: changed `Regeneration for 20 seconds` to `10 seconds`;
   - **Mulled Wine Glass**: replaced `Regeneration` with `Haste for  3 minutes`;
@@ -18,17 +48,138 @@
   - **Dandelion Beer Mug**: replaced `Strength` with `Haste for 3 minutes` and added half a point of saturation;
   - **Borscht**: replaced `Resistance` with `Absorption for 1 minute 30 seconds`;
   - **Wolf Berry Ice Cream**: replaced `Resistance` with `Haste for 2 minutes`;
+- Cooking spot at hunter outpost generation has been fixed, and it now finally spawns as intended. The structure itself has also been updated, and it is now sometimes generated instead of the alchemy building and not the stables;
+- A few new tents storing crops are now generated at hunter outposts as a variant of existing tents;
 
-## 0.1.7c
+### Fixes
+- Fixed the weathered letter creative tab generation conflicting because of referring to client on server;
+
+## 0.1.10b
+
+### Fixes
+- Fixed the weathered letter packet causing the server fail to start;
+
+## 0.1.10
+
+### Additions
+- New item added:
+  - **Weathered Letter**. It can sometimes be found in hunter outposts and can either be read or used to craft paper or vampire books when a few are combined. There are two different letters as of now;
+- Added a new building to hunter outposts - a canteen/kitchen that sometimes spawns at hunter outposts instead of stables;
+- **Rice** and **Cabbage** are now also generated in chests of tents and towers at hunter outposts;
+- New advancement added:
+  - `Centennial fanfics` - Find a Weathered Letter;
+
+### Updates
+- Updated textures:
+  - **Blood Wine Bottle**;
+  - **Dandelion Beer Bottle**;
+  - **Blood Syrup**;
+  - **Blood Hot Dog**;
+
+### Fixes
+- Placing this mod's cabinets no longer crashes the game;
+
+### Translations
+- Added new lines for weathered letters;
+- Corrected:
+  - en_Us;
+
+## 0.1.9c
 
 ### Fixes
 - Fixed a bug that crashed the game when bat-related food effect tooltips were displayed and `batMeatWithersHumans` was set to `false`;
+
+## 0.1.9b
+
+### Fixes
+- Fixed a critical bug that allowed vampire players to eat everything, even without custom data components;
+
+## 0.1.9
+
+### Additions
+- Non-human food values in the food are now stored in data components as well, and they can be modified using data packs or commands. However, it may cause various bugs. If you find any please report them. These new components are:
+  - `vampiresdelight:vampire_food`;
+  - `vampiresdelight:hunter_food`;
+  - `vampiresdelight:werewolf_food`;
+
+### Updates
+- **Hardtack** can now be eaten faster by hunters; 
+- **Orchid Tea** no longer has a colored outline and a faction tooltip for humans who can be infected. For everyone else, it's displayed as before;
+
+### Fixes
+- Fixed **Werewolves** mod integration;
+
+### Configurations
+- `tooltip_colors` category is now inside of `tooltips` category;
+- Added new configs:
+  - `overrideFoodPropertiesForFactions`:
+    - `true` by default;
+  - `spiritLanternFogDistanceMultiplier`:
+    - `0.4` by default;
+    - Range: from `0.0` to `10.0`;
+  - `coloredTooltipsForVampirismItems`:
+    - `true` by default;
+  - `factionTooltips`:
+    - `true` by default;
+  - `factionTooltipsForVampirismItems`:
+    - `true` by default;
+  - `debugFoodTooltips`:
+    - `false` by default;
+
+### Tags
+- Renamed tags:
+  - `vampiresdelight:drop_human_eye` into `vampiresdelight:drops_human_eye`;
+  - `vampiresdelight:wine_shelf` into `vampiresdelight:wine_shelves`;
+- Removed `vampiresdelight:blood_food` tag for technical reasons since it's no longer necessary;
+
+### Translations
+- Added translations to all mod's tags;
+
+## 0.1.8
+
+### Additions
+- Updated to NeoForge;
+- **Bloody Soil** can now be obtained by clicking on the **Rich Soil** or the **Rich Soil Farmland** with a **Pure Blood Bottle**;
+- Added `vampiresdelight:splash_radius` data component which can modify the splash radius of an **Alchemical Cocktail**. It can be used in data packs or with commands;
+
+### Updates
+- Most of the normal plants can now be planted in the **Cursed Farmland** and the **Bloody Soil Farmland**, except for the **Garlic**;
+- **Bloody Soil** now only boost cursed plants such as the **Vampire Orchid** and the **Dark Spruce Sapling**;
+- **Vampire Orchid Crop** no longer needs darkness, it will now grow in any light, but planting it in the dark or in fog will increase its growth speed;
+- Attacking an entity with **Alchemical Cocktail** will now cause it to break, setting everything on fire as if you threw it;
+- **Alchemical Cocktail** now has a handheld model, like a sword or a pickaxe;
+- **Spirit Lantern**'s model is no longer 3D in hand;
+- **Weird Jelly** no longer breaks instantly;
+- Updated **Grilled (Roasted) Garlic** texture;
+
+### Fixes
+- **Blood Pie** and **Orchid Cake** now drop slices after being broken with a knife as intended;
+
+### Configurations
+- Added brand-new config screen that can be found in mod menu;
+- Set the default value of `cookingPotInHunterCampSpawnChance` to `40`;
+- `hunterTooltipsForEveryone` now changes the color of tooltips as well;
+- Tooltip border colors are now stored in hex value in configuration;
+- Renamed `replaceWeirdJellySunscreenWithJumpboost` to `replaceWeirdJellySunscreenWithJumpBoost` for accuracy;
+- Removed configs since now their functions can be configured using data packs:
+  - `disableVampireBite`;
+  - `backstabbingCanBeAppliedToHunterWeapon`;
+
+### Translations
+- Renamed **Grilled Garlic** to **Roasted Garlic**;
+- Renamed advancement **Local Brewery** to **He hasn't brewed it since...**, since there's already a vanilla advancement with the same name;
+- Added more subtitles for sounds;
+- Added missing translation for thrown **Alchemical Cocktail**;
+- Corrected:
+  - en_Us;
+  - uk_Ua;
+  - ru_Ru;
 
 ## 0.1.7b
 
 ### Updates
 - Tooltips modified and added:
-  - **Spirit Lantern**'s tooltip is now hidden in order to save space on screen. Hold shift to view it;
+  - **Spirit Lantern**'s tooltip is now hidden to save space on screen. Hold shift to view it;
   - **Dandelion Beer Bottle** and **Blood Wine Bottle** now have a tooltip explaining how to pour drinks. Hold shift to view it;
 - **Alchemical Cocktail** can now be used by non-hunters;
 
@@ -63,7 +214,7 @@
   - **Blood Wine Glass**;
   - **Daisy Tea**;
 - Changed food values:
-  - **Snow-White Ice Cream**: `4` to `3,5`;
+  - **Snow_White Ice Cream**: `4` to `3,5`;
 - **Vampire Bite** enchantment now heals at least half a heart on a successful hit;
 
 ### Translations
@@ -159,7 +310,7 @@
   - `vampiresdelight:blood_food` - makes food restore blood bar for vampires. The value is the same as human food;
 
 ### Updates
-- Renamed **Clothes Dissolving** effect to just **Dissolving** in order to avoid unnecessary questions;
+- Renamed **Clothes Dissolving** effect to just **Dissolving** to avoid unnecessary questions;
 - Tweaked config file appearance;
 - **Pure Sorbet**, **Orchid Ice Cream**, **Dark Ice Cream**, and **Snow-White Ice Cream** now clear fire from the consumer and can always be eaten;
 - **Cursed Cupcake** no longer heals player, but gives regeneration effect;
@@ -265,7 +416,7 @@
 - The damage **Clothes Dissolving** effect deals to armor can now be reduced by Unbreaking enchantment;
 - **Clothes Dissolving** potion is now creative only, and can't be crafted;
 - Wandering traders now sell **Black Mushrooms**;
-- Recalculated **Vampire Bite** enchantment's healing values. Level 1 now has 20% to healing, level 2 has 25%, and level 3 has 30% (can be configured). Max healing value is now 2 hearts;
+- Recalculated **Vampire Bite** enchantment's healing values. Level 1 now has 20% to healing, level 2 has 25%, and level 3 has 30% (can be configured). Maximum healing value is now 2 hearts;
 
 ### Fixes
 - Fixed Hardtack giving bowl after being eaten;

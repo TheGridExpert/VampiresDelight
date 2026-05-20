@@ -7,16 +7,14 @@
   ],
   "result": [
     {
-      "count": 2,
-      "item": "vampiresdelight:orchid_petals"
-    },
-    {
-      "chance": 0.7,
-      "count": 2,
       "item": "vampiresdelight:orchid_seeds"
     },
     {
-      "chance": 0.3,
+      "chance": 0.6,
+      "item": "vampiresdelight:orchid_petals"
+    },
+    {
+      "chance": 0.35,
       "item": "vampirism:cursed_roots"
     }
   ],

@@ -1,26 +1,6 @@
 {
-  "elements": [
-    {
-      "faces": {
-        "north": {
-          "cullface": "north",
-          "texture": "#texture"
-        }
-      },
-      "from": [
-        0,
-        0,
-        0
-      ],
-      "to": [
-        16,
-        16,
-        0
-      ]
-    }
-  ],
+  "parent": "minecraft:block/template_single_face",
   "textures": {
-    "particle": "vampiresdelight:block/black_mushroom_block_inside",
     "texture": "vampiresdelight:block/black_mushroom_block_inside"
   }
 }

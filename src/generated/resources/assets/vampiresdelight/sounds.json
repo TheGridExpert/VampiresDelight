@@ -1,0 +1,61 @@
+{
+  "block.blood_poured": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "block.sculk.spread"
+      }
+    ],
+    "subtitle": "subtitles.vampiresdelight.block.blood_poured"
+  },
+  "block.bottle_breaks": {
+    "sounds": [
+      "vampiresdelight:bottle_breaks_1",
+      "vampiresdelight:bottle_breaks_1",
+      "vampiresdelight:bottle_breaks_2",
+      "vampiresdelight:bottle_breaks_2",
+      "random/glass2",
+      "random/glass3"
+    ],
+    "subtitle": "subtitles.vampiresdelight.block.bottle_breaks"
+  },
+  "entity.alchemical_cocktail.throw": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.snowball.throw"
+      }
+    ],
+    "subtitle": "subtitles.vampiresdelight.entity.alchemical_cocktail.throw"
+  },
+  "item.pouring_finish": {
+    "sounds": [
+      "vampiresdelight:pouring_finish"
+    ]
+  },
+  "item.pouring_full": {
+    "sounds": [
+      "vampiresdelight:pouring_full"
+    ]
+  },
+  "item.pouring_short": {
+    "sounds": [
+      "vampiresdelight:pouring_short"
+    ],
+    "subtitle": "subtitles.vampiresdelight.item.pouring_short"
+  },
+  "metal_pipe": {
+    "sounds": [
+      "vampiresdelight:metal_pipe"
+    ],
+    "subtitle": "subtitles.vampiresdelight.metal_pipe"
+  },
+  "triangle": {
+    "sounds": [
+      "vampiresdelight:triangle_1",
+      "vampiresdelight:triangle_2",
+      "vampiresdelight:triangle_3"
+    ],
+    "subtitle": "subtitles.vampiresdelight.triangle"
+  }
+}

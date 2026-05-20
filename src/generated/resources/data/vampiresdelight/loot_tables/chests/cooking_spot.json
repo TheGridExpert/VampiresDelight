@@ -1,0 +1,72 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:carrot",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potato",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:item",
+          "name": "farmersdelight:cabbage",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "farmersdelight:rice",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:charcoal",
+          "weight": 15
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 20.0,
+        "min": 10.0
+      }
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 35.0,
+                "min": 10.0
+              },
+              "treasure": false
+            }
+          ],
+          "name": "farmersdelight:iron_knife",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:empty",
+          "weight": 5
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "vampiresdelight:chests/cooking_spot"
+}

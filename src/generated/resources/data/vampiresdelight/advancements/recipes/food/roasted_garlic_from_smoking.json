@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vampiresdelight:roasted_garlic_from_smoking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "roasted_garlic": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "vampirism:item_garlic"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "roasted_garlic",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vampiresdelight:roasted_garlic_from_smoking"
+    ]
+  },
+  "sends_telemetry_event": false
+}
