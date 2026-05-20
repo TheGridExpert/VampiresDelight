@@ -497,20 +497,20 @@ public class VDRecipeProvider extends RecipeProvider {
     }
 
     private static void cookMiscellaneous(Consumer<FinishedRecipe> consumer) {
-        CookingPotRecipeBuilder.cookingPotRecipe(VDItems.DAISY_TEA.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
+        CookingPotRecipeBuilder.cookingPotRecipe(VDItems.DAISY_TEA.get(), 1, NORMAL_COOKING, MEDIUM_EXP, Items.GLASS_BOTTLE)
                 .addIngredient(Items.OXEYE_DAISY)
                 .addIngredient(Items.OXEYE_DAISY)
                 .unlockedByItems("has_oxeye_daisy", Items.OXEYE_DAISY)
                 .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
                 .save(consumer, itemLocationCooking(VDItems.DAISY_TEA.get()));
-        CookingPotRecipeBuilder.cookingPotRecipe(VDItems.ORCHID_TEA.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
+        CookingPotRecipeBuilder.cookingPotRecipe(VDItems.ORCHID_TEA.get(), 1, NORMAL_COOKING, MEDIUM_EXP, Items.GLASS_BOTTLE)
                 .addIngredient(MILK)
                 .addIngredient(VDItems.ORCHID_PETALS.get())
                 .addIngredient(VDItems.ORCHID_PETALS.get())
                 .unlockedByAnyIngredient(VDItems.ORCHID_PETALS.get(), ModBlocks.VAMPIRE_ORCHID.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
                 .save(consumer, itemLocationCooking(VDItems.ORCHID_TEA.get()));
-        CookingPotRecipeBuilder.cookingPotRecipe(VDItems.WEIRD_JELLY_BLOCK.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
+        CookingPotRecipeBuilder.cookingPotRecipe(VDItems.WEIRD_JELLY_BLOCK.get(), 1, NORMAL_COOKING, MEDIUM_EXP, Items.BOWL)
                 .addIngredient(Items.BONE)
                 .addIngredient(Items.SLIME_BALL)
                 .addIngredient(Items.SLIME_BALL)
@@ -528,7 +528,7 @@ public class VDRecipeProvider extends RecipeProvider {
                 .unlockedByAnyIngredient(VDItems.ORCHID_PETALS.get(), VDItems.BLOOD_SYRUP.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
                 .save(consumer, itemLocationCooking(VDItems.TRICOLOR_DANGO.get()));
-        CookingPotRecipeBuilder.cookingPotRecipe(VDItems.MULLED_WINE_GLASS.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
+        CookingPotRecipeBuilder.cookingPotRecipe(VDItems.MULLED_WINE_GLASS.get(), 1, NORMAL_COOKING, MEDIUM_EXP, Items.GLASS_BOTTLE)
                 .addIngredient(VDItems.BLOOD_WINE_GLASS.get())
                 .addIngredient(Ingredient.fromValues(Stream.of(
                         new Ingredient.ItemValue(new ItemStack(ModBlocks.CURSED_ROOTS.get())),
@@ -543,7 +543,7 @@ public class VDRecipeProvider extends RecipeProvider {
     }
 
     private static void cookMeals(Consumer<FinishedRecipe> consumer) {
-        CookingPotRecipeBuilder.cookingPotRecipe(VDItems.ORCHID_CREAM_SOUP.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
+        CookingPotRecipeBuilder.cookingPotRecipe(VDItems.ORCHID_CREAM_SOUP.get(), 1, NORMAL_COOKING, MEDIUM_EXP, Items.BOWL)
                 .addIngredient(VDItems.ORCHID_PETALS.get())
                 .addIngredient(SALAD_INGREDIENTS)
                 .addIngredient(VEGETABLES_ONION)
@@ -552,7 +552,7 @@ public class VDRecipeProvider extends RecipeProvider {
                 .unlockedByAnyIngredient(VDItems.ORCHID_PETALS.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .save(consumer, itemLocationCooking(VDItems.ORCHID_CREAM_SOUP.get()));
-        CookingPotRecipeBuilder.cookingPotRecipe(VDItems.BLACK_MUSHROOM_SOUP.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
+        CookingPotRecipeBuilder.cookingPotRecipe(VDItems.BLACK_MUSHROOM_SOUP.get(), 1, NORMAL_COOKING, MEDIUM_EXP, Items.BOWL)
                 .addIngredient(VDItems.BLACK_MUSHROOM.get())
                 .addIngredient(Items.POTATO)
                 .addIngredient(Items.CARROT)
@@ -560,7 +560,7 @@ public class VDRecipeProvider extends RecipeProvider {
                 .unlockedByAnyIngredient(VDItems.BLACK_MUSHROOM.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .save(consumer, itemLocationCooking(VDItems.BLACK_MUSHROOM_SOUP.get()));
-        CookingPotRecipeBuilder.cookingPotRecipe(VDItems.ORCHID_CURRY.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
+        CookingPotRecipeBuilder.cookingPotRecipe(VDItems.ORCHID_CURRY.get(), 1, NORMAL_COOKING, MEDIUM_EXP, Items.BOWL)
                 .addIngredient(VDItems.ORCHID_PETALS.get())
                 .addIngredient(VDItems.ORCHID_PETALS.get())
                 .addIngredient(Items.POTATO)
@@ -572,7 +572,7 @@ public class VDRecipeProvider extends RecipeProvider {
                 .unlockedByAnyIngredient(VDItems.ORCHID_PETALS.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .save(consumer, itemLocationCooking(VDItems.ORCHID_CURRY.get()));
-        CookingPotRecipeBuilder.cookingPotRecipe(VDItems.BLACK_MUSHROOM_NOODLES.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
+        CookingPotRecipeBuilder.cookingPotRecipe(VDItems.BLACK_MUSHROOM_NOODLES.get(), 1, NORMAL_COOKING, MEDIUM_EXP, Items.BOWL)
                 .addIngredient(VDItems.BLACK_MUSHROOM.get())
                 .addIngredient(VDItems.BLACK_MUSHROOM.get())
                 .addIngredient(PASTA)
@@ -588,7 +588,7 @@ public class VDRecipeProvider extends RecipeProvider {
                 .unlockedByAnyIngredient(VDItems.ROASTED_GARLIC.get(), ModItems.ITEM_GARLIC.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .save(consumer, itemLocationCooking(VDItems.GARLIC_SOUP.get()));
-        CookingPotRecipeBuilder.cookingPotRecipe(VDItems.BORSCHT.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
+        CookingPotRecipeBuilder.cookingPotRecipe(VDItems.BORSCHT.get(), 1, NORMAL_COOKING, MEDIUM_EXP, Items.BOWL)
                 .addIngredient(Ingredient.fromValues(Stream.of(
                         new Ingredient.TagValue(RAW_PORK),
                         new Ingredient.ItemValue(new ItemStack(Items.BEEF)),
