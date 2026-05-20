@@ -1,6 +1,5 @@
 package net.grid.vampiresdelight.common.core;
 
-import de.teamlapen.werewolves.util.WUtils;
 import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.util.OptRegistryObject;
 import net.grid.vampiresdelight.common.world.item.*;
@@ -23,7 +22,7 @@ import static net.grid.vampiresdelight.common.util.VDIntegrationUtils.WEREWOLVES
 public class VDItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, VampiresDelight.MODID);
 
-    public static final OptRegistryObject<SilverKnifeItem> SILVER_KNIFE = OptRegistryObject.register(ITEMS, WEREWOLVES, "silver_knife", () -> new SilverKnifeItem(WUtils.SILVER_ITEM_TIER, 0.5F, -2.0F, basicItem()));
+    public static final OptRegistryObject<Item> SILVER_KNIFE = OptRegistryObject.register(ITEMS, WEREWOLVES, "silver_knife", () -> SilverKnifeItem.create(basicItem()));
     public static final RegistryObject<AlchemicalCocktailItem> ALCHEMICAL_COCKTAIL = ITEMS.register("alchemical_cocktail", () -> new AlchemicalCocktailItem(basicItem()));
     public static final RegistryObject<ItemNameBlockItem> ORCHID_SEEDS = ITEMS.register("orchid_seeds", () -> new ItemNameBlockItem(VDBlocks.VAMPIRE_ORCHID_CROP.get(), basicItem()));
     public static final RegistryObject<Item> ORCHID_PETALS = ITEMS.register("orchid_petals", () -> new Item(basicItem()));
