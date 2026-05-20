@@ -10,6 +10,7 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.living.MobEffectEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -17,13 +18,13 @@ import net.minecraftforge.fml.common.Mod;
 public class EntityEventHandler {
 
     @SubscribeEvent
-    public static void onMobEffectApplied(MobEffectEvent.Added event) {
+    public static void onMobEffectApplied(MobEffectEvent.Applicable event) {
         LivingEntity entity = event.getEntity();
         Level level = entity.level();
 
         if (level.isClientSide || event.getEffectInstance().getEffect() != VDEffects.CONSECRATION.get()) return;
         if (Helper.isVampire(entity)) {
-            event.setCanceled(true);
+            event.setResult(Event.Result.DENY);
             return;
         }
 

@@ -11,11 +11,47 @@
       "condition": "minecraft:any_of",
       "terms": [
         {
+          "block": "vampiresdelight:black_orchid_candle_cake",
+          "condition": "minecraft:block_state_property"
+        },
+        {
+          "block": "vampiresdelight:blue_orchid_candle_cake",
+          "condition": "minecraft:block_state_property"
+        },
+        {
+          "block": "vampiresdelight:brown_orchid_candle_cake",
+          "condition": "minecraft:block_state_property"
+        },
+        {
+          "block": "vampiresdelight:cyan_orchid_candle_cake",
+          "condition": "minecraft:block_state_property"
+        },
+        {
           "block": "vampiresdelight:gray_orchid_candle_cake",
           "condition": "minecraft:block_state_property"
         },
         {
-          "block": "vampiresdelight:black_orchid_candle_cake",
+          "block": "vampiresdelight:green_orchid_candle_cake",
+          "condition": "minecraft:block_state_property"
+        },
+        {
+          "block": "vampiresdelight:light_blue_orchid_candle_cake",
+          "condition": "minecraft:block_state_property"
+        },
+        {
+          "block": "vampiresdelight:light_gray_orchid_candle_cake",
+          "condition": "minecraft:block_state_property"
+        },
+        {
+          "block": "vampiresdelight:lime_orchid_candle_cake",
+          "condition": "minecraft:block_state_property"
+        },
+        {
+          "block": "vampiresdelight:magenta_orchid_candle_cake",
+          "condition": "minecraft:block_state_property"
+        },
+        {
+          "block": "vampiresdelight:orange_orchid_candle_cake",
           "condition": "minecraft:block_state_property"
         },
         {
@@ -23,15 +59,15 @@
           "condition": "minecraft:block_state_property"
         },
         {
-          "block": "vampiresdelight:purple_orchid_candle_cake",
-          "condition": "minecraft:block_state_property"
-        },
-        {
           "block": "vampiresdelight:pink_orchid_candle_cake",
           "condition": "minecraft:block_state_property"
         },
         {
-          "block": "vampiresdelight:lime_orchid_candle_cake",
+          "block": "vampiresdelight:purple_orchid_candle_cake",
+          "condition": "minecraft:block_state_property"
+        },
+        {
+          "block": "vampiresdelight:red_orchid_candle_cake",
           "condition": "minecraft:block_state_property"
         },
         {
@@ -40,42 +76,6 @@
         },
         {
           "block": "vampiresdelight:yellow_orchid_candle_cake",
-          "condition": "minecraft:block_state_property"
-        },
-        {
-          "block": "vampiresdelight:green_orchid_candle_cake",
-          "condition": "minecraft:block_state_property"
-        },
-        {
-          "block": "vampiresdelight:blue_orchid_candle_cake",
-          "condition": "minecraft:block_state_property"
-        },
-        {
-          "block": "vampiresdelight:cyan_orchid_candle_cake",
-          "condition": "minecraft:block_state_property"
-        },
-        {
-          "block": "vampiresdelight:light_blue_orchid_candle_cake",
-          "condition": "minecraft:block_state_property"
-        },
-        {
-          "block": "vampiresdelight:brown_orchid_candle_cake",
-          "condition": "minecraft:block_state_property"
-        },
-        {
-          "block": "vampiresdelight:magenta_orchid_candle_cake",
-          "condition": "minecraft:block_state_property"
-        },
-        {
-          "block": "vampiresdelight:red_orchid_candle_cake",
-          "condition": "minecraft:block_state_property"
-        },
-        {
-          "block": "vampiresdelight:light_gray_orchid_candle_cake",
-          "condition": "minecraft:block_state_property"
-        },
-        {
-          "block": "vampiresdelight:orange_orchid_candle_cake",
           "condition": "minecraft:block_state_property"
         }
       ]

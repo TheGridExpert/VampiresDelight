@@ -3,6 +3,7 @@ package net.grid.vampiresdelight.data.provider.loot;
 import net.grid.vampiresdelight.common.core.VDEnchantments;
 import net.grid.vampiresdelight.common.core.VDItems;
 import net.grid.vampiresdelight.common.core.VDLootTables;
+import net.grid.vampiresdelight.common.world.loot.VampireBiteEnabledCondition;
 import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
@@ -85,7 +86,8 @@ public class VDChestLootProvider implements LootTableSubProvider {
     public LootPool.Builder vampiresBiteBookLoot(int bookWeight, int emptyWeight) {
         return LootPool.lootPool().setRolls(ConstantValue.exactly(1))
                 .add(LootItem.lootTableItem(Items.BOOK).setWeight(bookWeight)
-                        .apply(EnchantRandomlyFunction.randomEnchantment().withEnchantment(VDEnchantments.VAMPIRE_BITE.get())))
+                        .apply(EnchantRandomlyFunction.randomEnchantment().withEnchantment(VDEnchantments.VAMPIRE_BITE.get()))
+                        .when(VampireBiteEnabledCondition.builder()))
                 .add(EmptyLootItem.emptyItem().setWeight(emptyWeight));
     }
 }

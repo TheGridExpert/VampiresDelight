@@ -35,8 +35,6 @@ public class VDPotions {
     public static final RegistryObject<HunterPotion> VERY_LONG_DISSOLVING = POTIONS.register("very_long_dissolving", () -> new HunterPotion("dissolving", new MobEffectInstance(VDEffects.DISSOLVING.get(), 96000)));
     public static final RegistryObject<HunterPotion> LONG_STRONG_DISSOLVING = POTIONS.register("long_strong_dissolving", () -> new HunterPotion("dissolving", new MobEffectInstance(VDEffects.DISSOLVING.get(), 4800, 1)));
 
-
-
     public static void register(IEventBus eventBus) {
         POTIONS.register(eventBus);
     }

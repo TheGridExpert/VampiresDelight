@@ -17,8 +17,6 @@ public class VDEnchantments {
 
     public static final RegistryObject<Enchantment> VAMPIRE_BITE = ENCHANTMENTS.register("vampire_bite", () -> new VampireBiteEnchantment(Enchantment.Rarity.VERY_RARE));
 
-
-
     public static void register(IEventBus eventBus) {
         ENCHANTMENTS.register(eventBus);
     }

@@ -4,12 +4,14 @@ import de.teamlapen.vampirism.api.VampirismAPI;
 import de.teamlapen.vampirism.api.VampirismRegistries;
 import de.teamlapen.vampirism.api.entity.factions.IFactionPlayerHandler;
 import de.teamlapen.vampirism.api.entity.player.skills.ISkill;
+import de.teamlapen.werewolves.items.LiverItem;
 import de.teamlapen.werewolves.util.Helper;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.fml.ModList;
@@ -49,6 +51,10 @@ public class VDIntegrationUtils {
         return !isModPresent(WEREWOLVES) || Werewolves.canEat(entity, stack);
     }
 
+    public static boolean isLiver(Item item) {
+        return isModPresent(WEREWOLVES) && Werewolves.isLiver(item);
+    }
+
     private static boolean hasSkill(Player player, ResourceLocation skillId) {
         LazyOptional<IFactionPlayerHandler> playerHandler = player.isAlive() ? VampirismAPI.getFactionPlayerHandler(player) : LazyOptional.empty();
         ISkill<?> requiredSkill = VampirismRegistries.SKILLS.get().getValue(skillId);
@@ -77,6 +83,10 @@ public class VDIntegrationUtils {
 
         static boolean canEat(LivingEntity entity, ItemStack stack) {
             return Helper.canEat(entity, stack);
+        }
+
+        static boolean isLiver(Item item) {
+            return item instanceof LiverItem;
         }
     }
 }

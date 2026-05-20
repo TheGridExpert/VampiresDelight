@@ -35,6 +35,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import vectorwing.farmersdelight.common.registry.ModSounds;
 import vectorwing.farmersdelight.common.utility.ItemUtils;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -193,7 +194,9 @@ public class FactionCandleCakeBlock extends AbstractCandleBlock {
         return ForgeRegistries.BLOCKS.getValues().stream().filter(block -> {
             ResourceLocation location = ForgeRegistries.BLOCKS.getKey(block);
             return location != null && location.getNamespace().equals(VampiresDelight.MODID) && block instanceof FactionCandleCakeBlock;
-        }).map(block -> (FactionCandleCakeBlock) block).collect(Collectors.toList());
+        }).map(block -> (FactionCandleCakeBlock) block)
+                .sorted(Comparator.comparing(block -> Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block)).getPath()))
+                .collect(Collectors.toList());
     }
 
     public static Map<FactionCakeBlock, List<FactionCandleCakeBlock>> getCandleCakesByCake() {

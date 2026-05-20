@@ -34,7 +34,7 @@ public class FactionDrinkableItem extends FactionConsumableItem {
 
     @Override
     public boolean hasAnyFoodTooltip(ItemStack stack, @Nullable Player player) {
-        return player != null && VDEntityUtils.canConsumeHumanFood(player);
+        return player != null && VDEntityUtils.canConsumeHumanFood(player, stack);
     }
 
     public static InteractionResultHolder<ItemStack> useDrink(Level level, Player player, InteractionHand hand) {

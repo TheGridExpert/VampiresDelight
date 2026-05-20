@@ -19,6 +19,7 @@ public class VDRegistryManager {
         VDFeatures.register(eventBus);
         VDCreativeTabs.register(eventBus);
         VDSounds.register(eventBus);
+        VDLootConditions.register(eventBus);
     }
 
     public static void commonSetup(FMLCommonSetupEvent event) {

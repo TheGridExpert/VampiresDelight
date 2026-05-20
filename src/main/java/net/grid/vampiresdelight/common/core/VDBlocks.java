@@ -97,8 +97,6 @@ public class VDBlocks {
 
     public static final RegistryObject<WeirdJellyBlock> WEIRD_JELLY_BLOCK = BLOCKS.register("weird_jelly_block", () -> new WeirdJellyBlock(copyProperties(Blocks.CAKE).sound(SoundType.SLIME_BLOCK).noOcclusion().mapColor(MapColor.TERRACOTTA_MAGENTA), VDItems.WEIRD_JELLY::get, true));
 
-
-
     private static BlockBehaviour.Properties basicProperties() {
         return BlockBehaviour.Properties.of();
     }

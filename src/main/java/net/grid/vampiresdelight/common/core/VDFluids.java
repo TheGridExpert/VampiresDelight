@@ -25,8 +25,6 @@ public class VDFluids {
     public static final RegistryObject<FlowingFluid> FLOWING_ORCHID_TEA = FLUIDS.register("flowing_orchid_tea", () -> new ForgeFlowingFluid.Flowing(VDFluids.ORCHID_TEA_PROPERTIES));
     public static final ForgeFlowingFluid.Properties ORCHID_TEA_PROPERTIES = new ForgeFlowingFluid.Properties(ORCHID_TEA_TYPE, ORCHID_TEA, FLOWING_ORCHID_TEA);
 
-
-
     public static void register(IEventBus eventBus) {
         FLUID_TYPES.register(eventBus);
         FLUIDS.register(eventBus);

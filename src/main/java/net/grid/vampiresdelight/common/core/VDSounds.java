@@ -20,8 +20,6 @@ public class VDSounds {
     public static final RegistryObject<SoundEvent> POURING_FINISH = registerRangeSound("item.pouring_finish");
     public static final RegistryObject<SoundEvent> ALCHEMICAL_COCKTAIL_THROW = registerRangeSound("entity.alchemical_cocktail.throw");
 
-
-
     public static RegistryObject<SoundEvent> registerRangeSound(String id) {
         return SOUNDS.register(id, () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(VampiresDelight.MODID, id)));
     }

@@ -3,7 +3,6 @@ package net.grid.vampiresdelight.integration.appleskin;
 import de.teamlapen.vampirism.VampirismMod;
 import de.teamlapen.vampirism.items.VampirismItemBloodFoodItem;
 import de.teamlapen.vampirism.util.Helper;
-import de.teamlapen.werewolves.items.LiverItem;
 import net.grid.vampiresdelight.common.config.VDClientConfig;
 import net.grid.vampiresdelight.common.tag.VDItemTags;
 import net.grid.vampiresdelight.common.util.VDIntegrationUtils;
@@ -48,6 +47,8 @@ public class AppleSkinEventHandler {
         if (!VDClientConfig.CORRECT_APPLE_SKIN_TOOLTIPS.get()) return;
 
         Player player = event.player;
+        if (player == null) return;
+
         Item item = event.itemStack.getItem();
 
         if (item instanceof VampirismItemBloodFoodItem bloodFoodItem && Helper.isVampire(player)) {
@@ -63,7 +64,7 @@ public class AppleSkinEventHandler {
     private static boolean isVampireEdible(ItemStack stack) {
         Item item = stack.getItem();
         if (item instanceof VampireConsumableItem || item instanceof VampirismItemBloodFoodItem) return true;
-        if (VDIntegrationUtils.isModPresent(VDIntegrationUtils.WEREWOLVES) && item instanceof LiverItem) return true;
+        if (VDIntegrationUtils.isLiver(item)) return true;
         if (stack.is(VDItemTags.BLOOD_FOOD)) return true;
         return item instanceof FactionConsumableItem factionItem && factionItem.getVampireFood() != null;
     }

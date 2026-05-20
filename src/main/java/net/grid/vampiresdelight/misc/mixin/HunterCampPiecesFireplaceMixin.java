@@ -25,7 +25,7 @@ public class HunterCampPiecesFireplaceMixin {
 
     @Inject(at = @At("TAIL"), method = "postProcess(Lnet/minecraft/world/level/WorldGenLevel;Lnet/minecraft/world/level/StructureManager;Lnet/minecraft/world/level/chunk/ChunkGenerator;Lnet/minecraft/util/RandomSource;Lnet/minecraft/world/level/levelgen/structure/BoundingBox;Lnet/minecraft/world/level/ChunkPos;Lnet/minecraft/core/BlockPos;)V")
     public void placeCookingPot(WorldGenLevel worldIn, StructureManager structureManager, ChunkGenerator chunkGenerator, RandomSource random, BoundingBox structureBoundingBoxIn, ChunkPos chunkPos, BlockPos blockPos, CallbackInfo ci) {
-        if (random.nextInt(100) <= VDCommonConfig.COOKING_POT_IN_HUNTER_CAMP_CHANCE.get() && VDCommonConfig.GENERATE_COOKING_POT_IN_HUNTER_CAMP.get() && !VDCommonConfig.GENERATE_COOKING_POT_NEAR_HUNTER_CAMP.get()) {
+        if (random.nextInt(100) < VDCommonConfig.COOKING_POT_IN_HUNTER_CAMP_CHANCE.get() && VDCommonConfig.GENERATE_COOKING_POT_IN_HUNTER_CAMP.get() && !VDCommonConfig.GENERATE_COOKING_POT_NEAR_HUNTER_CAMP.get()) {
             ((StructurePieceAccessor) this).vampiresdelight$placeBlock(worldIn, ModBlocks.COOKING_POT.get().defaultBlockState().setValue(CookingPotBlock.SUPPORT, CookingPotSupport.TRAY), 1, 1, 1, structureBoundingBoxIn);
             VDHunterCampHelper.populateCookingPot((StructurePiece) (Object) this, worldIn, random, 1, 1, 1, structureBoundingBoxIn);
         }

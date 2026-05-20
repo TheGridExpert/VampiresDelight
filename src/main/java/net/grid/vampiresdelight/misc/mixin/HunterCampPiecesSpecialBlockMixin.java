@@ -32,7 +32,7 @@ public class HunterCampPiecesSpecialBlockMixin {
 
     @Inject(at = @At("TAIL"), method = "postProcess(Lnet/minecraft/world/level/WorldGenLevel;Lnet/minecraft/world/level/StructureManager;Lnet/minecraft/world/level/chunk/ChunkGenerator;Lnet/minecraft/util/RandomSource;Lnet/minecraft/world/level/levelgen/structure/BoundingBox;Lnet/minecraft/world/level/ChunkPos;Lnet/minecraft/core/BlockPos;)V")
     public void placeCookingPot(WorldGenLevel worldIn, StructureManager structureManager, ChunkGenerator chunkGenerator, RandomSource random, BoundingBox structureBoundingBoxIn, ChunkPos chunkPos, BlockPos blockPos, CallbackInfo ci) {
-        if (random.nextInt(100) <= VDCommonConfig.COOKING_POT_IN_HUNTER_CAMP_CHANCE.get() && VDCommonConfig.GENERATE_COOKING_POT_IN_HUNTER_CAMP.get() && VDCommonConfig.GENERATE_COOKING_POT_NEAR_HUNTER_CAMP.get()) {
+        if (random.nextInt(100) < VDCommonConfig.COOKING_POT_IN_HUNTER_CAMP_CHANCE.get() && VDCommonConfig.GENERATE_COOKING_POT_IN_HUNTER_CAMP.get() && VDCommonConfig.GENERATE_COOKING_POT_NEAR_HUNTER_CAMP.get()) {
             int potX = advanced ? 1 : 3;
             int potZ = advanced ? 3 : 1;
             ((StructurePieceAccessor) this).vampiresdelight$placeBlock(worldIn, Blocks.CAMPFIRE.defaultBlockState(), potX, 0, potZ, structureBoundingBoxIn);

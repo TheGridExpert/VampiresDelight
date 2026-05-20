@@ -14,8 +14,6 @@ public class VDFeatures {
 
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> HUGE_BLACK_MUSHROOM = FEATURES.register("huge_black_mushroom", () -> new HugeBlackMushroomFeature(NoneFeatureConfiguration.CODEC));
 
-
-
     public static void register(IEventBus eventBus) {
         FEATURES.register(eventBus);
     }

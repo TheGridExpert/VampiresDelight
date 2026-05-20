@@ -30,7 +30,7 @@ public class ConsumableItemMixin {
             )
     )
     private void vampiresdelight$wrapAffectConsumer(ConsumableItem instance, ItemStack stack, Level level, LivingEntity consumer) {
-        if (consumer instanceof Player player && !VDEntityUtils.canConsumeHumanFood(player)) {
+        if (consumer instanceof Player player && !VDEntityUtils.canConsumeHumanFood(player, stack)) {
             return;
         }
         instance.affectConsumer(stack, level, consumer);
@@ -39,7 +39,7 @@ public class ConsumableItemMixin {
     @Inject(method = "appendHoverText", at = @At("HEAD"), cancellable = true)
     private void vampiresdelight$cancelAppendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag, CallbackInfo ci) {
         Player player = VampirismMod.proxy.getClientPlayer();
-        if (player != null && !VDEntityUtils.canConsumeHumanFood(player)) {
+        if (player != null && !VDEntityUtils.canConsumeHumanFood(player, stack)) {
             ci.cancel();
         }
     }

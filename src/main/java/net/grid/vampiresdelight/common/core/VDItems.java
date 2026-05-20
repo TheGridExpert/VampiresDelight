@@ -132,8 +132,6 @@ public class VDItems {
     public static final RegistryObject<BlockItem> WILD_GARLIC = registerBlockItem(VDBlocks.WILD_GARLIC);
     public static final RegistryObject<BlockItem> WEIRD_JELLY_BLOCK = registerBlockItem(VDBlocks.WEIRD_JELLY_BLOCK);
 
-
-
     public static <T extends Block> RegistryObject<BlockItem> registerBlockItem(RegistryObject<T> block) {
         return registerBlockItem(block, basicItem());
     }

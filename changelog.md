@@ -79,7 +79,6 @@
 
 ### Technical
 - This version is made for Farmer's Delight 1.3 or newer. All recipes now use modern FD tags;
-- The mod now builds against the Modrinth Maven instead of the CurseForge Maven. This doesn't affect gameplay, but makes versioning less messy;
 - Werewolves mod is now integrated at a deeper level:
   - Werewolves' code is accessed at compile time, so it can be used directly instead of relying on workarounds;
   - Faction food for Werewolves is handled directly;

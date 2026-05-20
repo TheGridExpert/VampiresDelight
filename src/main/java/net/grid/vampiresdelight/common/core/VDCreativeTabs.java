@@ -146,8 +146,6 @@ public class VDCreativeTabs {
         item.ifPresent(output::accept);
     }
 
-    
-
     public static void register(IEventBus eventBus) {
         CREATIVE_TABS.register(eventBus);
     }

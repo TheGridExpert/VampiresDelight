@@ -15,8 +15,6 @@ public class VDOils {
     public static final RegistryObject<EffectWeaponOil> CONSECRATION = OILS.register("consecration", () -> new EffectWeaponOil(VDEffects.CONSECRATION.get(), 100, 15));
     public static final RegistryObject<EffectWeaponOil> DISSOLVING = OILS.register("dissolving", () -> new EffectWeaponOil(VDEffects.DISSOLVING.get(), 50, 10));
 
-
-
     public static void register(IEventBus eventBus) {
         OILS.register(eventBus);
     }

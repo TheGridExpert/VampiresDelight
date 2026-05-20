@@ -16,8 +16,6 @@ public class VDEffects {
     public static final RegistryObject<MobEffect> CONSECRATION = EFFECTS.register("consecration", () -> new MobEffect(MobEffectCategory.BENEFICIAL, 0xf2be5c));
     public static final RegistryObject<DissolvingEffect> DISSOLVING = EFFECTS.register("dissolving", () -> new DissolvingEffect(MobEffectCategory.HARMFUL, 0xceb180));
 
-
-
     public static void register(IEventBus eventBus) {
         EFFECTS.register(eventBus);
     }

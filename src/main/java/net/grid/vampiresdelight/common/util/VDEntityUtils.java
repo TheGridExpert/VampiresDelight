@@ -110,6 +110,16 @@ public class VDEntityUtils {
         return true;
     }
 
+    public static boolean canConsumeHumanFood(LivingEntity consumer, ItemStack stack) {
+        if (Helper.isVampire(consumer)) {
+            return false;
+        }
+        if (VDIntegrationUtils.isWerewolf(consumer)) {
+            return VDIntegrationUtils.canWerewolfEatFood(consumer, stack);
+        }
+        return true;
+    }
+
     public static void affectVampireEntityWithGarlic(LivingEntity entity, EnumStrength strength) {
         if (entity instanceof Player player && Helper.isVampire(entity)) {
             VReference.VAMPIRE_FACTION.getPlayerCapability(player).ifPresent(vamp -> DamageHandler.affectVampireGarlicDirect(vamp, strength));

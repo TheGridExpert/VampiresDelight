@@ -28,6 +28,8 @@ public class EnchantmentEventHandler {
     }
 
     public static void healFromDamage(LivingEntity user, int level, float damage) {
+        if (user.getCommandSenderWorld().isClientSide) return;
+
         RandomSource randomSource = user.getRandom();
         int chance = switch (level) {
             case 2 -> VDCommonConfig.VAMPIRE_BITE_HEALING_CHANCE_2.get();
@@ -36,12 +38,9 @@ public class EnchantmentEventHandler {
         };
         int maxHealingValue = (int) (VDCommonConfig.VAMPIRE_BITE_MAX_HEALING_VALUE.get() * 2);
 
-        if (user instanceof Player player && randomSource.nextInt(100) <= chance) {
-            float healAmount = (float) Math.ceil((double) level / 30 * damage);
-
-            if (!user.getCommandSenderWorld().isClientSide) {
-                player.heal(Math.min(healAmount, maxHealingValue));
-            }
+        if (user instanceof Player player && randomSource.nextInt(100) < chance) {
+            float healAmount = (float) Math.ceil((double) level / 25 * damage);
+            player.heal(Math.min(healAmount, maxHealingValue));
         }
     }
 }

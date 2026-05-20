@@ -6,6 +6,11 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "vampiresdelight:vampire_bite_enabled"
+            }
+          ],
           "functions": [
             {
               "enchantments": [

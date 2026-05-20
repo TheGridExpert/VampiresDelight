@@ -19,8 +19,6 @@ public class VDEntityTypes {
             .updateInterval(10)
     );
 
-
-
     public static <T extends Entity> RegistryObject<EntityType<T>> registerEntity(String id, EntityType.Builder<T> builder) {
         return ENTITIES.register(id, () -> builder.build(id));
     }

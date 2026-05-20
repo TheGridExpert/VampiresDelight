@@ -3,11 +3,15 @@ package net.grid.vampiresdelight.data.provider;
 import de.teamlapen.vampirism.core.ModBlocks;
 import de.teamlapen.vampirism.core.ModItems;
 import de.teamlapen.vampirism.core.ModTags;
+import de.teamlapen.vampirism.data.recipebuilder.AlchemyTableRecipeBuilder;
 import de.teamlapen.vampirism.data.recipebuilder.ShapedWeaponTableRecipeBuilder;
 import de.teamlapen.vampirism.data.recipebuilder.ShapelessWeaponTableRecipeBuilder;
+import de.teamlapen.vampirism.util.NBTIngredient;
 import net.grid.vampiresdelight.VampiresDelight;
 import net.grid.vampiresdelight.common.core.VDBlocks;
 import net.grid.vampiresdelight.common.core.VDItems;
+import net.grid.vampiresdelight.common.core.VDOils;
+import net.grid.vampiresdelight.common.core.VDPotions;
 import net.grid.vampiresdelight.common.tag.VDCommonTags;
 import net.grid.vampiresdelight.common.tag.VDItemTags;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -25,6 +29,8 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.Potion;
+import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
@@ -38,6 +44,7 @@ import vectorwing.farmersdelight.common.crafting.ingredient.ToolActionIngredient
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -136,6 +143,7 @@ public class VDRecipeProvider extends RecipeProvider {
 
         // Vampirism
         recipesWeaponTable(consumer);
+        recipesAlchemyTable(consumer);
     }
 
     private static void recipesBlocks(Consumer<FinishedRecipe> consumer) {
@@ -715,6 +723,24 @@ public class VDRecipeProvider extends RecipeProvider {
                 .save(consumer);
     }
 
+    private static void recipesAlchemyTable(Consumer<FinishedRecipe> consumer) {
+        AlchemyTableRecipeBuilder
+                .builder(VDOils.FOG_VISION)
+                .bloodOilIngredient()
+                .input(potion(VDPotions.FOG_VISION.get(), VDPotions.LONG_FOG_VISION.get()))
+                .build(consumer, ResourceLocation.fromNamespaceAndPath(VampiresDelight.MODID, "fog_vision_oil"));
+        AlchemyTableRecipeBuilder
+                .builder(VDOils.CONSECRATION)
+                .bloodOilIngredient()
+                .input(potion(VDPotions.CONSECRATION.get(), VDPotions.LONG_CONSECRATION.get()))
+                .build(consumer, ResourceLocation.fromNamespaceAndPath(VampiresDelight.MODID, "consecration_oil"));
+        AlchemyTableRecipeBuilder
+                .builder(VDOils.DISSOLVING)
+                .bloodOilIngredient()
+                .input(potion(VDPotions.DISSOLVING.get(), VDPotions.LONG_DISSOLVING.get(), VDPotions.STRONG_DISSOLVING.get()))
+                .build(consumer, ResourceLocation.fromNamespaceAndPath(VampiresDelight.MODID, "dissolving_oil"));
+    }
+
     private static void wineShelfRecipe(Block wineShelfBlock, Block slabBlock, Block planksBlock, Consumer<FinishedRecipe> consumer) {
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, wineShelfBlock)
                 .pattern("SSS")
@@ -785,6 +811,10 @@ public class VDRecipeProvider extends RecipeProvider {
             CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(item), SHEARS_TOOL, Items.LEATHER, leatherAmount)
                     .save(consumer, itemLocationCutting(item));
         }
+    }
+
+    private static Ingredient potion(Potion... potion) {
+        return new NBTIngredient(Arrays.stream(potion).map(p -> PotionUtils.setPotion(new ItemStack(Items.POTION, 1), p)).toArray(ItemStack[]::new));
     }
 
     private static ResourceLocation itemLocationCooking(Item item) {
