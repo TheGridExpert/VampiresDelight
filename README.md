@@ -43,6 +43,7 @@
 - **ru-RU** - DimensionPainter
 - **fr-FR** - Cursed Shadow
 - **fr-CA** - Cursed Shadow
+- **zh_CH** - Chairs
 
 ### Credits
 
