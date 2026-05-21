@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.13b
+
+### Changed
+- Item tooltips are now displayed correctly;
+- Updated the zh_ch translation (Thanks, Chairs!);
+
 ## 0.1.13
 
 > Note: This version is not a direct continuation of the previous 1.20.1 release — it was rewritten from scratch, drawing on content from 1.21.1 while keeping its own differences and improvements. This entry lists only the changes relative to the old 1.20.1 version.

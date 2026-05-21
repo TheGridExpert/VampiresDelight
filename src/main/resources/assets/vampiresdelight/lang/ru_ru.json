@@ -141,7 +141,7 @@
   "tooltip.vampiresdelight.alchemical_fire.burning_disabled": "Не поджигает землю, выключено на этом сервере",
   "tooltip.vampiresdelight.spirit_lantern": "Позволяет игроку видеть немного дальше в вампирском тумане, пока находится в одной из рук.",
   "tooltip.vampiresdelight.orchid_seeds": "Вампирский вид наземной орхидеи, который произрастает на проклятой или кровавой почве. Лучше всего растёт в вампирском тумане. Прямой солнечный свет замедляет её рост, однако размещение непрозрачного блока сверху поможет сохранить её в тени.",
-  "tooltip.vampiresdelight.pourable_drink": "Чтобы налить напиток в бокал, держите эту бутылку в одной руке и стеклянную бутылку в другой, затем нажмите и удерживайте левую кнопку мыши.",
+  "tooltip.vampiresdelight.pourable_drink": "Чтобы налить напиток в бокал, держите эту бутылку в одной руке и стеклянную бутылку в другой, затем нажмите и удерживайте правую кнопку мыши.",
   "tooltip.vampiresdelight.blood_wine_bottle.single": "Содержит %s порцию вина",
   "tooltip.vampiresdelight.blood_wine_bottle.multiple": "Содержит %s порций вина",
   "tooltip.vampiresdelight.dandelion_beer_bottle.single": "Содержит %s порцию пива",

@@ -141,7 +141,7 @@
   "tooltip.vampiresdelight.alchemical_fire.burning_disabled": "Does not burn ground, disabled on this server",
   "tooltip.vampiresdelight.spirit_lantern": "Makes the player see a little farther in vampire fog while held.",
   "tooltip.vampiresdelight.orchid_seeds": "A vampiric species of terrestrial orchid that thrives in cursed or bloody soil. Flourishes fastest in the vampire fog. Direct sunlight stunts its growth; however, placing an opaque block above will help to keep it shaded.",
-  "tooltip.vampiresdelight.pourable_drink": "To pour a drink into a glass, hold this bottle in one hand and a Glass Bottle in the other, then press and hold the left mouse button.",
+  "tooltip.vampiresdelight.pourable_drink": "To pour a drink into a glass, hold this bottle in one hand and a Glass Bottle in the other, then press and hold the right mouse button.",
   "tooltip.vampiresdelight.blood_wine_bottle.single": "Contains %s serving of wine",
   "tooltip.vampiresdelight.blood_wine_bottle.multiple": "Contains %s servings of wine",
   "tooltip.vampiresdelight.dandelion_beer_bottle.single": "Contains %s serving of beer",
