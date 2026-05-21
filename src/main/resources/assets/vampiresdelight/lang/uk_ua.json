@@ -146,7 +146,7 @@
   "tooltip.vampiresdelight.blood_wine_bottle.multiple": "Містить %s порції вина",
   "tooltip.vampiresdelight.dandelion_beer_bottle.single": "Містить %s порцію пива",
   "tooltip.vampiresdelight.dandelion_beer_bottle.multiple": "Містить %s порції пива",
-  "tooltip.vampiresdelight.daisy_tea": "Лікує слабкість, сліпоту,\\nповільність і нудоту",
+  "tooltip.vampiresdelight.daisy_tea": "Лікує слабкість, сліпоту,\nповільність і нудоту",
   "tooltip.vampiresdelight.orchid_tea": "Заражає вампіризмом",
   "tooltip.vampiresdelight.cursed_cupcake": "Знімає ефект часнику",
 
@@ -201,7 +201,7 @@
 
   "gui.vampiresdelight.jei.pouring": "Наливання",
   "gui.vampiresdelight.jei.spilling_blood": "Заливання кров'ю",
-  "gui.vampiresdelight.jei.info.human_eye": "Огидний на вигляд інгредієнт для вампірської їжі.\\n\\nМожна отримати, вирізаючи його у жителів, розбійників, мисливців та деяких інших людиноподібних істот.",
-  "gui.vampiresdelight.jei.info.black_mushroom": "Чорні гриби деколи зустрічаються у вампірських лісах.\\n\\nЇх можна удобрити кістяним борошном для отримання гігантської версії.",
+  "gui.vampiresdelight.jei.info.human_eye": "Огидний на вигляд інгредієнт для вампірської їжі.\n\nМожна отримати, вирізаючи його у жителів, розбійників, мисливців та деяких інших людиноподібних істот.",
+  "gui.vampiresdelight.jei.info.black_mushroom": "Чорні гриби деколи зустрічаються у вампірських лісах.\n\nЇх можна удобрити кістяним борошном для отримання гігантської версії.",
   "gui.vampiresdelight.jei.info.wild_garlic": "Часник зазвичай можна зустріти як дикорослу рослину у помірних місцях, наприклад у степах та лісах."
 }

@@ -146,7 +146,7 @@
   "tooltip.vampiresdelight.blood_wine_bottle.multiple": "Содержит %s порций вина",
   "tooltip.vampiresdelight.dandelion_beer_bottle.single": "Содержит %s порцию пива",
   "tooltip.vampiresdelight.dandelion_beer_bottle.multiple": "Содержит %s порций пива",
-  "tooltip.vampiresdelight.daisy_tea": "Лечит слабость, слепоту,\\nтошноту и медлительность",
+  "tooltip.vampiresdelight.daisy_tea": "Лечит слабость, слепоту,\nтошноту и медлительность",
   "tooltip.vampiresdelight.orchid_tea": "Заражает вампиризмом",
   "tooltip.vampiresdelight.cursed_cupcake": "Убирает эффект чеснока",
 
@@ -201,7 +201,7 @@
 
   "gui.vampiresdelight.jei.pouring": "Наливание напитка",
   "gui.vampiresdelight.jei.spilling_blood": "Пролитие крови",
-  "gui.vampiresdelight.jei.info.human_eye": "Неприятный глазу ингредиент для вампирской пищи.\\n\\nМожно получить, вырезая его у жителей, разбойников, охотников и некоторых других человекоподобных существ.",
-  "gui.vampiresdelight.jei.info.black_mushroom": "Чёрные грибы иногда можно встретить в вампирских лесах.\\n\\nИх можно удобрить костной мукой для получения гигантской версии.",
+  "gui.vampiresdelight.jei.info.human_eye": "Неприятный глазу ингредиент для вампирской пищи.\n\nМожно получить, вырезая его у жителей, разбойников, охотников и некоторых других человекоподобных существ.",
+  "gui.vampiresdelight.jei.info.black_mushroom": "Чёрные грибы иногда можно встретить в вампирских лесах.\n\nИх можно удобрить костной мукой для получения гигантской версии.",
   "gui.vampiresdelight.jei.info.wild_garlic": "Чеснок можно обычно встретить в виде дикорастущего растения в умеренных местах, таких как степи и леса."
 }

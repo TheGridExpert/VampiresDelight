@@ -11,21 +11,59 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class VDTooltipUtils {
 
+    private static final int MAX_TOOLTIP_WIDTH = 40;
+
     public static void addFormattedTooltip(String key, List<Component> tooltip, ChatFormatting style) {
-        tooltip.add(Component.translatable(key).withStyle(style));
+        addFormattedLines(Component.translatable(key).getString(), tooltip, style);
     }
 
     public static void addShiftTooltip(String key, List<Component> tooltip) {
         if (Screen.hasShiftDown()) {
-            tooltip.add(Component.translatable(key).withStyle(ChatFormatting.GRAY));
+            addFormattedLines(Component.translatable(key).getString(), tooltip, ChatFormatting.GRAY);
         } else {
             tooltip.add(Component.translatable("tooltip." + VampiresDelight.MODID + ".hold_shift_for_info", Component.translatable("tooltip." + VampiresDelight.MODID + ".shift").withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_GRAY));
         }
+    }
+
+    public static void addFormattedLines(String text, List<Component> tooltip, ChatFormatting style) {
+        for (String line : normalizeTextWidth(text, MAX_TOOLTIP_WIDTH)) {
+            tooltip.add(Component.literal(line).withStyle(style));
+        }
+    }
+
+    private static List<String> normalizeTextWidth(String text, int maxLength) {
+        List<String> lines = new ArrayList<>();
+
+        for (String paragraph : text.split("\n", -1)) {
+            StringBuilder line = new StringBuilder();
+
+            for (String word : paragraph.split(" ")) {
+                if (!line.isEmpty() && line.length() + word.length() + 1 > maxLength) {
+                    lines.add(line.toString());
+                    line = new StringBuilder();
+                }
+
+                if (!line.isEmpty()) {
+                    line.append(" ");
+                }
+
+                line.append(word);
+            }
+
+            if (!line.isEmpty()) {
+                lines.add(line.toString());
+            } else if (paragraph.isEmpty()) {
+                lines.add("");
+            }
+        }
+
+        return lines;
     }
 
     public static void addFactionFoodTooltip(List<Component> tooltip, @Nullable Player player, IPlayableFaction<?> foodFaction) {

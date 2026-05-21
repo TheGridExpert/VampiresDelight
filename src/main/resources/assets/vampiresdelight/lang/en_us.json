@@ -146,7 +146,7 @@
   "tooltip.vampiresdelight.blood_wine_bottle.multiple": "Contains %s servings of wine",
   "tooltip.vampiresdelight.dandelion_beer_bottle.single": "Contains %s serving of beer",
   "tooltip.vampiresdelight.dandelion_beer_bottle.multiple": "Contains %s servings of beer",
-  "tooltip.vampiresdelight.daisy_tea": "Cures Weakness, Blindness,\\nSlowness, and Nausea",
+  "tooltip.vampiresdelight.daisy_tea": "Cures Weakness, Blindness,\nSlowness, and Nausea",
   "tooltip.vampiresdelight.orchid_tea": "Infects With Sanguinare",
   "tooltip.vampiresdelight.cursed_cupcake": "Clears Garlic Effect",
 
@@ -201,7 +201,7 @@
 
   "gui.vampiresdelight.jei.pouring": "Pouring",
   "gui.vampiresdelight.jei.spilling_blood": "Spilling Blood",
-  "gui.vampiresdelight.jei.info.human_eye": "Disgusting-looking ingredient for vampire food.\\n\\nObtained by cutting up villagers, pillagers, hunters, and some other human-like races.",
-  "gui.vampiresdelight.jei.info.black_mushroom": "Black mushrooms are rarely found in vampire forests.\\n\\nBone Meal can be used to grow a huge variant.",
+  "gui.vampiresdelight.jei.info.human_eye": "Disgusting-looking ingredient for vampire food.\n\nObtained by cutting up villagers, pillagers, hunters, and some other human-like races.",
+  "gui.vampiresdelight.jei.info.black_mushroom": "Black mushrooms are rarely found in vampire forests.\n\nBone Meal can be used to grow a huge variant.",
   "gui.vampiresdelight.jei.info.wild_garlic": "Garlic is commonly found as a wild plant in temperate lands, such as plains and forests."
 }
