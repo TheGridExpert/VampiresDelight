@@ -10,7 +10,7 @@
   "block.vampiresdelight.vampire_orchid_crop": "生长中的吸血鬼兰花",
   "block.vampiresdelight.spirit_lantern": "灵魂灯笼",
   "block.vampiresdelight.dark_spruce_cabinet": "血衫橱柜",
-  "block.vampiresdelight.cursed_spruce_cabinet": "诅咒云衫橱柜",
+  "block.vampiresdelight.cursed_spruce_cabinet": "诅咒云杉橱柜",
   "block.vampiresdelight.jacaranda_cabinet": "蓝花楹橱柜",
   "block.vampiresdelight.magic_cabinet": "魔幻木橱柜",
 
@@ -33,7 +33,7 @@
   "block.vampiresdelight.crimson_wine_shelf": "绯红木酒架",
   "block.vampiresdelight.warped_wine_shelf": "诡异木酒架",
   "block.vampiresdelight.dark_spruce_wine_shelf": "血衫酒架",
-  "block.vampiresdelight.cursed_spruce_wine_shelf": "诅咒云衫酒架",
+  "block.vampiresdelight.cursed_spruce_wine_shelf": "诅咒云杉酒架",
   "block.vampiresdelight.jacaranda_wine_shelf": "蓝花楹酒架",
   "block.vampiresdelight.magic_wine_shelf": "魔幻木酒架",
 
@@ -206,7 +206,7 @@
 
   "vampiresdelight.advancement.pour_dandelion_beer": "我就知道你们精灵毫无荣誉可言！",
   "vampiresdelight.advancement.pour_dandelion_beer.desc": "不用工作台，而是用你的双手把蒲公英啤酒倒进杯子里。",
-  "vampiresdelight.advancement.place_dandelion_beer_bottle_on_shelf": "他并没有酿造它，直到......",
+  "vampiresdelight.advancement.place_dandelion_beer_bottle_on_shelf": "他并没有酿造它，直到……",
   "vampiresdelight.advancement.place_dandelion_beer_bottle_on_shelf.desc": "把蒲公英啤酒放在酒架上。这才对味。",
 
   "vampiresdelight.advancement.get_garlic": "人类的救世主",
@@ -219,7 +219,7 @@
   "vampiresdelight.advancement.get_orchid_tea": "只是刚入口时有点儿疼",
   "vampiresdelight.advancement.get_orchid_tea.desc": "冲泡一些兰花茶。饮用它的普通人将感染吸血鬼之疾。还会有点儿辣。",
 
-  "vampiresdelight.advancement.pour_blood_wine": "尝起来正像我记得的那样......",
+  "vampiresdelight.advancement.pour_blood_wine": "尝起来正像我记得的那样……",
   "vampiresdelight.advancement.pour_blood_wine.desc": "用你自己的双手把血酒倒进杯子里，而不是工作台。",
   "vampiresdelight.advancement.place_blood_wine_bottle_on_shelf": "鲜血美酒醉真知",
   "vampiresdelight.advancement.place_blood_wine_bottle_on_shelf.desc": "把血酒放在酒架上。",
@@ -243,7 +243,7 @@
   "weathered_letter.vampiresdelight.borscht_recipe.text": "罗宋，好的罗宋汤总是令人垂涎三尺！说实在的，配方很简单——新鲜的肉，新鲜的香甜蔬菜。首先，用猪肉或带骨牛肉熬汤，然后，清洗并切一些甜菜根、胡萝卜和洋葱。趁这时间，让我们准备烧料：把油倒进预热好的煎锅，加入洋葱、大蒜和胡萝卜。洋葱煎至金黄时，加入胡萝卜。煎五分钟，之后放入番茄酱，再煎五分钟。把肉从汤里沥出，加入卷心菜碎，再稍等片刻，之后是——土豆。将骨肉分离后再把它放回汤里，撒点盐，再倒入刚才的烧料。新鲜的肉，香甜的蔬菜！这就是，真正的罗宋汤！我相信许多人都忘了它会有多美味！烹饪，然后尽情享受猎人罗宋汤。新鲜的肉，香甜的蔬菜！\n\nPS:别忘了加点儿酸奶油！",
   "weathered_letter.vampiresdelight.dear_marcus": "输血技术的突破",
   "weathered_letter.vampiresdelight.dear_marcus.author": "by Ostap H.",
-  "weathered_letter.vampiresdelight.dear_marcus.text": "亲爱的 Marcus G.,\n\n我正写信告诉你当你离开时我们的最新发现。看起来，尽管我们心存疑虑，适当地注射纯净的吸血鬼血液确实能造成一些有利的结果。\n\n不幸的是，尽管我们采取了种种措施，我们的志愿者之一还是感染了吸血鬼之疾。然而，我们只给他注射了大蒜就治愈了疾病。显然，效果并没有被吸血鬼咬了那般强烈，所以一个非常小的剂量便足够了。我们确保没有另外的人受伤。感谢上帝，没有更多的感染和伤害。我希望这情况属实。\n\n回到主题，我们正要去取得你，作为研究的领头，的许可，去叫停实验。但之后，有两个感染后的人表现出了前所未有的效果。其中的一个显著地提升了黑暗中的视觉，而另一个拥有了水下呼吸的能力。 我们并不确定这种转变是长久的还是会于某些时候消失，但我认为这很有希望。如果我们继续实验，可能猎人们就会获得一些绝佳礼物，并且绝对物超所值。要做到这一点，这很可能是一个绝佳的方法。你的假说中有一些真理，Grid，尽管我们刚开始时并未认真对待它们。请尽快回到总部，我们需要你的帮助。\n\n您忠诚的，\nOstap H.",
+  "weathered_letter.vampiresdelight.dear_marcus.text": "亲爱的 Marcus G.,\n\n我正写信告诉你当你离开时我们的最新发现。看起来，尽管我们心存疑虑，适当地注射纯净的吸血鬼血液确实能造成一些有利的结果。\n\n不幸的是，尽管我们采取了种种措施，我们的志愿者之一还是感染了吸血鬼之疾。然而，我们只给他注射了大蒜就治愈了疾病。显然，效果并没有被吸血鬼咬了那般强烈，所以一个非常小的剂量便足够了。我们确保没有另外的人受伤。感谢上帝，没有更多的感染和伤害。我希望这情况属实。\n\n回到主题，我们正要去取得你，作为研究的领头，的许可，去叫停实验。但之后，有两个感染后的人表现出了前所未有的效果。其中的一个显著提升了黑暗中的视觉，而另一个拥有了水下呼吸的能力。 我们并不确定这种转变是长久的还是会于某些时候消失，但我认为这很有希望。如果我们继续实验，可能猎人们就会获得一些绝佳礼物，并且绝对物超所值。要做到这一点，这很可能是一个绝佳的方法。你的假说中有一些真理，Grid，尽管我们刚开始时并未认真对待它们。请尽快回到总部，我们需要你的帮助。\n\n您忠诚的，\nOstap H.",
   "weathered_letter.vampiresdelight.unknown_id": "风化的信件",
   "weathered_letter.vampiresdelight.unknown_id.author": "by Unknown",
   "weathered_letter.vampiresdelight.unknown_id.text": "你从哪搞来这玩意的？不，说真的，如果你是在生存模式下获得它的，请向作者报告。这封信已经损坏了，如果你想知道为什么。",
