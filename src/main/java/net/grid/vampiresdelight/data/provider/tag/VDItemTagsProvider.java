@@ -45,13 +45,13 @@ public class VDItemTagsProvider extends ItemTagsProvider {
         tag(net.minecraft.tags.ItemTags.BOOKSHELF_BOOKS).add(ModItems.VAMPIRE_BOOK.get());
 
         // Farmer's Delight
-        tag(ModTags.Items.KNIVES).add(VDItems.SILVER_KNIFE.getOrThrow());
+        tag(ModTags.Items.KNIVES).addOptional(VDItems.SILVER_KNIFE.idOrThrow());
 
         tag(ModTags.Items.CABINETS_WOODEN)
                 .add(VDItems.DARK_SPRUCE_CABINET.get())
                 .add(VDItems.CURSED_SPRUCE_CABINET.get())
-                .add(VDItems.JACARANDA_CABINET.getOrThrow())
-                .add(VDItems.MAGIC_CABINET.getOrThrow());
+                .addOptional(VDItems.JACARANDA_CABINET.idOrThrow())
+                .addOptional(VDItems.MAGIC_CABINET.idOrThrow());
 
         tag(ModTags.Items.MEALS)
                 .add(VDItems.ORCHID_CREAM_SOUP.get())
@@ -90,8 +90,8 @@ public class VDItemTagsProvider extends ItemTagsProvider {
                 .add(VDItems.CURSED_CUPCAKE.get())
                 .add(VDItems.DARK_ICE_CREAM.get())
                 .add(VDItems.SNOW_WHITE_ICE_CREAM.get())
-                .add(VDItems.WOLF_BERRY_COOKIE.getOrThrow())
-                .add(VDItems.WOLF_BERRY_ICE_CREAM.getOrThrow());
+                .addOptional(VDItems.WOLF_BERRY_COOKIE.idOrThrow())
+                .addOptional(VDItems.WOLF_BERRY_ICE_CREAM.idOrThrow());
 
         tag(ModTags.Items.PIES).add(VDItems.BLOOD_PIE.get());
 
@@ -101,9 +101,11 @@ public class VDItemTagsProvider extends ItemTagsProvider {
         tag(de.teamlapen.vampirism.core.ModTags.Items.HEART).add(VDItems.HEART_PIECES.get());
 
         // Werewolves
-        tag(de.teamlapen.werewolves.core.ModTags.Items.WEREWOLF_FOOD).add(VDItems.WOLF_BERRY_COOKIE.getOrThrow(), VDItems.WOLF_BERRY_ICE_CREAM.getOrThrow());
+        tag(de.teamlapen.werewolves.core.ModTags.Items.WEREWOLF_FOOD)
+                .addOptional(VDItems.WOLF_BERRY_COOKIE.idOrThrow())
+                .addOptional(VDItems.WOLF_BERRY_ICE_CREAM.idOrThrow());
 
-        tag(de.teamlapen.werewolves.core.ModTags.Items.SILVER_TOOL).add(VDItems.SILVER_KNIFE.getOrThrow());
+        tag(de.teamlapen.werewolves.core.ModTags.Items.SILVER_TOOL).addOptional(VDItems.SILVER_KNIFE.idOrThrow());
 
         tag(de.teamlapen.werewolves.core.ModTags.Items.RAW_MEAT)
                 .add(VDItems.RAW_BAT.get())

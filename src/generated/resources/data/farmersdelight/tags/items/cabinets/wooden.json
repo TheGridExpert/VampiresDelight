@@ -2,7 +2,13 @@
   "values": [
     "vampiresdelight:dark_spruce_cabinet",
     "vampiresdelight:cursed_spruce_cabinet",
-    "vampiresdelight:jacaranda_cabinet",
-    "vampiresdelight:magic_cabinet"
+    {
+      "id": "vampiresdelight:jacaranda_cabinet",
+      "required": false
+    },
+    {
+      "id": "vampiresdelight:magic_cabinet",
+      "required": false
+    }
   ]
 }

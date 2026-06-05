@@ -44,8 +44,8 @@ public class VDBlockTagsProvider extends BlockTagsProvider {
                 .add(VDBlocks.WARPED_WINE_SHELF.get())
                 .add(VDBlocks.DARK_SPRUCE_WINE_SHELF.get())
                 .add(VDBlocks.CURSED_SPRUCE_WINE_SHELF.get())
-                .add(VDBlocks.JACARANDA_WINE_SHELF.getOrThrow())
-                .add(VDBlocks.MAGIC_WINE_SHELF.getOrThrow());
+                .addOptional(VDBlocks.JACARANDA_WINE_SHELF.idOrThrow())
+                .addOptional(VDBlocks.MAGIC_WINE_SHELF.idOrThrow());
         tag(VDBlockTags.WINE_SHELVES).addTag(VDBlockTags.WINE_SHELVES_WOODEN);
 
         // Vanilla
@@ -53,8 +53,6 @@ public class VDBlockTagsProvider extends BlockTagsProvider {
                 .addTag(VDBlockTags.WINE_SHELVES_WOODEN)
                 .add(VDBlocks.DARK_SPRUCE_CABINET.get())
                 .add(VDBlocks.CURSED_SPRUCE_CABINET.get())
-                .add(VDBlocks.JACARANDA_CABINET.getOrThrow())
-                .add(VDBlocks.MAGIC_CABINET.getOrThrow())
                 .add(VDBlocks.GARLIC_CRATE.get())
                 .add(VDBlocks.WHITE_BAR_STOOL.get())
                 .add(VDBlocks.ORANGE_BAR_STOOL.get())
@@ -73,7 +71,9 @@ public class VDBlockTagsProvider extends BlockTagsProvider {
                 .add(VDBlocks.RED_BAR_STOOL.get())
                 .add(VDBlocks.BLACK_BAR_STOOL.get())
                 .add(VDBlocks.BLACK_MUSHROOM_BLOCK.get())
-                .add(VDBlocks.BLACK_MUSHROOM_STEM.get());
+                .add(VDBlocks.BLACK_MUSHROOM_STEM.get())
+                .addOptional(VDBlocks.JACARANDA_CABINET.idOrThrow())
+                .addOptional(VDBlocks.MAGIC_CABINET.idOrThrow());
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(VDBlocks.DARK_STONE_STOVE.get())
@@ -105,8 +105,8 @@ public class VDBlockTagsProvider extends BlockTagsProvider {
         tag(ModTags.Blocks.CABINETS_WOODEN)
                 .add(VDBlocks.DARK_SPRUCE_CABINET.get())
                 .add(VDBlocks.CURSED_SPRUCE_CABINET.get())
-                .add(VDBlocks.JACARANDA_CABINET.getOrThrow())
-                .add(VDBlocks.MAGIC_CABINET.getOrThrow());
+                .addOptional(VDBlocks.JACARANDA_CABINET.idOrThrow())
+                .addOptional(VDBlocks.MAGIC_CABINET.idOrThrow());
 
         tag(ModTags.Blocks.HEAT_SOURCES).add(VDBlocks.DARK_STONE_STOVE.get());
         tag(ModTags.Blocks.TRAY_HEAT_SOURCES).add(ModBlocks.FIRE_PLACE.get());

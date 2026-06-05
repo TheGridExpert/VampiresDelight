@@ -116,7 +116,11 @@ dependencies {
     implementation fg.deobf("maven.modrinth:vampirism:${minecraft_version}-${vampirism_version}")
 
     if (include_werewolves.toBoolean()) {
-        implementation fg.deobf("maven.modrinth:werewolves:${minecraft_version}-${werewolves_version}")
+        compileOnly fg.deobf("maven.modrinth:werewolves:${minecraft_version}-${werewolves_version}")
+
+        if (include_werewolves_runtime.toBoolean()) {
+            runtimeOnly fg.deobf("maven.modrinth:werewolves:${minecraft_version}-${werewolves_version}")
+        }
     }
 
     if (include_jei.toBoolean()) {

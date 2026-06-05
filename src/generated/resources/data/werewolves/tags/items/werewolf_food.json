@@ -1,6 +1,12 @@
 {
   "values": [
-    "vampiresdelight:wolf_berry_cookie",
-    "vampiresdelight:wolf_berry_ice_cream"
+    {
+      "id": "vampiresdelight:wolf_berry_cookie",
+      "required": false
+    },
+    {
+      "id": "vampiresdelight:wolf_berry_ice_cream",
+      "required": false
+    }
   ]
 }

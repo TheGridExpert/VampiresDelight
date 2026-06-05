@@ -1,5 +1,8 @@
 {
   "values": [
-    "vampiresdelight:silver_knife"
+    {
+      "id": "vampiresdelight:silver_knife",
+      "required": false
+    }
   ]
 }

@@ -75,6 +75,10 @@ public final class OptRegistryObject<T> {
         return ro != null ? Optional.ofNullable(ro.getId()) : Optional.empty();
     }
 
+    public ResourceLocation idOrThrow() {
+        return registryObjectOrThrow().getId();
+    }
+
     public Optional<String> name() {
         RegistryObject<T> ro = registryObject;
         return ro != null && ro.getId() != null ? Optional.of(ro.getId().getPath()) : Optional.empty();
