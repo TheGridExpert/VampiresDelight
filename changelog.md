@@ -5,6 +5,7 @@
 ### Fixed
 - Wild Garlic no longer crashes the game if a vampire steps into it;
 - Werewolves integration items (e.g. Silver Knife) no longer break tags related to them;
+- Vampire food from the mod now returns extra blood into blood bottles correctly;
 
 ## 0.1.13b
 

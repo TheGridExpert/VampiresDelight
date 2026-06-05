@@ -78,9 +78,9 @@ public class VDEntityUtils {
 
     private static void feedVampire(ItemStack stack, Level level, LivingEntity consumer, FoodProperties foodProperties) {
         if (consumer instanceof Player player) {
-            VampirePlayer.get(player).drinkBlood(foodProperties.getNutrition(), foodProperties.getSaturationModifier(), false, new DrinkBloodContext(stack));
+            VampirePlayer.get(player).drinkBlood(foodProperties.getNutrition(), foodProperties.getSaturationModifier(), true, new DrinkBloodContext(stack));
         } else if (consumer instanceof IVampire vampire) {
-            vampire.drinkBlood(foodProperties.getNutrition(), foodProperties.getSaturationModifier(), false, new DrinkBloodContext(stack));
+            vampire.drinkBlood(foodProperties.getNutrition(), foodProperties.getSaturationModifier(), true, new DrinkBloodContext(stack));
         }
         level.playSound(null, consumer.getX(), consumer.getY(), consumer.getZ(), SoundEvents.PLAYER_BURP, SoundSource.PLAYERS, 0.5F, consumer.getRandom().nextFloat() * 0.1F + 0.9F);
     }
