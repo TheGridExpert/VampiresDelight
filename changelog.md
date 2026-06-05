@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.13c
+
+### Fixed
+- Wild Garlic no longer crashes the game if a vampire steps into it;
+- Werewolves integration items (e.g. Silver Knife) no longer break tags related to them;
+
 ## 0.1.13b
 
 ### Changed
